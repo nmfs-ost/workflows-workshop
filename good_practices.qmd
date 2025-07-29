@@ -1,0 +1,10 @@
+# Good data science practices
+
+## Organization
+
+1. Use the `here` R package
+
+## Seeking help
+
+1. Create a reproducible example ("reprex") to allow your helper to reproduce your issue and get a clear sense of the context. See [the tidyverse's "do's and don'ts"](https://reprex.tidyverse.org/articles/reprex-dos-and-donts.html) for making reprexes.
+
