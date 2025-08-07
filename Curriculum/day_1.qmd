@@ -1,0 +1,88 @@
+---
+title: "Day 1"
+format: html
+  toc: true
+---
+
+::: objectives
+-   Identify purpose and scope of workshop
+-   Learn how R markdown can be used to enhance `asar` reports
+-   Understand how Quarto is used to structure an `asar` report
+-   Install software necessary to build an `asar` report
+:::
+
+# Introduction
+## Icebreaker
+
+Welcome! Please open the [Day 1 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?usp=sharing) and participate in the icebreaker exercise.
+
+## Code of conduct
+
+Everyone participating in this workshop is required to abide by the terms of our [Code of Conduct](https://github.com/nmfs-ost/asar/blob/main/CODE_OF_CONDUCT.md). We encourage you to contribute to a positive environment for our community by:
+
+-   Demonstrating empathy and kindness toward other people
+-   Being respectful of differing opinions, viewpoints, and experiences
+-   Giving and gracefully accepting constructive feedback
+-   Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
+-   Focusing on what is best not just for us as individuals, but for the overall community
+
+If you believe that someone is in violation of the Code of Conduct, please report the incident to our community leaders responsible for enforcement using [this form](https://docs.google.com/forms/d/e/1FAIpQLSftcxC8XuyoXJzrNS8cM8fXvuRWo1hnyS3TtI_VlM-XFmMYGQ/viewform).
+
+## Who are we?
+
+Sam Schiano: __________________
+
+Sophie Breitbart: _________________
+
+## Materials for today's lesson
+
+-   [Day 1 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?usp=sharing)
+    -   Contains areas for taking notes and definitions for jargon
+-   [JupyterHub workshop server](https://workshop.nmfs-openscapes.2i2c.cloud)
+    -   Environment where you can code along with us, if you'd prefer
+    -   All necessary packages are already installed
+    -   Username: your email
+    -   Password: *ask us*
+-   [Sample data]()
+    -   Sample model output data for coding demonstrations
+################################################################
+#### NOTE TO SOPHIE: add in link to sample data once ready #####
+################################################################
+
+## How to engage with us
+
+**Questions**: Please raise your hand, or write your question in the chat, at any time. Depending on our schedule, we may ask that you save larger questions for breaks.
+
+## Workshop overview
+### Why we’re holding this workshop
+
+### Scope of workshop
+
+#### What we'll cover
+
+#### What we won't cover
+
+### Why this information will benefit you
+
+# Markdown
+
+Cover:
+- how to open a document
+- Most common uses (outlined in [markdown vignette](https://nmfs-ost.github.io/asar/articles/markdown_notation.html))
+################################################################
+#### NOTE TO SOPHIE: left off just before outlining demo #######
+################################################################
+
+**15 min break**
+
+# Quarto (plan demo)
+
+- how child docs work with skeleton
+- Only files given paths relative to the Quarto doc will load
+- 
+
+# Installation
+
+- asar/stockplotr/tinytex
+
+# Overview of workflow/package
