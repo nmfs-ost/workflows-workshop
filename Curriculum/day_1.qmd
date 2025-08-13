@@ -164,3 +164,8 @@ pak::pak("nmfs-ost/asar")
 
 Please see the [`asar` README](https://github.com/nmfs-ost/asar) for more installation options.
 
+# Questions, comments, and feedback
+
+################################################################
+#### NOTE TO SOPHIE: add in link to easyretro board #######
+################################################################
