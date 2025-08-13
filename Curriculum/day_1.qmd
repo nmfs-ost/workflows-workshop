@@ -1,7 +1,6 @@
 ---
 title: "Day 1"
 format: html
-  toc: true
 ---
 
 ::: objectives
@@ -54,19 +53,38 @@ Sophie Breitbart: _________________
 **Questions**: Please raise your hand, or write your question in the chat, at any time. Depending on our schedule, we may ask that you save larger questions for breaks.
 
 ## Workshop overview
-### Why we’re holding this workshop
+### Purpose and benefits to you
+
+We are building asar as a national tool to streamline SA reporting workflows = faster, more efficient, and ideally easier process for SA scientists.
+
+An `asar` workflow can help ease the following challenges:
+
+#### Challenges faced by stock assessment scientists
+
+- Achieving accessibility standards (section 508 compliance)    
+- Iteratively changing a report during review                   
+- Meeting variable expectations for report structure and language
+- Following structure of inherited assessments                   
+- Collaborating                                                
+
+#### Challenges from a National Perspective
+
+- Differences in reporting among regions
+- Expectations from associated councils
 
 ### Scope of workshop
 
-#### What we'll cover
+During this workshop, we will cover the following topics:
 
-#### What we won't cover
-
-### Why this information will benefit you
+- Markdown language
+- Quarto basics
+- How to set up a reporting workflow using `asar`
+- How to create semi-automated figures and tables with `stockplotr` 
 
 # Markdown
 
 Cover:
+- Why this is useful for asar report creation
 - how to open a document
 - Most common uses (outlined in [markdown vignette](https://nmfs-ost.github.io/asar/articles/markdown_notation.html))
 ################################################################
@@ -77,12 +95,62 @@ Cover:
 
 # Quarto (plan demo)
 
+- Why Quarto is a good platform for asar report creation
+- Skeleton
 - how child docs work with skeleton
 - Only files given paths relative to the Quarto doc will load
-- 
+- yaml
 
 # Installation
 
-- asar/stockplotr/tinytex
+::: {.callout-tip}
+## Tip
+
+The following packages are already installed in the `asar` workspace on JupyterHub, so if you are using that space, you can skip this section.
+:::
+
+We recommend using the [`pak` R package](https://pak.r-lib.org/) to install R packages where possible, since it avoids re-downloading files if they're already present.
+
+## `tinytex`
+
+We recommend installing the default "bundle" of LaTeX packages via `tinytex` because 1) it's faster and 2) R *should* automatically install also-necessary LaTeX packages when they are needed, in the moment.
+
+```r
+install.packages("pak")
+pak::pkg_install("rstudio/tinytex")
+```
+
+If you'd prefer, you can install the full `tinytex` bundle to ensure that all LaTeX packages will be present when you need them. This will take longer to install.
+
+```r
+install.packages("pak")
+pak::pkg_install("rstudio/tinytex")
+tinytex::install_tinytex(bundle = "TinyTeX-2")
+```
+
+## `asar`
+
+Then, install `asar`.
+
+```r
+install.packages("pak")
+pak::pak("nmfs-ost/asar")
+```
+
+Please see the [`asar` README](https://github.com/nmfs-ost/asar) for more installation options.
 
 # Overview of workflow/package
+
+Main steps for creating a stock assessment report with `asar`:
+
+1. Install packages
+2. Convert model output into format usable by `asar`
+3. Create the report skeleton
+4. Make child docs containing figures and tables (made with `stockplotr` or by other means)
+5. Fill in child docs with text
+6. Render report
+7. Add accessibility features (PDF tags and alternative text for figures)
+
+################################################################
+#### NOTE TO SOPHIE: add in link to cheatsheet #######
+################################################################
