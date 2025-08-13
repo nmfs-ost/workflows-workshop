@@ -29,9 +29,7 @@ If you believe that someone is in violation of the Code of Conduct, please repor
 
 ## Who are we?
 
-Sam Schiano: __________________
-
-Sophie Breitbart: _________________
+Sam Schiano and Sophie Breitbart are contractors with ECS Federal working in support of the NOAA Fisheries National Stock Assessment Program. Our work primarily focuses on stock assessment workflows by creating tools to help stock assessment scientists increase throughput. We are developing two R packages, `asar` and `stockplotr`, using an open science framework that prioritizes transparency and reproducibility.
 
 ## Materials for today's lesson
 
@@ -55,22 +53,22 @@ Sophie Breitbart: _________________
 ## Workshop overview
 ### Purpose and benefits to you
 
-We are building asar as a national tool to streamline SA reporting workflows = faster, more efficient, and ideally easier process for SA scientists.
+By the end of this workshop, we hope that you come away with the knowledge and confidence to write your next stock assessment report using a *reproducible, efficient, and transparent workflow based on `asar` and `stockplotr`*.
 
 An `asar` workflow can help ease the following challenges:
 
 #### Challenges faced by stock assessment scientists
 
-- Achieving accessibility standards (section 508 compliance)    
-- Iteratively changing a report during review                   
+- Achieving accessibility standards (section 508 compliance)
+- Iteratively changing a report during review
 - Meeting variable expectations for report structure and language
-- Following structure of inherited assessments                   
-- Collaborating                                                
+- Following structure of inherited assessments
+- Collaborating
 
-#### Challenges from a National Perspective
+#### Challenges from a national perspective
 
 - Differences in reporting among regions
-- Expectations from associated councils
+- Divergent expectations from associated councils
 
 ### Scope of workshop
 
@@ -81,24 +79,51 @@ During this workshop, we will cover the following topics:
 - How to set up a reporting workflow using `asar`
 - How to create semi-automated figures and tables with `stockplotr` 
 
+### Overview of `asar`-based reporting workflow
+
+Main steps for creating a stock assessment report with `asar`:
+
+1. Install packages
+2. Convert model output into format usable by `asar`
+3. Create the report skeleton
+4. Make child docs containing figures and tables (made with `stockplotr` or by other means)
+5. Fill in child docs with text
+6. Render report
+7. Add accessibility features (PDF tags and alternative text for figures)
+
+################################################################
+#### NOTE TO SOPHIE: add in link to cheatsheet #######
+################################################################
 # Markdown
+
+::: {.callout-note}
+Follow along with our demo!
+:::
 
 Cover:
 - Why this is useful for asar report creation
 - how to open a document
 - Most common uses (outlined in [markdown vignette](https://nmfs-ost.github.io/asar/articles/markdown_notation.html))
-################################################################
-#### NOTE TO SOPHIE: left off just before outlining demo #######
-################################################################
+  - Parameters
+  - Formatting
+  - Math
+  - Code chunk options (echo, include, etc.)
+  - References
 
 **15 min break**
 
-# Quarto (plan demo)
+# Quarto
+
+::: {.callout-note}
+Follow along with our demo!
+:::
 
 - Why Quarto is a good platform for asar report creation
-- Skeleton
+- .qmd extension
+- Skeleton setup
 - how child docs work with skeleton
 - Only files given paths relative to the Quarto doc will load
+  - example
 - yaml
 
 # Installation
@@ -139,18 +164,3 @@ pak::pak("nmfs-ost/asar")
 
 Please see the [`asar` README](https://github.com/nmfs-ost/asar) for more installation options.
 
-# Overview of workflow/package
-
-Main steps for creating a stock assessment report with `asar`:
-
-1. Install packages
-2. Convert model output into format usable by `asar`
-3. Create the report skeleton
-4. Make child docs containing figures and tables (made with `stockplotr` or by other means)
-5. Fill in child docs with text
-6. Render report
-7. Add accessibility features (PDF tags and alternative text for figures)
-
-################################################################
-#### NOTE TO SOPHIE: add in link to cheatsheet #######
-################################################################
