@@ -17,9 +17,30 @@ Welcome! Please open the [Day 3 communal notes doc](https://docs.google.com/docu
 
 # `asar` workflow: Complex example
 
+- Customized sections
+- Reorganizing section order
+- Other functions
+- Latex (if there's time/interest)
+  - explain limitations or potential customizations
+
+**15 min break**
+
 # Introduction to `stockplotr`
 
-# `stockplotr` workflow: Basic example
+## `stockplotr` workflow: Basic example
+
+- Convert output, if not done already
+- Create some single plots
+- How to export them
+- Create and export all plots
+- How to customize (changing color palette, etc.)
+
+# Demo for a realistic, customized asar report with stockplotr plots
+
+- create_tables_doc() and create_figures_doc() with "figures" and "tables" folders
+- ensure alt text/captions work
+
+**Time to practice, ask questions, etc.**
 
 # Questions, comments, and feedback
 
