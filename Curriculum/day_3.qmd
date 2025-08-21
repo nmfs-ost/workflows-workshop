@@ -23,6 +23,8 @@ Welcome! Please open the [Day 3 communal notes doc](https://docs.google.com/docu
 
 # Questions, comments, and feedback
 
-################################################################
-#### NOTE TO SOPHIE: add in link to easyretro board #######
-################################################################
+Please navigate to the [Feedback](https://docs.google.com/document/d/11opBDjiMCL8_bUY2NmOoAO5QIpodzh1aGHIfvlZ8Asw/edit?tab=t.0#heading=h.llbcc8tygqlb) heading and tell us what you thought about today's workshop. Only 3 simple questions!
+
+* What went well?
+* What could be improved?
+* What is a question you still have?

@@ -166,6 +166,8 @@ Please see the [`asar` README](https://github.com/nmfs-ost/asar) for more instal
 
 # Questions, comments, and feedback
 
-################################################################
-#### NOTE TO SOPHIE: add in link to easyretro board #######
-################################################################
+Please navigate to the [Feedback](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.0#heading=h.llbcc8tygqlb) heading and tell us what you thought about today's workshop. Only 3 simple questions!
+
+* What went well?
+* What could be improved?
+* What is a question you still have?
