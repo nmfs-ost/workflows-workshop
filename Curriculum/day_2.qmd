@@ -1,0 +1,65 @@
+---
+title: "Day 2"
+format: html
+---
+
+::: objectives
+    -   Learn the basics of creating a stock assessment report using `asar`
+    -   Understand the complexities and customization options of the package
+    -   Provide time to practice and ask questions
+:::
+
+## asar
+
+### Installation
+
+Attendees of the workshop should have already downloaded this package during day 1. If you have not, please 
+download `asar` through the following code:
+
+```{r}
+pak::pak("nmfs-ost/asar")
+```
+
+::: {.callout-note}
+If you receive an error message when attempting the download the package, please ask the isntructor for 
+alternative directions or see the README on the [`asar` repository](https://github.com/nmfs-ost/asar) 
+for alternative download instructions.
+:::
+
+### Getting Started
+
+In this section we will cover the basics of `asar` by generating a blank stock assessement report and 
+going through basic navigation of the template.
+
+#### Recommended workflow
+
+We *highly* recommend using a project based workflow meaning creating an R project for each report. This makes returning to your session and maintaining files easier. Using either a project or GitHub repository will help you in the long run.
+
+To create a new R project in Rstudio:
+
+File > New Project > New or Existing Directory
+
+
+::: {.callout-important}
+If you use VSCode or Positron for your IDE, by navigating to a folder on your computer, it will automatically initialize a project-like environment.
+:::
+
+
+`asar` revolves around 4 primary functions, but contains a variety of support functions that help make the template. While most of them are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:
+
+    -   `create_template()`
+    -   `create_tables_doc()`
+    -   `create_figures_doc()`
+    -   `convert_output()`
+
+#### `asar::create_template`
+
+**What it does:**
+
+Generates a set of files that setup a stock assessment report with their supporting files. In these files is the "skeleton file" which drives the render of the entire report. For those familiar with Rmarkdown or Quarto books, this is operating similar to a .yml file. The other quarto files found in your folder will be what we refer to as "child documents", or child docs for short. These are the actual files that you will fill in when writing your report. These are the bulk of your content!
+
+**Try it out!**
+
+```{r}
+```
+
