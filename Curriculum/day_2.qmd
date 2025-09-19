@@ -22,8 +22,7 @@ pak::pak("nmfs-ost/asar")
 
 ::: {.callout-note}
 If you receive an error message when attempting the download the package, please ask the isntructor for 
-alternative directions or see the README on the [`asar` repository](https://github.com/nmfs-ost/asar) 
-for alternative download instructions.
+alternative directions or see the README on the [`asar` repository](https://github.com/nmfs-ost/asar).
 :::
 
 ### Getting Started
@@ -33,33 +32,66 @@ going through basic navigation of the template.
 
 #### Recommended workflow
 
-We *highly* recommend using a project based workflow meaning creating an R project for each report. This makes returning to your session and maintaining files easier. Using either a project or GitHub repository will help you in the long run.
+We *highly* recommend using a project based workflow meaning creating an R project for each report.
+This makes returning to your session and maintaining files easier. Using either a project or GitHub
+repository will help you in the long run.
 
 To create a new R project in Rstudio:
 
 File > New Project > New or Existing Directory
 
-
 ::: {.callout-important}
 If you use VSCode or Positron for your IDE, by navigating to a folder on your computer, it will automatically initialize a project-like environment.
 :::
 
+#### Our Package
 
-`asar` revolves around 4 primary functions, but contains a variety of support functions that help make the template. While most of them are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:
+`asar` revolves around 4 primary functions, but contains a variety of support functions that help
+make the template. While most of them are accessible to the user, they would not perform helpful
+functions for them. We will be going over the following functions:
 
     -   `create_template()`
     -   `create_tables_doc()`
     -   `create_figures_doc()`
     -   `convert_output()`
 
-#### `asar::create_template`
+##### `asar::create_template`
 
 **What it does:**
 
-Generates a set of files that setup a stock assessment report with their supporting files. In these files is the "skeleton file" which drives the render of the entire report. For those familiar with Rmarkdown or Quarto books, this is operating similar to a .yml file. The other quarto files found in your folder will be what we refer to as "child documents", or child docs for short. These are the actual files that you will fill in when writing your report. These are the bulk of your content!
+Generates a set of files that setup a stock assessment report with its supporting files
+
+Within the created files is the "skeleton file" which drives the render of the entire report. For those familiar
+with Rmarkdown or Quarto books, this is operating similar to a .yml file. The other quarto files
+found in your folder will be what we refer to as "child documents", or child docs for short. These
+are the actual files that you will fill in when writing your report. These are the bulk of your content!
 
 **Try it out!**
 
+`create_template()` contains *A LOT* of arguments that allow the user to customize their document how
+they want. The function contains a set of defaults that would produce a tempalte that could be rendered,
+but contains no real information relevant to the target stock.
+
+So, let's do more than just create a blank template! The following arguments are some key parts to fill
+for a specific stock assessment report:
+
+| Argument | Options    |
+|----------|------------|
+| format   | pdf, html |
+| type     | SAR, pfmc, safe |
+| office   | afsc, pifsc, nefsc, nwfsc sefsc, swfsc |
+| region   |  - |
+| species  |  - |
+| spp_latin | - |
+| year | - |
+| authors | - |
+| file_dir | - |
+
+
 ```{r}
+library(asar)
+create_template(
+
+)
 ```
 
