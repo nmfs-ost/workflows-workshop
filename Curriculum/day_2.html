@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.17">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Day 2</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="day_2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="day_2_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="day_2_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="day_2_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="day_2_files/libs/quarto-html/popper.min.js"></script>
+<script src="day_2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="day_2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="day_2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="day_2_files/libs/quarto-html/quarto-syntax-highlighting-c2d8198b7f72dec16de60f0cb3fab69f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="day_2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="day_2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="day_2_files/libs/bootstrap/bootstrap-0abb7f8e0048341453ce325ab957e724.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Day 2</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout-objectives">
+<pre><code>-   Learn the basics of creating a stock assessment report using `asar`
+-   Understand the complexities and customization options of the package
+-   Provide time to practice and ask questions</code></pre>
+</div>
+<section id="asar" class="level2">
+<h2 class="anchored" data-anchor-id="asar">asar</h2>
+<section id="installation" class="level3">
+<h3 class="anchored" data-anchor-id="installation">Installation</h3>
+<p>Attendees of the workshop should have already downloaded this package during day 1. If you have not, please download <code>asar</code> through the following code:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">"nmfs-ost/asar"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you receive an error message when attempting the download the package, please ask the isntructor for alternative directions or see the README on the <a href="https://github.com/nmfs-ost/asar"><code>asar</code> repository</a>.</p>
+</div>
+</div>
+</section>
+<section id="getting-started" class="level3">
+<h3 class="anchored" data-anchor-id="getting-started">Getting Started</h3>
+<p>In this section we will cover the basics of <code>asar</code> by generating a blank stock assessement report and going through basic navigation of the template.</p>
+<section id="recommended-workflow" class="level4">
+<h4 class="anchored" data-anchor-id="recommended-workflow">Recommended workflow</h4>
+<p>We <em>highly</em> recommend using a project based workflow meaning creating an R project for each report. This makes returning to your session and maintaining files easier. Using either a project or GitHub repository will help you in the long run.</p>
+<p>To create a new R project in Rstudio:</p>
+<p>File &gt; New Project &gt; New or Existing Directory</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you use VSCode or Positron for your IDE, by navigating to a folder on your computer, it will automatically initialize a project-like environment.</p>
+</div>
+</div>
+</section>
+<section id="our-package" class="level4">
+<h4 class="anchored" data-anchor-id="our-package">Our Package</h4>
+<p><code>asar</code> revolves around 4 primary functions, but contains a variety of support functions that help make the template. While most of them are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:</p>
+<pre><code>-   `create_template()`
+-   `convert_output()`
+-   `create_tables_doc()`
+-   `create_figures_doc()`</code></pre>
+<section id="asarcreate_template" class="level5">
+<h5 class="anchored" data-anchor-id="asarcreate_template"><code>asar::create_template</code></h5>
+<p><strong>What it does:</strong></p>
+<p>Generates a set of files that setup a stock assessment report with its supporting files.</p>
+<p>Within the created files is the “skeleton file” which drives the render of the entire report. For those familiar with Rmarkdown or Quarto books, this is operating similar to a .yml file. The other quarto files found in your folder will be what we refer to as “child documents”, or child docs for short. These are the actual files that you will fill in when writing your report. These are the bulk of your content!</p>
+<p><strong>Try it out!</strong></p>
+<p><code>create_template()</code> contains <em>A LOT</em> of arguments that allow the user to customize their document how they want. The function contains a set of defaults that would produce a template that could be rendered, but contains no real information relevant to the target stock.</p>
+<p>So, let’s do more than just create a blank template! The following arguments are some key parts to fill in for a specific stock assessment report:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Argument</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>format</td>
+<td>pdf, html</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>SAR, pfmc, safe</td>
+</tr>
+<tr class="odd">
+<td>office</td>
+<td>afsc, pifsc, nefsc, nwfsc sefsc, swfsc</td>
+</tr>
+<tr class="even">
+<td>region</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>species</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>spp_latin</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>year</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>authors</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>file_dir</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust below example based on audience</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(asar)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">create_template</span>(</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"pdf"</span>, <span class="co"># optional "html"</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"SAR"</span>, <span class="co"># add'l options: "safe", "nemt", "pfmc"</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">office =</span> <span class="st">"NWFSC"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">region =</span> <span class="st">"U.S. West Coast"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">species =</span> <span class="st">"Petrale sole"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">spp_latin =</span> <span class="st">"Eopsetta jordani"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">authors =</span> <span class="fu">c</span>(<span class="st">"Samantha Schiano"</span> <span class="ot">=</span> <span class="st">"OST"</span>),</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">file_dir =</span> here<span class="sc">::</span><span class="fu">here</span>()</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Run it!</strong></p>
+<p>You should see a folder called “<strong>report</strong>” where you indicated in the argument <code>file_dir</code>. It should have a set up that looks like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/asar_files.png" class="img-fluid figure-img"></p>
+<figcaption>The contents of an asar generated template found in the report folder.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You should see a variety of messaged reported in the console to indicate that it worked! For a blank template with no errors, it should look like this:</p>
+<p><img src="images/blank_template_output_messages.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="lets-take-a-tour-of-the-content-we-created" class="level5">
+<h5 class="anchored" data-anchor-id="lets-take-a-tour-of-the-content-we-created">Let’s take a tour of the content we created!</h5>
+<p><strong>The Skeleton</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/asar_skeleton.png" class="img-fluid figure-img"></p>
+<figcaption>Diagram showing different blocks of content found in the Quarto yaml within the skeleton.qmd file.</figcaption>
+</figure>
+</div>
+<p>As previously mentioned, the skeleton file controls the rest of the report. This is the file you go to to compile your report, change formatting, or add quantities to reference in your document.</p>
+<p>We went over the basics of a Quarto yaml in Day 1, but when using asar, you don’t actually have to fill in anything yourself. The beauty of using asar is that it removes this task, but filling out information provided in the <code>create_template()</code> arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/asar_yaml.png" class="img-fluid figure-img"></p>
+<figcaption>‘asar’ yaml controlling formatting and basic document information.</figcaption>
+</figure>
+</div>
+<p>The YAML controls the following:</p>
+<pre><code>- title
+- authorship
+- formatting
+- rendered file name
+- parameters
+- species cover image
+- bibliography
+- citation style</code></pre>
+<p><strong>The Preamble</strong></p>
+<p>The preamble is an R chunk that loads in a script called “preamble.R” which extracts key quantities commonly referenced in stock assessment reports. This will only work with a standard results file converted using <code>asar::convert_output()</code>, which we will get to shortly.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/preamble.png" class="img-fluid figure-img"></p>
+<figcaption>A screenshot showing lines of code in an R chunk within the skeleton file containing various quantities pulled from the preamble.R script.</figcaption>
+</figure>
+</div>
+<p>The quantities in found in this chunk can be referenced in-line throughout the document:</p>
+<p>` r R0 `</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For more information on markdown notation, see Day 1 of this workshop or navigate to <a href="https://nmfs-ost.github.io/asar/articles/markdown_notation.html">our article</a> on the topic!</p>
+</div>
+</div>
+<p><strong>The Content</strong></p>
+<p>The “child docs” are where you as the assessment author or contibutor report out the information you need to include. The template is highly modular so there are files for each section of the report and sometimes files for subsections. The default <code>asar</code> template creates child docs following the NOAA standard stock assessment report guidelines consisting of the following:</p>
+<pre><code>- executive summary
+- introduction
+- data
+- assessment (modelling and results)
+- discussion
+- acknowledgements
+- references
+- tables
+- figures
+- appendix</code></pre>
+<p>Each child doc contains pre-determined headers and labels for the author to reference back to throughout the document. There are also descriptions within each section that depcit what you should report on throughout the document. You can either keep or remove these notes once the document is finished, either way, they will not be included in your final report.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We are advising everyone that if required content is needed beyond the standard guidelines, that it gets placed in the appendix; however we encourage everyone to think about the importance of the content in terms of review for management versus CIE or SSC reveiw.</p>
+</div>
+</div>
+<p><strong>Demo of child docs</strong></p>
+</section>
+<section id="asarconvert_output" class="level5">
+<h5 class="anchored" data-anchor-id="asarconvert_output"><code>asar::convert_output</code></h5>
+<p>Another major component of <code>asar</code> is our converter function which converts an output file from a stock assessment model to a standard format which can be used by the preamble and our other package <code>stockplotr</code>.</p>
+<p>The <code>convert_output</code> function currently accepts output from Stock Synthesis (Report.sso) version 3.30 and higher, Beaufort Assessment Model (BAM; output.rda), or Fishereies Integrated Modelling System (FIMS; R object). We are actively working on expanding the <code>convert_output</code> function to be compatiable with all major U.S. stock assessment models. This function takes a lot of resources to develop, so any contribution to the package is welcome! If you have a model that is not currently compatible with <code>asar::convert_output()</code>, please navigate to <a href="https://nmfs-ost.github.io/asar/articles/convert_output_details.html">our article</a> describing the function and how to get your output in the same format as those produced from the converter!</p>
+<p><strong>Let’s try it out!</strong></p>
+<p>We have uploaded an example Report.sso file in the workshop GitHub, but if you have a compatible output file, we encourage you to use your own.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify output file</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>output_file <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"example_output"</span>, <span class="st">"Report.sso"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># convert the output</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>petrale <span class="ot">&lt;-</span> asar<span class="sc">::</span><span class="fu">convert_output</span>(output_file)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Processing Stock Synthesis output file...</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Identified fleet names:</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ North, South, Triennial, and WCGBTS</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Skipped DEFINITIONS</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing DERIVED_QUANTITIES</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing Input_Variance_Adjustment</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Skipped LIKELIHOOD</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing MGparm_By_Year_after_adjustments</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Error values are present, but are unique to the data frame and not to a selected parameter.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Skipped MORPH_INDEXING</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing OVERALL_COMPS</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ FACTORS REMOVED: OVERALL_COMPS - n_obs
+ℹ FACTORS REMOVED: OVERALL_COMPS - n_obs</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing PARAMETERS</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing BIOMASS_AT_AGE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ FACTORS REMOVED: BIOMASS_AT_AGE - beg/mid</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing BIOMASS_AT_LENGTH</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ FACTORS REMOVED: BIOMASS_AT_LENGTH - beg/mid</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing CATCH</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ FACTORS REMOVED: CATCH - fleet_name</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing DISCARD_AT_AGE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Skipped EXPLOITATION</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing CATCH_AT_AGE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing F_AT_AGE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing MEAN_SIZE_TIMESERIES</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing NUMBERS_AT_AGE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ FACTORS REMOVED: NUMBERS_AT_AGE - beg/mid</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing NUMBERS_AT_LENGTH</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ FACTORS REMOVED: NUMBERS_AT_LENGTH - beg/mid</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing SPAWN_RECRUIT</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing SPAWN_RECR_CURVE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing SPR_SERIES</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing TIME_SERIES</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Skipped COMPOSITION_DATABASE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Skipped DISCARD_SPECIFICATION</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing DISCARD_OUTPUT</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Multiple error metrics reported in DISCARD_OUTPUT.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Error label(s) removed: 
+std_use</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ FACTORS REMOVED: DISCARD_OUTPUT - fleet_name</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Skipped INDEX_1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing INDEX_2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ FACTORS REMOVED: INDEX_2 - fleet_name</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Skipped INDEX_3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing FIT_LEN_COMPS</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ FACTORS REMOVED: FIT_LEN_COMPS - fleet_name</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing FIT_AGE_COMPS</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ FACTORS REMOVED: FIT_AGE_COMPS - fleet_name</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Skipped MEAN_BODY_WT_OUTPUT</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing AGE_SELEX</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing LEN_SELEX</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing selparm(Size)_By_Year_after_adjustments</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing selparm(Age)_By_Year_after_adjustments</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing SELEX_database</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Skipped AGE_AGE_KEY</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Skipped AGE_LENGTH_KEY</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing BIOLOGY</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing Biology_at_age_in_endyr</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing Growth_Parameters</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing MEAN_BODY_WT(Begin)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing Natural_Mortality</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ FACTORS REMOVED: Natural_Mortality - beg/mid</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Skipped RECRUITMENT_DIST</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing Dynamic_Bzero</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Skipped GLOBAL_MSY</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing Kobe_Plot</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>→ Processing SPR/YPR_Profile</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Some parameters were not found or included in the output file. The following parameters were not added into the new output file: 
+Input_Variance_Adjustment
+SPAWN_RECR_CURVE
+selparm(Size)_By_Year_after_adjustments
+selparm(Age)_By_Year_after_adjustments
+BIOLOGY
+Biology_at_age_in_endyr
+SPR/YPR_Profile</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Conversion finished!</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>petrale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 591,109 × 33
+   label estimate  year fleet sex   area  growth_pattern uncertainty module_name
+   &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;      
+ 1 spaw…     22.9    NA &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;                  2.39 DERIVED_QU…
+ 2 spaw…     22.9    NA &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;                  2.39 DERIVED_QU…
+ 3 spaw…     22.9  1876 &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;                  3.42 DERIVED_QU…
+ 4 spaw…     22.9  1877 &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;                  3.42 DERIVED_QU…
+ 5 spaw…     22.9  1878 &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;                  3.42 DERIVED_QU…
+ 6 spaw…     22.9  1879 &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;                  3.42 DERIVED_QU…
+ 7 spaw…     22.9  1880 &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;                  3.42 DERIVED_QU…
+ 8 spaw…     22.9  1881 &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;                  3.42 DERIVED_QU…
+ 9 spaw…     22.9  1882 &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;                  3.42 DERIVED_QU…
+10 spaw…     22.9  1883 &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;                  3.43 DERIVED_QU…
+# ℹ 591,099 more rows
+# ℹ 24 more variables: uncertainty_label &lt;chr&gt;, time &lt;chr&gt;, era &lt;chr&gt;,
+#   month &lt;chr&gt;, season &lt;chr&gt;, subseason &lt;chr&gt;, birthseas &lt;chr&gt;, initial &lt;dbl&gt;,
+#   likelihood &lt;chr&gt;, platoon &lt;chr&gt;, age &lt;chr&gt;, bio_pattern &lt;chr&gt;,
+#   settlement &lt;chr&gt;, morph &lt;chr&gt;, type &lt;chr&gt;, factor &lt;lgl&gt;, part &lt;lgl&gt;,
+#   kind &lt;chr&gt;, nsim &lt;lgl&gt;, bin &lt;lgl&gt;, age_a &lt;lgl&gt;, length_bins &lt;chr&gt;,
+#   count &lt;chr&gt;, block &lt;chr&gt;</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>convert_output()</code> will recognize which model the results file came from as well as fleet names. In the rare case either of these are incorrect, the function contains arguments of <code>model</code> and <code>fleet_names</code> which you as the user can indicate for the function.</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
