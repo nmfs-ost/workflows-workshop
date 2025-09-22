@@ -99,11 +99,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout-objectives">
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
+<div class="objectives">
 <pre><code>-   Learn the basics of creating a stock assessment report using `asar`
 -   Understand the complexities and customization options of the package
 -   Provide time to practice and ask questions</code></pre>
 </div>
+</section>
+<section id="icebreaker" class="level2">
+<h2 class="anchored" data-anchor-id="icebreaker">Icebreaker</h2>
+<p>Welcome! Please open the <a href="https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?usp=sharing">Day 2 communal notes doc</a> and participate in the icebreaker exercise.</p>
+<p>Afterwards, we will use some time to answer any brief questionst lingering from yesterday.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Reminder</strong>: For comments or questions, please raise your hand, or write them in the chat, <em>at any time</em>. Depending on our schedule, we may ask that you save larger questions for breaks.</p>
+</div>
+</div>
+</section>
 <section id="asar" class="level2">
 <h2 class="anchored" data-anchor-id="asar">asar</h2>
 <section id="installation" class="level3">
@@ -273,6 +294,11 @@ Note
 - species cover image
 - bibliography
 - citation style</code></pre>
+<p><strong>Parameterization</strong></p>
+<p>Quarto has a cool feature that allows users to parameterize their document by utilizing markdown’s ability to render in-line code throughout your writing. In the yaml, there are pre-added parameters of the species, latin name, region, and office. These are called in through an R chunk after the YAML.</p>
+<p>You have two options for calling these parameters in your writing.</p>
+<pre><code>(1) \` r params$species \` (Quarto parameterization)
+(2) \` r species \` (asar use of parameterization)</code></pre>
 <p><strong>The Preamble</strong></p>
 <p>The preamble is an R chunk that loads in a script called “preamble.R” which extracts key quantities commonly referenced in stock assessment reports. This will only work with a standard results file converted using <code>asar::convert_output()</code>, which we will get to shortly.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -323,6 +349,7 @@ Important
 </div>
 </div>
 <p><strong>Demo of child docs</strong></p>
+<p><strong>15 minute break</strong></p>
 </section>
 <section id="asarconvert_output" class="level5">
 <h5 class="anchored" data-anchor-id="asarconvert_output"><code>asar::convert_output</code></h5>
@@ -330,222 +357,14 @@ Important
 <p>The <code>convert_output</code> function currently accepts output from Stock Synthesis (Report.sso) version 3.30 and higher, Beaufort Assessment Model (BAM; output.rda), or Fishereies Integrated Modelling System (FIMS; R object). We are actively working on expanding the <code>convert_output</code> function to be compatiable with all major U.S. stock assessment models. This function takes a lot of resources to develop, so any contribution to the package is welcome! If you have a model that is not currently compatible with <code>asar::convert_output()</code>, please navigate to <a href="https://nmfs-ost.github.io/asar/articles/convert_output_details.html">our article</a> describing the function and how to get your output in the same format as those produced from the converter!</p>
 <p><strong>Let’s try it out!</strong></p>
 <p>We have uploaded an example Report.sso file in the workshop GitHub, but if you have a compatible output file, we encourage you to use your own.</p>
+<div class="cell" data-messages="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify output file</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>output_file <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"example_output"</span>, <span class="st">"Report.sso"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># convert the output</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>petrale <span class="ot">&lt;-</span> asar<span class="sc">::</span><span class="fu">convert_output</span>(output_file)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify output file</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>output_file <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"example_output"</span>, <span class="st">"Report.sso"</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># convert the output</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>petrale <span class="ot">&lt;-</span> asar<span class="sc">::</span><span class="fu">convert_output</span>(output_file)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ Processing Stock Synthesis output file...</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ Identified fleet names:</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ North, South, Triennial, and WCGBTS</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Skipped DEFINITIONS</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing DERIVED_QUANTITIES</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing Input_Variance_Adjustment</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Skipped LIKELIHOOD</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing MGparm_By_Year_after_adjustments</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ Error values are present, but are unique to the data frame and not to a selected parameter.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Skipped MORPH_INDEXING</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing OVERALL_COMPS</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ FACTORS REMOVED: OVERALL_COMPS - n_obs
-ℹ FACTORS REMOVED: OVERALL_COMPS - n_obs</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing PARAMETERS</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing BIOMASS_AT_AGE</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ FACTORS REMOVED: BIOMASS_AT_AGE - beg/mid</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing BIOMASS_AT_LENGTH</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ FACTORS REMOVED: BIOMASS_AT_LENGTH - beg/mid</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing CATCH</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ FACTORS REMOVED: CATCH - fleet_name</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing DISCARD_AT_AGE</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Skipped EXPLOITATION</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing CATCH_AT_AGE</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing F_AT_AGE</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing MEAN_SIZE_TIMESERIES</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing NUMBERS_AT_AGE</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ FACTORS REMOVED: NUMBERS_AT_AGE - beg/mid</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing NUMBERS_AT_LENGTH</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ FACTORS REMOVED: NUMBERS_AT_LENGTH - beg/mid</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing SPAWN_RECRUIT</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing SPAWN_RECR_CURVE</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing SPR_SERIES</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing TIME_SERIES</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Skipped COMPOSITION_DATABASE</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Skipped DISCARD_SPECIFICATION</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing DISCARD_OUTPUT</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ Multiple error metrics reported in DISCARD_OUTPUT.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ Error label(s) removed: 
-std_use</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ FACTORS REMOVED: DISCARD_OUTPUT - fleet_name</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Skipped INDEX_1</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing INDEX_2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ FACTORS REMOVED: INDEX_2 - fleet_name</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Skipped INDEX_3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing FIT_LEN_COMPS</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ FACTORS REMOVED: FIT_LEN_COMPS - fleet_name</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing FIT_AGE_COMPS</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ FACTORS REMOVED: FIT_AGE_COMPS - fleet_name</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Skipped MEAN_BODY_WT_OUTPUT</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing AGE_SELEX</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing LEN_SELEX</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing selparm(Size)_By_Year_after_adjustments</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing selparm(Age)_By_Year_after_adjustments</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing SELEX_database</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Skipped AGE_AGE_KEY</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Skipped AGE_LENGTH_KEY</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing BIOLOGY</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing Biology_at_age_in_endyr</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing Growth_Parameters</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing MEAN_BODY_WT(Begin)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing Natural_Mortality</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ FACTORS REMOVED: Natural_Mortality - beg/mid</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Skipped RECRUITMENT_DIST</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing Dynamic_Bzero</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Skipped GLOBAL_MSY</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing Kobe_Plot</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>→ Processing SPR/YPR_Profile</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ Some parameters were not found or included in the output file. The following parameters were not added into the new output file: 
-Input_Variance_Adjustment
-SPAWN_RECR_CURVE
-selparm(Size)_By_Year_after_adjustments
-selparm(Age)_By_Year_after_adjustments
-BIOLOGY
-Biology_at_age_in_endyr
-SPR/YPR_Profile</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>✔ Conversion finished!</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>petrale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>petrale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 591,109 × 33
    label estimate  year fleet sex   area  growth_pattern uncertainty module_name
@@ -582,6 +401,12 @@ Tip
 <p><code>convert_output()</code> will recognize which model the results file came from as well as fleet names. In the rare case either of these are incorrect, the function contains arguments of <code>model</code> and <code>fleet_names</code> which you as the user can indicate for the function.</p>
 </div>
 </div>
+</section>
+<section id="asarcreate_tables_doc" class="level5">
+<h5 class="anchored" data-anchor-id="asarcreate_tables_doc"><code>asar::create_tables_doc</code></h5>
+</section>
+<section id="asarcreate_figures_doc" class="level5">
+<h5 class="anchored" data-anchor-id="asarcreate_figures_doc"><code>asar::create_figures_doc</code></h5>
 </section>
 </section>
 </section>

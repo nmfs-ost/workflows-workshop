@@ -3,10 +3,22 @@ title: "Day 2"
 format: html
 ---
 
-::: {.callout-objectives}
+## Objectives
+
+::: objectives
     -   Learn the basics of creating a stock assessment report using `asar`
     -   Understand the complexities and customization options of the package
     -   Provide time to practice and ask questions
+:::
+
+## Icebreaker
+
+Welcome! Please open the [Day 2 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?usp=sharing) and participate in the icebreaker exercise.
+
+Afterwards, we will use some time to answer any brief questionst lingering from yesterday.
+
+::: {.callout-tip}
+**Reminder**: For comments or questions, please raise your hand, or write them in the chat, *at any time*. Depending on our schedule, we may ask that you save larger questions for breaks.
 :::
 
 ## asar
@@ -57,7 +69,7 @@ functions for them. We will be going over the following functions:
     -   `create_tables_doc()`
     -   `create_figures_doc()`
 
-##### `asar::create_template`
+##### `create_template`
 
 **What it does:**
 
@@ -146,6 +158,16 @@ The YAML controls the following:
     - bibliography
     - citation style
 
+**Parameterization**
+
+Quarto has a cool feature that allows users to parameterize their document by utilizing markdown's ability to render in-line code throughout your writing. In the yaml, there are pre-added parameters of the species, latin name, region, and office. These are called in through an R chunk after the YAML.
+
+You have two options for calling these parameters in your writing.
+
+    (1) \` r params$species \` (Quarto parameterization)
+    (2) \` r species \` (asar use of parameterization)
+
+
 **The Preamble**
 
 The preamble is an R chunk that loads in a script called "preamble.R" which extracts key quantities commonly referenced in stock assessment reports. This will only work with a standard results file converted using `asar::convert_output()`, which we will get to shortly.
@@ -183,7 +205,11 @@ We are advising everyone that if required content is needed beyond the standard 
 
 **Demo of child docs**
 
-##### `asar::convert_output`
+### Break
+
+**15 minute break**
+
+##### `convert_output`
 
 Another major component of `asar` is our converter function which converts an output file from a stock assessment model to a standard format which can be used by the preamble and our other package `stockplotr`. 
 
