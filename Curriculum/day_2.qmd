@@ -13,7 +13,7 @@ format: html
 
 ## Icebreaker
 
-Welcome! Please open the [Day 2 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?usp=sharing) and participate in the icebreaker exercise.
+Welcome! Please open the [Day 2 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.ds1fl2nu2oi5#heading=h.piviu2gu74mf) and participate in the icebreaker exercise.
 
 Afterwards, we will use some time to answer any brief questionst lingering from yesterday.
 

@@ -13,7 +13,7 @@ format: html
 # Introduction
 ## Icebreaker
 
-Welcome! Please open the [Day 3 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?usp=sharing) and participate in the icebreaker exercise.
+Welcome! Please open the [Day 3 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.vffehz79fm7y#heading=h.sfq3xaeehv64) and participate in the icebreaker exercise.
 
 # `asar` workflow: Complex example
 
@@ -44,7 +44,7 @@ Welcome! Please open the [Day 3 communal notes doc](https://docs.google.com/docu
 
 # Questions, comments, and feedback
 
-Please navigate to the [Feedback](https://docs.google.com/document/d/11opBDjiMCL8_bUY2NmOoAO5QIpodzh1aGHIfvlZ8Asw/edit?tab=t.0#heading=h.llbcc8tygqlb) heading and tell us what you thought about today's workshop. Only 3 simple questions!
+Please navigate to the [Feedback](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.vffehz79fm7y#heading=h.llbcc8tygqlb) heading and tell us what you thought about today's workshop. Only 3 simple questions!
 
 * What went well?
 * What could be improved?
