@@ -139,7 +139,7 @@ Parameters allow you to create dynamic reports. You can define parameters in the
 
 For example, you could have a parameter for the species you're writing about:
 
-```yaml
+```{r eval=FALSE}
 ---
 title: "Stock Assessment Report"
 author: "Patrick Star"
@@ -151,9 +151,9 @@ params:
 
 Then, in the body of your report, you can reference this parameter like this:
 
-` The native range of `r params$species` spans from... `
+"The native range of \`params\$species\` spans from..."
 
-When you knit the document, `r params$species` will be replaced with "Petrale sole".
+When you knit the document, \`params\$species\` will be replaced with "Petrale sole".
 
 #### Formatting
 
@@ -197,14 +197,113 @@ To cite a reference in the text, use the `@` symbol followed by the citation key
 Follow along with our demo!
 :::
 
-- Why Quarto is a good platform for asar report creation
-- .qmd extension
-- Skeleton setup
-- how child docs work with skeleton
-- Only files given paths relative to the Quarto doc will load
-  - example
-- yaml
+## Why use Quarto for reports?
 
+Quarto is an ideal platform for building reproducible reports, which are denoted with a .qmd (Quarto Markdown) extension type. Why?
+
+* It allows you to combine narrative text, source code (like R), and the outputs of that code (like tables and figures) into a single, polished document.
+
+* Anyone with the same files can reproduce that document, which goes a long way in promoting scientific integrity.
+
+* You can produce reports in several formats like HTML, PDF, and Word.
+
+## Skeleton setup
+
+When you run `asar::create_template()`, you will receive a "report" folder with several files within it. One of the most important files is what we call the "skeleton": a .qmd file containing chunks that run *other* files, then places the rendered contents of those files within one report.
+
+Those *other* files are what we call "child documents". For example, your report introduction will be written in a child document. Your figures and tables will be placed in respective child docs, too.
+
+This setup avoids placing your entire report in one massive .qmd file, facilitates asynchronous collaboration with your colleagues, and keeps your project organized.
+
+### Relative pathnames
+
+::: {.callout-important}
+Only files with paths relative to the Quarto doc will load!
+:::
+
+Quarto projects are self-contained such that it can only find files if you tell it where to look *relative to the location of the .qmd file*. To Quarto, the location of that .qmd file essentially becomes the root of your directory.
+
+For example, imagine your project has this structure:
+
+```verbatim
+report/
+├── SAR_species_skeleton.qmd
+├── 01_executive_summary.qmd
+├── 02_introduction.qmd
+└── extra_data/
+    └── red_fish.csv
+    └── blue_fish.csv
+```
+
+To load 'red_fish.csv' inside SAR_species_skeleton.qmd, you would use a relative path:
+
+```{r eval=FALSE}
+my_data <- read.csv("extra_data/red_fish.csv")
+```
+
+This would work *even if your working directory is not the "report" folder.*
+
+## YAML
+
+The YAML is the block of text at the very top of your main .qmd file, enclosed by triple dashes (---). It provides metadata for your document-- i.e., how to build the report.
+
+Common settings in the YAML include:
+
+* title
+* author
+* date
+* format (For `asar`, this will be PDF or HTML)
+
+Here is an example of an `asar` YAML:
+
+```{r eval=FALSE}
+---
+title: 'Stock Assessment Report Template'
+author:
+  - name: 'FIRST LAST'
+    affiliations: 
+      - name: 'NOAA Fisheries' 
+        address: 'ADDRESS' 
+        city: 'CITY' 
+        state: 'STATE' 
+        postal-code: 'POSTAL CODE' 
+date: today
+keep-tex: true 
+mainfont: 'Latin Modern Sans' 
+cover: 
+pdf-engine: lualatex
+format: 
+  pdf: 
+    documentclass: scrartcl
+    papersize: letter
+    number-sections: true
+    template-partials:
+      - 'support_files/before-body.tex'
+      - 'support_files/_titlepage.tex'
+    include-in-header:
+      - 'support_files/in-header.tex'
+    toc: true
+    sansfont: 'Latin Modern Sans'
+    lof: true
+    lot: true
+    titlepage-geometry: 
+      - top=2in
+      - bottom=1in
+      - right=1in
+      - left=1in
+output-file: 'species_SAR_2025' 
+params:
+   office: ''
+   species: 'species'
+   spp_latin: ''
+bibliography:  
+  - asar_references.bib
+csl: support_files/cjfas.csl
+---
+```
+
+We will explore the components of the yaml in the Day 2 curriculum.
+  
 # Installation
 
 ::: {.callout-tip}
