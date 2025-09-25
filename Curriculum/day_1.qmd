@@ -40,11 +40,8 @@ Sam Schiano and Sophie Breitbart are contractors with ECS Federal working in sup
     -   All necessary packages are already installed
     -   Username: your email
     -   Password: *ask us*
--   [Sample data]()
+-   [Sample data](https://github.com/nmfs-ost/asar/blob/main/inst/extdata/Report.sso)
     -   Sample model output data for coding demonstrations
-################################################################
-#### NOTE TO SOPHIE: add in link to sample data once ready #####
-################################################################
 
 ## How to engage with us
 
@@ -70,6 +67,10 @@ An `asar` workflow can help ease the following challenges:
 - Differences in reporting among regions
 - Divergent expectations from associated councils
 
+::: {.callout-note}
+We have communicated with representatives from each council and all have expressed support for our proposed standardized report template.
+:::
+
 ### Scope of workshop
 
 During this workshop, we will cover the following topics:
@@ -91,24 +92,102 @@ Main steps for creating a stock assessment report with `asar`:
 6. Render report
 7. Add accessibility features (PDF tags and alternative text for figures)
 
-################################################################
-#### NOTE TO SOPHIE: add in link to cheatsheet #######
-################################################################
+::: {.callout-tip}
+Open the [`asar` cheatsheet](https://nmfs-ost.github.io/asar/asar_cheatsheet.pdf) for a visual overview of the main workflow!
+:::
+
 # Markdown
 
 ::: {.callout-note}
 Follow along with our demo!
 :::
 
-Cover:
-- Why this is useful for asar report creation
-- how to open a document
-- Most common uses (outlined in [markdown vignette](https://nmfs-ost.github.io/asar/articles/markdown_notation.html))
-  - Parameters
-  - Formatting
-  - Math
-  - Code chunk options (echo, include, etc.)
-  - References
+### What is markdown?
+
+[According to RStudio](https://rmarkdown.rstudio.com/articles_intro.html), markdown is "an easy-to-write plain text format"; not exactly a language, but a formatting style. 
+
+### Why use R markdown?
+
+R markdown, or "Rmd" for short, allows you to create amazingly dynamic reports. With R markdown, you can embed your R code directly into your documents. When you "knit" the document, the code is executed, and the results— like figures, tables, parameters, citations, and other outputs— are automatically inserted into the final report.
+
+A major reason why R markdown is incredibly useful: it *saves time and reduces errors*. If your data changes, you don't have to manually rerun your analysis and copy/paste the results. You just re-knit the document, and everything is updated automatically.
+
+### Opening an Rmd document
+
+Let's open a new R markdown document.
+
+1.  In RStudio, go to **File \> New File \> R Markdown...**.
+2.  A dialog box will appear. If you wish, you can give your document a title and author.
+3.  For the output format, you can select HTML, PDF, or Word. Let's choose HTML.
+4.  Click **OK**.
+
+You'll now see a new R Markdown file with some default text. Let's explore some ways you can take advantage of this powerful document type.
+
+### The core components
+
+1.  **The YAML Header:** This is the section at the top of the file, enclosed by triple dashes (`---`). It contains metadata about the document, like the title, author, and output format.
+2.  **Text and Formatting:** This is where you'll write the narrative of your report using Markdown syntax.
+3.  **Code Chunks:** These are sections of the document where you can embed and run your R code.
+
+### Common uses in `asar` reports
+
+Now, let's dive into some of the most common features you'll be using when creating `asar` reports.
+
+#### Parameters
+
+Parameters allow you to create dynamic reports. You can define parameters in the YAML header and then reference them in your text and code.
+
+For example, you could have a parameter for the species you're writing about:
+
+```yaml
+---
+title: "Stock Assessment Report"
+author: "Patrick Star"
+date: today
+params:
+  species: "Petrale sole"
+---
+```
+
+Then, in the body of your report, you can reference this parameter like this:
+
+` The native range of `r params$species` spans from... `
+
+When you knit the document, `r params$species` will be replaced with "Petrale sole".
+
+#### Formatting
+
+R Markdown uses a simple syntax for formatting your text. Here are some of the most common formatting options:
+
+  * **Headers**
+      * `#` signifies a top-level header
+      * `##` signifies a second-level header (etc.)
+  * **Emphasis**
+      * `*italic*` for *italic* text
+      * `**bold**` for **bold** text
+  * **Lists**
+      * **Unordered lists:** Use `*` or `-` at the beginning of a line.
+      * **Ordered lists:** Use numbers followed by a period.
+  * **Links**
+      * `[link text](URL)`
+
+#### Math and Equations
+
+You can include LaTeX-style math equations in your report.
+
+  * **Inline math:** Wrap your equation in single dollar signs: `$A = \pi * r^2$`
+  * **Block equations:** Wrap your equation in double dollar signs to display it on its own line:
+    ```
+    $$
+    E = mc^2
+    $$
+    ```
+
+#### References and Bibliography
+
+You can easily add citations to your report. We provide an `asar_references.bib` file in the "report" folder with hundreds of citations for you to reference, though you can add your own to the file too.
+
+To cite a reference in the text, use the `@` symbol followed by the citation key (e.g., `@Biddle_1992`). R Markdown will automatically format the citation and add it to the "References" section towards the end of your report.
 
 **15 min break**
 
