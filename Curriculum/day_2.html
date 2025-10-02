@@ -176,8 +176,8 @@ Important
 -   `convert_output()`
 -   `create_tables_doc()`
 -   `create_figures_doc()`</code></pre>
-<section id="asarcreate_template" class="level5">
-<h5 class="anchored" data-anchor-id="asarcreate_template"><code>asar::create_template</code></h5>
+<section id="create_template" class="level5">
+<h5 class="anchored" data-anchor-id="create_template"><code>create_template</code></h5>
 <p><strong>What it does:</strong></p>
 <p>Generates a set of files that setup a stock assessment report with its supporting files.</p>
 <p>Within the created files is the “skeleton file” which drives the render of the entire report. For those familiar with Rmarkdown or Quarto books, this is operating similar to a .yml file. The other quarto files found in your folder will be what we refer to as “child documents”, or child docs for short. These are the actual files that you will fill in when writing your report. These are the bulk of your content!</p>
@@ -349,10 +349,14 @@ Important
 </div>
 </div>
 <p><strong>Demo of child docs</strong></p>
-<p><strong>15 minute break</strong></p>
 </section>
-<section id="asarconvert_output" class="level5">
-<h5 class="anchored" data-anchor-id="asarconvert_output"><code>asar::convert_output</code></h5>
+</section>
+</section>
+<section id="break" class="level3">
+<h3 class="anchored" data-anchor-id="break">Break</h3>
+<p><strong>15 minute break</strong></p>
+<section id="convert_output" class="level5">
+<h5 class="anchored" data-anchor-id="convert_output"><code>convert_output</code></h5>
 <p>Another major component of <code>asar</code> is our converter function which converts an output file from a stock assessment model to a standard format which can be used by the preamble and our other package <code>stockplotr</code>.</p>
 <p>The <code>convert_output</code> function currently accepts output from Stock Synthesis (Report.sso) version 3.30 and higher, Beaufort Assessment Model (BAM; output.rda), or Fishereies Integrated Modelling System (FIMS; R object). We are actively working on expanding the <code>convert_output</code> function to be compatiable with all major U.S. stock assessment models. This function takes a lot of resources to develop, so any contribution to the package is welcome! If you have a model that is not currently compatible with <code>asar::convert_output()</code>, please navigate to <a href="https://nmfs-ost.github.io/asar/articles/convert_output_details.html">our article</a> describing the function and how to get your output in the same format as those produced from the converter!</p>
 <p><strong>Let’s try it out!</strong></p>
@@ -407,7 +411,6 @@ Tip
 </section>
 <section id="asarcreate_figures_doc" class="level5">
 <h5 class="anchored" data-anchor-id="asarcreate_figures_doc"><code>asar::create_figures_doc</code></h5>
-</section>
 </section>
 </section>
 </section>
