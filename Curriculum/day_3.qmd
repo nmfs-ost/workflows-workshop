@@ -27,11 +27,47 @@ Welcome! Please open the [Day 3 communal notes doc](https://docs.google.com/docu
 
 # Introduction to `stockplotr`
 
+## Installation
+
+::: {.callout-tip}
+### Tip
+
+The following packages are already installed in the `asar` workspace on JupyterHub, so if you are using that space, you can skip this section.
+:::
+
+```r
+install.packages("pak")
+pak::pak("nmfs-ost/stockplotr")
+```
+
+Please see the [`stockplotr` README](https://github.com/nmfs-ost/stockplotr) for more installation options.
+
 ## `stockplotr` workflow: Basic example
 
-- Convert output, if not done already
-- Create some single plots
-- How to export them
+### Convert output (if necessary)
+
+First, you'll need to convert your model results using the same workflow covered yesterday: `asar::convert_output()`.
+
+You can use the example Report.sso file uploaded to the workshop GitHub or, if you have a compatible output file, your own.
+
+```{r}
+#| label: conout-ex
+#| eval: true
+#| warning: false
+#| messages: false
+# Identify output file
+output_file <- here::here("example_output", "Report.sso")
+# convert the output
+petrale <- asar::convert_output(output_file)
+```
+
+If you have already converted your output: great! Import it into your R environment so that you can handle it as an object like "petrale" in the chunk above.
+
+### Create single plots
+
+
+
+- Export single plots
 - Create and export all plots
 - How to customize (changing color palette, etc.)
 
