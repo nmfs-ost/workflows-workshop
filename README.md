@@ -12,6 +12,10 @@ The workflows of stock assessment scientists across the U.S. are highly variable
 
 ## System Requirements
 
+|-------|--------|---------|
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rstudio/rstudio-original.svg" alt="Rstudio" width="55" height="55"/> | <img src="https://rstudio.github.io/cheatsheets/html/images/logo-quarto.png" alt="Quarto" width="55" height="55"/> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaTeX_logo.svg/1200px-LaTeX_logo.svg.png" alt="LaTeX" width="55" height="55"/> |
+| R version ? | Quarto v1.6+ | Latex from tinytex bundle-2 |
+
 * R version ? <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rstudio/rstudio-original.svg" alt="Rstudio" width="55" height="55"/>
 * Quarto v1.6+ <img src="https://rstudio.github.io/cheatsheets/html/images/logo-quarto.png" alt="Quarto" width="55" height="55"/>
 * LaTeX <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaTeX_logo.svg/1200px-LaTeX_logo.svg.png" alt="LuaLaTeX" width="55" height="55"/>
