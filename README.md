@@ -1,7 +1,5 @@
 <img src="assets/workshop_banner.png" align="center" width="800" height="200"/>
 
-# Welcome
-
 This repository houses the agenda, materials, and communication for the NOAA Fisheries Stock Assessment Workflows Workshops being held starting in 2026! Please use this README to help navigate within our repository and find out our current progress and plans in real time.
 
 ## In Progress
