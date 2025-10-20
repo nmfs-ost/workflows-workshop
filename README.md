@@ -32,19 +32,19 @@ The "examples" folder contains multiple examples of a report produced from `asar
 
 As of now, we are planning to hold a series of workshops spanning 3 days (Tuesday-Thursday) in 3 hours sessions. 
 
-[Day 1](https://github.com/nmfs-ost/workflows-workshop/blob/main/Curriculum/Day 1/day_1.qmd): Learning the foundations of Markdown, Quarto, and the Workflow
+[Day 1](https://github.com/nmfs-ost/workflows-workshop/tree/main/Curriculum/Day%201): Learning the foundations of Markdown, Quarto, and the Workflow
 
   - Markdown
   - Quarto
   - General overview of {asar} and {stockplotr}
 
-[Day 2](https://github.com/nmfs-ost/workflows-workshop/blob/main/Curriculum/Day 2/day_2.qmd): Introduction to `asar`
+[Day 2](https://github.com/nmfs-ost/workflows-workshop/tree/main/Curriculum/Day%202): Introduction to `asar`
 
   - Basics of {asar}
   - Getting familiar
   - Customization and adding complexities to your report using {asar}
 
-[Day 3](https://github.com/nmfs-ost/workflows-workshop/blob/main/Curriculum/Day 3/day_3.qmd): Adding Complexity and `stockplotr`
+[Day 3](https://github.com/nmfs-ost/workflows-workshop/tree/main/Curriculum/Day%203): Adding Complexity and `stockplotr`
 
   - Guided work through of more complex {asar} example
   - Introduction to {stockplotr}
