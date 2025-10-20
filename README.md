@@ -1,3 +1,5 @@
+<img src="assets/workshop_banner.png" align="center" width="200" height="200"/>
+
 # Welcome
 
 This repository houses the agenda, materials, and communication for the NOAA Fisheries Stock Assessment Workflows Workshops being held starting in 2026! Please use this README to help navigate within our repository and find out our current progress and plans in real time.
@@ -34,7 +36,19 @@ As of now, we are planning to hold a series of workshops spanning 3 days (Tuesda
 
 [Day 1](https://github.com/nmfs-ost/workflows-workshop/blob/main/Curriculum/day_1.qmd): Learning the foundations of Markdown, Quarto, and the Workflow
 
+  - Markdown
+  - Quarto
+  - General overview of {asar} and {stockplotr}
+
 [Day 2](https://github.com/nmfs-ost/workflows-workshop/blob/main/Curriculum/day_2.qmd): Introduction to `asar`
 
+  - Basics of {asar}
+  - Getting familiar
+  - Customization and adding complexities to your report using {asar}
+
 [Day 3](https://github.com/nmfs-ost/workflows-workshop/blob/main/Curriculum/day_3.qmd): Adding Complexity and `stockplotr`
+
+  - Guided work through of more complex {asar} example
+  - Introduction to {stockplotr}
+  - Integrating {asar} and {stockplotr} for a cohesive workflow
 
