@@ -303,6 +303,39 @@ csl: support_files/cjfas.csl
 ```
 
 We will explore the components of the yaml in the Day 2 curriculum.
+
+## Code Chunks
+
+As we previously mentioned, the beauty of using quarto is that it allows the user to integrate text and code throughout their reports making them super reproducible.
+
+The basics of a code chunk (chunk) are:
+
+- the language (R or python)
+- chunk options
+- code
+
+These three things get wrapped together within two sets of three back ticks (```) to allow a user to run code.
+
+```{verbatim}
+```{r}
+#| label: ex-chunk
+#| eval: false
+#| warning: false
+#| echo: false
+#| fig-cap: This is my figure caption.
+#| fig-alt: This is my alternative text.
+#| tbl-cap: This is my table caption.
+x <- 1 + 1
+```
+```
+
+*There are a variety of chunk options, but the ones you will see consistently throughout this workshop are listed in the example above.*
+
+::: {.callout-note}
+In the "label" option, for tables and figures, you will need to prefix the label with either "fig-" for a figure or "tbl-" for a table.
+:::
+
+For those familiar with Rmarkdown, the code chunk structure in Rmarkdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a "#|" proceeding each option.
   
 # Installation
 

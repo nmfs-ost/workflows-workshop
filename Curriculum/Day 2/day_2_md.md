@@ -1,4 +1,7 @@
-# Day 2
+---
+title: "Day 2"
+format: html
+---
 
 ## Objectives
 
@@ -196,6 +199,8 @@ The "child docs" are where you as the assessment author or contibutor report out
 
 Each child doc contains pre-determined headers and labels for the author to reference back to throughout the document. There are also descriptions within each section that depcit what you should report on throughout the document. You can either keep or remove these notes once the document is finished, either way, they will not be included in your final report.
 
+Child docs are not intended to be rendered on their own, but only from the skeleton as a whole!
+
 ::: {.callout-important}
 We are advising everyone that if required content is needed beyond the standard guidelines, that it gets placed in the appendix; however we encourage everyone to think about the importance of the content in terms of review for management versus CIE or SSC reveiw.
 :::
@@ -222,9 +227,9 @@ We have uploaded an example Report.sso file in the workshop GitHub, but if you h
 #| warning: false
 #| messages: false
 # Identify output file
-output_file <- here::here("example_output", "Report.sso")
+output_file <- here("example_output", "Report.sso")
 # convert the output
-petrale <- asar::convert_output(output_file)
+petrale <- convert_output(output_file)
 ```
 
 ```{r}
@@ -233,10 +238,101 @@ petrale
 
 ::: {.callout-tip}
 `convert_output()` will recognize which model the results file came from as well as fleet names. In the rare case either of these are incorrect, the function contains arguments of `model` and `fleet_names` which you as the user can indicate for the function.
+
+If you are explicitly stating fleet names, make sure they are in the order you expect them to be found in the file.
 :::
 
 ##### `asar::create_tables_doc`
 
+After running `create_template()`, a blank tables quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made tables. You will learn more of that tomorrow, but for now we are going to go over how you add your own tables to the document.
 
+Steps for adding a table:
+
+    1. Create a code chunk
+    2. Add your label and other options
+    3. Add code
+    4. Write caption
+
+**Add a code chunk for each table**
+
+```{verbatim}
+```{r}
+#| label: tbl-example
+#| eval: false
+#| echo: true
+#| warning: false
+#| tbl-cap: This is my caption for the example table.
+flextable::flextable(petrale)
+```
+```
+
+::: {.callout-tip}
+It will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!
+:::
+
+###### Non-code Tables
+
+In the case you have made a table not using code, you can add it as an image. While this is not generally recommended since it significaly reduces the accessibility of your table, we understand that sometimes this is the only format you have it in.
+
+Use the following notation to reference an external table as an image:
+
+`![Caption for my example table](example_table.png){fig-alt="This is the alternative text for my table", #tbl-example}`
+
+::: {.callout-note}
+Notice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. Please make sure you add alternative text for tables added in this way.
+:::
 
 ##### `asar::create_figures_doc`
+
+Like with our tables file, a blank figures quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made figures.
+
+Steps for adding a figure:
+
+    1. Create a code chunk
+    2. Add your label and other options
+    3. Add code
+    4. Write caption and **alternative text**
+
+[**Highlight the difference with a figure needing alternative text**]
+
+**Add a code chunk for each table**
+
+```{verbatim}
+```{r}
+#| label: tbl-example
+#| eval: false
+#| echo: true
+#| warning: false
+#| tbl-cap: This is my caption for the example table.
+flextable::flextable(petrale)
+```
+```
+
+::: {.callout-tip}
+It will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!
+:::
+
+###### Non-code Figures
+
+Like tables, you can reference figures not made directly in code chunks. However, in this case, this does not change the accessibility of the figure as much because you as the user can still add the neccessary components to meet section 508 standards.
+
+`![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}`
+
+##### Referencing your tables or figures in text
+
+Quarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:
+
+"@tbl-example" or "@fig-example"
+
+By adding an @ symbol followed by the chunk label or just label of your table/figure will create an interactive link that lets the reader naviagte to that specific table/figure.
+
+**Put it all together!**
+
+Render your entire document and take a look at what we've made today.
+
+## Questions
+
+## Final Reminders
+
+    - We will be holding office hours tomorrow 30 minutes before the next session starts for any questions.
+    - Feel free to practice some more tonight and come tomorrow with any questions you may have.

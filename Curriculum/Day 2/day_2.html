@@ -70,6 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="day_2_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="day_2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="day_2_files/libs/bootstrap/bootstrap-0abb7f8e0048341453ce325ab957e724.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="day_2_files/libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+
+<script src="day_2_files/libs/tabwid-1.1.3/tabwid.js"></script>
+
 
 
 </head>
@@ -109,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="icebreaker" class="level2">
 <h2 class="anchored" data-anchor-id="icebreaker">Icebreaker</h2>
-<p>Welcome! Please open the <a href="https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?usp=sharing">Day 2 communal notes doc</a> and participate in the icebreaker exercise.</p>
+<p>Welcome! Please open the <a href="https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.ds1fl2nu2oi5#heading=h.piviu2gu74mf">Day 2 communal notes doc</a> and participate in the icebreaker exercise.</p>
 <p>Afterwards, we will use some time to answer any brief questionst lingering from yesterday.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -335,6 +339,7 @@ Note
 - figures
 - appendix</code></pre>
 <p>Each child doc contains pre-determined headers and labels for the author to reference back to throughout the document. There are also descriptions within each section that depcit what you should report on throughout the document. You can either keep or remove these notes once the document is finished, either way, they will not be included in your final report.</p>
+<p>Child docs are not intended to be rendered on their own, but only from the skeleton as a whole!</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -403,16 +408,130 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <p><code>convert_output()</code> will recognize which model the results file came from as well as fleet names. In the rare case either of these are incorrect, the function contains arguments of <code>model</code> and <code>fleet_names</code> which you as the user can indicate for the function.</p>
+<p>If you are explicitly stating fleet names, make sure they are in the order you expect them to be found in the file.</p>
 </div>
 </div>
 </section>
 <section id="asarcreate_tables_doc" class="level5">
 <h5 class="anchored" data-anchor-id="asarcreate_tables_doc"><code>asar::create_tables_doc</code></h5>
+<p>After running <code>create_template()</code>, a blank tables quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made tables. You will learn more of that tomorrow, but for now we are going to go over how you add your own tables to the document.</p>
+<p>Steps for adding a table:</p>
+<pre><code>1. Create a code chunk
+2. Add your label and other options
+3. Add code
+4. Write caption</code></pre>
+<p><strong>Add a code chunk for each table</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(petrale) <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(label, year, estimate) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    flextable<span class="sc">::</span><span class="fu">flextable</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="tbl-example" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: This is my caption for the example table.
+</figcaption>
+<div aria-describedby="tbl-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-cc27a2ca{}.cl-cc05439c{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-cc1bbed8{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cc1bbef6{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cc1bf16e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc1bf182{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc1bf18c{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc1bf196{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc1bf1a0{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc1bf1aa{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-cc27a2ca"><thead><tr style="overflow-wrap:break-word;"><th class="cl-cc1bf16e"><p class="cl-cc1bbed8"><span class="cl-cc05439c">label</span></p></th><th class="cl-cc1bf182"><p class="cl-cc1bbef6"><span class="cl-cc05439c">year</span></p></th><th class="cl-cc1bf182"><p class="cl-cc1bbef6"><span class="cl-cc05439c">estimate</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-cc1bf18c"><p class="cl-cc1bbed8"><span class="cl-cc05439c">spawning_biomass_unfished</span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c"></span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c">22.9065</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc1bf18c"><p class="cl-cc1bbed8"><span class="cl-cc05439c">spawning_biomass_initial</span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c"></span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c">22.9065</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc1bf18c"><p class="cl-cc1bbed8"><span class="cl-cc05439c">spawning_biomass</span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c">1,876</span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c">22.9066</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc1bf18c"><p class="cl-cc1bbed8"><span class="cl-cc05439c">spawning_biomass</span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c">1,877</span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c">22.9060</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc1bf18c"><p class="cl-cc1bbed8"><span class="cl-cc05439c">spawning_biomass</span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c">1,878</span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c">22.9055</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc1bf1a0"><p class="cl-cc1bbed8"><span class="cl-cc05439c">spawning_biomass</span></p></td><td class="cl-cc1bf1aa"><p class="cl-cc1bbef6"><span class="cl-cc05439c">1,879</span></p></td><td class="cl-cc1bf1aa"><p class="cl-cc1bbef6"><span class="cl-cc05439c">22.9051</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!</p>
+</div>
+</div>
+<section id="non-code-tables" class="level6">
+<h6 class="anchored" data-anchor-id="non-code-tables">Non-code Tables</h6>
+<p>In the case you have made a table not using code, you can add it as an image. While this is not generally recommended since it significaly reduces the accessibility of your table, we understand that sometimes this is the only format you have it in.</p>
+<p>Use the following notation to reference an external table as an image:</p>
+<p><code>![Caption for my example table](example_table.png){fig-alt="This is the alternative text for my table", #tbl-example}</code></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. Please make sure you add alternative text for tables added in this way.</p>
+</div>
+</div>
+</section>
 </section>
 <section id="asarcreate_figures_doc" class="level5">
 <h5 class="anchored" data-anchor-id="asarcreate_figures_doc"><code>asar::create_figures_doc</code></h5>
+<p>Like with our tables file, a blank figures quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made figures.</p>
+<p>Steps for adding a figure:</p>
+<pre><code>1. Create a code chunk
+2. Add your label and other options
+3. Add code
+4. Write caption and **alternative text**</code></pre>
+<p>[<strong>Highlight the difference with a figure needing alternative text</strong>]</p>
+<p><strong>Add a code chunk for each table</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars<span class="sc">$</span>speed, cars<span class="sc">$</span>dist)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-example" class="quarto-float quarto-figure quarto-figure-center anchored" alt="This is my alternative text for an HTML doc.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="day_2_files/figure-html/fig-example-1.png" class="img-fluid figure-img" alt="This is my alternative text for an HTML doc." width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: This is my caption for the example table.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!</p>
+</div>
+</div>
+<section id="non-code-figures" class="level6">
+<h6 class="anchored" data-anchor-id="non-code-figures">Non-code Figures</h6>
+<p>Like tables, you can reference figures not made directly in code chunks. However, in this case, this does not change the accessibility of the figure as much because you as the user can still add the neccessary components to meet section 508 standards.</p>
+<p><code>![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}</code></p>
 </section>
 </section>
+<section id="referencing-your-tables-or-figures-in-text" class="level5">
+<h5 class="anchored" data-anchor-id="referencing-your-tables-or-figures-in-text">Referencing your tables or figures in text</h5>
+<p>Quarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:</p>
+<p>“<a href="#tbl-example" class="quarto-xref">Table&nbsp;1</a>” or “<a href="#fig-example" class="quarto-xref">Figure&nbsp;1</a>”</p>
+<p>By adding an @ symbol followed by the chunk label or just label of your table/figure will create an interactive link that lets the reader naviagte to that specific table/figure.</p>
+<p><strong>Put it all together!</strong></p>
+<p>Render your entire document and take a look at what we’ve made today.</p>
+</section>
+</section>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+</section>
+<section id="final-reminders" class="level2">
+<h2 class="anchored" data-anchor-id="final-reminders">Final Reminders</h2>
+<pre><code>- We will be holding office hours tomorrow 30 minutes before the next session starts for any questions.
+- Feel free to practice some more tonight and come tomorrow with any questions you may have.</code></pre>
 </section>
 
 </main>
