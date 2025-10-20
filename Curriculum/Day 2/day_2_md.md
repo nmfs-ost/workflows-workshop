@@ -227,9 +227,9 @@ We have uploaded an example Report.sso file in the workshop GitHub, but if you h
 #| warning: false
 #| messages: false
 # Identify output file
-output_file <- here("example_output", "Report.sso")
+output_file <- here::here("example_output", "Report.sso")
 # convert the output
-petrale <- convert_output(output_file)
+petrale <- asar::convert_output(output_file)
 ```
 
 ```{r}
@@ -255,15 +255,15 @@ Steps for adding a table:
 
 **Add a code chunk for each table**
 
-```{verbatim}
 ```{r}
 #| label: tbl-example
-#| eval: false
+#| eval: true
 #| echo: true
 #| warning: false
 #| tbl-cap: This is my caption for the example table.
-flextable::flextable(petrale)
-```
+head(petrale) |>
+    dplyr::select(label, year, estimate) |>
+    flextable::flextable()
 ```
 
 ::: {.callout-tip}
@@ -297,15 +297,14 @@ Steps for adding a figure:
 
 **Add a code chunk for each table**
 
-```{verbatim}
 ```{r}
-#| label: tbl-example
-#| eval: false
+#| label: fig-example
+#| eval: true
 #| echo: true
 #| warning: false
-#| tbl-cap: This is my caption for the example table.
-flextable::flextable(petrale)
-```
+#| fig-cap: This is my caption for the example table.
+#| fig-alt: This is my alternative text for an HTML doc.
+plot(cars$speed, cars$dist)
 ```
 
 ::: {.callout-tip}
@@ -325,6 +324,8 @@ Quarto uses a special notation to allow users to link tables and figures through
 "@tbl-example" or "@fig-example"
 
 By adding an @ symbol followed by the chunk label or just label of your table/figure will create an interactive link that lets the reader naviagte to that specific table/figure.
+
+[Show working example within positron]
 
 **Put it all together!**
 
