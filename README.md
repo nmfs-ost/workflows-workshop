@@ -1,4 +1,4 @@
-<img src="assets/workshop_banner.png" align="center" width="200" height="200"/>
+<img src="assets/workshop_banner.png" align="center" width="800" height="200"/>
 
 # Welcome
 
