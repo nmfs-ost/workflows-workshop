@@ -42,11 +42,11 @@ As of now, we are planning to hold a series of workshops spanning 3 days (Tuesda
 
   - Basics of {asar}
   - Getting familiar
-  - Customization and adding complexities to your report using {asar}
+  - Customization and adding complexities to your report
 
 [Day 3](https://github.com/nmfs-ost/workflows-workshop/tree/main/Curriculum/Day%203): Adding Complexity and `stockplotr`
 
-  - Guided work through of more complex {asar} example
   - Introduction to {stockplotr}
-  - Integrating {asar} and {stockplotr} for a cohesive workflow
+  - Integrating tables and figures into {asar} report
+  - Making reports accessible
 

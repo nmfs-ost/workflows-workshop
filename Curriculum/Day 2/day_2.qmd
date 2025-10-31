@@ -25,8 +25,8 @@ If you believe that someone is in violation of the Code of Conduct, please repor
 
 ## Materials for today's lesson
 
--   [Day 1 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?usp=sharing)
-    -   Contains areas for taking notes and definitions for jargon
+-   [Day 2 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?usp=sharing)
+    -   Contains areas for taking notes, definitions for jargon, and resources (from us and you!)
 -   [JupyterHub workshop server](https://workshop.nmfs-openscapes.2i2c.cloud)
     -   Environment where you can code along with us, if you'd prefer
     -   All necessary packages are already installed
@@ -48,6 +48,10 @@ Afterwards, we will use some time to answer any brief questions lingering from y
 ::: {.callout-tip}
 **Reminder**: For comments or questions, please raise your hand, or write them in the chat, *at any time*. Depending on our schedule, we may ask that you save larger questions for breaks.
 :::
+
+## Setup
+
+Fork workshop repository -- take them through it and explain materials
 
 ## asar
 
@@ -285,96 +289,23 @@ The converted output is a tibble that reframes and reshapes your data. The tibbl
 For more information, navigate to [this article](https://nmfs-ost.github.io/asar/articles/convert_output_details.html) describing the conversion process and find ways your can convert your model's data!
 :::
 
-##### `asar::create_tables_doc`
+# `asar` workflow: Complex example
 
-After running `create_template()`, a blank tables quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made tables. You will learn more of that tomorrow, but for now we are going to go over how you add your own tables to the document.
+- Customized sections
+- Reorganizing section order
+- Other functions
+- Latex (if there's time/interest)
+  - explain limitations or potential customizations
 
-Steps for adding a table:
+**15 min break**
 
-    1. Create a code chunk
-    2. Add your label and other options
-    3. Add code
-    4. Write caption
+# Rerendering report
 
-**Add a code chunk for each table**
+# Calling previous report
 
-```{r}
-#| label: tbl-example
-#| eval: true
-#| echo: true
-#| warning: false
-#| tbl-cap: This is my caption for the example table.
-head(petrale) |>
-    dplyr::select(label, year, estimate) |>
-    flextable::flextable()
-```
+## Q&A Session (20 mins)
 
-::: {.callout-tip}
-It will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!
-:::
-
-###### Non-code Tables
-
-In the case you have made a table not using code, you can add it as an image. While this is not generally recommended since it significaly reduces the accessibility of your table, we understand that sometimes this is the only format you have it in.
-
-Use the following notation to reference an external table as an image:
-
-`![Caption for my example table](example_table.png){fig-alt="This is the alternative text for my table", #tbl-example}`
-
-::: {.callout-note}
-Notice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. Please make sure you add alternative text for tables added in this way.
-:::
-
-##### `asar::create_figures_doc`
-
-Like with our tables file, a blank figures quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made figures.
-
-Steps for adding a figure:
-
-    1. Create a code chunk
-    2. Add your label and other options
-    3. Add code
-    4. Write caption and **alternative text**
-
-[**Highlight the difference with a figure needing alternative text**]
-
-**Add a code chunk for each table**
-
-```{r}
-#| label: fig-example
-#| eval: true
-#| echo: true
-#| warning: false
-#| fig-cap: This is my caption for the example table.
-#| fig-alt: This is my alternative text for an HTML doc.
-plot(cars$speed, cars$dist)
-```
-
-::: {.callout-tip}
-It will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!
-:::
-
-###### Non-code Figures
-
-Like tables, you can reference figures not made directly in code chunks. However, in this case, this does not change the accessibility of the figure as much because you as the user can still add the necessary components to meet section 508 standards.
-
-`![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}`
-
-##### Referencing your tables or figures in text
-
-Quarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:
-
-"@tbl-example" or "@fig-example"
-
-By adding an @ symbol followed by the chunk label or just label of your table/figure will create an interactive link that lets the reader navigate to that specific table/figure.
-
-[Show working example within positron]
-
-**Put it all together!**
-
-Render your entire document and take a look at what we've made today.
-
-## Questions
+## Summary (10 mins)
 
 ## Final Reminders
 
