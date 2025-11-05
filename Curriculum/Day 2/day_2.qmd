@@ -11,15 +11,47 @@ format: html
     -   Provide time to practice and ask questions
 :::
 
+## Code of conduct
+
+Everyone participating in this workshop is required to abide by the terms of our [Code of Conduct](https://github.com/nmfs-ost/asar/blob/main/CODE_OF_CONDUCT.md). We encourage you to contribute to a positive environment for our community by:
+
+-   Demonstrating empathy and kindness toward other people
+-   Being respectful of differing opinions, viewpoints, and experiences
+-   Giving and gracefully accepting constructive feedback
+-   Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
+-   Focusing on what is best not just for us as individuals, but for the overall community
+
+If you believe that someone is in violation of the Code of Conduct, please report the incident to our community leaders responsible for enforcement using [this form](https://docs.google.com/forms/d/e/1FAIpQLSftcxC8XuyoXJzrNS8cM8fXvuRWo1hnyS3TtI_VlM-XFmMYGQ/viewform).
+
+## Materials for today's lesson
+
+-   [Day 2 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?usp=sharing)
+    -   Contains areas for taking notes, definitions for jargon, and resources (from us and you!)
+-   [JupyterHub workshop server](https://workshop.nmfs-openscapes.2i2c.cloud)
+    -   Environment where you can code along with us, if you'd prefer
+    -   All necessary packages are already installed
+    -   Username: your email
+    -   Password: *ask us*
+-   [Sample data](https://github.com/nmfs-ost/asar/blob/main/inst/extdata/Report.sso)
+    -   Sample model output data for coding demonstrations
+
+## How to engage with us
+
+**Questions**: Please raise your hand, or write your question in the chat, at any time. Depending on our schedule, we may ask that you save larger questions for breaks.
+
 ## Icebreaker
 
 Welcome! Please open the [Day 2 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.ds1fl2nu2oi5#heading=h.piviu2gu74mf) and participate in the icebreaker exercise.
 
-Afterwards, we will use some time to answer any brief questionst lingering from yesterday.
+Afterwards, we will use some time to answer any brief questions lingering from yesterday.
 
 ::: {.callout-tip}
 **Reminder**: For comments or questions, please raise your hand, or write them in the chat, *at any time*. Depending on our schedule, we may ask that you save larger questions for breaks.
 :::
+
+## Setup
+
+Fork workshop repository -- take them through it and explain materials
 
 ## asar
 
@@ -68,6 +100,8 @@ functions for them. We will be going over the following functions:
     -   `convert_output()`
     -   `create_tables_doc()`
     -   `create_figures_doc()`
+    
+** Time to browse documentation? or show info from site? **
 
 ##### `create_template`
 
@@ -160,7 +194,7 @@ The YAML controls the following:
 
 **Parameterization**
 
-Quarto has a cool feature that allows users to parameterize their document by utilizing markdown's ability to render in-line code throughout your writing. In the yaml, there are pre-added parameters of the species, latin name, region, and office. These are called in through an R chunk after the YAML.
+Quarto has a cool feature that allows users to parameterize their document by utilizing markdown's ability to render in-line code throughout your writing. In the yaml, there are pre-added parameters of the species, Latin name, region, and office. These are called in through an R chunk after the YAML.
 
 You have two options for calling these parameters in your writing.
 
@@ -182,9 +216,11 @@ The quantities in found in this chunk can be referenced in-line throughout the d
 For more information on markdown notation, see Day 1 of this workshop or navigate to [our article](https://nmfs-ost.github.io/asar/articles/markdown_notation.html) on the topic!
 :::
 
+**Demo of where to find preamble quantities and methods to adding to it**
+
 **The Content**
 
-The "child docs" are where you as the assessment author or contibutor report out the information you need to include. The template is highly modular so there are files for each section of the report and sometimes files for subsections. The default `asar` template creates child docs following the NOAA standard stock assessment report guidelines consisting of the following:
+The "child docs" are where you as the assessment author or contributor report out the information you need to include. The template is highly modular so there are files for each section of the report and sometimes files for subsections. The default `asar` template creates child docs following the NOAA standard stock assessment report guidelines consisting of the following:
 
     - executive summary
     - introduction
@@ -202,10 +238,10 @@ Each child doc contains pre-determined headers and labels for the author to refe
 Child docs are not intended to be rendered on their own, but only from the skeleton as a whole!
 
 ::: {.callout-important}
-We are advising everyone that if required content is needed beyond the standard guidelines, that it gets placed in the appendix; however we encourage everyone to think about the importance of the content in terms of review for management versus CIE or SSC reveiw.
+We are advising everyone that if required content is needed beyond the standard guidelines, that it gets placed in the appendix; however we encourage everyone to think about the importance of the content in terms of review for management versus CIE or SSC review.
 :::
 
-**Demo of child docs**
+**Demo of child docs and adding quantities from the preamble into your document**
 
 ### Break
 
@@ -242,96 +278,34 @@ petrale
 If you are explicitly stating fleet names, make sure they are in the order you expect them to be found in the file.
 :::
 
-##### `asar::create_tables_doc`
+###### Format of converted output
 
-After running `create_template()`, a blank tables quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made tables. You will learn more of that tomorrow, but for now we are going to go over how you add your own tables to the document.
+The converted output is a tibble that reframes and reshapes your data. The tibble contains each output value as a row with its error and any associated indexing values.\
 
-Steps for adding a table:
 
-    1. Create a code chunk
-    2. Add your label and other options
-    3. Add code
-    4. Write caption
-
-**Add a code chunk for each table**
-
-```{r}
-#| label: tbl-example
-#| eval: true
-#| echo: true
-#| warning: false
-#| tbl-cap: This is my caption for the example table.
-head(petrale) |>
-    dplyr::select(label, year, estimate) |>
-    flextable::flextable()
-```
-
-::: {.callout-tip}
-It will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!
-:::
-
-###### Non-code Tables
-
-In the case you have made a table not using code, you can add it as an image. While this is not generally recommended since it significaly reduces the accessibility of your table, we understand that sometimes this is the only format you have it in.
-
-Use the following notation to reference an external table as an image:
-
-`![Caption for my example table](example_table.png){fig-alt="This is the alternative text for my table", #tbl-example}`
+**Walk through of converted output object**
 
 ::: {.callout-note}
-Notice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. Please make sure you add alternative text for tables added in this way.
+For more information, navigate to [this article](https://nmfs-ost.github.io/asar/articles/convert_output_details.html) describing the conversion process and find ways your can convert your model's data!
 :::
 
-##### `asar::create_figures_doc`
+# `asar` workflow: Complex example
 
-Like with our tables file, a blank figures quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made figures.
+- Customized sections
+- Reorganizing section order
+- Other functions
+- Latex (if there's time/interest)
+  - explain limitations or potential customizations
 
-Steps for adding a figure:
+**15 min break**
 
-    1. Create a code chunk
-    2. Add your label and other options
-    3. Add code
-    4. Write caption and **alternative text**
+# Rerendering report
 
-[**Highlight the difference with a figure needing alternative text**]
+# Calling previous report
 
-**Add a code chunk for each table**
+## Q&A Session (20 mins)
 
-```{r}
-#| label: fig-example
-#| eval: true
-#| echo: true
-#| warning: false
-#| fig-cap: This is my caption for the example table.
-#| fig-alt: This is my alternative text for an HTML doc.
-plot(cars$speed, cars$dist)
-```
-
-::: {.callout-tip}
-It will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!
-:::
-
-###### Non-code Figures
-
-Like tables, you can reference figures not made directly in code chunks. However, in this case, this does not change the accessibility of the figure as much because you as the user can still add the neccessary components to meet section 508 standards.
-
-`![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}`
-
-##### Referencing your tables or figures in text
-
-Quarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:
-
-"@tbl-example" or "@fig-example"
-
-By adding an @ symbol followed by the chunk label or just label of your table/figure will create an interactive link that lets the reader naviagte to that specific table/figure.
-
-[Show working example within positron]
-
-**Put it all together!**
-
-Render your entire document and take a look at what we've made today.
-
-## Questions
+## Summary (10 mins)
 
 ## Final Reminders
 

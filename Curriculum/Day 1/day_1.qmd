@@ -31,10 +31,14 @@ If you believe that someone is in violation of the Code of Conduct, please repor
 
 Sam Schiano and Sophie Breitbart are contractors with ECS Federal working in support of the NOAA Fisheries National Stock Assessment Program. Our work primarily focuses on stock assessment workflows by creating tools to help stock assessment scientists increase throughput. We are developing two R packages, `asar` and `stockplotr`, using an open science framework that prioritizes transparency and reproducibility.
 
+## How to engage with us
+
+**Questions**: Please raise your hand, or write your question in the chat, at any time. Depending on our schedule, we may ask that you save larger questions for breaks.
+
 ## Materials for today's lesson
 
 -   [Day 1 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?usp=sharing)
-    -   Contains areas for taking notes and definitions for jargon
+    -   Contains resources (from us and you!) and areas for note-taking
 -   [JupyterHub workshop server](https://workshop.nmfs-openscapes.2i2c.cloud)
     -   Environment where you can code along with us, if you'd prefer
     -   All necessary packages are already installed
@@ -43,9 +47,9 @@ Sam Schiano and Sophie Breitbart are contractors with ECS Federal working in sup
 -   [Sample data](https://github.com/nmfs-ost/asar/blob/main/inst/extdata/Report.sso)
     -   Sample model output data for coding demonstrations
 
-## How to engage with us
+Now, open up a JupyterHub session.
 
-**Questions**: Please raise your hand, or write your question in the chat, at any time. Depending on our schedule, we may ask that you save larger questions for breaks.
+* Break for questions *
 
 ## Workshop overview
 ### Purpose and benefits to you
@@ -112,16 +116,16 @@ R markdown, or "Rmd" for short, allows you to create amazingly dynamic reports. 
 
 A major reason why R markdown is incredibly useful: it *saves time and reduces errors*. If your data changes, you don't have to manually rerun your analysis and copy/paste the results. You just re-knit the document, and everything is updated automatically.
 
-### Opening an Rmd document
+### Opening a document
 
-Let's open a new R markdown document.
+Let's open a new document. We'll open a Quarto document (Qmd) because it also runs Rmd code; it's a newer document type that can handle more than Rmd can.
 
-1.  In RStudio, go to **File \> New File \> R Markdown...**.
+1.  In RStudio, go to **File \> New File \> Quarto document...**.
 2.  A dialog box will appear. If you wish, you can give your document a title and author.
 3.  For the output format, you can select HTML, PDF, or Word. Let's choose HTML.
 4.  Click **OK**.
 
-You'll now see a new R Markdown file with some default text. Let's explore some ways you can take advantage of this powerful document type.
+You'll now see a new Quarto file with some default text. Let's explore some ways you can take advantage of this powerful document type.
 
 ### The core components
 
