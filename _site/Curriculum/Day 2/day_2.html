@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.17">
+<meta name="generator" content="quarto-1.8.23">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 2</title>
+<title>Day 2 – NOAA quarto simple</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,31 +58,339 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="day_2_files/libs/clipboard/clipboard.min.js"></script>
-<script src="day_2_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="day_2_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="day_2_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="day_2_files/libs/quarto-html/popper.min.js"></script>
-<script src="day_2_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="day_2_files/libs/quarto-html/anchor.min.js"></script>
-<link href="day_2_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="day_2_files/libs/quarto-html/quarto-syntax-highlighting-c2d8198b7f72dec16de60f0cb3fab69f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="day_2_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="day_2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="day_2_files/libs/bootstrap/bootstrap-0abb7f8e0048341453ce325ab957e724.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="day_2_files/libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
-
-<script src="day_2_files/libs/tabwid-1.1.3/tabwid.js"></script>
-
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-6f6599830d51be977da3b6af758f8eff.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-bc96e5edff98c37889c1065653188eb1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-f22e73ab3a55e4ec7d5a0c4d152667e7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-bc96e5edff98c37889c1065653188eb1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
 
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Day 2</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="https://raw.githubusercontent.com/nmfs-opensci/assets/main/logo/nmfs-opensci-logo3.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="https://raw.githubusercontent.com/nmfs-opensci/assets/main/logo/nmfs-opensci-logo3.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://nmfs-opensci.github.io" title="NMFS Open Science" class="quarto-navigation-tool px-1" aria-label="NMFS Open Science"><i class="bi bi-globe"></i></a>
+    <a href="https://github.com/nmfs-opensci" title="NMFS OpenSci" class="quarto-navigation-tool px-1" aria-label="NMFS OpenSci"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/add-content.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add content</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/customizing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Customizing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/rendering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rendering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/rmarkdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Markdown files</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code in your files</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives</a></li>
+  <li><a href="#code-of-conduct" id="toc-code-of-conduct" class="nav-link" data-scroll-target="#code-of-conduct">Code of conduct</a></li>
+  <li><a href="#materials-for-todays-lesson" id="toc-materials-for-todays-lesson" class="nav-link" data-scroll-target="#materials-for-todays-lesson">Materials for today’s lesson</a></li>
+  <li><a href="#how-to-engage-with-us" id="toc-how-to-engage-with-us" class="nav-link" data-scroll-target="#how-to-engage-with-us">How to engage with us</a></li>
+  <li><a href="#icebreaker" id="toc-icebreaker" class="nav-link" data-scroll-target="#icebreaker">Icebreaker</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#asar" id="toc-asar" class="nav-link" data-scroll-target="#asar">asar</a>
+  <ul class="collapse">
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#break" id="toc-break" class="nav-link" data-scroll-target="#break">Break</a></li>
+  </ul></li>
+  <li><a href="#asar-workflow-complex-example" id="toc-asar-workflow-complex-example" class="nav-link" data-scroll-target="#asar-workflow-complex-example"><code>asar</code> workflow: Complex example</a></li>
+  <li><a href="#rerendering-report" id="toc-rerendering-report" class="nav-link" data-scroll-target="#rerendering-report">Rerendering report</a></li>
+  <li><a href="#calling-previous-report" id="toc-calling-previous-report" class="nav-link" data-scroll-target="#calling-previous-report">Calling previous report</a>
+  <ul class="collapse">
+  <li><a href="#qa-session-20-mins" id="toc-qa-session-20-mins" class="nav-link" data-scroll-target="#qa-session-20-mins">Q&amp;A Session (20 mins)</a></li>
+  <li><a href="#summary-10-mins" id="toc-summary-10-mins" class="nav-link" data-scroll-target="#summary-10-mins">Summary (10 mins)</a></li>
+  <li><a href="#final-reminders" id="toc-final-reminders" class="nav-link" data-scroll-target="#final-reminders">Final Reminders</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/nmfs-opensci/NOAA-quarto-simple/edit/main/Curriculum/Day 2/day_2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-opensci/NOAA-quarto-simple/blob/main/Curriculum/Day 2/day_2.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-opensci/NOAA-quarto-simple/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
+
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -111,10 +419,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 -   Provide time to practice and ask questions</code></pre>
 </div>
 </section>
+<section id="code-of-conduct" class="level2">
+<h2 class="anchored" data-anchor-id="code-of-conduct">Code of conduct</h2>
+<p>Everyone participating in this workshop is required to abide by the terms of our <a href="https://github.com/nmfs-ost/asar/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>. We encourage you to contribute to a positive environment for our community by:</p>
+<ul>
+<li>Demonstrating empathy and kindness toward other people</li>
+<li>Being respectful of differing opinions, viewpoints, and experiences</li>
+<li>Giving and gracefully accepting constructive feedback</li>
+<li>Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience</li>
+<li>Focusing on what is best not just for us as individuals, but for the overall community</li>
+</ul>
+<p>If you believe that someone is in violation of the Code of Conduct, please report the incident to our community leaders responsible for enforcement using <a href="https://docs.google.com/forms/d/e/1FAIpQLSftcxC8XuyoXJzrNS8cM8fXvuRWo1hnyS3TtI_VlM-XFmMYGQ/viewform">this form</a>.</p>
+</section>
+<section id="materials-for-todays-lesson" class="level2">
+<h2 class="anchored" data-anchor-id="materials-for-todays-lesson">Materials for today’s lesson</h2>
+<ul>
+<li><a href="https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?usp=sharing">Day 2 communal notes doc</a>
+<ul>
+<li>Contains areas for taking notes, definitions for jargon, and resources (from us and you!)</li>
+</ul></li>
+<li><a href="https://workshop.nmfs-openscapes.2i2c.cloud">JupyterHub workshop server</a>
+<ul>
+<li>Environment where you can code along with us, if you’d prefer</li>
+<li>All necessary packages are already installed</li>
+<li>Username: your email</li>
+<li>Password: <em>ask us</em></li>
+</ul></li>
+<li><a href="https://github.com/nmfs-ost/asar/blob/main/inst/extdata/Report.sso">Sample data</a>
+<ul>
+<li>Sample model output data for coding demonstrations</li>
+</ul></li>
+</ul>
+</section>
+<section id="how-to-engage-with-us" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-engage-with-us">How to engage with us</h2>
+<p><strong>Questions</strong>: Please raise your hand, or write your question in the chat, at any time. Depending on our schedule, we may ask that you save larger questions for breaks.</p>
+</section>
 <section id="icebreaker" class="level2">
 <h2 class="anchored" data-anchor-id="icebreaker">Icebreaker</h2>
 <p>Welcome! Please open the <a href="https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.ds1fl2nu2oi5#heading=h.piviu2gu74mf">Day 2 communal notes doc</a> and participate in the icebreaker exercise.</p>
-<p>Afterwards, we will use some time to answer any brief questionst lingering from yesterday.</p>
+<p>Afterwards, we will use some time to answer any brief questions lingering from yesterday.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -128,6 +472,10 @@ Tip
 <p><strong>Reminder</strong>: For comments or questions, please raise your hand, or write them in the chat, <em>at any time</em>. Depending on our schedule, we may ask that you save larger questions for breaks.</p>
 </div>
 </div>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>Fork workshop repository – take them through it and explain materials</p>
 </section>
 <section id="asar" class="level2">
 <h2 class="anchored" data-anchor-id="asar">asar</h2>
@@ -180,6 +528,7 @@ Important
 -   `convert_output()`
 -   `create_tables_doc()`
 -   `create_figures_doc()`</code></pre>
+<p>** Time to browse documentation? or show info from site? **</p>
 <section id="create_template" class="level5">
 <h5 class="anchored" data-anchor-id="create_template"><code>create_template</code></h5>
 <p><strong>What it does:</strong></p>
@@ -299,7 +648,7 @@ Note
 - bibliography
 - citation style</code></pre>
 <p><strong>Parameterization</strong></p>
-<p>Quarto has a cool feature that allows users to parameterize their document by utilizing markdown’s ability to render in-line code throughout your writing. In the yaml, there are pre-added parameters of the species, latin name, region, and office. These are called in through an R chunk after the YAML.</p>
+<p>Quarto has a cool feature that allows users to parameterize their document by utilizing markdown’s ability to render in-line code throughout your writing. In the yaml, there are pre-added parameters of the species, Latin name, region, and office. These are called in through an R chunk after the YAML.</p>
 <p>You have two options for calling these parameters in your writing.</p>
 <pre><code>(1) \` r params$species \` (Quarto parameterization)
 (2) \` r species \` (asar use of parameterization)</code></pre>
@@ -326,8 +675,9 @@ Note
 <p>For more information on markdown notation, see Day 1 of this workshop or navigate to <a href="https://nmfs-ost.github.io/asar/articles/markdown_notation.html">our article</a> on the topic!</p>
 </div>
 </div>
+<p><strong>Demo of where to find preamble quantities and methods to adding to it</strong></p>
 <p><strong>The Content</strong></p>
-<p>The “child docs” are where you as the assessment author or contibutor report out the information you need to include. The template is highly modular so there are files for each section of the report and sometimes files for subsections. The default <code>asar</code> template creates child docs following the NOAA standard stock assessment report guidelines consisting of the following:</p>
+<p>The “child docs” are where you as the assessment author or contributor report out the information you need to include. The template is highly modular so there are files for each section of the report and sometimes files for subsections. The default <code>asar</code> template creates child docs following the NOAA standard stock assessment report guidelines consisting of the following:</p>
 <pre><code>- executive summary
 - introduction
 - data
@@ -350,10 +700,10 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We are advising everyone that if required content is needed beyond the standard guidelines, that it gets placed in the appendix; however we encourage everyone to think about the importance of the content in terms of review for management versus CIE or SSC reveiw.</p>
+<p>We are advising everyone that if required content is needed beyond the standard guidelines, that it gets placed in the appendix; however we encourage everyone to think about the importance of the content in terms of review for management versus CIE or SSC review.</p>
 </div>
 </div>
-<p><strong>Demo of child docs</strong></p>
+<p><strong>Demo of child docs and adding quantities from the preamble into your document</strong></p>
 </section>
 </section>
 </section>
@@ -411,51 +761,11 @@ Tip
 <p>If you are explicitly stating fleet names, make sure they are in the order you expect them to be found in the file.</p>
 </div>
 </div>
-</section>
-<section id="asarcreate_tables_doc" class="level5">
-<h5 class="anchored" data-anchor-id="asarcreate_tables_doc"><code>asar::create_tables_doc</code></h5>
-<p>After running <code>create_template()</code>, a blank tables quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made tables. You will learn more of that tomorrow, but for now we are going to go over how you add your own tables to the document.</p>
-<p>Steps for adding a table:</p>
-<pre><code>1. Create a code chunk
-2. Add your label and other options
-3. Add code
-4. Write caption</code></pre>
-<p><strong>Add a code chunk for each table</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(petrale) <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(label, year, estimate) <span class="sc">|&gt;</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    flextable<span class="sc">::</span><span class="fu">flextable</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="tbl-example" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: This is my caption for the example table.
-</figcaption>
-<div aria-describedby="tbl-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div class="tabwid"><style>.cl-cc27a2ca{}.cl-cc05439c{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-cc1bbed8{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cc1bbef6{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cc1bf16e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc1bf182{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc1bf18c{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc1bf196{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc1bf1a0{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cc1bf1aa{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-cc27a2ca"><thead><tr style="overflow-wrap:break-word;"><th class="cl-cc1bf16e"><p class="cl-cc1bbed8"><span class="cl-cc05439c">label</span></p></th><th class="cl-cc1bf182"><p class="cl-cc1bbef6"><span class="cl-cc05439c">year</span></p></th><th class="cl-cc1bf182"><p class="cl-cc1bbef6"><span class="cl-cc05439c">estimate</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-cc1bf18c"><p class="cl-cc1bbed8"><span class="cl-cc05439c">spawning_biomass_unfished</span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c"></span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c">22.9065</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc1bf18c"><p class="cl-cc1bbed8"><span class="cl-cc05439c">spawning_biomass_initial</span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c"></span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c">22.9065</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc1bf18c"><p class="cl-cc1bbed8"><span class="cl-cc05439c">spawning_biomass</span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c">1,876</span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c">22.9066</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc1bf18c"><p class="cl-cc1bbed8"><span class="cl-cc05439c">spawning_biomass</span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c">1,877</span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c">22.9060</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc1bf18c"><p class="cl-cc1bbed8"><span class="cl-cc05439c">spawning_biomass</span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c">1,878</span></p></td><td class="cl-cc1bf196"><p class="cl-cc1bbef6"><span class="cl-cc05439c">22.9055</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cc1bf1a0"><p class="cl-cc1bbed8"><span class="cl-cc05439c">spawning_biomass</span></p></td><td class="cl-cc1bf1aa"><p class="cl-cc1bbef6"><span class="cl-cc05439c">1,879</span></p></td><td class="cl-cc1bf1aa"><p class="cl-cc1bbef6"><span class="cl-cc05439c">22.9051</span></p></td></tr></tbody></table></div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>It will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!</p>
-</div>
-</div>
-<section id="non-code-tables" class="level6">
-<h6 class="anchored" data-anchor-id="non-code-tables">Non-code Tables</h6>
-<p>In the case you have made a table not using code, you can add it as an image. While this is not generally recommended since it significaly reduces the accessibility of your table, we understand that sometimes this is the only format you have it in.</p>
-<p>Use the following notation to reference an external table as an image:</p>
-<p><code>![Caption for my example table](example_table.png){fig-alt="This is the alternative text for my table", #tbl-example}</code></p>
+<section id="format-of-converted-output" class="level6">
+<h6 class="anchored" data-anchor-id="format-of-converted-output">Format of converted output</h6>
+<p>The converted output is a tibble that reframes and reshapes your data. The tibble contains each output value as a row with its error and any associated indexing values.<br>
+</p>
+<p><strong>Walk through of converted output object</strong></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -466,78 +776,62 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Notice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. Please make sure you add alternative text for tables added in this way.</p>
+<p>For more information, navigate to <a href="https://nmfs-ost.github.io/asar/articles/convert_output_details.html">this article</a> describing the conversion process and find ways your can convert your model’s data!</p>
 </div>
 </div>
 </section>
 </section>
-<section id="asarcreate_figures_doc" class="level5">
-<h5 class="anchored" data-anchor-id="asarcreate_figures_doc"><code>asar::create_figures_doc</code></h5>
-<p>Like with our tables file, a blank figures quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made figures.</p>
-<p>Steps for adding a figure:</p>
-<pre><code>1. Create a code chunk
-2. Add your label and other options
-3. Add code
-4. Write caption and **alternative text**</code></pre>
-<p>[<strong>Highlight the difference with a figure needing alternative text</strong>]</p>
-<p><strong>Add a code chunk for each table</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars<span class="sc">$</span>speed, cars<span class="sc">$</span>dist)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div id="fig-example" class="quarto-float quarto-figure quarto-figure-center anchored" alt="This is my alternative text for an HTML doc.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="day_2_files/figure-html/fig-example-1.png" class="img-fluid figure-img" alt="This is my alternative text for an HTML doc." width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: This is my caption for the example table.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>It will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!</p>
-</div>
-</div>
-<section id="non-code-figures" class="level6">
-<h6 class="anchored" data-anchor-id="non-code-figures">Non-code Figures</h6>
-<p>Like tables, you can reference figures not made directly in code chunks. However, in this case, this does not change the accessibility of the figure as much because you as the user can still add the neccessary components to meet section 508 standards.</p>
-<p><code>![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}</code></p>
 </section>
 </section>
-<section id="referencing-your-tables-or-figures-in-text" class="level5">
-<h5 class="anchored" data-anchor-id="referencing-your-tables-or-figures-in-text">Referencing your tables or figures in text</h5>
-<p>Quarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:</p>
-<p>“<a href="#tbl-example" class="quarto-xref">Table&nbsp;1</a>” or “<a href="#fig-example" class="quarto-xref">Figure&nbsp;1</a>”</p>
-<p>By adding an @ symbol followed by the chunk label or just label of your table/figure will create an interactive link that lets the reader naviagte to that specific table/figure.</p>
-<p><strong>Put it all together!</strong></p>
-<p>Render your entire document and take a look at what we’ve made today.</p>
+<section id="asar-workflow-complex-example" class="level1">
+<h1><code>asar</code> workflow: Complex example</h1>
+<ul>
+<li>Customized sections</li>
+<li>Reorganizing section order</li>
+<li>Other functions</li>
+<li>Latex (if there’s time/interest)
+<ul>
+<li>explain limitations or potential customizations</li>
+</ul></li>
+</ul>
+<p><strong>15 min break</strong></p>
 </section>
+<section id="rerendering-report" class="level1">
+<h1>Rerendering report</h1>
 </section>
+<section id="calling-previous-report" class="level1">
+<h1>Calling previous report</h1>
+<section id="qa-session-20-mins" class="level2">
+<h2 class="anchored" data-anchor-id="qa-session-20-mins">Q&amp;A Session (20 mins)</h2>
 </section>
-<section id="questions" class="level2">
-<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<section id="summary-10-mins" class="level2">
+<h2 class="anchored" data-anchor-id="summary-10-mins">Summary (10 mins)</h2>
 </section>
 <section id="final-reminders" class="level2">
 <h2 class="anchored" data-anchor-id="final-reminders">Final Reminders</h2>
 <pre><code>- We will be holding office hours tomorrow 30 minutes before the next session starts for any questions.
 - Feel free to practice some more tonight and come tomorrow with any questions you may have.</code></pre>
+
+
+</section>
 </section>
 
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -587,13 +881,14 @@ Tip
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -608,7 +903,7 @@ Tip
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/nmfs-opensci\.github\.io\/NOAA-quarto-simple");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -936,6 +1231,19 @@ Tip
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© CC-1.0</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nmfs-opensci/NOAA-quarto-simple/edit/main/Curriculum/Day 2/day_2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-opensci/NOAA-quarto-simple/blob/main/Curriculum/Day 2/day_2.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-opensci/NOAA-quarto-simple/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
 
 
 

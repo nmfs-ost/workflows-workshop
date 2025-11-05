@@ -1,0 +1,324 @@
+[
+  {
+    "objectID": "Curriculum/Day 3/day_3.html",
+    "href": "Curriculum/Day 3/day_3.html",
+    "title": "Day 3",
+    "section": "",
+    "text": "Work through a guided demo of a more complex asar workflow\nLearn about the value of the stockplotr R package\nUnderstand how to integrate stockplotr into an asar-based reporting workflow\nWork through a guided demo of a basic stockplotr workflow"
+  },
+  {
+    "objectID": "Curriculum/Day 3/day_3.html#icebreaker",
+    "href": "Curriculum/Day 3/day_3.html#icebreaker",
+    "title": "Day 3",
+    "section": "Icebreaker",
+    "text": "Icebreaker\nWelcome! Please open the Day 3 communal notes doc and participate in the icebreaker exercise."
+  },
+  {
+    "objectID": "Curriculum/Day 3/day_3.html#installation",
+    "href": "Curriculum/Day 3/day_3.html#installation",
+    "title": "Day 3",
+    "section": "Installation",
+    "text": "Installation\n\n\n\n\n\n\nTipTip\n\n\n\nThe following packages are already installed in the asar workspace on JupyterHub, so if you are using that space, you can skip this section.\n\n\ninstall.packages(\"pak\")\npak::pak(\"nmfs-ost/stockplotr\")\nPlease see the stockplotr README for more installation options."
+  },
+  {
+    "objectID": "Curriculum/Day 3/day_3.html#stockplotr-workflow-basic-example",
+    "href": "Curriculum/Day 3/day_3.html#stockplotr-workflow-basic-example",
+    "title": "Day 3",
+    "section": "stockplotr workflow: Basic example",
+    "text": "stockplotr workflow: Basic example\n\nConvert output (if necessary)\nFirst, you’ll need to convert your model results using the same workflow covered yesterday: asar::convert_output().\nYou can use the example Report.sso file uploaded to the workshop GitHub or, if you have a compatible output file, your own.\n\n# Identify output file\noutput_file &lt;- here::here(\"example_output\", \"Report.sso\")\n# convert the output\npetrale &lt;- asar::convert_output(output_file)\n\nIf you have already converted your output: great! Import it into your R environment so that you can handle it as an object like “petrale” in the chunk above.\n\n\nCreate single plots\n\nExport single plots\nCreate and export all plots\nHow to customize (changing color palette, etc.)"
+  },
+  {
+    "objectID": "Curriculum/Day 3/day_3.html#asarcreate_tables_doc",
+    "href": "Curriculum/Day 3/day_3.html#asarcreate_tables_doc",
+    "title": "Day 3",
+    "section": "asar::create_tables_doc",
+    "text": "asar::create_tables_doc\nAfter running create_template(), a blank tables quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made tables. You will learn more of that tomorrow, but for now we are going to go over how you add your own tables to the document.\nSteps for adding a table:\n1. Create a code chunk\n2. Add your label and other options\n3. Add code\n4. Write caption\nAdd a code chunk for each table\n\nhead(petrale) |&gt;\n    dplyr::select(label, year, estimate) |&gt;\n    flextable::flextable()\n\n\n\nTable 1: This is my caption for the example table.\n\n\n\nlabelyearestimatespawning_biomass_unfished22.9065spawning_biomass_initial22.9065spawning_biomass1,87622.9066spawning_biomass1,87722.9060spawning_biomass1,87822.9055spawning_biomass1,87922.9051\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nIt will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!\n\n\n\nNon-code Tables\nIn the case you have made a table not using code, you can add it as an image. While this is not generally recommended since it significaly reduces the accessibility of your table, we understand that sometimes this is the only format you have it in.\nUse the following notation to reference an external table as an image:\n![Caption for my example table](example_table.png){fig-alt=\"This is the alternative text for my table\", #tbl-example}\n\n\n\n\n\n\nNote\n\n\n\nNotice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. Please make sure you add alternative text for tables added in this way."
+  },
+  {
+    "objectID": "Curriculum/Day 3/day_3.html#asarcreate_figures_doc",
+    "href": "Curriculum/Day 3/day_3.html#asarcreate_figures_doc",
+    "title": "Day 3",
+    "section": "asar::create_figures_doc",
+    "text": "asar::create_figures_doc\nLike with our tables file, a blank figures quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made figures.\nSteps for adding a figure:\n1. Create a code chunk\n2. Add your label and other options\n3. Add code\n4. Write caption and **alternative text**\n[Highlight the difference with a figure needing alternative text]\nAdd a code chunk for each table\n\nplot(cars$speed, cars$dist)\n\n\n\n\n\n\n\nFigure 1: This is my caption for the example table.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nIt will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!\n\n\n\nNon-code Figures\nLike tables, you can reference figures not made directly in code chunks. However, in this case, this does not change the accessibility of the figure as much because you as the user can still add the necessary components to meet section 508 standards.\n![Caption for my example figure](example_figure.png){fig-alt=\"This is the alternative text for my figure\", #fig-example}\n\n\nReferencing your tables or figures in text\nQuarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:\n“Table 1” or “Figure 1”\nBy adding an @ symbol followed by the chunk label or just label of your table/figure will create an interactive link that lets the reader navigate to that specific table/figure.\n[Show working example within positron]\nPut it all together!\nRender your entire document and take a look at what we’ve made today."
+  },
+  {
+    "objectID": "Curriculum/Day 3/day_3.html#adding-accessibility",
+    "href": "Curriculum/Day 3/day_3.html#adding-accessibility",
+    "title": "Day 3",
+    "section": "Adding accessibility",
+    "text": "Adding accessibility"
+  },
+  {
+    "objectID": "resources/terminology.html",
+    "href": "resources/terminology.html",
+    "title": "Terminology",
+    "section": "",
+    "text": "Terminology\nThe following are a list of terms we may use throughout the workshop that might be new or relatively new to some users:\n\n\n\n\n\n\n\nTerm\nDefinition\n\n\n\n\nskeleton\nthe central controlling quarto document created from {asar}. The document name will contain ‘skeleton’ within it\n\n\nrender\nsynonymous with compile, build the document to produce a single html or pdf report\n\n\nWorking directory\nThe place where your program looks for files. Also known as the “root”\n\n\nAbsolute filepath\n\n\n\nRelative filepath"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#disclaimer",
+    "href": "report/species_SAR_2025.html#disclaimer",
+    "title": "Stock Assessment Report Template",
+    "section": "Disclaimer",
+    "text": "Disclaimer\nThese materials do not constitute a formal publication and are for information only. They are in a pre-review, pre-decisional state and should not be formally cited or reproduced. They are to be considered provisional and do not represent any determination or policy of NOAA or the Department of Commerce.\n\nPlease cite this publication as:\n[AUTHOR NAME]. [YEAR]. Stock Assessment Report Template. National Marine Fisheries Service, [CITY], [STATE]. pp."
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#assessment-model",
+    "href": "report/species_SAR_2025.html#assessment-model",
+    "title": "Stock Assessment Report Template",
+    "section": "Assessment Model",
+    "text": "Assessment Model"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#reference-points-stock-status-and-projections",
+    "href": "report/species_SAR_2025.html#reference-points-stock-status-and-projections",
+    "title": "Stock Assessment Report Template",
+    "section": "Reference Points, Stock Status, and Projections",
+    "text": "Reference Points, Stock Status, and Projections"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#stock-id",
+    "href": "report/species_SAR_2025.html#stock-id",
+    "title": "Stock Assessment Report Template",
+    "section": "Stock ID",
+    "text": "Stock ID"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#management-history",
+    "href": "report/species_SAR_2025.html#management-history",
+    "title": "Stock Assessment Report Template",
+    "section": "Management History",
+    "text": "Management History"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#fishery-descriptions",
+    "href": "report/species_SAR_2025.html#fishery-descriptions",
+    "title": "Stock Assessment Report Template",
+    "section": "Fishery Descriptions",
+    "text": "Fishery Descriptions"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#ecosystem-considerations",
+    "href": "report/species_SAR_2025.html#ecosystem-considerations",
+    "title": "Stock Assessment Report Template",
+    "section": "Ecosystem Considerations",
+    "text": "Ecosystem Considerations\n\nEcosystem considerations and/or climate indicators were not included in this assessment."
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#life-history",
+    "href": "report/species_SAR_2025.html#life-history",
+    "title": "Stock Assessment Report Template",
+    "section": "Life History",
+    "text": "Life History"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#catch",
+    "href": "report/species_SAR_2025.html#catch",
+    "title": "Stock Assessment Report Template",
+    "section": "Catch",
+    "text": "Catch"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#indices-and-standardization",
+    "href": "report/species_SAR_2025.html#indices-and-standardization",
+    "title": "Stock Assessment Report Template",
+    "section": "Indices and Standardization",
+    "text": "Indices and Standardization"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#composition-data",
+    "href": "report/species_SAR_2025.html#composition-data",
+    "title": "Stock Assessment Report Template",
+    "section": "Composition Data",
+    "text": "Composition Data"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#absolute-abundance",
+    "href": "report/species_SAR_2025.html#absolute-abundance",
+    "title": "Stock Assessment Report Template",
+    "section": "Absolute Abundance",
+    "text": "Absolute Abundance"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#environmentalecosystem-indicator-data",
+    "href": "report/species_SAR_2025.html#environmentalecosystem-indicator-data",
+    "title": "Stock Assessment Report Template",
+    "section": "Environmental/Ecosystem Indicator Data",
+    "text": "Environmental/Ecosystem Indicator Data"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#current-modeling-approach",
+    "href": "report/species_SAR_2025.html#current-modeling-approach",
+    "title": "Stock Assessment Report Template",
+    "section": "Current Modeling Approach",
+    "text": "Current Modeling Approach"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#configuration-of-the-base-model",
+    "href": "report/species_SAR_2025.html#configuration-of-the-base-model",
+    "title": "Stock Assessment Report Template",
+    "section": "Configuration of the Base Model",
+    "text": "Configuration of the Base Model"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#bridging",
+    "href": "report/species_SAR_2025.html#bridging",
+    "title": "Stock Assessment Report Template",
+    "section": "Bridging",
+    "text": "Bridging"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#sec-assmt-results",
+    "href": "report/species_SAR_2025.html#sec-assmt-results",
+    "title": "Stock Assessment Report Template",
+    "section": "Modeling Results",
+    "text": "Modeling Results\n\n\nParameter Estimates\n\n\nTime Series\n\n\nModel Fits\n\n\nModel Diagnostics"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#sec-assmt-sens",
+    "href": "report/species_SAR_2025.html#sec-assmt-sens",
+    "title": "Stock Assessment Report Template",
+    "section": "Sensitivity Analyses",
+    "text": "Sensitivity Analyses"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#sec-assmt-bench",
+    "href": "report/species_SAR_2025.html#sec-assmt-bench",
+    "title": "Stock Assessment Report Template",
+    "section": "Management Benchmarks",
+    "text": "Management Benchmarks"
+  },
+  {
+    "objectID": "report/species_SAR_2025.html#sec-assmt-proj",
+    "href": "report/species_SAR_2025.html#sec-assmt-proj",
+    "title": "Stock Assessment Report Template",
+    "section": "Projections",
+    "text": "Projections"
+  },
+  {
+    "objectID": "report/09_figures.html",
+    "href": "report/09_figures.html",
+    "title": "Figures",
+    "section": "",
+    "text": "Figures\n\n\nFigures\nPlease refer to the stockplotr package downloaded from remotes::install_github(‘nmfs-ost/stockplotr’) to add premade figures."
+  },
+  {
+    "objectID": "report/07_references.html",
+    "href": "report/07_references.html",
+    "title": "References",
+    "section": "",
+    "text": "References"
+  },
+  {
+    "objectID": "report/05_discussion.html",
+    "href": "report/05_discussion.html",
+    "title": "Discussion",
+    "section": "",
+    "text": "Discussion"
+  },
+  {
+    "objectID": "good_practices.html",
+    "href": "good_practices.html",
+    "title": "Good data science practices",
+    "section": "",
+    "text": "Use the here R package\n\n\n\n\n\nCreate a reproducible example (“reprex”) to allow your helper to reproduce your issue and get a clear sense of the context. See the tidyverse’s “do’s and don’ts” for making reprexes."
+  },
+  {
+    "objectID": "good_practices.html#organization",
+    "href": "good_practices.html#organization",
+    "title": "Good data science practices",
+    "section": "",
+    "text": "Use the here R package"
+  },
+  {
+    "objectID": "good_practices.html#seeking-help",
+    "href": "good_practices.html#seeking-help",
+    "title": "Good data science practices",
+    "section": "",
+    "text": "Create a reproducible example (“reprex”) to allow your helper to reproduce your issue and get a clear sense of the context. See the tidyverse’s “do’s and don’ts” for making reprexes."
+  },
+  {
+    "objectID": "planning.html",
+    "href": "planning.html",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Sophie –\n\nCreate day 1 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nmarkdown section (plan demo)\nquarto section (plan demo)\ninstallation section\noverview of workflow/package\n\nCreate day 3 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nasar complex workflow\nintro to stockplotr\nstockplotr demo\n\nContribute to list of good practices (set up doc too)\n\nSam –\n\nSet up form or poll to find optional times for setting dates (Tues-Thurs AM or PM) (5 slots + NSAW)\nAsk regional directions for stock assessments to select dates that work best for them (3 week window for voting)\nMake website landing page\n\n\n\n\nSophie –\n\nMake asar cheatsheet\nCreate advertisement flier for workshops (save the date once we know)\nFill in outline of content for Day 1\nFill in outline of content for Day 3\n\nSam –\n\nCreate day 2 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nMaking R project/getting set up\nasar basic functions\nasar basic workflow\nquarto render\nreport workflow (post create_template)\n\nContribute to list of good practices\nFill in outline of content for Day 3\n\n\n\n\nSophie –\n\nWhat type of advertising - how and where\n\nSam –\n\nDesign condensed presentation and workshop for NSAW\nDraft & send gchat spam for workshops and emails\nSet dates and times for each region and send out calendar invites\nFill in outline of content for Day 2\n\n\n\n\nSophie –\n\nFind and select installation helpers for workshop (Early Nov. Elizabeth & Kathryn?)\nMake meetings with install helpers (Early Nov. Elizabeth & Kathryn?)\nUpdate jupyterhub (assure recent installs of packages and dependencies)\nMake visual diagram for Day 1\n\nSam –\n\nMake stockplotr cheatsheet\nMake visual diagram for Day 2\nMake visual diagram for Day 3\n\nGroup –\n\ntailor and finish workshop materials\n\n\n\n\n\nMake handouts for sharing\nSet up feedback response sheet/questions from attendees\nSet up communal docs notes template\nDetermine timing and breaks\n\nSam:\n\nPrepare demo folder with asar materials (script, report folder, images, plots, ect.)\n\nGoal: Finish by November (before holidays) Final details goal: Finish by end of December\n\n\n\n\nPractice"
+  },
+  {
+    "objectID": "planning.html#august",
+    "href": "planning.html#august",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Sophie –\n\nCreate day 1 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nmarkdown section (plan demo)\nquarto section (plan demo)\ninstallation section\noverview of workflow/package\n\nCreate day 3 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nasar complex workflow\nintro to stockplotr\nstockplotr demo\n\nContribute to list of good practices (set up doc too)\n\nSam –\n\nSet up form or poll to find optional times for setting dates (Tues-Thurs AM or PM) (5 slots + NSAW)\nAsk regional directions for stock assessments to select dates that work best for them (3 week window for voting)\nMake website landing page"
+  },
+  {
+    "objectID": "planning.html#september",
+    "href": "planning.html#september",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Sophie –\n\nMake asar cheatsheet\nCreate advertisement flier for workshops (save the date once we know)\nFill in outline of content for Day 1\nFill in outline of content for Day 3\n\nSam –\n\nCreate day 2 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nMaking R project/getting set up\nasar basic functions\nasar basic workflow\nquarto render\nreport workflow (post create_template)\n\nContribute to list of good practices\nFill in outline of content for Day 3"
+  },
+  {
+    "objectID": "planning.html#october",
+    "href": "planning.html#october",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Sophie –\n\nWhat type of advertising - how and where\n\nSam –\n\nDesign condensed presentation and workshop for NSAW\nDraft & send gchat spam for workshops and emails\nSet dates and times for each region and send out calendar invites\nFill in outline of content for Day 2"
+  },
+  {
+    "objectID": "planning.html#november",
+    "href": "planning.html#november",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Sophie –\n\nFind and select installation helpers for workshop (Early Nov. Elizabeth & Kathryn?)\nMake meetings with install helpers (Early Nov. Elizabeth & Kathryn?)\nUpdate jupyterhub (assure recent installs of packages and dependencies)\nMake visual diagram for Day 1\n\nSam –\n\nMake stockplotr cheatsheet\nMake visual diagram for Day 2\nMake visual diagram for Day 3\n\nGroup –\n\ntailor and finish workshop materials"
+  },
+  {
+    "objectID": "planning.html#december",
+    "href": "planning.html#december",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Make handouts for sharing\nSet up feedback response sheet/questions from attendees\nSet up communal docs notes template\nDetermine timing and breaks\n\nSam:\n\nPrepare demo folder with asar materials (script, report folder, images, plots, ect.)\n\nGoal: Finish by November (before holidays) Final details goal: Finish by end of December"
+  },
+  {
+    "objectID": "planning.html#january",
+    "href": "planning.html#january",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Practice"
+  },
+  {
+    "objectID": "report/02_introduction.html",
+    "href": "report/02_introduction.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Testing adding in an introduction for r params$species. There is currently no read of parameters for child documents.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEcosystem considerations and/or climate indicators were not included in this assessment."
+  },
+  {
+    "objectID": "report/02_introduction.html#ecosystem-considerations",
+    "href": "report/02_introduction.html#ecosystem-considerations",
+    "title": "Introduction",
+    "section": "",
+    "text": "Ecosystem considerations and/or climate indicators were not included in this assessment."
+  },
+  {
+    "objectID": "report/06_acknowledgments.html",
+    "href": "report/06_acknowledgments.html",
+    "title": "Acknowledgements",
+    "section": "",
+    "text": "Acknowledgements\n\nThis document was produced using the R package asar [@asar_2025], which is free to use and publicly available on GitHub."
+  },
+  {
+    "objectID": "report/08_tables.html",
+    "href": "report/08_tables.html",
+    "title": "Tables",
+    "section": "",
+    "text": "Tables\nPlease refer to the stockplotr package downloaded from remotes::install_github(‘nmfs-ost/stockplotr’) to add premade tables."
+  },
+  {
+    "objectID": "report/11_appendix.html",
+    "href": "report/11_appendix.html",
+    "title": "Appendices",
+    "section": "",
+    "text": "Appendices"
+  }
+]
