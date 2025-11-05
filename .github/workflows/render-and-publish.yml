@@ -30,6 +30,6 @@ jobs:
       - name: Publish to GitHub Pages (and render)
         uses: quarto-dev/quarto-actions/publish@v2
         with:
-          target: website # was gh-pages... could cause issues if I didn't set this up correctly
+          target: gh-pages # branch is called website... could cause issues if I didn't set this up correctly
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
