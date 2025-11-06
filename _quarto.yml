@@ -3,11 +3,11 @@ project:
 
 website: 
   page-navigation: true
-  title: "NOAA quarto simple" 
-  site-url: "https://nmfs-opensci.github.io/NOAA-quarto-simple" 
-  repo-url: "https://github.com/nmfs-opensci/NOAA-quarto-simple"
+  title: "Workflows workshop" 
+  site-url: "https://nmfs-ost.github.io/workflows-workshop/" 
+  repo-url: "https://github.com/nmfs-ost/workflows-workshop"
   repo-actions: [edit, source, issue]
-  favicon: images/favicon.ico
+  # favicon: images/favicon.ico
   
   page-footer:
     right: "This page is built with [Quarto](https://quarto.org/)."
@@ -15,17 +15,16 @@ website:
   
   sidebar:
     background: "#D9E3E4"
-    logo: "https://raw.githubusercontent.com/nmfs-opensci/assets/main/logo/nmfs-opensci-logo3.png"
-    favicon: images/favicon.ico
+    # logo: "https://raw.githubusercontent.com/nmfs-opensci/assets/main/logo/nmfs-opensci-logo3.png"
     pinned: true
     align: center
     tools: 
       - icon: globe
-        href: https://nmfs-opensci.github.io
-        text: "NMFS Open Science"
+        href: https://nmfs-ost.github.io/workflows-workshop/
+        text: "Workshop home"
       - icon: github
-        href: https://github.com/nmfs-opensci
-        text: "NMFS OpenSci"
+        href: https://github.com/nmfs-ost/workflows-workshop
+        text: "Workshop GitHub"
 
     style: "docked"
     search: true
@@ -33,18 +32,16 @@ website:
     contents:
       - href: index.qmd
         text: Home
-      - href: content/add-content.qmd
-        text: Add content
-      - href: content/customizing.qmd
-        text: Customizing
-      - href: content/rendering.qmd
-        text: Rendering
-      - href: content/rmarkdown.Rmd
-        text: R Markdown files
-      - href: content/code.qmd
-        text: Code in your files
-      - href: content/acknowledgements.qmd
-        text: Acknowledgements
+      - href: Curriculum/Day_1/day_1.qmd
+        text: Day 1
+      - href: Curriculum/Day_2/day_2.qmd
+        text: Day 2
+      - href: Curriculum/Day_3/day_3.qmd
+        text: Day 3
+      - href: resources/terminology.md
+        text: Terminology
+      - href: resources/local_session_info.qmd
+        text: Setting up a local session
 
 format:
   html:
