@@ -320,7 +320,7 @@ The basics of a code chunk (chunk) are:
 
 These three things get wrapped together within two sets of three back ticks (```) to allow a user to run code.
 
-```{verbatim}
+````{verbatim}
 ```{r}
 #| label: ex-chunk
 #| eval: false
@@ -331,7 +331,7 @@ These three things get wrapped together within two sets of three back ticks (```
 #| tbl-cap: This is my table caption.
 x <- 1 + 1
 ```
-```
+````
 
 *There are a variety of chunk options, but the ones you will see consistently throughout this workshop are listed in the example above.*
 
