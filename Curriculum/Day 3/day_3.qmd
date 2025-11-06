@@ -27,6 +27,7 @@ The following packages are already installed in the `asar` workspace on JupyterH
 
 ```r
 install.packages("pak")
+pak::pak("nmfs-ost/asar")
 pak::pak("nmfs-ost/stockplotr")
 ```
 
@@ -42,7 +43,7 @@ You can use the example Report.sso file uploaded to the workshop GitHub or, if y
 
 ```{r}
 #| label: conout-ex
-#| eval: true
+#| eval: false
 #| warning: false
 #| messages: false
 # Identify output file
@@ -76,7 +77,7 @@ Steps for adding a table:
 
 ```{r}
 #| label: tbl-example
-#| eval: true
+#| eval: false
 #| echo: true
 #| warning: false
 #| tbl-cap: This is my caption for the example table.
@@ -118,7 +119,7 @@ Steps for adding a figure:
 
 ```{r}
 #| label: fig-example
-#| eval: true
+#| eval: false
 #| echo: true
 #| warning: false
 #| fig-cap: This is my caption for the example table.

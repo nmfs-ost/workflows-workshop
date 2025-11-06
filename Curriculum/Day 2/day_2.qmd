@@ -259,7 +259,7 @@ We have uploaded an example Report.sso file in the workshop GitHub, but if you h
 
 ```{r}
 #| label: conout-ex
-#| eval: true
+#| eval: false
 #| warning: false
 #| messages: false
 # Identify output file
