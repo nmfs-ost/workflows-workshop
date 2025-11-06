@@ -114,7 +114,7 @@
     "href": "index.html#navigation",
     "title": "Workflows Workshop Home",
     "section": "Navigation",
-    "text": "Navigation\n\nCurriculum\nThe “curriculum” folder contains Quarto documents that we will be following through each day of the workshop. We have dedicated a lot of time already to the documentation of asar and stockplotr so we encourage everyone to visit these sites prior to the workshosps.\n\n\nExample\nThe “examples” folder contains multiple examples of a report produced from asar and stockplotr with varying complexities. Feel free to explore these folders and familiarize yourself with the contents generated from these two packages.",
+    "text": "Navigation\n\nCurriculum\nThe “curriculum” folder contains Quarto documents that we will be following through each day of the workshop. We have dedicated a lot of time already to the documentation of asar and stockplotr so we encourage everyone to visit these sites prior to the workshops.\n\n\nExample\nThe “examples” folder contains multiple examples of a report produced from asar and stockplotr with varying complexities. Feel free to explore these folders and familiarize yourself with the contents generated from these two packages.",
     "crumbs": [
       "Home"
     ]
