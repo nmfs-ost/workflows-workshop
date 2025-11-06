@@ -42,6 +42,8 @@ website:
         text: Terminology
       - href: resources/local_session_info.qmd
         text: Setting up a local session
+      - href: resources/good_practices.qmd
+        text: Good data science practices
 
 format:
   html:
