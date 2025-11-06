@@ -1,24 +1,13 @@
 [
   {
-    "objectID": "good_practices.html",
-    "href": "good_practices.html",
-    "title": "Good data science practices",
+    "objectID": "resources/terminology.html",
+    "href": "resources/terminology.html",
+    "title": "Terminology",
     "section": "",
-    "text": "Use the here R package\n\n\n\n\n\nCreate a reproducible example (“reprex”) to allow your helper to reproduce your issue and get a clear sense of the context. See the tidyverse’s “do’s and don’ts” for making reprexes."
-  },
-  {
-    "objectID": "good_practices.html#organization",
-    "href": "good_practices.html#organization",
-    "title": "Good data science practices",
-    "section": "",
-    "text": "Use the here R package"
-  },
-  {
-    "objectID": "good_practices.html#seeking-help",
-    "href": "good_practices.html#seeking-help",
-    "title": "Good data science practices",
-    "section": "",
-    "text": "Create a reproducible example (“reprex”) to allow your helper to reproduce your issue and get a clear sense of the context. See the tidyverse’s “do’s and don’ts” for making reprexes."
+    "text": "Terminology\nThe following are a list of terms we may use throughout the workshop that might be new or relatively new to some users:\n\n\n\n\n\n\n\nTerm\nDefinition\n\n\n\n\nskeleton\nthe central controlling quarto document created from {asar}. The document name will contain ‘skeleton’ within it\n\n\nrender\nsynonymous with compile, build the document to produce a single html or pdf report\n\n\nWorking directory\nThe place where your program looks for files. Also known as the “root”\n\n\nAbsolute filepath\n\n\n\nRelative filepath",
+    "crumbs": [
+      "Terminology"
+    ]
   },
   {
     "objectID": "Curriculum/Day_3/day_3.html",
@@ -390,13 +379,33 @@
     ]
   },
   {
-    "objectID": "resources/terminology.html",
-    "href": "resources/terminology.html",
-    "title": "Terminology",
+    "objectID": "resources/good_practices.html",
+    "href": "resources/good_practices.html",
+    "title": "Good data science practices",
     "section": "",
-    "text": "Terminology\nThe following are a list of terms we may use throughout the workshop that might be new or relatively new to some users:\n\n\n\n\n\n\n\nTerm\nDefinition\n\n\n\n\nskeleton\nthe central controlling quarto document created from {asar}. The document name will contain ‘skeleton’ within it\n\n\nrender\nsynonymous with compile, build the document to produce a single html or pdf report\n\n\nWorking directory\nThe place where your program looks for files. Also known as the “root”\n\n\nAbsolute filepath\n\n\n\nRelative filepath",
+    "text": "Use the here R package\n\n\n\n\n\nCreate a reproducible example (“reprex”) to allow your helper to reproduce your issue and get a clear sense of the context. See the tidyverse’s “do’s and don’ts” for making reprexes.",
     "crumbs": [
-      "Terminology"
+      "Good data science practices"
+    ]
+  },
+  {
+    "objectID": "resources/good_practices.html#organization",
+    "href": "resources/good_practices.html#organization",
+    "title": "Good data science practices",
+    "section": "",
+    "text": "Use the here R package",
+    "crumbs": [
+      "Good data science practices"
+    ]
+  },
+  {
+    "objectID": "resources/good_practices.html#seeking-help",
+    "href": "resources/good_practices.html#seeking-help",
+    "title": "Good data science practices",
+    "section": "",
+    "text": "Create a reproducible example (“reprex”) to allow your helper to reproduce your issue and get a clear sense of the context. See the tidyverse’s “do’s and don’ts” for making reprexes.",
+    "crumbs": [
+      "Good data science practices"
     ]
   }
 ]

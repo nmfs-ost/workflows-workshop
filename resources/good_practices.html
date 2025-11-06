@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 3 – Workflows workshop</title>
+<title>good_practices – Workflows workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,67 +20,31 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../resources/terminology.html" rel="next">
-<link href="../../Curriculum/Day_2/day_2.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3fe749c4c491919af384cf3d21cd6cd9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-232e4682cfd531faa731a02c7ded2837.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-3fe749c4c491919af384cf3d21cd6cd9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../resources/local_session_info.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3fe749c4c491919af384cf3d21cd6cd9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-232e4682cfd531faa731a02c7ded2837.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-3fe749c4c491919af384cf3d21cd6cd9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -283,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Curriculum/Day_3/day_3.html">Day 3</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/good_practices.html">Good data science practices</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -297,7 +261,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="../../index.html" class="sidebar-logo-link">
+      <a href="../index.html" class="sidebar-logo-link">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://nmfs-ost.github.io/workflows-workshop/" title="Workshop home" class="quarto-navigation-tool px-1" aria-label="Workshop home"><i class="bi bi-globe"></i></a>
@@ -314,43 +278,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Curriculum/Day_1/day_1.html" class="sidebar-item-text sidebar-link">
+  <a href="../Curriculum/Day_1/day_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Day 1</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Curriculum/Day_2/day_2.html" class="sidebar-item-text sidebar-link">
+  <a href="../Curriculum/Day_2/day_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Day 2</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Curriculum/Day_3/day_3.html" class="sidebar-item-text sidebar-link active">
+  <a href="../Curriculum/Day_3/day_3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Day 3</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../resources/terminology.html" class="sidebar-item-text sidebar-link">
+  <a href="../resources/terminology.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Terminology</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../resources/local_session_info.html" class="sidebar-item-text sidebar-link">
+  <a href="../resources/local_session_info.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setting up a local session</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../resources/good_practices.html" class="sidebar-item-text sidebar-link">
+  <a href="../resources/good_practices.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Good data science practices</span></a>
   </div>
 </li>
@@ -364,236 +328,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#good-data-science-practices" id="toc-good-data-science-practices" class="nav-link active" data-scroll-target="#good-data-science-practices">Good data science practices</a>
   <ul class="collapse">
-  <li><a href="#icebreaker" id="toc-icebreaker" class="nav-link" data-scroll-target="#icebreaker">Icebreaker</a></li>
+  <li><a href="#organization" id="toc-organization" class="nav-link" data-scroll-target="#organization">Organization</a></li>
+  <li><a href="#seeking-help" id="toc-seeking-help" class="nav-link" data-scroll-target="#seeking-help">Seeking help</a></li>
   </ul></li>
-  <li><a href="#introduction-to-stockplotr" id="toc-introduction-to-stockplotr" class="nav-link" data-scroll-target="#introduction-to-stockplotr">Introduction to <code>stockplotr</code></a>
-  <ul class="collapse">
-  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#stockplotr-workflow-basic-example" id="toc-stockplotr-workflow-basic-example" class="nav-link" data-scroll-target="#stockplotr-workflow-basic-example"><code>stockplotr</code> workflow: Basic example</a>
-  <ul class="collapse">
-  <li><a href="#convert-output-if-necessary" id="toc-convert-output-if-necessary" class="nav-link" data-scroll-target="#convert-output-if-necessary">Convert output (if necessary)</a></li>
-  <li><a href="#create-single-plots" id="toc-create-single-plots" class="nav-link" data-scroll-target="#create-single-plots">Create single plots</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#integrating-stockplotr-in-the-workflows" id="toc-integrating-stockplotr-in-the-workflows" class="nav-link" data-scroll-target="#integrating-stockplotr-in-the-workflows">Integrating stockplotr in the workflows</a>
-  <ul class="collapse">
-  <li><a href="#asarcreate_tables_doc" id="toc-asarcreate_tables_doc" class="nav-link" data-scroll-target="#asarcreate_tables_doc"><code>asar::create_tables_doc</code></a>
-  <ul class="collapse">
-  <li><a href="#non-code-tables" id="toc-non-code-tables" class="nav-link" data-scroll-target="#non-code-tables">Non-code Tables</a></li>
-  </ul></li>
-  <li><a href="#asarcreate_figures_doc" id="toc-asarcreate_figures_doc" class="nav-link" data-scroll-target="#asarcreate_figures_doc"><code>asar::create_figures_doc</code></a></li>
-  <li><a href="#adding-accessibility" id="toc-adding-accessibility" class="nav-link" data-scroll-target="#adding-accessibility">Adding accessibility</a></li>
-  </ul></li>
-  <li><a href="#demo-for-a-realistic-customized-asar-report-with-stockplotr-plots" id="toc-demo-for-a-realistic-customized-asar-report-with-stockplotr-plots" class="nav-link" data-scroll-target="#demo-for-a-realistic-customized-asar-report-with-stockplotr-plots">Demo for a realistic, customized asar report with stockplotr plots</a></li>
-  <li><a href="#questions-comments-and-feedback" id="toc-questions-comments-and-feedback" class="nav-link" data-scroll-target="#questions-comments-and-feedback">Questions, comments, and feedback</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nmfs-ost/workflows-workshop/edit/main/Curriculum/Day_3/day_3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/Curriculum/Day_3/day_3.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nmfs-ost/workflows-workshop/edit/main/resources/good_practices.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/resources/good_practices.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Day 3</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
+<section id="good-data-science-practices" class="level1">
+<h1>Good data science practices</h1>
+<section id="organization" class="level2">
+<h2 class="anchored" data-anchor-id="organization">Organization</h2>
+<ol type="1">
+<li>Use the <code>here</code> R package</li>
+</ol>
+</section>
+<section id="seeking-help" class="level2">
+<h2 class="anchored" data-anchor-id="seeking-help">Seeking help</h2>
+<ol type="1">
+<li>Create a reproducible example (“reprex”) to allow your helper to reproduce your issue and get a clear sense of the context. See <a href="https://reprex.tidyverse.org/articles/reprex-dos-and-donts.html">the tidyverse’s “do’s and don’ts”</a> for making reprexes.</li>
+</ol>
 
 
-<div class="objectives">
-<ul>
-<li>Work through a guided demo of a more complex <code>asar</code> workflow</li>
-<li>Learn about the value of the <code>stockplotr</code> R package</li>
-<li>Understand how to integrate <code>stockplotr</code> into an <code>asar</code>-based reporting workflow</li>
-<li>Work through a guided demo of a basic <code>stockplotr</code> workflow</li>
-</ul>
-</div>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<section id="icebreaker" class="level2">
-<h2 class="anchored" data-anchor-id="icebreaker">Icebreaker</h2>
-<p>Welcome! Please open the <a href="https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.vffehz79fm7y#heading=h.sfq3xaeehv64">Day 3 communal notes doc</a> and participate in the icebreaker exercise.</p>
 </section>
-</section>
-<section id="introduction-to-stockplotr" class="level1">
-<h1>Introduction to <code>stockplotr</code></h1>
-<section id="installation" class="level2">
-<h2 class="anchored" data-anchor-id="installation">Installation</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The following packages are already installed in the <code>asar</code> workspace on JupyterHub, so if you are using that space, you can skip this section.</p>
-</div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">"nmfs-ost/asar"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">"nmfs-ost/stockplotr"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Please see the <a href="https://github.com/nmfs-ost/stockplotr"><code>stockplotr</code> README</a> for more installation options.</p>
-</section>
-<section id="stockplotr-workflow-basic-example" class="level2">
-<h2 class="anchored" data-anchor-id="stockplotr-workflow-basic-example"><code>stockplotr</code> workflow: Basic example</h2>
-<section id="convert-output-if-necessary" class="level3">
-<h3 class="anchored" data-anchor-id="convert-output-if-necessary">Convert output (if necessary)</h3>
-<p>First, you’ll need to convert your model results using the same workflow covered yesterday: <code>asar::convert_output()</code>.</p>
-<p>You can use the example Report.sso file uploaded to the workshop GitHub or, if you have a compatible output file, your own.</p>
-<div class="cell" data-messages="false">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify output file</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>output_file <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"example_output"</span>, <span class="st">"Report.sso"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># convert the output</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>petrale <span class="ot">&lt;-</span> asar<span class="sc">::</span><span class="fu">convert_output</span>(output_file)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>If you have already converted your output: great! Import it into your R environment so that you can handle it as an object like “petrale” in the chunk above.</p>
-</section>
-<section id="create-single-plots" class="level3">
-<h3 class="anchored" data-anchor-id="create-single-plots">Create single plots</h3>
-<ul>
-<li>Export single plots</li>
-<li>Create and export all plots</li>
-<li>How to customize (changing color palette, etc.)</li>
-</ul>
-</section>
-</section>
-</section>
-<section id="integrating-stockplotr-in-the-workflows" class="level1">
-<h1>Integrating stockplotr in the workflows</h1>
-<section id="asarcreate_tables_doc" class="level2">
-<h2 class="anchored" data-anchor-id="asarcreate_tables_doc"><code>asar::create_tables_doc</code></h2>
-<p>After running <code>create_template()</code>, a blank tables quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made tables. You will learn more of that tomorrow, but for now we are going to go over how you add your own tables to the document.</p>
-<p>Steps for adding a table:</p>
-<pre><code>1. Create a code chunk
-2. Add your label and other options
-3. Add code
-4. Write caption</code></pre>
-<p><strong>Add a code chunk for each table</strong></p>
-<div id="tbl-example" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: This is my caption for the example table.
-</figcaption>
-<div aria-describedby="tbl-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(petrale) <span class="sc">|&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(label, year, estimate) <span class="sc">|&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    flextable<span class="sc">::</span><span class="fu">flextable</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</figure>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>It will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!</p>
-</div>
-</div>
-<section id="non-code-tables" class="level3">
-<h3 class="anchored" data-anchor-id="non-code-tables">Non-code Tables</h3>
-<p>In the case you have made a table not using code, you can add it as an image. While this is not generally recommended since it significaly reduces the accessibility of your table, we understand that sometimes this is the only format you have it in.</p>
-<p>Use the following notation to reference an external table as an image:</p>
-<p><code>![Caption for my example table](example_table.png){fig-alt="This is the alternative text for my table", #tbl-example}</code></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Notice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. Please make sure you add alternative text for tables added in this way.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="asarcreate_figures_doc" class="level2">
-<h2 class="anchored" data-anchor-id="asarcreate_figures_doc"><code>asar::create_figures_doc</code></h2>
-<p>Like with our tables file, a blank figures quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made figures.</p>
-<p>Steps for adding a figure:</p>
-<pre><code>1. Create a code chunk
-2. Add your label and other options
-3. Add code
-4. Write caption and **alternative text**</code></pre>
-<p>[<strong>Highlight the difference with a figure needing alternative text</strong>]</p>
-<p><strong>Add a code chunk for each table</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars<span class="sc">$</span>speed, cars<span class="sc">$</span>dist)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>It will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!</p>
-</div>
-</div>
-<section id="non-code-figures" class="level6">
-<h6 class="anchored" data-anchor-id="non-code-figures">Non-code Figures</h6>
-<p>Like tables, you can reference figures not made directly in code chunks. However, in this case, this does not change the accessibility of the figure as much because you as the user can still add the necessary components to meet section 508 standards.</p>
-<p><code>![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}</code></p>
-</section>
-<section id="referencing-your-tables-or-figures-in-text" class="level5">
-<h5 class="anchored" data-anchor-id="referencing-your-tables-or-figures-in-text">Referencing your tables or figures in text</h5>
-<p>Quarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:</p>
-<p>“@tbl-example” or “@fig-example”</p>
-<p>By adding an @ symbol followed by the chunk label or just label of your table/figure will create an interactive link that lets the reader navigate to that specific table/figure.</p>
-<p>[Show working example within positron]</p>
-<p><strong>Put it all together!</strong></p>
-<p>Render your entire document and take a look at what we’ve made today.</p>
-</section>
-</section>
-<section id="adding-accessibility" class="level2">
-<h2 class="anchored" data-anchor-id="adding-accessibility">Adding accessibility</h2>
-</section>
-</section>
-<section id="demo-for-a-realistic-customized-asar-report-with-stockplotr-plots" class="level1">
-<h1>Demo for a realistic, customized asar report with stockplotr plots</h1>
-<ul>
-<li>create_tables_doc() and create_figures_doc() with “figures” and “tables” folders</li>
-<li>ensure alt text/captions work</li>
-</ul>
-<p><strong>Time to practice, ask questions, etc.</strong></p>
-</section>
-<section id="questions-comments-and-feedback" class="level1">
-<h1>Questions, comments, and feedback</h1>
-<p>Please navigate to the <a href="https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.vffehz79fm7y#heading=h.llbcc8tygqlb">Feedback</a> heading and tell us what you thought about today’s workshop. Only 3 simple questions!</p>
-<ul>
-<li>What went well?</li>
-<li>What could be improved?</li>
-<li>What is a question you still have?</li>
-</ul>
-
-
 </section>
 
 </main> <!-- /main -->
@@ -1012,14 +777,11 @@ Tip
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../Curriculum/Day_2/day_2.html" class="pagination-link" aria-label="Day 2">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Day 2</span>
+      <a href="../resources/local_session_info.html" class="pagination-link" aria-label="Setting up a local session">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Setting up a local session</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../resources/terminology.html" class="pagination-link" aria-label="Terminology">
-        <span class="nav-page-text">Terminology</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -1030,7 +792,7 @@ Tip
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nmfs-ost/workflows-workshop/edit/main/Curriculum/Day_3/day_3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/Curriculum/Day_3/day_3.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nmfs-ost/workflows-workshop/edit/main/resources/good_practices.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/resources/good_practices.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
