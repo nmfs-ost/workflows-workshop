@@ -1,63 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/content/rmarkdown.html</loc>
-    <lastmod>2025-11-06T15:12:31.880Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/content/acknowledgements.html</loc>
-    <lastmod>2025-11-06T15:12:31.880Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/content/add-content.html</loc>
-    <lastmod>2025-11-06T15:12:31.880Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/content/customizing.html</loc>
-    <lastmod>2025-11-06T15:12:31.880Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/resources/terminology.html</loc>
-    <lastmod>2025-11-06T15:12:31.900Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/Curriculum/Day 2/day_2.html</loc>
-    <lastmod>2025-11-06T15:12:31.862Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/Curriculum/Day 3/day_3.html</loc>
-    <lastmod>2025-11-06T15:12:31.864Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/planning.html</loc>
-    <lastmod>2025-11-06T15:12:31.900Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/index.html</loc>
-    <lastmod>2025-11-06T15:12:31.900Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/Curriculum/Day 1/day_1.html</loc>
-    <lastmod>2025-11-06T15:12:31.862Z</lastmod>
+    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/good_practices.html</loc>
+    <lastmod>2025-11-06T15:43:04.999Z</lastmod>
   </url>
   <url>
     <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/resources/local_session_info.html</loc>
-    <lastmod>2025-11-06T15:12:31.900Z</lastmod>
+    <lastmod>2025-11-06T15:43:05.000Z</lastmod>
   </url>
   <url>
-    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/good_practices.html</loc>
-    <lastmod>2025-11-06T15:12:31.900Z</lastmod>
+    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/Curriculum/Day_3/day_3.html</loc>
+    <lastmod>2025-11-06T15:43:04.963Z</lastmod>
   </url>
   <url>
-    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/content/code.html</loc>
-    <lastmod>2025-11-06T15:12:31.880Z</lastmod>
+    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/index.html</loc>
+    <lastmod>2025-11-06T15:43:05.000Z</lastmod>
   </url>
   <url>
-    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/content/rendering.html</loc>
-    <lastmod>2025-11-06T15:12:31.880Z</lastmod>
+    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/planning.html</loc>
+    <lastmod>2025-11-06T15:43:05.000Z</lastmod>
   </url>
   <url>
-    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/content/publishing.html</loc>
-    <lastmod>2025-11-06T15:12:31.880Z</lastmod>
+    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/Curriculum/Day_2/day_2.html</loc>
+    <lastmod>2025-11-06T15:43:04.961Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/Curriculum/Day_1/day_1.html</loc>
+    <lastmod>2025-11-06T15:43:04.960Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nmfs-opensci.github.io/NOAA-quarto-simple/resources/terminology.html</loc>
+    <lastmod>2025-11-06T15:43:05.000Z</lastmod>
   </url>
 </urlset>
