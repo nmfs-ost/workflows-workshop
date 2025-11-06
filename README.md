@@ -4,7 +4,7 @@ subtitle: "Learn how to write semi-automated stock assessment reports!"
 page-layout: full
 ---
 
-<img src="assets/workshop_banner.png" align="center" width="700" height="175"/>
+<img src="assets/workshop_banner.png" align="center" width="650" height="175"/>
 
 This repository houses the agenda, materials, and communication for the NOAA Fisheries Stock Assessment Workflows Workshops being held starting in 2026! Please use this README to help navigate within our repository and find out our current progress and plans in real time.
 
@@ -25,7 +25,7 @@ The workflows of stock assessment scientists across the U.S. are highly variable
 |---------|---------|
 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rstudio/rstudio-original.svg" alt="Rstudio" width="55" height="55"/> | R version ? |
 | <img src="https://rstudio.github.io/cheatsheets/html/images/logo-quarto.png" alt="Quarto" width="50" height="55"/> | Quarto v1.6+ |
-| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaTeX_logo.svg/1200px-LaTeX_logo.svg.png" alt="LaTeX" width="75" height="55"/> | Latex from tinytex bundle-2 |
+| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaTeX_logo.svg/1200px-LaTeX_logo.svg.png" alt="LaTeX" width="115" height="55"/> | Latex from tinytex bundle-2 |
 
 ## Navigation
 
