@@ -141,7 +141,7 @@ Like tables, you can reference figures not made directly in code chunks. However
 
 Quarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:
 
-"@tbl-example" or "@fig-example"
+"\@tbl-example" or "\@fig-example"
 
 By adding an @ symbol followed by the chunk label or just label of your table/figure will create an interactive link that lets the reader navigate to that specific table/figure.
 
