@@ -336,6 +336,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
   </ul></li>
   <li><a href="#format" id="toc-format" class="nav-link" data-scroll-target="#format">Format</a></li>
+  <li><a href="#the-organizers" id="toc-the-organizers" class="nav-link" data-scroll-target="#the-organizers">The organizers</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nmfs-ost/workflows-workshop/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -378,17 +379,13 @@ ul.task-list li input[type="checkbox"] {
 <p>Currently, we are coordinating with our NOAA Fisheries Regional Science Centers to determine the best time to work with our stock assessment scientists and conduct these trainings.</p>
 </div>
 </div>
-<section id="background" class="level2">
-<h2 class="anchored" data-anchor-id="background">Background</h2>
-<p>The workflows of stock assessment scientists across the U.S. are highly variable and all consistently face similar issues including lack of automation, challenging data wrangling, increased requests for analyses, and more. A team with the National Stock Assessment Program at NOAA Fisheries HQ set about addressing some of these needs by identifying parts of the workflow scientists needed help in. While there were needs to improve parts of the workflow at every step, the team and a steering committee decided to first approach the lowest hanging fruit, reporting. The goal of this project was to establish a semi-automated system for generating reports in order to reduce time completing mundane and tedious tasks that, with some effort, could be automated. From there, <code>asar</code> and <code>stockplotr</code> were built along with beginning to establish a standard set of guidelines for stock assessment reports.</p>
+<section id="background" class="level1">
+<h1>Background</h1>
+<p>The workflows of stock assessment scientists across the U.S. are highly variable and all consistently face similar issues including lack of automation, challenging data wrangling, increased requests for analyses, and more. A team with the National Stock Assessment Program at NOAA Fisheries HQ set about addressing some of these needs by identifying parts of the workflow scientists needed help in. While there were needs to improve parts of the workflow at every step, the team and a steering committee decided to first approach the lowest hanging fruit, reporting. The goal of this project was to establish a semi-automated system for generating reports in order to reduce time completing mundane and tedious tasks that, with some effort, could be automated. From there, <a href="https://github.com/nmfs-ost/asar"><code>asar</code></a> and <a href="https://github.com/nmfs-ost/stockplotr"><code>stockplotr</code></a> were built along with beginning to establish a standard set of guidelines for stock assessment reports.</p>
 </section>
-<section id="system-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="system-requirements">System Requirements</h2>
+<section id="system-requirements" class="level1">
+<h1>System Requirements</h1>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Program</th>
@@ -398,32 +395,32 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rstudio/rstudio-original.svg" alt="Rstudio" width="55" height="55"></td>
-<td>R version ?</td>
+<td><a href="https://www.r-project.org/d">R</a> version ?</td>
 </tr>
 <tr class="even">
 <td><img src="https://rstudio.github.io/cheatsheets/html/images/logo-quarto.png" alt="Quarto" width="50" height="55"></td>
-<td>Quarto v1.6+</td>
+<td><a href="https://quarto.org/docs/get-started/">Quarto</a> v1.6+</td>
 </tr>
 <tr class="odd">
 <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaTeX_logo.svg/1200px-LaTeX_logo.svg.png" alt="LaTeX" width="135" height="55"></td>
-<td>Latex from tinytex bundle-2</td>
+<td><a href="https://latex3.github.io/">Latex</a> from <a href="https://github.com/rstudio/tinytex-releases?tab=readme-ov-file#releases">TinyTeX-2 bundle</a></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="navigation" class="level2">
-<h2 class="anchored" data-anchor-id="navigation">Navigation</h2>
-<section id="curriculum" class="level3">
-<h3 class="anchored" data-anchor-id="curriculum">Curriculum</h3>
-<p>The “curriculum” folder contains Quarto documents that we will be following through each day of the workshop. We have dedicated a lot of time already to the documentation of <code>asar</code> and <code>stockplotr</code> so we encourage everyone to visit these sites prior to the workshops.</p>
+<section id="navigation" class="level1">
+<h1>Navigation</h1>
+<section id="curriculum" class="level2">
+<h2 class="anchored" data-anchor-id="curriculum">Curriculum</h2>
+<p>The curriculum is comprised of three days of tutorial-based materials (see the left sidebar for <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html">Day 1</a>, <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html">Day 2</a>, and <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html">Day 3</a> links). We have dedicated a lot of time to the documentation of <code>asar</code> and <code>stockplotr</code>, so we encourage everyone to visit these sites prior to the workshop.</p>
 </section>
-<section id="example" class="level3">
-<h3 class="anchored" data-anchor-id="example">Example</h3>
-<p>The “examples” folder contains multiple examples of a report produced from <code>asar</code> and <code>stockplotr</code> with varying complexities. Feel free to explore these folders and familiarize yourself with the contents generated from these two packages.</p>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<p>The “examples” folder contains multiple examples of reports produced from <code>asar</code> and <code>stockplotr</code> with varying complexities. Feel free to explore these folders and familiarize yourself with the contents generated from these two packages.</p>
 </section>
 </section>
-<section id="format" class="level2">
-<h2 class="anchored" data-anchor-id="format">Format</h2>
+<section id="format" class="level1">
+<h1>Format</h1>
 <p>As of now, we are planning to hold a series of workshops spanning 3 days (Tuesday-Thursday) in 3 hours sessions.</p>
 <p><a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html">Day 1</a>: Learning the foundations of Markdown, Quarto, and the Workflow</p>
 <ul>
@@ -443,6 +440,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Integrating tables and figures into {asar} report</li>
 <li>Making reports accessible</li>
 </ul>
+</section>
+<section id="the-organizers" class="level1">
+<h1>The organizers</h1>
+<p>These workshops are being organized and taught by Workflows team members Sam Schiano and Sophie Breitbart, both of whom are based in OST.</p>
 
 
 </section>

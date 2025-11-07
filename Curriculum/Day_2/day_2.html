@@ -364,27 +364,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#code-of-conduct" id="toc-code-of-conduct" class="nav-link" data-scroll-target="#code-of-conduct">Code of conduct</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#icebreaker" id="toc-icebreaker" class="nav-link" data-scroll-target="#icebreaker">Icebreaker</a></li>
   <li><a href="#materials-for-todays-lesson" id="toc-materials-for-todays-lesson" class="nav-link" data-scroll-target="#materials-for-todays-lesson">Materials for today’s lesson</a></li>
   <li><a href="#how-to-engage-with-us" id="toc-how-to-engage-with-us" class="nav-link" data-scroll-target="#how-to-engage-with-us">How to engage with us</a></li>
-  <li><a href="#icebreaker" id="toc-icebreaker" class="nav-link" data-scroll-target="#icebreaker">Icebreaker</a></li>
+  <li><a href="#brief-qa" id="toc-brief-qa" class="nav-link" data-scroll-target="#brief-qa">Brief Q&amp;A</a></li>
+  </ul></li>
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
   <li><a href="#asar" id="toc-asar" class="nav-link" data-scroll-target="#asar">asar</a>
   <ul class="collapse">
   <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#break" id="toc-break" class="nav-link" data-scroll-target="#break">Break</a></li>
-  </ul></li>
-  <li><a href="#add-screenshot-of-petrale-here" id="toc-add-screenshot-of-petrale-here" class="nav-link" data-scroll-target="#add-screenshot-of-petrale-here">ADD SCREENSHOT OF petrale HERE</a></li>
-  <li><a href="#asar-workflow-complex-example" id="toc-asar-workflow-complex-example" class="nav-link" data-scroll-target="#asar-workflow-complex-example"><code>asar</code> workflow: Complex example</a></li>
-  <li><a href="#rerendering-report" id="toc-rerendering-report" class="nav-link" data-scroll-target="#rerendering-report">Rerendering report</a></li>
-  <li><a href="#calling-previous-report" id="toc-calling-previous-report" class="nav-link" data-scroll-target="#calling-previous-report">Calling previous report</a>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a>
   <ul class="collapse">
+  <li><a href="#recommended-workflow" id="toc-recommended-workflow" class="nav-link" data-scroll-target="#recommended-workflow">Recommended workflow</a></li>
+  <li><a href="#the-main-asar-functions" id="toc-the-main-asar-functions" class="nav-link" data-scroll-target="#the-main-asar-functions">The main <code>asar</code> functions</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#add-screenshot-of-petrale-here" id="toc-add-screenshot-of-petrale-here" class="nav-link" data-scroll-target="#add-screenshot-of-petrale-here">ADD SCREENSHOT OF petrale HERE</a>
+  <ul class="collapse">
+  <li><a href="#asar-workflow-complex-example" id="toc-asar-workflow-complex-example" class="nav-link" data-scroll-target="#asar-workflow-complex-example"><code>asar</code> workflow: Complex example</a></li>
+  </ul></li>
   <li><a href="#qa-session-20-mins" id="toc-qa-session-20-mins" class="nav-link" data-scroll-target="#qa-session-20-mins">Q&amp;A Session (20 mins)</a></li>
   <li><a href="#summary-10-mins" id="toc-summary-10-mins" class="nav-link" data-scroll-target="#summary-10-mins">Summary (10 mins)</a></li>
   <li><a href="#final-reminders" id="toc-final-reminders" class="nav-link" data-scroll-target="#final-reminders">Final Reminders</a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nmfs-ost/workflows-workshop/edit/main/Curriculum/Day_2/day_2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/Curriculum/Day_2/day_2.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -411,16 +414,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="objectives" class="level2">
-<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
 <div class="objectives">
-<pre><code>-   Learn the basics of creating a stock assessment report using `asar`
--   Understand the complexities and customization options of the package
--   Provide time to practice and ask questions</code></pre>
+<ul>
+<li>Learn the basics of creating a stock assessment report using <code>asar</code></li>
+<li>Understand the complexities and customization options of the package</li>
+<li>Provide time to practice and ask questions</li>
+</ul>
 </div>
-</section>
-<section id="code-of-conduct" class="level2">
-<h2 class="anchored" data-anchor-id="code-of-conduct">Code of conduct</h2>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<section id="icebreaker" class="level2">
+<h2 class="anchored" data-anchor-id="icebreaker">Icebreaker</h2>
+<p>Welcome! Please open the <a href="https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.ds1fl2nu2oi5#heading=h.piviu2gu74mf">Day 2 communal notes doc</a> and participate in the icebreaker exercise.## Code of conduct</p>
 <p>Everyone participating in this workshop is required to abide by the terms of our <a href="https://github.com/nmfs-ost/asar/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>. We encourage you to contribute to a positive environment for our community by:</p>
 <ul>
 <li>Demonstrating empathy and kindness toward other people</li>
@@ -455,35 +460,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="how-to-engage-with-us">How to engage with us</h2>
 <p><strong>Questions</strong>: Please raise your hand, or write your question in the chat, at any time. Depending on our schedule, we may ask that you save larger questions for breaks.</p>
 </section>
-<section id="icebreaker" class="level2">
-<h2 class="anchored" data-anchor-id="icebreaker">Icebreaker</h2>
-<p>Welcome! Please open the <a href="https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.ds1fl2nu2oi5#heading=h.piviu2gu74mf">Day 2 communal notes doc</a> and participate in the icebreaker exercise.</p>
-<p>Afterwards, we will use some time to answer any brief questions lingering from yesterday.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Reminder</strong>: For comments or questions, please raise your hand, or write them in the chat, <em>at any time</em>. Depending on our schedule, we may ask that you save larger questions for breaks.</p>
-</div>
-</div>
+<section id="brief-qa" class="level2">
+<h2 class="anchored" data-anchor-id="brief-qa">Brief Q&amp;A</h2>
+<p>You probably have some questions lingering from yesterday. Let us answer them for you!</p>
 </section>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+</section>
+<section id="setup" class="level1">
+<h1>Setup</h1>
 <p>Fork workshop repository – take them through it and explain materials</p>
 </section>
-<section id="asar" class="level2">
-<h2 class="anchored" data-anchor-id="asar">asar</h2>
-<section id="installation" class="level3">
-<h3 class="anchored" data-anchor-id="installation">Installation</h3>
+<section id="asar" class="level1">
+<h1>asar</h1>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
 <p>Attendees of the workshop should have already downloaded this package during day 1. If you have not, please download <code>asar</code> through the following code:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">"nmfs-ost/asar"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">"nmfs-ost/asar"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -499,11 +491,11 @@ Note
 </div>
 </div>
 </section>
-<section id="getting-started" class="level3">
-<h3 class="anchored" data-anchor-id="getting-started">Getting Started</h3>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
 <p>In this section we will cover the basics of <code>asar</code> by generating a blank stock assessement report and going through basic navigation of the template.</p>
-<section id="recommended-workflow" class="level4">
-<h4 class="anchored" data-anchor-id="recommended-workflow">Recommended workflow</h4>
+<section id="recommended-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-workflow">Recommended workflow</h3>
 <p>We <em>highly</em> recommend using a project based workflow meaning creating an R project for each report. This makes returning to your session and maintaining files easier. Using either a project or GitHub repository will help you in the long run.</p>
 <p>To create a new R project in Rstudio:</p>
 <p>File &gt; New Project &gt; New or Existing Directory</p>
@@ -521,13 +513,15 @@ Important
 </div>
 </div>
 </section>
-<section id="our-package" class="level4">
-<h4 class="anchored" data-anchor-id="our-package">Our Package</h4>
+<section id="the-main-asar-functions" class="level3">
+<h3 class="anchored" data-anchor-id="the-main-asar-functions">The main <code>asar</code> functions</h3>
 <p><code>asar</code> revolves around 4 primary functions, but contains a variety of support functions that help make the template. While most of them are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:</p>
-<pre><code>-   `create_template()`
--   `convert_output()`
--   `create_tables_doc()`
--   `create_figures_doc()`</code></pre>
+<ul>
+<li><code>create_template()</code></li>
+<li><code>convert_output()</code></li>
+<li><code>create_tables_doc()</code></li>
+<li><code>create_figures_doc()</code></li>
+</ul>
 <p>** Time to browse documentation? or show info from site? **</p>
 <section id="create_template" class="level5">
 <h5 class="anchored" data-anchor-id="create_template"><code>create_template</code></h5>
@@ -584,19 +578,19 @@ Important
 </tbody>
 </table>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust below example based on audience</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(asar)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">create_template</span>(</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"pdf"</span>, <span class="co"># optional "html"</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"SAR"</span>, <span class="co"># add'l options: "safe", "nemt", "pfmc"</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">office =</span> <span class="st">"NWFSC"</span>,</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">region =</span> <span class="st">"U.S. West Coast"</span>,</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">species =</span> <span class="st">"Petrale sole"</span>,</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">spp_latin =</span> <span class="st">"Eopsetta jordani"</span>,</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">authors =</span> <span class="fu">c</span>(<span class="st">"Samantha Schiano"</span> <span class="ot">=</span> <span class="st">"OST"</span>),</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">file_dir =</span> here<span class="sc">::</span><span class="fu">here</span>()</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust below example based on audience</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(asar)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">create_template</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"pdf"</span>, <span class="co"># optional "html"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"SAR"</span>, <span class="co"># add'l options: "safe", "nemt", "pfmc"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">office =</span> <span class="st">"NWFSC"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">region =</span> <span class="st">"U.S. West Coast"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">species =</span> <span class="st">"Petrale sole"</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">spp_latin =</span> <span class="st">"Eopsetta jordani"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">authors =</span> <span class="fu">c</span>(<span class="st">"Samantha Schiano"</span> <span class="ot">=</span> <span class="st">"OST"</span>),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">file_dir =</span> here<span class="sc">::</span><span class="fu">here</span>()</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>Run it!</strong></p>
 <p>You should see a folder called “<strong>report</strong>” where you indicated in the argument <code>file_dir</code>. It should have a set up that looks like this:</p>
@@ -623,7 +617,8 @@ Note
 </section>
 <section id="lets-take-a-tour-of-the-content-we-created" class="level5">
 <h5 class="anchored" data-anchor-id="lets-take-a-tour-of-the-content-we-created">Let’s take a tour of the content we created!</h5>
-<p><strong>The Skeleton</strong></p>
+<section id="the-skeleton" class="level6">
+<h6 class="anchored" data-anchor-id="the-skeleton">The skeleton</h6>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/asar_skeleton.png" class="img-fluid figure-img"></p>
@@ -631,7 +626,7 @@ Note
 </figure>
 </div>
 <p>As previously mentioned, the skeleton file controls the rest of the report. This is the file you go to to compile your report, change formatting, or add quantities to reference in your document.</p>
-<p>We went over the basics of a Quarto yaml in Day 1, but when using asar, you don’t actually have to fill in anything yourself. The beauty of using asar is that it removes this task, but filling out information provided in the <code>create_template()</code> arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).</p>
+<p>We went over the basics of a Quarto yaml in <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#yaml">Day 1</a>, but when using asar, you don’t actually have to fill in anything yourself. The beauty of using asar is that it removes this task, but filling out information provided in the <code>create_template()</code> arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/asar_yaml.png" class="img-fluid figure-img"></p>
@@ -639,20 +634,26 @@ Note
 </figure>
 </div>
 <p>The YAML controls the following:</p>
-<pre><code>- title
-- authorship
-- formatting
-- rendered file name
-- parameters
-- species cover image
-- bibliography
-- citation style</code></pre>
-<p><strong>Parameterization</strong></p>
+<ul>
+<li>title</li>
+<li>authorship</li>
+<li>formatting</li>
+<li>rendered file name</li>
+<li>parameters</li>
+<li>species cover image</li>
+<li>bibliography</li>
+<li>citation style</li>
+</ul>
+</section>
+<section id="parameterization" class="level6">
+<h6 class="anchored" data-anchor-id="parameterization">Parameterization</h6>
 <p>Quarto has a cool feature that allows users to parameterize their document by utilizing markdown’s ability to render in-line code throughout your writing. In the yaml, there are pre-added parameters of the species, Latin name, region, and office. These are called in through an R chunk after the YAML.</p>
 <p>You have two options for calling these parameters in your writing.</p>
 <pre><code>(1) \` r params$species \` (Quarto parameterization)
 (2) \` r species \` (asar use of parameterization)</code></pre>
-<p><strong>The Preamble</strong></p>
+</section>
+<section id="the-preamble" class="level6">
+<h6 class="anchored" data-anchor-id="the-preamble">The preamble</h6>
 <p>The preamble is an R chunk that loads in a script called “preamble.R” which extracts key quantities commonly referenced in stock assessment reports. This will only work with a standard results file converted using <code>asar::convert_output()</code>, which we will get to shortly.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -672,22 +673,26 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For more information on markdown notation, see Day 1 of this workshop or navigate to <a href="https://nmfs-ost.github.io/asar/articles/markdown_notation.html">our article</a> on the topic!</p>
+<p>For more information on markdown notation, see <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html">Day 1</a> of this workshop or navigate to <a href="https://nmfs-ost.github.io/asar/articles/markdown_notation.html">our article</a> on the topic!</p>
 </div>
 </div>
 <p><strong>Demo of where to find preamble quantities and methods to adding to it</strong></p>
-<p><strong>The Content</strong></p>
+</section>
+<section id="the-content" class="level6">
+<h6 class="anchored" data-anchor-id="the-content">The content</h6>
 <p>The “child docs” are where you as the assessment author or contributor report out the information you need to include. The template is highly modular so there are files for each section of the report and sometimes files for subsections. The default <code>asar</code> template creates child docs following the NOAA standard stock assessment report guidelines consisting of the following:</p>
-<pre><code>- executive summary
-- introduction
-- data
-- assessment (modelling and results)
-- discussion
-- acknowledgements
-- references
-- tables
-- figures
-- appendix</code></pre>
+<ul>
+<li>executive summary</li>
+<li>introduction</li>
+<li>data</li>
+<li>assessment (modelling and results)</li>
+<li>discussion</li>
+<li>acknowledgements</li>
+<li>references</li>
+<li>tables</li>
+<li>figures</li>
+<li>appendix</li>
+</ul>
 <p>Each child doc contains pre-determined headers and labels for the author to reference back to throughout the document. There are also descriptions within each section that depcit what you should report on throughout the document. You can either keep or remove these notes once the document is finished, either way, they will not be included in your final report.</p>
 <p>Child docs are not intended to be rendered on their own, but only from the skeleton as a whole!</p>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -704,12 +709,9 @@ Important
 </div>
 </div>
 <p><strong>Demo of child docs and adding quantities from the preamble into your document</strong></p>
-</section>
-</section>
-</section>
-<section id="break" class="level3">
-<h3 class="anchored" data-anchor-id="break">Break</h3>
 <p><strong>15 minute break</strong></p>
+</section>
+</section>
 <section id="convert_output" class="level5">
 <h5 class="anchored" data-anchor-id="convert_output"><code>convert_output</code></h5>
 <p>Another major component of <code>asar</code> is our converter function which converts an output file from a stock assessment model to a standard format which can be used by the preamble and our other package <code>stockplotr</code>.</p>
@@ -717,16 +719,17 @@ Important
 <p><strong>Let’s try it out!</strong></p>
 <p>We have uploaded an example Report.sso file in the workshop GitHub, but if you have a compatible output file, we encourage you to use your own.</p>
 <div class="cell" data-messages="false">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify output file</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>output_file <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"example_output"</span>, <span class="st">"Report.sso"</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># convert the output</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>petrale <span class="ot">&lt;-</span> asar<span class="sc">::</span><span class="fu">convert_output</span>(output_file)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify output file</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>output_file <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"example_output"</span>, <span class="st">"Report.sso"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># convert the output</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>petrale <span class="ot">&lt;-</span> asar<span class="sc">::</span><span class="fu">convert_output</span>(output_file)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>petrale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>petrale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="section" class="level12">
 <p class="heading"></p>
+</section>
 </section>
 </section>
 </section>
@@ -769,9 +772,8 @@ Note
 </div>
 </div>
 </section>
-</section>
-<section id="asar-workflow-complex-example" class="level1">
-<h1><code>asar</code> workflow: Complex example</h1>
+<section id="asar-workflow-complex-example" class="level3">
+<h3 class="anchored" data-anchor-id="asar-workflow-complex-example"><code>asar</code> workflow: Complex example</h3>
 <ul>
 <li>Customized sections</li>
 <li>Reorganizing section order</li>
@@ -782,25 +784,28 @@ Note
 </ul></li>
 </ul>
 <p><strong>15 min break</strong></p>
+<section id="rerendering-report" class="level4">
+<h4 class="anchored" data-anchor-id="rerendering-report">Rerendering report</h4>
 </section>
-<section id="rerendering-report" class="level1">
-<h1>Rerendering report</h1>
+<section id="calling-previous-report" class="level4">
+<h4 class="anchored" data-anchor-id="calling-previous-report">Calling previous report</h4>
 </section>
-<section id="calling-previous-report" class="level1">
-<h1>Calling previous report</h1>
-<section id="qa-session-20-mins" class="level2">
-<h2 class="anchored" data-anchor-id="qa-session-20-mins">Q&amp;A Session (20 mins)</h2>
 </section>
-<section id="summary-10-mins" class="level2">
-<h2 class="anchored" data-anchor-id="summary-10-mins">Summary (10 mins)</h2>
 </section>
-<section id="final-reminders" class="level2">
-<h2 class="anchored" data-anchor-id="final-reminders">Final Reminders</h2>
-<pre><code>- We will be holding office hours tomorrow 30 minutes before the next session starts for any questions.
-- Feel free to practice some more tonight and come tomorrow with any questions you may have.</code></pre>
+<section id="qa-session-20-mins" class="level1">
+<h1>Q&amp;A Session (20 mins)</h1>
+</section>
+<section id="summary-10-mins" class="level1">
+<h1>Summary (10 mins)</h1>
+</section>
+<section id="final-reminders" class="level1">
+<h1>Final Reminders</h1>
+<ul>
+<li>We will be holding office hours tomorrow 30 minutes before the next session starts for any questions.</li>
+<li>Feel free to practice some more tonight and come tomorrow with any questions you may have.</li>
+</ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
