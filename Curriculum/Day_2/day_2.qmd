@@ -3,15 +3,16 @@ title: "Day 2"
 format: html
 ---
 
-## Objectives
-
 ::: objectives
-    -   Learn the basics of creating a stock assessment report using `asar`
-    -   Understand the complexities and customization options of the package
-    -   Provide time to practice and ask questions
+-   Learn the basics of creating a stock assessment report using `asar`
+-   Understand the complexities and customization options of the package
+-   Provide time to practice and ask questions
 :::
 
-## Code of conduct
+# Introduction
+## Icebreaker
+
+Welcome! Please open the [Day 2 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.ds1fl2nu2oi5#heading=h.piviu2gu74mf) and participate in the icebreaker exercise.## Code of conduct
 
 Everyone participating in this workshop is required to abide by the terms of our [Code of Conduct](https://github.com/nmfs-ost/asar/blob/main/CODE_OF_CONDUCT.md). We encourage you to contribute to a positive environment for our community by:
 
@@ -39,23 +40,17 @@ If you believe that someone is in violation of the Code of Conduct, please repor
 
 **Questions**: Please raise your hand, or write your question in the chat, at any time. Depending on our schedule, we may ask that you save larger questions for breaks.
 
-## Icebreaker
+## Brief Q&A
 
-Welcome! Please open the [Day 2 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.ds1fl2nu2oi5#heading=h.piviu2gu74mf) and participate in the icebreaker exercise.
+You probably have some questions lingering from yesterday. Let us answer them for you!
 
-Afterwards, we will use some time to answer any brief questions lingering from yesterday.
-
-::: {.callout-tip}
-**Reminder**: For comments or questions, please raise your hand, or write them in the chat, *at any time*. Depending on our schedule, we may ask that you save larger questions for breaks.
-:::
-
-## Setup
+# Setup
 
 Fork workshop repository -- take them through it and explain materials
 
-## asar
+# asar
 
-### Installation
+## Installation
 
 Attendees of the workshop should have already downloaded this package during day 1. If you have not, please 
 download `asar` through the following code:
@@ -71,12 +66,11 @@ If you receive an error message when attempting the download the package, please
 alternative directions or see the README on the [`asar` repository](https://github.com/nmfs-ost/asar).
 :::
 
-### Getting Started
+## Getting Started
 
-In this section we will cover the basics of `asar` by generating a blank stock assessement report and 
-going through basic navigation of the template.
+In this section we will cover the basics of `asar` by generating a blank stock assessement report and going through basic navigation of the template.
 
-#### Recommended workflow
+### Recommended workflow
 
 We *highly* recommend using a project based workflow meaning creating an R project for each report.
 This makes returning to your session and maintaining files easier. Using either a project or GitHub
@@ -90,16 +84,14 @@ File > New Project > New or Existing Directory
 If you use VSCode or Positron for your IDE, by navigating to a folder on your computer, it will automatically initialize a project-like environment.
 :::
 
-#### Our Package
+### The main `asar` functions
 
-`asar` revolves around 4 primary functions, but contains a variety of support functions that help
-make the template. While most of them are accessible to the user, they would not perform helpful
-functions for them. We will be going over the following functions:
+`asar` revolves around 4 primary functions, but contains a variety of support functions that help make the template. While most of them are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:
 
-    -   `create_template()`
-    -   `convert_output()`
-    -   `create_tables_doc()`
-    -   `create_figures_doc()`
+- `create_template()`
+- `convert_output()`
+- `create_tables_doc()`
+- `create_figures_doc()`
     
 ** Time to browse documentation? or show info from site? **
 
@@ -169,7 +161,7 @@ that it worked! For a blank template with no errors, it should look like this:
 
 ##### Let's take a tour of the content we created!
 
-**The Skeleton**
+###### The skeleton
 
 ![Diagram showing different blocks of content found in the Quarto yaml within the skeleton.qmd file.](images/asar_skeleton.png)
 
@@ -177,22 +169,22 @@ As previously mentioned, the skeleton file controls the rest of the report. This
 is the file you go to to compile your report, change formatting, or add quantities
 to reference in your document.
 
-We went over the basics of a Quarto yaml in Day 1, but when using asar, you don't actually have to fill in anything yourself. The beauty of using asar is that it removes this task, but filling out information provided in the `create_template()` arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).
+We went over the basics of a Quarto yaml in [Day 1](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#yaml), but when using asar, you don't actually have to fill in anything yourself. The beauty of using asar is that it removes this task, but filling out information provided in the `create_template()` arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).
 
 !['asar' yaml controlling formatting and basic document information.](images/asar_yaml.png)
 
 The YAML controls the following:
 
-    - title
-    - authorship
-    - formatting
-    - rendered file name
-    - parameters
-    - species cover image
-    - bibliography
-    - citation style
+- title
+- authorship
+- formatting
+- rendered file name
+- parameters
+- species cover image
+- bibliography
+- citation style
 
-**Parameterization**
+###### Parameterization
 
 Quarto has a cool feature that allows users to parameterize their document by utilizing markdown's ability to render in-line code throughout your writing. In the yaml, there are pre-added parameters of the species, Latin name, region, and office. These are called in through an R chunk after the YAML.
 
@@ -202,7 +194,7 @@ You have two options for calling these parameters in your writing.
     (2) \` r species \` (asar use of parameterization)
 
 
-**The Preamble**
+###### The preamble
 
 The preamble is an R chunk that loads in a script called "preamble.R" which extracts key quantities commonly referenced in stock assessment reports. This will only work with a standard results file converted using `asar::convert_output()`, which we will get to shortly.
 
@@ -213,25 +205,25 @@ The quantities in found in this chunk can be referenced in-line throughout the d
 \` r R0 \`
 
 ::: {.callout-note}
-For more information on markdown notation, see Day 1 of this workshop or navigate to [our article](https://nmfs-ost.github.io/asar/articles/markdown_notation.html) on the topic!
+For more information on markdown notation, see [Day 1](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html) of this workshop or navigate to [our article](https://nmfs-ost.github.io/asar/articles/markdown_notation.html) on the topic!
 :::
 
 **Demo of where to find preamble quantities and methods to adding to it**
 
-**The Content**
+###### The content
 
 The "child docs" are where you as the assessment author or contributor report out the information you need to include. The template is highly modular so there are files for each section of the report and sometimes files for subsections. The default `asar` template creates child docs following the NOAA standard stock assessment report guidelines consisting of the following:
 
-    - executive summary
-    - introduction
-    - data
-    - assessment (modelling and results)
-    - discussion
-    - acknowledgements
-    - references
-    - tables
-    - figures
-    - appendix
+- executive summary
+- introduction
+- data
+- assessment (modelling and results)
+- discussion
+- acknowledgements
+- references
+- tables
+- figures
+- appendix
 
 Each child doc contains pre-determined headers and labels for the author to reference back to throughout the document. There are also descriptions within each section that depcit what you should report on throughout the document. You can either keep or remove these notes once the document is finished, either way, they will not be included in your final report.
 
@@ -242,8 +234,6 @@ We are advising everyone that if required content is needed beyond the standard 
 :::
 
 **Demo of child docs and adding quantities from the preamble into your document**
-
-### Break
 
 **15 minute break**
 
@@ -293,7 +283,7 @@ The converted output is a tibble that reframes and reshapes your data. The tibbl
 For more information, navigate to [this article](https://nmfs-ost.github.io/asar/articles/convert_output_details.html) describing the conversion process and find ways your can convert your model's data!
 :::
 
-# `asar` workflow: Complex example
+### `asar` workflow: Complex example
 
 - Customized sections
 - Reorganizing section order
@@ -303,15 +293,15 @@ For more information, navigate to [this article](https://nmfs-ost.github.io/asar
 
 **15 min break**
 
-# Rerendering report
+#### Rerendering report
 
-# Calling previous report
+#### Calling previous report
 
-## Q&A Session (20 mins)
+# Q&A Session (20 mins)
 
-## Summary (10 mins)
+# Summary (10 mins)
 
-## Final Reminders
+# Final Reminders
 
-    - We will be holding office hours tomorrow 30 minutes before the next session starts for any questions.
-    - Feel free to practice some more tonight and come tomorrow with any questions you may have.
+- We will be holding office hours tomorrow 30 minutes before the next session starts for any questions.
+- Feel free to practice some more tonight and come tomorrow with any questions you may have.

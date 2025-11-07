@@ -15,29 +15,29 @@ Currently, we are coordinating with our NOAA Fisheries Regional Science Centers 
 :::
 
 
-## Background
+# Background
 
-The workflows of stock assessment scientists across the U.S. are highly variable and all consistently face similar issues including lack of automation, challenging data wrangling, increased requests for analyses, and more. A team with the National Stock Assessment Program at NOAA Fisheries HQ set about addressing some of these needs by identifying parts of the workflow scientists needed help in. While there were needs to improve parts of the workflow at every step, the team and a steering committee decided to first approach the lowest hanging fruit, reporting. The goal of this project was to establish a semi-automated system for generating reports in order to reduce time completing mundane and tedious tasks that, with some effort, could be automated. From there, `asar` and `stockplotr` were built along with beginning to establish a standard set of guidelines for stock assessment reports.
+The workflows of stock assessment scientists across the U.S. are highly variable and all consistently face similar issues including lack of automation, challenging data wrangling, increased requests for analyses, and more. A team with the National Stock Assessment Program at NOAA Fisheries HQ set about addressing some of these needs by identifying parts of the workflow scientists needed help in. While there were needs to improve parts of the workflow at every step, the team and a steering committee decided to first approach the lowest hanging fruit, reporting. The goal of this project was to establish a semi-automated system for generating reports in order to reduce time completing mundane and tedious tasks that, with some effort, could be automated. From there, [`asar`](https://github.com/nmfs-ost/asar) and [`stockplotr`](https://github.com/nmfs-ost/stockplotr) were built along with beginning to establish a standard set of guidelines for stock assessment reports.
 
-## System Requirements
+# System Requirements
 
 | Program | Version |
 |---------|---------|
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rstudio/rstudio-original.svg" alt="Rstudio" width="55" height="55"/> | R version ? |
-| <img src="https://rstudio.github.io/cheatsheets/html/images/logo-quarto.png" alt="Quarto" width="50" height="55"/> | Quarto v1.6+ |
-| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaTeX_logo.svg/1200px-LaTeX_logo.svg.png" alt="LaTeX" width="135" height="55"/> | Latex from tinytex bundle-2 |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rstudio/rstudio-original.svg" alt="Rstudio" width="55" height="55"/> | [R](https://www.r-project.org/d) version ? |
+| <img src="https://rstudio.github.io/cheatsheets/html/images/logo-quarto.png" alt="Quarto" width="50" height="55"/> | [Quarto](https://quarto.org/docs/get-started/) v1.6+ |
+| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaTeX_logo.svg/1200px-LaTeX_logo.svg.png" alt="LaTeX" width="135" height="55"/> | [Latex](https://latex3.github.io/) from [TinyTeX-2 bundle](https://github.com/rstudio/tinytex-releases?tab=readme-ov-file#releases) |
 
-## Navigation
+# Navigation
 
-### Curriculum
+## Curriculum
 
-The "curriculum" folder contains Quarto documents that we will be following through each day of the workshop. We have dedicated a lot of time already to the documentation of `asar` and `stockplotr` so we encourage everyone to visit these sites prior to the workshops.
+The curriculum is comprised of three days of tutorial-based materials (see the left sidebar for [Day 1](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html), [Day 2](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html), and [Day 3](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html) links). We have dedicated a lot of time to the documentation of `asar` and `stockplotr`, so we encourage everyone to visit these sites prior to the workshop.
 
-### Example
+## Example
 
-The "examples" folder contains multiple examples of a report produced from `asar` and `stockplotr` with varying complexities. Feel free to explore these folders and familiarize yourself with the contents generated from these two packages.
+The "examples" folder contains multiple examples of reports produced from `asar` and `stockplotr` with varying complexities. Feel free to explore these folders and familiarize yourself with the contents generated from these two packages.
 
-## Format
+# Format
 
 As of now, we are planning to hold a series of workshops spanning 3 days (Tuesday-Thursday) in 3 hours sessions. 
 
@@ -59,4 +59,6 @@ As of now, we are planning to hold a series of workshops spanning 3 days (Tuesda
   - Integrating tables and figures into {asar} report
   - Making reports accessible
 
+# The organizers
 
+These workshops are being organized and taught by Workflows team members Sam Schiano and Sophie Breitbart, both of whom are based in OST.
