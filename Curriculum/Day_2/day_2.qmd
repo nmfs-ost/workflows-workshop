@@ -6,13 +6,15 @@ format: html
 ::: objectives
 -   Learn the basics of creating a stock assessment report using `asar`
 -   Understand the complexities and customization options of the package
--   Provide time to practice and ask questions
+-   Practice using `asar` and ask questions
 :::
 
 # Introduction
 ## Icebreaker
 
-Welcome! Please open the [Day 2 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.ds1fl2nu2oi5#heading=h.piviu2gu74mf) and participate in the icebreaker exercise.## Code of conduct
+Welcome! Please open the [Day 2 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.ds1fl2nu2oi5#heading=h.piviu2gu74mf) and participate in the icebreaker exercise.
+
+## Code of conduct
 
 Everyone participating in this workshop is required to abide by the terms of our [Code of Conduct](https://github.com/nmfs-ost/asar/blob/main/CODE_OF_CONDUCT.md). We encourage you to contribute to a positive environment for our community by:
 
@@ -48,7 +50,7 @@ You probably have some questions lingering from yesterday. Let us answer them fo
 
 Fork workshop repository -- take them through it and explain materials
 
-# asar
+# `asar`: Automated Stock Assessment Reporting
 
 ## Installation
 
@@ -95,7 +97,7 @@ If you use VSCode or Positron for your IDE, by navigating to a folder on your co
     
 ** Time to browse documentation? or show info from site? **
 
-##### `create_template`
+#### `create_template()`
 
 **What it does:**
 
@@ -190,8 +192,8 @@ Quarto has a cool feature that allows users to parameterize their document by ut
 
 You have two options for calling these parameters in your writing.
 
-    (1) \` r params$species \` (Quarto parameterization)
-    (2) \` r species \` (asar use of parameterization)
+1. \` r params$species \` (Quarto parameterization)
+2. \` r species \` (`asar` use of parameterization)
 
 
 ###### The preamble
@@ -237,7 +239,7 @@ We are advising everyone that if required content is needed beyond the standard 
 
 **15 minute break**
 
-##### `convert_output`
+#### `convert_output()`
 
 Another major component of `asar` is our converter function which converts an output file from a stock assessment model to a standard format which can be used by the preamble and our other package `stockplotr`. 
 
@@ -272,7 +274,7 @@ petrale
 If you are explicitly stating fleet names, make sure they are in the order you expect them to be found in the file.
 :::
 
-###### Format of converted output
+##### Format of converted output
 
 The converted output is a tibble that reframes and reshapes your data. The tibble contains each output value as a row with its error and any associated indexing values.\
 

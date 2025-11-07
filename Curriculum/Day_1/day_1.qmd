@@ -49,7 +49,7 @@ Sam Schiano and Sophie Breitbart are contractors with ECS Federal working in sup
 
 Now, open up a JupyterHub session.
 
-* Break for questions *
+**Break for questions**
 
 ## Workshop overview
 ### Purpose and benefits to you
