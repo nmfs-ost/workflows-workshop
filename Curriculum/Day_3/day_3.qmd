@@ -66,18 +66,33 @@ If you have already converted your output: great! Import it into your R environm
 
 # Integrating stockplotr in the workflows
 
-## `asar::create_tables_doc`
+After running `create_template()`, blank figures and tables quarto files are created (probably something like '08_tables.qmd' and '09_figures.qmd', though the prefix numbers may vary). Each contain a statement referring you to {stockplotr} to add pre-made tables and figures. Since we've created figures and tables already, now let's cover how to add your own tables to the document.
 
-After running `create_template()`, a blank tables quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made tables. You will learn more of that tomorrow, but for now we are going to go over how you add your own tables to the document.
+You can add your figures and tables with two workflows:
 
-Steps for adding a table:
+1. Rerunning `asar::create_tables_doc()` and `asar::create_figures_doc()` with arguments that allow R to find your tables and figures, then place them into the respective tables and figures docs automatically
+2. Add your tables and figures manually to each doc
 
-    1. Create a code chunk
-    2. Add your label and other options
-    3. Add code
-    4. Write caption
+## Option 1: Rerunning `asar::create_tables_doc()`/`asar::create_figures_doc()`
 
-**Add a code chunk for each table**
+### Tables
+
+### Figures
+
+
+
+## Option 2: Manually adding tables/figures
+
+To add a table/figure manually, here are the main steps:
+
+1. Create a code chunk
+2. Add your label and other options
+3. Add code
+4. Write caption
+
+### Tables
+
+**Add a code chunk for each plot**
 
 ```{r}
 #| label: tbl-example
@@ -91,12 +106,13 @@ head(petrale) |>
 ```
 
 ::: {.callout-tip}
-It will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!
+It will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility in a few moments!
 :::
 
-### Non-code Tables
 
-In the case you have made a table not using code, you can add it as an image. While this is not generally recommended since it significaly reduces the accessibility of your table, we understand that sometimes this is the only format you have it in.
+#### Non-code Tables
+
+In the case you have made a table not using code, you can add it as an image. While this is not generally recommended since it significantly reduces the accessibility of your table, we understand that sometimes this is the only format you have it in.
 
 Use the following notation to reference an external table as an image:
 
@@ -106,16 +122,16 @@ Use the following notation to reference an external table as an image:
 Notice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. Please make sure you add alternative text for tables added in this way.
 :::
 
-## `asar::create_figures_doc`
+### Figures
 
 Like with our tables file, a blank figures quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made figures.
 
 Steps for adding a figure:
 
-    1. Create a code chunk
-    2. Add your label and other options
-    3. Add code
-    4. Write caption and **alternative text**
+1. Create a code chunk
+2. Add your label and other options
+3. Add code
+4. Write caption and **alternative text**
 
 [**Highlight the difference with a figure needing alternative text**]
 
@@ -131,17 +147,14 @@ Steps for adding a figure:
 plot(cars$speed, cars$dist)
 ```
 
-::: {.callout-tip}
-It will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!
-:::
 
-###### Non-code Figures
+### Non-code Figures
 
 Like tables, you can reference figures not made directly in code chunks. However, in this case, this does not change the accessibility of the figure as much because you as the user can still add the necessary components to meet section 508 standards.
 
 `![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}`
 
-##### Referencing your tables or figures in text
+## Referencing your tables or figures in text
 
 Quarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:
 
@@ -155,7 +168,7 @@ By adding an @ symbol followed by the chunk label or just label of your table/fi
 
 Render your entire document and take a look at what we've made today.
 
-## Adding accessibility
+# Adding accessibility features
 
 
 
