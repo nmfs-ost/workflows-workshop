@@ -31,19 +31,19 @@ website:
     collapse-level: 1
     contents:
       - href: index.qmd
-        text: Home
+        text: "Home"
       - href: resources/terminology.md
-        text: Terminology
+        text: "Terminology"
       - href: resources/good_practices.qmd
-        text: Good data science practices
+        text: "Good data science practices"
       - href: resources/local_session_info.qmd
-        text: Setting up a local session
+        text: "Setting up a local session"
       - href: Curriculum/Day_1/day_1.qmd
-        text: Day 1: General
+        text: "Day 1: General"
       - href: Curriculum/Day_2/day_2.qmd
-        text: Day 2: asar
+        text: "Day 2: asar"
       - href: Curriculum/Day_3/day_3.qmd
-        text: Day 3: stockplotr + asar
+        text: "Day 3: stockplotr + asar"
 
 
 format:
