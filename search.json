@@ -16,7 +16,7 @@
     "section": "",
     "text": "Work through a guided demo of a more complex asar workflow\nLearn about the value of the stockplotr R package\nUnderstand how to integrate stockplotr into an asar-based reporting workflow\nWork through a guided demo of a basic stockplotr workflow",
     "crumbs": [
-      "Day 3"
+      "Day 3: stockplotr + asar"
     ]
   },
   {
@@ -26,7 +26,7 @@
     "section": "Icebreaker",
     "text": "Icebreaker\nWelcome! Please open the Day 3 communal notes doc and participate in the icebreaker exercise.\n\n\n\n\n\n\nTip\n\n\n\nReminder: For comments or questions, please raise your hand, or write them in the chat, at any time. Depending on our schedule, we may ask that you save larger questions for breaks.",
     "crumbs": [
-      "Day 3"
+      "Day 3: stockplotr + asar"
     ]
   },
   {
@@ -36,7 +36,7 @@
     "section": "Installation",
     "text": "Installation\n\n\n\n\n\n\nTipTip\n\n\n\nThe following packages are already installed in the asar workspace on JupyterHub, so if you are using that space, you can skip this section.\n\n\ninstall.packages(\"pak\")\npak::pak(\"nmfs-ost/asar\")\npak::pak(\"nmfs-ost/stockplotr\")\nPlease see the stockplotr README for more installation options.",
     "crumbs": [
-      "Day 3"
+      "Day 3: stockplotr + asar"
     ]
   },
   {
@@ -46,7 +46,7 @@
     "section": "stockplotr workflow: Basic example",
     "text": "stockplotr workflow: Basic example\n\nConvert output (if necessary)\nFirst, you’ll need to convert your model results using the same workflow covered yesterday: asar::convert_output().\nYou can use the example Report.sso file uploaded to the workshop GitHub or, if you have a compatible output file, your own.\n\n# Identify output file\noutput_file &lt;- here::here(\"example_output\", \"Report.sso\")\n# convert the output\npetrale &lt;- asar::convert_output(output_file)\n\nIf you have already converted your output: great! Import it into your R environment so that you can handle it as an object like “petrale” in the chunk above.\n\n\nCreate single plots\n\nExport single plots\nCreate and export all plots\nHow to customize (changing color palette, etc.)",
     "crumbs": [
-      "Day 3"
+      "Day 3: stockplotr + asar"
     ]
   },
   {
@@ -56,7 +56,7 @@
     "section": "asar::create_tables_doc",
     "text": "asar::create_tables_doc\nAfter running create_template(), a blank tables quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made tables. You will learn more of that tomorrow, but for now we are going to go over how you add your own tables to the document.\nSteps for adding a table:\n1. Create a code chunk\n2. Add your label and other options\n3. Add code\n4. Write caption\nAdd a code chunk for each table\n\n\n\nTable 1: This is my caption for the example table.\n\n\nhead(petrale) |&gt;\n    dplyr::select(label, year, estimate) |&gt;\n    flextable::flextable()\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nIt will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!\n\n\n\nNon-code Tables\nIn the case you have made a table not using code, you can add it as an image. While this is not generally recommended since it significaly reduces the accessibility of your table, we understand that sometimes this is the only format you have it in.\nUse the following notation to reference an external table as an image:\n![Caption for my example table](example_table.png){fig-alt=\"This is the alternative text for my table\", #tbl-example}\n\n\n\n\n\n\nNote\n\n\n\nNotice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. Please make sure you add alternative text for tables added in this way.",
     "crumbs": [
-      "Day 3"
+      "Day 3: stockplotr + asar"
     ]
   },
   {
@@ -66,7 +66,7 @@
     "section": "asar::create_figures_doc",
     "text": "asar::create_figures_doc\nLike with our tables file, a blank figures quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made figures.\nSteps for adding a figure:\n1. Create a code chunk\n2. Add your label and other options\n3. Add code\n4. Write caption and **alternative text**\n[Highlight the difference with a figure needing alternative text]\nAdd a code chunk for each table\n\nplot(cars$speed, cars$dist)\n\n\n\n\n\n\n\nTip\n\n\n\nIt will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!\n\n\n\nNon-code Figures\nLike tables, you can reference figures not made directly in code chunks. However, in this case, this does not change the accessibility of the figure as much because you as the user can still add the necessary components to meet section 508 standards.\n![Caption for my example figure](example_figure.png){fig-alt=\"This is the alternative text for my figure\", #fig-example}\n\n\nReferencing your tables or figures in text\nQuarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:\n“@tbl-example” or “@fig-example”\nBy adding an @ symbol followed by the chunk label or just label of your table/figure will create an interactive link that lets the reader navigate to that specific table/figure.\n[Show working example within positron]\nPut it all together!\nRender your entire document and take a look at what we’ve made today.",
     "crumbs": [
-      "Day 3"
+      "Day 3: stockplotr + asar"
     ]
   },
   {
@@ -76,7 +76,7 @@
     "section": "Adding accessibility",
     "text": "Adding accessibility",
     "crumbs": [
-      "Day 3"
+      "Day 3: stockplotr + asar"
     ]
   },
   {
@@ -165,7 +165,7 @@
     "section": "",
     "text": "Learn the basics of creating a stock assessment report using asar\nUnderstand the complexities and customization options of the package\nPractice using asar and ask questions",
     "crumbs": [
-      "Day 2"
+      "Day 2: asar"
     ]
   },
   {
@@ -175,7 +175,7 @@
     "section": "Icebreaker",
     "text": "Icebreaker\nWelcome! Please open the Day 2 communal notes doc and participate in the icebreaker exercise.",
     "crumbs": [
-      "Day 2"
+      "Day 2: asar"
     ]
   },
   {
@@ -185,7 +185,7 @@
     "section": "Code of conduct",
     "text": "Code of conduct\nEveryone participating in this workshop is required to abide by the terms of our Code of Conduct. We encourage you to contribute to a positive environment for our community by:\n\nDemonstrating empathy and kindness toward other people\nBeing respectful of differing opinions, viewpoints, and experiences\nGiving and gracefully accepting constructive feedback\nAccepting responsibility and apologizing to those affected by our mistakes, and learning from the experience\nFocusing on what is best not just for us as individuals, but for the overall community\n\nIf you believe that someone is in violation of the Code of Conduct, please report the incident to our community leaders responsible for enforcement using this form.",
     "crumbs": [
-      "Day 2"
+      "Day 2: asar"
     ]
   },
   {
@@ -195,7 +195,7 @@
     "section": "Materials for today’s lesson",
     "text": "Materials for today’s lesson\n\nDay 2 communal notes doc\n\nContains areas for taking notes, definitions for jargon, and resources (from us and you!)\n\nJupyterHub workshop server\n\nEnvironment where you can code along with us, if you’d prefer\nAll necessary packages are already installed\nUsername: your email\nPassword: ask us\n\nSample data\n\nSample model output data for coding demonstrations",
     "crumbs": [
-      "Day 2"
+      "Day 2: asar"
     ]
   },
   {
@@ -205,7 +205,7 @@
     "section": "How to engage with us",
     "text": "How to engage with us\nQuestions: Please raise your hand, or write your question in the chat, at any time. Depending on our schedule, we may ask that you save larger questions for breaks.",
     "crumbs": [
-      "Day 2"
+      "Day 2: asar"
     ]
   },
   {
@@ -215,7 +215,7 @@
     "section": "Brief Q&A",
     "text": "Brief Q&A\nYou probably have some questions lingering from yesterday. Let us answer them for you!",
     "crumbs": [
-      "Day 2"
+      "Day 2: asar"
     ]
   },
   {
@@ -225,7 +225,7 @@
     "section": "Installation",
     "text": "Installation\nAttendees of the workshop should have already downloaded this package during day 1. If you have not, please download asar through the following code:\n\npak::pak(\"nmfs-ost/asar\")\n\n\n\n\n\n\n\nNote\n\n\n\nIf you receive an error message when attempting the download the package, please ask the isntructor for alternative directions or see the README on the asar repository.",
     "crumbs": [
-      "Day 2"
+      "Day 2: asar"
     ]
   },
   {
@@ -235,7 +235,7 @@
     "section": "Getting Started",
     "text": "Getting Started\nIn this section we will cover the basics of asar by generating a blank stock assessement report and going through basic navigation of the template.\n\nRecommended workflow\nWe highly recommend using a project based workflow meaning creating an R project for each report. This makes returning to your session and maintaining files easier. Using either a project or GitHub repository will help you in the long run.\nTo create a new R project in Rstudio:\nFile &gt; New Project &gt; New or Existing Directory\n\n\n\n\n\n\nImportant\n\n\n\nIf you use VSCode or Positron for your IDE, by navigating to a folder on your computer, it will automatically initialize a project-like environment.\n\n\n\n\nThe main asar functions\nasar revolves around 4 primary functions, but contains a variety of support functions that help make the template. While most of them are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:\n\ncreate_template()\nconvert_output()\ncreate_tables_doc()\ncreate_figures_doc()\n\n** Time to browse documentation? or show info from site? **\n\ncreate_template()\nWhat it does:\nGenerates a set of files that setup a stock assessment report with its supporting files.\nWithin the created files is the “skeleton file” which drives the render of the entire report. For those familiar with Rmarkdown or Quarto books, this is operating similar to a .yml file. The other quarto files found in your folder will be what we refer to as “child documents”, or child docs for short. These are the actual files that you will fill in when writing your report. These are the bulk of your content!\nTry it out!\ncreate_template() contains A LOT of arguments that allow the user to customize their document how they want. The function contains a set of defaults that would produce a template that could be rendered, but contains no real information relevant to the target stock.\nSo, let’s do more than just create a blank template! The following arguments are some key parts to fill in for a specific stock assessment report:\n\n\n\nArgument\nOptions\n\n\n\n\nformat\npdf, html\n\n\ntype\nSAR, pfmc, safe\n\n\noffice\nafsc, pifsc, nefsc, nwfsc sefsc, swfsc\n\n\nregion\n-\n\n\nspecies\n-\n\n\nspp_latin\n-\n\n\nyear\n-\n\n\nauthors\n-\n\n\nfile_dir\n-\n\n\n\n\n# Adjust below example based on audience\nlibrary(asar)\nlibrary(here)\ncreate_template(\n  format = \"pdf\", # optional \"html\"\n  type = \"SAR\", # add'l options: \"safe\", \"nemt\", \"pfmc\"\n  office = \"NWFSC\",\n  region = \"U.S. West Coast\",\n  species = \"Petrale sole\",\n  spp_latin = \"Eopsetta jordani\",\n  authors = c(\"Samantha Schiano\" = \"OST\"),\n  file_dir = here::here()\n)\n\nRun it!\nYou should see a folder called “report” where you indicated in the argument file_dir. It should have a set up that looks like this:\n\n\n\nThe contents of an asar generated template found in the report folder.\n\n\n\n\n\n\n\n\nNote\n\n\n\nYou should see a variety of messaged reported in the console to indicate that it worked! For a blank template with no errors, it should look like this:\n\n\n\n\nLet’s take a tour of the content we created!\n\nThe skeleton\n\n\n\nDiagram showing different blocks of content found in the Quarto yaml within the skeleton.qmd file.\n\n\nAs previously mentioned, the skeleton file controls the rest of the report. This is the file you go to to compile your report, change formatting, or add quantities to reference in your document.\nWe went over the basics of a Quarto yaml in Day 1, but when using asar, you don’t actually have to fill in anything yourself. The beauty of using asar is that it removes this task, but filling out information provided in the create_template() arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).\n\n\n\n‘asar’ yaml controlling formatting and basic document information.\n\n\nThe YAML controls the following:\n\ntitle\nauthorship\nformatting\nrendered file name\nparameters\nspecies cover image\nbibliography\ncitation style\n\n\n\nParameterization\nQuarto has a cool feature that allows users to parameterize their document by utilizing markdown’s ability to render in-line code throughout your writing. In the yaml, there are pre-added parameters of the species, Latin name, region, and office. These are called in through an R chunk after the YAML.\nYou have two options for calling these parameters in your writing.\n\n` r params$species ` (Quarto parameterization)\n` r species ` (asar use of parameterization)\n\n\n\nThe preamble\nThe preamble is an R chunk that loads in a script called “preamble.R” which extracts key quantities commonly referenced in stock assessment reports. This will only work with a standard results file converted using asar::convert_output(), which we will get to shortly.\n\n\n\nA screenshot showing lines of code in an R chunk within the skeleton file containing various quantities pulled from the preamble.R script.\n\n\nThe quantities in found in this chunk can be referenced in-line throughout the document:\n` r R0 `\n\n\n\n\n\n\nNote\n\n\n\nFor more information on markdown notation, see Day 1 of this workshop or navigate to our article on the topic!\n\n\nDemo of where to find preamble quantities and methods to adding to it\n\n\nThe content\nThe “child docs” are where you as the assessment author or contributor report out the information you need to include. The template is highly modular so there are files for each section of the report and sometimes files for subsections. The default asar template creates child docs following the NOAA standard stock assessment report guidelines consisting of the following:\n\nexecutive summary\nintroduction\ndata\nassessment (modelling and results)\ndiscussion\nacknowledgements\nreferences\ntables\nfigures\nappendix\n\nEach child doc contains pre-determined headers and labels for the author to reference back to throughout the document. There are also descriptions within each section that depcit what you should report on throughout the document. You can either keep or remove these notes once the document is finished, either way, they will not be included in your final report.\nChild docs are not intended to be rendered on their own, but only from the skeleton as a whole!\n\n\n\n\n\n\nImportant\n\n\n\nWe are advising everyone that if required content is needed beyond the standard guidelines, that it gets placed in the appendix; however we encourage everyone to think about the importance of the content in terms of review for management versus CIE or SSC review.\n\n\nDemo of child docs and adding quantities from the preamble into your document\n15 minute break\n\n\n\n\nconvert_output()\nAnother major component of asar is our converter function which converts an output file from a stock assessment model to a standard format which can be used by the preamble and our other package stockplotr.\nThe convert_output function currently accepts output from Stock Synthesis (Report.sso) version 3.30 and higher, Beaufort Assessment Model (BAM; output.rda), or Fishereies Integrated Modelling System (FIMS; R object). We are actively working on expanding the convert_output function to be compatiable with all major U.S. stock assessment models. This function takes a lot of resources to develop, so any contribution to the package is welcome! If you have a model that is not currently compatible with asar::convert_output(), please navigate to our article describing the function and how to get your output in the same format as those produced from the converter!\nLet’s try it out!\nWe have uploaded an example Report.sso file in the workshop GitHub, but if you have a compatible output file, we encourage you to use your own.\n\n# Identify output file\noutput_file &lt;- here::here(\"example_output\", \"Report.sso\")\n# convert the output\npetrale &lt;- asar::convert_output(output_file)\n\n\npetrale",
     "crumbs": [
-      "Day 2"
+      "Day 2: asar"
     ]
   },
   {
@@ -245,7 +245,7 @@
     "section": "",
     "text": "Identify purpose and scope of workshop\nLearn how R markdown can be used to enhance asar reports\nUnderstand how Quarto is used to structure an asar report\nInstall software necessary to build an asar report",
     "crumbs": [
-      "Day 1"
+      "Day 1: General"
     ]
   },
   {
@@ -255,7 +255,7 @@
     "section": "Icebreaker",
     "text": "Icebreaker\nWelcome! Please open the Day 1 communal notes doc and participate in the icebreaker exercise.",
     "crumbs": [
-      "Day 1"
+      "Day 1: General"
     ]
   },
   {
@@ -265,7 +265,7 @@
     "section": "Code of conduct",
     "text": "Code of conduct\nEveryone participating in this workshop is required to abide by the terms of our Code of Conduct. We encourage you to contribute to a positive environment for our community by:\n\nDemonstrating empathy and kindness toward other people\nBeing respectful of differing opinions, viewpoints, and experiences\nGiving and gracefully accepting constructive feedback\nAccepting responsibility and apologizing to those affected by our mistakes, and learning from the experience\nFocusing on what is best not just for us as individuals, but for the overall community\n\nIf you believe that someone is in violation of the Code of Conduct, please report the incident to our community leaders responsible for enforcement using this form.",
     "crumbs": [
-      "Day 1"
+      "Day 1: General"
     ]
   },
   {
@@ -275,7 +275,7 @@
     "section": "Who are we?",
     "text": "Who are we?\nSam Schiano and Sophie Breitbart are contractors with ECS Federal working in support of the NOAA Fisheries National Stock Assessment Program. Our work primarily focuses on stock assessment workflows by creating tools to help stock assessment scientists increase throughput. We are developing two R packages, asar and stockplotr, using an open science framework that prioritizes transparency and reproducibility.",
     "crumbs": [
-      "Day 1"
+      "Day 1: General"
     ]
   },
   {
@@ -285,7 +285,7 @@
     "section": "How to engage with us",
     "text": "How to engage with us\nQuestions: Please raise your hand, or write your question in the chat, at any time. Depending on our schedule, we may ask that you save larger questions for breaks.",
     "crumbs": [
-      "Day 1"
+      "Day 1: General"
     ]
   },
   {
@@ -295,7 +295,7 @@
     "section": "Materials for today’s lesson",
     "text": "Materials for today’s lesson\n\nDay 1 communal notes doc\n\nContains resources (from us and you!) and areas for note-taking\n\nJupyterHub workshop server\n\nEnvironment where you can code along with us, if you’d prefer\nAll necessary packages are already installed\nUsername: your email\nPassword: ask us\n\nSample data\n\nSample model output data for coding demonstrations\n\n\nNow, open up a JupyterHub session.\nBreak for questions",
     "crumbs": [
-      "Day 1"
+      "Day 1: General"
     ]
   },
   {
@@ -305,7 +305,7 @@
     "section": "Workshop overview",
     "text": "Workshop overview\n\nPurpose and benefits to you\nBy the end of this workshop, we hope that you come away with the knowledge and confidence to write your next stock assessment report using a reproducible, efficient, and transparent workflow based on asar and stockplotr.\nAn asar workflow can help ease the following challenges:\n\nChallenges faced by stock assessment scientists\n\nAchieving accessibility standards (section 508 compliance)\nIteratively changing a report during review\nMeeting variable expectations for report structure and language\nFollowing structure of inherited assessments\nCollaborating\n\n\n\nChallenges from a national perspective\n\nDifferences in reporting among regions\nDivergent expectations from associated councils\n\n\n\n\n\n\n\nNote\n\n\n\nWe have communicated with representatives from each council and all have expressed support for our proposed standardized report template.\n\n\n\n\n\nScope of workshop\nDuring this workshop, we will cover the following topics:\n\nMarkdown language\nQuarto basics\nHow to set up a reporting workflow using asar\nHow to create semi-automated figures and tables with stockplotr\n\n\n\nOverview of asar-based reporting workflow\nMain steps for creating a stock assessment report with asar:\n\nInstall packages\nConvert model output into format usable by asar\nCreate the report skeleton\nMake child docs containing figures and tables (made with stockplotr or by other means)\nFill in child docs with text\nRender report\nAdd accessibility features (PDF tags and alternative text for figures)\n\n\n\n\n\n\n\nTip\n\n\n\nOpen the asar cheatsheet for a visual overview of the main workflow!",
     "crumbs": [
-      "Day 1"
+      "Day 1: General"
     ]
   },
   {
@@ -315,7 +315,7 @@
     "section": "Why use Quarto for reports?",
     "text": "Why use Quarto for reports?\nQuarto is an ideal platform for building reproducible reports, which are denoted with a .qmd (Quarto Markdown) extension type. Why?\n\nIt allows you to combine narrative text, source code (like R), and the outputs of that code (like tables and figures) into a single, polished document.\nAnyone with the same files can reproduce that document, which goes a long way in promoting scientific integrity.\nYou can produce reports in several formats like HTML, PDF, and Word.",
     "crumbs": [
-      "Day 1"
+      "Day 1: General"
     ]
   },
   {
@@ -325,7 +325,7 @@
     "section": "Skeleton setup",
     "text": "Skeleton setup\nWhen you run asar::create_template(), you will receive a “report” folder with several files within it. One of the most important files is what we call the “skeleton”: a .qmd file containing chunks that run other files, then places the rendered contents of those files within one report.\nThose other files are what we call “child documents”. For example, your report introduction will be written in a child document. Your figures and tables will be placed in respective child docs, too.\nThis setup avoids placing your entire report in one massive .qmd file, facilitates asynchronous collaboration with your colleagues, and keeps your project organized.\n\nRelative pathnames\n\n\n\n\n\n\nImportant\n\n\n\nOnly files with paths relative to the Quarto doc will load!\n\n\nQuarto projects are self-contained such that it can only find files if you tell it where to look relative to the location of the .qmd file. To Quarto, the location of that .qmd file essentially becomes the root of your directory.\nFor example, imagine your project has this structure:\nreport/\n├── SAR_species_skeleton.qmd\n├── 01_executive_summary.qmd\n├── 02_introduction.qmd\n└── extra_data/\n    └── red_fish.csv\n    └── blue_fish.csv\nTo load ‘red_fish.csv’ inside SAR_species_skeleton.qmd, you would use a relative path:\n\nmy_data &lt;- read.csv(\"extra_data/red_fish.csv\")\n\nThis would work even if your working directory is not the “report” folder.",
     "crumbs": [
-      "Day 1"
+      "Day 1: General"
     ]
   },
   {
@@ -335,7 +335,7 @@
     "section": "YAML",
     "text": "YAML\nThe YAML is the block of text at the very top of your main .qmd file, enclosed by triple dashes (—). It provides metadata for your document– i.e., how to build the report.\nCommon settings in the YAML include:\n\ntitle\nauthor\ndate\nformat (For asar, this will be PDF or HTML)\n\nHere is an example of an asar YAML:\n\n---\ntitle: 'Stock Assessment Report Template'\nauthor:\n  - name: 'FIRST LAST'\n    affiliations: \n      - name: 'NOAA Fisheries' \n        address: 'ADDRESS' \n        city: 'CITY' \n        state: 'STATE' \n        postal-code: 'POSTAL CODE' \ndate: today\nkeep-tex: true \nmainfont: 'Latin Modern Sans' \ncover: \npdf-engine: lualatex\nformat: \n  pdf: \n    documentclass: scrartcl\n    papersize: letter\n    number-sections: true\n    template-partials:\n      - 'support_files/before-body.tex'\n      - 'support_files/_titlepage.tex'\n    include-in-header:\n      - 'support_files/in-header.tex'\n    toc: true\n    sansfont: 'Latin Modern Sans'\n    lof: true\n    lot: true\n    titlepage-geometry: \n      - top=2in\n      - bottom=1in\n      - right=1in\n      - left=1in\noutput-file: 'species_SAR_2025' \nparams:\n   office: ''\n   species: 'species'\n   spp_latin: ''\nbibliography:  \n  - asar_references.bib\ncsl: support_files/cjfas.csl\n---\n\nWe will explore the components of the yaml in the Day 2 curriculum.",
     "crumbs": [
-      "Day 1"
+      "Day 1: General"
     ]
   },
   {
@@ -345,7 +345,7 @@
     "section": "Code Chunks",
     "text": "Code Chunks\nAs we previously mentioned, the beauty of using quarto is that it allows the user to integrate text and code throughout their reports making them super reproducible.\nThe basics of a code chunk (chunk) are:\n\nthe language (R or python)\nchunk options\ncode\n\nThese three things get wrapped together within two sets of three back ticks (```) to allow a user to run code.\n```{r}\n#| label: ex-chunk\n#| eval: false\n#| warning: false\n#| echo: false\n#| fig-cap: This is my figure caption.\n#| fig-alt: This is my alternative text.\n#| tbl-cap: This is my table caption.\nx &lt;- 1 + 1\n```\nThere are a variety of chunk options, but the ones you will see consistently throughout this workshop are listed in the example above.\n\n\n\n\n\n\nNote\n\n\n\nIn the “label” option, for tables and figures, you will need to prefix the label with either “fig-” for a figure or “tbl-” for a table.\n\n\nFor those familiar with Rmarkdown, the code chunk structure in Rmarkdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a “#|” proceeding each option.",
     "crumbs": [
-      "Day 1"
+      "Day 1: General"
     ]
   },
   {
@@ -355,7 +355,7 @@
     "section": "tinytex",
     "text": "tinytex\nWe recommend installing the default “bundle” of LaTeX packages via tinytex because 1) it’s faster and 2) R should automatically install also-necessary LaTeX packages when they are needed, in the moment.\ninstall.packages(\"pak\")\npak::pkg_install(\"rstudio/tinytex\")\nIf you’d prefer, you can install the full tinytex bundle to ensure that all LaTeX packages will be present when you need them. This will take longer to install.\ninstall.packages(\"pak\")\npak::pkg_install(\"rstudio/tinytex\")\ntinytex::install_tinytex(bundle = \"TinyTeX-2\")",
     "crumbs": [
-      "Day 1"
+      "Day 1: General"
     ]
   },
   {
@@ -365,7 +365,7 @@
     "section": "asar",
     "text": "asar\nThen, install asar.\ninstall.packages(\"pak\")\npak::pak(\"nmfs-ost/asar\")\nPlease see the asar README for more installation options.",
     "crumbs": [
-      "Day 1"
+      "Day 1: General"
     ]
   },
   {
