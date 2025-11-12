@@ -63,7 +63,79 @@ petrale <- asar::convert_output(output_file,
 
 If you have already converted your output: great! Import it into your R environment so that you can handle it as an object like "petrale" in the chunk above.
 
-### Create single plots
+### Introduction to  `stockplotr`
+
+This package is an ongoing process to gather contributions in order to expand the number of pre-made tables and figures that can be incorporated into a stock assessment report. All objects are intended to be generalized and not specific to any region.
+
+The following table contains figures and tables that are available in `stockplotr`:
+
+| Figure | Table |
+|--------|-------|
+| abundance-at-age | landings |
+| biomass-at-age | iomass, landings, and catch time series |
+| biomass time series | harvest projections |
+| catch compositions | indices |
+| fishing mortality time series |  |
+| indices |  |
+| landings time series |  |
+| natural mortality time series or at-age |  |
+| recruitment deviations |  |
+| recruitment time series |  |
+| spawn recruitment relationship |  |
+| spawning biomass time series |  |
+
+Each automated function returns either a `ggplot2` object (figure) or `flextable` object (table). This allows for further customization of the output if desired by using the notation you are familiar with. For a figure, you can continue to add onto the plot any other `ggplot2` function or extension using the plus (+) operator. For a table, please use the native pipe when adding additional formatting, rows, or other pieces to the object.
+
+### Example Figure
+
+```{r}
+stockplotr::plot_spawning_biomass(
+  dat = petrale,
+  geom = "line",
+  group = NULL,
+  facet = NULL,
+  ref_line = "msy",
+  unit_label = "mt",
+  scale_amount = 1,
+  relative = FALSE,
+  interactive = TRUE,
+  module = NULL
+)
+```
+
+Customizing
+
+```{r}
+stockplotr::plot_spawning_biomass(
+  dat = petrale,
+  geom = "line",
+  group = NULL,
+  facet = NULL,
+  ref_line = c("msy" = 15),
+  unit_label = "mt",
+  scale_amount = 1,
+  relative = FALSE,
+  # interactive = TRUE,
+  module = "TIME_SERIES"
+)
+```
+```{r}
+stockplotr::plot_spawning_biomass(
+  dat = petrale,
+  geom = "line",
+  group = NULL,
+  facet = NULL,
+  ref_line = "msy",
+  unit_label = "mt",
+  scale_amount = 1,
+  relative = TRUE,
+  # interactive = TRUE,
+  module = "TIME_SERIES"
+)
+```
+
+### Example Table
+
 
 - Export single plots
 - Create and export all plots
