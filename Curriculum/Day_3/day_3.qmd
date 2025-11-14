@@ -88,13 +88,15 @@ Each automated function returns either a `ggplot2` object (figure) or `flextable
 
 ### Example Figure
 
+Run the example below. It should result in a line graph showing spawning biomass over time, including a reference line for the spawning biomass at maximum sustainable yield (SBMSY).
+
 ```{r}
-stockplotr::plot_spawning_biomass(
+stockplotr::plot_biomass(
   dat = petrale,
   geom = "line",
   group = NULL,
   facet = NULL,
-  ref_line = "msy",
+  ref_line = "unfished",
   unit_label = "mt",
   scale_amount = 1,
   relative = FALSE,
@@ -103,15 +105,23 @@ stockplotr::plot_spawning_biomass(
 )
 ```
 
-Customizing
+#### Customizing
+
+All figures will automatically identify any indexing variables in the data such as fleet, area, or sex. You can use the `group` and `facet` arguments to modify how these indexing variables are displayed in the figure. You can also modify other arguments such as `geom`, `ref_line`, and `relative` to change the appearance of the figure. 
+
+Here are some examples of how to customize the spawning biomass figure:
+
+  (1) Change the reference line to a specific value (e.g., 15)
+  
+  In this example we are also telling the function which module to select in order to by-pass this step. We plan to remove grouping of some modules in the future.
 
 ```{r}
-stockplotr::plot_spawning_biomass(
+stockplotr::plot_biomass(
   dat = petrale,
   geom = "line",
   group = NULL,
   facet = NULL,
-  ref_line = c("msy" = 15),
+  ref_line = c("target" = 26000),
   unit_label = "mt",
   scale_amount = 1,
   relative = FALSE,
@@ -119,19 +129,64 @@ stockplotr::plot_spawning_biomass(
   module = "TIME_SERIES"
 )
 ```
+
+  (2) Plot relative spawning biomass instead of absolute values and change the size of the line
+  
+  In this example, we still are by-passing module selection and we are automatically extracting the reference line value from the data. However, now we are using this reference value to plot relative biomass and changing the linewidth to 2 (an argument inherited from `ggplot2`).
+
 ```{r}
-stockplotr::plot_spawning_biomass(
+stockplotr::plot_biomass(
   dat = petrale,
   geom = "line",
   group = NULL,
   facet = NULL,
-  ref_line = "msy",
+  ref_line = "unfished",
   unit_label = "mt",
   scale_amount = 1,
   relative = TRUE,
   # interactive = TRUE,
+  module = "TIME_SERIES",
+  linewidth = 2
+)
+```
+
+  (3) Group our data by fleet
+  
+  Notice that you can remove the reference line by setting `ref_line = NULL`.
+  
+```{r}
+stockplotr::plot_biomass(
+  dat = petrale,
+  geom = "line",
+  group = "fleet",
+  facet = NULL,
+  ref_line = NULL,
+  unit_label = "mt",
+  scale_amount = 1,
+  relative = FALSE,
+  # interactive = TRUE,
   module = "TIME_SERIES"
 )
+```
+
+::: {.callout-tip}
+Remember that figures return `ggplot2` objects, so we can make additional customizations to these plots.
+:::
+
+```{r}
+stockplotr::plot_biomass(
+  dat = petrale,
+  geom = "line",
+  group = "fleet",
+  facet = NULL,
+  ref_line = c("target" = 5690),
+  unit_label = "mt",
+  scale_amount = 1,
+  relative = FALSE,
+  # interactive = TRUE,
+  module = "TIME_SERIES"
+) +
+  ggplot2::geom_vline(xintercept = 2005, linetype = "dashed", color = "red")
 ```
 
 ### Example Table
