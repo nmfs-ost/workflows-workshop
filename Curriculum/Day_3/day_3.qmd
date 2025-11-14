@@ -64,29 +64,75 @@ If you have already converted your output: great! Import it into your R environm
 - Create and export all plots
 - How to customize (changing color palette, etc.)
 
-# Integrating stockplotr in the workflows
+# Integrating stockplotr in the workflow
 
-After running `create_template()`, blank figures and tables quarto files are created (probably something like '08_tables.qmd' and '09_figures.qmd', though the prefix numbers may vary). Each contain a statement referring you to {stockplotr} to add pre-made tables and figures. Since we've created figures and tables already, now let's cover how to add your own tables to the document.
+After running `create_template()`, you'll see figures and tables files, named something like '08_tables.qmd' and '09_figures.qmd' (the prefix numbers may vary).
+
+Each file will contain zero figures or tables. Instead, they will contain a statement referring you to {stockplotr} so that you can make your own. Since we've created those already, let's add them to your report!
 
 You can add your figures and tables with two workflows:
 
-1. Rerunning `asar::create_tables_doc()` and `asar::create_figures_doc()` with arguments that allow R to find your tables and figures, then place them into the respective tables and figures docs automatically
-2. Add your tables and figures manually to each doc
+1. Rerunning `asar::create_tables_doc()` and `asar::create_figures_doc()`
+  - If you fill in arguments that allow R to find your tables and figures, then it will place them into the respective tables and figures docs automatically.
+2. Adding your tables and figures manually to each doc.
 
 ## Option 1: Rerunning `asar::create_tables_doc()`/`asar::create_figures_doc()`
 
 ### Tables
 
+To add tables, first ensure that your folder containing the tables is called "tables".
+
+Then, there are only two arguments to fill out:
+
+1. `subdir`: The location where the *new* tables doc should be saved (we recommend your 'report' folder, so it overwrites the old, empty version)
+2. `tables_dir`: The location of your "tables" folder
+
+```{r}
+#| label: add-tables
+#| eval: false
+#| warning: false
+#| messages: false
+create_tables_doc(
+  subdir = fs::path(getwd(), "report"), # indicates the new tables doc will be saved in your "report" folder, located in the working directory
+  tables_dir = getwd() # indicates your "tables" folder is located in the working directory
+                  )
+```
+
+Now, open your new tables doc and take a look!
+
+You'll notice the following structure:
+
+**Chunk 1** will always create an object saving the location of your `tables_dir`.
+
+Then, there will be at least two chunks for each table. For tables that are *regularly-sized* (i.e., small enough that they don't need to be rotated or split across pages):
+
+**Chunk 2** will:
+
+* load an rda containing a table
+* give the rda a specific name
+* save the table and caption as separate objects
+
+**Chunk 3** will:
+
+* display the table
+
+::: {.callout-note}
+This workflow can also accommodate tables that are wide enough to require rotation into a landscape-view page OR splitting across pages. For more information, please see the ["Adding Custom Tables & Figures" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width).
+:::
+
 ### Figures
 
+Adding figures entails nearly the same process as described for tables. The only differences are:
 
+1. Figures will involve captions and *alternative text*, whereas tables only require captions
+2. Figures do not require the option to be rotated or split across pages.
 
 ## Option 2: Manually adding tables/figures
 
-To add a table/figure manually, here are the main steps:
+You can add a table/figure manually by following these main steps:
 
 1. Create a code chunk
-2. Add your label and other options
+2. Add your label and other chunk options
 3. Add code
 4. Write caption
 
@@ -110,21 +156,21 @@ It will be important to add your captions and labels into an excel file when mak
 :::
 
 
-#### Non-code Tables
+#### Non-coded tables (e.g., images)
 
-In the case you have made a table not using code, you can add it as an image. While this is not generally recommended since it significantly reduces the accessibility of your table, we understand that sometimes this is the only format you have it in.
+We don't recommended adding non-coded tables (e.g., images), since it significantly reduces the accessibility of your table. However, we understand that sometimes this is the only format available.
 
 Use the following notation to reference an external table as an image:
 
 `![Caption for my example table](example_table.png){fig-alt="This is the alternative text for my table", #tbl-example}`
 
 ::: {.callout-note}
-Notice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. Please make sure you add alternative text for tables added in this way.
+Notice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. **Please make sure you add alternative text for image-based tables added in this way.**
 :::
 
 ### Figures
 
-Like with our tables file, a blank figures quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made figures.
+Like with our tables file, a blank figures quarto file is created. We add figures similarly to tables.
 
 Steps for adding a figure:
 
@@ -148,9 +194,9 @@ plot(cars$speed, cars$dist)
 ```
 
 
-### Non-code Figures
+### Non-coded figures
 
-Like tables, you can reference figures not made directly in code chunks. However, in this case, this does not change the accessibility of the figure as much because you as the user can still add the necessary components to meet section 508 standards.
+Like tables, you can reference figures not made directly in code chunks. However, in this case, this does *not* change the accessibility of the figure because you can still add the necessary components to meet Section 508 compliance standards: alternative text and a caption.
 
 `![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}`
 
@@ -158,9 +204,9 @@ Like tables, you can reference figures not made directly in code chunks. However
 
 Quarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:
 
-"\@tbl-example" or "\@fig-example"
+`\@tbl-example` or `\@fig-example`
 
-By adding an @ symbol followed by the chunk label or just label of your table/figure will create an interactive link that lets the reader navigate to that specific table/figure.
+Adding an `@` symbol followed by the chunk label, or label of your table/figure, will create an interactive link that lets the reader navigate to that specific table/figure.
 
 [Show working example within positron]
 
