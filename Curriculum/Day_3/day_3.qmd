@@ -67,6 +67,8 @@ If you have already converted your output: great! Import it into your R environm
 
 # Integrating stockplotr in the workflow
 
+## Adding tables and figures to your report
+
 After running `create_template()`, you'll see figures and tables files, named something like '08_tables.qmd' and '09_figures.qmd' (the prefix numbers may vary).
 
 Each file will contain zero figures or tables. Instead, they will contain a statement referring you to {stockplotr} so that you can make your own. Since we've created those already, let's add them to your report!
@@ -77,9 +79,11 @@ You can add your figures and tables with two workflows:
   - If you fill in arguments that allow R to find your tables and figures, then it will place them into the respective tables and figures docs automatically.
 2. Adding your tables and figures manually to each doc.
 
-## Option 1: Rerunning `asar::create_tables_doc()`/`asar::create_figures_doc()`
+### Option 1: Rerunning `asar::create_tables_doc()`/`asar::create_figures_doc()`
 
-### Tables
+*This is also known as the [rda-based workflow](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#comparing-workflows)*.
+
+#### Tables
 
 To add tables, first ensure that your folder containing the tables is called "tables".
 
@@ -121,14 +125,16 @@ Then, there will be at least two chunks for each table. For tables that are *reg
 This workflow can also accommodate tables that are wide enough to require rotation into a landscape-view page OR splitting across pages. For more information, please see the ["Adding Custom Tables & Figures" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width).
 :::
 
-### Figures
+#### Figures
 
 Adding figures entails nearly the same process as described for tables. The only differences are:
 
 1. Figures will involve captions and *alternative text*, whereas tables only require captions
 2. Figures do not require the option to be rotated or split across pages.
 
-## Option 2: Manually adding tables/figures
+### Option 2: Manually adding tables/figures
+
+#### Tables
 
 You can add a regularly-sized^[Again, for tables that require rotating or splitting across pages, please refer to the ["Adding Custom Tables & Figures" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width).] table/figure manually by following these main steps:
 
@@ -138,7 +144,7 @@ You can add a regularly-sized^[Again, for tables that require rotating or splitt
 4. Write caption
 5. Add a page break between tables (optional but recommended)
 
-### Tables
+##### Direct coding-in-qmd table workflow 
 
 Example from the ["Adding Custom Tables & Figures" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#direct-coding-in-qmd-workflow-option-3-2):
 
@@ -173,14 +179,14 @@ Then, add a pagebreak:
 
 ``` 
 
-::: {.callout-tip}
-It will be important to add your captions and labels into a csv file when making your documents accessible. You will learn more about this in a few moments!
+::: {.callout-warning}
+It will be important to add your captions and labels into a csv file when making your documents accessible. You will soon learn more about this in the the ["Adding accessibility features" section](#sec-a11y)!
 :::
 
 
-#### Non-coded tables (e.g., images)
+##### Direct image-based table insertion workflow
 
-We don't recommended adding non-coded tables (e.g., images), since it significantly reduces the accessibility of your table. However, we understand that sometimes this is the only format available.
+We don't recommended adding tables as images, since it significantly reduces the accessibility of your table. However, we understand that sometimes this is the only format available.
 
 Use the following notation to reference an external table as an image:
 
@@ -190,33 +196,48 @@ Use the following notation to reference an external table as an image:
 Notice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. **Please make sure you add alternative text for image-based tables added in this way.**
 :::
 
-### Figures
+#### Figures
 
-Like with our tables file, a blank figures quarto file is created. We add figures similarly to tables.
+##### Direct coding-in-qmd figure workflow
 
-Steps for adding a figure:
+Like with tables, running `create_figures_doc()` produces a blank figures quarto file. We add figures similarly to tables. In fact, the only major difference is that you must write **alternative text** for your figure.
 
-1. Create a code chunk
-2. Add your label and other options
-3. Add code
-4. Write caption and **alternative text**
+Put your alternative text in a chunk option called 'fig-alt' (example below).
 
-[**Highlight the difference with a figure needing alternative text**]
+````{verbatim}
+```{r} 
+#| label: 'fig-custom1' # choose a label
+#| fig-cap: !expr This is your figure caption.
+#| fig-alt: !expr This is your figure alternative text.
 
-**Add a code chunk for each table**
+# Import your data
+load(fs::path("std_output.rda"))
 
-```{r}
-#| label: fig-example
-#| eval: false
-#| echo: true
-#| warning: false
-#| fig-cap: This is my caption for the example table.
-#| fig-alt: This is my alternative text for an HTML doc.
-plot(cars$speed, cars$dist)
-```
+petrale <- out_new |>
+                    dplyr::filter(year > 1980) |>
+                    dplyr::filter(module_name == "TIME_SERIES") |>
+                    dplyr::filter(label == "biomass") |>
+                    dplyr::filter(!is.na(fleet))
 
+# Make your figure
+your_figure <- ggplot2::ggplot(petrale,
+  ggplot2::aes(x = year, y = estimate, color = fleet)) +
+  ggplot2::geom_line(linewidth = 0.75) +
+  ggplot2::geom_point() +
+  ggplot2::theme_classic()
 
-### Non-coded figures
+# Show your figure
+your_figure
+``` 
+````
+
+![](images/petrale_figure.png)
+
+::: {.callout-warning}
+Even though you wrote alt text in the `fig-alt` area, **when you first render your report into a PDF, your alternative text will not show up in your document.** Strange, right?! **To ensure it shows up, refer to the ["Adding accessibility features" section](#sec-a11y)** (which we'll discuss in a moment).
+:::
+
+##### Direct image-based figure insertion workflow
 
 Like tables, you can reference figures not made directly in code chunks. However, in this case, this does *not* change the accessibility of the figure because you can still add the necessary components to meet Section 508 compliance standards: alternative text and a caption.
 
@@ -236,7 +257,7 @@ Adding an `@` symbol followed by the chunk label, or label of your table/figure,
 
 Render your entire document and take a look at what we've made today.
 
-# Adding accessibility features
+# Adding accessibility features {#sec-a11y}
 
 
 
