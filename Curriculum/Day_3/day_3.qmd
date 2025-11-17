@@ -166,7 +166,7 @@ your_table
 ``` 
 ````
 
-![](images/petrale_table.png)
+![](images/petrale_table.png){fig-alt="Example of a table produced with the 'Direct coding-in-qmd table workflow' option for adding tables to `asar` reports."}
 
 Then, add a pagebreak:
 
@@ -231,7 +231,7 @@ your_figure
 ``` 
 ````
 
-![](images/petrale_figure.png)
+![](images/petrale_figure.png){fig-alt="Example of a figure produced with the 'Direct coding-in-qmd figure workflow' option for adding figures to `asar` reports."}
 
 ::: {.callout-warning}
 Even though you wrote alt text in the `fig-alt` area, **when you first render your report into a PDF, your alternative text will not show up in your document.** Strange, right?! **To ensure it shows up, refer to the ["Adding accessibility features" section](#sec-a11y)** (which we'll discuss in a moment).
@@ -251,11 +251,34 @@ Quarto uses a special notation to allow users to link tables and figures through
 
 Adding an `@` symbol followed by the chunk label, or label of your table/figure, will create an interactive link that lets the reader navigate to that specific table/figure.
 
-[Show working example within positron]
+## Render your first report draft!
 
-**Put it all together!**
+Open your skeleton qmd file, then render the report. You've made major progress towards creating your first report!
 
-Render your entire document and take a look at what we've made today.
+You can render a report in three ways:
+
+### In the R console
+
+Run `quarto::quarto_render([path/to/your/skeleton.qmd file])` in the console. For example:
+
+```{r eval=FALSE}
+quarto::quarto_render(
+  here::here("report",
+             "SAR_species_skeleton.qmd") # add your skeleton filename
+)
+```
+
+### With the RStudio "render" button
+
+Open the skeleton.qmd file. Then, in the program pane, press the "render" button:
+
+![](images/render_button.png){fig-alt="Screenshot of the RStudio console with a red rectangle highlighting the location of the 'Render' button."}
+
+### In the terminal
+
+Run `quarto render [path/to/your/skeleton.qmd file]` in the terminal. For example:
+
+Enter `quarto render report/SAR_species_skeleton.qmd`
 
 # Adding accessibility features {#sec-a11y}
 
