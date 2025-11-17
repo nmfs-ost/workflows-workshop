@@ -251,13 +251,13 @@ Quarto uses a special notation to allow users to link tables and figures through
 
 Adding an `@` symbol followed by the chunk label, or label of your table/figure, will create an interactive link that lets the reader navigate to that specific table/figure.
 
-## Render your first report draft!
+# Render your first report draft!
 
-Open your skeleton qmd file, then render the report. You've made major progress towards creating your first report!
+Open your skeleton qmd file, then render the report.
 
 You can render a report in three ways:
 
-### In the R console
+## In the R console
 
 Run `quarto::quarto_render([path/to/your/skeleton.qmd file])` in the console. For example:
 
@@ -268,13 +268,13 @@ quarto::quarto_render(
 )
 ```
 
-### With the RStudio "render" button
+## With the RStudio "render" button
 
 Open the skeleton.qmd file. Then, in the program pane, press the "render" button:
 
 ![](images/render_button.png){fig-alt="Screenshot of the RStudio console with a red rectangle highlighting the location of the 'Render' button."}
 
-### In the terminal
+## In the terminal
 
 Run `quarto render [path/to/your/skeleton.qmd file]` in the terminal. For example:
 
@@ -282,7 +282,44 @@ Enter `quarto render report/SAR_species_skeleton.qmd`
 
 # Adding accessibility features {#sec-a11y}
 
+::: {.callout-tip}
+## Congrats! You're almost there!
+You've made major progress towards completing your first report!
+:::
 
+While your rendered report looks superb, it's probably missing two major components: **tags and alternative text**.
+
+If you made an HTML-based report, these features would most likely be in your document. But since we're prioritizing PDFs, there are a few more steps to take before your document will significantly more accessible than it is now. This means that, **to achieve compliance with Section 508 criteria, you must complete a couple more tasks**.
+
+## Add tagging
+
+In your 'report' folder, you'll find a new file with a .tex filetype: 'SAR_species_skeleton.tex' (or something similar). This file is a LaTex-based version of your rendered skeleton qmd file. It's also where we add our remaining accessibility features, since Quarto does not yet offer that functionality within its qmd files.
+
+[**Tags**](https://www.section508.gov/create/pdfs/common-tags-and-usage/) are structural elements of PDFs. They are signals telling software which information are headers, images, tables, text, and so on. Tags allow people using technology like screen readers to logically navigate PDFs.
+
+We'll use the `asar::add_tagging()` function to add tags.
+
+First, navigate to your 'report' folder. Set it as your working directory. This is essential because, for this function to work, the folder containing your skeleton .tex file must be set as your working directory.
+
+```{r eval = FALSE}
+setwd(here::here("report"))
+```
+
+Next, use the `add_tagging()` function. 
+
+```{r eval = FALSE}
+asar::add_tagging(
+  x = "SAR_species_skeleton.tex", # your .tex report file
+  dir = getwd(), # the location of the .tex file
+  compile = FALSE # whether the .tex file should be compiled after tagging. We'll set it to FALSE for now
+)
+```
+
+Now your PDF is tagged! If you compiled your .tex file, it'd look something like this. The tags are on the right side of the PDF viewer.
+
+![](images/tagged_pdf.png){fig-alt="Screenshot of an example PDF-based, tagged report. The PDF is opened in Adobe and tags for the Table of Contents are shown on the right side of the screen."}
+
+## Add alternative text
 
 # Demo for a realistic, customized asar report with stockplotr plots
 
