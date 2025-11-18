@@ -17,7 +17,11 @@ Welcome! Please open the [Day 3 communal notes doc](https://docs.google.com/docu
 
 ::: {.callout-tip}
 **Reminder**: For comments or questions, please raise your hand, or write them in the chat, *at any time*. Depending on our schedule, we may ask that you save larger questions for breaks.
-::: 
+:::
+
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
 
 # Introduction to `stockplotr`
 
@@ -64,6 +68,10 @@ If you have already converted your output: great! Import it into your R environm
 - Export single plots
 - Create and export all plots
 - How to customize (changing color palette, etc.)
+
+::: {.callout-note appearance="minimal"}
+15 minute break
+:::
 
 # Integrating stockplotr in the workflow
 
@@ -131,6 +139,10 @@ Adding figures entails nearly the same process as described for tables. The only
 
 1. Figures will involve captions and *alternative text*, whereas tables only require captions
 2. Figures do not require the option to be rotated or split across pages.
+
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
 
 ### Option 2: Manually adding tables/figures
 
@@ -251,6 +263,10 @@ Quarto uses a special notation to allow users to link tables and figures through
 
 Adding an `@` symbol followed by the chunk label, or label of your table/figure, will create an interactive link that lets the reader navigate to that specific table/figure.
 
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
+
 # Render your first report draft!
 
 Open your skeleton qmd file, then render the report.
@@ -317,6 +333,10 @@ withr::with_dir(
 Now your PDF is tagged! If you compiled your .tex file, it'd look something like this. The tags are on the right side of the PDF viewer.
 
 ![](images/tagged_pdf.png){fig-alt="Screenshot of an example PDF-based, tagged report. The PDF is opened in Adobe and tags for the Table of Contents are shown on the right side of the screen."}
+
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
 
 ## Add alternative text
 
@@ -405,6 +425,10 @@ withr::with_dir(
 Now your PDF's figures have alt text! If you hover your cursor over an image, you should see the alt text pop up, like this:
 
 ![](images/alt_text_fig.png){fig-alt="Screenshot of an example PDF-based, tagged report with alternative text. A cursor hovering over a biomass figure shows its alternative text in a bubble."}
+
+::: {.callout-note appearance="minimal"}
+15 minute break
+:::
 
 # Demo for a realistic, customized asar report with stockplotr plots
 
