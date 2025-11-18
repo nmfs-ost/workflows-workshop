@@ -125,7 +125,7 @@ Then, there will be at least two chunks for each table. For tables that are *reg
 This workflow can also accommodate tables that are wide enough to require rotation into a landscape-view page OR splitting across pages. For more information, please see the ["Adding Custom Tables & Figures" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width).
 :::
 
-#### Figures
+#### Figures {#sec-rda-based-fig}
 
 Adding figures entails nearly the same process as described for tables. The only differences are:
 
@@ -198,7 +198,7 @@ Notice how there is alternative text added to this method of adding a table. In 
 
 #### Figures
 
-##### Direct coding-in-qmd figure workflow
+##### Direct coding-in-qmd figure workflow {#sec-code-in-qmd-fig}
 
 Like with tables, running `create_figures_doc()` produces a blank figures quarto file. We add figures similarly to tables. In fact, the only major difference is that you must write **alternative text** for your figure.
 
@@ -237,7 +237,7 @@ your_figure
 Even though you wrote alt text in the `fig-alt` area, **when you first render your report into a PDF, your alternative text will not show up in your document.** Strange, right?! **To ensure it shows up, refer to the ["Adding accessibility features" section](#sec-a11y)** (which we'll discuss in a moment).
 :::
 
-##### Direct image-based figure insertion workflow
+##### Direct image-based figure insertion workflow {#sec-image-based-fig}
 
 Like tables, you can reference figures not made directly in code chunks. However, in this case, this does *not* change the accessibility of the figure because you can still add the necessary components to meet Section 508 compliance standards: alternative text and a caption.
 
@@ -299,19 +299,18 @@ In your 'report' folder, you'll find a new file with a .tex filetype: 'SAR_speci
 
 We'll use the `asar::add_tagging()` function to add tags.
 
-First, navigate to your 'report' folder. Set it as your working directory. This is essential because, for this function to work, the folder containing your skeleton .tex file must be set as your working directory.
+Notice that we are using the `withr::with_dir()` function as a wrapper for `add_tagging()`. This allow us to set the "report" folder as a *temporary* working directory, which is essential for the function to work. Likewise, if you set the "report" folder as the working directory, you could remove this wrapper and `add_tagging()` would succeed.
 
 ```{r eval = FALSE}
-setwd(here::here("report"))
-```
+path <- getwd()
 
-Next, use the `add_tagging()` function. 
-
-```{r eval = FALSE}
-asar::add_tagging(
+withr::with_dir(
+  file.path(path, "report"),
+  asar::add_tagging(
   x = "SAR_species_skeleton.tex", # your .tex report file
   dir = getwd(), # the location of the .tex file
   compile = FALSE # whether the .tex file should be compiled after tagging. We'll set it to FALSE for now
+  )
 )
 ```
 
@@ -320,6 +319,92 @@ Now your PDF is tagged! If you compiled your .tex file, it'd look something like
 ![](images/tagged_pdf.png){fig-alt="Screenshot of an example PDF-based, tagged report. The PDF is opened in Adobe and tags for the Table of Contents are shown on the right side of the screen."}
 
 ## Add alternative text
+
+You must add alternative text ("alt text") for images in a separate csv if you added figures using either of these workflows:
+
+* the [rda-based workflow](#sec-rda-based-fig)
+* the [direct coding-in-qmd workflow](#sec-code-in-qmd-fig)
+
+This step is *not* essential if you added *all of your figures* using the [direct image-based workflow](#sec-image-based-fig).
+
+Since you've used `stockplotr` to make some figures, you've already completed the first step: making a csv that will contain your alt text.
+
+### Look at your alt text csv
+
+The file, "captions_alt_text.csv", should be located in your working directory (enter `getwd()` if you forget where that is). Open it up.
+
+The file is set up like this:
+
+-   Column 1 ("label") is a shorthand label for your figure or table. Labels should be somewhat short and exclude spaces. Examples include "kobe", "relative.biomass", and "fishing.mortality".
+-   Column 2 ("type") contains "figure" or "table".
+-   Column 3 ("caption") contains your caption.
+-   Column 4 ("alt_text") contains alternative text for figures. For tables, this column will be blank.
+
++-------------+------------+-----------------------------+--------------------------------------+
+| label       | type       | caption                     | alt_text                             |
++=============+============+=============================+======================================+
+| example_fig | figure     | Example caption for figure. | Example alternative text for figure. |
++-------------+------------+-----------------------------+--------------------------------------+
+| example_tab | table      | Example caption for table.  |                                      |
++-------------+------------+-----------------------------+--------------------------------------+
+
+: Format for csv containing table and figure captions and alternative text.
+
+### Update the csv
+
+Your job is to:
+
+* *edit* existing entries for your figures already created with `stockplotr`. This entails [checking the accuracy, and writing the final component, of the existing alt text](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#your-to-do-list).
+* *add* entries for your custom figures.
+
+#### Editing existing entries {#sec-edit-exist-entries}
+
+Using the "label" column, find the row associated with your figure and inspect it.
+
+* You'll see that there's already some prewritten alt text (in the "alt_text" column) that includes data from the model results file. Now, **you must check this information for accuracy and update it where necessary** (especially if the default figures were modified).
+
+* If you see text that looks like a placeholder (e.g., "The x axis, showing the year, spans from B.start.year to B.end.year..."), that means that there was at least one instance where our tool failed to extract a specific value from the model results, calculate a key quantity (like the start year of a biomass plot- aka "B.start.year"), and substitute it into the placeholder.
+
+::: {.callout-important}
+While we have extracted key quantities as accurately as possible, we cannot guarantee that each quantity will have been calculated perfectly. Input data varies widely. **It's your responsibility to check the accuracy of your figures' alt text.**
+:::
+
+* This prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4): the relationship between the variables shown (i.e., what the figure is conveying). Since we can't program `stockplotr` to analyze the figure's meaning, **you must provide this crucial component**.
+
+When you're satisfied, save the csv.
+
+#### Adding new entries
+
+* Make a new row.
+* For "label", take the "label" of your figure chunk. For example, in [the example above](#sec-code-in-qmd-fig), the label would be "fig-custom1".
+* The type will be "figure".
+* The caption should be identical to the caption in your chunk (what you put in "fig-cap").
+* The "alt_text" will contain your alt text. See the "[Editing existing entries](#sec-edit-exist-entries)" section above, and the "[Achieve Greater Accessibility](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html)" vignette, for help writing alt text.
+
+When you're satisfied, save the csv.
+
+## Run alt text to your report
+
+Now, we'll use the `asar::add_alttext()` function to add the alt text into the report's .tex file. Again, we'll wrap the function with `with_dir()` to set a temporary working directory.
+
+```{r eval = FALSE}
+path <- getwd()
+
+withr::with_dir(
+  file.path(path, "report"),
+  add_alttext(
+    x = "SAR_species_skeleton.tex", # your .tex report file
+    dir = getwd(), # the location of the .tex file
+    alttext_csv_dir = getwd(), # the location of your "captions_alt_text.csv"
+    figures_dir = path, # location of your "figures" folder
+    compile = TRUE # now we'll compile the PDF
+  )
+)
+```
+
+Now your PDF's figures have alt text! If you hover your cursor over an image, you should see the alt text pop up, like this:
+
+![](images/alt_text_fig.png){fig-alt="Screenshot of an example PDF-based, tagged report with alternative text. A cursor hovering over a biomass figure shows its alternative text in a bubble."}
 
 # Demo for a realistic, customized asar report with stockplotr plots
 
