@@ -385,7 +385,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#why-use-r-markdown" id="toc-why-use-r-markdown" class="nav-link" data-scroll-target="#why-use-r-markdown">Why use R markdown?</a></li>
   <li><a href="#opening-a-document" id="toc-opening-a-document" class="nav-link" data-scroll-target="#opening-a-document">Opening a document</a></li>
   <li><a href="#the-core-components" id="toc-the-core-components" class="nav-link" data-scroll-target="#the-core-components">The core components</a></li>
-  <li><a href="#common-uses-in-asar-reports" id="toc-common-uses-in-asar-reports" class="nav-link" data-scroll-target="#common-uses-in-asar-reports">Common uses in <code>asar</code> reports</a></li>
+  <li><a href="#common-uses-in-asar-reports" id="toc-common-uses-in-asar-reports" class="nav-link" data-scroll-target="#common-uses-in-asar-reports">Common uses in <code>asar</code> reports</a>
+  <ul class="collapse">
+  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
+  <li><a href="#formatting" id="toc-formatting" class="nav-link" data-scroll-target="#formatting">Formatting</a></li>
+  <li><a href="#math-and-equations" id="toc-math-and-equations" class="nav-link" data-scroll-target="#math-and-equations">Math and Equations</a></li>
+  <li><a href="#references-and-bibliography" id="toc-references-and-bibliography" class="nav-link" data-scroll-target="#references-and-bibliography">References and Bibliography</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a>
   <ul class="collapse">
@@ -483,7 +489,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 <p>Now, open up a JupyterHub session.</p>
-<p><strong>Break for questions</strong></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Break for questions</p>
+</div>
+</div>
+</div>
 </section>
 <section id="workshop-overview" class="level2">
 <h2 class="anchored" data-anchor-id="workshop-overview">Workshop overview</h2>
@@ -562,30 +577,17 @@ Tip
 </section>
 <section id="markdown" class="level1">
 <h1>Markdown</h1>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Follow along with our demo!</p>
-</div>
-</div>
-<section id="what-is-markdown" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-markdown">What is markdown?</h3>
+<section id="what-is-markdown" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-markdown">What is markdown?</h2>
 <p><a href="https://rmarkdown.rstudio.com/articles_intro.html">According to RStudio</a>, markdown is “an easy-to-write plain text format”; not exactly a language, but a formatting style.</p>
 </section>
-<section id="why-use-r-markdown" class="level3">
-<h3 class="anchored" data-anchor-id="why-use-r-markdown">Why use R markdown?</h3>
+<section id="why-use-r-markdown" class="level2">
+<h2 class="anchored" data-anchor-id="why-use-r-markdown">Why use R markdown?</h2>
 <p>R markdown, or “Rmd” for short, allows you to create amazingly dynamic reports. With R markdown, you can embed your R code directly into your documents. When you “knit” the document, the code is executed, and the results— like figures, tables, parameters, citations, and other outputs— are automatically inserted into the final report.</p>
 <p>A major reason why R markdown is incredibly useful: it <em>saves time and reduces errors</em>. If your data changes, you don’t have to manually rerun your analysis and copy/paste the results. You just re-knit the document, and everything is updated automatically.</p>
 </section>
-<section id="opening-a-document" class="level3">
-<h3 class="anchored" data-anchor-id="opening-a-document">Opening a document</h3>
+<section id="opening-a-document" class="level2">
+<h2 class="anchored" data-anchor-id="opening-a-document">Opening a document</h2>
 <p>Let’s open a new document. We’ll open a Quarto document (Qmd) because it also runs Rmd code; it’s a newer document type that can handle more than Rmd can.</p>
 <ol type="1">
 <li>In RStudio, go to <strong>File &gt; New File &gt; Quarto document…</strong>.</li>
@@ -595,19 +597,19 @@ Note
 </ol>
 <p>You’ll now see a new Quarto file with some default text. Let’s explore some ways you can take advantage of this powerful document type.</p>
 </section>
-<section id="the-core-components" class="level3">
-<h3 class="anchored" data-anchor-id="the-core-components">The core components</h3>
+<section id="the-core-components" class="level2">
+<h2 class="anchored" data-anchor-id="the-core-components">The core components</h2>
 <ol type="1">
 <li><strong>The YAML Header:</strong> This is the section at the top of the file, enclosed by triple dashes (<code>---</code>). It contains metadata about the document, like the title, author, and output format.</li>
 <li><strong>Text and Formatting:</strong> This is where you’ll write the narrative of your report using Markdown syntax.</li>
 <li><strong>Code Chunks:</strong> These are sections of the document where you can embed and run your R code.</li>
 </ol>
 </section>
-<section id="common-uses-in-asar-reports" class="level3">
-<h3 class="anchored" data-anchor-id="common-uses-in-asar-reports">Common uses in <code>asar</code> reports</h3>
+<section id="common-uses-in-asar-reports" class="level2">
+<h2 class="anchored" data-anchor-id="common-uses-in-asar-reports">Common uses in <code>asar</code> reports</h2>
 <p>Now, let’s dive into some of the most common features you’ll be using when creating <code>asar</code> reports.</p>
-<section id="parameters" class="level4">
-<h4 class="anchored" data-anchor-id="parameters">Parameters</h4>
+<section id="parameters" class="level3">
+<h3 class="anchored" data-anchor-id="parameters">Parameters</h3>
 <p>Parameters allow you to create dynamic reports. You can define parameters in the YAML header and then reference them in your text and code.</p>
 <p>For example, you could have a parameter for the species you’re writing about:</p>
 <div class="cell">
@@ -623,8 +625,8 @@ Note
 <p>“The native range of `params$species` spans from…”</p>
 <p>When you knit the document, `params$species` will be replaced with “Petrale sole”.</p>
 </section>
-<section id="formatting" class="level4">
-<h4 class="anchored" data-anchor-id="formatting">Formatting</h4>
+<section id="formatting" class="level3">
+<h3 class="anchored" data-anchor-id="formatting">Formatting</h3>
 <p>R Markdown uses a simple syntax for formatting your text. Here are some of the most common formatting options:</p>
 <ul>
 <li><strong>Headers</strong>
@@ -648,37 +650,33 @@ Note
 </ul></li>
 </ul>
 </section>
-<section id="math-and-equations" class="level4">
-<h4 class="anchored" data-anchor-id="math-and-equations">Math and Equations</h4>
+<section id="math-and-equations" class="level3">
+<h3 class="anchored" data-anchor-id="math-and-equations">Math and Equations</h3>
 <p>You can include LaTeX-style math equations in your report.</p>
 <ul>
 <li><strong>Inline math:</strong> Wrap your equation in single dollar signs: <code>$A = \pi * r^2$</code></li>
 <li><strong>Block equations:</strong> Wrap your equation in double dollar signs to display it on its own line: <code>$$     E = mc^2     $$</code></li>
 </ul>
 </section>
-<section id="references-and-bibliography" class="level4">
-<h4 class="anchored" data-anchor-id="references-and-bibliography">References and Bibliography</h4>
+<section id="references-and-bibliography" class="level3">
+<h3 class="anchored" data-anchor-id="references-and-bibliography">References and Bibliography</h3>
 <p>You can easily add citations to your report. We provide an <code>asar_references.bib</code> file in the “report” folder with hundreds of citations for you to reference, though you can add your own to the file too.</p>
 <p>To cite a reference in the text, use the <code>@</code> symbol followed by the citation key (e.g., <code>@Biddle_1992</code>). R Markdown will automatically format the citation and add it to the “References” section towards the end of your report.</p>
-<p><strong>15 min break</strong></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>15 minute break</p>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
 <section id="quarto" class="level1">
 <h1>Quarto</h1>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Follow along with our demo!</p>
-</div>
-</div>
 <section id="why-use-quarto-for-reports" class="level2">
 <h2 class="anchored" data-anchor-id="why-use-quarto-for-reports">Why use Quarto for reports?</h2>
 <p>Quarto is an ideal platform for building reproducible reports, which are denoted with a .qmd (Quarto Markdown) extension type. Why?</p>
@@ -817,6 +815,16 @@ Note
 </div>
 </div>
 <p>For those familiar with Rmarkdown, the code chunk structure in Rmarkdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a “#|” proceeding each option.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Break for questions</p>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="installation" class="level1">
