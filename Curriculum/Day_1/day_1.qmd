@@ -49,7 +49,9 @@ Sam Schiano and Sophie Breitbart are contractors with ECS Federal working in sup
 
 Now, open up a JupyterHub session.
 
-**Break for questions**
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
 
 ## Workshop overview
 ### Purpose and benefits to you
@@ -102,21 +104,17 @@ Open the [`asar` cheatsheet](https://nmfs-ost.github.io/asar/asar_cheatsheet.pdf
 
 # Markdown
 
-::: {.callout-note}
-Follow along with our demo!
-:::
-
-### What is markdown?
+## What is markdown?
 
 [According to RStudio](https://rmarkdown.rstudio.com/articles_intro.html), markdown is "an easy-to-write plain text format"; not exactly a language, but a formatting style. 
 
-### Why use R markdown?
+## Why use R markdown?
 
 R markdown, or "Rmd" for short, allows you to create amazingly dynamic reports. With R markdown, you can embed your R code directly into your documents. When you "knit" the document, the code is executed, and the results— like figures, tables, parameters, citations, and other outputs— are automatically inserted into the final report.
 
 A major reason why R markdown is incredibly useful: it *saves time and reduces errors*. If your data changes, you don't have to manually rerun your analysis and copy/paste the results. You just re-knit the document, and everything is updated automatically.
 
-### Opening a document
+## Opening a document
 
 Let's open a new document. We'll open a Quarto document (Qmd) because it also runs Rmd code; it's a newer document type that can handle more than Rmd can.
 
@@ -127,17 +125,17 @@ Let's open a new document. We'll open a Quarto document (Qmd) because it also ru
 
 You'll now see a new Quarto file with some default text. Let's explore some ways you can take advantage of this powerful document type.
 
-### The core components
+## The core components
 
 1.  **The YAML Header:** This is the section at the top of the file, enclosed by triple dashes (`---`). It contains metadata about the document, like the title, author, and output format.
 2.  **Text and Formatting:** This is where you'll write the narrative of your report using Markdown syntax.
 3.  **Code Chunks:** These are sections of the document where you can embed and run your R code.
 
-### Common uses in `asar` reports
+## Common uses in `asar` reports
 
 Now, let's dive into some of the most common features you'll be using when creating `asar` reports.
 
-#### Parameters
+### Parameters
 
 Parameters allow you to create dynamic reports. You can define parameters in the YAML header and then reference them in your text and code.
 
@@ -159,7 +157,7 @@ Then, in the body of your report, you can reference this parameter like this:
 
 When you knit the document, \`params\$species\` will be replaced with "Petrale sole".
 
-#### Formatting
+### Formatting
 
 R Markdown uses a simple syntax for formatting your text. Here are some of the most common formatting options:
 
@@ -175,7 +173,7 @@ R Markdown uses a simple syntax for formatting your text. Here are some of the m
   * **Links**
       * `[link text](URL)`
 
-#### Math and Equations
+### Math and Equations
 
 You can include LaTeX-style math equations in your report.
 
@@ -187,19 +185,17 @@ You can include LaTeX-style math equations in your report.
     $$
     ```
 
-#### References and Bibliography
+### References and Bibliography
 
 You can easily add citations to your report. We provide an `asar_references.bib` file in the "report" folder with hundreds of citations for you to reference, though you can add your own to the file too.
 
 To cite a reference in the text, use the `@` symbol followed by the citation key (e.g., `@Biddle_1992`). R Markdown will automatically format the citation and add it to the "References" section towards the end of your report.
 
-**15 min break**
+::: {.callout-note appearance="minimal"}
+15 minute break
+:::
 
 # Quarto
-
-::: {.callout-note}
-Follow along with our demo!
-:::
 
 ## Why use Quarto for reports?
 
@@ -340,7 +336,11 @@ In the "label" option, for tables and figures, you will need to prefix the label
 :::
 
 For those familiar with Rmarkdown, the code chunk structure in Rmarkdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a "#|" proceeding each option.
-  
+
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
+
 # Installation
 
 ::: {.callout-tip}
