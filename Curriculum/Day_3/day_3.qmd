@@ -72,6 +72,10 @@ petrale <- asar::convert_output(output_file,
 
 If you have already converted your output: great! Import it into your R environment so that you can handle it as an object like "petrale" in the chunk above.
 
+::: {.callout-note appearance="minimal"}
+Break for issues
+:::
+
 ### Introduction to  `stockplotr`
 
 This package is an ongoing process to gather contributions in order to expand the number of pre-made tables and figures that can be incorporated into a stock assessment report. All objects are intended to be generalized and not specific to any region.
@@ -115,6 +119,10 @@ stockplotr::plot_biomass(
 ```
 
 ![](images/day3_ex_plt1.png)
+
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
 
 #### Customizing
 
@@ -191,6 +199,10 @@ stockplotr::plot_biomass(
 
 ![](images/day3_ex_plt4.png){fig-alt="why doesn't this work."}
 
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
+
 ::: {.callout-tip}
 Remember that figures return `ggplot2` objects, so we can make additional customization to these plots.
 :::
@@ -212,6 +224,10 @@ stockplotr::plot_biomass(
 ```
 
 ![](images/day3_ex_plt5.png)
+
+::: {.callout-note appearance="minimal"}
+Break for questions. We will be moving onto tables next.
+:::
 
 ### Example Table
 
@@ -237,6 +253,10 @@ stockplotr::table_landings(
 ```
 
 <!-- insert image of table here -->
+
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
 
 Next, we can add some different formatting:
 
@@ -283,6 +303,10 @@ stockplotr::table_landings(
 
 <!-- insert image of table here -->
 
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
+
 ## rda Package
 
 Each plot or table has the option to export is as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:
@@ -302,11 +326,19 @@ stockplotr::table_landings(
 )
 ```
 
+<!-- open the rda and show around -->
+
+```{r}
+load("tables/landings.rda")
+rda$table
+rda$caption
+rda$latex
+```
+
 We have designed two functions that allow you to automatically create all available figures and tables:
 
 - `save_all_plots()`
 - `html_all_figs_tables()`
-
 
 # Integrating stockplotr in the workflow
 
