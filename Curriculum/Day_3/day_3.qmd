@@ -1,13 +1,14 @@
 ---
 title: "Day 3"
 format: html
+execute:
+  eval: false
 ---
 
 ::: objectives
--   Work through a guided demo of a more complex `asar` workflow
+-   Walk through an example of a plot and table from `stockplotr`
 -   Learn about the value of the `stockplotr` R package
 -   Understand how to integrate `stockplotr` into an `asar`-based reporting workflow
--   Work through a guided demo of a basic `stockplotr` workflow
 :::
 
 # Introduction
@@ -27,17 +28,25 @@ Break for questions
 
 ## Installation
 
+`asar` should already be installed if you attedended day 2, but if not, please install it first:
+
+```r
+install.packages("pak")
+pak::pak("nmfs-ost/asar")
+```
+
+Next install `stockplotr`
+
+```r
+install.packages("pak")
+pak::pak("nmfs-ost/stockplotr")
+```
+
 ::: {.callout-tip}
 ### Tip
 
 The following packages are already installed in the `asar` workspace on JupyterHub, so if you are using that space, you can skip this section.
 :::
-
-```r
-install.packages("pak")
-pak::pak("nmfs-ost/asar")
-pak::pak("nmfs-ost/stockplotr")
-```
 
 Please see the [`stockplotr` README](https://github.com/nmfs-ost/stockplotr) for more installation options.
 
@@ -63,15 +72,273 @@ petrale <- asar::convert_output(output_file,
 
 If you have already converted your output: great! Import it into your R environment so that you can handle it as an object like "petrale" in the chunk above.
 
-### Create single plots
+::: {.callout-note appearance="minimal"}
+Break for issues
+:::
+
+### Introduction to  `stockplotr`
+
+This package is an ongoing process to gather contributions in order to expand the number of pre-made tables and figures that can be incorporated into a stock assessment report. All objects are intended to be generalized and not specific to any region.
+
+The following table contains figures and tables that are available in `stockplotr`:
+
+| Figure | Table |
+|--------|-------|
+| abundance-at-age | landings |
+| biomass-at-age | biomass, landings, and catch time series |
+| biomass time series | harvest projections |
+| catch compositions | indices |
+| fishing mortality time series |  |
+| indices |  |
+| landings time series |  |
+| natural mortality time series or at-age |  |
+| recruitment deviations |  |
+| recruitment time series |  |
+| spawn recruitment relationship |  |
+| spawning biomass time series |  |
+
+Each automated function returns either a `ggplot2` object (figure) or `flextable` object (table). This allows for further customization of the output if desired by using the notation you are familiar with. For a figure, you can continue to add onto the plot any other `ggplot2` function or extension using the plus (+) operator. For a table, please use the native pipe when adding additional formatting, rows, or other pieces to the object.
+
+### Example Figure
+
+Run the example below. It should result in a line graph showing spawning biomass over time, including a reference line for the spawning biomass at maximum sustainable yield (SBMSY).
+
+```{r}
+stockplotr::plot_biomass(
+  dat = petrale,
+  geom = "line",
+  group = NULL,
+  facet = NULL,
+  ref_line = "unfished",
+  unit_label = "mt",
+  scale_amount = 1,
+  relative = FALSE,
+  interactive = TRUE,
+  module = NULL
+)
+```
+
+![](images/day3_ex_plt1.png)
+
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
+
+#### Customizing
+
+All figures will automatically identify any indexing variables in the data such as fleet, area, or sex. You can use the `group` and `facet` arguments to modify how these indexing variables are displayed in the figure. You can also modify other arguments such as `geom`, `ref_line`, and `relative` to change the appearance of the figure. 
+
+Here are some examples of how to customize the spawning biomass figure:
+
+  (1) Change the reference line to a specific value (e.g., 15)
+  
+  In this example we are also telling the function which module to select in order to by-pass this step. We plan to remove grouping of some modules in the future.
+
+```{r}
+stockplotr::plot_biomass(
+  dat = petrale,
+  geom = "line",
+  group = NULL,
+  facet = NULL,
+  ref_line = c("target" = 26000),
+  unit_label = "mt",
+  scale_amount = 1,
+  relative = FALSE,
+  # interactive = TRUE,
+  module = "TIME_SERIES"
+)
+```
+
+![](images/day3_ex_plt2.png)
+
+  (2) Plot relative spawning biomass and change the size of the line
+  
+  In this example, we still are by-passing module selection and we are automatically extracting the reference line value from the data. However, now we are using this reference value to plot relative biomass and changing the line width to 2 (an argument inherited from `ggplot2`).
+
+```{r}
+stockplotr::plot_biomass(
+  dat = petrale,
+  geom = "line",
+  group = NULL,
+  facet = NULL,
+  ref_line = "unfished",
+  unit_label = "mt",
+  scale_amount = 1,
+  relative = TRUE,
+  # interactive = TRUE,
+  module = "TIME_SERIES",
+  linewidth = 2
+)
+```
+
+![](images/day3_ex_plt3.png)
+
+::: {.callout-tip}
+The only extended arguments available are the ones found from the ggplot2::geom_XX() function. Thus, any indexed variables can not be changes such as color to fill. Please see the documentation for `ggplot2` geom functions for these additional arguments.
+:::
+
+
+  (3) Group our data by fleet
+  
+  Notice that you can remove the reference line by setting `ref_line = NULL`.
+  
+```{r}
+stockplotr::plot_biomass(
+  dat = petrale,
+  geom = "line",
+  group = "fleet",
+  facet = NULL,
+  ref_line = NULL,
+  unit_label = "mt",
+  scale_amount = 1,
+  relative = FALSE,
+  # interactive = TRUE,
+  module = "TIME_SERIES"
+)
+```
+
+![](images/day3_ex_plt4.png){fig-alt="why doesn't this work."}
+
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
+
+::: {.callout-tip}
+Remember that figures return `ggplot2` objects, so we can make additional customization to these plots.
+:::
+
+```{r}
+stockplotr::plot_biomass(
+  dat = petrale,
+  geom = "line",
+  group = "fleet",
+  facet = NULL,
+  ref_line = c("target" = 5690),
+  unit_label = "mt",
+  scale_amount = 1,
+  relative = FALSE,
+  # interactive = TRUE,
+  module = "TIME_SERIES"
+) +
+  ggplot2::geom_vline(xintercept = 2005, linetype = "dashed", color = "red")
+```
+
+![](images/day3_ex_plt5.png)
+
+::: {.callout-note appearance="minimal"}
+Break for questions. We will be moving onto tables next.
+:::
+
+### Example Table
+
 
 - Export single plots
 - Create and export all plots
 - How to customize (changing color palette, etc.)
 
-::: {.callout-note appearance="minimal"}
-15 minute break
+Run the following example table. The result is a fully report ready table showing landings over time. Remember that these are exported as `flextable` objects and can be edited as such.
+
+::: {.callout-note}
+The workflows team uses the native pipe in this package, so if you decide to customize you table, please also use the native pipe to avoid errors.
 :::
+
+```{r}
+# not sure what this will exactly look like so this is a place holder
+stockplotr::table_landings(
+  dat = petrale,
+  group = "fleet",
+  unit_label = "mt",
+  module = NULL
+)
+```
+
+<!-- insert image of table here -->
+
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
+
+Next, we can add some different formatting:
+
+```{r}
+stockplotr::table_landings(
+  dat = petrale,
+  group = "fleet",
+  unit_label = "mt",
+  module = NULL
+) |>
+  flextable::footnote(
+    i = 6, # row
+    j = 2, # column
+    value = flextable::as_paragraph(
+      "This is an example table from the workflows workshop. Not intended for official use."
+      )
+  )
+```
+
+<!-- insert image of table here -->
+
+or potentially highlight a specific line within the table:
+
+```{r}
+stockplotr::table_landings(
+  dat = petrale,
+  group = "fleet",
+  unit_label = "mt",
+  module = NULL
+) |>
+  flextable::footnote(
+    i = 6, # row
+    j = 2, # column
+    value = flextable::as_paragraph(
+      "Not intended for official use."
+      )
+  ) |>
+  flextable::bg(
+    i = 5,
+    bg = "lightblue",
+    part = "body"
+    )
+```
+
+<!-- insert image of table here -->
+
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
+
+## rda Package
+
+Each plot or table has the option to export is as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:
+
+- ggplot or flextable object
+- caption
+- alternative text (figures only)
+- latex object (tables only)
+
+```{r}
+stockplotr::table_landings(
+  dat = petrale,
+  group = "fleet",
+  unit_label = "mt",
+  make_rda = TRUE,
+  tables_dir = getwd()
+)
+```
+
+<!-- open the rda and show around -->
+
+```{r}
+load("tables/landings.rda")
+rda$table
+rda$caption
+rda$latex
+```
+
+We have designed two functions that allow you to automatically create all available figures and tables:
+
+- `save_all_plots()`
+- `html_all_figs_tables()`
 
 # Integrating stockplotr in the workflow
 
