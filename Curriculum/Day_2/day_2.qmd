@@ -2,12 +2,15 @@
 title: "Day 2"
 format: html
 ---
-
-::: objectives
+<div style="background: ghostwhite; 
+            padding: 10px; 
+            border: 2px solid lightgray; 
+            margin: 10px;">
+# Objectives
 -   Learn the basics of creating a stock assessment report using `asar`
 -   Understand the complexities and customization options of the package
 -   Practice using `asar` and ask questions
-:::
+</div>
 
 # Introduction
 ## Icebreaker

@@ -200,7 +200,7 @@
     "href": "report/09_figures.html",
     "title": "Figures",
     "section": "",
-    "text": "Figures\n\n\nFigures\nPlease refer to the stockplotr package downloaded from remotes::install_github(‘nmfs-ost/stockplotr’) to add premade figures."
+    "text": "Figures\nPlease refer to the stockplotr package downloaded from remotes::install_github(‘nmfs-ost/stockplotr’) to add premade figures."
   },
   {
     "objectID": "report/07_references.html",
@@ -388,7 +388,7 @@
     "section": "",
     "text": "Work through a guided demo of a more complex asar workflow\nLearn about the value of the stockplotr R package\nUnderstand how to integrate stockplotr into an asar-based reporting workflow\nWork through a guided demo of a basic stockplotr workflow",
     "crumbs": [
-      "Day 3"
+      "Day 3: stockplotr + asar"
     ]
   },
   {
@@ -396,9 +396,9 @@
     "href": "Curriculum/Day_3/day_3.html#icebreaker",
     "title": "Day 3",
     "section": "Icebreaker",
-    "text": "Icebreaker\nWelcome! Please open the Day 3 communal notes doc and participate in the icebreaker exercise.",
+    "text": "Icebreaker\nWelcome! Please open the Day 3 communal notes doc and participate in the icebreaker exercise.\n\n\n\n\n\n\nTip\n\n\n\nReminder: For comments or questions, please raise your hand, or write them in the chat, at any time. Depending on our schedule, we may ask that you save larger questions for breaks.",
     "crumbs": [
-      "Day 3"
+      "Day 3: stockplotr + asar"
     ]
   },
   {
@@ -408,7 +408,7 @@
     "section": "Installation",
     "text": "Installation\n\n\n\n\n\n\nTipTip\n\n\n\nThe following packages are already installed in the asar workspace on JupyterHub, so if you are using that space, you can skip this section.\n\n\ninstall.packages(\"pak\")\npak::pak(\"nmfs-ost/asar\")\npak::pak(\"nmfs-ost/stockplotr\")\nPlease see the stockplotr README for more installation options.",
     "crumbs": [
-      "Day 3"
+      "Day 3: stockplotr + asar"
     ]
   },
   {
@@ -416,9 +416,9 @@
     "href": "Curriculum/Day_3/day_3.html#stockplotr-workflow-basic-example",
     "title": "Day 3",
     "section": "stockplotr workflow: Basic example",
-    "text": "stockplotr workflow: Basic example\n\nConvert output (if necessary)\nFirst, you’ll need to convert your model results using the same workflow covered yesterday: asar::convert_output().\nYou can use the example Report.sso file uploaded to the workshop GitHub or, if you have a compatible output file, your own.\n\n# Identify output file\noutput_file &lt;- here::here(\"example_output\", \"Report.sso\")\n# convert the output\npetrale &lt;- asar::convert_output(output_file)\n\nIf you have already converted your output: great! Import it into your R environment so that you can handle it as an object like “petrale” in the chunk above.\n\n\nCreate single plots\n\nExport single plots\nCreate and export all plots\nHow to customize (changing color palette, etc.)",
+    "text": "stockplotr workflow: Basic example\n\nConvert output (if necessary)\nFirst, you’ll need to convert your model results using the same workflow covered yesterday: asar::convert_output().\nYou can use the example Report.sso file uploaded to the workshop GitHub or, if you have a compatible output file, your own.\n\n# Identify output file\noutput_file &lt;- here::here(\"example_output\", \"Report.sso\")\n# convert the output\npetrale &lt;- asar::convert_output(output_file)\n\nIf you have already converted your output: great! Import it into your R environment so that you can handle it as an object like “petrale” in the chunk above.\n\n\nIntroduction to stockplotr\nThis package is an ongoing process to gather contributions in order to expand the number of pre-made tables and figures that can be incorporated into a stock assessment report. All objects are intended to be generalized and not specific to any region.\nThe following table contains figures and tables that are available in stockplotr:\n\n\n\nFigure\nTable\n\n\n\n\nabundance-at-age\nlandings\n\n\nbiomass-at-age\niomass, landings, and catch time series\n\n\nbiomass time series\nharvest projections\n\n\ncatch compositions\nindices\n\n\nfishing mortality time series\n\n\n\nindices\n\n\n\nlandings time series\n\n\n\nnatural mortality time series or at-age\n\n\n\nrecruitment deviations\n\n\n\nrecruitment time series\n\n\n\nspawn recruitment relationship\n\n\n\nspawning biomass time series\n\n\n\n\nEach automated function returns either a ggplot2 object (figure) or flextable object (table). This allows for further customization of the output if desired by using the notation you are familiar with. For a figure, you can continue to add onto the plot any other ggplot2 function or extension using the plus (+) operator. For a table, please use the native pipe when adding additional formatting, rows, or other pieces to the object.\n\n\nExample Figure\nRun the example below. It should result in a line graph showing spawning biomass over time, including a reference line for the spawning biomass at maximum sustainable yield (SBMSY).\n\nstockplotr::plot_biomass(\n  dat = petrale,\n  geom = \"line\",\n  group = NULL,\n  facet = NULL,\n  ref_line = \"unfished\",\n  unit_label = \"mt\",\n  scale_amount = 1,\n  relative = FALSE,\n  interactive = TRUE,\n  module = NULL\n)\n\n\n\nCustomizing\nAll figures will automatically identify any indexing variables in the data such as fleet, area, or sex. You can use the group and facet arguments to modify how these indexing variables are displayed in the figure. You can also modify other arguments such as geom, ref_line, and relative to change the appearance of the figure.\nHere are some examples of how to customize the spawning biomass figure:\n\nChange the reference line to a specific value (e.g., 15)\n\nIn this example we are also telling the function which module to select in order to by-pass this step. We plan to remove grouping of some modules in the future.\n\nstockplotr::plot_biomass(\n  dat = petrale,\n  geom = \"line\",\n  group = NULL,\n  facet = NULL,\n  ref_line = c(\"target\" = 26000),\n  unit_label = \"mt\",\n  scale_amount = 1,\n  relative = FALSE,\n  # interactive = TRUE,\n  module = \"TIME_SERIES\"\n)\n\n\n\nPlot relative spawning biomass instead of absolute values and change the size of the line\n\nIn this example, we still are by-passing module selection and we are automatically extracting the reference line value from the data. However, now we are using this reference value to plot relative biomass and changing the linewidth to 2 (an argument inherited from ggplot2).\n\nstockplotr::plot_biomass(\n  dat = petrale,\n  geom = \"line\",\n  group = NULL,\n  facet = NULL,\n  ref_line = \"unfished\",\n  unit_label = \"mt\",\n  scale_amount = 1,\n  relative = TRUE,\n  # interactive = TRUE,\n  module = \"TIME_SERIES\",\n  linewidth = 2\n)\n\n\n\nGroup our data by fleet\n\nNotice that you can remove the reference line by setting ref_line = NULL.\n\nstockplotr::plot_biomass(\n  dat = petrale,\n  geom = \"line\",\n  group = \"fleet\",\n  facet = NULL,\n  ref_line = NULL,\n  unit_label = \"mt\",\n  scale_amount = 1,\n  relative = FALSE,\n  # interactive = TRUE,\n  module = \"TIME_SERIES\"\n)\n\n\n\n\n\n\n\n\nTip\n\n\n\nRemember that figures return ggplot2 objects, so we can make additional customizations to these plots.\n\n\n\nstockplotr::plot_biomass(\n  dat = petrale,\n  geom = \"line\",\n  group = \"fleet\",\n  facet = NULL,\n  ref_line = c(\"target\" = 5690),\n  unit_label = \"mt\",\n  scale_amount = 1,\n  relative = FALSE,\n  # interactive = TRUE,\n  module = \"TIME_SERIES\"\n) +\n  ggplot2::geom_vline(xintercept = 2005, linetype = \"dashed\", color = \"red\")\n\n\n\n\n\nExample Table\n\nExport single plots\nCreate and export all plots\nHow to customize (changing color palette, etc.)",
     "crumbs": [
-      "Day 3"
+      "Day 3: stockplotr + asar"
     ]
   },
   {
@@ -720,5 +720,175 @@
     "crumbs": [
       "Day 1"
     ]
+  },
+  {
+    "objectID": "Curriculum/Day_3/day_3.html#option-1-rerunning-asarcreate_tables_docasarcreate_figures_doc",
+    "href": "Curriculum/Day_3/day_3.html#option-1-rerunning-asarcreate_tables_docasarcreate_figures_doc",
+    "title": "Day 3",
+    "section": "Option 1: Rerunning asar::create_tables_doc()/asar::create_figures_doc()",
+    "text": "Option 1: Rerunning asar::create_tables_doc()/asar::create_figures_doc()\n\nTables\n\n\nFigures",
+    "crumbs": [
+      "Day 3: stockplotr + asar"
+    ]
+  },
+  {
+    "objectID": "Curriculum/Day_3/day_3.html#option-2-manually-adding-tablesfigures",
+    "href": "Curriculum/Day_3/day_3.html#option-2-manually-adding-tablesfigures",
+    "title": "Day 3",
+    "section": "Option 2: Manually adding tables/figures",
+    "text": "Option 2: Manually adding tables/figures\nTo add a table/figure manually, here are the main steps:\n\nCreate a code chunk\nAdd your label and other options\nAdd code\nWrite caption\n\n\nTables\nAdd a code chunk for each plot\n\n\n\nTable 1: This is my caption for the example table.\n\n\nhead(petrale) |&gt;\n    dplyr::select(label, year, estimate) |&gt;\n    flextable::flextable()\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nIt will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility in a few moments!\n\n\n\nNon-code Tables\nIn the case you have made a table not using code, you can add it as an image. While this is not generally recommended since it significantly reduces the accessibility of your table, we understand that sometimes this is the only format you have it in.\nUse the following notation to reference an external table as an image:\n![Caption for my example table](example_table.png){fig-alt=\"This is the alternative text for my table\", #tbl-example}\n\n\n\n\n\n\nNote\n\n\n\nNotice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. Please make sure you add alternative text for tables added in this way.\n\n\n\n\n\nFigures\nLike with our tables file, a blank figures quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made figures.\nSteps for adding a figure:\n\nCreate a code chunk\nAdd your label and other options\nAdd code\nWrite caption and alternative text\n\n[Highlight the difference with a figure needing alternative text]\nAdd a code chunk for each table\n\nplot(cars$speed, cars$dist)\n\n\n\nNon-code Figures\nLike tables, you can reference figures not made directly in code chunks. However, in this case, this does not change the accessibility of the figure as much because you as the user can still add the necessary components to meet section 508 standards.\n![Caption for my example figure](example_figure.png){fig-alt=\"This is the alternative text for my figure\", #fig-example}",
+    "crumbs": [
+      "Day 3: stockplotr + asar"
+    ]
+  },
+  {
+    "objectID": "Curriculum/Day_3/day_3.html#referencing-your-tables-or-figures-in-text",
+    "href": "Curriculum/Day_3/day_3.html#referencing-your-tables-or-figures-in-text",
+    "title": "Day 3",
+    "section": "Referencing your tables or figures in text",
+    "text": "Referencing your tables or figures in text\nQuarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:\n“@tbl-example” or “@fig-example”\nBy adding an @ symbol followed by the chunk label or just label of your table/figure will create an interactive link that lets the reader navigate to that specific table/figure.\n[Show working example within positron]\nPut it all together!\nRender your entire document and take a look at what we’ve made today.",
+    "crumbs": [
+      "Day 3: stockplotr + asar"
+    ]
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#disclaimer",
+    "href": "report/Petrale_sole_SAR_2025.html#disclaimer",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Disclaimer",
+    "text": "Disclaimer\nThese materials do not constitute a formal publication and are for information only. They are in a pre-review, pre-decisional state and should not be formally cited or reproduced. They are to be considered provisional and do not represent any determination or policy of NOAA or the Department of Commerce.\n\nPlease cite this publication as:\nSchiano, S. 2025. Status of Petrale sole stock off the U.S. West Coast in 2025. . National Marine Fisheries Service, [CITY], [STATE]. pp."
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#assessment-model",
+    "href": "report/Petrale_sole_SAR_2025.html#assessment-model",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Assessment Model",
+    "text": "Assessment Model"
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#reference-points-stock-status-and-projections",
+    "href": "report/Petrale_sole_SAR_2025.html#reference-points-stock-status-and-projections",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Reference Points, Stock Status, and Projections",
+    "text": "Reference Points, Stock Status, and Projections"
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#stock-id",
+    "href": "report/Petrale_sole_SAR_2025.html#stock-id",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Stock ID",
+    "text": "Stock ID"
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#management-history",
+    "href": "report/Petrale_sole_SAR_2025.html#management-history",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Management History",
+    "text": "Management History"
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#fishery-descriptions",
+    "href": "report/Petrale_sole_SAR_2025.html#fishery-descriptions",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Fishery Descriptions",
+    "text": "Fishery Descriptions"
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#ecosystem-considerations",
+    "href": "report/Petrale_sole_SAR_2025.html#ecosystem-considerations",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Ecosystem Considerations",
+    "text": "Ecosystem Considerations\n\nEcosystem considerations and/or climate indicators were not included in this assessment."
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#life-history",
+    "href": "report/Petrale_sole_SAR_2025.html#life-history",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Life History",
+    "text": "Life History"
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#catch",
+    "href": "report/Petrale_sole_SAR_2025.html#catch",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Catch",
+    "text": "Catch"
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#indices-and-standardization",
+    "href": "report/Petrale_sole_SAR_2025.html#indices-and-standardization",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Indices and Standardization",
+    "text": "Indices and Standardization"
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#composition-data",
+    "href": "report/Petrale_sole_SAR_2025.html#composition-data",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Composition Data",
+    "text": "Composition Data"
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#absolute-abundance",
+    "href": "report/Petrale_sole_SAR_2025.html#absolute-abundance",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Absolute Abundance",
+    "text": "Absolute Abundance"
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#environmentalecosystem-indicator-data",
+    "href": "report/Petrale_sole_SAR_2025.html#environmentalecosystem-indicator-data",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Environmental/Ecosystem Indicator Data",
+    "text": "Environmental/Ecosystem Indicator Data"
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#current-modeling-approach",
+    "href": "report/Petrale_sole_SAR_2025.html#current-modeling-approach",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Current Modeling Approach",
+    "text": "Current Modeling Approach"
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#configuration-of-the-base-model",
+    "href": "report/Petrale_sole_SAR_2025.html#configuration-of-the-base-model",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Configuration of the Base Model",
+    "text": "Configuration of the Base Model"
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#bridging",
+    "href": "report/Petrale_sole_SAR_2025.html#bridging",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Bridging",
+    "text": "Bridging"
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#sec-assmt-results",
+    "href": "report/Petrale_sole_SAR_2025.html#sec-assmt-results",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Modeling Results",
+    "text": "Modeling Results\n\n\nParameter Estimates\n\n\nTime Series\n\n\nModel Fits\n\n\nModel Diagnostics"
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#sec-assmt-sens",
+    "href": "report/Petrale_sole_SAR_2025.html#sec-assmt-sens",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Sensitivity Analyses",
+    "text": "Sensitivity Analyses"
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#sec-assmt-bench",
+    "href": "report/Petrale_sole_SAR_2025.html#sec-assmt-bench",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Management Benchmarks",
+    "text": "Management Benchmarks"
+  },
+  {
+    "objectID": "report/Petrale_sole_SAR_2025.html#sec-assmt-proj",
+    "href": "report/Petrale_sole_SAR_2025.html#sec-assmt-proj",
+    "title": "Status of Petrale sole stock off the U.S. West Coast in 2025",
+    "section": "Projections",
+    "text": "Projections"
   }
 ]
