@@ -2,13 +2,16 @@
 title: "Day 1"
 format: html
 ---
-
-::: objectives
+<div style="background: ghostwhite; 
+            padding: 10px; 
+            border: 2px solid lightgray; 
+            margin: 10px;">
+# Objectives
 -   Identify purpose and scope of workshop
 -   Learn how R markdown can be used to enhance `asar` reports
 -   Understand how Quarto is used to structure an `asar` report
 -   Install software necessary to build an `asar` report
-:::
+</div>
 
 # Introduction
 ## Icebreaker

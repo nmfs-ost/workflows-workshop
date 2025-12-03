@@ -4,12 +4,15 @@ format: html
 execute:
   eval: false
 ---
-
-::: objectives
+<div style="background: ghostwhite; 
+            padding: 10px; 
+            border: 2px solid lightgray; 
+            margin: 10px;">
+# Objectives
 -   Walk through an example of a plot and table from `stockplotr`
 -   Learn about the value of the `stockplotr` R package
 -   Understand how to integrate `stockplotr` into an `asar`-based reporting workflow
-:::
+</div>
 
 # Introduction
 ## Icebreaker
@@ -24,18 +27,16 @@ Welcome! Please open the [Day 3 communal notes doc](https://docs.google.com/docu
 Break for questions
 :::
 
-# Introduction to `stockplotr`
+# Installation
 
-## Installation
-
-`asar` should already be installed if you attedended day 2, but if not, please install it first:
+`asar` should already be installed if you attended day 2, but if not, please install it first:
 
 ```r
 install.packages("pak")
 pak::pak("nmfs-ost/asar")
 ```
 
-Next install `stockplotr`
+Next, install `stockplotr`
 
 ```r
 install.packages("pak")
@@ -43,16 +44,16 @@ pak::pak("nmfs-ost/stockplotr")
 ```
 
 ::: {.callout-tip}
-### Tip
+## Tip
 
 The following packages are already installed in the `asar` workspace on JupyterHub, so if you are using that space, you can skip this section.
 :::
 
 Please see the [`stockplotr` README](https://github.com/nmfs-ost/stockplotr) for more installation options.
 
-## `stockplotr` workflow: Basic example
+# Introduction to `stockplotr`
 
-### Convert output (if necessary)
+## Convert output (if necessary)
 
 First, you'll need to convert your model results using the same workflow covered yesterday: `asar::convert_output()`.
 
@@ -76,7 +77,7 @@ If you have already converted your output: great! Import it into your R environm
 Break for issues
 :::
 
-### Introduction to  `stockplotr`
+## Package information
 
 This package is an ongoing process to gather contributions in order to expand the number of pre-made tables and figures that can be incorporated into a stock assessment report. All objects are intended to be generalized and not specific to any region.
 
@@ -97,11 +98,11 @@ The following table contains figures and tables that are available in `stockplot
 | spawn recruitment relationship |  |
 | spawning biomass time series |  |
 
-Each automated function returns either a `ggplot2` object (figure) or `flextable` object (table). This allows for further customization of the output if desired by using the notation you are familiar with. For a figure, you can continue to add onto the plot any other `ggplot2` function or extension using the plus (+) operator. For a table, please use the native pipe when adding additional formatting, rows, or other pieces to the object.
+Each automated function returns either a `ggplot2` object (figure) or `flextable` object (table). This allows for further customization of the output if desired by using the notation you are familiar with. For a figure, you can continue to add onto the plot any other `ggplot2` function or extension using the plus (+) operator. For a table, please use the native pipe (|>) when adding additional formatting, rows, or other pieces to the object.
 
-### Example Figure
+## Example Figure
 
-Run the example below. It should result in a line graph showing spawning biomass over time, including a reference line for the spawning biomass at maximum sustainable yield (SBMSY).
+Run the example below. It should result in a line graph showing biomass over time, including a reference line for the biomass unfished.
 
 ```{r}
 stockplotr::plot_biomass(
@@ -124,13 +125,13 @@ stockplotr::plot_biomass(
 Break for questions
 :::
 
-#### Customizing
+### Customizing
 
 All figures will automatically identify any indexing variables in the data such as fleet, area, or sex. You can use the `group` and `facet` arguments to modify how these indexing variables are displayed in the figure. You can also modify other arguments such as `geom`, `ref_line`, and `relative` to change the appearance of the figure. 
 
-Here are some examples of how to customize the spawning biomass figure:
+Here are some examples of how to customize the biomass figure:
 
-  (1) Change the reference line to a specific value (e.g., 15)
+#### Change the reference line to a specific value (e.g., 260)
   
   In this example we are also telling the function which module to select in order to by-pass this step. We plan to remove grouping of some modules in the future.
 
@@ -140,7 +141,7 @@ stockplotr::plot_biomass(
   geom = "line",
   group = NULL,
   facet = NULL,
-  ref_line = c("target" = 26000),
+  ref_line = c("target" = 260),
   unit_label = "mt",
   scale_amount = 1,
   relative = FALSE,
@@ -151,9 +152,9 @@ stockplotr::plot_biomass(
 
 ![](images/day3_ex_plt2.png)
 
-  (2) Plot relative spawning biomass and change the size of the line
+#### Plot relative biomass and change the size of the line
   
-  In this example, we still are by-passing module selection and we are automatically extracting the reference line value from the data. However, now we are using this reference value to plot relative biomass and changing the line width to 2 (an argument inherited from `ggplot2`).
+  In this example, we still are bypassing module selection and we are automatically extracting the reference line value from the data. However, now we are using this reference value to plot relative biomass and changing the linewidth to 2 (an argument inherited from `ggplot2`).
 
 ```{r}
 stockplotr::plot_biomass(
@@ -161,7 +162,7 @@ stockplotr::plot_biomass(
   geom = "line",
   group = NULL,
   facet = NULL,
-  ref_line = "unfished",
+  ref_line = c("target" = 260),
   unit_label = "mt",
   scale_amount = 1,
   relative = TRUE,
@@ -177,16 +178,15 @@ stockplotr::plot_biomass(
 The only extended arguments available are the ones found from the ggplot2::geom_XX() function. Thus, any indexed variables can not be changes such as color to fill. Please see the documentation for `ggplot2` geom functions for these additional arguments.
 :::
 
-
-  (3) Group our data by fleet
+#### Summarize our data
   
-  Notice that you can remove the reference line by setting `ref_line = NULL`.
+Notice that you can remove the reference line by setting `ref_line = NULL`.
   
 ```{r}
 stockplotr::plot_biomass(
   dat = petrale,
   geom = "line",
-  group = "fleet",
+  group = "none",
   facet = NULL,
   ref_line = NULL,
   unit_label = "mt",
@@ -229,17 +229,12 @@ stockplotr::plot_biomass(
 Break for questions. We will be moving onto tables next.
 :::
 
-### Example Table
-
-
-- Export single plots
-- Create and export all plots
-- How to customize (changing color palette, etc.)
+## Example Table
 
 Run the following example table. The result is a fully report ready table showing landings over time. Remember that these are exported as `flextable` objects and can be edited as such.
 
 ::: {.callout-note}
-The workflows team uses the native pipe in this package, so if you decide to customize you table, please also use the native pipe to avoid errors.
+`stockplotr` uses the native pipe (|>), so if you decide to customize you table, please also use the native pipe to avoid errors.
 :::
 
 ```{r}
@@ -307,9 +302,11 @@ stockplotr::table_landings(
 Break for questions
 :::
 
-## rda Package
+### rda file
 
-Each plot or table has the option to export is as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:
+An rda is an R data file that stores R objects and preserves their structure. In this case, you can think of an rda file exported from `stockplotr` as a list of objects.
+
+Each plot or table has the option to export it as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:
 
 - ggplot or flextable object
 - caption
@@ -343,6 +340,8 @@ We have designed two functions that allow you to automatically create all availa
 # Integrating stockplotr in the workflow
 
 ## Adding tables and figures to your report
+
+<!-- Add brief reorientation of template files/structure -->
 
 After running `create_template()`, you'll see figures and tables files, named something like '08_tables.qmd' and '09_figures.qmd' (the prefix numbers may vary).
 
@@ -445,7 +444,7 @@ your_table
 ``` 
 ````
 
-![](images/petrale_table.png){fig-alt="Example of a table produced with the 'Direct coding-in-qmd table workflow' option for adding tables to `asar` reports."}
+![](images/petrale_table.png){width=50% fig-alt="Example of a table produced with the 'Direct coding-in-qmd table workflow' option for adding tables to `asar` reports."}
 
 Then, add a pagebreak:
 
@@ -510,7 +509,7 @@ your_figure
 ``` 
 ````
 
-![](images/petrale_figure.png){fig-alt="Example of a figure produced with the 'Direct coding-in-qmd figure workflow' option for adding figures to `asar` reports."}
+![](images/petrale_figure.png){width=50% fig-alt="Example of a figure produced with the 'Direct coding-in-qmd figure workflow' option for adding figures to `asar` reports."}
 
 ::: {.callout-warning}
 Even though you wrote alt text in the `fig-alt` area, **when you first render your report into a PDF, your alternative text will not show up in your document.** Strange, right?! **To ensure it shows up, refer to the ["Adding accessibility features" section](#sec-a11y)** (which we'll discuss in a moment).
@@ -526,7 +525,13 @@ Like tables, you can reference figures not made directly in code chunks. However
 
 Quarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:
 
-`\@tbl-example` or `\@fig-example`
+````{verbatim}
+@tbl-example
+````
+or
+````{verbatim}
+@fig-example
+````
 
 Adding an `@` symbol followed by the chunk label, or label of your table/figure, will create an interactive link that lets the reader navigate to that specific table/figure.
 
@@ -601,11 +606,15 @@ Now your PDF is tagged! If you compiled your .tex file, it'd look something like
 
 ![](images/tagged_pdf.png){fig-alt="Screenshot of an example PDF-based, tagged report. The PDF is opened in Adobe and tags for the Table of Contents are shown on the right side of the screen."}
 
+<!-- Add note here: if no alt tex provided, then it'll take the image path as alt text. We'll fix that in next step -->
+
 ::: {.callout-note appearance="minimal"}
 Break for questions
 :::
 
 ## Add alternative text
+
+<!-- Take out/edit the following text for direct image-based workflow images ?? need more testing to see if alt text is added -->
 
 You must add alternative text ("alt text") for images in a separate csv if you added figures using either of these workflows:
 
@@ -694,15 +703,21 @@ Now your PDF's figures have alt text! If you hover your cursor over an image, yo
 ![](images/alt_text_fig.png){fig-alt="Screenshot of an example PDF-based, tagged report with alternative text. A cursor hovering over a biomass figure shows its alternative text in a bubble."}
 
 ::: {.callout-note appearance="minimal"}
-15 minute break
+questions, then 10 minute break
 :::
 
 # Demo for a realistic, customized asar report with stockplotr plots
+
+<!-- Not sure we'll have time for this. If so, update bullets below -->
 
 - create_tables_doc() and create_figures_doc() with "figures" and "tables" folders
 - ensure alt text/captions work
 
 **Time to practice, ask questions, etc.**
+
+Practice ideas:
+
+-Add the landings figure .png file, located in the 'example_plots' folder, to your figures doc.
 
 # Questions, comments, and feedback
 
