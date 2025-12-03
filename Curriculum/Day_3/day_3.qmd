@@ -337,15 +337,19 @@ We have designed two functions that allow you to automatically create all availa
 - `save_all_plots()`
 - `html_all_figs_tables()`
 
+::: {.callout-note appearance="minimal"}
+10 minute break
+:::
+
 # Integrating stockplotr in the workflow
 
-## Adding tables and figures to your report
+For the second half of today's lesson, let's reorient ourselves. We've just learned how to make figures and tables with `stockplotr`. Now, we'll cover how to add those plots into your `asar` report template.
 
-<!-- Add brief reorientation of template files/structure -->
-
-After running `create_template()`, you'll see figures and tables files, named something like '08_tables.qmd' and '09_figures.qmd' (the prefix numbers may vary).
+Remember that after running the primary `asar` function-- `create_template()`- you have a 'report' folder with several files in it. These files include the report skeleton; the child documents containing the executive summary, introduction, results, and so on; and, importantly for us right now, the documents that will contain code to display your figures and tables. The files will be named something like '08_tables.qmd' and '09_figures.qmd' (the prefix numbers may vary).
 
 Each file will contain zero figures or tables. Instead, they will contain a statement referring you to {stockplotr} so that you can make your own. Since we've created those already, let's add them to your report!
+
+## Adding tables and figures to your report
 
 You can add your figures and tables with two workflows:
 
@@ -606,22 +610,18 @@ Now your PDF is tagged! If you compiled your .tex file, it'd look something like
 
 ![](images/tagged_pdf.png){fig-alt="Screenshot of an example PDF-based, tagged report. The PDF is opened in Adobe and tags for the Table of Contents are shown on the right side of the screen."}
 
-<!-- Add note here: if no alt tex provided, then it'll take the image path as alt text. We'll fix that in next step -->
+::: {.callout-warning}
+## Default alt text should be updated 
+If you stop here (i.e., you don't add your own alt text), this function will add the image paths as alt text. We'll show you how to add your *intended* alt text in [the next step](@sec-add-alttext).
+:::
 
 ::: {.callout-note appearance="minimal"}
 Break for questions
 :::
 
-## Add alternative text
+## Add alternative text {#sec-add-alttext}
 
-<!-- Take out/edit the following text for direct image-based workflow images ?? need more testing to see if alt text is added -->
-
-You must add alternative text ("alt text") for images in a separate csv if you added figures using either of these workflows:
-
-* the [rda-based workflow](#sec-rda-based-fig)
-* the [direct coding-in-qmd workflow](#sec-code-in-qmd-fig)
-
-This step is *not* essential if you added *all of your figures* using the [direct image-based workflow](#sec-image-based-fig).
+You must add alternative text ("alt text") for images in a separate csv if you added figures using any of the workflows described above.
 
 Since you've used `stockplotr` to make some figures, you've already completed the first step: making a csv that will contain your alt text.
 
