@@ -14,7 +14,7 @@
     "href": "Curriculum/Day_3/day_3.html",
     "title": "Day 3",
     "section": "",
-    "text": "Work through a guided demo of a more complex asar workflow\nLearn about the value of the stockplotr R package\nUnderstand how to integrate stockplotr into an asar-based reporting workflow\nWork through a guided demo of a basic stockplotr workflow",
+    "text": "Walk through an example of a plot and table from stockplotr\nLearn about the value of the stockplotr R package\nUnderstand how to integrate stockplotr into an asar-based reporting workflow",
     "crumbs": [
       "Day 3: stockplotr + asar"
     ]
@@ -24,57 +24,137 @@
     "href": "Curriculum/Day_3/day_3.html#icebreaker",
     "title": "Day 3",
     "section": "Icebreaker",
-    "text": "Icebreaker\nWelcome! Please open the Day 3 communal notes doc and participate in the icebreaker exercise.\n\n\n\n\n\n\nTip\n\n\n\nReminder: For comments or questions, please raise your hand, or write them in the chat, at any time. Depending on our schedule, we may ask that you save larger questions for breaks.",
+    "text": "Icebreaker\nWelcome! Please open the Day 3 communal notes doc and participate in the icebreaker exercise.\n\n\n\n\n\n\nTip\n\n\n\nReminder: For comments or questions, please raise your hand, or write them in the chat, at any time. Depending on our schedule, we may ask that you save larger questions for breaks.\n\n\n\n\n\n\n\n\nBreak for questions",
     "crumbs": [
       "Day 3: stockplotr + asar"
     ]
   },
   {
-    "objectID": "Curriculum/Day_3/day_3.html#installation",
-    "href": "Curriculum/Day_3/day_3.html#installation",
+    "objectID": "Curriculum/Day_3/day_3.html#convert-output-if-necessary",
+    "href": "Curriculum/Day_3/day_3.html#convert-output-if-necessary",
     "title": "Day 3",
-    "section": "Installation",
-    "text": "Installation\n\n\n\n\n\n\nTipTip\n\n\n\nThe following packages are already installed in the asar workspace on JupyterHub, so if you are using that space, you can skip this section.\n\n\ninstall.packages(\"pak\")\npak::pak(\"nmfs-ost/asar\")\npak::pak(\"nmfs-ost/stockplotr\")\nPlease see the stockplotr README for more installation options.",
+    "section": "Convert output (if necessary)",
+    "text": "Convert output (if necessary)\nFirst, you’ll need to convert your model results using the same workflow covered yesterday: asar::convert_output().\nYou can use the example Report.sso file uploaded to the workshop GitHub or, if you have a compatible output file, your own.\n\n# Identify output file\noutput_file &lt;- here::here(\"example_output\", \"Report.sso\")\n# convert the output and save it as an rda\npetrale &lt;- asar::convert_output(output_file,\n                                save_dir = getwd())\n\nIf you have already converted your output: great! Import it into your R environment so that you can handle it as an object like “petrale” in the chunk above.\n\n\n\n\n\n\nBreak for issues",
     "crumbs": [
       "Day 3: stockplotr + asar"
     ]
   },
   {
-    "objectID": "Curriculum/Day_3/day_3.html#stockplotr-workflow-basic-example",
-    "href": "Curriculum/Day_3/day_3.html#stockplotr-workflow-basic-example",
+    "objectID": "Curriculum/Day_3/day_3.html#package-information",
+    "href": "Curriculum/Day_3/day_3.html#package-information",
     "title": "Day 3",
-    "section": "stockplotr workflow: Basic example",
-    "text": "stockplotr workflow: Basic example\n\nConvert output (if necessary)\nFirst, you’ll need to convert your model results using the same workflow covered yesterday: asar::convert_output().\nYou can use the example Report.sso file uploaded to the workshop GitHub or, if you have a compatible output file, your own.\n\n# Identify output file\noutput_file &lt;- here::here(\"example_output\", \"Report.sso\")\n# convert the output\npetrale &lt;- asar::convert_output(output_file)\n\nIf you have already converted your output: great! Import it into your R environment so that you can handle it as an object like “petrale” in the chunk above.\n\n\nCreate single plots\n\nExport single plots\nCreate and export all plots\nHow to customize (changing color palette, etc.)",
+    "section": "Package information",
+    "text": "Package information\nThis package is an ongoing process to gather contributions in order to expand the number of pre-made tables and figures that can be incorporated into a stock assessment report. All objects are intended to be generalized and not specific to any region.\nThe following table contains figures and tables that are available in stockplotr:\n\n\n\n\n\n\n\nFunction\nDescription\n\n\n\n\nplot_abundance_at_age()\nabundance-at-age\n\n\nplot_biomass_at_age()\nbiomass-at-age\n\n\nplot_biomass()\nbiomass time series\n\n\nplot_catch_comp()\ncatch compositions\n\n\nplot_fishing_mortality\nfishing mortality time series\n\n\nplot_indices()\nindices\n\n\nplot_landings()\nlandings time series\n\n\nplot_natural_mortality()\nnatural mortality time series or at-age\n\n\nplot_recruitment_deviations()\nrecruitment deviations\n\n\nplot_recruitment()\nrecruitment time series\n\n\nplot_spawn_recruitment()\nspawn recruitment relationship\n\n\nplot_spawning_biomass()\nspawning biomass time series\n\n\ntable_landings()\nlandings time series by fleet or other indexing\n\n\ntable_bnc()\nbiomass, landings, and catch time series\n\n\ntable_harvest_projection()\nharvest projection table according to SAFE standards (to be expanded nationally)\n\n\ntables_indices()\nindices by fleet\n\n\n\nEach automated function returns either a ggplot2 object (figure) or flextable object (table). This allows for further customization of the output if desired by using the notation you are familiar with. For a figure, you can continue to add onto the plot any other ggplot2 function or extension using the plus (+) operator. For a table, please use the native pipe (|&gt;) when adding additional formatting, rows, or other pieces to the object.",
     "crumbs": [
       "Day 3: stockplotr + asar"
     ]
   },
   {
-    "objectID": "Curriculum/Day_3/day_3.html#asarcreate_tables_doc",
-    "href": "Curriculum/Day_3/day_3.html#asarcreate_tables_doc",
+    "objectID": "Curriculum/Day_3/day_3.html#example-figure",
+    "href": "Curriculum/Day_3/day_3.html#example-figure",
     "title": "Day 3",
-    "section": "asar::create_tables_doc",
-    "text": "asar::create_tables_doc\nAfter running create_template(), a blank tables quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made tables. You will learn more of that tomorrow, but for now we are going to go over how you add your own tables to the document.\nSteps for adding a table:\n1. Create a code chunk\n2. Add your label and other options\n3. Add code\n4. Write caption\nAdd a code chunk for each table\n\n\n\nTable 1: This is my caption for the example table.\n\n\nhead(petrale) |&gt;\n    dplyr::select(label, year, estimate) |&gt;\n    flextable::flextable()\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nIt will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!\n\n\n\nNon-code Tables\nIn the case you have made a table not using code, you can add it as an image. While this is not generally recommended since it significaly reduces the accessibility of your table, we understand that sometimes this is the only format you have it in.\nUse the following notation to reference an external table as an image:\n![Caption for my example table](example_table.png){fig-alt=\"This is the alternative text for my table\", #tbl-example}\n\n\n\n\n\n\nNote\n\n\n\nNotice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. Please make sure you add alternative text for tables added in this way.",
+    "section": "Example Figure",
+    "text": "Example Figure\nRun the example below. It should result in a line graph showing biomass over time, including a reference line for the biomass unfished.\n\nstockplotr::plot_biomass(\n  dat = petrale,\n  geom = \"line\",\n  group = NULL,\n  facet = NULL,\n  ref_line = \"unfished\",\n  unit_label = \"mt\",\n  scale_amount = 1,\n  relative = FALSE,\n  interactive = TRUE,\n  module = NULL\n)\n\n\n\n\n\n\n\n\nBreak for questions\n\n\n\n\nCustomizing\nAll figures will automatically identify any indexing variables in the data such as fleet, area, or sex. You can use the group and facet arguments to modify how these indexing variables are displayed in the figure. You can also modify other arguments such as geom, ref_line, and relative to change the appearance of the figure.\nHere are some examples of how to customize the biomass figure:\n\nChange the reference line to a specific value (e.g., 260)\nIn this example we are also telling the function which module to select in order to by-pass this step. We plan to remove grouping of some modules in the future.\n\nstockplotr::plot_biomass(\n  dat = petrale,\n  geom = \"line\",\n  group = NULL,\n  facet = NULL,\n  ref_line = c(\"target\" = 260),\n  unit_label = \"mt\",\n  scale_amount = 1,\n  relative = FALSE,\n  # interactive = TRUE,\n  module = \"TIME_SERIES\"\n)\n\n\n\n\nPlot relative biomass and change the size of the line\nIn this example, we still are bypassing module selection and we are automatically extracting the reference line value from the data. However, now we are using this reference value to plot relative biomass and changing the linewidth to 2 (an argument inherited from ggplot2).\n\nstockplotr::plot_biomass(\n  dat = petrale,\n  geom = \"line\",\n  group = NULL,\n  facet = NULL,\n  ref_line = c(\"target\" = 260),\n  unit_label = \"mt\",\n  scale_amount = 1,\n  relative = TRUE,\n  # interactive = TRUE,\n  module = \"TIME_SERIES\",\n  linewidth = 2\n)\n\n\n\n\n\n\n\n\nTip\n\n\n\nThe only extended arguments available are the ones found from the ggplot2::geom_XX() function. Thus, any indexed variables can not be changes such as color to fill. Please see the documentation for ggplot2 geom functions for these additional arguments.\n\n\n\n\nSummarize our data\nNotice that you can remove the reference line by setting ref_line = NULL.\n\nstockplotr::plot_biomass(\n  dat = petrale,\n  geom = \"line\",\n  group = \"none\",\n  facet = NULL,\n  ref_line = NULL,\n  unit_label = \"mt\",\n  scale_amount = 1,\n  relative = FALSE,\n  # interactive = TRUE,\n  module = \"TIME_SERIES\"\n)\n\n\n\n\n\n\n\n\nBreak for questions\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nRemember that figures return ggplot2 objects, so we can make additional customization to these plots.\n\n\n\nstockplotr::plot_biomass(\n  dat = petrale,\n  geom = \"line\",\n  group = \"fleet\",\n  facet = NULL,\n  ref_line = c(\"target\" = 5690),\n  unit_label = \"mt\",\n  scale_amount = 1,\n  relative = FALSE,\n  # interactive = TRUE,\n  module = \"TIME_SERIES\"\n) +\n  ggplot2::geom_vline(xintercept = 2005, linetype = \"dashed\", color = \"red\")\n\n\n\n\n\n\n\n\nBreak for questions. We will be moving onto tables next.",
     "crumbs": [
       "Day 3: stockplotr + asar"
     ]
   },
   {
-    "objectID": "Curriculum/Day_3/day_3.html#asarcreate_figures_doc",
-    "href": "Curriculum/Day_3/day_3.html#asarcreate_figures_doc",
+    "objectID": "Curriculum/Day_3/day_3.html#example-table",
+    "href": "Curriculum/Day_3/day_3.html#example-table",
     "title": "Day 3",
-    "section": "asar::create_figures_doc",
-    "text": "asar::create_figures_doc\nLike with our tables file, a blank figures quarto file is created. It contains a statement to refer to {stockplotr} to add pre-made figures.\nSteps for adding a figure:\n1. Create a code chunk\n2. Add your label and other options\n3. Add code\n4. Write caption and **alternative text**\n[Highlight the difference with a figure needing alternative text]\nAdd a code chunk for each table\n\nplot(cars$speed, cars$dist)\n\n\n\n\n\n\n\nTip\n\n\n\nIt will be important to add your captions and labels into an excel file when making your documents accessible. You will learn more about this excel file and accessibility tomorrow!\n\n\n\nNon-code Figures\nLike tables, you can reference figures not made directly in code chunks. However, in this case, this does not change the accessibility of the figure as much because you as the user can still add the necessary components to meet section 508 standards.\n![Caption for my example figure](example_figure.png){fig-alt=\"This is the alternative text for my figure\", #fig-example}\n\n\nReferencing your tables or figures in text\nQuarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:\n“@tbl-example” or “@fig-example”\nBy adding an @ symbol followed by the chunk label or just label of your table/figure will create an interactive link that lets the reader navigate to that specific table/figure.\n[Show working example within positron]\nPut it all together!\nRender your entire document and take a look at what we’ve made today.",
+    "section": "Example Table",
+    "text": "Example Table\nRun the following example table. The result is a fully report ready table showing landings over time. Remember that these are exported as flextable objects and can be edited as such.\n\n\n\n\n\n\nNote\n\n\n\nstockplotr uses the native pipe (|&gt;), so if you decide to customize you table, please also use the native pipe to avoid errors.\n\n\n\n# not sure what this will exactly look like so this is a place holder\nstockplotr::table_landings(\n  dat = petrale,\n  group = \"fleet\",\n  unit_label = \"mt\",\n  module = NULL\n)\n\n\n\n\n\n\n\n\nBreak for questions\n\n\n\nNext, we can add some different formatting:\n\nstockplotr::table_landings(\n  dat = petrale,\n  group = \"fleet\",\n  unit_label = \"mt\",\n  module = NULL\n) |&gt;\n  flextable::footnote(\n    i = 6, # row\n    j = 2, # column\n    value = flextable::as_paragraph(\n      \"This is an example table from the workflows workshop. Not intended for official use.\"\n      )\n  )\n\n\nor potentially highlight a specific line within the table:\n\nstockplotr::table_landings(\n  dat = petrale,\n  group = \"fleet\",\n  unit_label = \"mt\",\n  module = NULL\n) |&gt;\n  flextable::footnote(\n    i = 6, # row\n    j = 2, # column\n    value = flextable::as_paragraph(\n      \"Not intended for official use.\"\n      )\n  ) |&gt;\n  flextable::bg(\n    i = 5,\n    bg = \"lightblue\",\n    part = \"body\"\n    )\n\n\n\n\n\n\n\n\nBreak for questions\n\n\n\n\nrda file\nAn rda is an R data file that stores R objects and preserves their structure. In this case, you can think of an rda file exported from stockplotr as a list of objects.\nEach plot or table has the option to export it as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:\n\nggplot or flextable object\ncaption\nalternative text (figures only)\nlatex object (tables only)\n\n\nstockplotr::plot_biomass(\n  dat = petrale,\n  ref_line = c(\"target\" = 260),\n  unit_label = \"mt\",\n  module = \"TIME_SERIES\",\n  make_rda = TRUE,\n  tables_dir = getwd()\n)\n\n\nload(\"figures/biomass_figure.rda\")\nrda$figure\nrda$cap\nrda$alt_text\n\n\n\n\n\n\n\n\nBreak for questions\n\n\n\n\n\nstockplotr::table_landings(\n  dat = petrale,\n  group = \"fleet\",\n  unit_label = \"mt\",\n  make_rda = TRUE,\n  tables_dir = getwd()\n)\n\n\nload(\"tables/landings_table.rda\")\nrda$table\nrda$cap\nrda$latex\n\n\n\n\n\n\n\nTip\n\n\n\nWe have designed two functions that allow you to automatically create all available figures and tables:\n\nsave_all_plots()\nhtml_all_figs_tables()\n\n\n\n\n\n\n\n\n\n10 minute break",
     "crumbs": [
       "Day 3: stockplotr + asar"
     ]
   },
   {
-    "objectID": "Curriculum/Day_3/day_3.html#adding-accessibility",
-    "href": "Curriculum/Day_3/day_3.html#adding-accessibility",
+    "objectID": "Curriculum/Day_3/day_3.html#adding-tables-and-figures-to-your-report",
+    "href": "Curriculum/Day_3/day_3.html#adding-tables-and-figures-to-your-report",
     "title": "Day 3",
-    "section": "Adding accessibility",
-    "text": "Adding accessibility",
+    "section": "Adding tables and figures to your report",
+    "text": "Adding tables and figures to your report\nYou can add your figures and tables with two workflows:\n\nRerunning asar::create_tables_doc() and asar::create_figures_doc()\n\n\nIf you fill in arguments that allow R to find your tables and figures, then it will place them into the respective tables and figures docs automatically.\n\n\nAdding your tables and figures manually to each doc.\n\n\nOption 1: Rerunning asar::create_tables_doc()/asar::create_figures_doc()\nThis is also known as the rda-based workflow.\n\nTables\nTo add tables, first ensure that your folder containing the tables is called “tables”.\nThen, there are only two arguments to fill out:\n\nsubdir: The location where the new tables doc should be saved (we recommend your ‘report’ folder, so it overwrites the old, empty version)\ntables_dir: The location of your “tables” folder\n\n\ncreate_tables_doc(\n  subdir = fs::path(getwd(), \"report\"), # indicates the new tables doc will be saved in your \"report\" folder, located in the working directory\n  tables_dir = getwd() # indicates your \"tables\" folder is located in the working directory\n                  )\n\nNow, open your new tables doc and take a look!\nYou’ll notice the following structure:\nChunk 1 will always create an object saving the location of your tables_dir.\nThen, there will be at least two chunks for each table. For tables that are regularly-sized (i.e., small enough that they don’t need to be rotated or split across pages):\nChunk 2 will:\n\nload an rda containing a table\ngive the rda a specific name\nsave the table and caption as separate objects\n\nChunk 3 will:\n\ndisplay the table\n\n\n\n\n\n\n\nNote\n\n\n\nThis workflow can also accommodate tables that are wide enough to require rotation into a landscape-view page OR splitting across pages. For more information, please see the “Adding Custom Tables & Figures” vignette.\n\n\n\n\nFigures\nAdding figures entails nearly the same process as described for tables. The only differences are:\n\nFigures will involve captions and alternative text, whereas tables only require captions\nFigures do not require the option to be rotated or split across pages.\n\n\n\n\n\n\n\nBreak for questions\n\n\n\n\n\n\nOption 2: Manually adding tables/figures\n\nTables\nYou can add a regularly-sized1 table/figure manually by following these main steps:\n\nCreate a code chunk\nAdd your label and other chunk options\nAdd code\nWrite caption\nAdd a page break between tables (optional but recommended)\n\n\nDirect coding-in-qmd table workflow\nExample from the “Adding Custom Tables & Figures” vignette:\n```{r} \n#| label: 'tbl-custom1' # choose a label\n#| tbl-cap: !expr This is your table caption.\n\n# Import your data\npetrale &lt;- load(fs::path(\"std_output.rda\"))\n\n# Make your table\nyour_table &lt;- head(petrale) |&gt;\n  dplyr::select(label, year, estimate) |&gt;\n  flextable::flextable()\n\n# Show your table\nyour_table\n``` \n\nThen, add a pagebreak:\n\n{{&lt; pagebreak &gt;}}\n\n\n\n\n\n\n\nWarning\n\n\n\nIt will be important to add your captions and labels into a csv file when making your documents accessible. You will soon learn more about this in the the “Adding accessibility features” section!\n\n\n\n\nDirect image-based table insertion workflow\nWe don’t recommended adding tables as images, since it significantly reduces the accessibility of your table. However, we understand that sometimes this is the only format available.\nUse the following notation to reference an external table as an image:\n![Caption for my example table](example_table.png){fig-alt=\"This is the alternative text for my table\", #tbl-example}\n\n\n\n\n\n\nNote\n\n\n\nNotice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. Please make sure you add alternative text for image-based tables added in this way.\n\n\n\n\n\nFigures\n\nDirect coding-in-qmd figure workflow\nLike with tables, running create_figures_doc() produces a blank figures quarto file. We add figures similarly to tables. In fact, the only major difference is that you must write alternative text for your figure.\nPut your alternative text in a chunk option called ‘fig-alt’ (example below).\n```{r} \n#| label: 'fig-custom1' # choose a label\n#| fig-cap: !expr This is your figure caption.\n#| fig-alt: !expr This is your figure alternative text.\n\n# Import your data\nload(fs::path(\"std_output.rda\"))\n\npetrale &lt;- out_new |&gt;\n                    dplyr::filter(year &gt; 1980) |&gt;\n                    dplyr::filter(module_name == \"TIME_SERIES\") |&gt;\n                    dplyr::filter(label == \"biomass\") |&gt;\n                    dplyr::filter(!is.na(fleet))\n\n# Make your figure\nyour_figure &lt;- ggplot2::ggplot(petrale,\n  ggplot2::aes(x = year, y = estimate, color = fleet)) +\n  ggplot2::geom_line(linewidth = 0.75) +\n  ggplot2::geom_point() +\n  ggplot2::theme_classic()\n\n# Show your figure\nyour_figure\n``` \n\n\n\n\n\n\n\nWarning\n\n\n\nEven though you wrote alt text in the fig-alt area, when you first render your report into a PDF, your alternative text will not show up in your document. Strange, right?! To ensure it shows up, refer to the “Adding accessibility features” section (which we’ll discuss in a moment).\n\n\n\n\nDirect image-based figure insertion workflow\nLike tables, you can reference figures not made directly in code chunks. However, in this case, this does not change the accessibility of the figure because you can still add the necessary components to meet Section 508 compliance standards: alternative text and a caption.\n![Caption for my example figure](example_figure.png){fig-alt=\"This is the alternative text for my figure\", #fig-example}",
+    "crumbs": [
+      "Day 3: stockplotr + asar"
+    ]
+  },
+  {
+    "objectID": "Curriculum/Day_3/day_3.html#referencing-your-tables-or-figures-in-text",
+    "href": "Curriculum/Day_3/day_3.html#referencing-your-tables-or-figures-in-text",
+    "title": "Day 3",
+    "section": "Referencing your tables or figures in text",
+    "text": "Referencing your tables or figures in text\nQuarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:\n@tbl-example\nor\n@fig-example\nAdding an @ symbol followed by the chunk label, or label of your table/figure, will create an interactive link that lets the reader navigate to that specific table/figure.\n\n\n\n\n\n\nBreak for questions",
+    "crumbs": [
+      "Day 3: stockplotr + asar"
+    ]
+  },
+  {
+    "objectID": "Curriculum/Day_3/day_3.html#in-the-r-console",
+    "href": "Curriculum/Day_3/day_3.html#in-the-r-console",
+    "title": "Day 3",
+    "section": "In the R console",
+    "text": "In the R console\nRun quarto::quarto_render([path/to/your/skeleton.qmd file]) in the console. For example:\n\nquarto::quarto_render(\n  here::here(\"report\",\n             \"SAR_species_skeleton.qmd\") # add your skeleton filename\n)",
+    "crumbs": [
+      "Day 3: stockplotr + asar"
+    ]
+  },
+  {
+    "objectID": "Curriculum/Day_3/day_3.html#with-the-rstudio-render-button",
+    "href": "Curriculum/Day_3/day_3.html#with-the-rstudio-render-button",
+    "title": "Day 3",
+    "section": "With the RStudio “render” button",
+    "text": "With the RStudio “render” button\nOpen the skeleton.qmd file. Then, in the program pane, press the “render” button:",
+    "crumbs": [
+      "Day 3: stockplotr + asar"
+    ]
+  },
+  {
+    "objectID": "Curriculum/Day_3/day_3.html#in-the-terminal",
+    "href": "Curriculum/Day_3/day_3.html#in-the-terminal",
+    "title": "Day 3",
+    "section": "In the terminal",
+    "text": "In the terminal\nRun quarto render [path/to/your/skeleton.qmd file] in the terminal. For example:\nEnter quarto render report/SAR_species_skeleton.qmd",
+    "crumbs": [
+      "Day 3: stockplotr + asar"
+    ]
+  },
+  {
+    "objectID": "Curriculum/Day_3/day_3.html#add-tagging",
+    "href": "Curriculum/Day_3/day_3.html#add-tagging",
+    "title": "Day 3",
+    "section": "Add tagging",
+    "text": "Add tagging\nIn your ‘report’ folder, you’ll find a new file with a .tex filetype: ‘SAR_species_skeleton.tex’ (or something similar). This file is a LaTex-based version of your rendered skeleton qmd file. It’s also where we add our remaining accessibility features, since Quarto does not yet offer that functionality within its qmd files.\nTags are structural elements of PDFs. They are signals telling software which information are headers, images, tables, text, and so on. Tags allow people using technology like screen readers to logically navigate PDFs.\nWe’ll use the asar::add_tagging() function to add tags.\nNotice that we are using the withr::with_dir() function as a wrapper for add_tagging(). This allow us to set the “report” folder as a temporary working directory, which is essential for the function to work. Likewise, if you set the “report” folder as the working directory, you could remove this wrapper and add_tagging() would succeed.\n\npath &lt;- getwd()\n\nwithr::with_dir(\n  file.path(path, \"report\"),\n  asar::add_tagging(\n  x = \"SAR_species_skeleton.tex\", # your .tex report file\n  dir = getwd(), # the location of the .tex file\n  compile = FALSE # whether the .tex file should be compiled after tagging. We'll set it to FALSE for now\n  )\n)\n\nNow your PDF is tagged! If you compiled your .tex file, it’d look something like this. The tags are on the right side of the PDF viewer.\n\n\n\n\n\n\n\nWarningDefault alt text should be updated\n\n\n\nIf you stop here (i.e., you don’t add your own alt text), this function will add the image paths as alt text. We’ll show you how to add your intended alt text in the next step.\n\n\n\n\n\n\n\n\nBreak for questions",
+    "crumbs": [
+      "Day 3: stockplotr + asar"
+    ]
+  },
+  {
+    "objectID": "Curriculum/Day_3/day_3.html#sec-add-alttext",
+    "href": "Curriculum/Day_3/day_3.html#sec-add-alttext",
+    "title": "Day 3",
+    "section": "Add alternative text",
+    "text": "Add alternative text\nYou must add alternative text (“alt text”) for images in a separate csv if you added figures using any of the workflows described above.\nSince you’ve used stockplotr to make some figures, you’ve already completed the first step: making a csv that will contain your alt text.\n\nLook at your alt text csv\nThe file, “captions_alt_text.csv”, should be located in your working directory (enter getwd() if you forget where that is). Open it up.\nThe file is set up like this:\n\nColumn 1 (“label”) is a shorthand label for your figure or table. Labels should be somewhat short and exclude spaces. Examples include “kobe”, “relative.biomass”, and “fishing.mortality”.\nColumn 2 (“type”) contains “figure” or “table”.\nColumn 3 (“caption”) contains your caption.\nColumn 4 (“alt_text”) contains alternative text for figures. For tables, this column will be blank.\n\n\nFormat for csv containing table and figure captions and alternative text.\n\n\n\n\n\n\n\n\nlabel\ntype\ncaption\nalt_text\n\n\n\n\nexample_fig\nfigure\nExample caption for figure.\nExample alternative text for figure.\n\n\nexample_tab\ntable\nExample caption for table.\n\n\n\n\n\n\nUpdate the csv\nYour job is to:\n\nedit existing entries for your figures already created with stockplotr. This entails checking the accuracy, and writing the final component, of the existing alt text.\nadd entries for your custom figures.\n\n\nEditing existing entries\nUsing the “label” column, find the row associated with your figure and inspect it.\n\nYou’ll see that there’s already some prewritten alt text (in the “alt_text” column) that includes data from the model results file. Now, you must check this information for accuracy and update it where necessary (especially if the default figures were modified).\nIf you see text that looks like a placeholder (e.g., “The x axis, showing the year, spans from B.start.year to B.end.year…”), that means that there was at least one instance where our tool failed to extract a specific value from the model results, calculate a key quantity (like the start year of a biomass plot- aka “B.start.year”), and substitute it into the placeholder.\n\n\n\n\n\n\n\nImportant\n\n\n\nWhile we have extracted key quantities as accurately as possible, we cannot guarantee that each quantity will have been calculated perfectly. Input data varies widely. It’s your responsibility to check the accuracy of your figures’ alt text.\n\n\n\nThis prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4): the relationship between the variables shown (i.e., what the figure is conveying). Since we can’t program stockplotr to analyze the figure’s meaning, you must provide this crucial component.\n\nWhen you’re satisfied, save the csv.\n\n\nAdding new entries\n\nMake a new row.\nFor “label”, take the “label” of your figure chunk. For example, in the example above, the label would be “fig-custom1”.\nThe type will be “figure”.\nThe caption should be identical to the caption in your chunk (what you put in “fig-cap”).\nThe “alt_text” will contain your alt text. See the “Editing existing entries” section above, and the “Achieve Greater Accessibility” vignette, for help writing alt text.\n\nWhen you’re satisfied, save the csv.",
+    "crumbs": [
+      "Day 3: stockplotr + asar"
+    ]
+  },
+  {
+    "objectID": "Curriculum/Day_3/day_3.html#run-alt-text-to-your-report",
+    "href": "Curriculum/Day_3/day_3.html#run-alt-text-to-your-report",
+    "title": "Day 3",
+    "section": "Run alt text to your report",
+    "text": "Run alt text to your report\nNow, we’ll use the asar::add_alttext() function to add the alt text into the report’s .tex file. Again, we’ll wrap the function with with_dir() to set a temporary working directory.\n\npath &lt;- getwd()\n\nwithr::with_dir(\n  file.path(path, \"report\"),\n  add_alttext(\n    x = \"SAR_species_skeleton.tex\", # your .tex report file\n    dir = getwd(), # the location of the .tex file\n    alttext_csv_dir = getwd(), # the location of your \"captions_alt_text.csv\"\n    figures_dir = path, # location of your \"figures\" folder\n    compile = TRUE # now we'll compile the PDF\n  )\n)\n\nNow your PDF’s figures have alt text! If you hover your cursor over an image, you should see the alt text pop up, like this:\n\n\n\n\n\n\n\nquestions, then 10 minute break",
+    "crumbs": [
+      "Day 3: stockplotr + asar"
+    ]
+  },
+  {
+    "objectID": "Curriculum/Day_3/day_3.html#footnotes",
+    "href": "Curriculum/Day_3/day_3.html#footnotes",
+    "title": "Day 3",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nAgain, for tables that require rotating or splitting across pages, please refer to the “Adding Custom Tables & Figures” vignette.↩︎",
     "crumbs": [
       "Day 3: stockplotr + asar"
     ]
