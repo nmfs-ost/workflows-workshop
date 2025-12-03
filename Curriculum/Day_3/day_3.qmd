@@ -201,7 +201,7 @@ stockplotr::plot_biomass(
 )
 ```
 
-![](images/day3_ex_plt4.png){fig-alt="why doesn't this work."}
+![](images/day3_ex_plt4.png)
 
 ::: {.callout-note appearance="minimal"}
 Break for questions
@@ -318,6 +318,33 @@ Each plot or table has the option to export it as an rda. This rda is a list of 
 - latex object (tables only)
 
 ```{r}
+stockplotr::plot_biomass(
+  dat = petrale,
+  ref_line = c("target" = 260),
+  unit_label = "mt",
+  module = "TIME_SERIES",
+  make_rda = TRUE,
+  tables_dir = getwd()
+)
+```
+
+```{r}
+load("figures/biomass_figure.rda")
+rda$figure
+rda$cap
+rda$alt_text
+```
+
+<!-- open the rda and show around -->
+
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
+
+
+<!-- Repeat for table -->
+
+```{r}
 stockplotr::table_landings(
   dat = petrale,
   group = "fleet",
@@ -327,19 +354,19 @@ stockplotr::table_landings(
 )
 ```
 
-<!-- open the rda and show around -->
-
 ```{r}
-load("tables/landings.rda")
+load("tables/landings_table.rda")
 rda$table
-rda$caption
+rda$cap
 rda$latex
 ```
 
+::: {.callout-tip}
 We have designed two functions that allow you to automatically create all available figures and tables:
 
 - `save_all_plots()`
 - `html_all_figs_tables()`
+:::
 
 ::: {.callout-note appearance="minimal"}
 10 minute break
