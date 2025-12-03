@@ -83,20 +83,24 @@ This package is an ongoing process to gather contributions in order to expand th
 
 The following table contains figures and tables that are available in `stockplotr`:
 
-| Figure | Table |
-|--------|-------|
-| abundance-at-age | landings |
-| biomass-at-age | biomass, landings, and catch time series |
-| biomass time series | harvest projections |
-| catch compositions | indices |
-| fishing mortality time series |  |
-| indices |  |
-| landings time series |  |
-| natural mortality time series or at-age |  |
-| recruitment deviations |  |
-| recruitment time series |  |
-| spawn recruitment relationship |  |
-| spawning biomass time series |  |
+| Function | Description |
+|----------|-------------|
+| `plot_abundance_at_age()` | abundance-at-age |
+| `plot_biomass_at_age()` | biomass-at-age |
+| `plot_biomass()` | biomass time series |
+| `plot_catch_comp()` | catch compositions |
+| `plot_fishing_mortality` | fishing mortality time series |
+| `plot_indices()` | indices |
+| `plot_landings()` | landings time series |
+| `plot_natural_mortality()` | natural mortality time series or at-age |
+| `plot_recruitment_deviations()` | recruitment deviations |
+| `plot_recruitment()` | recruitment time series |
+| `plot_spawn_recruitment()` | spawn recruitment relationship |
+| `plot_spawning_biomass()` | spawning biomass time series |
+| `table_landings()` | landings time series by fleet or other indexing |
+| `table_bnc()` | biomass, landings, and catch time series |
+| `table_harvest_projection()` | harvest projection table according to SAFE standards (to be expanded nationally) |
+| `tables_indices()` | indices by fleet |
 
 Each automated function returns either a `ggplot2` object (figure) or `flextable` object (table). This allows for further customization of the output if desired by using the notation you are familiar with. For a figure, you can continue to add onto the plot any other `ggplot2` function or extension using the plus (+) operator. For a table, please use the native pipe (|>) when adding additional formatting, rows, or other pieces to the object.
 
