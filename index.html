@@ -298,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources/local_session_info.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Setting up a local session</span></a>
+ <span class="menu-text">How to set up a local session</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -330,6 +330,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
+  <li><a href="#expected-setup-before-workshop" id="toc-expected-setup-before-workshop" class="nav-link" data-scroll-target="#expected-setup-before-workshop">Expected setup before workshop</a></li>
   <li><a href="#system-requirements" id="toc-system-requirements" class="nav-link" data-scroll-target="#system-requirements">System Requirements</a></li>
   <li><a href="#navigation" id="toc-navigation" class="nav-link" data-scroll-target="#navigation">Navigation</a>
   <ul class="collapse">
@@ -384,6 +385,16 @@ ul.task-list li input[type="checkbox"] {
 <h1>Background</h1>
 <p>The workflows of stock assessment scientists across the U.S. are highly variable and all consistently face similar issues including lack of automation, challenging data wrangling, increased requests for analyses, and more. A team with the National Stock Assessment Program at NOAA Fisheries HQ set about addressing some of these needs by identifying parts of the workflow scientists needed help in. While there were needs to improve parts of the workflow at every step, the team and a steering committee decided to first approach the lowest hanging fruit, reporting. The goal of this project was to establish a semi-automated system for generating reports in order to reduce time completing mundane and tedious tasks that, with some effort, could be automated. From there, <a href="https://github.com/nmfs-ost/asar"><code>asar</code></a> and <a href="https://github.com/nmfs-ost/stockplotr"><code>stockplotr</code></a> were built along with beginning to establish a standard set of guidelines for stock assessment reports.</p>
 </section>
+<section id="expected-setup-before-workshop" class="level1">
+<h1>Expected setup before workshop</h1>
+<p>Before attending the workshop, we ask that you take the following steps:</p>
+<ol type="1">
+<li>Set up a local RStudio project linked with a GitHub repository (explained in the <a href="./resources/local_session_info.html">“How to set up a local session” page</a>.</li>
+<li>Ensure that you can run R code with a platform like RStudio, VS Code, Positron, etc.</li>
+<li>Ensure you can create <a href="https://quarto.org/docs/get-started/">Quarto documents</a></li>
+<li>Install <code>pak</code>, <code>asar</code>, <code>stockplotr</code>, and <code>tinytex</code> as explained in the <a href="@sec-install">Day 1 curriculum</a>.</li>
+</ol>
+</section>
 <section id="system-requirements" class="level1">
 <h1>System Requirements</h1>
 <table class="caption-top table">
@@ -396,11 +407,11 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rstudio/rstudio-original.svg" alt="Rstudio" width="55" height="55"></td>
-<td><a href="https://www.r-project.org/d">R</a> version ?</td>
+<td><a href="https://www.r-project.org/">R</a></td>
 </tr>
 <tr class="even">
 <td><img src="https://rstudio.github.io/cheatsheets/html/images/logo-quarto.png" alt="Quarto" width="50" height="55"></td>
-<td><a href="https://quarto.org/docs/get-started/">Quarto</a> v1.6+</td>
+<td><a href="https://quarto.org/docs/get-started/">Quarto</a> version 1.6+</td>
 </tr>
 <tr class="odd">
 <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaTeX_logo.svg/1200px-LaTeX_logo.svg.png" alt="LaTeX" width="135" height="55"></td>

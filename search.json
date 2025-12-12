@@ -10,6 +10,16 @@
     ]
   },
   {
+    "objectID": "resources/local_session_info.html",
+    "href": "resources/local_session_info.html",
+    "title": "How to set up a local session",
+    "section": "",
+    "text": "Create a new Github repo\nClone your repo and set up an RStudio Project\nRun the following code to get two essential files from the workflows-workshop github repo:\n\n\ninput data file “Report.sso” will save to a “example_output” folder in your home directory\nexample plot file “landings_fig_png.png” will save to a “example_plots” folder in your home directory\n\n\n# Function to obtain two files used during workshop\nget_workshop_files &lt;- function(dest_folder,\n                               dest_file,\n                               url){\n  if (!file.exists(dest_folder)) {\n    dir.create(dest_folder)\n  }\n  if (!file.exists(dest_file)) {\n    cli::cli_alert_info(\"📥 Downloading {dest_file}...\")\n    download.file(url, dest_file, mode = \"wb\")\n    message(\"✅ Download complete.\")\n  } else {\n    cli::cli_alert_info(\"✅ File already exists: {dest_file}\")\n  }\n}\n\n# Obtain example output file\nget_workshop_files(\n  dest_folder = file.path(here::here(\"example_output\")),\n  dest_file = file.path(here::here(\"example_output\", \"Report.sso\")),\n  url = \"https://github.com/nmfs-ost/workflows-workshop/blob/main/example_output/Report.sso\"\n  )\n\n# Obtain example figure file\nget_workshop_files(\n  dest_folder = file.path(here::here(\"example_plots\")),\n  dest_file = file.path(here::here(\"example_plots\", \"landings_fig_png.png\")),\n  url = \"https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots/landings_fig_png.png\"\n  )",
+    "crumbs": [
+      "How to set up a local session"
+    ]
+  },
+  {
     "objectID": "Curriculum/Day_3/day_3.html",
     "href": "Curriculum/Day_3/day_3.html",
     "title": "Day 3",
