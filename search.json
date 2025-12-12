@@ -40,6 +40,26 @@
     ]
   },
   {
+    "objectID": "Curriculum/Day_3/day_3.html#materials-for-todays-lesson",
+    "href": "Curriculum/Day_3/day_3.html#materials-for-todays-lesson",
+    "title": "Day 3",
+    "section": "Materials for today’s lesson",
+    "text": "Materials for today’s lesson\n\nDay 3 communal notes doc\n\nContains resources (from us and you!) and areas for note-taking\n\nSample data\n\nSample model output data for coding demonstrations\n\nExample figure\n\nExample figure for coding demonstration",
+    "crumbs": [
+      "Day 3: stockplotr + asar"
+    ]
+  },
+  {
+    "objectID": "Curriculum/Day_3/day_3.html#installation",
+    "href": "Curriculum/Day_3/day_3.html#installation",
+    "title": "Day 3",
+    "section": "Installation",
+    "text": "Installation\nasar, stockplotr, and tinytex should already be installed if you attended Days 1 or 2. If not, please install these packages by following the instructions in the pre-workshop checklist.",
+    "crumbs": [
+      "Day 3: stockplotr + asar"
+    ]
+  },
+  {
     "objectID": "Curriculum/Day_3/day_3.html#convert-output-if-necessary",
     "href": "Curriculum/Day_3/day_3.html#convert-output-if-necessary",
     "title": "Day 3",
@@ -283,7 +303,7 @@
     "href": "Curriculum/Day_2/day_2.html#materials-for-todays-lesson",
     "title": "Day 2",
     "section": "Materials for today’s lesson",
-    "text": "Materials for today’s lesson\n\nDay 2 communal notes doc\n\nContains areas for taking notes, definitions for jargon, and resources (from us and you!)\n\nJupyterHub workshop server\n\nEnvironment where you can code along with us, if you’d prefer\nAll necessary packages are already installed\nUsername: your email\nPassword: ask us\n\nSample data\n\nSample model output data for coding demonstrations",
+    "text": "Materials for today’s lesson\n\nDay 2 communal notes doc\n\nContains resources (from us and you!) and areas for note-taking\n\nSample data\n\nSample model output data for coding demonstrations",
     "crumbs": [
       "Day 2: asar"
     ]
@@ -393,7 +413,7 @@
     "href": "Curriculum/Day_1/day_1.html#materials-for-todays-lesson",
     "title": "Day 1",
     "section": "Materials for today’s lesson",
-    "text": "Materials for today’s lesson\n\nDay 1 communal notes doc\n\nContains resources (from us and you!) and areas for note-taking\n\nJupyterHub workshop server\n\nEnvironment where you can code along with us, if you’d prefer\nAll necessary packages are already installed\nUsername: your email\nPassword: ask us\n\nSample data\n\nSample model output data for coding demonstrations\n\n\nNow, open up a JupyterHub session.\n\n\n\n\n\n\nBreak for questions",
+    "text": "Materials for today’s lesson\n\nDay 1 communal notes doc\n\nContains resources (from us and you!) and areas for note-taking\n\nSample data\n\nSample model output data for coding demonstrations\n\n\n\n\n\n\n\n\nBreak for questions",
     "crumbs": [
       "Day 1: General"
     ]
