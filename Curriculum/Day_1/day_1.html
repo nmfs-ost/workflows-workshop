@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../Curriculum/Day_2/day_2.html" rel="next">
-<link href="../../resources/local_session_info.html" rel="prev">
+<link href="../../resources/checklist.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -333,8 +333,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../resources/local_session_info.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">How to set up a local session</span></a>
+  <a href="../../resources/checklist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pre-workshop checklist</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -404,11 +404,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">YAML</a></li>
   <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">Code Chunks</a></li>
   </ul></li>
-  <li><a href="#sec-install" id="toc-sec-install" class="nav-link" data-scroll-target="#sec-install">Installation</a>
-  <ul class="collapse">
-  <li><a href="#tinytex" id="toc-tinytex" class="nav-link" data-scroll-target="#tinytex"><code>tinytex</code></a></li>
-  <li><a href="#asar" id="toc-asar" class="nav-link" data-scroll-target="#asar"><code>asar</code></a></li>
-  </ul></li>
+  <li><a href="#install-packages-and-get-ready-for-tomorrows-material-if-need-be" id="toc-install-packages-and-get-ready-for-tomorrows-material-if-need-be" class="nav-link" data-scroll-target="#install-packages-and-get-ready-for-tomorrows-material-if-need-be">Install packages and get ready for tomorrow’s material (if need be)</a></li>
   <li><a href="#questions-comments-and-feedback" id="toc-questions-comments-and-feedback" class="nav-link" data-scroll-target="#questions-comments-and-feedback">Questions, comments, and feedback</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nmfs-ost/workflows-workshop/edit/main/Curriculum/Day_1/day_1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/Curriculum/Day_1/day_1.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -832,39 +828,21 @@ Note
 </div>
 </section>
 </section>
-<section id="sec-install" class="level1">
-<h1>Installation</h1>
-<div class="callout callout-style-default callout-tip callout-titled">
+<section id="install-packages-and-get-ready-for-tomorrows-material-if-need-be" class="level1">
+<h1>Install packages and get ready for tomorrow’s material (if need be)</h1>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Tip
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The following packages are already installed in the <code>asar</code> workspace on JupyterHub, so if you are using that space, you can skip this section.</p>
+<p>Before we begin using <code>asar</code> and <code>stockplotr</code> tomorrow, we highly suggest that you ensure that you’ve completed the <a href="resources/checklist.qmd">pre-workshop checklist</a>.</p>
 </div>
 </div>
-<p>We recommend using the <a href="https://pak.r-lib.org/"><code>pak</code> R package</a> to install R packages where possible, since it avoids re-downloading files if they’re already present.</p>
-<section id="tinytex" class="level2">
-<h2 class="anchored" data-anchor-id="tinytex"><code>tinytex</code></h2>
-<p>We recommend installing the default “bundle” of LaTeX packages via <code>tinytex</code> because 1) it’s faster and 2) R <em>should</em> automatically install also-necessary LaTeX packages when they are needed, in the moment.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(<span class="st">"rstudio/tinytex"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If you’d prefer, you can install the full <code>tinytex</code> bundle to ensure that all LaTeX packages will be present when you need them. This will take longer to install.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(<span class="st">"rstudio/tinytex"</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>(<span class="at">bundle =</span> <span class="st">"TinyTeX-2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="asar" class="level2">
-<h2 class="anchored" data-anchor-id="asar"><code>asar</code></h2>
-<p>Then, install <code>asar</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">"nmfs-ost/asar"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Please see the <a href="https://github.com/nmfs-ost/asar"><code>asar</code> README</a> for more installation options.</p>
-</section>
 </section>
 <section id="questions-comments-and-feedback" class="level1">
 <h1>Questions, comments, and feedback</h1>
@@ -1294,8 +1272,8 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../resources/local_session_info.html" class="pagination-link" aria-label="How to set up a local session">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">How to set up a local session</span>
+      <a href="../../resources/checklist.html" class="pagination-link" aria-label="Pre-workshop checklist">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Pre-workshop checklist</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

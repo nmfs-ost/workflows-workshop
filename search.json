@@ -10,13 +10,13 @@
     ]
   },
   {
-    "objectID": "resources/local_session_info.html",
-    "href": "resources/local_session_info.html",
-    "title": "How to set up a local session",
+    "objectID": "resources/checklist.html",
+    "href": "resources/checklist.html",
+    "title": "Pre-workshop checklist",
     "section": "",
-    "text": "Create a new Github repo\nClone your repo and set up an RStudio Project\nRun the following code to get two essential files from the workflows-workshop github repo:\n\n\ninput data file “Report.sso” will save to a “example_output” folder in your home directory\nexample plot file “landings_fig_png.png” will save to a “example_plots” folder in your home directory\n\n\n# Function to obtain two files used during workshop\nget_workshop_files &lt;- function(dest_folder,\n                               dest_file,\n                               url){\n  if (!file.exists(dest_folder)) {\n    dir.create(dest_folder)\n  }\n  if (!file.exists(dest_file)) {\n    cli::cli_alert_info(\"📥 Downloading {dest_file}...\")\n    download.file(url, dest_file, mode = \"wb\")\n    message(\"✅ Download complete.\")\n  } else {\n    cli::cli_alert_info(\"✅ File already exists: {dest_file}\")\n  }\n}\n\n# Obtain example output file\nget_workshop_files(\n  dest_folder = file.path(here::here(\"example_output\")),\n  dest_file = file.path(here::here(\"example_output\", \"Report.sso\")),\n  url = \"https://github.com/nmfs-ost/workflows-workshop/blob/main/example_output/Report.sso\"\n  )\n\n# Obtain example figure file\nget_workshop_files(\n  dest_folder = file.path(here::here(\"example_plots\")),\n  dest_file = file.path(here::here(\"example_plots\", \"landings_fig_png.png\")),\n  url = \"https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots/landings_fig_png.png\"\n  )",
+    "text": "Here are the main steps needed to set up your environment so that you’re ready to use asar and stockplotr to create a stock assessment report.\nIf you have any questions, please contact the workshop organizers.\n\nEnsure that you can run R code with a platform like RStudio, VS Code, Positron, etc.\nEnsure you have downloaded Quarto, version 1.6+ and can create Quarto documents.\nCreate a new Github repo for the workshop.\nClone your repo and set up an RStudio Project.\nRun the following code to get two essential files from the workflows-workshop github repo:\n\n\ninput data file “Report.sso” will save to a “example_output” folder in your home directory\nexample plot file “landings_fig_png.png” will save to a “example_plots” folder in your home directory\n\n\n# Function to obtain two files used during workshop\nget_workshop_files &lt;- function(dest_folder,\n                               dest_file,\n                               url){\n  if (!file.exists(dest_folder)) {\n    dir.create(dest_folder)\n  }\n  if (!file.exists(dest_file)) {\n    cli::cli_alert_info(\"📥 Downloading {dest_file}...\")\n    download.file(url, dest_file, mode = \"wb\")\n    message(\"✅ Download complete.\")\n  } else {\n    cli::cli_alert_info(\"✅ File already exists: {dest_file}\")\n  }\n}\n\n# Obtain example output file\nget_workshop_files(\n  dest_folder = file.path(here::here(\"example_output\")),\n  dest_file = file.path(here::here(\"example_output\", \"Report.sso\")),\n  url = \"https://github.com/nmfs-ost/workflows-workshop/blob/main/example_output/Report.sso\"\n  )\n\n# Obtain example figure file\nget_workshop_files(\n  dest_folder = file.path(here::here(\"example_plots\")),\n  dest_file = file.path(here::here(\"example_plots\", \"landings_fig_png.png\")),\n  url = \"https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots/landings_fig_png.png\"\n  )\n\n\nInstall important R packages\n\n\n\n\n\n\n\nTipTip\n\n\n\nThe following packages are already installed in the asar workspace on JupyterHub, so if you are using that space, you can skip this section.\n\n\nWe recommend using the pak R package to install R packages where possible, since it avoids re-downloading files if they’re already present.\ninstall.packages(\"pak\")\n\ntinytex\n\nWe recommend installing the full tinytex bundle to ensure that all LaTeX packages will be present when you need them. This will take ~30 minutes to complete.\npak::pkg_install(\"rstudio/tinytex\")\ntinytex::install_tinytex(bundle = \"TinyTeX-2\")\n\nasar\n\npak::pak(\"nmfs-ost/asar\")\nPlease see the asar README for more installation options.\n\nstockplotr\n\npak::pak(\"nmfs-ost/stockplotr\")\nPlease see the stockplotr README for more installation options.",
     "crumbs": [
-      "How to set up a local session"
+      "Pre-workshop checklist"
     ]
   },
   {
@@ -494,26 +494,6 @@
     "title": "Day 1",
     "section": "Code Chunks",
     "text": "Code Chunks\nAs we previously mentioned, the beauty of using quarto is that it allows the user to integrate text and code throughout their reports making them super reproducible.\nThe basics of a code chunk (chunk) are:\n\nthe language (R or python)\nchunk options\ncode\n\nThese three things get wrapped together within two sets of three back ticks (```) to allow a user to run code.\n```{r}\n#| label: ex-chunk\n#| eval: false\n#| warning: false\n#| echo: false\n#| fig-cap: This is my figure caption.\n#| fig-alt: This is my alternative text.\n#| tbl-cap: This is my table caption.\nx &lt;- 1 + 1\n```\nThere are a variety of chunk options, but the ones you will see consistently throughout this workshop are listed in the example above.\n\n\n\n\n\n\nNote\n\n\n\nIn the “label” option, for tables and figures, you will need to prefix the label with either “fig-” for a figure or “tbl-” for a table.\n\n\nFor those familiar with Rmarkdown, the code chunk structure in Rmarkdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a “#|” proceeding each option.\n\n\n\n\n\n\nBreak for questions",
-    "crumbs": [
-      "Day 1: General"
-    ]
-  },
-  {
-    "objectID": "Curriculum/Day_1/day_1.html#tinytex",
-    "href": "Curriculum/Day_1/day_1.html#tinytex",
-    "title": "Day 1",
-    "section": "tinytex",
-    "text": "tinytex\nWe recommend installing the default “bundle” of LaTeX packages via tinytex because 1) it’s faster and 2) R should automatically install also-necessary LaTeX packages when they are needed, in the moment.\ninstall.packages(\"pak\")\npak::pkg_install(\"rstudio/tinytex\")\nIf you’d prefer, you can install the full tinytex bundle to ensure that all LaTeX packages will be present when you need them. This will take longer to install.\ninstall.packages(\"pak\")\npak::pkg_install(\"rstudio/tinytex\")\ntinytex::install_tinytex(bundle = \"TinyTeX-2\")",
-    "crumbs": [
-      "Day 1: General"
-    ]
-  },
-  {
-    "objectID": "Curriculum/Day_1/day_1.html#asar",
-    "href": "Curriculum/Day_1/day_1.html#asar",
-    "title": "Day 1",
-    "section": "asar",
-    "text": "asar\nThen, install asar.\ninstall.packages(\"pak\")\npak::pak(\"nmfs-ost/asar\")\nPlease see the asar README for more installation options.",
     "crumbs": [
       "Day 1: General"
     ]
