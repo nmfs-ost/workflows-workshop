@@ -19,12 +19,21 @@ Currently, we are coordinating with our NOAA Fisheries Regional Science Centers 
 
 The workflows of stock assessment scientists across the U.S. are highly variable and all consistently face similar issues including lack of automation, challenging data wrangling, increased requests for analyses, and more. A team with the National Stock Assessment Program at NOAA Fisheries HQ set about addressing some of these needs by identifying parts of the workflow scientists needed help in. While there were needs to improve parts of the workflow at every step, the team and a steering committee decided to first approach the lowest hanging fruit, reporting. The goal of this project was to establish a semi-automated system for generating reports in order to reduce time completing mundane and tedious tasks that, with some effort, could be automated. From there, [`asar`](https://github.com/nmfs-ost/asar) and [`stockplotr`](https://github.com/nmfs-ost/stockplotr) were built along with beginning to establish a standard set of guidelines for stock assessment reports.
 
+# Expected setup before workshop
+
+Before attending the workshop, we ask that you take the following steps:
+
+1. Set up a local RStudio project linked with a GitHub repository (explained in the ["How to set up a local session" page](resources/local_session_info.qmd).
+2. Ensure that you can run R code with a platform like RStudio, VS Code, Positron, etc.
+3. Ensure you can create [Quarto documents](https://quarto.org/docs/get-started/)
+4. Install `pak`, `asar`, `stockplotr`, and `tinytex` as explained in the [Day 1 curriculum](@sec-install).
+
 # System Requirements
 
 | Program | Version |
 |---------|---------|
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rstudio/rstudio-original.svg" alt="Rstudio" width="55" height="55"/> | [R](https://www.r-project.org/d) version ? |
-| <img src="https://rstudio.github.io/cheatsheets/html/images/logo-quarto.png" alt="Quarto" width="50" height="55"/> | [Quarto](https://quarto.org/docs/get-started/) v1.6+ |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rstudio/rstudio-original.svg" alt="Rstudio" width="55" height="55"/> | [R](https://www.r-project.org/) |
+| <img src="https://rstudio.github.io/cheatsheets/html/images/logo-quarto.png" alt="Quarto" width="50" height="55"/> | [Quarto](https://quarto.org/docs/get-started/) version 1.6+ |
 | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaTeX_logo.svg/1200px-LaTeX_logo.svg.png" alt="LaTeX" width="135" height="55"/> | [Latex](https://latex3.github.io/) from [TinyTeX-2 bundle](https://github.com/rstudio/tinytex-releases?tab=readme-ov-file#releases) |
 
 # Navigation

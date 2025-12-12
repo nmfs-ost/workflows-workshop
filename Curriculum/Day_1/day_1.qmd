@@ -344,7 +344,7 @@ For those familiar with Rmarkdown, the code chunk structure in Rmarkdown documen
 Break for questions
 :::
 
-# Installation
+# Installation {#sec-install}
 
 ::: {.callout-tip}
 ## Tip
