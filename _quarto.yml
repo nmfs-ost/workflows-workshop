@@ -36,8 +36,8 @@ website:
         text: "Terminology"
       - href: resources/good_practices.qmd
         text: "Good data science practices"
-      - href: resources/local_session_info.qmd
-        text: "How to set up a local session"
+      - href: resources/checklist.qmd
+        text: "Pre-workshop checklist"
       - href: Curriculum/Day_1/day_1.qmd
         text: "Day 1: General"
       - href: Curriculum/Day_2/day_2.qmd

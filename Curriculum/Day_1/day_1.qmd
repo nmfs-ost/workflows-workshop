@@ -344,43 +344,11 @@ For those familiar with Rmarkdown, the code chunk structure in Rmarkdown documen
 Break for questions
 :::
 
-# Installation {#sec-install}
+# Install packages and get ready for tomorrow's material (if need be)
 
-::: {.callout-tip}
-## Tip
-
-The following packages are already installed in the `asar` workspace on JupyterHub, so if you are using that space, you can skip this section.
+::: {.callout-important}
+Before we begin using `asar` and `stockplotr` tomorrow, we highly suggest that you ensure that you've completed the [pre-workshop checklist](resources/checklist.qmd).
 :::
-
-We recommend using the [`pak` R package](https://pak.r-lib.org/) to install R packages where possible, since it avoids re-downloading files if they're already present.
-
-## `tinytex`
-
-We recommend installing the default "bundle" of LaTeX packages via `tinytex` because 1) it's faster and 2) R *should* automatically install also-necessary LaTeX packages when they are needed, in the moment.
-
-```r
-install.packages("pak")
-pak::pkg_install("rstudio/tinytex")
-```
-
-If you'd prefer, you can install the full `tinytex` bundle to ensure that all LaTeX packages will be present when you need them. This will take longer to install.
-
-```r
-install.packages("pak")
-pak::pkg_install("rstudio/tinytex")
-tinytex::install_tinytex(bundle = "TinyTeX-2")
-```
-
-## `asar`
-
-Then, install `asar`.
-
-```r
-install.packages("pak")
-pak::pak("nmfs-ost/asar")
-```
-
-Please see the [`asar` README](https://github.com/nmfs-ost/asar) for more installation options.
 
 # Questions, comments, and feedback
 
