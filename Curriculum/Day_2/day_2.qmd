@@ -59,16 +59,10 @@ In this section we will cover the basics of `asar` by generating a blank stock a
 
 ## Installation
 
-Attendees of the workshop should have already downloaded this package during day 1. If you have not, please download `asar` through the following code:
-
-```{r}
-#| label: asar-download
-#| eval: false
-pak::pak("nmfs-ost/asar")
-```
+`asar` should already be installed if you attended Day 1. If not, please install this package by following the instructions in the [pre-workshop checklist](https://nmfs-ost.github.io/workflows-workshop/resources/checklist.html#sec-install_pkgs).
 
 ::: {.callout-note}
-If you receive an error message when attempting the download the package, please ask the isntructor for alternative directions or see the README on the [`asar` repository](https://github.com/nmfs-ost/asar).
+If you receive an error message when attempting the download the package, please ask the instructor for alternative directions or see the README on the [`asar` repository](https://github.com/nmfs-ost/asar).
 :::
 
 ## Recommended workflow

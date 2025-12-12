@@ -344,7 +344,7 @@ For those familiar with Rmarkdown, the code chunk structure in Rmarkdown documen
 Break for questions
 :::
 
-# Install packages and get ready for tomorrow's material (if need be)
+# Install packages and get ready for tomorrow's material (if need be) {#sec-prep}
 
 ::: {.callout-important}
 Before we begin using `asar` and `stockplotr` tomorrow, we highly suggest that you ensure that you've completed the [pre-workshop checklist](resources/checklist.qmd).

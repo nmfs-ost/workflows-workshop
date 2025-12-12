@@ -29,19 +29,7 @@ Break for questions
 
 # Installation
 
-`asar` should already be installed if you attended day 2, but if not, please install it first:
-
-```r
-install.packages("pak")
-pak::pak("nmfs-ost/asar")
-```
-
-Next, install `stockplotr`
-
-```r
-install.packages("pak")
-pak::pak("nmfs-ost/stockplotr")
-```
+`asar`, `stockplotr`, and `tinytex` should already be installed if you attended Days 1 or 2. If not, please install these packages by following the instructions in the [pre-workshop checklist](https://nmfs-ost.github.io/workflows-workshop/resources/checklist.html#sec-install_pkgs).
 
 ::: {.callout-tip}
 ## Tip
