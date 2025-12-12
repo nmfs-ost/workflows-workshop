@@ -44,6 +44,8 @@ website:
         text: "Day 2: asar"
       - href: Curriculum/Day_3/day_3.qmd
         text: "Day 3: stockplotr + asar"
+      - href: Curriculum/nsaw.qmd
+        text: "NSAW workshop"
 
 
 format:
