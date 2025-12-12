@@ -42,15 +42,8 @@ Sam Schiano and Sophie Breitbart are contractors with ECS Federal working in sup
 
 -   [Day 1 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?usp=sharing)
     -   Contains resources (from us and you!) and areas for note-taking
--   [JupyterHub workshop server](https://workshop.nmfs-openscapes.2i2c.cloud)
-    -   Environment where you can code along with us, if you'd prefer
-    -   All necessary packages are already installed
-    -   Username: your email
-    -   Password: *ask us*
 -   [Sample data](https://github.com/nmfs-ost/asar/blob/main/inst/extdata/Report.sso)
     -   Sample model output data for coding demonstrations
-
-Now, open up a JupyterHub session.
 
 ::: {.callout-note appearance="minimal"}
 Break for questions

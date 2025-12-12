@@ -27,17 +27,18 @@ Welcome! Please open the [Day 3 communal notes doc](https://docs.google.com/docu
 Break for questions
 :::
 
-# Installation
+## Materials for today's lesson
+
+-   [Day 3 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.vffehz79fm7y#heading=h.sfq3xaeehv64)
+    -   Contains resources (from us and you!) and areas for note-taking
+-   [Sample data](https://github.com/nmfs-ost/asar/blob/main/inst/extdata/Report.sso)
+    -   Sample model output data for coding demonstrations
+-   [Example figure](https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots/landings_fig_png.png)
+    -   Example figure for coding demonstration
+
+## Installation
 
 `asar`, `stockplotr`, and `tinytex` should already be installed if you attended Days 1 or 2. If not, please install these packages by following the instructions in the [pre-workshop checklist](https://nmfs-ost.github.io/workflows-workshop/resources/checklist.html#sec-install_pkgs).
-
-::: {.callout-tip}
-## Tip
-
-The following packages are already installed in the `asar` workspace on JupyterHub, so if you are using that space, you can skip this section.
-:::
-
-Please see the [`stockplotr` README](https://github.com/nmfs-ost/stockplotr) for more installation options.
 
 # Introduction to `stockplotr`
 

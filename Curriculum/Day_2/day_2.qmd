@@ -32,12 +32,7 @@ If you believe that someone is in violation of the Code of Conduct, please repor
 ## Materials for today's lesson
 
 -   [Day 2 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?usp=sharing)
-    -   Contains areas for taking notes, definitions for jargon, and resources (from us and you!)
--   [JupyterHub workshop server](https://workshop.nmfs-openscapes.2i2c.cloud)
-    -   Environment where you can code along with us, if you'd prefer
-    -   All necessary packages are already installed
-    -   Username: your email
-    -   Password: *ask us*
+    -   Contains resources (from us and you!) and areas for note-taking
 -   [Sample data](https://github.com/nmfs-ost/asar/blob/main/inst/extdata/Report.sso)
     -   Sample model output data for coding demonstrations
 
