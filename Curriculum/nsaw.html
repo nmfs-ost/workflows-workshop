@@ -389,11 +389,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#overview-of-asar-based-reporting-workflow" id="toc-overview-of-asar-based-reporting-workflow" class="nav-link" data-scroll-target="#overview-of-asar-based-reporting-workflow">Overview of <code>asar</code>-based reporting workflow</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#markdown" id="toc-markdown" class="nav-link" data-scroll-target="#markdown">Markdown</a>
+  <li><a href="#r-markdown" id="toc-r-markdown" class="nav-link" data-scroll-target="#r-markdown">(R) markdown</a>
   <ul class="collapse">
-  <li><a href="#what-is-markdown" id="toc-what-is-markdown" class="nav-link" data-scroll-target="#what-is-markdown">What is markdown?</a></li>
-  <li><a href="#why-use-r-markdown" id="toc-why-use-r-markdown" class="nav-link" data-scroll-target="#why-use-r-markdown">Why use R markdown?</a></li>
-  <li><a href="#opening-a-document" id="toc-opening-a-document" class="nav-link" data-scroll-target="#opening-a-document">Opening a document</a></li>
   <li><a href="#the-core-components" id="toc-the-core-components" class="nav-link" data-scroll-target="#the-core-components">The core components</a></li>
   <li><a href="#common-uses-in-asar-reports" id="toc-common-uses-in-asar-reports" class="nav-link" data-scroll-target="#common-uses-in-asar-reports">Common uses in <code>asar</code> reports</a>
   <ul class="collapse">
@@ -405,7 +402,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a>
   <ul class="collapse">
-  <li><a href="#why-use-quarto-for-reports" id="toc-why-use-quarto-for-reports" class="nav-link" data-scroll-target="#why-use-quarto-for-reports">Why use Quarto for reports?</a></li>
   <li><a href="#skeleton-setup" id="toc-skeleton-setup" class="nav-link" data-scroll-target="#skeleton-setup">Skeleton setup</a>
   <ul class="collapse">
   <li><a href="#relative-pathnames" id="toc-relative-pathnames" class="nav-link" data-scroll-target="#relative-pathnames">Relative pathnames</a></li>
@@ -583,28 +579,11 @@ Tip
 </section>
 </section>
 </section>
-<section id="markdown" class="level1">
-<h1>Markdown</h1>
-<section id="what-is-markdown" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-markdown">What is markdown?</h2>
-<p><a href="https://rmarkdown.rstudio.com/articles_intro.html">According to RStudio</a>, markdown is “an easy-to-write plain text format”; not exactly a language, but a formatting style.</p>
-</section>
-<section id="why-use-r-markdown" class="level2">
-<h2 class="anchored" data-anchor-id="why-use-r-markdown">Why use R markdown?</h2>
-<p>R markdown, or “Rmd” for short, allows you to create amazingly dynamic reports. With R markdown, you can embed your R code directly into your documents. When you “knit” the document, the code is executed, and the results— like figures, tables, parameters, citations, and other outputs— are automatically inserted into the final report.</p>
+<section id="r-markdown" class="level1">
+<h1>(R) markdown</h1>
+<p><a href="https://rmarkdown.rstudio.com/articles_intro.html">According to RStudio</a>, <em>markdown</em> is “an easy-to-write plain text format”; not exactly a language, but a formatting style.</p>
+<p><em>R markdown</em>, or “Rmd” for short, allows you to create amazingly dynamic reports. With R markdown, you can embed your R code directly into your documents. When you “knit” the document, the code is executed, and the results— like figures, tables, parameters, citations, and other outputs— are automatically inserted into the final report.</p>
 <p>A major reason why R markdown is incredibly useful: it <em>saves time and reduces errors</em>. If your data changes, you don’t have to manually rerun your analysis and copy/paste the results. You just re-knit the document, and everything is updated automatically.</p>
-</section>
-<section id="opening-a-document" class="level2">
-<h2 class="anchored" data-anchor-id="opening-a-document">Opening a document</h2>
-<p>Let’s open a new document. We’ll open a Quarto document (Qmd) because it also runs Rmd code; it’s a newer document type that can handle more than Rmd can.</p>
-<ol type="1">
-<li>In RStudio, go to <strong>File &gt; New File &gt; Quarto document…</strong>.</li>
-<li>A dialog box will appear. If you wish, you can give your document a title and author.</li>
-<li>For the output format, you can select HTML, PDF, or Word. Let’s choose HTML.</li>
-<li>Click <strong>OK</strong>.</li>
-</ol>
-<p>You’ll now see a new Quarto file with some default text. Let’s explore some ways you can take advantage of this powerful document type.</p>
-</section>
 <section id="the-core-components" class="level2">
 <h2 class="anchored" data-anchor-id="the-core-components">The core components</h2>
 <ol type="1">
@@ -685,15 +664,12 @@ Tip
 </section>
 <section id="quarto" class="level1">
 <h1>Quarto</h1>
-<section id="why-use-quarto-for-reports" class="level2">
-<h2 class="anchored" data-anchor-id="why-use-quarto-for-reports">Why use Quarto for reports?</h2>
 <p>Quarto is an ideal platform for building reproducible reports, which are denoted with a .qmd (Quarto Markdown) extension type. Why?</p>
 <ul>
 <li><p>It allows you to combine narrative text, source code (like R), and the outputs of that code (like tables and figures) into a single, polished document.</p></li>
 <li><p>Anyone with the same files can reproduce that document, which goes a long way in promoting scientific integrity.</p></li>
 <li><p>You can produce reports in several formats like HTML, PDF, and Word.</p></li>
 </ul>
-</section>
 <section id="skeleton-setup" class="level2">
 <h2 class="anchored" data-anchor-id="skeleton-setup">Skeleton setup</h2>
 <p>When you run <code>asar::create_template()</code>, you will receive a “report” folder with several files within it. One of the most important files is what we call the “skeleton”: a .qmd file containing chunks that run <em>other</em> files, then places the rendered contents of those files within one report.</p>
@@ -786,7 +762,6 @@ Important
 <span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>csl<span class="sc">:</span> support_files<span class="sc">/</span>cjfas.csl</span>
 <span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>We will explore the components of the yaml in the Day 2 curriculum.</p>
 </section>
 <section id="code-chunks" class="level2">
 <h2 class="anchored" data-anchor-id="code-chunks">Code Chunks</h2>
@@ -833,6 +808,7 @@ Note
 </div>
 </div>
 </div>
+<!-- Add workflow tutorial here: asar and stockplotr -->
 </section>
 </section>
 <section id="questions-comments-and-feedback" class="level1">

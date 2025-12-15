@@ -589,36 +589,6 @@
     ]
   },
   {
-    "objectID": "Curriculum/nsaw.html#what-is-markdown",
-    "href": "Curriculum/nsaw.html#what-is-markdown",
-    "title": "NSAW workshop",
-    "section": "What is markdown?",
-    "text": "What is markdown?\nAccording to RStudio, markdown is “an easy-to-write plain text format”; not exactly a language, but a formatting style.",
-    "crumbs": [
-      "NSAW workshop"
-    ]
-  },
-  {
-    "objectID": "Curriculum/nsaw.html#why-use-r-markdown",
-    "href": "Curriculum/nsaw.html#why-use-r-markdown",
-    "title": "NSAW workshop",
-    "section": "Why use R markdown?",
-    "text": "Why use R markdown?\nR markdown, or “Rmd” for short, allows you to create amazingly dynamic reports. With R markdown, you can embed your R code directly into your documents. When you “knit” the document, the code is executed, and the results— like figures, tables, parameters, citations, and other outputs— are automatically inserted into the final report.\nA major reason why R markdown is incredibly useful: it saves time and reduces errors. If your data changes, you don’t have to manually rerun your analysis and copy/paste the results. You just re-knit the document, and everything is updated automatically.",
-    "crumbs": [
-      "NSAW workshop"
-    ]
-  },
-  {
-    "objectID": "Curriculum/nsaw.html#opening-a-document",
-    "href": "Curriculum/nsaw.html#opening-a-document",
-    "title": "NSAW workshop",
-    "section": "Opening a document",
-    "text": "Opening a document\nLet’s open a new document. We’ll open a Quarto document (Qmd) because it also runs Rmd code; it’s a newer document type that can handle more than Rmd can.\n\nIn RStudio, go to File &gt; New File &gt; Quarto document….\nA dialog box will appear. If you wish, you can give your document a title and author.\nFor the output format, you can select HTML, PDF, or Word. Let’s choose HTML.\nClick OK.\n\nYou’ll now see a new Quarto file with some default text. Let’s explore some ways you can take advantage of this powerful document type.",
-    "crumbs": [
-      "NSAW workshop"
-    ]
-  },
-  {
     "objectID": "Curriculum/nsaw.html#the-core-components",
     "href": "Curriculum/nsaw.html#the-core-components",
     "title": "NSAW workshop",
@@ -639,16 +609,6 @@
     ]
   },
   {
-    "objectID": "Curriculum/nsaw.html#why-use-quarto-for-reports",
-    "href": "Curriculum/nsaw.html#why-use-quarto-for-reports",
-    "title": "NSAW workshop",
-    "section": "Why use Quarto for reports?",
-    "text": "Why use Quarto for reports?\nQuarto is an ideal platform for building reproducible reports, which are denoted with a .qmd (Quarto Markdown) extension type. Why?\n\nIt allows you to combine narrative text, source code (like R), and the outputs of that code (like tables and figures) into a single, polished document.\nAnyone with the same files can reproduce that document, which goes a long way in promoting scientific integrity.\nYou can produce reports in several formats like HTML, PDF, and Word.",
-    "crumbs": [
-      "NSAW workshop"
-    ]
-  },
-  {
     "objectID": "Curriculum/nsaw.html#skeleton-setup",
     "href": "Curriculum/nsaw.html#skeleton-setup",
     "title": "NSAW workshop",
@@ -663,7 +623,7 @@
     "href": "Curriculum/nsaw.html#yaml",
     "title": "NSAW workshop",
     "section": "YAML",
-    "text": "YAML\nThe YAML is the block of text at the very top of your main .qmd file, enclosed by triple dashes (—). It provides metadata for your document– i.e., how to build the report.\nCommon settings in the YAML include:\n\ntitle\nauthor\ndate\nformat (For asar, this will be PDF or HTML)\n\nHere is an example of an asar YAML:\n\n---\ntitle: 'Stock Assessment Report Template'\nauthor:\n  - name: 'FIRST LAST'\n    affiliations: \n      - name: 'NOAA Fisheries' \n        address: 'ADDRESS' \n        city: 'CITY' \n        state: 'STATE' \n        postal-code: 'POSTAL CODE' \ndate: today\nkeep-tex: true \nmainfont: 'Latin Modern Sans' \ncover: \npdf-engine: lualatex\nformat: \n  pdf: \n    documentclass: scrartcl\n    papersize: letter\n    number-sections: true\n    template-partials:\n      - 'support_files/before-body.tex'\n      - 'support_files/_titlepage.tex'\n    include-in-header:\n      - 'support_files/in-header.tex'\n    toc: true\n    sansfont: 'Latin Modern Sans'\n    lof: true\n    lot: true\n    titlepage-geometry: \n      - top=2in\n      - bottom=1in\n      - right=1in\n      - left=1in\noutput-file: 'species_SAR_2025' \nparams:\n   office: ''\n   species: 'species'\n   spp_latin: ''\nbibliography:  \n  - asar_references.bib\ncsl: support_files/cjfas.csl\n---\n\nWe will explore the components of the yaml in the Day 2 curriculum.",
+    "text": "YAML\nThe YAML is the block of text at the very top of your main .qmd file, enclosed by triple dashes (—). It provides metadata for your document– i.e., how to build the report.\nCommon settings in the YAML include:\n\ntitle\nauthor\ndate\nformat (For asar, this will be PDF or HTML)\n\nHere is an example of an asar YAML:\n\n---\ntitle: 'Stock Assessment Report Template'\nauthor:\n  - name: 'FIRST LAST'\n    affiliations: \n      - name: 'NOAA Fisheries' \n        address: 'ADDRESS' \n        city: 'CITY' \n        state: 'STATE' \n        postal-code: 'POSTAL CODE' \ndate: today\nkeep-tex: true \nmainfont: 'Latin Modern Sans' \ncover: \npdf-engine: lualatex\nformat: \n  pdf: \n    documentclass: scrartcl\n    papersize: letter\n    number-sections: true\n    template-partials:\n      - 'support_files/before-body.tex'\n      - 'support_files/_titlepage.tex'\n    include-in-header:\n      - 'support_files/in-header.tex'\n    toc: true\n    sansfont: 'Latin Modern Sans'\n    lof: true\n    lot: true\n    titlepage-geometry: \n      - top=2in\n      - bottom=1in\n      - right=1in\n      - left=1in\noutput-file: 'species_SAR_2025' \nparams:\n   office: ''\n   species: 'species'\n   spp_latin: ''\nbibliography:  \n  - asar_references.bib\ncsl: support_files/cjfas.csl\n---",
     "crumbs": [
       "NSAW workshop"
     ]
