@@ -96,28 +96,13 @@ Main steps for creating a stock assessment report with `asar`:
 Open the [`asar` cheatsheet](https://nmfs-ost.github.io/asar/asar_cheatsheet.pdf) for a visual overview of the main workflow!
 :::
 
-# Markdown
+# (R) markdown
 
-## What is markdown?
+[According to RStudio](https://rmarkdown.rstudio.com/articles_intro.html), *markdown* is "an easy-to-write plain text format"; not exactly a language, but a formatting style. 
 
-[According to RStudio](https://rmarkdown.rstudio.com/articles_intro.html), markdown is "an easy-to-write plain text format"; not exactly a language, but a formatting style. 
-
-## Why use R markdown?
-
-R markdown, or "Rmd" for short, allows you to create amazingly dynamic reports. With R markdown, you can embed your R code directly into your documents. When you "knit" the document, the code is executed, and the results— like figures, tables, parameters, citations, and other outputs— are automatically inserted into the final report.
+*R markdown*, or "Rmd" for short, allows you to create amazingly dynamic reports. With R markdown, you can embed your R code directly into your documents. When you "knit" the document, the code is executed, and the results— like figures, tables, parameters, citations, and other outputs— are automatically inserted into the final report.
 
 A major reason why R markdown is incredibly useful: it *saves time and reduces errors*. If your data changes, you don't have to manually rerun your analysis and copy/paste the results. You just re-knit the document, and everything is updated automatically.
-
-## Opening a document
-
-Let's open a new document. We'll open a Quarto document (Qmd) because it also runs Rmd code; it's a newer document type that can handle more than Rmd can.
-
-1.  In RStudio, go to **File \> New File \> Quarto document...**.
-2.  A dialog box will appear. If you wish, you can give your document a title and author.
-3.  For the output format, you can select HTML, PDF, or Word. Let's choose HTML.
-4.  Click **OK**.
-
-You'll now see a new Quarto file with some default text. Let's explore some ways you can take advantage of this powerful document type.
 
 ## The core components
 
@@ -190,8 +175,6 @@ To cite a reference in the text, use the `@` symbol followed by the citation key
 :::
 
 # Quarto
-
-## Why use Quarto for reports?
 
 Quarto is an ideal platform for building reproducible reports, which are denoted with a .qmd (Quarto Markdown) extension type. Why?
 
@@ -296,8 +279,6 @@ csl: support_files/cjfas.csl
 ---
 ```
 
-We will explore the components of the yaml in the Day 2 curriculum.
-
 ## Code Chunks
 
 As we previously mentioned, the beauty of using quarto is that it allows the user to integrate text and code throughout their reports making them super reproducible.
@@ -334,6 +315,9 @@ For those familiar with Rmarkdown, the code chunk structure in Rmarkdown documen
 ::: {.callout-note appearance="minimal"}
 Break for questions
 :::
+
+
+<!-- Add workflow tutorial here: asar and stockplotr -->
 
 # Questions, comments, and feedback
 
