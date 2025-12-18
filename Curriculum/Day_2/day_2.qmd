@@ -140,13 +140,13 @@ create_template(
 You should see a folder called "**report**" where you indicated in the argument `file_dir`. It
 should have a set up that looks like this:
 
-![The contents of an asar generated template found in the report folder.](images/asar_files.png)
+![The contents of an asar generated template found in the report folder.](images/asar_files.png){fig-alt="A screenshot of files that should appear in the 'report' folder, including '01_executive_summary.qmd', '02_introduction.qmd', '03_data.qmd', and more."}
 
 ::: {.callout-note}
-You should see a variety of messaged reported in the console to indicate
+You should see a variety of messages reported in the console to indicate
 that it worked! For a blank template with no errors, it should look like this:
 
-![](images/blank_template_output_messages.png)
+![](images/blank_template_output_messages.png){fig-alt="A screenshot of console text expected when `create_template()` is run successfully."}
 :::
 
 ::: {.callout-note appearance="minimal"}
@@ -157,7 +157,7 @@ Break for questions
 
 ##### The skeleton
 
-![Diagram showing different blocks of content found in the Quarto yaml within the skeleton.qmd file.](images/asar_skeleton.png)
+![Diagram showing different blocks of content found in the Quarto yaml within the skeleton.qmd file.](images/asar_skeleton.png){fig-alt="A figure showing seven rectangles on top of one another, portraying the order of content in a Quarto yaml. Sections include 'Yaml (Formatting and input information)', 'Parameters R chunk', 'Preamble R chunk', 'Disclaimer', 'Citation', 'Report content ('child docs'): Executive Summary', an ellipsis to separate the blocks, and then a final block ('Report content ('Child docs'): Appendix')."}
 
 As previously mentioned, the skeleton file controls the rest of the report. This 
 is the file you go to to compile your report, change formatting, or add quantities
@@ -165,7 +165,7 @@ to reference in your document.
 
 We went over the basics of a Quarto yaml in [Day 1](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#yaml), but when using asar, you don't actually have to fill in anything yourself. The beauty of using asar is that it removes this task, but filling out information provided in the `create_template()` arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).
 
-!['asar' yaml controlling formatting and basic document information.](images/asar_yaml.png)
+!['asar' yaml controlling formatting and basic document information.](images/asar_yaml.png){fig-alt="A screenshot of an example yaml, with curly brackets highlighting which code is 'information' and which code is 'formatting'."}
 
 The YAML controls the following:
 
@@ -192,7 +192,7 @@ You have two options for calling these parameters in your writing.
 
 The preamble is an R chunk that loads in a script called "preamble.R" which extracts key quantities commonly referenced in stock assessment reports. This will only work with a standard results file converted using `asar::convert_output()`, which we will get to shortly.
 
-![A screenshot showing lines of code in an R chunk within the skeleton file containing various quantities pulled from the preamble.R script.](images/preamble.png)
+![A screenshot showing lines of code in an R chunk within the skeleton file containing various quantities pulled from the preamble.R script.](images/preamble.png){fig-alt="A screenshot of the preamble, with the R chunk option 'eval: false' highlighted."}
 
 The quantities in found in this chunk can be referenced in-line throughout the document:
 

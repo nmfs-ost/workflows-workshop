@@ -468,7 +468,7 @@ your_table
 ``` 
 ````
 
-![](images/petrale_table.png){width=50% fig-alt="Example of a table produced with the 'Direct coding-in-qmd table workflow' option for adding tables to `asar` reports."}
+![](images/petrale_table.png){fig-alt="Example of a table produced with the 'Direct coding-in-qmd table workflow' option for adding tables to `asar` reports."}
 
 Then, add a pagebreak:
 
@@ -533,7 +533,7 @@ your_figure
 ``` 
 ````
 
-![](images/petrale_figure.png){width=50% fig-alt="Example of a figure produced with the 'Direct coding-in-qmd figure workflow' option for adding figures to `asar` reports."}
+![](images/petrale_figure.png){fig-alt="Example of a figure produced with the 'Direct coding-in-qmd figure workflow' option for adding figures to `asar` reports."}
 
 ::: {.callout-warning}
 Even though you wrote alt text in the `fig-alt` area, **when you first render your report into a PDF, your alternative text will not show up in your document.** Strange, right?! **To ensure it shows up, refer to the ["Adding accessibility features" section](#sec-a11y)** (which we'll discuss in a moment).
