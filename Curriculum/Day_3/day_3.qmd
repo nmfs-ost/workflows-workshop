@@ -358,8 +358,10 @@ We have designed two functions that allow you to automatically create all availa
 :::
 
 ::: {.callout-note appearance="minimal"}
-10 minute break
+20 minute break for questions & practicing
 :::
+
+{{< include ../snippets/figure_table_exercises.qmd >}}
 
 # Integrating stockplotr in the workflow
 

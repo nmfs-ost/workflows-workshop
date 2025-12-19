@@ -1,0 +1,97 @@
+
+::: {.callout-caution collapse="true"}
+## Practice exercises: Creating `stockplotr` figures & tables
+
+For the following, use `stockplotr::example_data` as the input data.
+
+1. Create an abundance-at-age plot. Export it as an rda to your working directory.
+2. Create a recruitment time series plot. Change the `unit_label` and `scale_amount` so that the y axis shows recruitment in thousands of fish. Set `module` = "TIME_SERIES".
+3. Create a fishing mortality plot. Ensure it does not group by fleet. Set `module` = "TIME_SERIES". Add a reference line ("target") at 0.5. Convert it from a line plot to a scatterplot.
+4. Create a landings table.
+
+Now, use your own data.
+
+5. Convert your own dataset using `convert_output()`.
+6. Create a spawning biomass plot. Change the theme by applying the `ggplot2::theme_classic()`.
+
+:::
+
+::: {.callout-caution collapse="true"}
+## **Answers** for Practice exercises: Creating `stockplotr` figures & tables
+
+For the following, use `stockplotr::example_data` as the input data.
+
+1. Create an abundance-at-age plot. Export it as an rda to your working directory.
+
+**Answer**:
+
+```{r eval=FALSE}
+stockplotr::plot_abundance_at_age(
+  dat = stockplotr::example_data,
+  make_rda = TRUE,
+  figures_dir = getwd()
+)
+```
+
+2. Create a recruitment time series plot. Change the `unit_label` and `scale_amount` so that the y axis shows recruitment in thousands of fish. Set `module` = "TIME_SERIES".
+
+**Answer**:
+
+```{r eval=FALSE}
+stockplotr::plot_recruitment(
+  dat = stockplotr::example_data,
+  unit_label = "fish",
+  scale_amount = 1000,
+  module = "TIME_SERIES"
+)
+```
+
+3. Create a fishing mortality plot. Ensure it does not group by fleet. Set `module` = "TIME_SERIES". Add a reference line ("target") at 0.5. Convert it from a line plot to a scatterplot.
+
+**Answer**:
+
+```{r eval=FALSE}
+stockplotr::plot_fishing_mortality(
+  dat = stockplotr::example_data,
+  group = "none",
+  module = "TIME_SERIES",
+  ref_line = c("target" = 0.5),
+  geom = "point"
+)
+```
+
+4. Create a landings table.
+
+**Answer**:
+
+```{r eval=FALSE}
+stockplotr::table_landings(
+  dat = stockplotr::example_data
+)
+```
+
+Now, use your own data.
+
+5. Convert your own dataset using `convert_output()`.
+
+**Answer**:
+
+```{r eval=FALSE}
+convert_output(
+  file = "path/to/your_report_file"
+  # Specify these arguments if you wish: model, fleet_names,   save_dir
+)
+```
+
+6. Create a spawning biomass plot. Change the theme by applying the `ggplot2::theme_classic()`.
+
+**Answer**:
+
+```{r eval=FALSE}
+stockplotr::plot_spawning_biomass(
+  dat = your_converted_data_object
+) +
+  ggplot2::theme_classic()
+```
+
+:::

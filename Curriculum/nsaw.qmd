@@ -317,7 +317,26 @@ For those familiar with Rmarkdown, the code chunk structure in Rmarkdown documen
 <!--               -->
 <!-- END OF HOUR 1 -->
 <!--               -->
-<!-- Add workflow tutorial here: asar and stockplotr -->
+
+<!-- Add workflow tutorial here: asar -->
+
+<!--               -->
+<!-- END OF HOUR 2 -->
+<!--               -->
+
+<!-- Add workflow tutorial here: stockplotr + putting it all together -->
+
+<!--               -->
+<!-- END OF HOUR 3 -->
+<!--               -->
+
+::: {.callout-note appearance="minimal"}
+20 minute break for questions & practicing
+:::
+
+{{< include snippets/figure_table_exercises.qmd >}}
+
+<!-- Add practice exercise for making a SAR from start to finish (ask them to follow along with the tutorial?) -->
 
 # Questions, comments, and feedback
 
