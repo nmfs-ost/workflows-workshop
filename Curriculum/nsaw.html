@@ -649,16 +649,6 @@ Tip
 <h3 class="anchored" data-anchor-id="references-and-bibliography">References and Bibliography</h3>
 <p>You can easily add citations to your report. We provide an <code>asar_references.bib</code> file in the “report” folder with hundreds of citations for you to reference, though you can add your own to the file too.</p>
 <p>To cite a reference in the text, use the <code>@</code> symbol followed by the citation key (e.g., <code>@Biddle_1992</code>). R Markdown will automatically format the citation and add it to the “References” section towards the end of your report.</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>15 minute break</p>
-</div>
-</div>
-</div>
 </section>
 </section>
 </section>
@@ -804,10 +794,100 @@ Note
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Break for questions</p>
+<p>20 minute break for questions &amp; practicing</p>
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Practice exercises: Markdown
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Create a new quarto document</li>
+<li>Add the following elements:</li>
+</ol>
+<ul>
+<li>Level 1 header (call it “Sandwiches”)</li>
+<li>Level 2 header (call it “My favorite sandwich”)</li>
+</ul>
+<ol start="3" type="1">
+<li>Under heading level 2, add a sentence that describes your favorite sandwich. Italicize “favorite” and bold the sandwich name.</li>
+<li>Add an unordered list with the sandwich’s ingredients.</li>
+<li>Add an ordered list with the steps needed to make the sandwich.</li>
+<li>Find the first ingredient in the list and add a link to its wikipedia page.</li>
+<li>Your instructors are hungry, and they’re demanding that you split your sandwich with them. Use an inline mathematical notation to write the fraction necessary to feed the three of you.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span><strong>Answers</strong> for Practice exercises: Markdown
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Create a new quarto document</li>
+</ol>
+<p><strong>Answer</strong>: Follow directions in the <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#opening-a-document">Day 1 “Opening a Document” section</a></p>
+<ol start="2" type="1">
+<li>Add the following elements:</li>
+</ol>
+<ul>
+<li>Level 1 header (call it “Sandwiches”)</li>
+<li>Level 2 header (call it “My favorite sandwich”)</li>
+</ul>
+<ol start="3" type="1">
+<li>Under heading level 2, add a sentence that describes your favorite sandwich. Italicize “favorite” and bold the sandwich name.</li>
+<li>Add an unordered list with the sandwich’s ingredients.</li>
+<li>Add an ordered list with the steps needed to make the sandwich.</li>
+<li>Find the first ingredient in the list and add a link to its wikipedia page.</li>
+<li>Your instructors are hungry, and they’re demanding that you split your sandwich with them. Use an inline mathematical notation to write the fraction necessary to feed the three of you.</li>
+</ol>
+<p><strong>Answers</strong>: Add code like the following:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sandwiches</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">## My favorite sandwich</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>My <span class="sc">*</span>favorite<span class="sc">*</span> sandwich is a <span class="sc">**</span>peanut butter and jelly sandwich<span class="sc">**</span>.</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>Ingredients<span class="sc">:</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> [peanut <span class="fu">butter</span> (PB)](https<span class="sc">:</span><span class="er">//</span>en.wikipedia.org<span class="sc">/</span>wiki<span class="sc">/</span>Peanut_butter)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> jelly</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> bread</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>Steps<span class="sc">:</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fl">1.</span> Get two slices of bread</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fl">2.</span> Spread PB on one side of one slice of bread</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="fl">3.</span> Spread jelly on one side of the other bread slice</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="fl">4.</span> Stack the PB slice on top of the jelly slice so that PB and J meet <span class="cf">in</span> the middle of the sandwich.</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="fl">5.</span> Eat<span class="sc">!</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>I<span class="st">'ll split my sandwich into three pieces so that each person can get $1/3$ of the sandwich.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+<!--               -->
+<!-- END OF HOUR 1 -->
+<!--               -->
 <!-- Add workflow tutorial here: asar and stockplotr -->
 </section>
 </section>

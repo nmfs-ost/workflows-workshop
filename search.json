@@ -134,7 +134,7 @@
     "href": "Curriculum/Day_1/day_1.html#common-uses-in-asar-reports",
     "title": "Day 1",
     "section": "Common uses in asar reports",
-    "text": "Common uses in asar reports\nNow, let’s dive into some of the most common features you’ll be using when creating asar reports.\n\nParameters\nParameters allow you to create dynamic reports. You can define parameters in the YAML header and then reference them in your text and code.\nFor example, you could have a parameter for the species you’re writing about:\n\n---\ntitle: \"Stock Assessment Report\"\nauthor: \"Patrick Star\"\ndate: today\nparams:\n  species: \"Petrale sole\"\n---\n\nThen, in the body of your report, you can reference this parameter like this:\n“The native range of `params$species` spans from…”\nWhen you knit the document, `params$species` will be replaced with “Petrale sole”.\n\n\nFormatting\nR Markdown uses a simple syntax for formatting your text. Here are some of the most common formatting options:\n\nHeaders\n\n# signifies a top-level header\n## signifies a second-level header (etc.)\n\nEmphasis\n\n*italic* for italic text\n**bold** for bold text\n\nLists\n\nUnordered lists: Use * or - at the beginning of a line.\nOrdered lists: Use numbers followed by a period.\n\nLinks\n\n[link text](URL)\n\n\n\n\nMath and Equations\nYou can include LaTeX-style math equations in your report.\n\nInline math: Wrap your equation in single dollar signs: $A = \\pi * r^2$\nBlock equations: Wrap your equation in double dollar signs to display it on its own line: $$     E = mc^2     $$\n\n\n\nReferences and Bibliography\nYou can easily add citations to your report. We provide an asar_references.bib file in the “report” folder with hundreds of citations for you to reference, though you can add your own to the file too.\nTo cite a reference in the text, use the @ symbol followed by the citation key (e.g., @Biddle_1992). R Markdown will automatically format the citation and add it to the “References” section towards the end of your report.\n\n\n\n\n\n\n15 minute break",
+    "text": "Common uses in asar reports\nNow, let’s dive into some of the most common features you’ll be using when creating asar reports.\n\nParameters\nParameters allow you to create dynamic reports. You can define parameters in the YAML header and then reference them in your text and code.\nFor example, you could have a parameter for the species you’re writing about:\n\n---\ntitle: \"Stock Assessment Report\"\nauthor: \"Patrick Star\"\ndate: today\nparams:\n  species: \"Petrale sole\"\n---\n\nThen, in the body of your report, you can reference this parameter like this:\n“The native range of `params$species` spans from…”\nWhen you knit the document, `params$species` will be replaced with “Petrale sole”.\n\n\nFormatting\nR Markdown uses a simple syntax for formatting your text. Here are some of the most common formatting options:\n\nHeaders\n\n# signifies a top-level header\n## signifies a second-level header (etc.)\n\nEmphasis\n\n*italic* for italic text\n**bold** for bold text\n\nLists\n\nUnordered lists: Use * or - at the beginning of a line.\nOrdered lists: Use numbers followed by a period.\n\nLinks\n\n[link text](URL)\n\n\n\n\nMath and Equations\nYou can include LaTeX-style math equations in your report.\n\nInline math: Wrap your equation in single dollar signs: $A = \\pi * r^2$\nBlock equations: Wrap your equation in double dollar signs to display it on its own line: $$     E = mc^2     $$\n\n\n\nReferences and Bibliography\nYou can easily add citations to your report. We provide an asar_references.bib file in the “report” folder with hundreds of citations for you to reference, though you can add your own to the file too.\nTo cite a reference in the text, use the @ symbol followed by the citation key (e.g., @Biddle_1992). R Markdown will automatically format the citation and add it to the “References” section towards the end of your report.\n\n\n\n\n\n\n20 minute break for questions & practicing\n\n\n\n\n\n\n\n\n\nCautionPractice exercises: Markdown\n\n\n\n\n\n\nCreate a new quarto document\nAdd the following elements:\n\n\nLevel 1 header (call it “Sandwiches”)\nLevel 2 header (call it “My favorite sandwich”)\n\n\nUnder heading level 2, add a sentence that describes your favorite sandwich. Italicize “favorite” and bold the sandwich name.\nAdd an unordered list with the sandwich’s ingredients.\nAdd an ordered list with the steps needed to make the sandwich.\nFind the first ingredient in the list and add a link to its wikipedia page.\nYour instructors are hungry, and they’re demanding that you split your sandwich with them. Use an inline mathematical notation to write the fraction necessary to feed the three of you.\n\n\n\n\n\n\n\n\n\n\nCautionAnswers for Practice exercises: Markdown\n\n\n\n\n\n\nCreate a new quarto document\n\nAnswer: Follow directions in the Day 1 “Opening a Document” section\n\nAdd the following elements:\n\n\nLevel 1 header (call it “Sandwiches”)\nLevel 2 header (call it “My favorite sandwich”)\n\n\nUnder heading level 2, add a sentence that describes your favorite sandwich. Italicize “favorite” and bold the sandwich name.\nAdd an unordered list with the sandwich’s ingredients.\nAdd an ordered list with the steps needed to make the sandwich.\nFind the first ingredient in the list and add a link to its wikipedia page.\nYour instructors are hungry, and they’re demanding that you split your sandwich with them. Use an inline mathematical notation to write the fraction necessary to feed the three of you.\n\nAnswers: Add code like the following:\n\n# Sandwiches\n\n## My favorite sandwich\n\nMy *favorite* sandwich is a **peanut butter and jelly sandwich**.\n\nIngredients:\n\n- [peanut butter (PB)](https://en.wikipedia.org/wiki/Peanut_butter)\n- jelly\n- bread\n\nSteps:\n\n1. Get two slices of bread\n2. Spread PB on one side of one slice of bread\n3. Spread jelly on one side of the other bread slice\n4. Stack the PB slice on top of the jelly slice so that PB and J meet in the middle of the sandwich.\n5. Eat!\n\nI'll split my sandwich into three pieces so that each person can get $1/3$ of the sandwich.",
     "crumbs": [
       "Day 1: General"
     ]
@@ -178,6 +178,92 @@
     "crumbs": [
       "Day 1: General"
     ]
+  },
+  {
+    "objectID": "Curriculum/snippets/markdown_exercises.html",
+    "href": "Curriculum/snippets/markdown_exercises.html",
+    "title": "Workflows workshop",
+    "section": "",
+    "text": "CautionPractice exercises: Markdown\n\n\n\n\n\n\nCreate a new quarto document\nAdd the following elements:\n\n\nLevel 1 header (call it “Sandwiches”)\nLevel 2 header (call it “My favorite sandwich”)\n\n\nUnder heading level 2, add a sentence that describes your favorite sandwich. Italicize “favorite” and bold the sandwich name.\nAdd an unordered list with the sandwich’s ingredients.\nAdd an ordered list with the steps needed to make the sandwich.\nFind the first ingredient in the list and add a link to its wikipedia page.\nYour instructors are hungry, and they’re demanding that you split your sandwich with them. Use an inline mathematical notation to write the fraction necessary to feed the three of you.\n\n\n\n\n\n\n\n\n\n\nCautionAnswers for Practice exercises: Markdown\n\n\n\n\n\n\nCreate a new quarto document\n\nAnswer: Follow directions in the Day 1 “Opening a Document” section\n\nAdd the following elements:\n\n\nLevel 1 header (call it “Sandwiches”)\nLevel 2 header (call it “My favorite sandwich”)\n\n\nUnder heading level 2, add a sentence that describes your favorite sandwich. Italicize “favorite” and bold the sandwich name.\nAdd an unordered list with the sandwich’s ingredients.\nAdd an ordered list with the steps needed to make the sandwich.\nFind the first ingredient in the list and add a link to its wikipedia page.\nYour instructors are hungry, and they’re demanding that you split your sandwich with them. Use an inline mathematical notation to write the fraction necessary to feed the three of you.\n\nAnswers: Add code like the following:\n\n# Sandwiches\n\n## My favorite sandwich\n\nMy *favorite* sandwich is a **peanut butter and jelly sandwich**.\n\nIngredients:\n\n- [peanut butter (PB)](https://en.wikipedia.org/wiki/Peanut_butter)\n- jelly\n- bread\n\nSteps:\n\n1. Get two slices of bread\n2. Spread PB on one side of one slice of bread\n3. Spread jelly on one side of the other bread slice\n4. Stack the PB slice on top of the jelly slice so that PB and J meet in the middle of the sandwich.\n5. Eat!\n\nI'll split my sandwich into three pieces so that each person can get $1/3$ of the sandwich."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Workflows Workshop Home",
+    "section": "",
+    "text": "This repository houses the agenda, materials, and communication for the NOAA Fisheries Stock Assessment Workflows Workshops being held starting in 2026! Please use this README to help navigate within our repository and find out our current progress and plans in real time.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#curriculum",
+    "href": "index.html#curriculum",
+    "title": "Workflows Workshop Home",
+    "section": "Curriculum",
+    "text": "Curriculum\nThe curriculum is comprised of three days of tutorial-based materials (see the left sidebar for Day 1, Day 2, and Day 3 links). We have dedicated a lot of time to the documentation of asar and stockplotr, so we encourage everyone to visit these sites prior to the workshop.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#example",
+    "href": "index.html#example",
+    "title": "Workflows Workshop Home",
+    "section": "Example",
+    "text": "Example\nThe “examples” folder contains multiple examples of reports produced from asar and stockplotr with varying complexities. Feel free to explore these folders and familiarize yourself with the contents generated from these two packages.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "planning.html",
+    "href": "planning.html",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Sophie –\n\nCreate day 1 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nmarkdown section (plan demo)\nquarto section (plan demo)\ninstallation section\noverview of workflow/package\n\nCreate day 3 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nasar complex workflow\nintro to stockplotr\nstockplotr demo\n\nContribute to list of good practices (set up doc too)\n\nSam –\n\nSet up form or poll to find optional times for setting dates (Tues-Thurs AM or PM) (5 slots + NSAW)\nAsk regional directions for stock assessments to select dates that work best for them (3 week window for voting)\nMake website landing page\n\n\n\n\nSophie –\n\nMake asar cheatsheet\nCreate advertisement flier for workshops (save the date once we know)\nFill in outline of content for Day 1\nFill in outline of content for Day 3\n\nSam –\n\nCreate day 2 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nMaking R project/getting set up\nasar basic functions\nasar basic workflow\nquarto render\nreport workflow (post create_template)\n\nContribute to list of good practices\nFill in outline of content for Day 3\n\n\n\n\nSophie –\n\nWhat type of advertising - how and where\n\nSam –\n\nDesign condensed presentation and workshop for NSAW\nDraft & send gchat spam for workshops and emails\nSet dates and times for each region and send out calendar invites\nFill in outline of content for Day 2\n\n\n\n\nSophie –\n\nFind and select installation helpers for workshop (Early Nov. Elizabeth & Kathryn?)\nMake meetings with install helpers (Early Nov. Elizabeth & Kathryn?)\nUpdate jupyterhub (assure recent installs of packages and dependencies)\nMake visual diagram for Day 1\n\nSam –\n\nMake stockplotr cheatsheet\nMake visual diagram for Day 2\nMake visual diagram for Day 3\n\nGroup –\n\ntailor and finish workshop materials\n\n\n\n\n\nMake handouts for sharing\nSet up feedback response sheet/questions from attendees\nSet up communal docs notes template\nDetermine timing and breaks\n\nSam:\n\nPrepare demo folder with asar materials (script, report folder, images, plots, ect.)\n\nGoal: Finish by November (before holidays) Final details goal: Finish by end of December\n\n\n\n\nPractice"
+  },
+  {
+    "objectID": "planning.html#august",
+    "href": "planning.html#august",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Sophie –\n\nCreate day 1 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nmarkdown section (plan demo)\nquarto section (plan demo)\ninstallation section\noverview of workflow/package\n\nCreate day 3 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nasar complex workflow\nintro to stockplotr\nstockplotr demo\n\nContribute to list of good practices (set up doc too)\n\nSam –\n\nSet up form or poll to find optional times for setting dates (Tues-Thurs AM or PM) (5 slots + NSAW)\nAsk regional directions for stock assessments to select dates that work best for them (3 week window for voting)\nMake website landing page"
+  },
+  {
+    "objectID": "planning.html#september",
+    "href": "planning.html#september",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Sophie –\n\nMake asar cheatsheet\nCreate advertisement flier for workshops (save the date once we know)\nFill in outline of content for Day 1\nFill in outline of content for Day 3\n\nSam –\n\nCreate day 2 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nMaking R project/getting set up\nasar basic functions\nasar basic workflow\nquarto render\nreport workflow (post create_template)\n\nContribute to list of good practices\nFill in outline of content for Day 3"
+  },
+  {
+    "objectID": "planning.html#october",
+    "href": "planning.html#october",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Sophie –\n\nWhat type of advertising - how and where\n\nSam –\n\nDesign condensed presentation and workshop for NSAW\nDraft & send gchat spam for workshops and emails\nSet dates and times for each region and send out calendar invites\nFill in outline of content for Day 2"
+  },
+  {
+    "objectID": "planning.html#november",
+    "href": "planning.html#november",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Sophie –\n\nFind and select installation helpers for workshop (Early Nov. Elizabeth & Kathryn?)\nMake meetings with install helpers (Early Nov. Elizabeth & Kathryn?)\nUpdate jupyterhub (assure recent installs of packages and dependencies)\nMake visual diagram for Day 1\n\nSam –\n\nMake stockplotr cheatsheet\nMake visual diagram for Day 2\nMake visual diagram for Day 3\n\nGroup –\n\ntailor and finish workshop materials"
+  },
+  {
+    "objectID": "planning.html#december",
+    "href": "planning.html#december",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Make handouts for sharing\nSet up feedback response sheet/questions from attendees\nSet up communal docs notes template\nDetermine timing and breaks\n\nSam:\n\nPrepare demo folder with asar materials (script, report folder, images, plots, ect.)\n\nGoal: Finish by November (before holidays) Final details goal: Finish by end of December"
+  },
+  {
+    "objectID": "planning.html#january",
+    "href": "planning.html#january",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Practice"
   },
   {
     "objectID": "Curriculum/Day_2/day_2.html",
@@ -267,85 +353,6 @@
     "text": "asar workflow: Complex example\n\nCustomized sections\nReorganizing section order\nOther functions\nLatex (if there’s time/interest)\n\nexplain limitations or potential customizations\n\n\n\n\n\n\n\n\n15 min break\n\n\n\n\nRerendering report\n\n\nCalling previous report\n\n\n\n\n\n\nBreak for questions",
     "crumbs": [
       "Day 2: asar"
-    ]
-  },
-  {
-    "objectID": "planning.html",
-    "href": "planning.html",
-    "title": "To Dos:",
-    "section": "",
-    "text": "Sophie –\n\nCreate day 1 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nmarkdown section (plan demo)\nquarto section (plan demo)\ninstallation section\noverview of workflow/package\n\nCreate day 3 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nasar complex workflow\nintro to stockplotr\nstockplotr demo\n\nContribute to list of good practices (set up doc too)\n\nSam –\n\nSet up form or poll to find optional times for setting dates (Tues-Thurs AM or PM) (5 slots + NSAW)\nAsk regional directions for stock assessments to select dates that work best for them (3 week window for voting)\nMake website landing page\n\n\n\n\nSophie –\n\nMake asar cheatsheet\nCreate advertisement flier for workshops (save the date once we know)\nFill in outline of content for Day 1\nFill in outline of content for Day 3\n\nSam –\n\nCreate day 2 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nMaking R project/getting set up\nasar basic functions\nasar basic workflow\nquarto render\nreport workflow (post create_template)\n\nContribute to list of good practices\nFill in outline of content for Day 3\n\n\n\n\nSophie –\n\nWhat type of advertising - how and where\n\nSam –\n\nDesign condensed presentation and workshop for NSAW\nDraft & send gchat spam for workshops and emails\nSet dates and times for each region and send out calendar invites\nFill in outline of content for Day 2\n\n\n\n\nSophie –\n\nFind and select installation helpers for workshop (Early Nov. Elizabeth & Kathryn?)\nMake meetings with install helpers (Early Nov. Elizabeth & Kathryn?)\nUpdate jupyterhub (assure recent installs of packages and dependencies)\nMake visual diagram for Day 1\n\nSam –\n\nMake stockplotr cheatsheet\nMake visual diagram for Day 2\nMake visual diagram for Day 3\n\nGroup –\n\ntailor and finish workshop materials\n\n\n\n\n\nMake handouts for sharing\nSet up feedback response sheet/questions from attendees\nSet up communal docs notes template\nDetermine timing and breaks\n\nSam:\n\nPrepare demo folder with asar materials (script, report folder, images, plots, ect.)\n\nGoal: Finish by November (before holidays) Final details goal: Finish by end of December\n\n\n\n\nPractice"
-  },
-  {
-    "objectID": "planning.html#august",
-    "href": "planning.html#august",
-    "title": "To Dos:",
-    "section": "",
-    "text": "Sophie –\n\nCreate day 1 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nmarkdown section (plan demo)\nquarto section (plan demo)\ninstallation section\noverview of workflow/package\n\nCreate day 3 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nasar complex workflow\nintro to stockplotr\nstockplotr demo\n\nContribute to list of good practices (set up doc too)\n\nSam –\n\nSet up form or poll to find optional times for setting dates (Tues-Thurs AM or PM) (5 slots + NSAW)\nAsk regional directions for stock assessments to select dates that work best for them (3 week window for voting)\nMake website landing page"
-  },
-  {
-    "objectID": "planning.html#september",
-    "href": "planning.html#september",
-    "title": "To Dos:",
-    "section": "",
-    "text": "Sophie –\n\nMake asar cheatsheet\nCreate advertisement flier for workshops (save the date once we know)\nFill in outline of content for Day 1\nFill in outline of content for Day 3\n\nSam –\n\nCreate day 2 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nMaking R project/getting set up\nasar basic functions\nasar basic workflow\nquarto render\nreport workflow (post create_template)\n\nContribute to list of good practices\nFill in outline of content for Day 3"
-  },
-  {
-    "objectID": "planning.html#october",
-    "href": "planning.html#october",
-    "title": "To Dos:",
-    "section": "",
-    "text": "Sophie –\n\nWhat type of advertising - how and where\n\nSam –\n\nDesign condensed presentation and workshop for NSAW\nDraft & send gchat spam for workshops and emails\nSet dates and times for each region and send out calendar invites\nFill in outline of content for Day 2"
-  },
-  {
-    "objectID": "planning.html#november",
-    "href": "planning.html#november",
-    "title": "To Dos:",
-    "section": "",
-    "text": "Sophie –\n\nFind and select installation helpers for workshop (Early Nov. Elizabeth & Kathryn?)\nMake meetings with install helpers (Early Nov. Elizabeth & Kathryn?)\nUpdate jupyterhub (assure recent installs of packages and dependencies)\nMake visual diagram for Day 1\n\nSam –\n\nMake stockplotr cheatsheet\nMake visual diagram for Day 2\nMake visual diagram for Day 3\n\nGroup –\n\ntailor and finish workshop materials"
-  },
-  {
-    "objectID": "planning.html#december",
-    "href": "planning.html#december",
-    "title": "To Dos:",
-    "section": "",
-    "text": "Make handouts for sharing\nSet up feedback response sheet/questions from attendees\nSet up communal docs notes template\nDetermine timing and breaks\n\nSam:\n\nPrepare demo folder with asar materials (script, report folder, images, plots, ect.)\n\nGoal: Finish by November (before holidays) Final details goal: Finish by end of December"
-  },
-  {
-    "objectID": "planning.html#january",
-    "href": "planning.html#january",
-    "title": "To Dos:",
-    "section": "",
-    "text": "Practice"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Workflows Workshop Home",
-    "section": "",
-    "text": "This repository houses the agenda, materials, and communication for the NOAA Fisheries Stock Assessment Workflows Workshops being held starting in 2026! Please use this README to help navigate within our repository and find out our current progress and plans in real time.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#curriculum",
-    "href": "index.html#curriculum",
-    "title": "Workflows Workshop Home",
-    "section": "Curriculum",
-    "text": "Curriculum\nThe curriculum is comprised of three days of tutorial-based materials (see the left sidebar for Day 1, Day 2, and Day 3 links). We have dedicated a lot of time to the documentation of asar and stockplotr, so we encourage everyone to visit these sites prior to the workshop.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#example",
-    "href": "index.html#example",
-    "title": "Workflows Workshop Home",
-    "section": "Example",
-    "text": "Example\nThe “examples” folder contains multiple examples of reports produced from asar and stockplotr with varying complexities. Feel free to explore these folders and familiarize yourself with the contents generated from these two packages.",
-    "crumbs": [
-      "Home"
     ]
   },
   {
@@ -603,7 +610,7 @@
     "href": "Curriculum/nsaw.html#common-uses-in-asar-reports",
     "title": "NSAW workshop",
     "section": "Common uses in asar reports",
-    "text": "Common uses in asar reports\nNow, let’s dive into some of the most common features you’ll be using when creating asar reports.\n\nParameters\nParameters allow you to create dynamic reports. You can define parameters in the YAML header and then reference them in your text and code.\nFor example, you could have a parameter for the species you’re writing about:\n\n---\ntitle: \"Stock Assessment Report\"\nauthor: \"Patrick Star\"\ndate: today\nparams:\n  species: \"Petrale sole\"\n---\n\nThen, in the body of your report, you can reference this parameter like this:\n“The native range of `params$species` spans from…”\nWhen you knit the document, `params$species` will be replaced with “Petrale sole”.\n\n\nFormatting\nR Markdown uses a simple syntax for formatting your text. Here are some of the most common formatting options:\n\nHeaders\n\n# signifies a top-level header\n## signifies a second-level header (etc.)\n\nEmphasis\n\n*italic* for italic text\n**bold** for bold text\n\nLists\n\nUnordered lists: Use * or - at the beginning of a line.\nOrdered lists: Use numbers followed by a period.\n\nLinks\n\n[link text](URL)\n\n\n\n\nMath and Equations\nYou can include LaTeX-style math equations in your report.\n\nInline math: Wrap your equation in single dollar signs: $A = \\pi * r^2$\nBlock equations: Wrap your equation in double dollar signs to display it on its own line: $$     E = mc^2     $$\n\n\n\nReferences and Bibliography\nYou can easily add citations to your report. We provide an asar_references.bib file in the “report” folder with hundreds of citations for you to reference, though you can add your own to the file too.\nTo cite a reference in the text, use the @ symbol followed by the citation key (e.g., @Biddle_1992). R Markdown will automatically format the citation and add it to the “References” section towards the end of your report.\n\n\n\n\n\n\n15 minute break",
+    "text": "Common uses in asar reports\nNow, let’s dive into some of the most common features you’ll be using when creating asar reports.\n\nParameters\nParameters allow you to create dynamic reports. You can define parameters in the YAML header and then reference them in your text and code.\nFor example, you could have a parameter for the species you’re writing about:\n\n---\ntitle: \"Stock Assessment Report\"\nauthor: \"Patrick Star\"\ndate: today\nparams:\n  species: \"Petrale sole\"\n---\n\nThen, in the body of your report, you can reference this parameter like this:\n“The native range of `params$species` spans from…”\nWhen you knit the document, `params$species` will be replaced with “Petrale sole”.\n\n\nFormatting\nR Markdown uses a simple syntax for formatting your text. Here are some of the most common formatting options:\n\nHeaders\n\n# signifies a top-level header\n## signifies a second-level header (etc.)\n\nEmphasis\n\n*italic* for italic text\n**bold** for bold text\n\nLists\n\nUnordered lists: Use * or - at the beginning of a line.\nOrdered lists: Use numbers followed by a period.\n\nLinks\n\n[link text](URL)\n\n\n\n\nMath and Equations\nYou can include LaTeX-style math equations in your report.\n\nInline math: Wrap your equation in single dollar signs: $A = \\pi * r^2$\nBlock equations: Wrap your equation in double dollar signs to display it on its own line: $$     E = mc^2     $$\n\n\n\nReferences and Bibliography\nYou can easily add citations to your report. We provide an asar_references.bib file in the “report” folder with hundreds of citations for you to reference, though you can add your own to the file too.\nTo cite a reference in the text, use the @ symbol followed by the citation key (e.g., @Biddle_1992). R Markdown will automatically format the citation and add it to the “References” section towards the end of your report.",
     "crumbs": [
       "NSAW workshop"
     ]
@@ -633,7 +640,7 @@
     "href": "Curriculum/nsaw.html#code-chunks",
     "title": "NSAW workshop",
     "section": "Code Chunks",
-    "text": "Code Chunks\nAs we previously mentioned, the beauty of using quarto is that it allows the user to integrate text and code throughout their reports making them super reproducible.\nThe basics of a code chunk (chunk) are:\n\nthe language (R or python)\nchunk options\ncode\n\nThese three things get wrapped together within two sets of three back ticks (```) to allow a user to run code.\n```{r}\n#| label: ex-chunk\n#| eval: false\n#| warning: false\n#| echo: false\n#| fig-cap: This is my figure caption.\n#| fig-alt: This is my alternative text.\n#| tbl-cap: This is my table caption.\nx &lt;- 1 + 1\n```\nThere are a variety of chunk options, but the ones you will see consistently throughout this workshop are listed in the example above.\n\n\n\n\n\n\nNote\n\n\n\nIn the “label” option, for tables and figures, you will need to prefix the label with either “fig-” for a figure or “tbl-” for a table.\n\n\nFor those familiar with Rmarkdown, the code chunk structure in Rmarkdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a “#|” proceeding each option.\n\n\n\n\n\n\nBreak for questions",
+    "text": "Code Chunks\nAs we previously mentioned, the beauty of using quarto is that it allows the user to integrate text and code throughout their reports making them super reproducible.\nThe basics of a code chunk (chunk) are:\n\nthe language (R or python)\nchunk options\ncode\n\nThese three things get wrapped together within two sets of three back ticks (```) to allow a user to run code.\n```{r}\n#| label: ex-chunk\n#| eval: false\n#| warning: false\n#| echo: false\n#| fig-cap: This is my figure caption.\n#| fig-alt: This is my alternative text.\n#| tbl-cap: This is my table caption.\nx &lt;- 1 + 1\n```\nThere are a variety of chunk options, but the ones you will see consistently throughout this workshop are listed in the example above.\n\n\n\n\n\n\nNote\n\n\n\nIn the “label” option, for tables and figures, you will need to prefix the label with either “fig-” for a figure or “tbl-” for a table.\n\n\nFor those familiar with Rmarkdown, the code chunk structure in Rmarkdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a “#|” proceeding each option.\n\n\n\n\n\n\n20 minute break for questions & practicing\n\n\n\n\n\n\n\n\n\nCautionPractice exercises: Markdown\n\n\n\n\n\n\nCreate a new quarto document\nAdd the following elements:\n\n\nLevel 1 header (call it “Sandwiches”)\nLevel 2 header (call it “My favorite sandwich”)\n\n\nUnder heading level 2, add a sentence that describes your favorite sandwich. Italicize “favorite” and bold the sandwich name.\nAdd an unordered list with the sandwich’s ingredients.\nAdd an ordered list with the steps needed to make the sandwich.\nFind the first ingredient in the list and add a link to its wikipedia page.\nYour instructors are hungry, and they’re demanding that you split your sandwich with them. Use an inline mathematical notation to write the fraction necessary to feed the three of you.\n\n\n\n\n\n\n\n\n\n\nCautionAnswers for Practice exercises: Markdown\n\n\n\n\n\n\nCreate a new quarto document\n\nAnswer: Follow directions in the Day 1 “Opening a Document” section\n\nAdd the following elements:\n\n\nLevel 1 header (call it “Sandwiches”)\nLevel 2 header (call it “My favorite sandwich”)\n\n\nUnder heading level 2, add a sentence that describes your favorite sandwich. Italicize “favorite” and bold the sandwich name.\nAdd an unordered list with the sandwich’s ingredients.\nAdd an ordered list with the steps needed to make the sandwich.\nFind the first ingredient in the list and add a link to its wikipedia page.\nYour instructors are hungry, and they’re demanding that you split your sandwich with them. Use an inline mathematical notation to write the fraction necessary to feed the three of you.\n\nAnswers: Add code like the following:\n\n# Sandwiches\n\n## My favorite sandwich\n\nMy *favorite* sandwich is a **peanut butter and jelly sandwich**.\n\nIngredients:\n\n- [peanut butter (PB)](https://en.wikipedia.org/wiki/Peanut_butter)\n- jelly\n- bread\n\nSteps:\n\n1. Get two slices of bread\n2. Spread PB on one side of one slice of bread\n3. Spread jelly on one side of the other bread slice\n4. Stack the PB slice on top of the jelly slice so that PB and J meet in the middle of the sandwich.\n5. Eat!\n\nI'll split my sandwich into three pieces so that each person can get $1/3$ of the sandwich.",
     "crumbs": [
       "NSAW workshop"
     ]
