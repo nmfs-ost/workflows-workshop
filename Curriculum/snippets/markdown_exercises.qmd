@@ -1,0 +1,60 @@
+
+::: {.callout-caution collapse="true"}
+## Practice exercises: Markdown
+
+1. Create a new quarto document
+2. Add the following elements:
+  * Level 1 header (call it "Sandwiches")
+  * Level 2 header (call it "My favorite sandwich")
+3. Under heading level 2, add a sentence that describes your favorite sandwich. Italicize "favorite" and bold the sandwich name.
+4. Add an unordered list with the sandwich's ingredients.
+5. Add an ordered list with the steps needed to make the sandwich.
+6. Find the first ingredient in the list and add a link to its wikipedia page.
+7. Your instructors are hungry, and they're demanding that you split your sandwich with them. Use an inline mathematical notation to write the fraction necessary to feed the three of you.
+
+:::
+
+::: {.callout-caution collapse="true"}
+## **Answers** for Practice exercises: Markdown
+
+1. Create a new quarto document
+
+**Answer**: Follow directions in the [Day 1 "Opening a Document" section](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#opening-a-document)
+
+2. Add the following elements:
+  * Level 1 header (call it "Sandwiches")
+  * Level 2 header (call it "My favorite sandwich")
+3. Under heading level 2, add a sentence that describes your favorite sandwich. Italicize "favorite" and bold the sandwich name.
+4. Add an unordered list with the sandwich's ingredients.
+5. Add an ordered list with the steps needed to make the sandwich.
+6. Find the first ingredient in the list and add a link to its wikipedia page.
+7. Your instructors are hungry, and they're demanding that you split your sandwich with them. Use an inline mathematical notation to write the fraction necessary to feed the three of you.
+
+**Answers**: Add code like the following:
+
+```{r eval=FALSE}
+# Sandwiches
+
+## My favorite sandwich
+
+My *favorite* sandwich is a **peanut butter and jelly sandwich**.
+
+Ingredients:
+
+- [peanut butter (PB)](https://en.wikipedia.org/wiki/Peanut_butter)
+- jelly
+- bread
+
+Steps:
+
+1. Get two slices of bread
+2. Spread PB on one side of one slice of bread
+3. Spread jelly on one side of the other bread slice
+4. Stack the PB slice on top of the jelly slice so that PB and J meet in the middle of the sandwich.
+5. Eat!
+
+I'll split my sandwich into three pieces so that each person can get $1/3$ of the sandwich.
+
+```
+
+:::

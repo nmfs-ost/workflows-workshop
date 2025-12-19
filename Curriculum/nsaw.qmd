@@ -170,10 +170,6 @@ You can easily add citations to your report. We provide an `asar_references.bib`
 
 To cite a reference in the text, use the `@` symbol followed by the citation key (e.g., `@Biddle_1992`). R Markdown will automatically format the citation and add it to the "References" section towards the end of your report.
 
-::: {.callout-note appearance="minimal"}
-15 minute break
-:::
-
 # Quarto
 
 Quarto is an ideal platform for building reproducible reports, which are denoted with a .qmd (Quarto Markdown) extension type. Why?
@@ -313,10 +309,14 @@ In the "label" option, for tables and figures, you will need to prefix the label
 For those familiar with Rmarkdown, the code chunk structure in Rmarkdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a "#|" proceeding each option.
 
 ::: {.callout-note appearance="minimal"}
-Break for questions
+20 minute break for questions & practicing
 :::
 
+{{< include snippets/markdown_exercises.qmd >}}
 
+<!--               -->
+<!-- END OF HOUR 1 -->
+<!--               -->
 <!-- Add workflow tutorial here: asar and stockplotr -->
 
 # Questions, comments, and feedback

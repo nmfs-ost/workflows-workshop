@@ -188,8 +188,10 @@ You can easily add citations to your report. We provide an `asar_references.bib`
 To cite a reference in the text, use the `@` symbol followed by the citation key (e.g., `@Biddle_1992`). R Markdown will automatically format the citation and add it to the "References" section towards the end of your report.
 
 ::: {.callout-note appearance="minimal"}
-15 minute break
+20 minute break for questions & practicing
 :::
+
+{{< include ../snippets/markdown_exercises.qmd >}}
 
 # Quarto
 
@@ -336,6 +338,7 @@ For those familiar with Rmarkdown, the code chunk structure in Rmarkdown documen
 ::: {.callout-note appearance="minimal"}
 Break for questions
 :::
+
 
 # Install packages and get ready for tomorrow's material (if need be) {#sec-prep}
 
