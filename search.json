@@ -187,85 +187,6 @@
     "text": "CautionPractice exercises: Markdown\n\n\n\n\n\n\nCreate a new quarto document\nAdd the following elements:\n\n\nLevel 1 header (call it “Sandwiches”)\nLevel 2 header (call it “My favorite sandwich”)\n\n\nUnder heading level 2, add a sentence that describes your favorite sandwich. Italicize “favorite” and bold the sandwich name.\nAdd an unordered list with the sandwich’s ingredients.\nAdd an ordered list with the steps needed to make the sandwich.\nFind the first ingredient in the list and add a link to its wikipedia page.\nYour instructors are hungry, and they’re demanding that you split your sandwich with them. Use an inline mathematical notation to write the fraction necessary to feed the three of you.\n\n\n\n\n\n\n\n\n\n\nCautionAnswers for Practice exercises: Markdown\n\n\n\n\n\n\nCreate a new quarto document\n\nAnswer: Follow directions in the Day 1 “Opening a Document” section\n\nAdd the following elements:\n\n\nLevel 1 header (call it “Sandwiches”)\nLevel 2 header (call it “My favorite sandwich”)\n\n\nUnder heading level 2, add a sentence that describes your favorite sandwich. Italicize “favorite” and bold the sandwich name.\nAdd an unordered list with the sandwich’s ingredients.\nAdd an ordered list with the steps needed to make the sandwich.\nFind the first ingredient in the list and add a link to its wikipedia page.\nYour instructors are hungry, and they’re demanding that you split your sandwich with them. Use an inline mathematical notation to write the fraction necessary to feed the three of you.\n\nAnswers: Add code like the following:\n\n# Sandwiches\n\n## My favorite sandwich\n\nMy *favorite* sandwich is a **peanut butter and jelly sandwich**.\n\nIngredients:\n\n- [peanut butter (PB)](https://en.wikipedia.org/wiki/Peanut_butter)\n- jelly\n- bread\n\nSteps:\n\n1. Get two slices of bread\n2. Spread PB on one side of one slice of bread\n3. Spread jelly on one side of the other bread slice\n4. Stack the PB slice on top of the jelly slice so that PB and J meet in the middle of the sandwich.\n5. Eat!\n\nI'll split my sandwich into three pieces so that each person can get $1/3$ of the sandwich."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Workflows Workshop Home",
-    "section": "",
-    "text": "This repository houses the agenda, materials, and communication for the NOAA Fisheries Stock Assessment Workflows Workshops being held starting in 2026! Please use this README to help navigate within our repository and find out our current progress and plans in real time.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#curriculum",
-    "href": "index.html#curriculum",
-    "title": "Workflows Workshop Home",
-    "section": "Curriculum",
-    "text": "Curriculum\nThe curriculum is comprised of three days of tutorial-based materials (see the left sidebar for Day 1, Day 2, and Day 3 links). We have dedicated a lot of time to the documentation of asar and stockplotr, so we encourage everyone to visit these sites prior to the workshop.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#example",
-    "href": "index.html#example",
-    "title": "Workflows Workshop Home",
-    "section": "Example",
-    "text": "Example\nThe “examples” folder contains multiple examples of reports produced from asar and stockplotr with varying complexities. Feel free to explore these folders and familiarize yourself with the contents generated from these two packages.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "planning.html",
-    "href": "planning.html",
-    "title": "To Dos:",
-    "section": "",
-    "text": "Sophie –\n\nCreate day 1 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nmarkdown section (plan demo)\nquarto section (plan demo)\ninstallation section\noverview of workflow/package\n\nCreate day 3 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nasar complex workflow\nintro to stockplotr\nstockplotr demo\n\nContribute to list of good practices (set up doc too)\n\nSam –\n\nSet up form or poll to find optional times for setting dates (Tues-Thurs AM or PM) (5 slots + NSAW)\nAsk regional directions for stock assessments to select dates that work best for them (3 week window for voting)\nMake website landing page\n\n\n\n\nSophie –\n\nMake asar cheatsheet\nCreate advertisement flier for workshops (save the date once we know)\nFill in outline of content for Day 1\nFill in outline of content for Day 3\n\nSam –\n\nCreate day 2 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nMaking R project/getting set up\nasar basic functions\nasar basic workflow\nquarto render\nreport workflow (post create_template)\n\nContribute to list of good practices\nFill in outline of content for Day 3\n\n\n\n\nSophie –\n\nWhat type of advertising - how and where\n\nSam –\n\nDesign condensed presentation and workshop for NSAW\nDraft & send gchat spam for workshops and emails\nSet dates and times for each region and send out calendar invites\nFill in outline of content for Day 2\n\n\n\n\nSophie –\n\nFind and select installation helpers for workshop (Early Nov. Elizabeth & Kathryn?)\nMake meetings with install helpers (Early Nov. Elizabeth & Kathryn?)\nUpdate jupyterhub (assure recent installs of packages and dependencies)\nMake visual diagram for Day 1\n\nSam –\n\nMake stockplotr cheatsheet\nMake visual diagram for Day 2\nMake visual diagram for Day 3\n\nGroup –\n\ntailor and finish workshop materials\n\n\n\n\n\nMake handouts for sharing\nSet up feedback response sheet/questions from attendees\nSet up communal docs notes template\nDetermine timing and breaks\n\nSam:\n\nPrepare demo folder with asar materials (script, report folder, images, plots, ect.)\n\nGoal: Finish by November (before holidays) Final details goal: Finish by end of December\n\n\n\n\nPractice"
-  },
-  {
-    "objectID": "planning.html#august",
-    "href": "planning.html#august",
-    "title": "To Dos:",
-    "section": "",
-    "text": "Sophie –\n\nCreate day 1 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nmarkdown section (plan demo)\nquarto section (plan demo)\ninstallation section\noverview of workflow/package\n\nCreate day 3 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nasar complex workflow\nintro to stockplotr\nstockplotr demo\n\nContribute to list of good practices (set up doc too)\n\nSam –\n\nSet up form or poll to find optional times for setting dates (Tues-Thurs AM or PM) (5 slots + NSAW)\nAsk regional directions for stock assessments to select dates that work best for them (3 week window for voting)\nMake website landing page"
-  },
-  {
-    "objectID": "planning.html#september",
-    "href": "planning.html#september",
-    "title": "To Dos:",
-    "section": "",
-    "text": "Sophie –\n\nMake asar cheatsheet\nCreate advertisement flier for workshops (save the date once we know)\nFill in outline of content for Day 1\nFill in outline of content for Day 3\n\nSam –\n\nCreate day 2 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nMaking R project/getting set up\nasar basic functions\nasar basic workflow\nquarto render\nreport workflow (post create_template)\n\nContribute to list of good practices\nFill in outline of content for Day 3"
-  },
-  {
-    "objectID": "planning.html#october",
-    "href": "planning.html#october",
-    "title": "To Dos:",
-    "section": "",
-    "text": "Sophie –\n\nWhat type of advertising - how and where\n\nSam –\n\nDesign condensed presentation and workshop for NSAW\nDraft & send gchat spam for workshops and emails\nSet dates and times for each region and send out calendar invites\nFill in outline of content for Day 2"
-  },
-  {
-    "objectID": "planning.html#november",
-    "href": "planning.html#november",
-    "title": "To Dos:",
-    "section": "",
-    "text": "Sophie –\n\nFind and select installation helpers for workshop (Early Nov. Elizabeth & Kathryn?)\nMake meetings with install helpers (Early Nov. Elizabeth & Kathryn?)\nUpdate jupyterhub (assure recent installs of packages and dependencies)\nMake visual diagram for Day 1\n\nSam –\n\nMake stockplotr cheatsheet\nMake visual diagram for Day 2\nMake visual diagram for Day 3\n\nGroup –\n\ntailor and finish workshop materials"
-  },
-  {
-    "objectID": "planning.html#december",
-    "href": "planning.html#december",
-    "title": "To Dos:",
-    "section": "",
-    "text": "Make handouts for sharing\nSet up feedback response sheet/questions from attendees\nSet up communal docs notes template\nDetermine timing and breaks\n\nSam:\n\nPrepare demo folder with asar materials (script, report folder, images, plots, ect.)\n\nGoal: Finish by November (before holidays) Final details goal: Finish by end of December"
-  },
-  {
-    "objectID": "planning.html#january",
-    "href": "planning.html#january",
-    "title": "To Dos:",
-    "section": "",
-    "text": "Practice"
-  },
-  {
     "objectID": "Curriculum/Day_2/day_2.html",
     "href": "Curriculum/Day_2/day_2.html",
     "title": "Day 2",
@@ -356,6 +277,92 @@
     ]
   },
   {
+    "objectID": "planning.html",
+    "href": "planning.html",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Sophie –\n\nCreate day 1 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nmarkdown section (plan demo)\nquarto section (plan demo)\ninstallation section\noverview of workflow/package\n\nCreate day 3 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nasar complex workflow\nintro to stockplotr\nstockplotr demo\n\nContribute to list of good practices (set up doc too)\n\nSam –\n\nSet up form or poll to find optional times for setting dates (Tues-Thurs AM or PM) (5 slots + NSAW)\nAsk regional directions for stock assessments to select dates that work best for them (3 week window for voting)\nMake website landing page\n\n\n\n\nSophie –\n\nMake asar cheatsheet\nCreate advertisement flier for workshops (save the date once we know)\nFill in outline of content for Day 1\nFill in outline of content for Day 3\n\nSam –\n\nCreate day 2 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nMaking R project/getting set up\nasar basic functions\nasar basic workflow\nquarto render\nreport workflow (post create_template)\n\nContribute to list of good practices\nFill in outline of content for Day 3\n\n\n\n\nSophie –\n\nWhat type of advertising - how and where\n\nSam –\n\nDesign condensed presentation and workshop for NSAW\nDraft & send gchat spam for workshops and emails\nSet dates and times for each region and send out calendar invites\nFill in outline of content for Day 2\n\n\n\n\nSophie –\n\nFind and select installation helpers for workshop (Early Nov. Elizabeth & Kathryn?)\nMake meetings with install helpers (Early Nov. Elizabeth & Kathryn?)\nUpdate jupyterhub (assure recent installs of packages and dependencies)\nMake visual diagram for Day 1\n\nSam –\n\nMake stockplotr cheatsheet\nMake visual diagram for Day 2\nMake visual diagram for Day 3\n\nGroup –\n\ntailor and finish workshop materials\n\n\n\n\n\nMake handouts for sharing\nSet up feedback response sheet/questions from attendees\nSet up communal docs notes template\nDetermine timing and breaks\n\nSam:\n\nPrepare demo folder with asar materials (script, report folder, images, plots, ect.)\n\nGoal: Finish by November (before holidays) Final details goal: Finish by end of December\n\n\n\n\nPractice"
+  },
+  {
+    "objectID": "planning.html#august",
+    "href": "planning.html#august",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Sophie –\n\nCreate day 1 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nmarkdown section (plan demo)\nquarto section (plan demo)\ninstallation section\noverview of workflow/package\n\nCreate day 3 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nasar complex workflow\nintro to stockplotr\nstockplotr demo\n\nContribute to list of good practices (set up doc too)\n\nSam –\n\nSet up form or poll to find optional times for setting dates (Tues-Thurs AM or PM) (5 slots + NSAW)\nAsk regional directions for stock assessments to select dates that work best for them (3 week window for voting)\nMake website landing page"
+  },
+  {
+    "objectID": "planning.html#september",
+    "href": "planning.html#september",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Sophie –\n\nMake asar cheatsheet\nCreate advertisement flier for workshops (save the date once we know)\nFill in outline of content for Day 1\nFill in outline of content for Day 3\n\nSam –\n\nCreate day 2 outline (single quarto doc)\n\nSet objectives\nIcebreaker\nMaking R project/getting set up\nasar basic functions\nasar basic workflow\nquarto render\nreport workflow (post create_template)\n\nContribute to list of good practices\nFill in outline of content for Day 3"
+  },
+  {
+    "objectID": "planning.html#october",
+    "href": "planning.html#october",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Sophie –\n\nWhat type of advertising - how and where\n\nSam –\n\nDesign condensed presentation and workshop for NSAW\nDraft & send gchat spam for workshops and emails\nSet dates and times for each region and send out calendar invites\nFill in outline of content for Day 2"
+  },
+  {
+    "objectID": "planning.html#november",
+    "href": "planning.html#november",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Sophie –\n\nFind and select installation helpers for workshop (Early Nov. Elizabeth & Kathryn?)\nMake meetings with install helpers (Early Nov. Elizabeth & Kathryn?)\nUpdate jupyterhub (assure recent installs of packages and dependencies)\nMake visual diagram for Day 1\n\nSam –\n\nMake stockplotr cheatsheet\nMake visual diagram for Day 2\nMake visual diagram for Day 3\n\nGroup –\n\ntailor and finish workshop materials"
+  },
+  {
+    "objectID": "planning.html#december",
+    "href": "planning.html#december",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Make handouts for sharing\nSet up feedback response sheet/questions from attendees\nSet up communal docs notes template\nDetermine timing and breaks\n\nSam:\n\nPrepare demo folder with asar materials (script, report folder, images, plots, ect.)\n\nGoal: Finish by November (before holidays) Final details goal: Finish by end of December"
+  },
+  {
+    "objectID": "planning.html#january",
+    "href": "planning.html#january",
+    "title": "To Dos:",
+    "section": "",
+    "text": "Practice"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Workflows Workshop Home",
+    "section": "",
+    "text": "This repository houses the agenda, materials, and communication for the NOAA Fisheries Stock Assessment Workflows Workshops being held starting in 2026! Please use this README to help navigate within our repository and find out our current progress and plans in real time.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#curriculum",
+    "href": "index.html#curriculum",
+    "title": "Workflows Workshop Home",
+    "section": "Curriculum",
+    "text": "Curriculum\nThe curriculum is comprised of three days of tutorial-based materials (see the left sidebar for Day 1, Day 2, and Day 3 links). We have dedicated a lot of time to the documentation of asar and stockplotr, so we encourage everyone to visit these sites prior to the workshop.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#example",
+    "href": "index.html#example",
+    "title": "Workflows Workshop Home",
+    "section": "Example",
+    "text": "Example\nThe “examples” folder contains multiple examples of reports produced from asar and stockplotr with varying complexities. Feel free to explore these folders and familiarize yourself with the contents generated from these two packages.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "Curriculum/snippets/figure_table_exercises.html",
+    "href": "Curriculum/snippets/figure_table_exercises.html",
+    "title": "Workflows workshop",
+    "section": "",
+    "text": "CautionPractice exercises: Creating stockplotr figures & tables\n\n\n\n\n\nFor the following, use stockplotr::example_data as the input data.\n\nCreate an abundance-at-age plot. Export it as an rda to your working directory.\nCreate a recruitment time series plot. Change the unit_label and scale_amount so that the y axis shows recruitment in thousands of fish. Set module = “TIME_SERIES”.\nCreate a fishing mortality plot. Ensure it does not group by fleet. Set module = “TIME_SERIES”. Add a reference line (“target”) at 0.5. Convert it from a line plot to a scatterplot.\nCreate a landings table.\n\nNow, use your own data.\n\nConvert your own dataset using convert_output().\nCreate a spawning biomass plot. Change the theme by applying the ggplot2::theme_classic().\n\n\n\n\n\n\n\n\n\n\nCautionAnswers for Practice exercises: Creating stockplotr figures & tables\n\n\n\n\n\nFor the following, use stockplotr::example_data as the input data.\n\nCreate an abundance-at-age plot. Export it as an rda to your working directory.\n\nAnswer:\n\nstockplotr::plot_abundance_at_age(\n  dat = stockplotr::example_data,\n  make_rda = TRUE,\n  figures_dir = getwd()\n)\n\n\nCreate a recruitment time series plot. Change the unit_label and scale_amount so that the y axis shows recruitment in thousands of fish. Set module = “TIME_SERIES”.\n\nAnswer:\n\nstockplotr::plot_recruitment(\n  dat = stockplotr::example_data,\n  unit_label = \"fish\",\n  scale_amount = 1000,\n  module = \"TIME_SERIES\"\n)\n\n\nCreate a fishing mortality plot. Ensure it does not group by fleet. Set module = “TIME_SERIES”. Add a reference line (“target”) at 0.5. Convert it from a line plot to a scatterplot.\n\nAnswer:\n\nstockplotr::plot_fishing_mortality(\n  dat = stockplotr::example_data,\n  group = \"none\",\n  module = \"TIME_SERIES\",\n  ref_line = c(\"target\" = 0.5),\n  geom = \"point\"\n)\n\n\nCreate a landings table.\n\nAnswer:\n\nstockplotr::table_landings(\n  dat = stockplotr::example_data\n)\n\nNow, use your own data.\n\nConvert your own dataset using convert_output().\n\nAnswer:\n\nconvert_output(\n  file = \"path/to/your_report_file\"\n  # Specify these arguments if you wish: model, fleet_names,   save_dir\n)\n\n\nCreate a spawning biomass plot. Change the theme by applying the ggplot2::theme_classic().\n\nAnswer:\n\nstockplotr::plot_spawning_biomass(\n  dat = your_converted_data_object\n) +\n  ggplot2::theme_classic()"
+  },
+  {
     "objectID": "Curriculum/Day_3/day_3.html",
     "href": "Curriculum/Day_3/day_3.html",
     "title": "Day 3",
@@ -430,7 +437,7 @@
     "href": "Curriculum/Day_3/day_3.html#example-table",
     "title": "Day 3",
     "section": "Example Table",
-    "text": "Example Table\nRun the following example table. The result is a fully report ready table showing landings over time. Remember that these are exported as flextable objects and can be edited as such.\n\n\n\n\n\n\nNote\n\n\n\nstockplotr uses the native pipe (|&gt;), so if you decide to customize you table, please also use the native pipe to avoid errors.\n\n\n\n# not sure what this will exactly look like so this is a place holder\nstockplotr::table_landings(\n  dat = petrale,\n  group = \"fleet\",\n  unit_label = \"mt\",\n  module = NULL\n)\n\n\n\n\n\n\n\n\nBreak for questions\n\n\n\nNext, we can add some different formatting:\n\nstockplotr::table_landings(\n  dat = petrale,\n  group = \"fleet\",\n  unit_label = \"mt\",\n  module = NULL\n) |&gt;\n  flextable::footnote(\n    i = 6, # row\n    j = 2, # column\n    value = flextable::as_paragraph(\n      \"This is an example table from the workflows workshop. Not intended for official use.\"\n      )\n  )\n\n\nor potentially highlight a specific line within the table:\n\nstockplotr::table_landings(\n  dat = petrale,\n  group = \"fleet\",\n  unit_label = \"mt\",\n  module = NULL\n) |&gt;\n  flextable::footnote(\n    i = 6, # row\n    j = 2, # column\n    value = flextable::as_paragraph(\n      \"Not intended for official use.\"\n      )\n  ) |&gt;\n  flextable::bg(\n    i = 5,\n    bg = \"lightblue\",\n    part = \"body\"\n    )\n\n\n\n\n\n\n\n\nBreak for questions\n\n\n\n\nrda file\nAn rda is an R data file that stores R objects and preserves their structure. In this case, you can think of an rda file exported from stockplotr as a list of objects.\nEach plot or table has the option to export it as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:\n\nggplot or flextable object\ncaption\nalternative text (figures only)\nlatex object (tables only)\n\n\nstockplotr::plot_biomass(\n  dat = petrale,\n  ref_line = c(\"target\" = 260),\n  unit_label = \"mt\",\n  module = \"TIME_SERIES\",\n  make_rda = TRUE,\n  tables_dir = getwd()\n)\n\n\nload(\"figures/biomass_figure.rda\")\nrda$figure\nrda$cap\nrda$alt_text\n\n\n\n\n\n\n\n\nBreak for questions\n\n\n\n\n\nstockplotr::table_landings(\n  dat = petrale,\n  group = \"fleet\",\n  unit_label = \"mt\",\n  make_rda = TRUE,\n  tables_dir = getwd()\n)\n\n\nload(\"tables/landings_table.rda\")\nrda$table\nrda$cap\nrda$latex\n\n\n\n\n\n\n\nTip\n\n\n\nWe have designed two functions that allow you to automatically create all available figures and tables:\n\nsave_all_plots()\nhtml_all_figs_tables()\n\n\n\n\n\n\n\n\n\n10 minute break",
+    "text": "Example Table\nRun the following example table. The result is a fully report ready table showing landings over time. Remember that these are exported as flextable objects and can be edited as such.\n\n\n\n\n\n\nNote\n\n\n\nstockplotr uses the native pipe (|&gt;), so if you decide to customize you table, please also use the native pipe to avoid errors.\n\n\n\n# not sure what this will exactly look like so this is a place holder\nstockplotr::table_landings(\n  dat = petrale,\n  group = \"fleet\",\n  unit_label = \"mt\",\n  module = NULL\n)\n\n\n\n\n\n\n\n\nBreak for questions\n\n\n\nNext, we can add some different formatting:\n\nstockplotr::table_landings(\n  dat = petrale,\n  group = \"fleet\",\n  unit_label = \"mt\",\n  module = NULL\n) |&gt;\n  flextable::footnote(\n    i = 6, # row\n    j = 2, # column\n    value = flextable::as_paragraph(\n      \"This is an example table from the workflows workshop. Not intended for official use.\"\n      )\n  )\n\n\nor potentially highlight a specific line within the table:\n\nstockplotr::table_landings(\n  dat = petrale,\n  group = \"fleet\",\n  unit_label = \"mt\",\n  module = NULL\n) |&gt;\n  flextable::footnote(\n    i = 6, # row\n    j = 2, # column\n    value = flextable::as_paragraph(\n      \"Not intended for official use.\"\n      )\n  ) |&gt;\n  flextable::bg(\n    i = 5,\n    bg = \"lightblue\",\n    part = \"body\"\n    )\n\n\n\n\n\n\n\n\nBreak for questions\n\n\n\n\nrda file\nAn rda is an R data file that stores R objects and preserves their structure. In this case, you can think of an rda file exported from stockplotr as a list of objects.\nEach plot or table has the option to export it as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:\n\nggplot or flextable object\ncaption\nalternative text (figures only)\nlatex object (tables only)\n\n\nstockplotr::plot_biomass(\n  dat = petrale,\n  ref_line = c(\"target\" = 260),\n  unit_label = \"mt\",\n  module = \"TIME_SERIES\",\n  make_rda = TRUE,\n  tables_dir = getwd()\n)\n\n\nload(\"figures/biomass_figure.rda\")\nrda$figure\nrda$cap\nrda$alt_text\n\n\n\n\n\n\n\n\nBreak for questions\n\n\n\n\n\nstockplotr::table_landings(\n  dat = petrale,\n  group = \"fleet\",\n  unit_label = \"mt\",\n  make_rda = TRUE,\n  tables_dir = getwd()\n)\n\n\nload(\"tables/landings_table.rda\")\nrda$table\nrda$cap\nrda$latex\n\n\n\n\n\n\n\nTip\n\n\n\nWe have designed two functions that allow you to automatically create all available figures and tables:\n\nsave_all_plots()\nhtml_all_figs_tables()\n\n\n\n\n\n\n\n\n\n20 minute break for questions & practicing\n\n\n\n\n\n\n\n\n\nCautionPractice exercises: Creating stockplotr figures & tables\n\n\n\n\n\nFor the following, use stockplotr::example_data as the input data.\n\nCreate an abundance-at-age plot. Export it as an rda to your working directory.\nCreate a recruitment time series plot. Change the unit_label and scale_amount so that the y axis shows recruitment in thousands of fish. Set module = “TIME_SERIES”.\nCreate a fishing mortality plot. Ensure it does not group by fleet. Set module = “TIME_SERIES”. Add a reference line (“target”) at 0.5. Convert it from a line plot to a scatterplot.\nCreate a landings table.\n\nNow, use your own data.\n\nConvert your own dataset using convert_output().\nCreate a spawning biomass plot. Change the theme by applying the ggplot2::theme_classic().\n\n\n\n\n\n\n\n\n\n\nCautionAnswers for Practice exercises: Creating stockplotr figures & tables\n\n\n\n\n\nFor the following, use stockplotr::example_data as the input data.\n\nCreate an abundance-at-age plot. Export it as an rda to your working directory.\n\nAnswer:\n\nstockplotr::plot_abundance_at_age(\n  dat = stockplotr::example_data,\n  make_rda = TRUE,\n  figures_dir = getwd()\n)\n\n\nCreate a recruitment time series plot. Change the unit_label and scale_amount so that the y axis shows recruitment in thousands of fish. Set module = “TIME_SERIES”.\n\nAnswer:\n\nstockplotr::plot_recruitment(\n  dat = stockplotr::example_data,\n  unit_label = \"fish\",\n  scale_amount = 1000,\n  module = \"TIME_SERIES\"\n)\n\n\nCreate a fishing mortality plot. Ensure it does not group by fleet. Set module = “TIME_SERIES”. Add a reference line (“target”) at 0.5. Convert it from a line plot to a scatterplot.\n\nAnswer:\n\nstockplotr::plot_fishing_mortality(\n  dat = stockplotr::example_data,\n  group = \"none\",\n  module = \"TIME_SERIES\",\n  ref_line = c(\"target\" = 0.5),\n  geom = \"point\"\n)\n\n\nCreate a landings table.\n\nAnswer:\n\nstockplotr::table_landings(\n  dat = stockplotr::example_data\n)\n\nNow, use your own data.\n\nConvert your own dataset using convert_output().\n\nAnswer:\n\nconvert_output(\n  file = \"path/to/your_report_file\"\n  # Specify these arguments if you wish: model, fleet_names,   save_dir\n)\n\n\nCreate a spawning biomass plot. Change the theme by applying the ggplot2::theme_classic().\n\nAnswer:\n\nstockplotr::plot_spawning_biomass(\n  dat = your_converted_data_object\n) +\n  ggplot2::theme_classic()",
     "crumbs": [
       "Day 3: stockplotr + asar"
     ]
@@ -640,7 +647,7 @@
     "href": "Curriculum/nsaw.html#code-chunks",
     "title": "NSAW workshop",
     "section": "Code Chunks",
-    "text": "Code Chunks\nAs we previously mentioned, the beauty of using quarto is that it allows the user to integrate text and code throughout their reports making them super reproducible.\nThe basics of a code chunk (chunk) are:\n\nthe language (R or python)\nchunk options\ncode\n\nThese three things get wrapped together within two sets of three back ticks (```) to allow a user to run code.\n```{r}\n#| label: ex-chunk\n#| eval: false\n#| warning: false\n#| echo: false\n#| fig-cap: This is my figure caption.\n#| fig-alt: This is my alternative text.\n#| tbl-cap: This is my table caption.\nx &lt;- 1 + 1\n```\nThere are a variety of chunk options, but the ones you will see consistently throughout this workshop are listed in the example above.\n\n\n\n\n\n\nNote\n\n\n\nIn the “label” option, for tables and figures, you will need to prefix the label with either “fig-” for a figure or “tbl-” for a table.\n\n\nFor those familiar with Rmarkdown, the code chunk structure in Rmarkdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a “#|” proceeding each option.\n\n\n\n\n\n\n20 minute break for questions & practicing\n\n\n\n\n\n\n\n\n\nCautionPractice exercises: Markdown\n\n\n\n\n\n\nCreate a new quarto document\nAdd the following elements:\n\n\nLevel 1 header (call it “Sandwiches”)\nLevel 2 header (call it “My favorite sandwich”)\n\n\nUnder heading level 2, add a sentence that describes your favorite sandwich. Italicize “favorite” and bold the sandwich name.\nAdd an unordered list with the sandwich’s ingredients.\nAdd an ordered list with the steps needed to make the sandwich.\nFind the first ingredient in the list and add a link to its wikipedia page.\nYour instructors are hungry, and they’re demanding that you split your sandwich with them. Use an inline mathematical notation to write the fraction necessary to feed the three of you.\n\n\n\n\n\n\n\n\n\n\nCautionAnswers for Practice exercises: Markdown\n\n\n\n\n\n\nCreate a new quarto document\n\nAnswer: Follow directions in the Day 1 “Opening a Document” section\n\nAdd the following elements:\n\n\nLevel 1 header (call it “Sandwiches”)\nLevel 2 header (call it “My favorite sandwich”)\n\n\nUnder heading level 2, add a sentence that describes your favorite sandwich. Italicize “favorite” and bold the sandwich name.\nAdd an unordered list with the sandwich’s ingredients.\nAdd an ordered list with the steps needed to make the sandwich.\nFind the first ingredient in the list and add a link to its wikipedia page.\nYour instructors are hungry, and they’re demanding that you split your sandwich with them. Use an inline mathematical notation to write the fraction necessary to feed the three of you.\n\nAnswers: Add code like the following:\n\n# Sandwiches\n\n## My favorite sandwich\n\nMy *favorite* sandwich is a **peanut butter and jelly sandwich**.\n\nIngredients:\n\n- [peanut butter (PB)](https://en.wikipedia.org/wiki/Peanut_butter)\n- jelly\n- bread\n\nSteps:\n\n1. Get two slices of bread\n2. Spread PB on one side of one slice of bread\n3. Spread jelly on one side of the other bread slice\n4. Stack the PB slice on top of the jelly slice so that PB and J meet in the middle of the sandwich.\n5. Eat!\n\nI'll split my sandwich into three pieces so that each person can get $1/3$ of the sandwich.",
+    "text": "Code Chunks\nAs we previously mentioned, the beauty of using quarto is that it allows the user to integrate text and code throughout their reports making them super reproducible.\nThe basics of a code chunk (chunk) are:\n\nthe language (R or python)\nchunk options\ncode\n\nThese three things get wrapped together within two sets of three back ticks (```) to allow a user to run code.\n```{r}\n#| label: ex-chunk\n#| eval: false\n#| warning: false\n#| echo: false\n#| fig-cap: This is my figure caption.\n#| fig-alt: This is my alternative text.\n#| tbl-cap: This is my table caption.\nx &lt;- 1 + 1\n```\nThere are a variety of chunk options, but the ones you will see consistently throughout this workshop are listed in the example above.\n\n\n\n\n\n\nNote\n\n\n\nIn the “label” option, for tables and figures, you will need to prefix the label with either “fig-” for a figure or “tbl-” for a table.\n\n\nFor those familiar with Rmarkdown, the code chunk structure in Rmarkdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a “#|” proceeding each option.\n\n\n\n\n\n\n20 minute break for questions & practicing\n\n\n\n\n\n\n\n\n\nCautionPractice exercises: Markdown\n\n\n\n\n\n\nCreate a new quarto document\nAdd the following elements:\n\n\nLevel 1 header (call it “Sandwiches”)\nLevel 2 header (call it “My favorite sandwich”)\n\n\nUnder heading level 2, add a sentence that describes your favorite sandwich. Italicize “favorite” and bold the sandwich name.\nAdd an unordered list with the sandwich’s ingredients.\nAdd an ordered list with the steps needed to make the sandwich.\nFind the first ingredient in the list and add a link to its wikipedia page.\nYour instructors are hungry, and they’re demanding that you split your sandwich with them. Use an inline mathematical notation to write the fraction necessary to feed the three of you.\n\n\n\n\n\n\n\n\n\n\nCautionAnswers for Practice exercises: Markdown\n\n\n\n\n\n\nCreate a new quarto document\n\nAnswer: Follow directions in the Day 1 “Opening a Document” section\n\nAdd the following elements:\n\n\nLevel 1 header (call it “Sandwiches”)\nLevel 2 header (call it “My favorite sandwich”)\n\n\nUnder heading level 2, add a sentence that describes your favorite sandwich. Italicize “favorite” and bold the sandwich name.\nAdd an unordered list with the sandwich’s ingredients.\nAdd an ordered list with the steps needed to make the sandwich.\nFind the first ingredient in the list and add a link to its wikipedia page.\nYour instructors are hungry, and they’re demanding that you split your sandwich with them. Use an inline mathematical notation to write the fraction necessary to feed the three of you.\n\nAnswers: Add code like the following:\n\n# Sandwiches\n\n## My favorite sandwich\n\nMy *favorite* sandwich is a **peanut butter and jelly sandwich**.\n\nIngredients:\n\n- [peanut butter (PB)](https://en.wikipedia.org/wiki/Peanut_butter)\n- jelly\n- bread\n\nSteps:\n\n1. Get two slices of bread\n2. Spread PB on one side of one slice of bread\n3. Spread jelly on one side of the other bread slice\n4. Stack the PB slice on top of the jelly slice so that PB and J meet in the middle of the sandwich.\n5. Eat!\n\nI'll split my sandwich into three pieces so that each person can get $1/3$ of the sandwich.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n20 minute break for questions & practicing\n\n\n\n\n\n\n\n\n\nCautionPractice exercises: Creating stockplotr figures & tables\n\n\n\n\n\nFor the following, use stockplotr::example_data as the input data.\n\nCreate an abundance-at-age plot. Export it as an rda to your working directory.\nCreate a recruitment time series plot. Change the unit_label and scale_amount so that the y axis shows recruitment in thousands of fish. Set module = “TIME_SERIES”.\nCreate a fishing mortality plot. Ensure it does not group by fleet. Set module = “TIME_SERIES”. Add a reference line (“target”) at 0.5. Convert it from a line plot to a scatterplot.\nCreate a landings table.\n\nNow, use your own data.\n\nConvert your own dataset using convert_output().\nCreate a spawning biomass plot. Change the theme by applying the ggplot2::theme_classic().\n\n\n\n\n\n\n\n\n\n\nCautionAnswers for Practice exercises: Creating stockplotr figures & tables\n\n\n\n\n\nFor the following, use stockplotr::example_data as the input data.\n\nCreate an abundance-at-age plot. Export it as an rda to your working directory.\n\nAnswer:\n\nstockplotr::plot_abundance_at_age(\n  dat = stockplotr::example_data,\n  make_rda = TRUE,\n  figures_dir = getwd()\n)\n\n\nCreate a recruitment time series plot. Change the unit_label and scale_amount so that the y axis shows recruitment in thousands of fish. Set module = “TIME_SERIES”.\n\nAnswer:\n\nstockplotr::plot_recruitment(\n  dat = stockplotr::example_data,\n  unit_label = \"fish\",\n  scale_amount = 1000,\n  module = \"TIME_SERIES\"\n)\n\n\nCreate a fishing mortality plot. Ensure it does not group by fleet. Set module = “TIME_SERIES”. Add a reference line (“target”) at 0.5. Convert it from a line plot to a scatterplot.\n\nAnswer:\n\nstockplotr::plot_fishing_mortality(\n  dat = stockplotr::example_data,\n  group = \"none\",\n  module = \"TIME_SERIES\",\n  ref_line = c(\"target\" = 0.5),\n  geom = \"point\"\n)\n\n\nCreate a landings table.\n\nAnswer:\n\nstockplotr::table_landings(\n  dat = stockplotr::example_data\n)\n\nNow, use your own data.\n\nConvert your own dataset using convert_output().\n\nAnswer:\n\nconvert_output(\n  file = \"path/to/your_report_file\"\n  # Specify these arguments if you wish: model, fleet_names,   save_dir\n)\n\n\nCreate a spawning biomass plot. Change the theme by applying the ggplot2::theme_classic().\n\nAnswer:\n\nstockplotr::plot_spawning_biomass(\n  dat = your_converted_data_object\n) +\n  ggplot2::theme_classic()",
     "crumbs": [
       "NSAW workshop"
     ]
