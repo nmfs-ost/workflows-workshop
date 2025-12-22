@@ -230,8 +230,10 @@ We are advising everyone that if required content is needed beyond the standard 
 **Demo of child docs and adding quantities from the preamble into your document**
 
 ::: {.callout-note appearance="minimal"}
-15 minute break
+20 minute break for questions & practicing
 :::
+
+{{< include ../snippets/template_exercises.qmd >}}
 
 ### `convert_output()`
 

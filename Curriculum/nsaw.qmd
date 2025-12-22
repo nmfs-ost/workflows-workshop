@@ -320,6 +320,12 @@ For those familiar with Rmarkdown, the code chunk structure in Rmarkdown documen
 
 <!-- Add workflow tutorial here: asar -->
 
+::: {.callout-note appearance="minimal"}
+20 minute break for questions & practicing
+:::
+
+{{< include snippets/template_exercises.qmd >}}
+
 <!--               -->
 <!-- END OF HOUR 2 -->
 <!--               -->

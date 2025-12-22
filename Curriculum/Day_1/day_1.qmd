@@ -272,7 +272,7 @@ cover:
 pdf-engine: lualatex
 format: 
   pdf: 
-    documentclass: scrartcl
+    documentclass: article
     papersize: letter
     number-sections: true
     template-partials:

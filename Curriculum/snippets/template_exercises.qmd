@@ -1,0 +1,86 @@
+
+::: {.callout-caution collapse="true"}
+## Practice exercises: `create_template()`
+
+1. Run `create_template()`. Fill in your own values for `office`, `region`, `species`, `spp_latin`, and `year`. Use default values for all remaining arguments.
+
+2. Whoops! You forgot to add the report author's name and affiliation (yours!). Open the report skeleton and edit the yaml with this information.
+
+3. You realize that your report will frequently reference another species: *Patrickicus starrus*. Add a new parameter to the report's yaml so that you can reference "Patrickicus starrus" with a simple "ps".
+
+4. Open up the Executive Summary qmd file and add a sentence that references your new parameter.
+
+:::
+
+::: {.callout-caution collapse="true"}
+## **Answers** for Practice exercises: `create_template()`
+
+1. Run `create_template()`. Fill in your own values for `office`, `region`, `species`, `spp_latin`, and `year`. Use default values for all remaining arguments.
+
+**Answer**: Run code similar to the following, adding in your own values for the arguments below.
+
+```{r eval = FALSE}
+create_template(
+    office = "SEFSC",
+    region = "Southeast Coast",
+    species = "Atlantic Bigeye Tuna",
+    spp_latin = "Thunnus obesus",
+    year = 2026
+)
+```
+
+2. Whoops! You forgot to add the report author's name and affiliation (yours!). Open the report skeleton and edit the yaml with this information.
+
+**Answer**: Open the .qmd file with "skeleton" in the filename. Edit the yaml's "author" section to go from something like the first chunk to the second chunk.
+
+```{r eval = FALSE}
+# Original yaml snippet (located just beneath the title)
+author:
+  - name: 'FIRST LAST'
+    affiliations: 
+      - name: 'NOAA Fisheries' 
+        address: 'ADDRESS' 
+        city: 'CITY' 
+        state: 'STATE' 
+        postal-code: 'POSTAL CODE' 
+```
+
+```{r eval = FALSE}
+# Updated yaml snippet
+author:
+  - name: 'Patrick Star'
+    affiliations:
+      - name: 'NOAA Fisheries Southeast Fisheries Science Center'
+        address: '75 Virginia Beach Drive'
+        city: 'Miami, FL'
+        state: 'FL'
+        postal-code: '33149'
+```
+
+3. You realize that your report will frequently reference another species: *Patrickicus starrus*. Add a new parameter to the report's yaml so that you can reference "Patrickicus starrus" with a simple "ps".
+
+**Answer**: Open the .qmd file with "skeleton" in the filename. Edit the yaml's "params" section and add the following line:
+
+```{r eval = FALSE}
+# Updated yaml snippet
+params:
+   office: 'SEFSC'
+   species: 'Atlantic Bigeye Tuna'
+   spp_latin: 'Thunnus obesus'
+   region: 'Southeast Coast'
+   ps: 'Patrickicus starrus' # <-- new line
+```
+
+4. Open up the Executive Summary qmd file and add a sentence that references your new parameter.
+
+**Answer**: Open the 01_executive_summary.qmd file and add a line that references the param 'ps', like the following:
+
+```{r eval = FALSE}
+"The species `r ps` was abundant throughout the study area."
+```
+
+*The sentence will render as such:*
+
+"The species Patrickicus starrus was abundant throughout the study area."
+
+:::
