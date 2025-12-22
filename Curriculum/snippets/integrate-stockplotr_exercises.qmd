@@ -1,0 +1,35 @@
+
+::: {.callout-caution collapse="true"}
+## Practice exercises: Add figures/tables and render report
+
+1. Ensure that you have a 'figures' folder and a 'tables' folder, each with at least one rda file. If you don't, export a couple of figures and tables.
+   * *Hint:* ensure that the `make_rda` argument is set to TRUE when running the `stockplotr` functions that create figures and tables).
+
+2. Open up your figures and tables qmds, in the 'report' folder. If these documents do not contain the necessary chunks to import and display at least one plot, rerun `create_figures_doc()` and/or `create_tables_doc()` to add code that will plot the figures/tables in your 'figures' and 'tables' folders.
+   * *Hint:* ensure that the arguments are correct: `subdir` and `figures_dir` (for the figures doc) / `tables_dir` (for the tables doc)
+   * *Hint:* This step practices the ["rda-based workflow"](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#option-1-rerunning-asarcreate_tables_docasarcreate_figures_doc).
+
+3. Practice adding a figure with markdown notation by adding the image of a landings figure into the figures doc. The figure is located in the ['example_plots' folder](https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots/landings_fig_png.png). Set the caption to "Historical landings by fleet.", the alternative text to "Cumulative line plot showing historical landings for North and South fleets. The x axis shows the year, which spans from 1850 to 2026. The y axis shows landings in metric tons, which spans from 0 to 2,400.", and the figure label to "practice-figure-label".
+    * *Hint:* This step practices the ["direct image-based workflow"](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#direct-image-based-table-insertion-workflow).
+
+4. In the Executive Summary, add a reference to the first figure in your figures qmd file.
+
+:::
+
+::: {.callout-caution collapse="true"}
+## **Answers** for Practice exercises: Add figures/tables and render report
+
+3. Practice adding a figure with markdown notation by adding the image of a landings figure into the figures doc. The figure is located in the ['example_plots' folder](https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots/landings_fig_png.png). Set the caption to "Historical landings by fleet.", the alternative text to "Cumulative line plot showing historical landings for North and South fleets. The x axis shows the year, which spans from 1850 to 2026. The y axis shows landings in metric tons, which spans from 0 to 2,400.", and the figure label to "practice-figure-label".
+   *Hint:* This step practices the ["direct image-based workflow"](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#direct-image-based-table-insertion-workflow).
+
+**Answer**: Add the following chunk to the figures doc:
+
+```{r eval = FALSE}
+![Historical landings by fleet.](example_plots/landings_fig_png.png){fig-alt="Cumulative line plot showing historical landings for North and South fleets. The x axis shows the year, which spans from 1850 to 2026. The y axis shows landings in metric tons, which spans from 0 to 2,400.", #practice-figure-label}
+```
+
+4. In the Executive Summary, add a reference to the first figure in your figures qmd file.
+
+**Answer**: If the 'label' for that first figure is 'fig-custom1', then the in-text reference would be '\@fig-custom1'.
+
+:::

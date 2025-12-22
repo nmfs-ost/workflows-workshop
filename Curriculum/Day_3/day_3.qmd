@@ -594,6 +594,12 @@ Run `quarto render [path/to/your/skeleton.qmd file]` in the terminal. For exampl
 
 Enter `quarto render report/SAR_species_skeleton.qmd`
 
+::: {.callout-note appearance="minimal"}
+20 minute break for questions & practicing
+:::
+
+{{< include ../snippets/integrate-stockplotr_exercises.qmd >}}
+
 # Adding accessibility features {#sec-a11y}
 
 ::: {.callout-tip}
