@@ -414,9 +414,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#look-at-your-alt-text-csv" id="toc-look-at-your-alt-text-csv" class="nav-link" data-scroll-target="#look-at-your-alt-text-csv">Look at your alt text csv</a></li>
   <li><a href="#update-the-csv" id="toc-update-the-csv" class="nav-link" data-scroll-target="#update-the-csv">Update the csv</a></li>
   </ul></li>
-  <li><a href="#run-alt-text-to-your-report" id="toc-run-alt-text-to-your-report" class="nav-link" data-scroll-target="#run-alt-text-to-your-report">Run alt text to your report</a></li>
+  <li><a href="#add-alt-text-to-your-reports-images" id="toc-add-alt-text-to-your-reports-images" class="nav-link" data-scroll-target="#add-alt-text-to-your-reports-images">Add alt text to your report’s images</a></li>
   </ul></li>
-  <li><a href="#demo-for-a-realistic-customized-asar-report-with-stockplotr-plots" id="toc-demo-for-a-realistic-customized-asar-report-with-stockplotr-plots" class="nav-link" data-scroll-target="#demo-for-a-realistic-customized-asar-report-with-stockplotr-plots">Demo for a realistic, customized asar report with stockplotr plots</a></li>
   <li><a href="#questions-comments-and-feedback" id="toc-questions-comments-and-feedback" class="nav-link" data-scroll-target="#questions-comments-and-feedback">Questions, comments, and feedback</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nmfs-ost/workflows-workshop/edit/main/Curriculum/Day_3/day_3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/Curriculum/Day_3/day_3.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -1512,8 +1511,8 @@ Important
 </section>
 </section>
 </section>
-<section id="run-alt-text-to-your-report" class="level2">
-<h2 class="anchored" data-anchor-id="run-alt-text-to-your-report">Run alt text to your report</h2>
+<section id="add-alt-text-to-your-reports-images" class="level2">
+<h2 class="anchored" data-anchor-id="add-alt-text-to-your-reports-images">Add alt text to your report’s images</h2>
 <p>Now, we’ll use the <code>asar::add_alttext()</code> function to add the alt text into the report’s .tex file. Again, we’ll wrap the function with <code>with_dir()</code> to set a temporary working directory.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
@@ -1537,22 +1536,36 @@ Important
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>questions, then 10 minute break</p>
+<p>20 minute break for questions &amp; practicing</p>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="demo-for-a-realistic-customized-asar-report-with-stockplotr-plots" class="level1">
-<h1>Demo for a realistic, customized asar report with stockplotr plots</h1>
-<!-- Not sure we'll have time for this. If so, update bullets below -->
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Practice exercises: Adding accessibility features
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>If you haven’t already, add tags to your pdf by running <code>add_tagging()</code> with the appropriate arguments (including <code>compile</code> set to TRUE). Then, open up the report and ensure it was tagged.</p></li>
+<li><p>Open up the “captions_alt_text.csv” file that contains your alternative text and captions. Find the rows that are linked with the figures and tables in your report.</p>
 <ul>
-<li>create_tables_doc() and create_figures_doc() with “figures” and “tables” folders</li>
-<li>ensure alt text/captions work</li>
-</ul>
-<p><strong>Time to practice, ask questions, etc.</strong></p>
-<p>Practice ideas:</p>
-<p>-Add the landings figure .png file, located in the ‘example_plots’ folder, to your figures doc.</p>
+<li>Read through the captions and alternative text. Edit inaccuracies if necessary.</li>
+<li>For figures, add a sentence or two describing <a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#how-to-write-ingredient-4">the final ingredient for a solid alternative text</a>: the relationship between the variables shown (i.e., what the figure is conveying).</li>
+<li>If you’ve created custom figures/tables, create new rows for each. Add captions for all, and alternative text for just figures. Ensure that the label matches the chunk label.</li>
+</ul></li>
+<li><p>Run <code>add_alttext()</code> with <code>compile</code> set to TRUE. Then, open up the report and ensure the images contain alt text.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="questions-comments-and-feedback" class="level1">
 <h1>Questions, comments, and feedback</h1>
