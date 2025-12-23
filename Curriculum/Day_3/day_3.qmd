@@ -707,7 +707,7 @@ When you're satisfied, save the csv.
 
 When you're satisfied, save the csv.
 
-## Run alt text to your report
+## Add alt text to your report's images
 
 Now, we'll use the `asar::add_alttext()` function to add the alt text into the report's .tex file. Again, we'll wrap the function with `with_dir()` to set a temporary working directory.
 
@@ -731,21 +731,10 @@ Now your PDF's figures have alt text! If you hover your cursor over an image, yo
 ![](images/alt_text_fig.png){fig-alt="Screenshot of an example PDF-based, tagged report with alternative text. A cursor hovering over a biomass figure shows its alternative text in a bubble."}
 
 ::: {.callout-note appearance="minimal"}
-questions, then 10 minute break
+20 minute break for questions & practicing
 :::
 
-# Demo for a realistic, customized asar report with stockplotr plots
-
-<!-- Not sure we'll have time for this. If so, update bullets below -->
-
-- create_tables_doc() and create_figures_doc() with "figures" and "tables" folders
-- ensure alt text/captions work
-
-**Time to practice, ask questions, etc.**
-
-Practice ideas:
-
--Add the landings figure .png file, located in the 'example_plots' folder, to your figures doc.
+{{< include ../snippets/a11y_exercises.qmd >}}
 
 # Questions, comments, and feedback
 

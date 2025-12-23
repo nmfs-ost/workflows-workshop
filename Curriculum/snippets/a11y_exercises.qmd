@@ -1,0 +1,14 @@
+
+::: {.callout-caution collapse="true"}
+## Practice exercises: Adding accessibility features
+
+1. If you haven't already, add tags to your pdf by running `add_tagging()` with the appropriate arguments (including `compile` set to TRUE). Then, open up the report and ensure it was tagged.
+
+2. Open up the "captions_alt_text.csv" file that contains your alternative text and captions. Find the rows that are linked with the figures and tables in your report.
+    * Read through the captions and alternative text. Edit inaccuracies if necessary.
+    * For figures, add a sentence or two describing [the final ingredient for a solid alternative text](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#how-to-write-ingredient-4): the relationship between the variables shown (i.e., what the figure is conveying).
+    * If you've created custom figures/tables, create new rows for each. Add captions for all, and alternative text for just figures. Ensure that the label matches the chunk label.
+    
+3. Run `add_alttext()` with `compile` set to TRUE. Then, open up the report and ensure the images contain alt text.
+
+:::
