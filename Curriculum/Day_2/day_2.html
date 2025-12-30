@@ -389,11 +389,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#create_template" id="toc-create_template" class="nav-link" data-scroll-target="#create_template"><code>create_template()</code></a></li>
   <li><a href="#convert_output" id="toc-convert_output" class="nav-link" data-scroll-target="#convert_output"><code>convert_output()</code></a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#add-screenshot-of-petrale-here" id="toc-add-screenshot-of-petrale-here" class="nav-link" data-scroll-target="#add-screenshot-of-petrale-here">ADD SCREENSHOT OF petrale HERE</a>
-  <ul class="collapse">
   <li><a href="#asar-workflow-complex-example" id="toc-asar-workflow-complex-example" class="nav-link" data-scroll-target="#asar-workflow-complex-example"><code>asar</code> workflow: Complex example</a>
   <ul class="collapse">
+  <li><a href="#create-your-own" id="toc-create-your-own" class="nav-link" data-scroll-target="#create-your-own">Create-your-own</a></li>
   <li><a href="#rerendering-report" id="toc-rerendering-report" class="nav-link" data-scroll-target="#rerendering-report">Rerendering report</a></li>
   <li><a href="#calling-previous-report" id="toc-calling-previous-report" class="nav-link" data-scroll-target="#calling-previous-report">Calling previous report</a></li>
   </ul></li>
@@ -485,7 +483,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="setup" class="level1">
 <h1>Setup</h1>
-<p>Fork workshop repository – take them through it and explain materials</p>
+<p>Let’s fork the workshop repository</p>
+<!-- tour of the workshop repo and materials -->
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Break for questions</p>
+</div>
+</div>
+</div>
 </section>
 <section id="asar-automated-stock-assessment-reporting" class="level1">
 <h1><code>asar</code>: Automated Stock Assessment Reporting</h1>
@@ -700,7 +709,7 @@ Note
 <p>For more information on markdown notation, see <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html">Day 1</a> of this workshop or navigate to <a href="https://nmfs-ost.github.io/asar/articles/markdown_notation.html">our article</a> on the topic!</p>
 </div>
 </div>
-<p><strong>Demo of where to find preamble quantities and methods to adding to it</strong></p>
+<p><strong>Let’s find the preamble and see the methods to edit it</strong></p>
 </section>
 <section id="the-content" class="level5">
 <h5 class="anchored" data-anchor-id="the-content">The content</h5>
@@ -858,16 +867,12 @@ Important
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>petrale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="section" class="level12">
-<p class="heading"></p>
-</section>
-</section>
-</section>
-</section>
-<section id="add-screenshot-of-petrale-here" class="level1">
-<h1>ADD SCREENSHOT OF petrale HERE</h1>
-<section id="section-1" class="level14">
-<p class="heading"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/petrale_conout.png" class="img-fluid figure-img"></p>
+<figcaption>A screenshot of the first 8 columns and 10 rows of data from a standard output tibble converted from a stock synthesis Report.sso file.</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -882,12 +887,22 @@ Tip
 <p>If you are explicitly stating fleet names, make sure they are in the order you expect them to be found in the file.</p>
 </div>
 </div>
-</section>
 <section id="format-of-converted-output" class="level4">
 <h4 class="anchored" data-anchor-id="format-of-converted-output">Format of converted output</h4>
-<p>The converted output is a tibble that reframes and reshapes your data. The tibble contains each output value as a row with its error and any associated indexing values.<br>
-</p>
-<p><strong>Walk through of converted output object</strong></p>
+<p>The converted output is a tibble that reframes and reshapes your data. The tibble contains each output value as a row with its error and any associated indexing values.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let’s walk through a standard output file in more detail.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -901,30 +916,127 @@ Note
 <p>For more information, navigate to <a href="https://nmfs-ost.github.io/asar/articles/convert_output_details.html">this article</a> describing the conversion process and find ways your can convert your model’s data!</p>
 </div>
 </div>
-</section>
-<section id="asar-workflow-complex-example" class="level2">
-<h2 class="anchored" data-anchor-id="asar-workflow-complex-example"><code>asar</code> workflow: Complex example</h2>
-<ul>
-<li>Customized sections</li>
-<li>Reorganizing section order</li>
-<li>Other functions</li>
-<li>Latex (if there’s time/interest)
-<ul>
-<li>explain limitations or potential customizations</li>
-</ul></li>
-</ul>
+<hr>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>15 min break</p>
+<p>Break for questions</p>
 </div>
 </div>
 </div>
+<!-- this is a good place to take a 15 min break -->
+</section>
+</section>
+</section>
+<section id="asar-workflow-complex-example" class="level2">
+<h2 class="anchored" data-anchor-id="asar-workflow-complex-example"><code>asar</code> workflow: Complex example</h2>
+<p>Now we are going to walk-through a more complex use of <code>asar</code> by</p>
+<ul>
+<li>Additional parameters</li>
+<li>customizing our sections</li>
+<li>reorganizing section order</li>
+<li>calling a previous report and editing</li>
+</ul>
+<section id="create-your-own" class="level3">
+<h3 class="anchored" data-anchor-id="create-your-own">Create-your-own</h3>
+<p>There are three additional template options available to users to use while we work to set standard assessment report guidelines across the country. They include SAFE reports, NEFSC management track reports, and PFMC guidelines. Not only thing, but you have the ability to add new sections either within the current outline or in individual sections or even select which sections of the standard template you want to create your report around.</p>
+<p>Today, we will be going over how to customize your template by selecting a subset of the standard guidelines then adding in a new section within our data section.</p>
+<p>First, let’s make our template.</p>
+<p><strong>We are creating a new report, so please set your working directory to a new folder or rename our previous “simple” report folder to “simple_report” or something along those lines.</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">create_template</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Previous arguments we used for simple</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"pdf"</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"SAR"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">office =</span> <span class="st">"NWFSC"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">region =</span> <span class="st">"U.S. West Coast"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">species =</span> <span class="st">"Petrale sole"</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">spp_latin =</span> <span class="st">"Eopsetta jordani"</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">authors =</span> <span class="fu">c</span>(<span class="st">"Samantha Schiano"</span> <span class="ot">=</span> <span class="st">"OST"</span>),</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># New arguments</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom_sections =</span> <span class="cn">NULL</span>,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">new_section =</span> <span class="cn">NULL</span>,</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">section_location =</span> <span class="cn">NULL</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To identify what sections you can include from the standard guidelines, you can run <code>list.files(system.file("templates", "skeleton", package = "asar"))</code>. Note: this only includes sections within a standard template. To see other sections for available templates, replace “skeleton” with your target template acronym.</p>
+<p>Don’t worry if you forget! You can find this code in the documentation for the “custom_sections” argument.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Break for Questions</p>
+</div>
+</div>
+</div>
+</section>
 <section id="rerendering-report" class="level3">
 <h3 class="anchored" data-anchor-id="rerendering-report">Rerendering report</h3>
+<p>We understand that it’s easy to forget to enter in all of the information you need for a report on it’s initial creation! Because of this, we made the argument “rerender_skeleton” that adds on any new information to the skeleton file that you might want such as additional authors, a new species image, parameters, or anything that is open for you to customize in the skeleton file.</p>
+<p>You COULD do this manually, but using the function both allows you to create a record of your changes (making it more reproducible) <em>and</em> makes the Quarto yaml less intimidating to new users!</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can run re-render skeleton as often as you want, it will always edit the current skeleton in the folder. Please note: any additional skeleton files will make this process fail. The process will also verify that you want to overwrite the current skeleton and either keep or replace the key quantities file.</p>
+</div>
+</div>
+<section id="our-changes-new-parameters-additional-author-and-a-new-section" class="level4">
+<h4 class="anchored" data-anchor-id="our-changes-new-parameters-additional-author-and-a-new-section">Our changes: new parameters, additional author, and a new section</h4>
+<p>Let’s add some more parameters to our script which will allow us to references in-text throughout the document.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">create_template</span>(</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">rerender_skeleton =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">parameters =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">param_names =</span> <span class="fu">c</span>(<span class="st">"fleet_a"</span>, <span class="st">"fleet_b"</span>),</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">param_values =</span> <span class="fu">c</span>(<span class="st">"a long fleet name"</span>, <span class="st">"b long fleet name"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Now, I need to add my co-authors to my report especially since I wasn’t sure who was going to be working on it at the time I created my report template. After review of our terms of reference, I noticed that I needed a section to document my changes to the model, so let’s add that in too.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">create_template</span>(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">rerender_skeleton =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">authors =</span> <span class="fu">c</span>(<span class="st">"John Doe"</span><span class="ot">=</span><span class="st">"NEFSC"</span>, <span class="st">"Jane Doe"</span><span class="ot">=</span><span class="st">"SWFSC-LJCA"</span>),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">new_section =</span> <span class="st">"Changes to the Model"</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">section_location =</span> <span class="st">"in-assessment"</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Break for Questions</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="calling-previous-report" class="level3">
 <h3 class="anchored" data-anchor-id="calling-previous-report">Calling previous report</h3>
@@ -943,6 +1055,14 @@ Note
 </section>
 <section id="summary-10-mins" class="level1">
 <h1>Summary (10 mins)</h1>
+<p>You should now be able to</p>
+<ul>
+<li>Create and fill in a report template</li>
+<li>Understand how to use parameters and key quantities within text</li>
+<li>Understand the format of a standard output object</li>
+<li>Know how to customize a report</li>
+<li>Know how to pull and update and old report that used <code>asar</code></li>
+</ul>
 </section>
 <section id="final-reminders" class="level1">
 <h1>Final Reminders</h1>
