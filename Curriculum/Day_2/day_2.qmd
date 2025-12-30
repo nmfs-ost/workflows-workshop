@@ -314,7 +314,7 @@ First, let's make our template.
 
 **We are creating a new report, so please set your working directory to a new folder or rename our previous "simple" report folder to "simple_report" or something along those lines.**
 
-```{r}
+```{r eval=FALSE}
 asar::create_template(
   # Previous arguments we used for simple
   format = "pdf",
@@ -333,7 +333,7 @@ asar::create_template(
 ```
 
 ::: {.callout-tip}
-To identify what sections you can include from the standard guidelines, you can run `r `list.files(system.file("templates", "skeleton", package = "asar"))`. Note: this only includes sections within a standard template. To see other sections for available templates, replace "skeleton" with your target template acronym.
+To identify what sections you can include from the standard guidelines, you can run `list.files(system.file("templates", "skeleton", package = "asar"))`. Note: this only includes sections within a standard template. To see other sections for available templates, replace "skeleton" with your target template acronym.
 
 Don't worry if you forget! You can find this code in the documentation for the "custom_sections" argument.
 :::
@@ -356,7 +356,7 @@ You can run re-render skeleton as often as you want, it will always edit the cur
 
 Let's add some more parameters to our script which will allow us to references in-text throughout the document.
 
-```{r}
+```{r eval=FALSE}
 asar::create_template(
   rerender_skeleton = TRUE,
   parameters = TRUE,
@@ -367,7 +367,7 @@ asar::create_template(
 
 Now, I need to add my co-authors to my report especially since I wasn't sure who was going to be working on it at the time I created my report template. After review of our terms of reference, I noticed that I needed a section to document my changes to the model, so let's add that in too.
 
-```{r}
+```{r eval=FALSE}
 asar::create_template(
   rerender_skeleton = TRUE,
   authors = c("John Doe"="NEFSC", "Jane Doe"="SWFSC-LJCA"),
