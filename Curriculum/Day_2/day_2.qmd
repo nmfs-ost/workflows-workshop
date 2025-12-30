@@ -46,7 +46,13 @@ You probably have some questions lingering from yesterday. Let us answer them fo
 
 # Setup
 
-Fork workshop repository -- take them through it and explain materials
+Let's fork the workshop repository
+
+<!-- tour of the workshop repo and materials -->
+
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
 
 # `asar`: Automated Stock Assessment Reporting
 
@@ -202,7 +208,7 @@ The quantities in found in this chunk can be referenced in-line throughout the d
 For more information on markdown notation, see [Day 1](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html) of this workshop or navigate to [our article](https://nmfs-ost.github.io/asar/articles/markdown_notation.html) on the topic!
 :::
 
-**Demo of where to find preamble quantities and methods to adding to it**
+**Let's find the preamble and see the methods to edit it**
 
 ##### The content
 
@@ -260,9 +266,7 @@ petrale <- asar::convert_output(output_file)
 petrale
 ```
 
-############
-# ADD SCREENSHOT OF petrale HERE
-##############
+![A screenshot of the first 8 columns and 10 rows of data from a standard output tibble converted from a stock synthesis Report.sso file.](images/petrale_conout.png)
 
 ::: {.callout-tip}
 `convert_output()` will recognize which model the results file came from as well as fleet names. In the rare case either of these are incorrect, the function contains arguments of `model` and `fleet_names` which you as the user can indicate for the function.
@@ -272,28 +276,111 @@ If you are explicitly stating fleet names, make sure they are in the order you e
 
 #### Format of converted output
 
-The converted output is a tibble that reframes and reshapes your data. The tibble contains each output value as a row with its error and any associated indexing values.\
+The converted output is a tibble that reframes and reshapes your data. The tibble contains each output value as a row with its error and any associated indexing values.
 
 
-**Walk through of converted output object**
+::: {.callout-note}
+Let's walk through a standard output file in more detail.
+:::
 
 ::: {.callout-note}
 For more information, navigate to [this article](https://nmfs-ost.github.io/asar/articles/convert_output_details.html) describing the conversion process and find ways your can convert your model's data!
 :::
 
-## `asar` workflow: Complex example
-
-- Customized sections
-- Reorganizing section order
-- Other functions
-- Latex (if there's time/interest)
-  - explain limitations or potential customizations
+___________________________________________________________________________________________________________
 
 ::: {.callout-note appearance="minimal"}
-15 min break
+Break for questions
+:::
+
+<!-- this is a good place to take a 15 min break -->
+
+## `asar` workflow: Complex example
+
+Now we are going to walk-through a more complex use of `asar` by
+
+- Additional parameters
+- customizing our sections
+- reorganizing section order
+- calling a previous report and editing
+
+### Create-your-own
+
+There are three additional template options available to users to use while we work to set standard assessment report guidelines across the country. They include SAFE reports, NEFSC management track reports, and PFMC guidelines. Not only thing, but you have the ability to add new sections either within the current outline or in individual sections or even select which sections of the standard template you want to create your report around.
+
+Today, we will be going over how to customize your template by selecting a subset of the standard guidelines then adding in a new section within our data section.
+
+First, let's make our template. 
+
+**We are creating a new report, so please set your working directory to a new folder or rename our previous "simple" report folder to "simple_report" or something along those lines.**
+
+```{r}
+asar::create_template(
+  # Previous arguments we used for simple
+  format = "pdf",
+  type = "SAR",
+  office = "NWFSC",
+  region = "U.S. West Coast",
+  species = "Petrale sole",
+  spp_latin = "Eopsetta jordani",
+  authors = c("Samantha Schiano" = "OST"),
+  # New arguments
+  custom = TRUE,
+  custom_sections = NULL,
+  new_section = NULL,
+  section_location = NULL
+)
+```
+
+::: {.callout-tip}
+To identify what sections you can include from the standard guidelines, you can run `r 	
+List of existing sections to include in the custom template. Note: this only includes sections within `list.files(system.file("templates", "skeleton", package = "asar"))`
+
+Don't worry if you forget! You can find this code in the documentation for the "custom_sections" argument.
+:::
+
+::: {.callout-note appearance="minimal"}
+Break for Questions
 :::
 
 ### Rerendering report
+
+We understand that it's easy to forget to enter in all of the information you need for a report on it's initial creation! Because of this, we made the argument "rerender_skeleton" that adds on any new information to the skeleton file that you might want such as additional authors, a new species image, parameters, or anything that is open for you to customize in the skeleton file. 
+
+You COULD do this manually, but using the function both allows you to create a record of your changes (making it more reproducible) *and* makes the Quarto yaml less intimidating to new users!
+
+::: {.callout-note}
+You can run re-render skeleton as often as you want, it will always edit the current skeleton in the folder. Please note: any additional skeleton files will make this process fail. The process will also verify that you want to overwrite the current skeleton and either keep or replace the key quantities file.
+:::
+
+#### Our changes: new parameters, additional author, and a new section
+
+Let's add some more parameters to our script which will allow us to references in-text throughout the document.
+
+```{r}
+asar::create_template(
+  rerender_skeleton = TRUE,
+  parameters = TRUE,
+  param_names = c("fleet_a", "fleet_b"),
+  param_values = c("a long fleet name", "b long fleet name")
+)
+```
+
+Now, I need to add my co-authors to my report especially since I wasn't sure who was going to be working on it at the time I created my report template. After review of our terms of reference, I noticed that I needed a section to document my changes to the model, so let's add that in too.
+
+```{r}
+asar::create_template(
+  rerender_skeleton = TRUE,
+  authors = c("John Doe"="NEFSC", "Jane Doe"="SWFSC-LJCA"),
+  custom = TRUE,
+  new_section = "Changes to the Model",
+  section_location = "in-assessment"
+)
+```
+
+::: {.callout-note appearance="minimal"}
+Break for Questions
+:::
 
 ### Calling previous report
 
@@ -303,7 +390,16 @@ Break for questions
 
 # Summary (10 mins)
 
+You should now be able to
+
+- Create and fill in a report template
+- Understand how to use parameters and key quantities within text
+- Understand the format of a standard output object
+- Know how to customize a report
+- Know how to pull and update and old report that used `asar`
+
 # Final Reminders
 
 - We will be holding office hours tomorrow 30 minutes before the next session starts for any questions.
 - Feel free to practice some more tonight and come tomorrow with any questions you may have.
+
