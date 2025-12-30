@@ -333,8 +333,7 @@ asar::create_template(
 ```
 
 ::: {.callout-tip}
-To identify what sections you can include from the standard guidelines, you can run `r 	
-List of existing sections to include in the custom template. Note: this only includes sections within `list.files(system.file("templates", "skeleton", package = "asar"))`
+To identify what sections you can include from the standard guidelines, you can run `r `list.files(system.file("templates", "skeleton", package = "asar"))`. Note: this only includes sections within a standard template. To see other sections for available templates, replace "skeleton" with your target template acronym.
 
 Don't worry if you forget! You can find this code in the documentation for the "custom_sections" argument.
 :::

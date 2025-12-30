@@ -320,7 +320,7 @@ stockplotr::plot_biomass(
 ```{r}
 load("figures/biomass_figure.rda")
 rda$figure
-rda$cap
+rda$caption
 rda$alt_text
 ```
 
@@ -346,7 +346,7 @@ stockplotr::table_landings(
 ```{r}
 load("tables/landings_table.rda")
 rda$table
-rda$cap
+rda$caption
 rda$latex
 ```
 
