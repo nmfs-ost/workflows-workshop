@@ -46,7 +46,13 @@ You probably have some questions lingering from yesterday. Let us answer them fo
 
 # Setup
 
-Fork workshop repository -- take them through it and explain materials
+Let's fork the workshop repository
+
+<!-- tour of the workshop repo and materials -->
+
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
 
 # `asar`: Automated Stock Assessment Reporting
 
@@ -202,7 +208,7 @@ The quantities in found in this chunk can be referenced in-line throughout the d
 For more information on markdown notation, see [Day 1](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html) of this workshop or navigate to [our article](https://nmfs-ost.github.io/asar/articles/markdown_notation.html) on the topic!
 :::
 
-**Demo of where to find preamble quantities and methods to adding to it**
+**Let's find the preamble and see the methods to edit it**
 
 ##### The content
 
@@ -260,9 +266,7 @@ petrale <- asar::convert_output(output_file)
 petrale
 ```
 
-############
-# ADD SCREENSHOT OF petrale HERE
-##############
+![A screenshot of the first 8 columns and 10 rows of data from a standard output tibble converted from a stock synthesis Report.sso file.](images/petrale_conout.png)
 
 ::: {.callout-tip}
 `convert_output()` will recognize which model the results file came from as well as fleet names. In the rare case either of these are incorrect, the function contains arguments of `model` and `fleet_names` which you as the user can indicate for the function.
@@ -275,11 +279,21 @@ If you are explicitly stating fleet names, make sure they are in the order you e
 The converted output is a tibble that reframes and reshapes your data. The tibble contains each output value as a row with its error and any associated indexing values.
 
 
-**Walk through of converted output object**
+::: {.callout-note}
+Let's walk through a standard output file in more detail.
+:::
 
 ::: {.callout-note}
 For more information, navigate to [this article](https://nmfs-ost.github.io/asar/articles/convert_output_details.html) describing the conversion process and find ways your can convert your model's data!
 :::
+
+___________________________________________________________________________________________________________
+
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
+
+<!-- this is a good place to take a 15 min break -->
 
 ## `asar` workflow: Complex example
 
@@ -325,9 +339,8 @@ List of existing sections to include in the custom template. Note: this only inc
 Don't worry if you forget! You can find this code in the documentation for the "custom_sections" argument.
 :::
 
-
 ::: {.callout-note appearance="minimal"}
-15 min break
+Break for Questions
 :::
 
 ### Rerendering report
@@ -365,6 +378,10 @@ asar::create_template(
 )
 ```
 
+::: {.callout-note appearance="minimal"}
+Break for Questions
+:::
+
 ### Calling previous report
 
 ::: {.callout-note appearance="minimal"}
@@ -373,7 +390,16 @@ Break for questions
 
 # Summary (10 mins)
 
+You should now be able to
+
+- Create and fill in a report template
+- Understand how to use parameters and key quantities within text
+- Understand the format of a standard output object
+- Know how to customize a report
+- Know how to pull and update and old report that used `asar`
+
 # Final Reminders
 
 - We will be holding office hours tomorrow 30 minutes before the next session starts for any questions.
 - Feel free to practice some more tonight and come tomorrow with any questions you may have.
+
