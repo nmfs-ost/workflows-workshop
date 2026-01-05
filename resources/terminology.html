@@ -363,24 +363,24 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>skeleton</td>
-<td>the central controlling quarto document created from {asar}. The document name will contain ‘skeleton’ within it</td>
+<td>Absolute filepath</td>
+<td>A filepath that starts in relation to the root directory (oftentimes the start of your hard drive). For example, the absolute filepath for a file “C:/Documents/metadata.qmd” would be “C:/Documents/metadata.qmd”.</td>
 </tr>
 <tr class="even">
-<td>render</td>
-<td>synonymous with compile, build the document to produce a single html or pdf report</td>
+<td>Relative filepath</td>
+<td>A filepath that starts in relation to the working directory. For example, if the working directory is “C:/Documents/”, then the relative filepath for a file “C:/Documents/metadata.qmd” would be “metadata.qmd”.</td>
+</tr>
+<tr class="odd">
+<td>Render</td>
+<td>Synonymous with compile; build the document to produce a single html or pdf report</td>
+</tr>
+<tr class="even">
+<td>Skeleton</td>
+<td>The central controlling Quarto document created from {asar}. The document filename will contain ‘skeleton’</td>
 </tr>
 <tr class="odd">
 <td>Working directory</td>
-<td>The place where your program looks for files. Also known as the “root”</td>
-</tr>
-<tr class="even">
-<td>Absolute filepath</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Relative filepath</td>
-<td></td>
+<td>The place where your program looks for files. If you are working within an R Project, the working directory is the folder that contains every file within your project. You can identify it with the <code>getwd()</code> command.</td>
 </tr>
 </tbody>
 </table>
