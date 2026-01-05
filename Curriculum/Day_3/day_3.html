@@ -386,10 +386,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#customizing" id="toc-customizing" class="nav-link" data-scroll-target="#customizing">Customizing</a></li>
   </ul></li>
-  <li><a href="#example-table" id="toc-example-table" class="nav-link" data-scroll-target="#example-table">Example Table</a>
-  <ul class="collapse">
-  <li><a href="#rda-file" id="toc-rda-file" class="nav-link" data-scroll-target="#rda-file">rda file</a></li>
-  </ul></li>
+  <li><a href="#example-table" id="toc-example-table" class="nav-link" data-scroll-target="#example-table">Example Table</a></li>
+  <li><a href="#exporting" id="toc-exporting" class="nav-link" data-scroll-target="#exporting">Exporting</a></li>
   </ul></li>
   <li><a href="#integrating-stockplotr-in-the-workflow" id="toc-integrating-stockplotr-in-the-workflow" class="nav-link" data-scroll-target="#integrating-stockplotr-in-the-workflow">Integrating stockplotr in the workflow</a>
   <ul class="collapse">
@@ -853,9 +851,10 @@ Note
 </div>
 </div>
 </div>
-<section id="rda-file" class="level3">
-<h3 class="anchored" data-anchor-id="rda-file">rda file</h3>
-<p>An rda is an R data file that stores R objects and preserves their structure. In this case, you can think of an rda file exported from <code>stockplotr</code> as a list of objects.</p>
+</section>
+<section id="exporting" class="level2">
+<h2 class="anchored" data-anchor-id="exporting">Exporting</h2>
+<p>You can export any table or plot along with their associated caption and alternative text (figures only) in the format of an rda file. An rda is an R data file that stores R objects and preserves their structure. In this case, you can think of an rda file exported from <code>stockplotr</code> as a list of objects.</p>
 <p>Each plot or table has the option to export it as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:</p>
 <ul>
 <li>ggplot or flextable object</li>
@@ -1042,7 +1041,6 @@ Tip
 </div>
 </div>
 </div>
-</section>
 </section>
 </section>
 <section id="integrating-stockplotr-in-the-workflow" class="level1">
