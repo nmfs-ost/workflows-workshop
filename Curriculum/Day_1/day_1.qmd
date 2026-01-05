@@ -6,6 +6,9 @@ format: html
             padding: 10px; 
             border: 2px solid lightgray; 
             margin: 10px;">
+            
+<!-- Sam start -->
+            
 # Objectives
 -   Identify purpose and scope of workshop
 -   Learn how markdown can be used to enhance {asar} reports
@@ -123,7 +126,37 @@ You can include LaTeX-style math equations in your report.
     $$
     ```
 
+### References and Bibliography
+
+<!-- Sam's last section -->
+
+You can easily add citations to your report. We provide an `asar_references.bib` file in the "report" folder with hundreds of citations for you to reference, though you can add your own to the file too.
+
+To cite a reference in the text, use the `@` symbol followed by the citation key (e.g., `@Biddle_1992`). R Markdown will automatically format the citation and add it to the "References" section towards the end of your report.
+
+Here's an example entry from the .bib file:
+
+````
+@article{Biddle_1992,
+  title={Repton and the Vikings},
+  volume={66},
+  DOI={10.1017/S0003598X00081023},
+  number={250}, journal={Antiquity},
+  author={Biddle, Martin and Kjølbye-Biddle, Birthe},
+  year={1992},
+  pages={36–51}
+}
+````
+
+::: {.callout-note appearance="minimal"}
+20 minute break for questions & practicing
+:::
+
+{{< include ../snippets/markdown_exercises.qmd >}}
+
 # Quarto
+
+<!-- Sophie start -->
 
 ## Why use Quarto for reports?
 
