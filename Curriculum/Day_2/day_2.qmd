@@ -306,7 +306,7 @@ Once you've added files to those "figures" and "tables" folders, you can rerun
 20 minute break for questions & practicing
 :::
 
-## `asar` workflow: Complex example
+## Advanced `asar` workflow
 
 Now we are going to walk-through a more complex use of `asar` by
 
