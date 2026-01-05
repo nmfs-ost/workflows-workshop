@@ -387,7 +387,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#the-main-asar-functions" id="toc-the-main-asar-functions" class="nav-link" data-scroll-target="#the-main-asar-functions">The main <code>asar</code> functions</a>
   <ul class="collapse">
   <li><a href="#create_template" id="toc-create_template" class="nav-link" data-scroll-target="#create_template"><code>create_template()</code></a></li>
-  <li><a href="#convert_output" id="toc-convert_output" class="nav-link" data-scroll-target="#convert_output"><code>convert_output()</code></a></li>
+  <li><a href="#stockplotrconvert_output" id="toc-stockplotrconvert_output" class="nav-link" data-scroll-target="#stockplotrconvert_output"><code>stockplotr::convert_output()</code></a></li>
+  <li><a href="#create_tables_doc-create_figures_doc" id="toc-create_tables_doc-create_figures_doc" class="nav-link" data-scroll-target="#create_tables_doc-create_figures_doc"><code>create_tables_doc()</code> &amp; <code>create_figures_doc()</code></a></li>
   </ul></li>
   <li><a href="#asar-workflow-complex-example" id="toc-asar-workflow-complex-example" class="nav-link" data-scroll-target="#asar-workflow-complex-example"><code>asar</code> workflow: Complex example</a>
   <ul class="collapse">
@@ -537,10 +538,10 @@ Important
 </section>
 <section id="the-main-asar-functions" class="level2">
 <h2 class="anchored" data-anchor-id="the-main-asar-functions">The main <code>asar</code> functions</h2>
-<p><code>asar</code> revolves around 4 primary functions, but contains a variety of support functions that help make the template. While most of them are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:</p>
+<p><code>asar</code> revolves around a few primary functions*, but contains a variety of support functions that help make the template. While most of them are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:</p>
 <ul>
 <li><code>create_template()</code></li>
-<li><code>convert_output()</code></li>
+<li><code>convert_output()</code>* (*This function is now located within <code>stockplotr</code> but is useful for building <code>asar</code> reports)</li>
 <li><code>create_tables_doc()</code></li>
 <li><code>create_figures_doc()</code></li>
 </ul>
@@ -758,7 +759,7 @@ Important
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Practice exercises: <code>create_template()</code>
+<span class="screen-reader-only">Caution</span>Practice exercises: Foundational <code>create_template()</code> use cases
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -779,7 +780,7 @@ Important
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span><strong>Answers</strong> for Practice exercises: <code>create_template()</code>
+<span class="screen-reader-only">Caution</span><strong>Answers</strong> for Practice exercises: Foundational <code>create_template()</code> use cases
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -852,18 +853,20 @@ Important
 </section>
 </section>
 </section>
-<section id="convert_output" class="level3">
-<h3 class="anchored" data-anchor-id="convert_output"><code>convert_output()</code></h3>
-<p>Another major component of <code>asar</code> is our converter function which converts an output file from a stock assessment model to a standard format which can be used by the preamble and our other package <code>stockplotr</code>.</p>
-<p>The <code>convert_output</code> function currently accepts output from Stock Synthesis (Report.sso) version 3.30 and higher, Beaufort Assessment Model (BAM; output.rda), or Fishereies Integrated Modelling System (FIMS; R object). We are actively working on expanding the <code>convert_output</code> function to be compatiable with all major U.S. stock assessment models. This function takes a lot of resources to develop, so any contribution to the package is welcome! If you have a model that is not currently compatible with <code>asar::convert_output()</code>, please navigate to <a href="https://nmfs-ost.github.io/asar/articles/convert_output_details.html">our article</a> describing the function and how to get your output in the same format as those produced from the converter!</p>
+<section id="stockplotrconvert_output" class="level3">
+<h3 class="anchored" data-anchor-id="stockplotrconvert_output"><code>stockplotr::convert_output()</code></h3>
+<p><strong>What it does:</strong></p>
+<p>This function, which was <strong>formerly located within <code>asar</code> but has been moved to <code>stockplotr</code></strong>, converts an output file from a stock assessment model to a standard format. This file can be used to extract quantities within the preamble and to build figures and tables with <code>stockplotr</code> (covered in <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html">Day 3</a>).</p>
+<p>The <code>convert_output</code> function currently accepts output from Stock Synthesis (Report.sso) version 3.30 and higher, Beaufort Assessment Model (BAM; output.rda), or Fishereies Integrated Modelling System (FIMS; R object). We are actively working on expanding the <code>convert_output</code> function to be compatible with all major U.S. stock assessment models. This function takes a lot of resources to develop, so any contribution to the package is welcome! If you have a model that is not currently compatible with <code>stockplotr::convert_output()</code>, please navigate to <a href="https://nmfs-ost.github.io/stockplotr/articles/convert_output_details.html">our article</a> describing the function and how to get your output in the same format as those produced from the converter!</p>
 <p><strong>Let’s try it out!</strong></p>
 <p>We have uploaded an example Report.sso file in the workshop GitHub, but if you have a compatible output file, we encourage you to use your own.</p>
 <div class="cell" data-messages="false">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify output file</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>output_file <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"example_output"</span>, <span class="st">"Report.sso"</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># convert the output</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>petrale <span class="ot">&lt;-</span> asar<span class="sc">::</span><span class="fu">convert_output</span>(output_file)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>petrale <span class="ot">&lt;-</span> stockplotr<span class="sc">::</span><span class="fu">convert_output</span>(output_file)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p><strong>Run it!</strong></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>petrale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -913,22 +916,23 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For more information, navigate to <a href="https://nmfs-ost.github.io/asar/articles/convert_output_details.html">this article</a> describing the conversion process and find ways your can convert your model’s data!</p>
+<p>For more information, navigate to <a href="https://nmfs-ost.github.io/stockplotr/articles/convert_output_details.html">this article</a> describing the conversion process and find ways your can convert your model’s data!</p>
 </div>
 </div>
-<hr>
+</section>
+</section>
+<section id="create_tables_doc-create_figures_doc" class="level3">
+<h3 class="anchored" data-anchor-id="create_tables_doc-create_figures_doc"><code>create_tables_doc()</code> &amp; <code>create_figures_doc()</code></h3>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Break for questions</p>
+<p>20 minute break for questions &amp; practicing</p>
 </div>
 </div>
 </div>
-<!-- this is a good place to take a 15 min break -->
-</section>
 </section>
 </section>
 <section id="asar-workflow-complex-example" class="level2">
@@ -1032,7 +1036,82 @@ Note
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Break for Questions</p>
+<p>20 minute break for questions &amp; practicing</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Practice exercises: Advanced <code>create_template()</code> use cases
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Create a stock assessment report template tailored for the AFSC (a SAFE report).</p></li>
+<li><p>Create a stock assessment report template with two main sections: an executive summary and an introduction (the following sections will be added automatically: acknowledgments, references, tables, figures).</p></li>
+<li><p>Whoops! You forgot to add your species name, and now you don’t have a cover image. Run <code>create_template()</code> with the argument <code>rerender_skeleton = TRUE</code>, and add your species name (common and scientific names) as two additional arguments: “Petrale sole” (<em>Eopsetta jordani</em>).</p></li>
+</ol>
+<!-- 
+Add questions to practice adding new sections and calling a previous report when features are ready.
+2. Create a stock assessment report template with two new sections. "" should be placed before the introduction and "" should be placed after the acknowledgments. -->
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span><strong>Answers</strong> for Practice exercises: Advanced <code>create_template()</code> use cases
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Create a stock assessment report template tailored for the AFSC (a SAFE report).</li>
+</ol>
+<p><strong>Answer</strong>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">create_template</span>(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"safe"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<!-- asar::create_template( -->
+<!--   # custom = TRUE, -->
+<!--   # new_section = c("Changes to the Model", "Sec3"), -->
+<!--   # section_location = c("before-introduction", "after-acknowledgments") -->
+<!-- ) -->
+<ol start="2" type="1">
+<li>Create a stock assessment report template with two main sections: an executive summary and an introduction (the following sections will be added automatically: acknowledgments, references, tables, figures).</li>
+</ol>
+<p><strong>Answer</strong>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">create_template</span>(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">authors =</span> <span class="fu">c</span>(<span class="st">"Samantha Schiano"</span> <span class="ot">=</span> <span class="st">"OST"</span>),</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">custom =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">custom_sections =</span> <span class="fu">c</span>(<span class="st">"executive_summary"</span>, <span class="st">"introduction"</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="3" type="1">
+<li>Whoops! You forgot to add your species name, and now you don’t have a cover image. Run <code>create_template()</code> with the argument <code>rerender_skeleton = TRUE</code>, and add your species name (common and scientific names) as two additional arguments: “Petrale sole” (<em>Eopsetta jordani</em>).</li>
+</ol>
+<p><strong>Answer</strong>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">create_template</span>(</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">rerender_skeleton =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">species =</span> <span class="st">"Petrale sole"</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">spp_latin =</span> <span class="st">"Eopsetta jordani"</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">file_dir =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"report"</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </div>
 </div>
 </div>

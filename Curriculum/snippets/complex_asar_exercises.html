@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>template_exercises – Workflows workshop</title>
+<title>complex_asar_exercises – Workflows workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -382,18 +382,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Practice exercises: Foundational <code>create_template()</code> use cases
+<span class="screen-reader-only">Caution</span>Practice exercises: Advanced <code>create_template()</code> use cases
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p>Run <code>create_template()</code>. Fill in your own values for <code>office</code>, <code>region</code>, <code>species</code>, <code>spp_latin</code>, and <code>year</code>. Use default values for all remaining arguments.</p></li>
-<li><p>Whoops! You forgot to add the report author’s name and affiliation (yours!). Open the report skeleton and edit the yaml with this information.</p></li>
-<li><p>You realize that your report will frequently reference another species: <em>Patrickicus starrus</em>. Add a new parameter to the report’s yaml so that you can reference “Patrickicus starrus” with a simple “ps”.</p></li>
-<li><p>Open up the Executive Summary qmd file and add a sentence that references your new parameter.</p></li>
+<li><p>Create a stock assessment report template tailored for the AFSC (a SAFE report).</p></li>
+<li><p>Create a stock assessment report template with two main sections: an executive summary and an introduction (the following sections will be added automatically: acknowledgments, references, tables, figures).</p></li>
+<li><p>Whoops! You forgot to add your species name, and now you don’t have a cover image. Run <code>create_template()</code> with the argument <code>rerender_skeleton = TRUE</code>, and add your species name (common and scientific names) as two additional arguments: “Petrale sole” (<em>Eopsetta jordani</em>).</p></li>
 </ol>
+<!-- 
+Add questions to practice adding new sections and calling a previous report when features are ready.
+2. Create a stock assessment report template with two new sections. "" should be placed before the introduction and "" should be placed after the acknowledgments. -->
 </div>
 </div>
 </div>
@@ -403,73 +405,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span><strong>Answers</strong> for Practice exercises: Foundational <code>create_template()</code> use cases
+<span class="screen-reader-only">Caution</span><strong>Answers</strong> for Practice exercises: Advanced <code>create_template()</code> use cases
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Run <code>create_template()</code>. Fill in your own values for <code>office</code>, <code>region</code>, <code>species</code>, <code>spp_latin</code>, and <code>year</code>. Use default values for all remaining arguments.</li>
+<li>Create a stock assessment report template tailored for the AFSC (a SAFE report).</li>
 </ol>
-<p><strong>Answer</strong>: Run code similar to the following, adding in your own values for the arguments below.</p>
+<p><strong>Answer</strong>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_template</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">office =</span> <span class="st">"SEFSC"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">region =</span> <span class="st">"Southeast Coast"</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">species =</span> <span class="st">"Atlantic Bigeye Tuna"</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">spp_latin =</span> <span class="st">"Thunnus obesus"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="dv">2026</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">create_template</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"safe"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<!-- asar::create_template( -->
+<!--   # custom = TRUE, -->
+<!--   # new_section = c("Changes to the Model", "Sec3"), -->
+<!--   # section_location = c("before-introduction", "after-acknowledgments") -->
+<!-- ) -->
 <ol start="2" type="1">
-<li>Whoops! You forgot to add the report author’s name and affiliation (yours!). Open the report skeleton and edit the yaml with this information.</li>
+<li>Create a stock assessment report template with two main sections: an executive summary and an introduction (the following sections will be added automatically: acknowledgments, references, tables, figures).</li>
 </ol>
-<p><strong>Answer</strong>: Open the .qmd file with “skeleton” in the filename. Edit the yaml’s “author” section to go from something like the first chunk to the second chunk.</p>
+<p><strong>Answer</strong>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Original yaml snippet (located just beneath the title)</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'FIRST LAST'</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    affiliations<span class="sc">:</span> </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'NOAA Fisheries'</span> </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        address<span class="sc">:</span> <span class="st">'ADDRESS'</span> </span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        city<span class="sc">:</span> <span class="st">'CITY'</span> </span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        state<span class="sc">:</span> <span class="st">'STATE'</span> </span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        postal<span class="sc">-</span>code<span class="sc">:</span> <span class="st">'POSTAL CODE'</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated yaml snippet</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'Patrick Star'</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    affiliations<span class="sc">:</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'NOAA Fisheries Southeast Fisheries Science Center'</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        address<span class="sc">:</span> <span class="st">'75 Virginia Beach Drive'</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        city<span class="sc">:</span> <span class="st">'Miami, FL'</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        state<span class="sc">:</span> <span class="st">'FL'</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        postal<span class="sc">-</span>code<span class="sc">:</span> <span class="st">'33149'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">create_template</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">authors =</span> <span class="fu">c</span>(<span class="st">"Samantha Schiano"</span> <span class="ot">=</span> <span class="st">"OST"</span>),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">custom =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">custom_sections =</span> <span class="fu">c</span>(<span class="st">"executive_summary"</span>, <span class="st">"introduction"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="3" type="1">
-<li>You realize that your report will frequently reference another species: <em>Patrickicus starrus</em>. Add a new parameter to the report’s yaml so that you can reference “Patrickicus starrus” with a simple “ps”.</li>
+<li>Whoops! You forgot to add your species name, and now you don’t have a cover image. Run <code>create_template()</code> with the argument <code>rerender_skeleton = TRUE</code>, and add your species name (common and scientific names) as two additional arguments: “Petrale sole” (<em>Eopsetta jordani</em>).</li>
 </ol>
-<p><strong>Answer</strong>: Open the .qmd file with “skeleton” in the filename. Edit the yaml’s “params” section and add the following line:</p>
+<p><strong>Answer</strong>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated yaml snippet</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>params<span class="sc">:</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>   office<span class="sc">:</span> <span class="st">'SEFSC'</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>   species<span class="sc">:</span> <span class="st">'Atlantic Bigeye Tuna'</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>   spp_latin<span class="sc">:</span> <span class="st">'Thunnus obesus'</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>   region<span class="sc">:</span> <span class="st">'Southeast Coast'</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>   ps<span class="sc">:</span> <span class="st">'Patrickicus starrus'</span> <span class="co"># &lt;-- new line</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">create_template</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">rerender_skeleton =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">species =</span> <span class="st">"Petrale sole"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">spp_latin =</span> <span class="st">"Eopsetta jordani"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">file_dir =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"report"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<ol start="4" type="1">
-<li>Open up the Executive Summary qmd file and add a sentence that references your new parameter.</li>
-</ol>
-<p><strong>Answer</strong>: Open the 01_executive_summary.qmd file and add a line that references the param ‘ps’, like the following:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="st">"The species `r ps` was abundant throughout the study area."</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><em>The sentence will render as such:</em></p>
-<p>“The species Patrickicus starrus was abundant throughout the study area.”</p>
 </div>
 </div>
 </div>
@@ -898,7 +876,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/nmfs-ost/workflows-workshop/edit/main/Curriculum/snippets/template_exercises.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/Curriculum/snippets/template_exercises.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/nmfs-ost/workflows-workshop/edit/main/Curriculum/snippets/complex_asar_exercises.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/Curriculum/snippets/complex_asar_exercises.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
