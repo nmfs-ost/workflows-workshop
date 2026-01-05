@@ -6,6 +6,9 @@ format: html
             padding: 10px; 
             border: 2px solid lightgray; 
             margin: 10px;">
+
+<!-- Sam start -->
+
 # Objectives
 -   Learn the basics of creating a stock assessment report using {asar}
 -   Understand the complexities and customization options of the package
@@ -324,6 +327,7 @@ For more information, navigate to [this article](https://nmfs-ost.github.io/stoc
 :::
 
 ## Advanced {asar} workflow
+<!-- Sophie start -->
 
 Now we are going to walk-through a more complex use of {asar} by
 
