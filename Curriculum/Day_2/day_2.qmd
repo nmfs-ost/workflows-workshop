@@ -82,10 +82,10 @@ If you use VSCode or Positron for your IDE, by navigating to a folder on your co
 
 ## The main `asar` functions
 
-`asar` revolves around a few primary functions*, but contains a variety of support functions that help make the template. While most of them are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:
+`asar` revolves around a few primary functions* and contains several support functions that help make the template. While most are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:
 
 - `create_template()`
-- `convert_output()`* (*This function is now located within `stockplotr` but is useful for building `asar` reports)
+- `stockplotr::convert_output()`* (*This function is now located within `stockplotr` but is useful for building `asar` reports)
 - `create_tables_doc()`
 - `create_figures_doc()`
     
@@ -293,12 +293,18 @@ For more information, navigate to [this article](https://nmfs-ost.github.io/stoc
 
 ### `create_tables_doc()` & `create_figures_doc()`
 
+**What they do:**
+
+These functions create child documents that display your report's tables and figures, respectively.
+
+If you run `create_template()` *without* folders in your working directory that contain your figures (called "figures") and tables (called "tables"), then the resulting child documents will be empty except for a note referring you to use `stockplotr` to make plots.
+
+Once you've added files to those "figures" and "tables" folders, you can rerun 
+`create_tables_doc()` & `create_figures_doc()` to add those plots to your report. We cover how to do this in [Day 3](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#adding-tables-and-figures-to-your-report).
 
 ::: {.callout-note appearance="minimal"}
 20 minute break for questions & practicing
 :::
-
-
 
 ## `asar` workflow: Complex example
 
@@ -382,17 +388,21 @@ asar::create_template(
 )
 ```
 
+<!-- Add back in once section is developed -->
+
+<!-- ::: {.callout-note appearance="minimal"} -->
+<!-- Break for questions -->
+<!-- ::: -->
+
+<!-- ### Calling previous report -->
+
+
+
 ::: {.callout-note appearance="minimal"}
 20 minute break for questions & practicing
 :::
 
 {{< include ../snippets/complex_asar_exercises.qmd >}}
-
-### Calling previous report
-
-::: {.callout-note appearance="minimal"}
-Break for questions
-:::
 
 # Summary (10 mins)
 
