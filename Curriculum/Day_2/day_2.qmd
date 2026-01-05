@@ -82,10 +82,10 @@ If you use VSCode or Positron for your IDE, by navigating to a folder on your co
 
 ## The main `asar` functions
 
-`asar` revolves around 4 primary functions, but contains a variety of support functions that help make the template. While most of them are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:
+`asar` revolves around a few primary functions*, but contains a variety of support functions that help make the template. While most of them are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:
 
 - `create_template()`
-- `convert_output()`
+- `convert_output()`* (*This function is now located within `stockplotr` but is useful for building `asar` reports)
 - `create_tables_doc()`
 - `create_figures_doc()`
     
@@ -241,11 +241,13 @@ We are advising everyone that if required content is needed beyond the standard 
 
 {{< include ../snippets/template_exercises.qmd >}}
 
-### `convert_output()`
+### `stockplotr::convert_output()`
 
-Another major component of `asar` is our converter function which converts an output file from a stock assessment model to a standard format which can be used by the preamble and our other package `stockplotr`. 
+**What it does:**
 
-The `convert_output` function currently accepts output from Stock Synthesis (Report.sso) version 3.30 and higher, Beaufort Assessment Model (BAM; output.rda), or Fishereies Integrated Modelling System (FIMS; R object). We are actively working on expanding the `convert_output` function to be compatiable with all major U.S. stock assessment models. This function takes a lot of resources to develop, so any contribution to the package is welcome! If you have a model that is not currently compatible with `asar::convert_output()`, please navigate to [our article](https://nmfs-ost.github.io/asar/articles/convert_output_details.html) describing the function and how to get your output in the same format as those produced from the converter!
+This function, which was **formerly located within `asar` but has been moved to `stockplotr`**, converts an output file from a stock assessment model to a standard format. This file can be used to extract quantities within the preamble and to build figures and tables with `stockplotr` (covered in [Day 3](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html)).
+
+The `convert_output` function currently accepts output from Stock Synthesis (Report.sso) version 3.30 and higher, Beaufort Assessment Model (BAM; output.rda), or Fishereies Integrated Modelling System (FIMS; R object). We are actively working on expanding the `convert_output` function to be compatible with all major U.S. stock assessment models. This function takes a lot of resources to develop, so any contribution to the package is welcome! If you have a model that is not currently compatible with `stockplotr::convert_output()`, please navigate to [our article](https://nmfs-ost.github.io/stockplotr/articles/convert_output_details.html) describing the function and how to get your output in the same format as those produced from the converter!
 
 **Let's try it out!**
 
@@ -259,8 +261,10 @@ We have uploaded an example Report.sso file in the workshop GitHub, but if you h
 # Identify output file
 output_file <- here::here("example_output", "Report.sso")
 # convert the output
-petrale <- asar::convert_output(output_file)
+petrale <- stockplotr::convert_output(output_file)
 ```
+
+**Run it!**
 
 ```{r eval=FALSE}
 petrale
@@ -284,16 +288,17 @@ Let's walk through a standard output file in more detail.
 :::
 
 ::: {.callout-note}
-For more information, navigate to [this article](https://nmfs-ost.github.io/asar/articles/convert_output_details.html) describing the conversion process and find ways your can convert your model's data!
+For more information, navigate to [this article](https://nmfs-ost.github.io/stockplotr/articles/convert_output_details.html) describing the conversion process and find ways your can convert your model's data!
 :::
 
-___________________________________________________________________________________________________________
+### `create_tables_doc()` & `create_figures_doc()`
+
 
 ::: {.callout-note appearance="minimal"}
-Break for questions
+20 minute break for questions & practicing
 :::
 
-<!-- this is a good place to take a 15 min break -->
+
 
 ## `asar` workflow: Complex example
 
@@ -378,8 +383,10 @@ asar::create_template(
 ```
 
 ::: {.callout-note appearance="minimal"}
-Break for Questions
+20 minute break for questions & practicing
 :::
+
+{{< include ../snippets/complex_asar_exercises.qmd >}}
 
 ### Calling previous report
 
