@@ -1,6 +1,6 @@
 
 ::: {.callout-caution collapse="true"}
-## Practice exercises: `create_template()`
+## Practice exercises: Foundational `create_template()` use cases
 
 1. Run `create_template()`. Fill in your own values for `office`, `region`, `species`, `spp_latin`, and `year`. Use default values for all remaining arguments.
 
@@ -13,7 +13,7 @@
 :::
 
 ::: {.callout-caution collapse="true"}
-## **Answers** for Practice exercises: `create_template()`
+## **Answers** for Practice exercises: Foundational `create_template()` use cases
 
 1. Run `create_template()`. Fill in your own values for `office`, `region`, `species`, `spp_latin`, and `year`. Use default values for all remaining arguments.
 

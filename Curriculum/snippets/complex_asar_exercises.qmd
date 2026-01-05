@@ -1,0 +1,61 @@
+
+::: {.callout-caution collapse="true"}
+## Practice exercises: Advanced `create_template()` use cases
+
+1. Create a stock assessment report template tailored for the AFSC (a SAFE report).
+
+2. Create a stock assessment report template with two main sections: an executive summary and an introduction (the following sections will be added automatically: acknowledgments, references, tables, figures).
+
+3. Whoops! You forgot to add your species name, and now you don't have a cover image. Run `create_template()` with the argument `rerender_skeleton = TRUE`, and add your species name (common and scientific names) as two additional arguments: "Petrale sole" (*Eopsetta jordani*).
+
+<!-- 
+Add questions to practice adding new sections and calling a previous report when features are ready.
+2. Create a stock assessment report template with two new sections. "" should be placed before the introduction and "" should be placed after the acknowledgments. -->
+
+:::
+
+::: {.callout-caution collapse="true"}
+## **Answers** for Practice exercises: Advanced `create_template()` use cases
+
+1. Create a stock assessment report template tailored for the AFSC (a SAFE report).
+
+**Answer**:
+
+```{r eval=FALSE}
+asar::create_template(
+  type = "safe"
+)
+```
+
+<!-- asar::create_template( -->
+<!--   # custom = TRUE, -->
+<!--   # new_section = c("Changes to the Model", "Sec3"), -->
+<!--   # section_location = c("before-introduction", "after-acknowledgments") -->
+<!-- ) -->
+
+2. Create a stock assessment report template with two main sections: an executive summary and an introduction (the following sections will be added automatically: acknowledgments, references, tables, figures).
+
+**Answer**:
+
+```{r eval=FALSE}
+asar::create_template(
+    authors = c("Samantha Schiano" = "OST"),
+    custom = TRUE,
+    custom_sections = c("executive_summary", "introduction")
+)
+```
+
+3. Whoops! You forgot to add your species name, and now you don't have a cover image. Run `create_template()` with the argument `rerender_skeleton = TRUE`, and add your species name (common and scientific names) as two additional arguments: "Petrale sole" (*Eopsetta jordani*).
+
+**Answer**:
+
+```{r eval=FALSE}
+asar::create_template(
+  rerender_skeleton = TRUE,
+  species = "Petrale sole",
+  spp_latin = "Eopsetta jordani",
+  file_dir = here::here("report")
+)
+```
+
+:::
