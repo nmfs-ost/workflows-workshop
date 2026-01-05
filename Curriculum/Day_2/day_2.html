@@ -394,7 +394,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#create-your-own" id="toc-create-your-own" class="nav-link" data-scroll-target="#create-your-own">Create-your-own</a></li>
   <li><a href="#rerendering-report" id="toc-rerendering-report" class="nav-link" data-scroll-target="#rerendering-report">Rerendering report</a></li>
-  <li><a href="#calling-previous-report" id="toc-calling-previous-report" class="nav-link" data-scroll-target="#calling-previous-report">Calling previous report</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#summary-10-mins" id="toc-summary-10-mins" class="nav-link" data-scroll-target="#summary-10-mins">Summary (10 mins)</a></li>
@@ -538,10 +537,10 @@ Important
 </section>
 <section id="the-main-asar-functions" class="level2">
 <h2 class="anchored" data-anchor-id="the-main-asar-functions">The main <code>asar</code> functions</h2>
-<p><code>asar</code> revolves around a few primary functions*, but contains a variety of support functions that help make the template. While most of them are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:</p>
+<p><code>asar</code> revolves around a few primary functions* and contains several support functions that help make the template. While most are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:</p>
 <ul>
 <li><code>create_template()</code></li>
-<li><code>convert_output()</code>* (*This function is now located within <code>stockplotr</code> but is useful for building <code>asar</code> reports)</li>
+<li><code>stockplotr::convert_output()</code>* (*This function is now located within <code>stockplotr</code> but is useful for building <code>asar</code> reports)</li>
 <li><code>create_tables_doc()</code></li>
 <li><code>create_figures_doc()</code></li>
 </ul>
@@ -923,6 +922,10 @@ Note
 </section>
 <section id="create_tables_doc-create_figures_doc" class="level3">
 <h3 class="anchored" data-anchor-id="create_tables_doc-create_figures_doc"><code>create_tables_doc()</code> &amp; <code>create_figures_doc()</code></h3>
+<p><strong>What they do:</strong></p>
+<p>These functions create child documents that display your report’s tables and figures, respectively.</p>
+<p>If you run <code>create_template()</code> <em>without</em> folders in your working directory that contain your figures (called “figures”) and tables (called “tables”), then the resulting child documents will be empty except for a note referring you to use <code>stockplotr</code> to make plots.</p>
+<p>Once you’ve added files to those “figures” and “tables” folders, you can rerun <code>create_tables_doc()</code> &amp; <code>create_figures_doc()</code> to add those plots to your report. We cover how to do this in <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#adding-tables-and-figures-to-your-report">Day 3</a>.</p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1030,6 +1033,11 @@ Note
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">section_location =</span> <span class="st">"in-assessment"</span></span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<!-- Add back in once section is developed -->
+<!-- ::: {.callout-note appearance="minimal"} -->
+<!-- Break for questions -->
+<!-- ::: -->
+<!-- ### Calling previous report -->
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1116,19 +1124,6 @@ Add questions to practice adding new sections and calling a previous report when
 </div>
 </div>
 </section>
-</section>
-<section id="calling-previous-report" class="level3">
-<h3 class="anchored" data-anchor-id="calling-previous-report">Calling previous report</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Break for questions</p>
-</div>
-</div>
-</div>
 </section>
 </section>
 </section>
