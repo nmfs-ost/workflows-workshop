@@ -49,7 +49,7 @@ get_workshop_files(
   )
 ```
 
-6. Install important R packages {#sec-install_pkgs}
+6. Install important R packages
 
 ::: {.callout-tip}
 ## Tip
