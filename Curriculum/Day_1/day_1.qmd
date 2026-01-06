@@ -304,7 +304,7 @@ We will explore the components of the yaml in the Day 2 curriculum.
 
 ## Code Chunks
 
-As we previously mentioned, the beauty of using quarto is that it allows the user to integrate text and code throughout their reports making them super reproducible.
+As we previously mentioned, the beauty of using Quarto is that it allows the user to integrate text and code throughout their reports making them super reproducible.
 
 The basics of a code chunk (chunk) are:
 

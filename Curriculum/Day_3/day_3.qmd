@@ -363,7 +363,7 @@ We have designed two functions that allow you to automatically create all availa
 
 {{< include ../snippets/figure_table_exercises.qmd >}}
 
-# Integrating stockplotr in the workflow
+# Integrating `stockplotr` into the workflow
 
 For the second half of today's lesson, let's reorient ourselves. We've just learned how to make figures and tables with `stockplotr`. Now, we'll cover how to add those plots into your `asar` report template.
 
@@ -504,7 +504,7 @@ Notice how there is alternative text added to this method of adding a table. In 
 
 ##### Direct coding-in-qmd figure workflow {#sec-code-in-qmd-fig}
 
-Like with tables, running `create_figures_doc()` produces a blank figures quarto file. We add figures similarly to tables. In fact, the only major difference is that you must write **alternative text** for your figure.
+Like with tables, running `create_figures_doc()` produces a blank figures Quarto file. We add figures similarly to tables. In fact, the only major difference is that you must write **alternative text** for your figure.
 
 Put your alternative text in a chunk option called 'fig-alt' (example below).
 

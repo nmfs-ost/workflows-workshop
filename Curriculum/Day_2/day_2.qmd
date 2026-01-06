@@ -56,7 +56,7 @@ Break for questions
 
 # `asar`: Automated Stock Assessment Reporting
 
-In this section we will cover the basics of `asar` by generating a blank stock assessment report and going through basic navigation of the template.
+In this section we will cover the basics of `asar` by generating a stock assessment report and going through basic navigation of the template.
 
 ## Installation
 
@@ -68,9 +68,7 @@ If you receive an error message when attempting the download the package, please
 
 ## Recommended workflow
 
-We *highly* recommend using a project based workflow meaning creating an R project for each report.
-This makes returning to your session and maintaining files easier. Using either a project or GitHub
-repository will help you in the long run.
+We *highly* recommend using a project-based workflow. This involves creating an R project for each report, which facilitates returning to your session and maintaining files. Using either a project or GitHub repository will help you in the long run.
 
 To create a new R project in Rstudio:
 
@@ -97,10 +95,7 @@ If you use VSCode or Positron for your IDE, by navigating to a folder on your co
 
 Generates a set of files that setup a stock assessment report with its supporting files.
 
-Within the created files is the "skeleton file" which drives the render of the entire report. For those familiar
-with Rmarkdown or Quarto books, this is operating similar to a .yml file. The other quarto files
-found in your folder will be what we refer to as "child documents", or child docs for short. These
-are the actual files that you will fill in when writing your report. These are the bulk of your content!
+Within the created files is the "skeleton file" which drives the render of the entire report. For those familiar with Rmarkdown or Quarto books, this is operating similar to a .yml file. The other Quarto files found in your folder will be what we refer to as "child documents", or child docs for short. These are the actual files that you will fill in when writing your report. These are the bulk of your content!
 
 **Try it out!**
 
@@ -146,7 +141,7 @@ create_template(
 You should see a folder called "**report**" where you indicated in the argument `file_dir`. It
 should have a set up that looks like this:
 
-![The contents of an asar generated template found in the report folder.](images/asar_files.png){fig-alt="A screenshot of files that should appear in the 'report' folder, including '01_executive_summary.qmd', '02_introduction.qmd', '03_data.qmd', and more."}
+![The contents of an `asar`-generated template found in the report folder.](images/asar_files.png){fig-alt="A screenshot of files that should appear in the 'report' folder, including '01_executive_summary.qmd', '02_introduction.qmd', '03_data.qmd', and more."}
 
 ::: {.callout-note}
 You should see a variety of messages reported in the console to indicate
@@ -169,9 +164,9 @@ As previously mentioned, the skeleton file controls the rest of the report. This
 is the file you go to to compile your report, change formatting, or add quantities
 to reference in your document.
 
-We went over the basics of a Quarto yaml in [Day 1](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#yaml), but when using asar, you don't actually have to fill in anything yourself. The beauty of using asar is that it removes this task, but filling out information provided in the `create_template()` arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).
+We went over the basics of a Quarto yaml in [Day 1](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#yaml), but when using `asar`, you don't actually have to fill in anything yourself. The beauty of using `asar` is that it removes this task, but filling out information provided in the `create_template()` arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).
 
-!['asar' yaml controlling formatting and basic document information.](images/asar_yaml.png){fig-alt="A screenshot of an example yaml, with curly brackets highlighting which code is 'information' and which code is 'formatting'."}
+![`asar` yaml controlling formatting and basic document information.](images/asar_yaml.png){fig-alt="A screenshot of an example yaml, with curly brackets highlighting which code is 'information' and which code is 'formatting'."}
 
 The YAML controls the following:
 
@@ -350,7 +345,7 @@ Don't worry if you forget! You can find this code in the documentation for the "
 :::
 
 ::: {.callout-note appearance="minimal"}
-Break for Questions
+Break for questions
 :::
 
 ### Rerendering report
