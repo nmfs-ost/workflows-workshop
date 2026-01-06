@@ -402,12 +402,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a>
   <ul class="collapse">
-  <li><a href="#skeleton-setup" id="toc-skeleton-setup" class="nav-link" data-scroll-target="#skeleton-setup">Skeleton setup</a>
+  <li><a href="#modularized-setup-with-a-skeleton" id="toc-modularized-setup-with-a-skeleton" class="nav-link" data-scroll-target="#modularized-setup-with-a-skeleton">Modularized setup with a skeleton</a>
   <ul class="collapse">
   <li><a href="#relative-pathnames" id="toc-relative-pathnames" class="nav-link" data-scroll-target="#relative-pathnames">Relative pathnames</a></li>
   </ul></li>
-  <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">YAML</a></li>
-  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">Code Chunks</a></li>
+  </ul></li>
+  <li><a href="#asar-automated-stock-assessment-reporting" id="toc-asar-automated-stock-assessment-reporting" class="nav-link" data-scroll-target="#asar-automated-stock-assessment-reporting"><code>asar</code>: Automated Stock Assessment Reporting</a>
+  <ul class="collapse">
+  <li><a href="#recommended-workflow" id="toc-recommended-workflow" class="nav-link" data-scroll-target="#recommended-workflow">Recommended workflow</a></li>
+  <li><a href="#the-main-asar-functions" id="toc-the-main-asar-functions" class="nav-link" data-scroll-target="#the-main-asar-functions">The main <code>asar</code> functions</a>
+  <ul class="collapse">
+  <li><a href="#create_template" id="toc-create_template" class="nav-link" data-scroll-target="#create_template"><code>create_template()</code></a></li>
+  <li><a href="#stockplotrconvert_output" id="toc-stockplotrconvert_output" class="nav-link" data-scroll-target="#stockplotrconvert_output"><code>stockplotr::convert_output()</code></a></li>
+  <li><a href="#create_tables_doc-create_figures_doc" id="toc-create_tables_doc-create_figures_doc" class="nav-link" data-scroll-target="#create_tables_doc-create_figures_doc"><code>create_tables_doc()</code> &amp; <code>create_figures_doc()</code></a></li>
+  </ul></li>
+  <li><a href="#advanced-asar-workflow" id="toc-advanced-asar-workflow" class="nav-link" data-scroll-target="#advanced-asar-workflow">Advanced <code>asar</code> workflow</a>
+  <ul class="collapse">
+  <li><a href="#create-your-own" id="toc-create-your-own" class="nav-link" data-scroll-target="#create-your-own">Create-your-own</a></li>
+  <li><a href="#rerendering-report" id="toc-rerendering-report" class="nav-link" data-scroll-target="#rerendering-report">Rerendering report</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#introduction-to-stockplotr" id="toc-introduction-to-stockplotr" class="nav-link" data-scroll-target="#introduction-to-stockplotr">Introduction to <code>stockplotr</code></a>
+  <ul class="collapse">
+  <li><a href="#package-information" id="toc-package-information" class="nav-link" data-scroll-target="#package-information">Package information</a></li>
+  <li><a href="#example-figure" id="toc-example-figure" class="nav-link" data-scroll-target="#example-figure">Example Figure</a>
+  <ul class="collapse">
+  <li><a href="#customizing" id="toc-customizing" class="nav-link" data-scroll-target="#customizing">Customizing</a></li>
+  </ul></li>
+  <li><a href="#example-table" id="toc-example-table" class="nav-link" data-scroll-target="#example-table">Example Table</a></li>
+  <li><a href="#exporting" id="toc-exporting" class="nav-link" data-scroll-target="#exporting">Exporting</a></li>
+  </ul></li>
+  <li><a href="#integrating-stockplotr-into-the-workflow" id="toc-integrating-stockplotr-into-the-workflow" class="nav-link" data-scroll-target="#integrating-stockplotr-into-the-workflow">Integrating <code>stockplotr</code> into the workflow</a>
+  <ul class="collapse">
+  <li><a href="#adding-tables-and-figures-to-your-report" id="toc-adding-tables-and-figures-to-your-report" class="nav-link" data-scroll-target="#adding-tables-and-figures-to-your-report">Adding tables and figures to your report</a>
+  <ul class="collapse">
+  <li><a href="#option-1-rerunning-asarcreate_tables_docasarcreate_figures_doc" id="toc-option-1-rerunning-asarcreate_tables_docasarcreate_figures_doc" class="nav-link" data-scroll-target="#option-1-rerunning-asarcreate_tables_docasarcreate_figures_doc">Option 1: Rerunning <code>asar::create_tables_doc()</code>/<code>asar::create_figures_doc()</code></a></li>
+  <li><a href="#option-2-manually-adding-tablesfigures" id="toc-option-2-manually-adding-tablesfigures" class="nav-link" data-scroll-target="#option-2-manually-adding-tablesfigures">Option 2: Manually adding tables/figures</a></li>
+  </ul></li>
+  <li><a href="#referencing-your-tables-or-figures-in-text" id="toc-referencing-your-tables-or-figures-in-text" class="nav-link" data-scroll-target="#referencing-your-tables-or-figures-in-text">Referencing your tables or figures in text</a></li>
+  </ul></li>
+  <li><a href="#render-your-first-report-draft" id="toc-render-your-first-report-draft" class="nav-link" data-scroll-target="#render-your-first-report-draft">Render your first report draft!</a></li>
+  <li><a href="#sec-a11y" id="toc-sec-a11y" class="nav-link" data-scroll-target="#sec-a11y">Adding accessibility features</a>
+  <ul class="collapse">
+  <li><a href="#add-tagging" id="toc-add-tagging" class="nav-link" data-scroll-target="#add-tagging">Add tagging</a></li>
+  <li><a href="#sec-add-alttext" id="toc-sec-add-alttext" class="nav-link" data-scroll-target="#sec-add-alttext">Add alternative text</a>
+  <ul class="collapse">
+  <li><a href="#look-at-your-alt-text-csv" id="toc-look-at-your-alt-text-csv" class="nav-link" data-scroll-target="#look-at-your-alt-text-csv">Look at your alt text csv</a></li>
+  <li><a href="#update-the-csv" id="toc-update-the-csv" class="nav-link" data-scroll-target="#update-the-csv">Update the csv</a></li>
+  </ul></li>
+  <li><a href="#add-alt-text-to-your-reports-images" id="toc-add-alt-text-to-your-reports-images" class="nav-link" data-scroll-target="#add-alt-text-to-your-reports-images">Add alt text to your report’s images</a></li>
   </ul></li>
   <li><a href="#questions-comments-and-feedback" id="toc-questions-comments-and-feedback" class="nav-link" data-scroll-target="#questions-comments-and-feedback">Questions, comments, and feedback</a></li>
   </ul>
@@ -660,11 +703,11 @@ Tip
 <li><p>Anyone with the same files can reproduce that document, which goes a long way in promoting scientific integrity.</p></li>
 <li><p>You can produce reports in several formats like HTML, PDF, and Word.</p></li>
 </ul>
-<section id="skeleton-setup" class="level2">
-<h2 class="anchored" data-anchor-id="skeleton-setup">Skeleton setup</h2>
+<section id="modularized-setup-with-a-skeleton" class="level2">
+<h2 class="anchored" data-anchor-id="modularized-setup-with-a-skeleton">Modularized setup with a skeleton</h2>
 <p>When you run <code>asar::create_template()</code>, you will receive a “report” folder with several files within it. One of the most important files is what we call the “skeleton”: a .qmd file containing chunks that run <em>other</em> files, then places the rendered contents of those files within one report.</p>
 <p>Those <em>other</em> files are what we call “child documents”. For example, your report introduction will be written in a child document. Your figures and tables will be placed in respective child docs, too.</p>
-<p>This setup avoids placing your entire report in one massive .qmd file, facilitates asynchronous collaboration with your colleagues, and keeps your project organized.</p>
+<p>This setup avoids placing your entire report in one massive .qmd file, facilitates asynchronous collaboration with your colleagues, and keeps your project organized (in a “modular” fashion).</p>
 <section id="relative-pathnames" class="level3">
 <h3 class="anchored" data-anchor-id="relative-pathnames">Relative pathnames</h3>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -694,100 +737,30 @@ Important
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"extra_data/red_fish.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This would work <em>even if your working directory is not the “report” folder.</em></p>
-</section>
-</section>
-<section id="yaml" class="level2">
-<h2 class="anchored" data-anchor-id="yaml">YAML</h2>
-<p>The YAML is the block of text at the very top of your main .qmd file, enclosed by triple dashes (—). It provides metadata for your document– i.e., how to build the report.</p>
-<p>Common settings in the YAML include:</p>
-<ul>
-<li>title</li>
-<li>author</li>
-<li>date</li>
-<li>format (For <code>asar</code>, this will be PDF or HTML)</li>
-</ul>
-<p>Here is an example of an <code>asar</code> YAML:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">'Stock Assessment Report Template'</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'FIRST LAST'</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    affiliations<span class="sc">:</span> </span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'NOAA Fisheries'</span> </span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        address<span class="sc">:</span> <span class="st">'ADDRESS'</span> </span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        city<span class="sc">:</span> <span class="st">'CITY'</span> </span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        state<span class="sc">:</span> <span class="st">'STATE'</span> </span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        postal<span class="sc">-</span>code<span class="sc">:</span> <span class="st">'POSTAL CODE'</span> </span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> today</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>keep<span class="sc">-</span>tex<span class="sc">:</span> true </span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>mainfont<span class="sc">:</span> <span class="st">'Latin Modern Sans'</span> </span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>cover<span class="sc">:</span> </span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>pdf<span class="sc">-</span>engine<span class="sc">:</span> lualatex</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>format<span class="sc">:</span> </span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  pdf<span class="sc">:</span> </span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    documentclass<span class="sc">:</span> article</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    papersize<span class="sc">:</span> letter</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    number<span class="sc">-</span>sections<span class="sc">:</span> true</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    template<span class="sc">-</span>partials<span class="sc">:</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> <span class="st">'support_files/before-body.tex'</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> <span class="st">'support_files/_titlepage.tex'</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    include<span class="sc">-</span><span class="cf">in</span><span class="sc">-</span>header<span class="sc">:</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> <span class="st">'support_files/in-header.tex'</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    toc<span class="sc">:</span> true</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    sansfont<span class="sc">:</span> <span class="st">'Latin Modern Sans'</span></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    lof<span class="sc">:</span> true</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    lot<span class="sc">:</span> true</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    titlepage<span class="sc">-</span>geometry<span class="sc">:</span> </span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> top<span class="ot">=</span><span class="dv">2</span>in</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> bottom<span class="ot">=</span><span class="dv">1</span>in</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> right<span class="ot">=</span><span class="dv">1</span>in</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> left<span class="ot">=</span><span class="dv">1</span>in</span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>output<span class="sc">-</span>file<span class="sc">:</span> <span class="st">'species_SAR_2025'</span> </span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>params<span class="sc">:</span></span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>   office<span class="sc">:</span> <span class="st">''</span></span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>   species<span class="sc">:</span> <span class="st">'species'</span></span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>   spp_latin<span class="sc">:</span> <span class="st">''</span></span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>bibliography<span class="sc">:</span>  </span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> asar_references.bib</span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>csl<span class="sc">:</span> support_files<span class="sc">/</span>cjfas.csl</span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="code-chunks" class="level2">
-<h2 class="anchored" data-anchor-id="code-chunks">Code Chunks</h2>
-<p>As we previously mentioned, the beauty of using quarto is that it allows the user to integrate text and code throughout their reports making them super reproducible.</p>
-<p>The basics of a code chunk (chunk) are:</p>
-<ul>
-<li>the language (R or python)</li>
-<li>chunk options</li>
-<li>code</li>
-</ul>
-<p>These three things get wrapped together within two sets of three back ticks (```) to allow a user to run code.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>```{r}</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>#| label: ex-chunk</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>#| eval: false</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>#| warning: false</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>#| echo: false</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>#| fig-cap: This is my figure caption.</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>#| fig-alt: This is my alternative text.</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>#| tbl-cap: This is my table caption.</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>x &lt;- 1 + 1</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><em>There are a variety of chunk options, but the ones you will see consistently throughout this workshop are listed in the example above.</em></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the “label” option, for tables and figures, you will need to prefix the label with either “fig-” for a figure or “tbl-” for a table.</p>
-</div>
-</div>
-<p>For those familiar with Rmarkdown, the code chunk structure in Rmarkdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a “#|” proceeding each option.</p>
+<!-- ## Code Chunks -->
+<!-- As we previously mentioned, the beauty of using quarto is that it allows the user to integrate text and code throughout their reports making them super reproducible. -->
+<!-- The basics of a code chunk (chunk) are: -->
+<!-- - the language (R or python) -->
+<!-- - chunk options -->
+<!-- - code -->
+<!-- These three things get wrapped together within two sets of three back ticks (```) to allow a user to run code. -->
+<!-- ````{verbatim} -->
+<!-- ```{r} -->
+<!-- #| label: ex-chunk -->
+<!-- #| eval: false -->
+<!-- #| warning: false -->
+<!-- #| echo: false -->
+<!-- #| fig-cap: This is my figure caption. -->
+<!-- #| fig-alt: This is my alternative text. -->
+<!-- #| tbl-cap: This is my table caption. -->
+<!-- x <- 1 + 1 -->
+<!-- ``` -->
+<!-- ```` -->
+<!-- *There are a variety of chunk options, but the ones you will see consistently throughout this workshop are listed in the example above.* -->
+<!-- ::: {.callout-note} -->
+<!-- In the "label" option, for tables and figures, you will need to prefix the label with either "fig-" for a figure or "tbl-" for a table. -->
+<!-- ::: -->
+<!-- For those familiar with Rmarkdown, the code chunk structure in Rmarkdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a "#|" proceeding each option. -->
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -799,7 +772,7 @@ Note
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -808,7 +781,7 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Create a new quarto document</li>
@@ -829,7 +802,7 @@ Note
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -838,7 +811,7 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Create a new quarto document</li>
@@ -860,27 +833,27 @@ Note
 </ol>
 <p><strong>Answers</strong>: Add code like the following:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sandwiches</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">## My favorite sandwich</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>My <span class="sc">*</span>favorite<span class="sc">*</span> sandwich is a <span class="sc">**</span>peanut butter and jelly sandwich<span class="sc">**</span>.</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>Ingredients<span class="sc">:</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> [peanut <span class="fu">butter</span> (PB)](https<span class="sc">:</span><span class="er">//</span>en.wikipedia.org<span class="sc">/</span>wiki<span class="sc">/</span>Peanut_butter)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> jelly</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> bread</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>Steps<span class="sc">:</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fl">1.</span> Get two slices of bread</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fl">2.</span> Spread PB on one side of one slice of bread</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="fl">3.</span> Spread jelly on one side of the other bread slice</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="fl">4.</span> Stack the PB slice on top of the jelly slice so that PB and J meet <span class="cf">in</span> the middle of the sandwich.</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="fl">5.</span> Eat<span class="sc">!</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>I<span class="st">'ll split my sandwich into three pieces so that each person can get $1/3$ of the sandwich.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sandwiches</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="do">## My favorite sandwich</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>My <span class="sc">*</span>favorite<span class="sc">*</span> sandwich is a <span class="sc">**</span>peanut butter and jelly sandwich<span class="sc">**</span>.</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>Ingredients<span class="sc">:</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> [peanut <span class="fu">butter</span> (PB)](https<span class="sc">:</span><span class="er">//</span>en.wikipedia.org<span class="sc">/</span>wiki<span class="sc">/</span>Peanut_butter)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> jelly</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> bread</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>Steps<span class="sc">:</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fl">1.</span> Get two slices of bread</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fl">2.</span> Spread PB on one side of one slice of bread</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fl">3.</span> Spread jelly on one side of the other bread slice</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="fl">4.</span> Stack the PB slice on top of the jelly slice so that PB and J meet <span class="cf">in</span> the middle of the sandwich.</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="fl">5.</span> Eat<span class="sc">!</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>I<span class="st">'ll split my sandwich into three pieces so that each person can get $1/3$ of the sandwich.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -888,7 +861,423 @@ Note
 <!--               -->
 <!-- END OF HOUR 1 -->
 <!--               -->
-<!-- Add workflow tutorial here: asar -->
+</section>
+</section>
+</section>
+<section id="asar-automated-stock-assessment-reporting" class="level1">
+<h1><code>asar</code>: Automated Stock Assessment Reporting</h1>
+<p>In this section we will cover the basics of <code>asar</code> by generating a stock assessment report and going through basic navigation of the template.</p>
+<section id="recommended-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-workflow">Recommended workflow</h2>
+<p>We <em>highly</em> recommend using a project-based workflow. This involves creating an R project for each report, which facilitates returning to your session and maintaining files. Using either a project or GitHub repository will help you in the long run.</p>
+<p>To create a new R project in Rstudio:</p>
+<p>File &gt; New Project &gt; New or Existing Directory</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you use VSCode or Positron for your IDE, by navigating to a folder on your computer, it will automatically initialize a project-like environment.</p>
+</div>
+</div>
+</section>
+<section id="the-main-asar-functions" class="level2">
+<h2 class="anchored" data-anchor-id="the-main-asar-functions">The main <code>asar</code> functions</h2>
+<p><code>asar</code> revolves around a few primary functions* and contains several support functions that help make the template. While most are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:</p>
+<ul>
+<li><code>create_template()</code></li>
+<li><code>stockplotr::convert_output()</code>* (*This function is now located within <code>stockplotr</code> but is useful for building <code>asar</code> reports)</li>
+<li><code>create_tables_doc()</code></li>
+<li><code>create_figures_doc()</code></li>
+</ul>
+<section id="create_template" class="level3">
+<h3 class="anchored" data-anchor-id="create_template"><code>create_template()</code></h3>
+<p><strong>What it does:</strong></p>
+<p>Generates a set of files that setup a stock assessment report with its supporting files.</p>
+<p>Within the created files is the “skeleton file” which drives the render of the entire report. For those familiar with Rmarkdown or Quarto books, this is operating similar to a .yml file. The other quarto files found in your folder will be what we refer to as “child documents”, or child docs for short. These are the actual files that you will fill in when writing your report. These are the bulk of your content!</p>
+<p><strong>Try it out!</strong></p>
+<p><code>create_template()</code> contains <em>A LOT</em> of arguments that allow the user to customize their document how they want. The function contains a set of defaults that would produce a template that could be rendered, but contains no real information relevant to the target stock.</p>
+<p>So, let’s do more than just create a blank template! The following arguments are some key parts to fill in for a specific stock assessment report:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Argument</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>format</td>
+<td>pdf, html</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>SAR, pfmc, safe</td>
+</tr>
+<tr class="odd">
+<td>office</td>
+<td>afsc, pifsc, nefsc, nwfsc sefsc, swfsc</td>
+</tr>
+<tr class="even">
+<td>region</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>species</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>spp_latin</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>year</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>authors</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>file_dir</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust below example based on audience</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(asar)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">create_template</span>(</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"pdf"</span>, <span class="co"># optional "html"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"SAR"</span>, <span class="co"># add'l options: "safe", "nemt", "pfmc"</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">office =</span> <span class="st">"NWFSC"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">region =</span> <span class="st">"U.S. West Coast"</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">species =</span> <span class="st">"Petrale sole"</span>,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">spp_latin =</span> <span class="st">"Eopsetta jordani"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">authors =</span> <span class="fu">c</span>(<span class="st">"Samantha Schiano"</span> <span class="ot">=</span> <span class="st">"OST"</span>),</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">file_dir =</span> here<span class="sc">::</span><span class="fu">here</span>()</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Run it!</strong></p>
+<p>You should see a folder called “<strong>report</strong>” where you indicated in the argument <code>file_dir</code>. It should have a set up that looks like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/asar_files.png" class="img-fluid figure-img" alt="A screenshot of files that should appear in the 'report' folder, including '01_executive_summary.qmd', '02_introduction.qmd', '03_data.qmd', and more."></p>
+<figcaption>The contents of an <code>asar</code>-generated template found in the report folder.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You should see a variety of messages reported in the console to indicate that it worked! For a blank template with no errors, it should look like this:</p>
+<p><img src="images/blank_template_output_messages.png" class="img-fluid" alt="A screenshot of console text expected when `create_template()` is run successfully."></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Break for questions</p>
+</div>
+</div>
+</div>
+<section id="lets-take-a-tour-of-the-content-we-created" class="level4">
+<h4 class="anchored" data-anchor-id="lets-take-a-tour-of-the-content-we-created">Let’s take a tour of the content we created!</h4>
+<section id="the-skeleton" class="level5">
+<h5 class="anchored" data-anchor-id="the-skeleton">The skeleton</h5>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/asar_skeleton.png" class="img-fluid figure-img" alt="A figure showing seven rectangles on top of one another, portraying the order of content in a Quarto yaml. Sections include 'Yaml (Formatting and input information)', 'Parameters R chunk', 'Preamble R chunk', 'Disclaimer', 'Citation', 'Report content ('child docs'): Executive Summary', an ellipsis to separate the blocks, and then a final block ('Report content ('Child docs'): Appendix')."></p>
+<figcaption>Diagram showing different blocks of content found in the Quarto yaml within the skeleton.qmd file.</figcaption>
+</figure>
+</div>
+<p>As previously mentioned, the skeleton file controls the rest of the report. This is the file you go to to compile your report, change formatting, or add quantities to reference in your document.</p>
+<p>When using <code>asar</code>, you don’t actually have to adjust the yaml yourself. The beauty of using <code>asar</code> is that it removes this task, but filling out information provided in the <code>create_template()</code> arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/asar_yaml.png" class="img-fluid figure-img" alt="A screenshot of an example yaml, with curly brackets highlighting which code is 'information' and which code is 'formatting'."></p>
+<figcaption><code>asar</code> yaml controlling formatting and basic document information.</figcaption>
+</figure>
+</div>
+<p>The YAML controls the following:</p>
+<ul>
+<li>title</li>
+<li>authorship</li>
+<li>formatting</li>
+<li>rendered file name</li>
+<li>parameters</li>
+<li>species cover image</li>
+<li>bibliography</li>
+<li>citation style</li>
+</ul>
+</section>
+<section id="parameterization" class="level5">
+<h5 class="anchored" data-anchor-id="parameterization">Parameterization</h5>
+<p>Quarto has a cool feature that allows users to parameterize their document by utilizing markdown’s ability to render in-line code throughout your writing. In the yaml, there are pre-added parameters of the species, Latin name, region, and office. These are called in through an R chunk after the YAML.</p>
+<p>You have two options for calling these parameters in your writing.</p>
+<ol type="1">
+<li>` r params$species ` (Quarto parameterization)</li>
+<li>` r species ` (<code>asar</code> use of parameterization)</li>
+</ol>
+</section>
+<section id="the-preamble" class="level5">
+<h5 class="anchored" data-anchor-id="the-preamble">The preamble</h5>
+<p>The preamble is an R chunk that loads in a script called “preamble.R” which extracts key quantities commonly referenced in stock assessment reports. This will only work with a standard results file converted using <code>asar::convert_output()</code>, which we will get to shortly.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/preamble.png" class="img-fluid figure-img" alt="A screenshot of the preamble, with the R chunk option 'eval: false' highlighted."></p>
+<figcaption>A screenshot showing lines of code in an R chunk within the skeleton file containing various quantities pulled from the preamble.R script.</figcaption>
+</figure>
+</div>
+<p>The quantities in found in this chunk can be referenced in-line throughout the document:</p>
+<p>` r R0 `</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For more information on markdown notation, see <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html">Day 1</a> of this workshop or navigate to <a href="https://nmfs-ost.github.io/asar/articles/markdown_notation.html">our article</a> on the topic!</p>
+</div>
+</div>
+<p><strong>Let’s find the preamble and see the methods to edit it</strong></p>
+</section>
+<section id="the-content" class="level5">
+<h5 class="anchored" data-anchor-id="the-content">The content</h5>
+<p>The “child docs” are where you as the assessment author or contributor report out the information you need to include. The template is highly modular so there are files for each section of the report and sometimes files for subsections. The default <code>asar</code> template creates child docs following the NOAA standard stock assessment report guidelines consisting of the following:</p>
+<ul>
+<li>executive summary</li>
+<li>introduction</li>
+<li>data</li>
+<li>assessment (modelling and results)</li>
+<li>discussion</li>
+<li>acknowledgements</li>
+<li>references</li>
+<li>tables</li>
+<li>figures</li>
+<li>appendix</li>
+</ul>
+<p>Each child doc contains pre-determined headers and labels for the author to reference back to throughout the document. There are also descriptions within each section that depcit what you should report on throughout the document. You can either keep or remove these notes once the document is finished, either way, they will not be included in your final report.</p>
+<p>Child docs are not intended to be rendered on their own, but only from the skeleton as a whole!</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We are advising everyone that if required content is needed beyond the standard guidelines, that it gets placed in the appendix; however we encourage everyone to think about the importance of the content in terms of review for management versus CIE or SSC review.</p>
+</div>
+</div>
+<!-- **Demo of child docs and adding quantities from the preamble into your document** -->
+</section>
+</section>
+</section>
+<section id="stockplotrconvert_output" class="level3">
+<h3 class="anchored" data-anchor-id="stockplotrconvert_output"><code>stockplotr::convert_output()</code></h3>
+<p><strong>What it does:</strong></p>
+<p>This function, which was <strong>formerly located within <code>asar</code> but has been moved to <code>stockplotr</code></strong>, converts an output file from a stock assessment model to a standard format. This file can be used to extract quantities within the preamble and to build figures and tables with <code>stockplotr</code> (covered in <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html">Day 3</a>).</p>
+<p>The <code>convert_output</code> function currently accepts output from Stock Synthesis (Report.sso) version 3.30 and higher, Beaufort Assessment Model (BAM; output.rda), or Fishereies Integrated Modelling System (FIMS; R object). We are actively working on expanding the <code>convert_output</code> function to be compatible with all major U.S. stock assessment models. This function takes a lot of resources to develop, so any contribution to the package is welcome! If you have a model that is not currently compatible with <code>stockplotr::convert_output()</code>, please navigate to <a href="https://nmfs-ost.github.io/stockplotr/articles/convert_output_details.html">our article</a> describing the function and how to get your output in the same format as those produced from the converter!</p>
+<p><strong>Let’s try it out!</strong></p>
+<p>We have uploaded an example Report.sso file in the workshop GitHub, but if you have a compatible output file, we encourage you to use your own.</p>
+<div class="cell" data-messages="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify output file</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>output_file <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"example_output"</span>, <span class="st">"Report.sso"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># convert the output</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>petrale <span class="ot">&lt;-</span> stockplotr<span class="sc">::</span><span class="fu">convert_output</span>(output_file)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Run it!</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>petrale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/petrale_conout.png" class="img-fluid figure-img"></p>
+<figcaption>A screenshot of the first 8 columns and 10 rows of data from a standard output tibble converted from a stock synthesis Report.sso file.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>convert_output()</code> will recognize which model the results file came from as well as fleet names. In the rare case either of these are incorrect, the function contains arguments of <code>model</code> and <code>fleet_names</code> which you as the user can indicate for the function.</p>
+<p>If you are explicitly stating fleet names, make sure they are in the order you expect them to be found in the file.</p>
+</div>
+</div>
+<section id="format-of-converted-output" class="level4">
+<h4 class="anchored" data-anchor-id="format-of-converted-output">Format of converted output</h4>
+<p>The converted output is a tibble that reframes and reshapes your data. The tibble contains each output value as a row with its error and any associated indexing values.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let’s walk through a standard output file in more detail.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For more information, navigate to <a href="https://nmfs-ost.github.io/stockplotr/articles/convert_output_details.html">this article</a> describing the conversion process and find ways your can convert your model’s data!</p>
+</div>
+</div>
+</section>
+</section>
+<section id="create_tables_doc-create_figures_doc" class="level3">
+<h3 class="anchored" data-anchor-id="create_tables_doc-create_figures_doc"><code>create_tables_doc()</code> &amp; <code>create_figures_doc()</code></h3>
+<p><strong>What they do:</strong></p>
+<p>These functions create child documents that display your report’s tables and figures, respectively.</p>
+<p>If you run <code>create_template()</code> <em>without</em> folders in your working directory that contain your figures (called “figures”) and tables (called “tables”), then the resulting child documents will be empty except for a note referring you to use <code>stockplotr</code> to make plots.</p>
+<p>Once you’ve added files to those “figures” and “tables” folders, you can rerun <code>create_tables_doc()</code> &amp; <code>create_figures_doc()</code> to add those plots to your report. We cover how to do this in <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#adding-tables-and-figures-to-your-report">Day 3</a>.</p>
+</section>
+</section>
+<section id="advanced-asar-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-asar-workflow">Advanced <code>asar</code> workflow</h2>
+<p>Now we are going to walk-through a more complex use of <code>asar</code> by</p>
+<ul>
+<li>Additional parameters</li>
+<li>customizing our sections</li>
+<li>reorganizing section order</li>
+<li>calling a previous report and editing</li>
+</ul>
+<section id="create-your-own" class="level3">
+<h3 class="anchored" data-anchor-id="create-your-own">Create-your-own</h3>
+<p>There are three additional template options available to users to use while we work to set standard assessment report guidelines across the country. They include SAFE reports, NEFSC management track reports, and PFMC guidelines. Not only thing, but you have the ability to add new sections either within the current outline or in individual sections or even select which sections of the standard template you want to create your report around.</p>
+<p>Today, we will be going over how to customize your template by selecting a subset of the standard guidelines then adding in a new section within our data section.</p>
+<p>First, let’s make our template.</p>
+<p><strong>We are creating a new report, so please set your working directory to a new folder or rename our previous “simple” report folder to “simple_report” or something along those lines.</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">create_template</span>(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Previous arguments we used for simple</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"pdf"</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"SAR"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">office =</span> <span class="st">"NWFSC"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">region =</span> <span class="st">"U.S. West Coast"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">species =</span> <span class="st">"Petrale sole"</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">spp_latin =</span> <span class="st">"Eopsetta jordani"</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">authors =</span> <span class="fu">c</span>(<span class="st">"Samantha Schiano"</span> <span class="ot">=</span> <span class="st">"OST"</span>),</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># New arguments</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom_sections =</span> <span class="cn">NULL</span>,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">new_section =</span> <span class="cn">NULL</span>,</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">section_location =</span> <span class="cn">NULL</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To identify what sections you can include from the standard guidelines, you can run <code>list.files(system.file("templates", "skeleton", package = "asar"))</code>. Note: this only includes sections within a standard template. To see other sections for available templates, replace “skeleton” with your target template acronym.</p>
+<p>Don’t worry if you forget! You can find this code in the documentation for the “custom_sections” argument.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Break for questions</p>
+</div>
+</div>
+</div>
+</section>
+<section id="rerendering-report" class="level3">
+<h3 class="anchored" data-anchor-id="rerendering-report">Rerendering report</h3>
+<p>We understand that it’s easy to forget to enter in all of the information you need for a report on it’s initial creation! Because of this, we made the argument “rerender_skeleton” that adds on any new information to the skeleton file that you might want such as additional authors, a new species image, parameters, or anything that is open for you to customize in the skeleton file.</p>
+<p>You COULD do this manually, but using the function both allows you to create a record of your changes (making it more reproducible) <em>and</em> makes the Quarto yaml less intimidating to new users!</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can run re-render skeleton as often as you want, it will always edit the current skeleton in the folder. Please note: any additional skeleton files will make this process fail. The process will also verify that you want to overwrite the current skeleton and either keep or replace the key quantities file.</p>
+</div>
+</div>
+<section id="our-changes-new-parameters-additional-author-and-a-new-section" class="level4">
+<h4 class="anchored" data-anchor-id="our-changes-new-parameters-additional-author-and-a-new-section">Our changes: new parameters, additional author, and a new section</h4>
+<p>Let’s add some more parameters to our script which will allow us to references in-text throughout the document.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">create_template</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">rerender_skeleton =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">parameters =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">param_names =</span> <span class="fu">c</span>(<span class="st">"fleet_a"</span>, <span class="st">"fleet_b"</span>),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">param_values =</span> <span class="fu">c</span>(<span class="st">"a long fleet name"</span>, <span class="st">"b long fleet name"</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Now, I need to add my co-authors to my report especially since I wasn’t sure who was going to be working on it at the time I created my report template. After review of our terms of reference, I noticed that I needed a section to document my changes to the model, so let’s add that in too.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">create_template</span>(</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">rerender_skeleton =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">authors =</span> <span class="fu">c</span>(<span class="st">"John Doe"</span><span class="ot">=</span><span class="st">"NEFSC"</span>, <span class="st">"Jane Doe"</span><span class="ot">=</span><span class="st">"SWFSC-LJCA"</span>),</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">new_section =</span> <span class="st">"Changes to the Model"</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">section_location =</span> <span class="st">"in-assessment"</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<!-- Add back in once section is developed -->
+<!-- ::: {.callout-note appearance="minimal"} -->
+<!-- Break for questions -->
+<!-- ::: -->
+<!-- ### Calling previous report -->
+<!-- # Summary (10 mins) -->
+<!-- You should now be able to -->
+<!-- - Create and fill in a report template -->
+<!-- - Understand how to use parameters and key quantities within text -->
+<!-- - Understand the format of a standard output object -->
+<!-- - Know how to customize a report -->
+<!-- - Know how to pull and update and old report that used `asar` -->
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -900,7 +1289,7 @@ Note
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -909,7 +1298,7 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>Run <code>create_template()</code>. Fill in your own values for <code>office</code>, <code>region</code>, <code>species</code>, <code>spp_latin</code>, and <code>year</code>. Use default values for all remaining arguments.</p></li>
@@ -921,7 +1310,7 @@ Note
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -930,76 +1319,943 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Run <code>create_template()</code>. Fill in your own values for <code>office</code>, <code>region</code>, <code>species</code>, <code>spp_latin</code>, and <code>year</code>. Use default values for all remaining arguments.</li>
 </ol>
 <p><strong>Answer</strong>: Run code similar to the following, adding in your own values for the arguments below.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_template</span>(</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">office =</span> <span class="st">"SEFSC"</span>,</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">region =</span> <span class="st">"Southeast Coast"</span>,</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">species =</span> <span class="st">"Atlantic Bigeye Tuna"</span>,</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">spp_latin =</span> <span class="st">"Thunnus obesus"</span>,</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="dv">2026</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_template</span>(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">office =</span> <span class="st">"SEFSC"</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">region =</span> <span class="st">"Southeast Coast"</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">species =</span> <span class="st">"Atlantic Bigeye Tuna"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">spp_latin =</span> <span class="st">"Thunnus obesus"</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="dv">2026</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="2" type="1">
 <li>Whoops! You forgot to add the report author’s name and affiliation (yours!). Open the report skeleton and edit the yaml with this information.</li>
 </ol>
 <p><strong>Answer</strong>: Open the .qmd file with “skeleton” in the filename. Edit the yaml’s “author” section to go from something like the first chunk to the second chunk.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Original yaml snippet (located just beneath the title)</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'FIRST LAST'</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    affiliations<span class="sc">:</span> </span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'NOAA Fisheries'</span> </span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        address<span class="sc">:</span> <span class="st">'ADDRESS'</span> </span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        city<span class="sc">:</span> <span class="st">'CITY'</span> </span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        state<span class="sc">:</span> <span class="st">'STATE'</span> </span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        postal<span class="sc">-</span>code<span class="sc">:</span> <span class="st">'POSTAL CODE'</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Original yaml snippet (located just beneath the title)</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'FIRST LAST'</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    affiliations<span class="sc">:</span> </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'NOAA Fisheries'</span> </span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        address<span class="sc">:</span> <span class="st">'ADDRESS'</span> </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        city<span class="sc">:</span> <span class="st">'CITY'</span> </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        state<span class="sc">:</span> <span class="st">'STATE'</span> </span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>        postal<span class="sc">-</span>code<span class="sc">:</span> <span class="st">'POSTAL CODE'</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated yaml snippet</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'Patrick Star'</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    affiliations<span class="sc">:</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'NOAA Fisheries Southeast Fisheries Science Center'</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        address<span class="sc">:</span> <span class="st">'75 Virginia Beach Drive'</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        city<span class="sc">:</span> <span class="st">'Miami, FL'</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        state<span class="sc">:</span> <span class="st">'FL'</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        postal<span class="sc">-</span>code<span class="sc">:</span> <span class="st">'33149'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated yaml snippet</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'Patrick Star'</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    affiliations<span class="sc">:</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'NOAA Fisheries Southeast Fisheries Science Center'</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        address<span class="sc">:</span> <span class="st">'75 Virginia Beach Drive'</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        city<span class="sc">:</span> <span class="st">'Miami, FL'</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        state<span class="sc">:</span> <span class="st">'FL'</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>        postal<span class="sc">-</span>code<span class="sc">:</span> <span class="st">'33149'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="3" type="1">
 <li>You realize that your report will frequently reference another species: <em>Patrickicus starrus</em>. Add a new parameter to the report’s yaml so that you can reference “Patrickicus starrus” with a simple “ps”.</li>
 </ol>
 <p><strong>Answer</strong>: Open the .qmd file with “skeleton” in the filename. Edit the yaml’s “params” section and add the following line:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated yaml snippet</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>params<span class="sc">:</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>   office<span class="sc">:</span> <span class="st">'SEFSC'</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>   species<span class="sc">:</span> <span class="st">'Atlantic Bigeye Tuna'</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>   spp_latin<span class="sc">:</span> <span class="st">'Thunnus obesus'</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>   region<span class="sc">:</span> <span class="st">'Southeast Coast'</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>   ps<span class="sc">:</span> <span class="st">'Patrickicus starrus'</span> <span class="co"># &lt;-- new line</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated yaml snippet</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>params<span class="sc">:</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>   office<span class="sc">:</span> <span class="st">'SEFSC'</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>   species<span class="sc">:</span> <span class="st">'Atlantic Bigeye Tuna'</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>   spp_latin<span class="sc">:</span> <span class="st">'Thunnus obesus'</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>   region<span class="sc">:</span> <span class="st">'Southeast Coast'</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>   ps<span class="sc">:</span> <span class="st">'Patrickicus starrus'</span> <span class="co"># &lt;-- new line</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="4" type="1">
 <li>Open up the Executive Summary qmd file and add a sentence that references your new parameter.</li>
 </ol>
 <p><strong>Answer</strong>: Open the 01_executive_summary.qmd file and add a line that references the param ‘ps’, like the following:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="st">"The species `r ps` was abundant throughout the study area."</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="st">"The species `r ps` was abundant throughout the study area."</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><em>The sentence will render as such:</em></p>
 <p>“The species Patrickicus starrus was abundant throughout the study area.”</p>
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Practice exercises: Advanced <code>create_template()</code> use cases
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Create a stock assessment report template tailored for the AFSC (a SAFE report).</p></li>
+<li><p>Create a stock assessment report template with two main sections: an executive summary and an introduction (the following sections will be added automatically: acknowledgments, references, tables, figures).</p></li>
+<li><p>Whoops! You forgot to add your species name, and now you don’t have a cover image. Run <code>create_template()</code> with the argument <code>rerender_skeleton = TRUE</code>, and add your species name (common and scientific names) as two additional arguments: “Petrale sole” (<em>Eopsetta jordani</em>).</p></li>
+</ol>
+<!-- 
+Add questions to practice adding new sections and calling a previous report when features are ready.
+2. Create a stock assessment report template with two new sections. "" should be placed before the introduction and "" should be placed after the acknowledgments. -->
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span><strong>Answers</strong> for Practice exercises: Advanced <code>create_template()</code> use cases
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Create a stock assessment report template tailored for the AFSC (a SAFE report).</li>
+</ol>
+<p><strong>Answer</strong>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">create_template</span>(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"safe"</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<!-- asar::create_template( -->
+<!--   # custom = TRUE, -->
+<!--   # new_section = c("Changes to the Model", "Sec3"), -->
+<!--   # section_location = c("before-introduction", "after-acknowledgments") -->
+<!-- ) -->
+<ol start="2" type="1">
+<li>Create a stock assessment report template with two main sections: an executive summary and an introduction (the following sections will be added automatically: acknowledgments, references, tables, figures).</li>
+</ol>
+<p><strong>Answer</strong>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">create_template</span>(</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">authors =</span> <span class="fu">c</span>(<span class="st">"Samantha Schiano"</span> <span class="ot">=</span> <span class="st">"OST"</span>),</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">custom =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">custom_sections =</span> <span class="fu">c</span>(<span class="st">"executive_summary"</span>, <span class="st">"introduction"</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="3" type="1">
+<li>Whoops! You forgot to add your species name, and now you don’t have a cover image. Run <code>create_template()</code> with the argument <code>rerender_skeleton = TRUE</code>, and add your species name (common and scientific names) as two additional arguments: “Petrale sole” (<em>Eopsetta jordani</em>).</li>
+</ol>
+<p><strong>Answer</strong>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">create_template</span>(</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">rerender_skeleton =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">species =</span> <span class="st">"Petrale sole"</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">spp_latin =</span> <span class="st">"Eopsetta jordani"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">file_dir =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"report"</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
 <!--               -->
 <!-- END OF HOUR 2 -->
 <!--               -->
-<!-- Add workflow tutorial here: stockplotr + putting it all together -->
+</section>
+</section>
+</section>
+</section>
+<section id="introduction-to-stockplotr" class="level1">
+<h1>Introduction to <code>stockplotr</code></h1>
+<!-- ## Import converted output (if necessary) -->
+<!-- If you didn't do so already, you'll need to convert your model results using the `stockplotr::convert_output()` function. -->
+<!-- You can use the example Report.sso file uploaded to the workshop GitHub or, if you have a compatible output file, your own. -->
+<!-- ```{r} -->
+<!-- #| label: conout-ex -->
+<!-- #| eval: false -->
+<!-- #| warning: false -->
+<!-- #| messages: false -->
+<!-- # Identify output file -->
+<!-- output_file <- here::here("example_output", "Report.sso") -->
+<!-- # convert the output -->
+<!-- petrale <- stockplotr::convert_output(output_file) -->
+<!-- ``` -->
+<!-- If you have already converted your output: great! Import it into your R environment so that you can handle it as an object like "petrale" in the chunk above. -->
+<section id="package-information" class="level2">
+<h2 class="anchored" data-anchor-id="package-information">Package information</h2>
+<p>This package is an ongoing process to gather contributions in order to expand the number of pre-made tables and figures that can be incorporated into a stock assessment report. All objects are intended to be generalized and not specific to any region.</p>
+<p>The following table contains figures and tables that are available in <code>stockplotr</code>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>plot_abundance_at_age()</code></td>
+<td>abundance-at-age</td>
+</tr>
+<tr class="even">
+<td><code>plot_biomass_at_age()</code></td>
+<td>biomass-at-age</td>
+</tr>
+<tr class="odd">
+<td><code>plot_biomass()</code></td>
+<td>biomass time series</td>
+</tr>
+<tr class="even">
+<td><code>plot_catch_comp()</code></td>
+<td>catch compositions</td>
+</tr>
+<tr class="odd">
+<td><code>plot_fishing_mortality</code></td>
+<td>fishing mortality time series</td>
+</tr>
+<tr class="even">
+<td><code>plot_indices()</code></td>
+<td>indices</td>
+</tr>
+<tr class="odd">
+<td><code>plot_landings()</code></td>
+<td>landings time series</td>
+</tr>
+<tr class="even">
+<td><code>plot_natural_mortality()</code></td>
+<td>natural mortality time series or at-age</td>
+</tr>
+<tr class="odd">
+<td><code>plot_recruitment_deviations()</code></td>
+<td>recruitment deviations</td>
+</tr>
+<tr class="even">
+<td><code>plot_recruitment()</code></td>
+<td>recruitment time series</td>
+</tr>
+<tr class="odd">
+<td><code>plot_spawn_recruitment()</code></td>
+<td>spawn recruitment relationship</td>
+</tr>
+<tr class="even">
+<td><code>plot_spawning_biomass()</code></td>
+<td>spawning biomass time series</td>
+</tr>
+<tr class="odd">
+<td><code>table_landings()</code></td>
+<td>landings time series by fleet or other indexing</td>
+</tr>
+<tr class="even">
+<td><code>table_bnc()</code></td>
+<td>biomass, landings, and catch time series</td>
+</tr>
+<tr class="odd">
+<td><code>table_harvest_projection()</code></td>
+<td>harvest projection table according to SAFE standards (to be expanded nationally)</td>
+</tr>
+<tr class="even">
+<td><code>tables_indices()</code></td>
+<td>indices by fleet</td>
+</tr>
+</tbody>
+</table>
+<p>Each automated function returns either a <code>ggplot2</code> object (figure) or <code>flextable</code> object (table). This allows for further customization of the output if desired by using the notation you are familiar with. For a figure, you can continue to add onto the plot any other <code>ggplot2</code> function or extension using the plus (+) operator. For a table, please use the native pipe (|&gt;) when adding additional formatting, rows, or other pieces to the object.</p>
+</section>
+<section id="example-figure" class="level2">
+<h2 class="anchored" data-anchor-id="example-figure">Example Figure</h2>
+<p>Run the example below. It should result in a line graph showing biomass over time, including a reference line for the biomass unfished.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_biomass</span>(</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> petrale,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">geom =</span> <span class="st">"line"</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="cn">NULL</span>,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">facet =</span> <span class="cn">NULL</span>,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="st">"unfished"</span>,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>,</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale_amount =</span> <span class="dv">1</span>,</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">relative =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">interactive =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="cn">NULL</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><img src="images/day3_ex_plt1.png" class="img-fluid"></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Break for questions</p>
+</div>
+</div>
+</div>
+<section id="customizing" class="level3">
+<h3 class="anchored" data-anchor-id="customizing">Customizing</h3>
+<p>All figures will automatically identify any indexing variables in the data such as fleet, area, or sex. You can use the <code>group</code> and <code>facet</code> arguments to modify how these indexing variables are displayed in the figure. You can also modify other arguments such as <code>geom</code>, <code>ref_line</code>, and <code>relative</code> to change the appearance of the figure.</p>
+<p>Here are some examples of how to customize the biomass figure:</p>
+<section id="change-the-reference-line-to-a-specific-value-e.g.-260" class="level4">
+<h4 class="anchored" data-anchor-id="change-the-reference-line-to-a-specific-value-e.g.-260">Change the reference line to a specific value (e.g., 260)</h4>
+<p>In this example we are also telling the function which module to select in order to by-pass this step. We plan to remove grouping of some modules in the future.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_biomass</span>(</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> petrale,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">geom =</span> <span class="st">"line"</span>,</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="cn">NULL</span>,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">facet =</span> <span class="cn">NULL</span>,</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="fu">c</span>(<span class="st">"target"</span> <span class="ot">=</span> <span class="dv">260</span>),</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>,</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale_amount =</span> <span class="dv">1</span>,</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">relative =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># interactive = TRUE,</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="st">"TIME_SERIES"</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><img src="images/day3_ex_plt2.png" class="img-fluid"></p>
+</section>
+<section id="plot-relative-biomass-and-change-the-size-of-the-line" class="level4">
+<h4 class="anchored" data-anchor-id="plot-relative-biomass-and-change-the-size-of-the-line">Plot relative biomass and change the size of the line</h4>
+<p>In this example, we still are bypassing module selection and we are automatically extracting the reference line value from the data. However, now we are using this reference value to plot relative biomass and changing the linewidth to 2 (an argument inherited from <code>ggplot2</code>).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_biomass</span>(</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> petrale,</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">geom =</span> <span class="st">"line"</span>,</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="cn">NULL</span>,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">facet =</span> <span class="cn">NULL</span>,</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="fu">c</span>(<span class="st">"target"</span> <span class="ot">=</span> <span class="dv">260</span>),</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>,</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale_amount =</span> <span class="dv">1</span>,</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">relative =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># interactive = TRUE,</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="st">"TIME_SERIES"</span>,</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">linewidth =</span> <span class="dv">2</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><img src="images/day3_ex_plt3.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The only extended arguments available are the ones found from the ggplot2::geom_XX() function. Thus, any indexed variables can not be changes such as color to fill. Please see the documentation for <code>ggplot2</code> geom functions for these additional arguments.</p>
+</div>
+</div>
+<!-- #### Summarize our data -->
+<!-- Notice that you can remove the reference line by setting `ref_line = NULL`. -->
+<!-- ```{r} -->
+<!-- stockplotr::plot_biomass( -->
+<!--   dat = petrale, -->
+<!--   geom = "line", -->
+<!--   group = "none", -->
+<!--   facet = NULL, -->
+<!--   ref_line = NULL, -->
+<!--   unit_label = "mt", -->
+<!--   scale_amount = 1, -->
+<!--   relative = FALSE, -->
+<!--   # interactive = TRUE, -->
+<!--   module = "TIME_SERIES" -->
+<!-- ) -->
+<!-- ``` -->
+<!-- ![](images/day3_ex_plt4.png) -->
+<!-- ::: {.callout-note appearance="minimal"} -->
+<!-- Break for questions -->
+<!-- ::: -->
+<!-- ::: {.callout-tip} -->
+<!-- Remember that figures return `ggplot2` objects, so we can make additional customization to these plots. -->
+<!-- ::: -->
+<!-- ```{r} -->
+<!-- stockplotr::plot_biomass( -->
+<!--   dat = petrale, -->
+<!--   geom = "line", -->
+<!--   group = "fleet", -->
+<!--   facet = NULL, -->
+<!--   ref_line = c("target" = 5690), -->
+<!--   unit_label = "mt", -->
+<!--   scale_amount = 1, -->
+<!--   relative = FALSE, -->
+<!--   # interactive = TRUE, -->
+<!--   module = "TIME_SERIES" -->
+<!-- ) + -->
+<!--   ggplot2::geom_vline(xintercept = 2005, linetype = "dashed", color = "red") -->
+<!-- ``` -->
+<!-- ![](images/day3_ex_plt5.png) -->
+<!-- ::: {.callout-note appearance="minimal"} -->
+<!-- Break for questions. We will be moving onto tables next. -->
+<!-- ::: -->
+</section>
+</section>
+</section>
+<section id="example-table" class="level2">
+<h2 class="anchored" data-anchor-id="example-table">Example Table</h2>
+<p>Run the following example table. The result is a fully report ready table showing landings over time. Remember that these are exported as <code>flextable</code> objects and can be edited as such.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>stockplotr</code> uses the native pipe (|&gt;), so if you decide to customize you table, please also use the native pipe to avoid errors.</p>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># not sure what this will exactly look like so this is a place holder</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">table_landings</span>(</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> petrale,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="st">"fleet"</span>,</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>,</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="cn">NULL</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<!-- insert image of table here -->
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Break for questions</p>
+</div>
+</div>
+</div>
+<!-- Next, we can add some different formatting: -->
+<!-- ```{r} -->
+<!-- stockplotr::table_landings( -->
+<!--   dat = petrale, -->
+<!--   group = "fleet", -->
+<!--   unit_label = "mt", -->
+<!--   module = NULL -->
+<!-- ) |> -->
+<!--   flextable::footnote( -->
+<!--     i = 6, # row -->
+<!--     j = 2, # column -->
+<!--     value = flextable::as_paragraph( -->
+<!--       "This is an example table from the workflows workshop. Not intended for official use." -->
+<!--       ) -->
+<!--   ) -->
+<!-- ``` -->
+<!-- <!-- insert image of table here -->
+<p>–&gt;</p>
+<!-- or potentially highlight a specific line within the table: -->
+<!-- ```{r} -->
+<!-- stockplotr::table_landings( -->
+<!--   dat = petrale, -->
+<!--   group = "fleet", -->
+<!--   unit_label = "mt", -->
+<!--   module = NULL -->
+<!-- ) |> -->
+<!--   flextable::footnote( -->
+<!--     i = 6, # row -->
+<!--     j = 2, # column -->
+<!--     value = flextable::as_paragraph( -->
+<!--       "Not intended for official use." -->
+<!--       ) -->
+<!--   ) |> -->
+<!--   flextable::bg( -->
+<!--     i = 5, -->
+<!--     bg = "lightblue", -->
+<!--     part = "body" -->
+<!--     ) -->
+<!-- ``` -->
+<!-- <!-- insert image of table here -->
+<p>–&gt;</p>
+<!-- ::: {.callout-note appearance="minimal"} -->
+<!-- Break for questions -->
+<!-- ::: -->
+</section>
+<section id="exporting" class="level2">
+<h2 class="anchored" data-anchor-id="exporting">Exporting</h2>
+<p>You can export any table or plot along with their associated caption and alternative text (figures only) in the format of an rda file. An rda is an R data file that stores R objects and preserves their structure. In this case, you can think of an rda file exported from <code>stockplotr</code> as a list of objects.</p>
+<p>Each plot or table has the option to export it as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:</p>
+<ul>
+<li>ggplot or flextable object</li>
+<li>caption</li>
+<li>alternative text (figures only)</li>
+<li>latex object (tables only)</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_biomass</span>(</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> petrale,</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="fu">c</span>(<span class="st">"target"</span> <span class="ot">=</span> <span class="dv">260</span>),</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>,</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="st">"TIME_SERIES"</span>,</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">make_rda =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">tables_dir =</span> <span class="fu">getwd</span>()</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"figures/biomass_figure.rda"</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>rda<span class="sc">$</span>figure</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>rda<span class="sc">$</span>caption</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>rda<span class="sc">$</span>alt_text</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<!-- open the rda and show around -->
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Break for questions</p>
+</div>
+</div>
+</div>
+<!-- <!-- Repeat for table -->
+<p>–&gt;</p>
+<!-- ```{r} -->
+<!-- stockplotr::table_landings( -->
+<!--   dat = petrale, -->
+<!--   group = "fleet", -->
+<!--   unit_label = "mt", -->
+<!--   make_rda = TRUE, -->
+<!--   tables_dir = getwd() -->
+<!-- ) -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- load("tables/landings_table.rda") -->
+<!-- rda$table -->
+<!-- rda$caption -->
+<!-- rda$latex -->
+<!-- ``` -->
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We have designed two functions that allow you to automatically create all available figures and tables:</p>
+<ul>
+<li><code>save_all_plots()</code></li>
+<li><code>html_all_figs_tables()</code></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="integrating-stockplotr-into-the-workflow" class="level1">
+<h1>Integrating <code>stockplotr</code> into the workflow</h1>
+<p>For the second half of today’s lesson, let’s reorient ourselves. We’ve just learned how to make figures and tables with <code>stockplotr</code>. Now, we’ll cover how to add those plots into your <code>asar</code> report template.</p>
+<p>Remember that after running the primary <code>asar</code> function– <code>create_template()</code>- you have a ‘report’ folder with several files in it. These files include the report skeleton; the child documents containing the executive summary, introduction, results, and so on; and, importantly for us right now, the documents that will contain code to display your figures and tables. The files will be named something like ‘08_tables.qmd’ and ‘09_figures.qmd’ (the prefix numbers may vary).</p>
+<p>Each file will contain zero figures or tables. Instead, they will contain a statement referring you to {stockplotr} so that you can make your own. Since we’ve created those already, let’s add them to your report!</p>
+<section id="adding-tables-and-figures-to-your-report" class="level2">
+<h2 class="anchored" data-anchor-id="adding-tables-and-figures-to-your-report">Adding tables and figures to your report</h2>
+<p>You can add your figures and tables with two workflows:</p>
+<ol type="1">
+<li>Rerunning <code>asar::create_tables_doc()</code> and <code>asar::create_figures_doc()</code></li>
+</ol>
+<ul>
+<li>If you fill in arguments that allow R to find your tables and figures, then it will place them into the respective tables and figures docs automatically.</li>
+</ul>
+<ol start="2" type="1">
+<li>Adding your tables and figures manually to each doc.</li>
+</ol>
+<section id="option-1-rerunning-asarcreate_tables_docasarcreate_figures_doc" class="level3">
+<h3 class="anchored" data-anchor-id="option-1-rerunning-asarcreate_tables_docasarcreate_figures_doc">Option 1: Rerunning <code>asar::create_tables_doc()</code>/<code>asar::create_figures_doc()</code></h3>
+<p><em>This is also known as the <a href="https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#comparing-workflows">rda-based workflow</a></em>.</p>
+<section id="tables" class="level4">
+<h4 class="anchored" data-anchor-id="tables">Tables</h4>
+<p>To add tables, first ensure that your folder containing the tables is called “tables”.</p>
+<p>Then, there are only two arguments to fill out:</p>
+<ol type="1">
+<li><code>subdir</code>: The location where the <em>new</em> tables doc should be saved (we recommend your ‘report’ folder, so it overwrites the old, empty version)</li>
+<li><code>tables_dir</code>: The location of your “tables” folder</li>
+</ol>
+<div class="cell" data-messages="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_tables_doc</span>(</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">subdir =</span> fs<span class="sc">::</span><span class="fu">path</span>(<span class="fu">getwd</span>(), <span class="st">"report"</span>), <span class="co"># indicates the new tables doc will be saved in your "report" folder, located in the working directory</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">tables_dir =</span> <span class="fu">getwd</span>() <span class="co"># indicates your "tables" folder is located in the working directory</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>                  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Now, open your new tables doc and take a look!</p>
+<p>You’ll notice the following structure:</p>
+<p><strong>Chunk 1</strong> will always create an object saving the location of your <code>tables_dir</code>.</p>
+<p>Then, there will be at least two chunks for each table. For tables that are <em>regularly-sized</em> (i.e., small enough that they don’t need to be rotated or split across pages):</p>
+<p><strong>Chunk 2</strong> will:</p>
+<ul>
+<li>load an rda containing a table</li>
+<li>give the rda a specific name</li>
+<li>save the table and caption as separate objects</li>
+</ul>
+<p><strong>Chunk 3</strong> will:</p>
+<ul>
+<li>display the table</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This workflow can also accommodate tables that are wide enough to require rotation into a landscape-view page OR splitting across pages. For more information, please see the <a href="https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width">“Adding Custom Tables &amp; Figures” vignette</a>.</p>
+</div>
+</div>
+</section>
+<section id="sec-rda-based-fig" class="level4">
+<h4 class="anchored" data-anchor-id="sec-rda-based-fig">Figures</h4>
+<p>Adding figures entails nearly the same process as described for tables. The only differences are:</p>
+<ol type="1">
+<li>Figures will involve captions and <em>alternative text</em>, whereas tables only require captions</li>
+<li>Figures do not require the option to be rotated or split across pages.</li>
+</ol>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Break for questions</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="option-2-manually-adding-tablesfigures" class="level3">
+<h3 class="anchored" data-anchor-id="option-2-manually-adding-tablesfigures">Option 2: Manually adding tables/figures</h3>
+<section id="tables-1" class="level4">
+<h4 class="anchored" data-anchor-id="tables-1">Tables</h4>
+<p>You can add a regularly-sized<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> table/figure manually by following these main steps:</p>
+<ol type="1">
+<li>Create a code chunk</li>
+<li>Add your label and other chunk options</li>
+<li>Add code</li>
+<li>Write caption</li>
+<li>Add a page break between tables (optional but recommended)</li>
+</ol>
+<section id="direct-coding-in-qmd-table-workflow" class="level5">
+<h5 class="anchored" data-anchor-id="direct-coding-in-qmd-table-workflow">Direct coding-in-qmd table workflow</h5>
+<p>Example from the <a href="https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#direct-coding-in-qmd-workflow-option-3-2">“Adding Custom Tables &amp; Figures” vignette</a>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>```{r} </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>#| label: 'tbl-custom1' # choose a label</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>#| tbl-cap: !expr This is your table caption.</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a># Import your data</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>petrale &lt;- load(fs::path("std_output.rda"))</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a># Make your table</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>your_table &lt;- head(petrale) |&gt;</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  dplyr::select(label, year, estimate) |&gt;</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  flextable::flextable()</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a># Show your table</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>your_table</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>``` </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="images/petrale_table.png" class="img-fluid" alt="Example of a table produced with the 'Direct coding-in-qmd table workflow' option for adding tables to `asar` reports."></p>
+<p>Then, add a pagebreak:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>{{<span class="sc">&lt;</span> pagebreak <span class="sc">&gt;</span>}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It will be important to add your captions and labels into a csv file when making your documents accessible. You will soon learn more about this in the the <a href="#sec-a11y">“Adding accessibility features” section</a>!</p>
+</div>
+</div>
+</section>
+<section id="direct-image-based-table-insertion-workflow" class="level5">
+<h5 class="anchored" data-anchor-id="direct-image-based-table-insertion-workflow">Direct image-based table insertion workflow</h5>
+<p>We don’t recommended adding tables as images, since it significantly reduces the accessibility of your table. However, we understand that sometimes this is the only format available.</p>
+<p>Use the following notation to reference an external table as an image:</p>
+<p><code>![Caption for my example table](example_table.png){fig-alt="This is the alternative text for my table", #tbl-example}</code></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. <strong>Please make sure you add alternative text for image-based tables added in this way.</strong></p>
+</div>
+</div>
+</section>
+</section>
+<section id="figures" class="level4">
+<h4 class="anchored" data-anchor-id="figures">Figures</h4>
+<section id="sec-code-in-qmd-fig" class="level5">
+<h5 class="anchored" data-anchor-id="sec-code-in-qmd-fig">Direct coding-in-qmd figure workflow</h5>
+<p>Like with tables, running <code>create_figures_doc()</code> produces a blank figures quarto file. We add figures similarly to tables. In fact, the only major difference is that you must write <strong>alternative text</strong> for your figure.</p>
+<p>Put your alternative text in a chunk option called ‘fig-alt’ (example below).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>```{r} </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>#| label: 'fig-custom1' # choose a label</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>#| fig-cap: !expr This is your figure caption.</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>#| fig-alt: !expr This is your figure alternative text.</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a># Import your data</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>load(fs::path("std_output.rda"))</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>petrale &lt;- out_new |&gt;</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>                    dplyr::filter(year &gt; 1980) |&gt;</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>                    dplyr::filter(module_name == "TIME_SERIES") |&gt;</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>                    dplyr::filter(label == "biomass") |&gt;</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>                    dplyr::filter(!is.na(fleet))</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a># Make your figure</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>your_figure &lt;- ggplot2::ggplot(petrale,</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>  ggplot2::aes(x = year, y = estimate, color = fleet)) +</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>  ggplot2::geom_line(linewidth = 0.75) +</span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>  ggplot2::geom_point() +</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>  ggplot2::theme_classic()</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a># Show your figure</span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>your_figure</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>``` </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="images/petrale_figure.png" class="img-fluid" alt="Example of a figure produced with the 'Direct coding-in-qmd figure workflow' option for adding figures to `asar` reports."></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Even though you wrote alt text in the <code>fig-alt</code> area, <strong>when you first render your report into a PDF, your alternative text will not show up in your document.</strong> Strange, right?! <strong>To ensure it shows up, refer to the <a href="#sec-a11y">“Adding accessibility features” section</a></strong> (which we’ll discuss in a moment).</p>
+</div>
+</div>
+</section>
+<section id="sec-image-based-fig" class="level5">
+<h5 class="anchored" data-anchor-id="sec-image-based-fig">Direct image-based figure insertion workflow</h5>
+<p>Like tables, you can reference figures not made directly in code chunks. However, in this case, this does <em>not</em> change the accessibility of the figure because you can still add the necessary components to meet Section 508 compliance standards: alternative text and a caption.</p>
+<p><code>![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}</code></p>
+</section>
+</section>
+</section>
+</section>
+<section id="referencing-your-tables-or-figures-in-text" class="level2">
+<h2 class="anchored" data-anchor-id="referencing-your-tables-or-figures-in-text">Referencing your tables or figures in text</h2>
+<p>Quarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>@tbl-example</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>or</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>@fig-example</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Adding an <code>@</code> symbol followed by the chunk label, or label of your table/figure, will create an interactive link that lets the reader navigate to that specific table/figure.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Break for questions</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="render-your-first-report-draft" class="level1">
+<h1>Render your first report draft!</h1>
+<p>Open your skeleton .qmd file, then render the report.</p>
+<p>Run <code>quarto::quarto_render([path/to/your/skeleton.qmd file])</code> in the console. For example:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>quarto<span class="sc">::</span><span class="fu">quarto_render</span>(</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"report"</span>,</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>             <span class="st">"SAR_species_skeleton.qmd"</span>) <span class="co"># add your skeleton filename</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<!-- ## With the RStudio "render" button -->
+<!-- Open the skeleton.qmd file. Then, in the program pane, press the "render" button: -->
+<!-- ![](images/render_button.png){fig-alt="Screenshot of the RStudio console with a red rectangle highlighting the location of the 'Render' button."} -->
+<!-- ## In the terminal -->
+<!-- Run `quarto render [path/to/your/skeleton.qmd file]` in the terminal. For example: -->
+<!-- Enter `quarto render report/SAR_species_skeleton.qmd` -->
+</section>
+<section id="sec-a11y" class="level1">
+<h1>Adding accessibility features</h1>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Congrats! You’re almost there!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You’ve made major progress towards completing your first report!</p>
+</div>
+</div>
+<p>While your rendered report looks superb, it’s probably missing two major components: <strong>tags and alternative text</strong>.</p>
+<p>If you made an HTML-based report, these features would most likely be in your document. But since we’re prioritizing PDFs, there are a few more steps to take before your document will significantly more accessible than it is now. This means that, <strong>to achieve compliance with Section 508 criteria, you must complete a couple more tasks</strong>.</p>
+<section id="add-tagging" class="level2">
+<h2 class="anchored" data-anchor-id="add-tagging">Add tagging</h2>
+<p>In your ‘report’ folder, you’ll find a new file with a .tex filetype: ‘SAR_species_skeleton.tex’ (or something similar). This file is a LaTex-based version of your rendered skeleton qmd file. It’s also where we add our remaining accessibility features, since Quarto does not yet offer that functionality within its qmd files.</p>
+<p><a href="https://www.section508.gov/create/pdfs/common-tags-and-usage/"><strong>Tags</strong></a> are structural elements of PDFs. They are signals telling software which information are headers, images, tables, text, and so on. Tags allow people using technology like screen readers to logically navigate PDFs.</p>
+<p>We’ll use the <code>asar::add_tagging()</code> function to add tags.</p>
+<p>Notice that we are using the <code>withr::with_dir()</code> function as a wrapper for <code>add_tagging()</code>. This allow us to set the “report” folder as a <em>temporary</em> working directory, which is essential for the function to work. Likewise, if you set the “report” folder as the working directory, you could remove this wrapper and <code>add_tagging()</code> would succeed.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>withr<span class="sc">::</span><span class="fu">with_dir</span>(</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(path, <span class="st">"report"</span>),</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  asar<span class="sc">::</span><span class="fu">add_tagging</span>(</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="st">"SAR_species_skeleton.tex"</span>, <span class="co"># your .tex report file</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">dir =</span> <span class="fu">getwd</span>(), <span class="co"># the location of the .tex file</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">compile =</span> <span class="cn">FALSE</span> <span class="co"># whether the .tex file should be compiled after tagging. We'll set it to FALSE for now</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Now your PDF is tagged! If you compiled your .tex file, it’d look something like this. The tags are on the right side of the PDF viewer.</p>
+<p><img src="images/tagged_pdf.png" class="img-fluid" alt="Screenshot of an example PDF-based, tagged report. The PDF is opened in Adobe and tags for the Table of Contents are shown on the right side of the screen."></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Default alt text should be updated
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you stop here (i.e., you don’t add your own alt text), this function will add the image paths as alt text. We’ll show you how to add your <em>intended</em> alt text in <a href="@sec-add-alttext">the next step</a>.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Break for questions</p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-add-alttext" class="level2">
+<h2 class="anchored" data-anchor-id="sec-add-alttext">Add alternative text</h2>
+<p>You must add alternative text (“alt text”) for images in a separate csv if you added figures using any of the workflows described above.</p>
+<p>Since you’ve used <code>stockplotr</code> to make some figures, you’ve already completed the first step: making a csv that will contain your alt text.</p>
+<section id="look-at-your-alt-text-csv" class="level3">
+<h3 class="anchored" data-anchor-id="look-at-your-alt-text-csv">Look at your alt text csv</h3>
+<p>The file, “captions_alt_text.csv”, should be located in your working directory (enter <code>getwd()</code> if you forget where that is). Open it up.</p>
+<p>The file is set up like this:</p>
+<ul>
+<li>Column 1 (“label”) is a shorthand label for your figure or table. Labels should be somewhat short and exclude spaces. Examples include “kobe”, “relative.biomass”, and “fishing.mortality”.</li>
+<li>Column 2 (“type”) contains “figure” or “table”.</li>
+<li>Column 3 (“caption”) contains your caption.</li>
+<li>Column 4 (“alt_text”) contains alternative text for figures. For tables, this column will be blank.</li>
+</ul>
+<table class="caption-top table">
+<caption>Format for csv containing table and figure captions and alternative text.</caption>
+<colgroup>
+<col style="width: 14%">
+<col style="width: 13%">
+<col style="width: 30%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>label</th>
+<th>type</th>
+<th>caption</th>
+<th>alt_text</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>example_fig</td>
+<td>figure</td>
+<td>Example caption for figure.</td>
+<td>Example alternative text for figure.</td>
+</tr>
+<tr class="even">
+<td>example_tab</td>
+<td>table</td>
+<td>Example caption for table.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="update-the-csv" class="level3">
+<h3 class="anchored" data-anchor-id="update-the-csv">Update the csv</h3>
+<p>Your job is to:</p>
+<ul>
+<li><em>edit</em> existing entries for your figures already created with <code>stockplotr</code>. This entails <a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#your-to-do-list">checking the accuracy, and writing the final component, of the existing alt text</a>.</li>
+<li><em>add</em> entries for your custom figures.</li>
+</ul>
+<!-- #### Editing existing entries {#sec-edit-exist-entries} -->
+<!-- Using the "label" column, find the row associated with your figure and inspect it. -->
+<!-- * You'll see that there's already some prewritten alt text (in the "alt_text" column) that includes data from the model results file. Now, **you must check this information for accuracy and update it where necessary** (especially if the default figures were modified). -->
+<!-- * If you see text that looks like a placeholder (e.g., "The x axis, showing the year, spans from B.start.year to B.end.year..."), that means that there was at least one instance where our tool failed to extract a specific value from the model results, calculate a key quantity (like the start year of a biomass plot- aka "B.start.year"), and substitute it into the placeholder. -->
+<!-- ::: {.callout-important} -->
+<!-- While we have extracted key quantities as accurately as possible, we cannot guarantee that each quantity will have been calculated perfectly. Input data varies widely. **It's your responsibility to check the accuracy of your figures' alt text.** -->
+<!-- ::: -->
+<!-- * This prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4): the relationship between the variables shown (i.e., what the figure is conveying). Since we can't program `stockplotr` to analyze the figure's meaning, **you must provide this crucial component**. -->
+<!-- When you're satisfied, save the csv. -->
+<!-- #### Adding new entries -->
+<!-- * Make a new row. -->
+<!-- * For "label", take the "label" of your figure chunk. For example, in [the example above](#sec-code-in-qmd-fig), the label would be "fig-custom1". -->
+<!-- * The type will be "figure". -->
+<!-- * The caption should be identical to the caption in your chunk (what you put in "fig-cap"). -->
+<!-- * The "alt_text" will contain your alt text. See the "[Editing existing entries](#sec-edit-exist-entries)" section above, and the "[Achieve Greater Accessibility](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html)" vignette, for help writing alt text. -->
+<!-- When you're satisfied, save the csv. -->
+</section>
+</section>
+<section id="add-alt-text-to-your-reports-images" class="level2">
+<h2 class="anchored" data-anchor-id="add-alt-text-to-your-reports-images">Add alt text to your report’s images</h2>
+<p>Now, we’ll use the <code>asar::add_alttext()</code> function to add the alt text into the report’s .tex file. Again, we’ll wrap the function with <code>with_dir()</code> to set a temporary working directory.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>withr<span class="sc">::</span><span class="fu">with_dir</span>(</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(path, <span class="st">"report"</span>),</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_alttext</span>(</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"SAR_species_skeleton.tex"</span>, <span class="co"># your .tex report file</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">dir =</span> <span class="fu">getwd</span>(), <span class="co"># the location of the .tex file</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">alttext_csv_dir =</span> <span class="fu">getwd</span>(), <span class="co"># the location of your "captions_alt_text.csv"</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">figures_dir =</span> path, <span class="co"># location of your "figures" folder</span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">compile =</span> <span class="cn">TRUE</span> <span class="co"># now we'll compile the PDF</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Now your PDF’s figures have alt text! You can find and edit the alt text by following these steps:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Check_alttext-1.png" class="img-fluid figure-img" alt="Screenshot of a document opened in Adobe. The 'All Tools' menu shows a red oval around the 'Prepare for accessibility' button."></p>
+<figcaption>1. Open the ‘All Tools’ menu in Adobe. Scroll down until you reach the “Prepare for accessibility” button. Click it.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Check_alttext-2.png" class="img-fluid figure-img" alt="Screenshot of a document opened in Adobe. The 'Prepare for accessibility' menu shows a red oval around the 'Add alternative text' button."></p>
+<figcaption>2. In the ‘Prepare for accessibility’, click the “Add alternative text” button.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Check_alttext-3.png" class="img-fluid figure-img" alt="Screenshot of a document opened in Adobe. The 'Set alternative text' pop-up shows where an example image's alternative text is located."></p>
+<figcaption>3. In the ‘Set alternative text’ pop-up, verify that your images contain the expected alternative text and edit as necessary.</figcaption>
+</figure>
+</div>
 <!--               -->
 <!-- END OF HOUR 3 -->
 <!--               -->
@@ -1014,7 +2270,7 @@ Note
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1023,7 +2279,7 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>For the following, use <code>stockplotr::example_data</code> as the input data.</p>
 <ol type="1">
@@ -1041,7 +2297,7 @@ Note
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1050,7 +2306,7 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>For the following, use <code>stockplotr::example_data</code> as the input data.</p>
 <ol type="1">
@@ -1058,45 +2314,45 @@ Note
 </ol>
 <p><strong>Answer</strong>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_abundance_at_age</span>(</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> stockplotr<span class="sc">::</span>example_data,</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">make_rda =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">figures_dir =</span> <span class="fu">getwd</span>()</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_abundance_at_age</span>(</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> stockplotr<span class="sc">::</span>example_data,</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">make_rda =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">figures_dir =</span> <span class="fu">getwd</span>()</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="2" type="1">
 <li>Create a recruitment time series plot. Change the <code>unit_label</code> and <code>scale_amount</code> so that the y axis shows recruitment in thousands of fish. Set <code>module</code> = “TIME_SERIES”.</li>
 </ol>
 <p><strong>Answer</strong>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_recruitment</span>(</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> stockplotr<span class="sc">::</span>example_data,</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"fish"</span>,</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale_amount =</span> <span class="dv">1000</span>,</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="st">"TIME_SERIES"</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_recruitment</span>(</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> stockplotr<span class="sc">::</span>example_data,</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"fish"</span>,</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale_amount =</span> <span class="dv">1000</span>,</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="st">"TIME_SERIES"</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="3" type="1">
 <li>Create a fishing mortality plot. Ensure it does not group by fleet. Set <code>module</code> = “TIME_SERIES”. Add a reference line (“target”) at 0.5. Convert it from a line plot to a scatterplot.</li>
 </ol>
 <p><strong>Answer</strong>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_fishing_mortality</span>(</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> stockplotr<span class="sc">::</span>example_data,</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="st">"none"</span>,</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="st">"TIME_SERIES"</span>,</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="fu">c</span>(<span class="st">"target"</span> <span class="ot">=</span> <span class="fl">0.5</span>),</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">geom =</span> <span class="st">"point"</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_fishing_mortality</span>(</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> stockplotr<span class="sc">::</span>example_data,</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="st">"none"</span>,</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="st">"TIME_SERIES"</span>,</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="fu">c</span>(<span class="st">"target"</span> <span class="ot">=</span> <span class="fl">0.5</span>),</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">geom =</span> <span class="st">"point"</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="4" type="1">
 <li>Create a landings table.</li>
 </ol>
 <p><strong>Answer</strong>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">table_landings</span>(</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> stockplotr<span class="sc">::</span>example_data</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">table_landings</span>(</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> stockplotr<span class="sc">::</span>example_data</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, use your own data.</p>
 <ol start="5" type="1">
@@ -1104,25 +2360,106 @@ Note
 </ol>
 <p><strong>Answer</strong>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">convert_output</span>(</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">file =</span> <span class="st">"path/to/your_report_file"</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Specify these arguments if you wish: model, fleet_names,   save_dir</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">convert_output</span>(</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">file =</span> <span class="st">"path/to/your_report_file"</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Specify these arguments if you wish: model, fleet_names,   save_dir</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="6" type="1">
 <li>Create a spawning biomass plot. Change the theme by applying the <code>ggplot2::theme_classic()</code>.</li>
 </ol>
 <p><strong>Answer</strong>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_spawning_biomass</span>(</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> your_converted_data_object</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_classic</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_spawning_biomass</span>(</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> your_converted_data_object</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_classic</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 </div>
-<!-- Add practice exercise for making a SAR from start to finish (ask them to follow along with the tutorial?) -->
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Practice exercises: Add figures/tables and render report
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Ensure that you have a ‘figures’ folder and a ‘tables’ folder, each with at least one rda file. If you don’t, export a couple of figures and tables.
+<ul>
+<li><em>Hint:</em> ensure that the <code>make_rda</code> argument is set to TRUE when running the <code>stockplotr</code> functions that create figures and tables).</li>
+</ul></li>
+<li>Open up your figures and tables qmds, in the ‘report’ folder. If these documents do not contain the necessary chunks to import and display at least one plot, rerun <code>create_figures_doc()</code> and/or <code>create_tables_doc()</code> to add code that will plot the figures/tables in your ‘figures’ and ‘tables’ folders.
+<ul>
+<li><em>Hint:</em> ensure that the arguments are correct: <code>subdir</code> and <code>figures_dir</code> (for the figures doc) / <code>tables_dir</code> (for the tables doc)</li>
+<li><em>Hint:</em> This step practices the <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#option-1-rerunning-asarcreate_tables_docasarcreate_figures_doc">“rda-based workflow”</a>.</li>
+</ul></li>
+<li>Practice adding a figure with markdown notation by adding the image of a landings figure into the figures doc. The figure is located in the <a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots/landings_fig_png.png">‘example_plots’ folder</a>. Set the caption to “Historical landings by fleet.”, the alternative text to “Cumulative line plot showing historical landings for North and South fleets. The x axis shows the year, which spans from 1850 to 2026. The y axis shows landings in metric tons, which spans from 0 to 2,400.”, and the figure label to “practice-figure-label”.
+<ul>
+<li><em>Hint:</em> This step practices the <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#direct-image-based-table-insertion-workflow">“direct image-based workflow”</a>.</li>
+</ul></li>
+<li>In the Executive Summary, add a reference to the first figure in your figures qmd file.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span><strong>Answers</strong> for Practice exercises: Add figures/tables and render report
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol start="3" type="1">
+<li>Practice adding a figure with markdown notation by adding the image of a landings figure into the figures doc. The figure is located in the <a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots/landings_fig_png.png">‘example_plots’ folder</a>. Set the caption to “Historical landings by fleet.”, the alternative text to “Cumulative line plot showing historical landings for North and South fleets. The x axis shows the year, which spans from 1850 to 2026. The y axis shows landings in metric tons, which spans from 0 to 2,400.”, and the figure label to “practice-figure-label”. <em>Hint:</em> This step practices the <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#direct-image-based-table-insertion-workflow">“direct image-based workflow”</a>.</li>
+</ol>
+<p><strong>Answer</strong>: Add the following chunk to the figures doc:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[Historical landings by fleet.](example_plots<span class="sc">/</span>landings_fig_png.png){fig<span class="sc">-</span>alt<span class="ot">=</span><span class="st">"Cumulative line plot showing historical landings for North and South fleets. The x axis shows the year, which spans from 1850 to 2026. The y axis shows landings in metric tons, which spans from 0 to 2,400."</span>, <span class="co">#practice-figure-label}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="4" type="1">
+<li>In the Executive Summary, add a reference to the first figure in your figures qmd file.</li>
+</ol>
+<p><strong>Answer</strong>: If the ‘label’ for that first figure is ‘fig-custom1’, then the in-text reference would be ‘@fig-custom1’.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Practice exercises: Adding accessibility features
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>If you haven’t already, add tags to your pdf by running <code>add_tagging()</code> with the appropriate arguments (including <code>compile</code> set to TRUE). Then, open up the report and ensure it was tagged.</p></li>
+<li><p>Open up the “captions_alt_text.csv” file that contains your alternative text and captions. Find the rows that are linked with the figures and tables in your report.</p>
+<ul>
+<li>Read through the captions and alternative text. Edit inaccuracies if necessary.</li>
+<li>For figures, add a sentence or two describing <a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#how-to-write-ingredient-4">the final ingredient for a solid alternative text</a>: the relationship between the variables shown (i.e., what the figure is conveying).</li>
+<li>If you’ve created custom figures/tables, create new rows for each. Add captions for all, and alternative text for just figures. Ensure that the label matches the chunk label.</li>
+</ul></li>
+<li><p>Run <code>add_alttext()</code> with <code>compile</code> set to TRUE. Then, open up the report and ensure the images contain alt text.</p></li>
+</ol>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="questions-comments-and-feedback" class="level1">
@@ -1137,7 +2474,13 @@ Note
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Again, for tables that require rotating or splitting across pages, please refer to the <a href="https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width">“Adding Custom Tables &amp; Figures” vignette</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

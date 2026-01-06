@@ -498,7 +498,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="asar-automated-stock-assessment-reporting" class="level1">
 <h1><code>asar</code>: Automated Stock Assessment Reporting</h1>
-<p>In this section we will cover the basics of <code>asar</code> by generating a blank stock assessment report and going through basic navigation of the template.</p>
+<p>In this section we will cover the basics of <code>asar</code> by generating a stock assessment report and going through basic navigation of the template.</p>
 <section id="installation" class="level2">
 <h2 class="anchored" data-anchor-id="installation">Installation</h2>
 <p><code>asar</code> should already be installed if you attended Day 1. If not, please install this package by following the instructions in the <a href="https://nmfs-ost.github.io/workflows-workshop/resources/checklist.html">pre-workshop checklist</a>.</p>
@@ -518,7 +518,7 @@ Note
 </section>
 <section id="recommended-workflow" class="level2">
 <h2 class="anchored" data-anchor-id="recommended-workflow">Recommended workflow</h2>
-<p>We <em>highly</em> recommend using a project based workflow meaning creating an R project for each report. This makes returning to your session and maintaining files easier. Using either a project or GitHub repository will help you in the long run.</p>
+<p>We <em>highly</em> recommend using a project-based workflow. This involves creating an R project for each report, which facilitates returning to your session and maintaining files. Using either a project or GitHub repository will help you in the long run.</p>
 <p>To create a new R project in Rstudio:</p>
 <p>File &gt; New Project &gt; New or Existing Directory</p>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -549,7 +549,7 @@ Important
 <h3 class="anchored" data-anchor-id="create_template"><code>create_template()</code></h3>
 <p><strong>What it does:</strong></p>
 <p>Generates a set of files that setup a stock assessment report with its supporting files.</p>
-<p>Within the created files is the “skeleton file” which drives the render of the entire report. For those familiar with Rmarkdown or Quarto books, this is operating similar to a .yml file. The other quarto files found in your folder will be what we refer to as “child documents”, or child docs for short. These are the actual files that you will fill in when writing your report. These are the bulk of your content!</p>
+<p>Within the created files is the “skeleton file” which drives the render of the entire report. For those familiar with Rmarkdown or Quarto books, this is operating similar to a .yml file. The other Quarto files found in your folder will be what we refer to as “child documents”, or child docs for short. These are the actual files that you will fill in when writing your report. These are the bulk of your content!</p>
 <p><strong>Try it out!</strong></p>
 <p><code>create_template()</code> contains <em>A LOT</em> of arguments that allow the user to customize their document how they want. The function contains a set of defaults that would produce a template that could be rendered, but contains no real information relevant to the target stock.</p>
 <p>So, let’s do more than just create a blank template! The following arguments are some key parts to fill in for a specific stock assessment report:</p>
@@ -619,7 +619,7 @@ Important
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/asar_files.png" class="img-fluid figure-img" alt="A screenshot of files that should appear in the 'report' folder, including '01_executive_summary.qmd', '02_introduction.qmd', '03_data.qmd', and more."></p>
-<figcaption>The contents of an asar generated template found in the report folder.</figcaption>
+<figcaption>The contents of an <code>asar</code>-generated template found in the report folder.</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -657,11 +657,11 @@ Note
 </figure>
 </div>
 <p>As previously mentioned, the skeleton file controls the rest of the report. This is the file you go to to compile your report, change formatting, or add quantities to reference in your document.</p>
-<p>We went over the basics of a Quarto yaml in <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#yaml">Day 1</a>, but when using asar, you don’t actually have to fill in anything yourself. The beauty of using asar is that it removes this task, but filling out information provided in the <code>create_template()</code> arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).</p>
+<p>We went over the basics of a Quarto yaml in <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#yaml">Day 1</a>, but when using <code>asar</code>, you don’t actually have to fill in anything yourself. The beauty of using <code>asar</code> is that it removes this task, but filling out information provided in the <code>create_template()</code> arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/asar_yaml.png" class="img-fluid figure-img" alt="A screenshot of an example yaml, with curly brackets highlighting which code is 'information' and which code is 'formatting'."></p>
-<figcaption>‘asar’ yaml controlling formatting and basic document information.</figcaption>
+<figcaption><code>asar</code> yaml controlling formatting and basic document information.</figcaption>
 </figure>
 </div>
 <p>The YAML controls the following:</p>
@@ -990,7 +990,7 @@ Tip
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Break for Questions</p>
+<p>Break for questions</p>
 </div>
 </div>
 </div>

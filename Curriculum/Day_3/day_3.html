@@ -389,7 +389,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#example-table" id="toc-example-table" class="nav-link" data-scroll-target="#example-table">Example Table</a></li>
   <li><a href="#exporting" id="toc-exporting" class="nav-link" data-scroll-target="#exporting">Exporting</a></li>
   </ul></li>
-  <li><a href="#integrating-stockplotr-in-the-workflow" id="toc-integrating-stockplotr-in-the-workflow" class="nav-link" data-scroll-target="#integrating-stockplotr-in-the-workflow">Integrating stockplotr in the workflow</a>
+  <li><a href="#integrating-stockplotr-into-the-workflow" id="toc-integrating-stockplotr-into-the-workflow" class="nav-link" data-scroll-target="#integrating-stockplotr-into-the-workflow">Integrating <code>stockplotr</code> into the workflow</a>
   <ul class="collapse">
   <li><a href="#adding-tables-and-figures-to-your-report" id="toc-adding-tables-and-figures-to-your-report" class="nav-link" data-scroll-target="#adding-tables-and-figures-to-your-report">Adding tables and figures to your report</a>
   <ul class="collapse">
@@ -1043,8 +1043,8 @@ Tip
 </div>
 </section>
 </section>
-<section id="integrating-stockplotr-in-the-workflow" class="level1">
-<h1>Integrating stockplotr in the workflow</h1>
+<section id="integrating-stockplotr-into-the-workflow" class="level1">
+<h1>Integrating <code>stockplotr</code> into the workflow</h1>
 <p>For the second half of today’s lesson, let’s reorient ourselves. We’ve just learned how to make figures and tables with <code>stockplotr</code>. Now, we’ll cover how to add those plots into your <code>asar</code> report template.</p>
 <p>Remember that after running the primary <code>asar</code> function– <code>create_template()</code>- you have a ‘report’ folder with several files in it. These files include the report skeleton; the child documents containing the executive summary, introduction, results, and so on; and, importantly for us right now, the documents that will contain code to display your figures and tables. The files will be named something like ‘08_tables.qmd’ and ‘09_figures.qmd’ (the prefix numbers may vary).</p>
 <p>Each file will contain zero figures or tables. Instead, they will contain a statement referring you to {stockplotr} so that you can make your own. Since we’ve created those already, let’s add them to your report!</p>
@@ -1197,7 +1197,7 @@ Note
 <h4 class="anchored" data-anchor-id="figures">Figures</h4>
 <section id="sec-code-in-qmd-fig" class="level5">
 <h5 class="anchored" data-anchor-id="sec-code-in-qmd-fig">Direct coding-in-qmd figure workflow</h5>
-<p>Like with tables, running <code>create_figures_doc()</code> produces a blank figures quarto file. We add figures similarly to tables. In fact, the only major difference is that you must write <strong>alternative text</strong> for your figure.</p>
+<p>Like with tables, running <code>create_figures_doc()</code> produces a blank figures Quarto file. We add figures similarly to tables. In fact, the only major difference is that you must write <strong>alternative text</strong> for your figure.</p>
 <p>Put your alternative text in a chunk option called ‘fig-alt’ (example below).</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>```{r} </span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>#| label: 'fig-custom1' # choose a label</span>
