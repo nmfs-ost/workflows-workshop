@@ -216,38 +216,10 @@ my_data <- read.csv("extra_data/red_fish.csv")
 
 This would work *even if your working directory is not the "report" folder.*
 
-<!-- ## Code Chunks -->
-
-<!-- As we previously mentioned, the beauty of using quarto is that it allows the user to integrate text and code throughout their reports making them super reproducible. -->
-
-<!-- The basics of a code chunk (chunk) are: -->
-
-<!-- - the language (R or python) -->
-<!-- - chunk options -->
-<!-- - code -->
-
-<!-- These three things get wrapped together within two sets of three back ticks (```) to allow a user to run code. -->
-
-<!-- ````{verbatim} -->
-<!-- ```{r} -->
-<!-- #| label: ex-chunk -->
-<!-- #| eval: false -->
-<!-- #| warning: false -->
-<!-- #| echo: false -->
-<!-- #| fig-cap: This is my figure caption. -->
-<!-- #| fig-alt: This is my alternative text. -->
-<!-- #| tbl-cap: This is my table caption. -->
-<!-- x <- 1 + 1 -->
-<!-- ``` -->
-<!-- ```` -->
-
-<!-- *There are a variety of chunk options, but the ones you will see consistently throughout this workshop are listed in the example above.* -->
-
-<!-- ::: {.callout-note} -->
-<!-- In the "label" option, for tables and figures, you will need to prefix the label with either "fig-" for a figure or "tbl-" for a table. -->
-<!-- ::: -->
-
-<!-- For those familiar with Rmarkdown, the code chunk structure in Rmarkdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a "#|" proceeding each option. -->
+::: {.callout-tip}
+## Outside today's scope
+Learn about [code chunks](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#code-chunks) on our Day 1 page!
+:::
 
 ::: {.callout-note appearance="minimal"}
 20 minute break for questions & practicing
@@ -489,10 +461,8 @@ Once you've added files to those "figures" and "tables" folders, you can rerun
 
 Now we are going to walk-through a more complex use of `asar` by
 
-- Additional parameters
-- customizing our sections
-- reorganizing section order
-- calling a previous report and editing
+- Customizing our sections
+- Reorganizing section order
 
 ### Create-your-own
 
@@ -544,16 +514,10 @@ You can run re-render skeleton as often as you want, it will always edit the cur
 
 #### Our changes: new parameters, additional author, and a new section
 
-Let's add some more parameters to our script which will allow us to references in-text throughout the document.
-
-```{r eval=FALSE}
-asar::create_template(
-  rerender_skeleton = TRUE,
-  parameters = TRUE,
-  param_names = c("fleet_a", "fleet_b"),
-  param_values = c("a long fleet name", "b long fleet name")
-)
-```
+::: {.callout-tip}
+## Outside today's scope
+Learn about how to [add more parameters](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#our-changes-new-parameters-additional-author-and-a-new-section) to a script on our Day 2 page!
+:::
 
 Now, I need to add my co-authors to my report especially since I wasn't sure who was going to be working on it at the time I created my report template. After review of our terms of reference, I noticed that I needed a section to document my changes to the model, so let's add that in too.
 
@@ -567,24 +531,10 @@ asar::create_template(
 )
 ```
 
-<!-- Add back in once section is developed -->
-
-<!-- ::: {.callout-note appearance="minimal"} -->
-<!-- Break for questions -->
-<!-- ::: -->
-
-<!-- ### Calling previous report -->
-
-
-<!-- # Summary (10 mins) -->
-
-<!-- You should now be able to -->
-
-<!-- - Create and fill in a report template -->
-<!-- - Understand how to use parameters and key quantities within text -->
-<!-- - Understand the format of a standard output object -->
-<!-- - Know how to customize a report -->
-<!-- - Know how to pull and update and old report that used `asar` -->
+::: {.callout-tip}
+## Outside today's scope
+Learn about how to [call in previous reports](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html) on our Day 2 page!
+:::
 
 ::: {.callout-note appearance="minimal"}
 20 minute break for questions & practicing
@@ -598,25 +548,6 @@ asar::create_template(
 <!--               -->
 
 # Introduction to `stockplotr`
-
-<!-- ## Import converted output (if necessary) -->
-
-<!-- If you didn't do so already, you'll need to convert your model results using the `stockplotr::convert_output()` function. -->
-
-<!-- You can use the example Report.sso file uploaded to the workshop GitHub or, if you have a compatible output file, your own. -->
-
-<!-- ```{r} -->
-<!-- #| label: conout-ex -->
-<!-- #| eval: false -->
-<!-- #| warning: false -->
-<!-- #| messages: false -->
-<!-- # Identify output file -->
-<!-- output_file <- here::here("example_output", "Report.sso") -->
-<!-- # convert the output -->
-<!-- petrale <- stockplotr::convert_output(output_file) -->
-<!-- ``` -->
-
-<!-- If you have already converted your output: great! Import it into your R environment so that you can handle it as an object like "petrale" in the chunk above. -->
 
 ## Package information
 
@@ -720,59 +651,13 @@ stockplotr::plot_biomass(
 ![](images/day3_ex_plt3.png)
 
 ::: {.callout-tip}
-The only extended arguments available are the ones found from the ggplot2::geom_XX() function. Thus, any indexed variables can not be changes such as color to fill. Please see the documentation for `ggplot2` geom functions for these additional arguments.
+## Outside today's scope
+Learn about how to [remove a reference line and further customize these `ggplot2`-based plots](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#summarize-our-data) on our Day 3 page!
 :::
 
-<!-- #### Summarize our data -->
-
-<!-- Notice that you can remove the reference line by setting `ref_line = NULL`. -->
-
-<!-- ```{r} -->
-<!-- stockplotr::plot_biomass( -->
-<!--   dat = petrale, -->
-<!--   geom = "line", -->
-<!--   group = "none", -->
-<!--   facet = NULL, -->
-<!--   ref_line = NULL, -->
-<!--   unit_label = "mt", -->
-<!--   scale_amount = 1, -->
-<!--   relative = FALSE, -->
-<!--   # interactive = TRUE, -->
-<!--   module = "TIME_SERIES" -->
-<!-- ) -->
-<!-- ``` -->
-
-<!-- ![](images/day3_ex_plt4.png) -->
-
-<!-- ::: {.callout-note appearance="minimal"} -->
-<!-- Break for questions -->
-<!-- ::: -->
-
-<!-- ::: {.callout-tip} -->
-<!-- Remember that figures return `ggplot2` objects, so we can make additional customization to these plots. -->
-<!-- ::: -->
-
-<!-- ```{r} -->
-<!-- stockplotr::plot_biomass( -->
-<!--   dat = petrale, -->
-<!--   geom = "line", -->
-<!--   group = "fleet", -->
-<!--   facet = NULL, -->
-<!--   ref_line = c("target" = 5690), -->
-<!--   unit_label = "mt", -->
-<!--   scale_amount = 1, -->
-<!--   relative = FALSE, -->
-<!--   # interactive = TRUE, -->
-<!--   module = "TIME_SERIES" -->
-<!-- ) + -->
-<!--   ggplot2::geom_vline(xintercept = 2005, linetype = "dashed", color = "red") -->
-<!-- ``` -->
-
-<!-- ![](images/day3_ex_plt5.png) -->
-
-<!-- ::: {.callout-note appearance="minimal"} -->
-<!-- Break for questions. We will be moving onto tables next. -->
-<!-- ::: -->
+::: {.callout-note appearance="minimal"}
+Break for questions. We will be moving onto tables next.
+:::
 
 ## Example Table
 
@@ -794,58 +679,14 @@ stockplotr::table_landings(
 
 <!-- insert image of table here -->
 
+::: {.callout-tip}
+## Outside today's scope
+Learn about how to [further customize table formatting](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#example-table) on our Day 3 page!
+:::
+
 ::: {.callout-note appearance="minimal"}
 Break for questions
 :::
-
-<!-- Next, we can add some different formatting: -->
-
-<!-- ```{r} -->
-<!-- stockplotr::table_landings( -->
-<!--   dat = petrale, -->
-<!--   group = "fleet", -->
-<!--   unit_label = "mt", -->
-<!--   module = NULL -->
-<!-- ) |> -->
-<!--   flextable::footnote( -->
-<!--     i = 6, # row -->
-<!--     j = 2, # column -->
-<!--     value = flextable::as_paragraph( -->
-<!--       "This is an example table from the workflows workshop. Not intended for official use." -->
-<!--       ) -->
-<!--   ) -->
-<!-- ``` -->
-
-<!-- <!-- insert image of table here --> -->
-
-<!-- or potentially highlight a specific line within the table: -->
-
-<!-- ```{r} -->
-<!-- stockplotr::table_landings( -->
-<!--   dat = petrale, -->
-<!--   group = "fleet", -->
-<!--   unit_label = "mt", -->
-<!--   module = NULL -->
-<!-- ) |> -->
-<!--   flextable::footnote( -->
-<!--     i = 6, # row -->
-<!--     j = 2, # column -->
-<!--     value = flextable::as_paragraph( -->
-<!--       "Not intended for official use." -->
-<!--       ) -->
-<!--   ) |> -->
-<!--   flextable::bg( -->
-<!--     i = 5, -->
-<!--     bg = "lightblue", -->
-<!--     part = "body" -->
-<!--     ) -->
-<!-- ``` -->
-
-<!-- <!-- insert image of table here --> -->
-
-<!-- ::: {.callout-note appearance="minimal"} -->
-<!-- Break for questions -->
-<!-- ::: -->
 
 ## Exporting
 
@@ -878,40 +719,18 @@ rda$alt_text
 
 <!-- open the rda and show around -->
 
+::: {.callout-tip}
+## Outside today's scope
+Learn about [table rda components and how to automatically create all available figures and tables](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#example-table) on our Day 3 page!
+:::
+
 ::: {.callout-note appearance="minimal"}
 Break for questions
 :::
 
-
-<!-- <!-- Repeat for table --> -->
-
-<!-- ```{r} -->
-<!-- stockplotr::table_landings( -->
-<!--   dat = petrale, -->
-<!--   group = "fleet", -->
-<!--   unit_label = "mt", -->
-<!--   make_rda = TRUE, -->
-<!--   tables_dir = getwd() -->
-<!-- ) -->
-<!-- ``` -->
-
-<!-- ```{r} -->
-<!-- load("tables/landings_table.rda") -->
-<!-- rda$table -->
-<!-- rda$caption -->
-<!-- rda$latex -->
-<!-- ``` -->
-
-::: {.callout-tip}
-We have designed two functions that allow you to automatically create all available figures and tables:
-
-- `save_all_plots()`
-- `html_all_figs_tables()`
-:::
-
 # Integrating `stockplotr` into the workflow
 
-For the second half of today's lesson, let's reorient ourselves. We've just learned how to make figures and tables with `stockplotr`. Now, we'll cover how to add those plots into your `asar` report template.
+Let's reorient ourselves. We've just learned how to make figures and tables with `stockplotr`. Now, we'll cover how to add those plots into your `asar` report template.
 
 Remember that after running the primary `asar` function-- `create_template()`- you have a 'report' folder with several files in it. These files include the report skeleton; the child documents containing the executive summary, introduction, results, and so on; and, importantly for us right now, the documents that will contain code to display your figures and tables. The files will be named something like '08_tables.qmd' and '09_figures.qmd' (the prefix numbers may vary).
 
@@ -978,120 +797,16 @@ Adding figures entails nearly the same process as described for tables. The only
 1. Figures will involve captions and *alternative text*, whereas tables only require captions
 2. Figures do not require the option to be rotated or split across pages.
 
+### Option 2: Manually adding tables/figures
+
+::: {.callout-tip}
+## Outside today's scope
+Learn about how to [manually add figures and tables](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#option-2-manually-adding-tablesfigures)-- i.e., directly code figures/tables in child document chunks, and reference premade figures/tables with markdown code-- on our Day 3 page!
+:::
+
 ::: {.callout-note appearance="minimal"}
 Break for questions
 :::
-
-### Option 2: Manually adding tables/figures
-
-#### Tables
-
-You can add a regularly-sized^[Again, for tables that require rotating or splitting across pages, please refer to the ["Adding Custom Tables & Figures" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width).] table/figure manually by following these main steps:
-
-1. Create a code chunk
-2. Add your label and other chunk options
-3. Add code
-4. Write caption
-5. Add a page break between tables (optional but recommended)
-
-##### Direct coding-in-qmd table workflow 
-
-Example from the ["Adding Custom Tables & Figures" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#direct-coding-in-qmd-workflow-option-3-2):
-
-````{verbatim}
-```{r} 
-#| label: 'tbl-custom1' # choose a label
-#| tbl-cap: !expr This is your table caption.
-
-# Import your data
-petrale <- load(fs::path("std_output.rda"))
-
-# Make your table
-your_table <- head(petrale) |>
-  dplyr::select(label, year, estimate) |>
-  flextable::flextable()
-
-# Show your table
-your_table
-``` 
-````
-
-![](images/petrale_table.png){fig-alt="Example of a table produced with the 'Direct coding-in-qmd table workflow' option for adding tables to `asar` reports."}
-
-Then, add a pagebreak:
-
-```{r} 
-#| label: 'pgbreak'
-#| eval: false
-#| echo: true
-
-{{< pagebreak >}}
-
-``` 
-
-::: {.callout-warning}
-It will be important to add your captions and labels into a csv file when making your documents accessible. You will soon learn more about this in the the ["Adding accessibility features" section](#sec-a11y)!
-:::
-
-
-##### Direct image-based table insertion workflow
-
-We don't recommended adding tables as images, since it significantly reduces the accessibility of your table. However, we understand that sometimes this is the only format available.
-
-Use the following notation to reference an external table as an image:
-
-`![Caption for my example table](example_table.png){fig-alt="This is the alternative text for my table", #tbl-example}`
-
-::: {.callout-note}
-Notice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. **Please make sure you add alternative text for image-based tables added in this way.**
-:::
-
-#### Figures
-
-##### Direct coding-in-qmd figure workflow {#sec-code-in-qmd-fig}
-
-Like with tables, running `create_figures_doc()` produces a blank figures quarto file. We add figures similarly to tables. In fact, the only major difference is that you must write **alternative text** for your figure.
-
-Put your alternative text in a chunk option called 'fig-alt' (example below).
-
-````{verbatim}
-```{r} 
-#| label: 'fig-custom1' # choose a label
-#| fig-cap: !expr This is your figure caption.
-#| fig-alt: !expr This is your figure alternative text.
-
-# Import your data
-load(fs::path("std_output.rda"))
-
-petrale <- out_new |>
-                    dplyr::filter(year > 1980) |>
-                    dplyr::filter(module_name == "TIME_SERIES") |>
-                    dplyr::filter(label == "biomass") |>
-                    dplyr::filter(!is.na(fleet))
-
-# Make your figure
-your_figure <- ggplot2::ggplot(petrale,
-  ggplot2::aes(x = year, y = estimate, color = fleet)) +
-  ggplot2::geom_line(linewidth = 0.75) +
-  ggplot2::geom_point() +
-  ggplot2::theme_classic()
-
-# Show your figure
-your_figure
-``` 
-````
-
-![](images/petrale_figure.png){fig-alt="Example of a figure produced with the 'Direct coding-in-qmd figure workflow' option for adding figures to `asar` reports."}
-
-::: {.callout-warning}
-Even though you wrote alt text in the `fig-alt` area, **when you first render your report into a PDF, your alternative text will not show up in your document.** Strange, right?! **To ensure it shows up, refer to the ["Adding accessibility features" section](#sec-a11y)** (which we'll discuss in a moment).
-:::
-
-##### Direct image-based figure insertion workflow {#sec-image-based-fig}
-
-Like tables, you can reference figures not made directly in code chunks. However, in this case, this does *not* change the accessibility of the figure because you can still add the necessary components to meet Section 508 compliance standards: alternative text and a caption.
-
-`![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}`
 
 ## Referencing your tables or figures in text
 
@@ -1107,10 +822,6 @@ or
 
 Adding an `@` symbol followed by the chunk label, or label of your table/figure, will create an interactive link that lets the reader navigate to that specific table/figure.
 
-::: {.callout-note appearance="minimal"}
-Break for questions
-:::
-
 # Render your first report draft!
 
 Open your skeleton .qmd file, then render the report.
@@ -1124,17 +835,14 @@ quarto::quarto_render(
 )
 ```
 
-<!-- ## With the RStudio "render" button -->
+::: {.callout-tip}
+## Outside today's scope
+Learn about [other ways to render reports](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#with-the-rstudio-render-button) on our Day 3 page!
+:::
 
-<!-- Open the skeleton.qmd file. Then, in the program pane, press the "render" button: -->
-
-<!-- ![](images/render_button.png){fig-alt="Screenshot of the RStudio console with a red rectangle highlighting the location of the 'Render' button."} -->
-
-<!-- ## In the terminal -->
-
-<!-- Run `quarto render [path/to/your/skeleton.qmd file]` in the terminal. For example: -->
-
-<!-- Enter `quarto render report/SAR_species_skeleton.qmd` -->
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
 
 # Adding accessibility features {#sec-a11y}
 
@@ -1217,31 +925,16 @@ Your job is to:
 * *edit* existing entries for your figures already created with `stockplotr`. This entails [checking the accuracy, and writing the final component, of the existing alt text](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#your-to-do-list).
 * *add* entries for your custom figures.
 
-<!-- #### Editing existing entries {#sec-edit-exist-entries} -->
+::: {.callout-important}
+While we have extracted key quantities as accurately as possible, we cannot guarantee that each quantity will have been calculated perfectly. Input data varies widely. **It's your responsibility to check the accuracy of your figures' alt text.**
+:::
 
-<!-- Using the "label" column, find the row associated with your figure and inspect it. -->
+* This prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4): the relationship between the variables shown (i.e., what the figure is conveying). Since we can't program `stockplotr` to analyze the figure's meaning, **you must provide this crucial component**.
 
-<!-- * You'll see that there's already some prewritten alt text (in the "alt_text" column) that includes data from the model results file. Now, **you must check this information for accuracy and update it where necessary** (especially if the default figures were modified). -->
-
-<!-- * If you see text that looks like a placeholder (e.g., "The x axis, showing the year, spans from B.start.year to B.end.year..."), that means that there was at least one instance where our tool failed to extract a specific value from the model results, calculate a key quantity (like the start year of a biomass plot- aka "B.start.year"), and substitute it into the placeholder. -->
-
-<!-- ::: {.callout-important} -->
-<!-- While we have extracted key quantities as accurately as possible, we cannot guarantee that each quantity will have been calculated perfectly. Input data varies widely. **It's your responsibility to check the accuracy of your figures' alt text.** -->
-<!-- ::: -->
-
-<!-- * This prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4): the relationship between the variables shown (i.e., what the figure is conveying). Since we can't program `stockplotr` to analyze the figure's meaning, **you must provide this crucial component**. -->
-
-<!-- When you're satisfied, save the csv. -->
-
-<!-- #### Adding new entries -->
-
-<!-- * Make a new row. -->
-<!-- * For "label", take the "label" of your figure chunk. For example, in [the example above](#sec-code-in-qmd-fig), the label would be "fig-custom1". -->
-<!-- * The type will be "figure". -->
-<!-- * The caption should be identical to the caption in your chunk (what you put in "fig-cap"). -->
-<!-- * The "alt_text" will contain your alt text. See the "[Editing existing entries](#sec-edit-exist-entries)" section above, and the "[Achieve Greater Accessibility](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html)" vignette, for help writing alt text. -->
-
-<!-- When you're satisfied, save the csv. -->
+::: {.callout-tip}
+## Outside today's scope
+Learn about how to [edit your report's alternative text and captions, and add new entries](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#with-the-rstudio-render-button), on our Day 3 page!
+:::
 
 ## Add alt text to your report's images
 
@@ -1270,10 +963,6 @@ Now your PDF's figures have alt text! You can find and edit the alt text by foll
 
 ![3. In the 'Set alternative text' pop-up, verify that your images contain the expected alternative text and edit as necessary.](images/Check_alttext-3.png){fig-alt="Screenshot of a document opened in Adobe. The 'Set alternative text' pop-up shows where an example image's alternative text is located."}
 
-<!--               -->
-<!-- END OF HOUR 3 -->
-<!--               -->
-
 ::: {.callout-note appearance="minimal"}
 20 minute break for questions & practicing
 :::
@@ -1289,3 +978,7 @@ Please navigate to the [Feedback](https://docs.google.com/document/d/1SY-xwHXnJU
 * What went well?
 * What could be improved?
 * What is a question you still have?
+
+<!--               -->
+<!-- END OF HOUR 3 -->
+<!--               -->

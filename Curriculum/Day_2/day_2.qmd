@@ -305,10 +305,10 @@ Once you've added files to those "figures" and "tables" folders, you can rerun
 
 Now we are going to walk-through a more complex use of `asar` by
 
-- Additional parameters
-- customizing our sections
-- reorganizing section order
-- calling a previous report and editing
+- Adding additional parameters
+- Customizing our sections
+- Reorganizing section order
+- Calling a previous report and editing
 
 ### Create-your-own
 
