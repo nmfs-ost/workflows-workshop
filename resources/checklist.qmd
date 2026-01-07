@@ -5,8 +5,7 @@ format: html
 
 Here are the main steps needed to set up your environment so that you're ready to use `asar` and `stockplotr` to create a stock assessment report.
 
-If you have any questions, please contact the [workshop organizers](https://nmfs-ost.github.io/workflows-workshop#sec-organizers).
-
+If you have any questions, please contact the [workshop organizers](https://nmfs-ost.github.io/workflows-workshop/#the-organizers).
 
 1. Ensure that you can run [R code](https://www.r-project.org/) with a platform like RStudio, VS Code, Positron, etc.
 2. Ensure you have downloaded [Quarto, version 1.6+ ](https://quarto.org/docs/get-started/) and can create Quarto documents.

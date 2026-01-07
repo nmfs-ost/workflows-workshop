@@ -1,19 +1,13 @@
----
-title: "Workflows Workshop Home"
-subtitle: "Learn how to write semi-automated stock assessment reports!"
-page-layout: full
----
+# Workflows Workshop Home
+> Learn how to write semi-automated stock assessment reports!
 
 <img src="assets/workshop_banner.png" align="center" width="430" height="115"/>
 
 This repository houses the agenda, materials, and communication for the NOAA Fisheries Stock Assessment Workflows Workshops being held starting in 2026! Please use this README to help navigate within our repository and find out our current progress and plans in real time.
 
-::: {.callout-warning}
-## Workshop preparation is in progress!
+## Note: Workshop preparation is in progress!
 
 Currently, we are coordinating with our NOAA Fisheries Regional Science Centers to determine the best time to work with our stock assessment scientists and conduct these trainings.
-:::
-
 
 # Background
 
@@ -21,9 +15,7 @@ The workflows of stock assessment scientists across the U.S. are highly variable
 
 # Pre-workshop checklist
 
-::: {.callout-important}
-Before attending the workshop, we ask that you prepare by completing the [pre-workshop checklist](resources/checklist.qmd).
-:::
+Before attending the workshop, **we ask that you prepare by completing the [pre-workshop checklist](resources/checklist.qmd).**
 
 # Navigation
 
@@ -57,6 +49,6 @@ As of now, we are planning to hold a series of workshops spanning 3 days (Tuesda
   - Integrating tables and figures into {asar} report
   - Making reports accessible
 
-# The organizers {#sec-organizers}
+# The organizers
 
 These workshops are being organized and taught by Workflows team members Sam Schiano and Sophie Breitbart, both of whom are based in OST.
