@@ -957,7 +957,7 @@ Important
 <p>You should see a folder called “<strong>report</strong>” where you indicated in the argument <code>file_dir</code>. It should have a set up that looks like this:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/asar_files.png" class="img-fluid figure-img" alt="A screenshot of files that should appear in the 'report' folder, including '01_executive_summary.qmd', '02_introduction.qmd', '03_data.qmd', and more."></p>
+<p><img src="Day_2/images/asar_files.png" class="img-fluid figure-img" alt="A screenshot of files that should appear in the 'report' folder, including '01_executive_summary.qmd', '02_introduction.qmd', '03_data.qmd', and more."></p>
 <figcaption>The contents of an <code>asar</code>-generated template found in the report folder.</figcaption>
 </figure>
 </div>
@@ -972,7 +972,7 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p>You should see a variety of messages reported in the console to indicate that it worked! For a blank template with no errors, it should look like this:</p>
-<p><img src="images/blank_template_output_messages.png" class="img-fluid" alt="A screenshot of console text expected when `create_template()` is run successfully."></p>
+<p><img src="Day_2/images/blank_template_output_messages.png" class="img-fluid" alt="A screenshot of console text expected when `create_template()` is run successfully."></p>
 </div>
 </div>
 <div class="callout callout-style-simple callout-note no-icon">
@@ -991,7 +991,7 @@ Note
 <h5 class="anchored" data-anchor-id="the-skeleton">The skeleton</h5>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/asar_skeleton.png" class="img-fluid figure-img" alt="A figure showing seven rectangles on top of one another, portraying the order of content in a Quarto yaml. Sections include 'Yaml (Formatting and input information)', 'Parameters R chunk', 'Preamble R chunk', 'Disclaimer', 'Citation', 'Report content ('child docs'): Executive Summary', an ellipsis to separate the blocks, and then a final block ('Report content ('Child docs'): Appendix')."></p>
+<p><img src="Day_2/images/asar_skeleton.png" class="img-fluid figure-img" alt="A figure showing seven rectangles on top of one another, portraying the order of content in a Quarto yaml. Sections include 'Yaml (Formatting and input information)', 'Parameters R chunk', 'Preamble R chunk', 'Disclaimer', 'Citation', 'Report content ('child docs'): Executive Summary', an ellipsis to separate the blocks, and then a final block ('Report content ('Child docs'): Appendix')."></p>
 <figcaption>Diagram showing different blocks of content found in the Quarto yaml within the skeleton.qmd file.</figcaption>
 </figure>
 </div>
@@ -999,7 +999,7 @@ Note
 <p>When using <code>asar</code>, you don’t actually have to adjust the yaml yourself. The beauty of using <code>asar</code> is that it removes this task, but filling out information provided in the <code>create_template()</code> arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/asar_yaml.png" class="img-fluid figure-img" alt="A screenshot of an example yaml, with curly brackets highlighting which code is 'information' and which code is 'formatting'."></p>
+<p><img src="Day_2/images/asar_yaml.png" class="img-fluid figure-img" alt="A screenshot of an example yaml, with curly brackets highlighting which code is 'information' and which code is 'formatting'."></p>
 <figcaption><code>asar</code> yaml controlling formatting and basic document information.</figcaption>
 </figure>
 </div>
@@ -1029,7 +1029,7 @@ Note
 <p>The preamble is an R chunk that loads in a script called “preamble.R” which extracts key quantities commonly referenced in stock assessment reports. This will only work with a standard results file converted using <code>asar::convert_output()</code>, which we will get to shortly.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/preamble.png" class="img-fluid figure-img" alt="A screenshot of the preamble, with the R chunk option 'eval: false' highlighted."></p>
+<p><img src="Day_2/images/preamble.png" class="img-fluid figure-img" alt="A screenshot of the preamble, with the R chunk option 'eval: false' highlighted."></p>
 <figcaption>A screenshot showing lines of code in an R chunk within the skeleton file containing various quantities pulled from the preamble.R script.</figcaption>
 </figure>
 </div>
@@ -1103,7 +1103,7 @@ Important
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/petrale_conout.png" class="img-fluid figure-img"></p>
+<p><img src="Day_2/images/petrale_conout.png" class="img-fluid figure-img"></p>
 <figcaption>A screenshot of the first 8 columns and 10 rows of data from a standard output tibble converted from a stock synthesis Report.sso file.</figcaption>
 </figure>
 </div>
@@ -1562,7 +1562,7 @@ Add questions to practice adding new sections and calling a previous report when
 <span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="cn">NULL</span></span>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><img src="images/day3_ex_plt1.png" class="img-fluid"></p>
+<p><img src="Day_3/images/day3_ex_plt1.png" class="img-fluid"></p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1594,7 +1594,7 @@ Add questions to practice adding new sections and calling a previous report when
 <span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="st">"TIME_SERIES"</span></span>
 <span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><img src="images/day3_ex_plt2.png" class="img-fluid"></p>
+<p><img src="Day_3/images/day3_ex_plt2.png" class="img-fluid"></p>
 </section>
 <section id="plot-relative-biomass-and-change-the-size-of-the-line" class="level4">
 <h4 class="anchored" data-anchor-id="plot-relative-biomass-and-change-the-size-of-the-line">Plot relative biomass and change the size of the line</h4>
@@ -1614,7 +1614,7 @@ Add questions to practice adding new sections and calling a previous report when
 <span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">linewidth =</span> <span class="dv">2</span></span>
 <span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><img src="images/day3_ex_plt3.png" class="img-fluid"></p>
+<p><img src="Day_3/images/day3_ex_plt3.png" class="img-fluid"></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1920,7 +1920,7 @@ Note
 <span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now your PDF is tagged! If you compiled your .tex file, it’d look something like this. The tags are on the right side of the PDF viewer.</p>
-<p><img src="images/tagged_pdf.png" class="img-fluid" alt="Screenshot of an example PDF-based, tagged report. The PDF is opened in Adobe and tags for the Table of Contents are shown on the right side of the screen."></p>
+<p><img src="Day_3/images/tagged_pdf.png" class="img-fluid" alt="Screenshot of an example PDF-based, tagged report. The PDF is opened in Adobe and tags for the Table of Contents are shown on the right side of the screen."></p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2049,19 +2049,19 @@ Important
 <p>Now your PDF’s figures have alt text! You can find and edit the alt text by following these steps:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Check_alttext-1.png" class="img-fluid figure-img" alt="Screenshot of a document opened in Adobe. The 'All Tools' menu shows a red oval around the 'Prepare for accessibility' button."></p>
+<p><img src="Day_3/images/Check_alttext-1.png" class="img-fluid figure-img" alt="Screenshot of a document opened in Adobe. The 'All Tools' menu shows a red oval around the 'Prepare for accessibility' button."></p>
 <figcaption>1. Open the ‘All Tools’ menu in Adobe. Scroll down until you reach the “Prepare for accessibility” button. Click it.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Check_alttext-2.png" class="img-fluid figure-img" alt="Screenshot of a document opened in Adobe. The 'Prepare for accessibility' menu shows a red oval around the 'Add alternative text' button."></p>
+<p><img src="Day_3/images/Check_alttext-2.png" class="img-fluid figure-img" alt="Screenshot of a document opened in Adobe. The 'Prepare for accessibility' menu shows a red oval around the 'Add alternative text' button."></p>
 <figcaption>2. In the ‘Prepare for accessibility’, click the “Add alternative text” button.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Check_alttext-3.png" class="img-fluid figure-img" alt="Screenshot of a document opened in Adobe. The 'Set alternative text' pop-up shows where an example image's alternative text is located."></p>
+<p><img src="Day_3/images/Check_alttext-3.png" class="img-fluid figure-img" alt="Screenshot of a document opened in Adobe. The 'Set alternative text' pop-up shows where an example image's alternative text is located."></p>
 <figcaption>3. In the ‘Set alternative text’ pop-up, verify that your images contain the expected alternative text and edit as necessary.</figcaption>
 </figure>
 </div>
