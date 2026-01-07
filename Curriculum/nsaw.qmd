@@ -12,6 +12,9 @@ toc-depth: 3
             padding: 10px; 
             border: 2px solid lightgray; 
             margin: 10px;">
+            
+<!-- Sam start -->
+            
 # Objectives
 -   Learn how R markdown can be used to enhance {asar} reports
 -   Understand how Quarto is used to structure an {asar} report
@@ -88,6 +91,7 @@ By the end of this workshop, we hope that you come away with the knowledge and c
 - Move towards a more centralized workflow across NOAA Fisheries
 
 # Markdown
+<!-- Sophie start -->
 
 [According to RStudio](https://rmarkdown.rstudio.com/articles_intro.html), *markdown* is "an easy-to-write plain text format"; not exactly a language, but a formatting style. It allows you to format text reproducibly-- without pressing buttons.
 
@@ -209,6 +213,8 @@ This setup avoids placing your entire report in one massive .qmd file, facilitat
 
 ### Relative pathnames
 
+<!-- Sophie last section -->
+
 ::: {.callout-important}
 Only files with paths relative to the Quarto doc will load!
 :::
@@ -249,8 +255,11 @@ Learn about [code chunks](https://nmfs-ost.github.io/workflows-workshop/Curricul
 <!--               -->
 <!-- END OF HOUR 1 -->
 <!--               -->
+<!-- Sophie end -->
 
 # {asar}: Automated Stock Assessment Reporting
+
+<!-- Sam start -->
 
 In this section we will cover the basics of {asar} by generating a stock assessment report and going through basic navigation of the template.
 
@@ -504,6 +513,8 @@ You can run re-render skeleton as often as you want, it will always edit the cur
 
 #### Our changes: new parameters, additional author, and a new section
 
+<!-- Sam last section -->
+
 ::: {.callout-tip}
 ## Outside today's scope
 Learn about how to [add more parameters](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#our-changes-new-parameters-additional-author-and-a-new-section) to a script on our Day 2 page!
@@ -538,8 +549,11 @@ Learn about how to [call in previous reports](https://nmfs-ost.github.io/workflo
 <!--               -->
 <!-- END OF HOUR 2 -->
 <!--               -->
+<!-- Sam end -->
 
 # Introduction to {stockplotr}
+
+<!-- Sophie start -->
 
 ## Package information
 
@@ -980,3 +994,5 @@ Please navigate to the [Feedback](https://docs.google.com/document/d/1SY-xwHXnJU
 <!--               -->
 <!-- END OF HOUR 3 -->
 <!--               -->
+
+<!-- Sophie end -->
