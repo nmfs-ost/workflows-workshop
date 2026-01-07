@@ -309,13 +309,13 @@ create_template(
 You should see a folder called "**report**" where you indicated in the argument `file_dir`. It
 should have a set up that looks like this:
 
-![The contents of an `asar`-generated template found in the report folder.](images/asar_files.png){fig-alt="A screenshot of files that should appear in the 'report' folder, including '01_executive_summary.qmd', '02_introduction.qmd', '03_data.qmd', and more."}
+![The contents of an `asar`-generated template found in the report folder.](/Day_2/images/asar_files.png){fig-alt="A screenshot of files that should appear in the 'report' folder, including '01_executive_summary.qmd', '02_introduction.qmd', '03_data.qmd', and more."}
 
 ::: {.callout-note}
 You should see a variety of messages reported in the console to indicate
 that it worked! For a blank template with no errors, it should look like this:
 
-![](images/blank_template_output_messages.png){fig-alt="A screenshot of console text expected when `create_template()` is run successfully."}
+![](Day_2/images/blank_template_output_messages.png){fig-alt="A screenshot of console text expected when `create_template()` is run successfully."}
 :::
 
 ::: {.callout-note appearance="minimal"}
@@ -326,13 +326,13 @@ Break for questions
 
 ##### The skeleton
 
-![Diagram showing different blocks of content found in the Quarto yaml within the skeleton.qmd file.](images/asar_skeleton.png){fig-alt="A figure showing seven rectangles on top of one another, portraying the order of content in a Quarto yaml. Sections include 'Yaml (Formatting and input information)', 'Parameters R chunk', 'Preamble R chunk', 'Disclaimer', 'Citation', 'Report content ('child docs'): Executive Summary', an ellipsis to separate the blocks, and then a final block ('Report content ('Child docs'): Appendix')."}
+![Diagram showing different blocks of content found in the Quarto yaml within the skeleton.qmd file.](Day_2/images/asar_skeleton.png){fig-alt="A figure showing seven rectangles on top of one another, portraying the order of content in a Quarto yaml. Sections include 'Yaml (Formatting and input information)', 'Parameters R chunk', 'Preamble R chunk', 'Disclaimer', 'Citation', 'Report content ('child docs'): Executive Summary', an ellipsis to separate the blocks, and then a final block ('Report content ('Child docs'): Appendix')."}
 
 As previously mentioned, the skeleton file controls the rest of the report. This is the file you go to to compile your report, change formatting, or add quantities to reference in your document.
 
 When using `asar`, you don't actually have to adjust the yaml yourself. The beauty of using `asar` is that it removes this task, but filling out information provided in the `create_template()` arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).
 
-![`asar` yaml controlling formatting and basic document information.](images/asar_yaml.png){fig-alt="A screenshot of an example yaml, with curly brackets highlighting which code is 'information' and which code is 'formatting'."}
+![`asar` yaml controlling formatting and basic document information.](/Curriculum/Day_2/images/asar_yaml.png){fig-alt="A screenshot of an example yaml, with curly brackets highlighting which code is 'information' and which code is 'formatting'."}
 
 The YAML controls the following:
 
@@ -359,7 +359,7 @@ You have two options for calling these parameters in your writing.
 
 The preamble is an R chunk that loads in a script called "preamble.R" which extracts key quantities commonly referenced in stock assessment reports. This will only work with a standard results file converted using `asar::convert_output()`, which we will get to shortly.
 
-![A screenshot showing lines of code in an R chunk within the skeleton file containing various quantities pulled from the preamble.R script.](images/preamble.png){fig-alt="A screenshot of the preamble, with the R chunk option 'eval: false' highlighted."}
+![A screenshot showing lines of code in an R chunk within the skeleton file containing various quantities pulled from the preamble.R script.](Day_2/images/preamble.png){fig-alt="A screenshot of the preamble, with the R chunk option 'eval: false' highlighted."}
 
 The quantities in found in this chunk can be referenced in-line throughout the document:
 
@@ -425,7 +425,7 @@ petrale <- stockplotr::convert_output(output_file)
 petrale
 ```
 
-![A screenshot of the first 8 columns and 10 rows of data from a standard output tibble converted from a stock synthesis Report.sso file.](images/petrale_conout.png)
+![A screenshot of the first 8 columns and 10 rows of data from a standard output tibble converted from a stock synthesis Report.sso file.](Day_2/images/petrale_conout.png)
 
 ::: {.callout-tip}
 `convert_output()` will recognize which model the results file came from as well as fleet names. In the rare case either of these are incorrect, the function contains arguments of `model` and `fleet_names` which you as the user can indicate for the function.
@@ -595,7 +595,7 @@ stockplotr::plot_biomass(
 )
 ```
 
-![](images/day3_ex_plt1.png)
+![](Day_3/images/day3_ex_plt1.png)
 
 ::: {.callout-note appearance="minimal"}
 Break for questions
@@ -626,7 +626,7 @@ stockplotr::plot_biomass(
 )
 ```
 
-![](images/day3_ex_plt2.png)
+![](Day_3/images/day3_ex_plt2.png)
 
 #### Plot relative biomass and change the size of the line
   
@@ -648,7 +648,7 @@ stockplotr::plot_biomass(
 )
 ```
 
-![](images/day3_ex_plt3.png)
+![](Day_3/images/day3_ex_plt3.png)
 
 ::: {.callout-tip}
 ## Outside today's scope
@@ -880,7 +880,7 @@ withr::with_dir(
 
 Now your PDF is tagged! If you compiled your .tex file, it'd look something like this. The tags are on the right side of the PDF viewer.
 
-![](images/tagged_pdf.png){fig-alt="Screenshot of an example PDF-based, tagged report. The PDF is opened in Adobe and tags for the Table of Contents are shown on the right side of the screen."}
+![](Day_3/images/tagged_pdf.png){fig-alt="Screenshot of an example PDF-based, tagged report. The PDF is opened in Adobe and tags for the Table of Contents are shown on the right side of the screen."}
 
 ::: {.callout-warning}
 ## Default alt text should be updated 
@@ -957,11 +957,11 @@ withr::with_dir(
 
 Now your PDF's figures have alt text! You can find and edit the alt text by following these steps:
 
-![1. Open the 'All Tools' menu in Adobe. Scroll down until you reach the "Prepare for accessibility" button. Click it.](images/Check_alttext-1.png){fig-alt="Screenshot of a document opened in Adobe. The 'All Tools' menu shows a red oval around the 'Prepare for accessibility' button."}
+![1. Open the 'All Tools' menu in Adobe. Scroll down until you reach the "Prepare for accessibility" button. Click it.](Day_3/images/Check_alttext-1.png){fig-alt="Screenshot of a document opened in Adobe. The 'All Tools' menu shows a red oval around the 'Prepare for accessibility' button."}
 
-![2. In the 'Prepare for accessibility', click the "Add alternative text" button.](images/Check_alttext-2.png){fig-alt="Screenshot of a document opened in Adobe. The 'Prepare for accessibility' menu shows a red oval around the 'Add alternative text' button."}
+![2. In the 'Prepare for accessibility', click the "Add alternative text" button.](Day_3/images/Check_alttext-2.png){fig-alt="Screenshot of a document opened in Adobe. The 'Prepare for accessibility' menu shows a red oval around the 'Add alternative text' button."}
 
-![3. In the 'Set alternative text' pop-up, verify that your images contain the expected alternative text and edit as necessary.](images/Check_alttext-3.png){fig-alt="Screenshot of a document opened in Adobe. The 'Set alternative text' pop-up shows where an example image's alternative text is located."}
+![3. In the 'Set alternative text' pop-up, verify that your images contain the expected alternative text and edit as necessary.](Day_3/images/Check_alttext-3.png){fig-alt="Screenshot of a document opened in Adobe. The 'Set alternative text' pop-up shows where an example image's alternative text is located."}
 
 ::: {.callout-note appearance="minimal"}
 20 minute break for questions & practicing
