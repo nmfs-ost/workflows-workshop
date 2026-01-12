@@ -625,6 +625,8 @@ Each automated function returns either a `ggplot2` object (figure) or `gt` objec
 
 ## Example Figure
 
+<!-- Using the 'petrale' object, which is the model results file you converted just a few minutes ago: -->
+
 Run the example below. It should result in a line graph showing biomass over time, including a reference line for the biomass unfished.
 
 ```{r eval = FALSE}
@@ -650,13 +652,23 @@ Break for questions
 
 ### Customizing
 
+<!-- Now let's customize even more -->
+<!-- All figures automatically identify any indexing variables in the data (e.g., fleet, area, or sex) -->
+<!-- You can use the `group` and `facet` arguments to modify how these indexing variables are displayed in the figure -->
+<!-- You can also modify other arguments such as `geom`, `ref_line`, and `relative` to change the appearance of the figure.  -->
+
+
 All figures will automatically identify any indexing variables in the data such as fleet, area, or sex. You can use the `group` and `facet` arguments to modify how these indexing variables are displayed in the figure. You can also modify other arguments such as `geom`, `ref_line`, and `relative` to change the appearance of the figure. 
 
 Here are some examples of how to customize the biomass figure:
 
 #### Change the reference line to a specific value (e.g., 260)
-  
+
 In this example we are also telling the function which module to select in order to by-pass this step. We plan to remove grouping of some modules in the future.
+
+<!-- This example: -->
+<!-- -we're setting the reference line to 260 -->
+<!-- -we're specifying the module name to "time series" so that we won't have to answer the question in the console each time -->
 
 ```{r eval = FALSE}
 stockplotr::plot_biomass(
@@ -676,12 +688,16 @@ stockplotr::plot_biomass(
 ![](Day_3/images/day3_ex_plt2.png)
 
 #### Plot relative biomass and change the size of the line
-  
+
 In this example, we still are bypassing module selection and we are automatically extracting the reference line value from the data. However, now we are using this reference value to plot relative biomass and changing the linewidth to 2 (an argument inherited from `ggplot2::geom_line()`).
 
 ::: {.callout-note}
 If you were plotting a scatterplot (`geom = 'point'`) or area plot (`geom = 'area'`), you could add arguments associated with `geom_point()` and `geom_area()`, respectively.
 :::
+
+<!-- This example: -->
+<!-- building on the prev customization, AND: -->
+<!-- -making the plot show *relative* biomass (biomass relative to the ref line) AND changing linewidth to be bolder (with a classic `ggplot2` command) -->
 
 ```{r eval = FALSE}
 stockplotr::plot_biomass(
@@ -700,6 +716,9 @@ stockplotr::plot_biomass(
 ```
 
 ![](Day_3/images/day3_ex_plt3.png)
+
+<!-- We don't have time for this right now, but you can see the tip below to learn how to remove a ref line and customize your figures even more. -->
+<!-- Questions? -->
 
 ::: {.callout-tip}
 ## Outside today's scope
