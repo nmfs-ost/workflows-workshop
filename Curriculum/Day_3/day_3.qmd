@@ -301,10 +301,10 @@ You can export any table or plot along with their associated caption and alterna
 
 Each plot or table has the option to export it as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:
 
-- ggplot or flextable object
+- `ggplot2` or `gt` object
 - caption
 - alternative text (figures only)
-- latex object (tables only)
+- LaTeX object (tables only)
 
 ```{r}
 stockplotr::plot_biomass(
