@@ -170,6 +170,20 @@ You can easily add citations to your report. We provide an `asar_references.bib`
 
 To cite a reference in the text, use the `@` symbol followed by the citation key (e.g., `@Biddle_1992`). R Markdown will automatically format the citation and add it to the "References" section towards the end of your report.
 
+Here's an example entry from the .bib file:
+
+````
+@article{Biddle_1992,
+  title={Repton and the Vikings},
+  volume={66},
+  DOI={10.1017/S0003598X00081023},
+  number={250}, journal={Antiquity},
+  author={Biddle, Martin and Kjølbye-Biddle, Birthe},
+  year={1992},
+  pages={36–51}
+}
+````
+
 # Quarto
 
 Quarto is an ideal platform for building reproducible reports, which are denoted with a .qmd (Quarto Markdown) extension type. Why?
