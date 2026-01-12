@@ -162,6 +162,12 @@ date: today
 
 ### Parameters
 
+<!-- Parameters are objects you can reference in a report. Example: "species" = "Petrale sole" -->
+<!-- In report, you'd basically write "species" (with a specific syntax) and, when your report renders, "species" would change to "Petrale sole". -->
+<!-- The syntax: 'params' + dollar sign + param name -->
+<!-- They're great bc if you want to change the species- e.g., if your next report is about salmon- you simply change "species" in the YAML once, instead of dozens of times throughout report. -->
+<!-- -esp. great for params like "year" -->
+
 Parameters allow you to create dynamic reports. You can define parameters in the YAML header and then reference them in your text and code.
 
 For example, you could have a parameter for the species you're writing about:
@@ -182,8 +188,14 @@ Then, in the body of your report, you can reference this parameter like this:
 
 When you knit the document, \`params\$species\` will be replaced with "Petrale sole".
 
-
 ### References and Bibliography
+
+<!-- Lastly, add citations -->
+<!-- -Check out the .bib file that is produced when you create an asar report- contains hundreds of citations -->
+<!-- --you can also add to it -->
+<!-- In the bib file, you'll see a "citation key"- the name of the citation, before its title, volume, etc. Just add that to your report, with an @ sign in front, to add a citation. -->
+<!-- Great for if you need to edit all citations- example: you realized year was incorrect. Just edit entry in bib file and recompile. No manual editing each citation! -->
+<!-- You'll also see a list of the references cited in your report in the "References" section. -->
 
 You can easily add citations to your report. We provide an `asar_references.bib` file in the "report" folder with hundreds of citations for you to reference, though you can add your own to the file too.
 
@@ -205,6 +217,12 @@ Here's an example entry from the .bib file:
 ## Tips for Quarto documents
 ### Modular setup with a skeleton
 
+<!-- When you create an asar report, you'll see that the report is set up in a *modular* fashion. This means that, instead of having one giant file with your entire report's text in it, your report will be assembled by pulling in text from several different files. -->
+<!-- You'll have two main groups of files: -->
+<!-- -child docs (one file for the exec summary, one file for the introduction, etc.) -->
+<!-- -skeleton (the file that pulls in the child docs, and which is rendered into the report) -->
+<!-- This setup helps with collaboration because people aren't all working on the same file at the same time. Helps reduce conflicts when everyone's changes are submitted. -->
+
 When you run `asar::create_template()`, you will receive a "report" folder with several files within it. One of the most important files is what we call the "skeleton": a .qmd file containing chunks that run *other* files, then places the rendered contents of those files within one report.
 
 Those *other* files are what we call "child documents". For example, your report introduction will be written in a child document. Your figures and tables will be placed in respective child docs, too.
@@ -214,6 +232,16 @@ This setup avoids placing your entire report in one massive .qmd file, facilitat
 ### Relative pathnames
 
 <!-- Sophie last section -->
+
+<!-- Last general topic: absolute vs relative pathnames -->
+<!-- *Who's familiar with these terms?* -->
+<!-- An absolute filepath: entire path from your computer's root (like, C drive) to the document. -->
+<!-- Relative filepath: a portion of the absolute filepath- starting at a different folder. -->
+<!-- Example: Absolute filepath is the entire address of this building. Relative filepath: Just the street address and town- no zip code, state, or country. It's the *local* address. -->
+<!-- With Quarto, if you, e.g., import a file into a quarto doc, you have to use either an absolute filepath, OR a relative filepath that is created in relation to the Quarto doc itself. -->
+<!-- Example: (review ex w/fish files) -->
+<!-- Not enough time to cover code chunks today- feel free to explore yourself. -->
+<!-- Now we'll take a break until 10am. Feel free to use the time for anything you need. Take a break; try some practice questions, with answers; ask us questions! We'll start at 10am with an intro to asar. -->
 
 ::: {.callout-important}
 Only files with paths relative to the Quarto doc will load!
