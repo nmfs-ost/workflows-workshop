@@ -583,7 +583,18 @@ Learn about how to [call in previous reports](https://nmfs-ost.github.io/workflo
 
 <!-- Sophie start -->
 
+<!-- Now that you've generated your report outline, let's make figures and tables to add to it! -->
+<!-- We'll use the R package `stockplotr`. -->
+<!-- -Our goal: create a centralized package that contains all of the figures and tables for a stock assessment report, which are generalized and not specific to any one region. -->
+<!-- -Saw a need for one centralized pkg since multiple packages that make figs/table but are typically region and/or model-dependent -->
+
 ## Package information
+
+<!-- Here is a table showing the available figures and tables you can make, with their associated function (we're working on tables besides landings rn) -->
+<!-- Functions return a `ggplot2` object (figure) or `gt` object (table) -->
+<!-- Then, you can further customize them using notation you are familiar with: -->
+<!-- Figures: can add onto the plot with other `ggplot2` functions or extensions using the plus (+) sign -->
+<!-- Tables: use the native pipe (|>) when adding additional formatting, rows, etc -->
 
 This package is an ongoing process to gather contributions in order to expand the number of pre-made tables and figures that can be incorporated into a stock assessment report. All objects are intended to be generalized and not specific to any region.
 
