@@ -805,7 +805,7 @@
     "href": "resources/good_practices.html",
     "title": "Good data science practices",
     "section": "",
-    "text": "Use the here R package\n\n\n\n\n\nCreate a reproducible example (“reprex”) to allow your helper to reproduce your issue and get a clear sense of the context. See the tidyverse’s “do’s and don’ts” for making reprexes.",
+    "text": "Use the here R package. As stated on their website: “The goal of the here package is to enable easy file referencing in project-oriented workflows. In contrast to using setwd(), which is fragile and dependent on the way you organize your files, here uses the top-level directory of a project to easily build paths to files.” This is especially useful when you’re collaborating with others on the same files.\n\n\n\n\n\nCreate a reproducible example (“reprex”) to allow your helper to reproduce your issue and get a clear sense of the context. See the tidyverse’s “do’s and don’ts” for making reprexes.",
     "crumbs": [
       "Good data science practices"
     ]
@@ -815,7 +815,7 @@
     "href": "resources/good_practices.html#organization",
     "title": "Good data science practices",
     "section": "",
-    "text": "Use the here R package",
+    "text": "Use the here R package. As stated on their website: “The goal of the here package is to enable easy file referencing in project-oriented workflows. In contrast to using setwd(), which is fragile and dependent on the way you organize your files, here uses the top-level directory of a project to easily build paths to files.” This is especially useful when you’re collaborating with others on the same files.",
     "crumbs": [
       "Good data science practices"
     ]
