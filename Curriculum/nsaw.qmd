@@ -731,6 +731,9 @@ Break for questions. We will be moving onto tables next.
 
 ## Example Table
 
+<!-- Now let's make a table. -->
+<!-- -exported as `gt` objects; can be edited/customized as such (use the native pipe) -->
+
 Run the following example table. The result is a fully report ready table showing landings over time. Remember that these are exported as `gt` objects and can be edited as such.
 
 ::: {.callout-note}
@@ -746,6 +749,9 @@ stockplotr::table_landings(
 ```
 
 ![](Day_3/images/day3_ex_table1.png)
+
+<!-- There are many more ways to customize tables; click the link in the tip box if you'd like to learn more! -->
+<!-- Questions? -->
 
 ::: {.callout-tip}
 ## Outside today's scope
