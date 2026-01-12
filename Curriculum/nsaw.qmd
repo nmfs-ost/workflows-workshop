@@ -588,7 +588,7 @@ The following table contains figures and tables that are available in `stockplot
 | `table_harvest_projection()` | harvest projection table according to SAFE standards (to be expanded nationally) |
 | `tables_indices()` | indices by fleet |
 
-Each automated function returns either a `ggplot2` object (figure) or `flextable` object (table). This allows for further customization of the output if desired by using the notation you are familiar with. For a figure, you can continue to add onto the plot any other `ggplot2` function or extension using the plus (+) operator. For a table, please use the native pipe (|>) when adding additional formatting, rows, or other pieces to the object.
+Each automated function returns either a `ggplot2` object (figure) or `gt` object (table). This allows for further customization of the output if desired by using the notation you are familiar with. For a figure, you can continue to add onto the plot any other `ggplot2` function or extension using the plus (+) operator. For a table, please use the native pipe (|>) when adding additional formatting, rows, or other pieces to the object.
 
 ## Example Figure
 
@@ -675,7 +675,7 @@ Break for questions. We will be moving onto tables next.
 
 ## Example Table
 
-Run the following example table. The result is a fully report ready table showing landings over time. Remember that these are exported as `flextable` objects and can be edited as such.
+Run the following example table. The result is a fully report ready table showing landings over time. Remember that these are exported as `gt` objects and can be edited as such.
 
 ::: {.callout-note}
 `stockplotr` uses the native pipe (|>), so if you decide to customize you table, please also use the native pipe to avoid errors.
@@ -708,7 +708,7 @@ You can export any table or plot along with their associated caption and alterna
 
 Each plot or table has the option to export it as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:
 
-- ggplot or flextable object
+- ggplot or gt object
 - caption
 - alternative text (figures only)
 - latex object (tables only)
