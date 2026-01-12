@@ -857,10 +857,10 @@ Note
 <p>You can export any table or plot along with their associated caption and alternative text (figures only) in the format of an rda file. An rda is an R data file that stores R objects and preserves their structure. In this case, you can think of an rda file exported from <code>stockplotr</code> as a list of objects.</p>
 <p>Each plot or table has the option to export it as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:</p>
 <ul>
-<li>ggplot or flextable object</li>
+<li><code>ggplot2</code> or <code>gt</code> object</li>
 <li>caption</li>
 <li>alternative text (figures only)</li>
-<li>latex object (tables only)</li>
+<li>LaTeX object (tables only)</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_biomass</span>(</span>
