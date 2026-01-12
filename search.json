@@ -735,7 +735,7 @@
     "href": "Curriculum/nsaw.html#example-table",
     "title": "NSAW workshop",
     "section": "Example Table",
-    "text": "Example Table\nRun the following example table. The result is a fully report ready table showing landings over time. Remember that these are exported as gt objects and can be edited as such.\n\n\n\n\n\n\nNote\n\n\n\nstockplotr uses the native pipe (|&gt;), so if you decide to customize you table, please also use the native pipe to avoid errors.\n\n\n\n# not sure what this will exactly look like so this is a place holder\nstockplotr::table_landings(\n  dat = petrale,\n  group = \"fleet\",\n  unit_label = \"mt\",\n  module = NULL\n)\n\n\n\n\n\n\n\n\nTipOutside today’s scope\n\n\n\nLearn about how to further customize table formatting on our Day 3 page!\n\n\n\n\n\n\n\n\nBreak for questions",
+    "text": "Example Table\nRun the following example table. The result is a fully report ready table showing landings over time. Remember that these are exported as gt objects and can be edited as such.\n\n\n\n\n\n\nNote\n\n\n\nstockplotr uses the native pipe (|&gt;), so if you decide to customize your table, please also use the native pipe to avoid errors.\n\n\n\n# not sure what this will exactly look like so this is a place holder\nstockplotr::table_landings(\n  dat = petrale,\n  group = \"fleet\",\n  unit_label = \"mt\",\n  module = NULL\n)\n\n\n\n\n\n\n\n\nTipOutside today’s scope\n\n\n\nLearn about how to further customize table formatting on our Day 3 page!\n\n\n\n\n\n\n\n\nBreak for questions",
     "crumbs": [
       "NSAW workshop"
     ]
