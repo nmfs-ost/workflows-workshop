@@ -96,23 +96,70 @@ Main steps for creating a stock assessment report with `asar`:
 Open the [`asar` cheatsheet](https://nmfs-ost.github.io/asar/asar_cheatsheet.pdf) for a visual overview of the main workflow!
 :::
 
-# (R) markdown
+# Markdown
 
-[According to RStudio](https://rmarkdown.rstudio.com/articles_intro.html), *markdown* is "an easy-to-write plain text format"; not exactly a language, but a formatting style. 
-
-*R markdown*, or "Rmd" for short, allows you to create amazingly dynamic reports. With R markdown, you can embed your R code directly into your documents. When you "knit" the document, the code is executed, and the results— like figures, tables, parameters, citations, and other outputs— are automatically inserted into the final report.
-
-A major reason why R markdown is incredibly useful: it *saves time and reduces errors*. If your data changes, you don't have to manually rerun your analysis and copy/paste the results. You just re-knit the document, and everything is updated automatically.
-
-## The core components
-
-1.  **The YAML Header:** This is the section at the top of the file, enclosed by triple dashes (`---`). It contains metadata about the document, like the title, author, and output format.
-2.  **Text and Formatting:** This is where you'll write the narrative of your report using Markdown syntax.
-3.  **Code Chunks:** These are sections of the document where you can embed and run your R code.
+[According to RStudio](https://rmarkdown.rstudio.com/articles_intro.html), *markdown* is "an easy-to-write plain text format"; not exactly a language, but a formatting style. It allows you to format text reproducibly-- without pressing buttons.
 
 ## Common uses in `asar` reports
 
-Now, let's dive into some of the most common features you'll be using when creating `asar` reports.
+R Markdown uses a simple syntax for formatting your text. Here are some of the most common formatting options:
+
+  * **Headers**
+      * `#` signifies a top-level header
+      * `##` signifies a second-level header (etc.)
+  * **Emphasis**
+      * `*italic*` for *italic* text
+      * `**bold**` for **bold** text
+  * **Lists**
+      * **Unordered lists:** Use `*` or `-` at the beginning of a line.
+      * **Ordered lists:** Use numbers followed by a period.
+  * **Links**
+      * `[link text](URL)`
+  * **Math**
+    * **Inline math:** Wrap your equation in single dollar signs: `$A = \pi * r^2$`
+    * **Block equations:** Wrap your equation in double dollar signs to display it on its own line:
+    ```
+    $$
+    E = mc^2
+    $$
+    ```
+
+# Quarto
+
+Quarto is an ideal platform for building reproducible reports, many of which contain markdown. These reports are denoted with a .qmd (Quarto Markdown) extension type. For those familiar with R markdown, Quarto is like a more flexible and powerful version of that.
+
+So, why should you Quarto to build reports?
+
+* It allows you to combine narrative text, source code (like R, Python, LaTeX, and more), and the outputs of that code (like tables and figures) into a single, polished, dynamic document. When you "knit" the document, the code is executed, and all of those components are inserted into the final report.
+
+* Anyone with the same files can reproduce that document, which goes a long way in promoting scientific integrity.
+
+* You can produce reports in several formats like HTML, PDF, and Word.
+
+* Using a platform like Quarto *saves time and reduces errors*. If your data changes, you don't have to manually rerun your analysis and copy/paste the results. You just re-knit the document, and everything is updated automatically.
+
+## Components of Quarto reports
+
+### YAML
+
+The YAML is the block of text at the very top of your main .qmd file, enclosed by triple dashes (---). It provides metadata for your document-- i.e., how to build the report.
+
+Common settings in the YAML include:
+
+* title
+* author
+* date
+* format (For `asar`, this will be PDF or HTML)
+
+Here is an example of a basic YAML:
+
+```{r eval=FALSE}
+---
+title: "Stock Assessment Report"
+author: "Patrick Star"
+date: today
+---
+```
 
 ### Parameters
 
@@ -136,39 +183,12 @@ Then, in the body of your report, you can reference this parameter like this:
 
 When you knit the document, \`params\$species\` will be replaced with "Petrale sole".
 
-### Formatting
-
-R Markdown uses a simple syntax for formatting your text. Here are some of the most common formatting options:
-
-  * **Headers**
-      * `#` signifies a top-level header
-      * `##` signifies a second-level header (etc.)
-  * **Emphasis**
-      * `*italic*` for *italic* text
-      * `**bold**` for **bold** text
-  * **Lists**
-      * **Unordered lists:** Use `*` or `-` at the beginning of a line.
-      * **Ordered lists:** Use numbers followed by a period.
-  * **Links**
-      * `[link text](URL)`
-
-### Math and Equations
-
-You can include LaTeX-style math equations in your report.
-
-  * **Inline math:** Wrap your equation in single dollar signs: `$A = \pi * r^2$`
-  * **Block equations:** Wrap your equation in double dollar signs to display it on its own line:
-    ```
-    $$
-    E = mc^2
-    $$
-    ```
 
 ### References and Bibliography
 
 You can easily add citations to your report. We provide an `asar_references.bib` file in the "report" folder with hundreds of citations for you to reference, though you can add your own to the file too.
 
-To cite a reference in the text, use the `@` symbol followed by the citation key (e.g., `@Biddle_1992`). R Markdown will automatically format the citation and add it to the "References" section towards the end of your report.
+To cite a reference in the text, use the `@` symbol followed by the citation key (e.g., `@Biddle_1992`). Quarto will automatically format the citation and add it to the "References" section towards the end of your report. The bib file will be referenced in your `asar` report's YAML.
 
 Here's an example entry from the .bib file:
 
@@ -183,18 +203,8 @@ Here's an example entry from the .bib file:
   pages={36–51}
 }
 ````
-
-# Quarto
-
-Quarto is an ideal platform for building reproducible reports, which are denoted with a .qmd (Quarto Markdown) extension type. Why?
-
-* It allows you to combine narrative text, source code (like R), and the outputs of that code (like tables and figures) into a single, polished document.
-
-* Anyone with the same files can reproduce that document, which goes a long way in promoting scientific integrity.
-
-* You can produce reports in several formats like HTML, PDF, and Word.
-
-## Modularized setup with a skeleton
+## Tips for Quarto documents
+### Modular setup with a skeleton
 
 When you run `asar::create_template()`, you will receive a "report" folder with several files within it. One of the most important files is what we call the "skeleton": a .qmd file containing chunks that run *other* files, then places the rendered contents of those files within one report.
 
