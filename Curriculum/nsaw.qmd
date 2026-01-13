@@ -764,6 +764,11 @@ Break for questions
 
 ## Exporting
 
+<!-- Export plots into rdas: R data files (like a list of objects) -->
+<!-- Figures: figure, caption, alt text -->
+<!-- Tables: `gt`-based table, caption, table in latex format -->
+<!-- *Run example and explore associated rda* -->
+
 You can export any table or plot along with their associated caption and alternative text (figures only) in the format of an rda file. An rda is an R data file that stores R objects and preserves their structure. In this case, you can think of an rda file exported from {stockplotr} as a list of objects.
 
 Each plot or table has the option to export it as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:
@@ -791,7 +796,8 @@ rda$caption
 rda$alt_text
 ```
 
-<!-- open the rda and show around -->
+<!-- Can click link in the tip box to learn more about table rdas, and how to automatically create and export all figures/tables -->
+<!-- Questions? -->
 
 ::: {.callout-tip}
 ## Outside today's scope
@@ -803,6 +809,10 @@ Break for questions
 :::
 
 # Integrating {stockplotr} into the workflow
+s
+<!-- We just learned how to make figures and tables with `stockplotr`. Now: add plots into `asar` reports -->
+<!-- Remember: running `create_template()` creates 'report' folder w/many files, incl. docs that will contain code to display figures and tables (like '08_tables.qmd' and '09_figures.qmd') -->
+<!-- Currently, those files are empty. Let's add figs/tables now! -->
 
 Let's reorient ourselves. We've just learned how to make figures and tables with {stockplotr}. Now, we'll cover how to add those plots into your {asar} report template.
 
@@ -811,6 +821,8 @@ Remember that after running the primary {asar} function-- `create_template()`- y
 Each file will contain zero figures or tables. Instead, they will contain a statement referring you to {stockplotr} so that you can make your own. Since we've created those already, let's add them to your report!
 
 ## Adding tables and figures to your report
+
+<!-- Two ways to do this. We'll show first way today (rerunning `create_tables/figures_doc()`) and give you info to explore second way (manually adding them) -->
 
 You can add your figures and tables with two workflows:
 
