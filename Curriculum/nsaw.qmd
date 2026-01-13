@@ -97,6 +97,14 @@ By the end of this workshop, we hope that you come away with the knowledge and c
 
 ## Common uses in {asar} reports
 
+<!-- With markdown, you use symbols to signify when text is bolded, italicized, are in a list, etc. -->
+<!-- I'll just name some examples below- you can always reference this page (publicly available), and check out the asar vignette with way more info about markdown formatting options. -->
+<!-- Pound signs signify header levels -->
+<!-- Asterisks can make text italic or bold -->
+<!-- Create unordered lists with hyphens and asterisks; ordered lists with numbers -->
+<!-- Add links with square brackets and parentheses. -->
+<!-- Can add math to your documents- in a paragraph, and in its own paragraph. LaTeX-style formatting is acceptable in markdown files. -->
+
 R Markdown uses a simple syntax for formatting your text. Here are some of the most common formatting options:
 
   * **Headers**
@@ -124,6 +132,15 @@ Open the [markdown vignette](https://nmfs-ost.github.io/asar/articles/markdown_n
 :::
 
 # Quarto
+
+<!-- *Who here is familiar with Quarto?* -->
+<!-- If you're familiar with it, you can think of it like a next-generation R markdown; like it, but with more features and flexibility. -->
+<!-- Why use quarto? -->
+<!-- -Create dynamic reports combining markdown, code (like R, Python, LaTeX, and more), the outputs of that code (like tables and figures), and all kinds of elements into one document -->
+<!-- -Reproducible: others can replicate your work in a straightforward way -->
+<!-- -You can produce reports in several formats like HTML, PDF, and Word -->
+<!-- -Quarto will *save time and reduces errors*. If your data changes, you don't have to manually rerun your analysis and copy/paste the results. You just re-knit the document, and everything is updated automatically. -->
+<!-- You'll be writing your asar-based report with Quarto. Most files are quarto files: qmd extension. -->
 
 Quarto is an ideal platform for building reproducible reports, many of which contain markdown. These reports are denoted with a .qmd (Quarto Markdown) extension type. For those familiar with R markdown, Quarto is like a more flexible and powerful version of that.
 
@@ -190,7 +207,7 @@ When you knit the document, \`params\$species\` will be replaced with "Petrale s
 
 ### References and Bibliography
 
-<!-- Lastly, add citations -->
+<!-- Add citations -->
 <!-- -Check out the .bib file that is produced when you create an asar report- contains hundreds of citations -->
 <!-- --you can also add to it -->
 <!-- In the bib file, you'll see a "citation key"- the name of the citation, before its title, volume, etc. Just add that to your report, with an @ sign in front, to add a citation. -->
