@@ -93,6 +93,9 @@ By the end of this workshop, we hope that you come away with the knowledge and c
 # Markdown
 <!-- Sophie start -->
 
+<!-- Before asar/stockplotr: cover a few topics that build the foundation of these tools -->
+<!-- This info will be publicly available, so you can always refer back to it -->
+
 [According to RStudio](https://rmarkdown.rstudio.com/articles_intro.html), *markdown* is "an easy-to-write plain text format"; not exactly a language, but a formatting style. It allows you to format text reproducibly-- without pressing buttons.
 
 ## Common uses in {asar} reports
@@ -141,6 +144,7 @@ Open the [markdown vignette](https://nmfs-ost.github.io/asar/articles/markdown_n
 <!-- -You can produce reports in several formats like HTML, PDF, and Word -->
 <!-- -Quarto will *save time and reduces errors*. If your data changes, you don't have to manually rerun your analysis and copy/paste the results. You just re-knit the document, and everything is updated automatically. -->
 <!-- You'll be writing your asar-based report with Quarto. Most files are quarto files: qmd extension. -->
+<!-- Actually, the page you're reading was rendered from a Quarto document! Shows some of the many features available, like callouts, headers, links, etc. -->
 
 Quarto is an ideal platform for building reproducible reports, many of which contain markdown. These reports are denoted with a .qmd (Quarto Markdown) extension type. For those familiar with R markdown, Quarto is like a more flexible and powerful version of that.
 
@@ -209,7 +213,7 @@ When you knit the document, \`params\$species\` will be replaced with "Petrale s
 
 <!-- Add citations -->
 <!-- -Check out the .bib file that is produced when you create an asar report- contains hundreds of citations -->
-<!-- --you can also add to it -->
+<!-- --you can also add to it; reference managers export citations to .bib format, as do journal websites -->
 <!-- In the bib file, you'll see a "citation key"- the name of the citation, before its title, volume, etc. Just add that to your report, with an @ sign in front, to add a citation. -->
 <!-- Great for if you need to edit all citations- example: you realized year was incorrect. Just edit entry in bib file and recompile. No manual editing each citation! -->
 <!-- You'll also see a list of the references cited in your report in the "References" section. -->
