@@ -975,6 +975,15 @@ If you made an HTML-based report, these features would most likely be in your do
 
 ## Add tagging
 
+<!-- A major component of accessible doc: tags -->
+<!-- Tags: structural components of PDFs, help screen readers navigate doc -->
+<!-- -ID headers, paragraph text, images, etc. -->
+<!-- We use add_tagging() to add tags to the latex version of our qmd report: named something like 'SAR_species_skeleton.tex' (note extension) -->
+<!-- -doing this bc Quarto doesn't offer tagging yet (v1.9 hopefully!) -->
+<!-- See code to add tagging, below. Note we use `withr::with_dir()` function as a wrapper for `add_tagging()` b/c it sets the "report" folder as a temporary wd -->
+<!-- -Could remove wrapper if you set the "report" folder as the wd -->
+<!-- Note the arguments (explain) -->
+
 In your 'report' folder, you'll find a new file with a .tex filetype: 'SAR_USWC_Petrale_sole_skeleton.tex' (or something similar). This file is a LaTex-based version of your rendered skeleton qmd file. It's also where we add our remaining accessibility features, since Quarto does not yet offer that functionality within its qmd files.
 
 [**Tags**](https://www.section508.gov/create/pdfs/common-tags-and-usage/) are structural elements of PDFs. They are signals telling software which information are headers, images, tables, text, and so on. Tags allow people using technology like screen readers to logically navigate PDFs.
@@ -1003,6 +1012,11 @@ Break for questions
 :::
 
 ## Add alternative text {#sec-add-alttext}
+
+<!-- Next step: add alt text -->
+<!-- -anyone know what this is? (then, explain- telephone example) -->
+<!-- Our workflow involves adding AT to a spreadsheet, then adding it into the same .tex file -->
+<!-- -using stockplotr to make figs sets up the spreadsheet -->
 
 You must add alternative text ("alt text") for images in a separate csv if you added figures using any of the workflows described above.
 
@@ -1071,6 +1085,12 @@ Now your PDF's figures have alt text! You can find and edit the alt text by foll
 ::: {.callout-tip}
 The function [`asar::add_accessibility()`](https://github.com/nmfs-ost/asar/blob/main/R/add_accessibility.R) performs the same tasks as `asar::add_tagging()` + `asar::add_alttext()` combined! Here, we showed the latter functions to explain how they work, but you can use `asar::add_accessibility()` once you're comfortable with these steps.
 :::
+
+<!-- We've reached the end! -->
+<!-- Can use remaining time to practice, ask questions, etc -->
+<!-- We also ask that you tell us what you thought about today's workshop  by answering 3 quick questions: What went well? What could be improved? What is a question you still have? -->
+<!-- This will help us improve the workshop, which we'll be presenting in a longer form several times this winter/spring. -->
+<!-- Thank you for your attention and effort! Again, can use remaining time to practice, ask questions, etc -->
 
 ::: {.callout-note appearance="minimal"}
 20 minute break for questions & practicing
