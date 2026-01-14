@@ -617,16 +617,16 @@ Run the example below. It should result in a line graph showing biomass over tim
 
 ```{r eval = FALSE}
 stockplotr::plot_biomass(
-  dat = petrale,
-  geom = "line",
-  group = NULL,
-  facet = NULL,
-  ref_line = "unfished",
-  unit_label = "mt",
-  scale_amount = 1,
-  relative = FALSE,
-  interactive = TRUE,
-  module = NULL
+  dat = petrale, # dataset
+  geom = "line", # show a line graph
+  group = NULL, # don't group by sex, fleet, etc.
+  facet = NULL, # not faceting by any variable
+  ref_line = "unfished", # set reference line at unfished
+  unit_label = "mt", # unit label: metric tons
+  scale_amount = 1, # do not scale biomass
+  relative = FALSE, # show biomass, NOT relative biomass
+  interactive = TRUE, # prompt user for MODULE_NAME in console
+  module = NULL # MODULE_NAME not specified here
 )
 ```
 
@@ -652,12 +652,12 @@ stockplotr::plot_biomass(
   geom = "line",
   group = NULL,
   facet = NULL,
-  ref_line = c("target" = 260),
+  ref_line = c("target" = 260), # changed from "unfished"
   unit_label = "mt",
   scale_amount = 1,
   relative = FALSE,
-  # interactive = TRUE,
-  module = "TIME_SERIES"
+  # interactive = TRUE, # commenting out this argument sets it to FALSE
+  module = "TIME_SERIES" # indicate module name here
 )
 ```
 
@@ -676,10 +676,10 @@ stockplotr::plot_biomass(
   ref_line = c("target" = 260),
   unit_label = "mt",
   scale_amount = 1,
-  relative = TRUE,
+  relative = TRUE, # changed from FALSE
   # interactive = TRUE,
   module = "TIME_SERIES",
-  linewidth = 2
+  linewidth = 2 # increase width of lines
 )
 ```
 
