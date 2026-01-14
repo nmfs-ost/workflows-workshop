@@ -3,7 +3,7 @@ title: "Pre-workshop checklist"
 format: html
 ---
 
-Here are the main steps needed to set up your environment so that you're ready to use `asar` and `stockplotr` to create a stock assessment report.
+Here are the main steps needed to set up your environment so that you're ready to use {asar} and {stockplotr} to create a stock assessment report.
 
 If you have any questions, please contact the [workshop organizers](https://nmfs-ost.github.io/workflows-workshop/#the-organizers).
 
@@ -53,34 +53,34 @@ get_workshop_files(
 ::: {.callout-tip}
 ## Tip
 
-The following packages are already installed in the `asar` workspace on JupyterHub, so if you are using that space, you can skip this section.
+The following packages are already installed in the {asar} workspace on JupyterHub, so if you are using that space, you can skip this section.
 :::
 
-We recommend using the [`pak` R package](https://pak.r-lib.org/) to install R packages where possible, since it avoids re-downloading files if they're already present.
+We recommend using the [{pak} R package](https://pak.r-lib.org/) to install R packages where possible, since it avoids re-downloading files if they're already present.
 
 ```r
 install.packages("pak")
 ```
 
-* `asar`
+* {asar}
 
 ```r
 pak::pak("nmfs-ost/asar")
 ```
 
-Please see the [`asar` README](https://github.com/nmfs-ost/asar) for more installation options.
+Please see the [{asar} README](https://github.com/nmfs-ost/asar) for more installation options.
 
-* `stockplotr`
+* {stockplotr}
 
 ```r
 pak::pak("nmfs-ost/stockplotr")
 ```
 
-Please see the [`stockplotr` README](https://github.com/nmfs-ost/stockplotr) for more installation options.
+Please see the [stockplotr README](https://github.com/nmfs-ost/stockplotr) for more installation options.
 
-* `tinytex`
+* {tinytex}
 
-We recommend installing the full `tinytex` bundle to ensure that all LaTeX packages will be present when you need them. **This will take ~30 minutes to complete.**
+We recommend installing the full {tinytex} bundle to ensure that all LaTeX packages will be present when you need them. **This will take ~30 minutes to complete.**
 
 ```r
 pak::pkg_install("rstudio/tinytex")

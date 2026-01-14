@@ -3,7 +3,7 @@
 ## Practice exercises: Add figures/tables and render report
 
 1. Ensure that you have a 'figures' folder and a 'tables' folder, each with at least one rda file. If you don't, export a couple of figures and tables.
-   * *Hint:* ensure that the `make_rda` argument is set to TRUE when running the `stockplotr` functions that create figures and tables).
+   * *Hint:* ensure that the `make_rda` argument is set to TRUE when running the {stockplotr} functions that create figures and tables).
 
 2. Open up your figures and tables qmds, in the 'report' folder. If these documents do not contain the necessary chunks to import and display at least one plot, rerun `create_figures_doc()` and/or `create_tables_doc()` to add code that will plot the figures/tables in your 'figures' and 'tables' folders.
    * *Hint:* ensure that the arguments are correct: `subdir` and `figures_dir` (for the figures doc) / `tables_dir` (for the tables doc)

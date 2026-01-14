@@ -1,6 +1,6 @@
 
 ::: {.callout-caution collapse="true"}
-## Practice exercises: Creating `stockplotr` figures & tables
+## Practice exercises: Creating {stockplotr} figures & tables
 
 For the following, use `stockplotr::example_data` as the input data.
 
@@ -17,7 +17,7 @@ Now, use your own data.
 :::
 
 ::: {.callout-caution collapse="true"}
-## **Answers** for Practice exercises: Creating `stockplotr` figures & tables
+## **Answers** for Practice exercises: Creating {stockplotr} figures & tables
 
 For the following, use `stockplotr::example_data` as the input data.
 

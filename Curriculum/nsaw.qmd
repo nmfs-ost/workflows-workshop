@@ -2,7 +2,7 @@
 title: "NSAW workshop"
 format: html
 date: 1/26/2026
-abstract: "Workshop about how to make stock assessment reports using a workflow based on the `asar` and `stockplotr` R packages. This 3-hour workshop is an abbreivated version of our full workshop (also shown on this website, under Days 1-3) that was designed for the National Stock Assessment Workshop (NSAW) in La Jolla, CA."
+abstract: "Workshop about how to make stock assessment reports using a workflow based on the {asar} and {stockplotr} R packages. This 3-hour workshop is an abbreivated version of our full workshop (also shown on this website, under Days 1-3) that was designed for the National Stock Assessment Workshop (NSAW) in La Jolla, CA."
 abstract-title: "Description"
 author: "Sam Schiano & Sophie Breitbart"
 toc: TRUE
@@ -13,10 +13,10 @@ toc-depth: 3
             border: 2px solid lightgray; 
             margin: 10px;">
 # Objectives
--   Learn how R markdown can be used to enhance `asar` reports
--   Understand how Quarto is used to structure an `asar` report
--   Practice setting up a reporting workflow using `asar`
--   Create semi-automated figures and tables with `stockplotr`
+-   Learn how R markdown can be used to enhance {asar} reports
+-   Understand how Quarto is used to structure an {asar} report
+-   Practice setting up a reporting workflow using {asar}
+-   Create semi-automated figures and tables with {stockplotr}
 </div>
 
 # Introduction
@@ -38,7 +38,7 @@ If you believe that someone is in violation of the Code of Conduct, please repor
 
 ## Who are we?
 
-Sam Schiano and Sophie Breitbart are contractors with ECS Federal working in support of the NOAA Fisheries National Stock Assessment Program. Our work primarily focuses on stock assessment workflows by creating tools to help stock assessment scientists increase throughput. We are developing two R packages, `asar` and `stockplotr`, using an open science framework that prioritizes transparency and reproducibility.
+Sam Schiano and Sophie Breitbart are contractors with ECS Federal working in support of the NOAA Fisheries National Stock Assessment Program. Our work primarily focuses on stock assessment workflows by creating tools to help stock assessment scientists increase throughput. We are developing two R packages, {asar} and {stockplotr}, using an open science framework that prioritizes transparency and reproducibility.
 
 ## How to engage with us
 
@@ -63,7 +63,7 @@ If you'd like to use JupyterHub for today's coding environment, please open a se
 
 ### Package installation
 
-If you haven't installed `asar`, `stockplotr`, and `tinytex`, please install these packages by following the instructions in the [pre-workshop checklist](https://nmfs-ost.github.io/workflows-workshop/resources/checklist.html).
+If you haven't installed {asar}, {stockplotr}, and {tinytex}, please install these packages by following the instructions in the [pre-workshop checklist](https://nmfs-ost.github.io/workflows-workshop/resources/checklist.html).
 
 ::: {.callout-tip}
 ## Tip
@@ -78,9 +78,9 @@ Break for questions
 ## Workshop overview
 ### Purpose and benefits to you
 
-By the end of this workshop, we hope that you come away with the knowledge and confidence to write your next stock assessment report using a *reproducible, efficient, and transparent workflow based on `asar` and `stockplotr`*.
+By the end of this workshop, we hope that you come away with the knowledge and confidence to write your next stock assessment report using a *reproducible, efficient, and transparent workflow based on {asar} and {stockplotr}*.
 
-`asar` is designed to:
+{asar} is designed to:
 
 - Reduce the barriers of entry to using Quarto
 - Familiarize stock assessment scientists with reproducible workflows
@@ -91,7 +91,7 @@ By the end of this workshop, we hope that you come away with the knowledge and c
 
 [According to RStudio](https://rmarkdown.rstudio.com/articles_intro.html), *markdown* is "an easy-to-write plain text format"; not exactly a language, but a formatting style. It allows you to format text reproducibly-- without pressing buttons.
 
-## Common uses in `asar` reports
+## Common uses in {asar} reports
 
 R Markdown uses a simple syntax for formatting your text. Here are some of the most common formatting options:
 
@@ -144,7 +144,7 @@ Common settings in the YAML include:
 * title
 * author
 * date
-* format (For `asar`, this will be PDF or HTML)
+* format (For {asar}, this will be PDF or HTML)
 
 Here is an example of a basic YAML:
 
@@ -183,7 +183,7 @@ When you knit the document, \`params\$species\` will be replaced with "Petrale s
 
 You can easily add citations to your report. We provide an `asar_references.bib` file in the "report" folder with hundreds of citations for you to reference, though you can add your own to the file too.
 
-To cite a reference in the text, use the `@` symbol followed by the citation key (e.g., `@Biddle_1992`). Quarto will automatically format the citation and add it to the "References" section towards the end of your report. The bib file will be referenced in your `asar` report's YAML.
+To cite a reference in the text, use the `@` symbol followed by the citation key (e.g., `@Biddle_1992`). Quarto will automatically format the citation and add it to the "References" section towards the end of your report. The bib file will be referenced in your {asar} report's YAML.
 
 Here's an example entry from the .bib file:
 
@@ -250,24 +250,24 @@ Learn about [code chunks](https://nmfs-ost.github.io/workflows-workshop/Curricul
 <!-- END OF HOUR 1 -->
 <!--               -->
 
-# `asar`: Automated Stock Assessment Reporting
+# {asar}: Automated Stock Assessment Reporting
 
-In this section we will cover the basics of `asar` by generating a stock assessment report and going through basic navigation of the template.
+In this section we will cover the basics of {asar} by generating a stock assessment report and going through basic navigation of the template.
 
-## Overview of `asar`-based reporting workflow
+## Overview of {asar}-based reporting workflow
 
-Main steps for creating a stock assessment report with `asar`:
+Main steps for creating a stock assessment report with {asar}:
 
 1. Install packages
-2. Convert model output into format usable by `asar`
+2. Convert model output into format usable by {asar}
 3. Create the report skeleton
-4. Make child docs containing figures and tables (made with `stockplotr` or by other means)
+4. Make child docs containing figures and tables (made with {stockplotr} or by other means)
 5. Fill in child docs with text
 6. Render report
 7. Add accessibility features (PDF tags and alternative text for figures)
 
 ::: {.callout-tip}
-Open the [`asar` cheatsheet](https://nmfs-ost.github.io/asar/asar_cheatsheet.pdf) for a visual overview of the main workflow!
+Open the [asar cheatsheet](https://nmfs-ost.github.io/asar/asar_cheatsheet.pdf) for a visual overview of the main workflow!
 :::
 
 ## Recommended workflow
@@ -282,12 +282,12 @@ File > New Project > New or Existing Directory
 If you use VSCode or Positron for your IDE, by navigating to a folder on your computer, it will automatically initialize a project-like environment.
 :::
 
-## The main `asar` functions
+## The main {asar} functions
 
-`asar` revolves around a few primary functions* and contains several support functions that help make the template. While most are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:
+{asar} revolves around a few primary functions* and contains several support functions that help make the template. While most are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:
 
 - `create_template()`
-- `stockplotr::convert_output()`* (*This function is now located within `stockplotr` but is useful for building `asar` reports)
+- `stockplotr::convert_output()`* (*This function is now located within {stockplotr} but is useful for building {asar} reports)
 - `create_tables_doc()`
 - `create_figures_doc()`
     
@@ -344,7 +344,7 @@ create_template(
 You should see a folder called "**report**" where you indicated in the argument `file_dir`. It
 should have a set up that looks like this:
 
-![The contents of an `asar`-generated template found in the report folder.](/Day_2/images/asar_files.png){fig-alt="A screenshot of files that should appear in the 'report' folder, including '01_executive_summary.qmd', '02_introduction.qmd', '03_data.qmd', and more."}
+![The contents of an asar-generated template found in the report folder.](/Day_2/images/asar_files.png){fig-alt="A screenshot of files that should appear in the 'report' folder, including '01_executive_summary.qmd', '02_introduction.qmd', '03_data.qmd', and more."}
 
 ::: {.callout-note}
 You should see a variety of messages reported in the console to indicate
@@ -365,9 +365,9 @@ Break for questions
 
 As previously mentioned, the skeleton file controls the rest of the report. This is the file you go to to compile your report, change formatting, or add quantities to reference in your document.
 
-When using `asar`, you don't actually have to adjust the yaml yourself. The beauty of using `asar` is that it removes this task, but filling out information provided in the `create_template()` arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).
+When using {asar}, you don't actually have to adjust the yaml yourself. The beauty of using {asar} is that it removes this task, but filling out information provided in the `create_template()` arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).
 
-![`asar` yaml controlling formatting and basic document information.](/Curriculum/Day_2/images/asar_yaml.png){fig-alt="A screenshot of an example yaml, with curly brackets highlighting which code is 'information' and which code is 'formatting'."}
+![asar yaml controlling formatting and basic document information.](/Curriculum/Day_2/images/asar_yaml.png){fig-alt="A screenshot of an example yaml, with curly brackets highlighting which code is 'information' and which code is 'formatting'."}
 
 The YAML controls the following:
 
@@ -387,7 +387,7 @@ Quarto has a cool feature that allows users to parameterize their document by ut
 You have two options for calling these parameters in your writing.
 
 1. \` r params$species \` (Quarto parameterization)
-2. \` r species \` (`asar` use of parameterization)
+2. \` r species \` ({asar} use of parameterization)
 
 
 ##### The preamble
@@ -408,7 +408,7 @@ For more information on markdown notation, see [Day 1](https://nmfs-ost.github.i
 
 ##### The content
 
-The "child docs" are where you as the assessment author or contributor report out the information you need to include. The template is highly modular so there are files for each section of the report and sometimes files for subsections. The default `asar` template creates child docs following the NOAA standard stock assessment report guidelines consisting of the following:
+The "child docs" are where you as the assessment author or contributor report out the information you need to include. The template is highly modular so there are files for each section of the report and sometimes files for subsections. The default {asar} template creates child docs following the NOAA standard stock assessment report guidelines consisting of the following:
 
 - executive summary
 - introduction
@@ -435,7 +435,7 @@ We are advising everyone that if required content is needed beyond the standard 
 
 **What it does:**
 
-This function, which was **formerly located within `asar` but has been moved to `stockplotr`**, converts an output file from a stock assessment model to a standard format. This file can be used to extract quantities within the preamble and to build figures and tables with `stockplotr` (covered in [Day 3](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html)).
+This function, which was **formerly located within {asar} but has been moved to {stockplotr}**, converts an output file from a stock assessment model to a standard format. This file can be used to extract quantities within the preamble and to build figures and tables with {stockplotr} (covered in [Day 3](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html)).
 
 The `convert_output` function currently accepts output from Stock Synthesis (Report.sso) version 3.30 and higher, Beaufort Assessment Model (BAM; output.rda), or Fishereies Integrated Modelling System (FIMS; R object). We are actively working on expanding the `convert_output` function to be compatible with all major U.S. stock assessment models. This function takes a lot of resources to develop, so any contribution to the package is welcome! If you have a model that is not currently compatible with `stockplotr::convert_output()`, please navigate to [our article](https://nmfs-ost.github.io/stockplotr/articles/convert_output_details.html) describing the function and how to get your output in the same format as those produced from the converter!
 
@@ -487,14 +487,14 @@ For more information, navigate to [this article](https://nmfs-ost.github.io/stoc
 
 These functions create child documents that display your report's tables and figures, respectively.
 
-If you run `create_template()` *without* folders in your working directory that contain your figures (called "figures") and tables (called "tables"), then the resulting child documents will be empty except for a note referring you to use `stockplotr` to make plots.
+If you run `create_template()` *without* folders in your working directory that contain your figures (called "figures") and tables (called "tables"), then the resulting child documents will be empty except for a note referring you to use {stockplotr} to make plots.
 
 Once you've added files to those "figures" and "tables" folders, you can rerun 
 `create_tables_doc()` & `create_figures_doc()` to add those plots to your report. We cover how to do this in [Day 3](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#adding-tables-and-figures-to-your-report).
 
-## Advanced `asar` workflow
+## Advanced {asar} workflow
 
-Now we are going to walk-through a more complex use of `asar` by
+Now we are going to walk-through a more complex use of {asar} by
 
 - Customizing our sections
 - Reorganizing section order
@@ -582,13 +582,13 @@ Learn about how to [call in previous reports](https://nmfs-ost.github.io/workflo
 <!-- END OF HOUR 2 -->
 <!--               -->
 
-# Introduction to `stockplotr`
+# Introduction to {stockplotr}
 
 ## Package information
 
 This package is an ongoing process to gather contributions in order to expand the number of pre-made tables and figures that can be incorporated into a stock assessment report. All objects are intended to be generalized and not specific to any region.
 
-The following table contains figures and tables that are available in `stockplotr`:
+The following table contains figures and tables that are available in {stockplotr}:
 
 | Function | Description |
 |----------|-------------|
@@ -699,7 +699,7 @@ Break for questions. We will be moving onto tables next.
 Run the following example table. The result is a fully report ready table showing landings over time. Remember that these are exported as `gt` objects and can be edited as such.
 
 ::: {.callout-note}
-`stockplotr` uses the native pipe (|>), so if you decide to customize your table, please also use the native pipe to avoid errors.
+{stockplotr} uses the native pipe (|>), so if you decide to customize your table, please also use the native pipe to avoid errors.
 :::
 
 ```{r eval = FALSE}
@@ -725,7 +725,7 @@ Break for questions
 
 ## Exporting
 
-You can export any table or plot along with their associated caption and alternative text (figures only) in the format of an rda file. An rda is an R data file that stores R objects and preserves their structure. In this case, you can think of an rda file exported from `stockplotr` as a list of objects.
+You can export any table or plot along with their associated caption and alternative text (figures only) in the format of an rda file. An rda is an R data file that stores R objects and preserves their structure. In this case, you can think of an rda file exported from {stockplotr} as a list of objects.
 
 Each plot or table has the option to export it as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:
 
@@ -763,11 +763,11 @@ Learn about [table rda components and how to automatically create all available 
 Break for questions
 :::
 
-# Integrating `stockplotr` into the workflow
+# Integrating {stockplotr} into the workflow
 
-Let's reorient ourselves. We've just learned how to make figures and tables with `stockplotr`. Now, we'll cover how to add those plots into your `asar` report template.
+Let's reorient ourselves. We've just learned how to make figures and tables with {stockplotr}. Now, we'll cover how to add those plots into your {asar} report template.
 
-Remember that after running the primary `asar` function-- `create_template()`- you have a 'report' folder with several files in it. These files include the report skeleton; the child documents containing the executive summary, introduction, results, and so on; and, importantly for us right now, the documents that will contain code to display your figures and tables. The files will be named something like '08_tables.qmd' and '09_figures.qmd' (the prefix numbers may vary).
+Remember that after running the primary {asar} function-- `create_template()`- you have a 'report' folder with several files in it. These files include the report skeleton; the child documents containing the executive summary, introduction, results, and so on; and, importantly for us right now, the documents that will contain code to display your figures and tables. The files will be named something like '08_tables.qmd' and '09_figures.qmd' (the prefix numbers may vary).
 
 Each file will contain zero figures or tables. Instead, they will contain a statement referring you to {stockplotr} so that you can make your own. Since we've created those already, let's add them to your report!
 
@@ -930,7 +930,7 @@ Break for questions
 
 You must add alternative text ("alt text") for images in a separate csv if you added figures using any of the workflows described above.
 
-Since you've used `stockplotr` to make some figures, you've already completed the first step: making a csv that will contain your alt text.
+Since you've used {stockplotr} to make some figures, you've already completed the first step: making a csv that will contain your alt text.
 
 ### Look at your alt text csv
 
@@ -957,14 +957,14 @@ The file is set up like this:
 
 Your job is to:
 
-* *edit* existing entries for your figures already created with `stockplotr`. This entails [checking the accuracy, and writing the final component, of the existing alt text](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#your-to-do-list).
+* *edit* existing entries for your figures already created with {stockplotr}. This entails [checking the accuracy, and writing the final component, of the existing alt text](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#your-to-do-list).
 * *add* entries for your custom figures.
 
 ::: {.callout-important}
 While we have extracted key quantities as accurately as possible, we cannot guarantee that each quantity will have been calculated perfectly. Input data varies widely. **It's your responsibility to check the accuracy of your figures' alt text.**
 :::
 
-* This prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4): the relationship between the variables shown (i.e., what the figure is conveying). Since we can't program `stockplotr` to analyze the figure's meaning, **you must provide this crucial component**.
+* This prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4): the relationship between the variables shown (i.e., what the figure is conveying). Since we can't program {stockplotr} to analyze the figure's meaning, **you must provide this crucial component**.
 
 ::: {.callout-tip}
 ## Outside today's scope

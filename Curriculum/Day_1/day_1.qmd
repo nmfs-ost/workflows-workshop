@@ -8,9 +8,9 @@ format: html
             margin: 10px;">
 # Objectives
 -   Identify purpose and scope of workshop
--   Learn how R markdown can be used to enhance `asar` reports
--   Understand how Quarto is used to structure an `asar` report
--   Install software necessary to build an `asar` report
+-   Learn how R markdown can be used to enhance {asar} reports
+-   Understand how Quarto is used to structure an {asar} report
+-   Install software necessary to build an {asar} report
 </div>
 
 # Introduction
@@ -32,7 +32,7 @@ If you believe that someone is in violation of the Code of Conduct, please repor
 
 ## Who are we?
 
-Sam Schiano and Sophie Breitbart are contractors with ECS Federal working in support of the NOAA Fisheries National Stock Assessment Program. Our work primarily focuses on stock assessment workflows by creating tools to help stock assessment scientists increase throughput. We are developing two R packages, `asar` and `stockplotr`, using an open science framework that prioritizes transparency and reproducibility.
+Sam Schiano and Sophie Breitbart are contractors with ECS Federal working in support of the NOAA Fisheries National Stock Assessment Program. Our work primarily focuses on stock assessment workflows by creating tools to help stock assessment scientists increase throughput. We are developing two R packages, {asar} and {stockplotr}, using an open science framework that prioritizes transparency and reproducibility.
 
 ## How to engage with us
 
@@ -52,16 +52,16 @@ Break for questions
 ## Workshop overview
 ### Purpose and benefits to you
 
-By the end of this workshop, we hope that you come away with the knowledge and confidence to write your next stock assessment report using a *reproducible, efficient, and transparent workflow based on `asar` and `stockplotr`*.
+By the end of this workshop, we hope that you come away with the knowledge and confidence to write your next stock assessment report using a *reproducible, efficient, and transparent workflow based on {asar} and {stockplotr}*.
 
-`asar` is designed to:
+{asar} is designed to:
 
 - Reduce the barriers of entry to using Quarto
 - Familiarize stock assessment scientists with reproducible workflows
 - Shift towards a more concise reporting format
 - Move towards a more centralized workflow across NOAA Fisheries
 
-An `asar` workflow can help ease the following challenges:
+An {asar} workflow can help ease the following challenges:
 
 #### Challenges faced by stock assessment scientists
 
@@ -86,8 +86,8 @@ During this workshop, we will cover the following topics:
 
 - Markdown language
 - Quarto basics
-- How to set up a reporting workflow using `asar`
-- How to create semi-automated figures and tables with `stockplotr` 
+- How to set up a reporting workflow using {asar}
+- How to create semi-automated figures and tables with {stockplotr} 
 
 # Markdown
 
@@ -118,9 +118,9 @@ You'll now see a new Quarto file with some default text. Let's explore some ways
 2.  **Text and Formatting:** This is where you'll write the narrative of your report using Markdown syntax.
 3.  **Code Chunks:** These are sections of the document where you can embed and run your R code.
 
-## Common uses in `asar` reports
+## Common uses in {asar} reports
 
-Now, let's dive into some of the most common features you'll be using when creating `asar` reports.
+Now, let's dive into some of the most common features you'll be using when creating {asar} reports.
 
 ### Parameters
 
@@ -255,9 +255,9 @@ Common settings in the YAML include:
 * title
 * author
 * date
-* format (For `asar`, this will be PDF or HTML)
+* format (For {asar}, this will be PDF or HTML)
 
-Here is an example of an `asar` YAML:
+Here is an example of an {asar} YAML:
 
 ```{r eval=FALSE}
 ---
@@ -347,7 +347,7 @@ Break for questions
 # Install packages and get ready for tomorrow's material (if need be) {#sec-prep}
 
 ::: {.callout-important}
-Before we begin using `asar` and `stockplotr` tomorrow, we highly suggest that you ensure that you've completed the [pre-workshop checklist](resources/checklist.qmd).
+Before we begin using {asar} and {stockplotr} tomorrow, we highly suggest that you ensure that you've completed the [pre-workshop checklist](../../resources/checklist.qmd).
 :::
 
 # Questions, comments, and feedback
