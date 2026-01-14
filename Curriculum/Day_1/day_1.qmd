@@ -54,6 +54,13 @@ Break for questions
 
 By the end of this workshop, we hope that you come away with the knowledge and confidence to write your next stock assessment report using a *reproducible, efficient, and transparent workflow based on `asar` and `stockplotr`*.
 
+`asar` is designed to:
+
+- Reduce the barriers of entry to using Quarto
+- Familiarize stock assessment scientists with reproducible workflows
+- Shift towards a more concise reporting format
+- Move towards a more centralized workflow across NOAA Fisheries
+
 An `asar` workflow can help ease the following challenges:
 
 #### Challenges faced by stock assessment scientists
@@ -81,22 +88,6 @@ During this workshop, we will cover the following topics:
 - Quarto basics
 - How to set up a reporting workflow using `asar`
 - How to create semi-automated figures and tables with `stockplotr` 
-
-### Overview of `asar`-based reporting workflow
-
-Main steps for creating a stock assessment report with `asar`:
-
-1. Install packages
-2. Convert model output into format usable by `asar`
-3. Create the report skeleton
-4. Make child docs containing figures and tables (made with `stockplotr` or by other means)
-5. Fill in child docs with text
-6. Render report
-7. Add accessibility features (PDF tags and alternative text for figures)
-
-::: {.callout-tip}
-Open the [`asar` cheatsheet](https://nmfs-ost.github.io/asar/asar_cheatsheet.pdf) for a visual overview of the main workflow!
-:::
 
 # Markdown
 
@@ -341,18 +332,17 @@ x <- 1 + 1
 ```
 ````
 
-*There are a variety of chunk options, but the ones you will see consistently throughout this workshop are listed in the example above.*
+*There are a variety of chunk options, but the ones you will see consistently throughout this workshop are listed in the example above.* See more chunk options in the [markdown vignette](https://nmfs-ost.github.io/asar/articles/markdown_notation.html#sec-codechunk).
 
 ::: {.callout-note}
 In the "label" option, for tables and figures, you will need to prefix the label with either "fig-" for a figure or "tbl-" for a table.
 :::
 
-For those familiar with Rmarkdown, the code chunk structure in Rmarkdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a "#|" proceeding each option.
+For those familiar with R markdown, the code chunk structure in R markdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a "#|" proceeding each option.
 
 ::: {.callout-note appearance="minimal"}
 Break for questions
 :::
-
 
 # Install packages and get ready for tomorrow's material (if need be) {#sec-prep}
 

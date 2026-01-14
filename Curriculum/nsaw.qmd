@@ -80,28 +80,12 @@ Break for questions
 
 By the end of this workshop, we hope that you come away with the knowledge and confidence to write your next stock assessment report using a *reproducible, efficient, and transparent workflow based on `asar` and `stockplotr`*.
 
-'asar' is designed to:
+`asar` is designed to:
 
-- reduce the barriers of entry to using quarto
-- familiarize stock assessment scientists with reproducible workflows
-- shift towards a more concise reporting format
-- move towards a more centralized workflow across NOAA Fisheries
-
-### Overview of `asar`-based reporting workflow
-
-Main steps for creating a stock assessment report with `asar`:
-
-1. Install packages
-2. Convert model output into format usable by `asar`
-3. Create the report skeleton
-4. Make child docs containing figures and tables (made with `stockplotr` or by other means)
-5. Fill in child docs with text
-6. Render report
-7. Add accessibility features (PDF tags and alternative text for figures)
-
-::: {.callout-tip}
-Open the [`asar` cheatsheet](https://nmfs-ost.github.io/asar/asar_cheatsheet.pdf) for a visual overview of the main workflow!
-:::
+- Reduce the barriers of entry to using Quarto
+- Familiarize stock assessment scientists with reproducible workflows
+- Shift towards a more concise reporting format
+- Move towards a more centralized workflow across NOAA Fisheries
 
 # Markdown
 
@@ -130,6 +114,10 @@ R Markdown uses a simple syntax for formatting your text. Here are some of the m
     E = mc^2
     $$
     ```
+
+::: {.callout-tip}
+Open the [markdown vignette](https://nmfs-ost.github.io/asar/articles/markdown_notation.html) to learn about other markdown capabilities including tables, footnotes, subscripts, and more!
+:::
 
 # Quarto
 
@@ -265,6 +253,22 @@ Learn about [code chunks](https://nmfs-ost.github.io/workflows-workshop/Curricul
 # `asar`: Automated Stock Assessment Reporting
 
 In this section we will cover the basics of `asar` by generating a stock assessment report and going through basic navigation of the template.
+
+## Overview of `asar`-based reporting workflow
+
+Main steps for creating a stock assessment report with `asar`:
+
+1. Install packages
+2. Convert model output into format usable by `asar`
+3. Create the report skeleton
+4. Make child docs containing figures and tables (made with `stockplotr` or by other means)
+5. Fill in child docs with text
+6. Render report
+7. Add accessibility features (PDF tags and alternative text for figures)
+
+::: {.callout-tip}
+Open the [`asar` cheatsheet](https://nmfs-ost.github.io/asar/asar_cheatsheet.pdf) for a visual overview of the main workflow!
+:::
 
 ## Recommended workflow
 

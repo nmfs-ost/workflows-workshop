@@ -66,6 +66,22 @@ In this section we will cover the basics of `asar` by generating a stock assessm
 If you receive an error message when attempting the download the package, please ask the instructor for alternative directions or see the README on the [`asar` repository](https://github.com/nmfs-ost/asar).
 :::
 
+## Overview of `asar`-based reporting workflow
+
+Main steps for creating a stock assessment report with `asar`:
+
+1. Install packages
+2. Convert model output into format usable by `asar`
+3. Create the report skeleton
+4. Make child docs containing figures and tables (made with `stockplotr` or by other means)
+5. Fill in child docs with text
+6. Render report
+7. Add accessibility features (PDF tags and alternative text for figures)
+
+::: {.callout-tip}
+Open the [`asar` cheatsheet](https://nmfs-ost.github.io/asar/asar_cheatsheet.pdf) for a visual overview of the main workflow!
+:::
+
 ## Recommended workflow
 
 We *highly* recommend using a project-based workflow. This involves creating an R project for each report, which facilitates returning to your session and maintaining files. Using either a project or GitHub repository will help you in the long run.
