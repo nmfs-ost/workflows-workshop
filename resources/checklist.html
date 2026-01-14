@@ -392,7 +392,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Here are the main steps needed to set up your environment so that you’re ready to use <code>asar</code> and <code>stockplotr</code> to create a stock assessment report.</p>
+<p>Here are the main steps needed to set up your environment so that you’re ready to use {asar} and {stockplotr} to create a stock assessment report.</p>
 <p>If you have any questions, please contact the <a href="https://nmfs-ost.github.io/workflows-workshop/#the-organizers">workshop organizers</a>.</p>
 <ol type="1">
 <li>Ensure that you can run <a href="https://www.r-project.org/">R code</a> with a platform like RStudio, VS Code, Positron, etc.</li>
@@ -449,25 +449,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The following packages are already installed in the <code>asar</code> workspace on JupyterHub, so if you are using that space, you can skip this section.</p>
+<p>The following packages are already installed in the {asar} workspace on JupyterHub, so if you are using that space, you can skip this section.</p>
 </div>
 </div>
-<p>We recommend using the <a href="https://pak.r-lib.org/"><code>pak</code> R package</a> to install R packages where possible, since it avoids re-downloading files if they’re already present.</p>
+<p>We recommend using the <a href="https://pak.r-lib.org/">{pak} R package</a> to install R packages where possible, since it avoids re-downloading files if they’re already present.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
-<li><code>asar</code></li>
+<li>{asar}</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">"nmfs-ost/asar"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Please see the <a href="https://github.com/nmfs-ost/asar"><code>asar</code> README</a> for more installation options.</p>
+<p>Please see the <a href="https://github.com/nmfs-ost/asar">{asar} README</a> for more installation options.</p>
 <ul>
-<li><code>stockplotr</code></li>
+<li>{stockplotr}</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">"nmfs-ost/stockplotr"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Please see the <a href="https://github.com/nmfs-ost/stockplotr"><code>stockplotr</code> README</a> for more installation options.</p>
+<p>Please see the <a href="https://github.com/nmfs-ost/stockplotr">stockplotr README</a> for more installation options.</p>
 <ul>
-<li><code>tinytex</code></li>
+<li>{tinytex}</li>
 </ul>
-<p>We recommend installing the full <code>tinytex</code> bundle to ensure that all LaTeX packages will be present when you need them. <strong>This will take ~30 minutes to complete.</strong></p>
+<p>We recommend installing the full {tinytex} bundle to ensure that all LaTeX packages will be present when you need them. <strong>This will take ~30 minutes to complete.</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(<span class="st">"rstudio/tinytex"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>(<span class="at">bundle =</span> <span class="st">"TinyTeX-2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 

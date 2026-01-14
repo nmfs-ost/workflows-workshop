@@ -391,7 +391,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#why-use-r-markdown" id="toc-why-use-r-markdown" class="nav-link" data-scroll-target="#why-use-r-markdown">Why use R markdown?</a></li>
   <li><a href="#opening-a-document" id="toc-opening-a-document" class="nav-link" data-scroll-target="#opening-a-document">Opening a document</a></li>
   <li><a href="#the-core-components" id="toc-the-core-components" class="nav-link" data-scroll-target="#the-core-components">The core components</a></li>
-  <li><a href="#common-uses-in-asar-reports" id="toc-common-uses-in-asar-reports" class="nav-link" data-scroll-target="#common-uses-in-asar-reports">Common uses in <code>asar</code> reports</a>
+  <li><a href="#common-uses-in-asar-reports" id="toc-common-uses-in-asar-reports" class="nav-link" data-scroll-target="#common-uses-in-asar-reports">Common uses in {asar} reports</a>
   <ul class="collapse">
   <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
   <li><a href="#formatting" id="toc-formatting" class="nav-link" data-scroll-target="#formatting">Formatting</a></li>
@@ -444,9 +444,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Objectives</h1>
 <ul>
 <li>Identify purpose and scope of workshop</li>
-<li>Learn how R markdown can be used to enhance <code>asar</code> reports</li>
-<li>Understand how Quarto is used to structure an <code>asar</code> report</li>
-<li>Install software necessary to build an <code>asar</code> report</li>
+<li>Learn how R markdown can be used to enhance {asar} reports</li>
+<li>Understand how Quarto is used to structure an {asar} report</li>
+<li>Install software necessary to build an {asar} report</li>
 </ul>
 </section>
 <section id="introduction" class="level1">
@@ -469,7 +469,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="who-are-we" class="level2">
 <h2 class="anchored" data-anchor-id="who-are-we">Who are we?</h2>
-<p>Sam Schiano and Sophie Breitbart are contractors with ECS Federal working in support of the NOAA Fisheries National Stock Assessment Program. Our work primarily focuses on stock assessment workflows by creating tools to help stock assessment scientists increase throughput. We are developing two R packages, <code>asar</code> and <code>stockplotr</code>, using an open science framework that prioritizes transparency and reproducibility.</p>
+<p>Sam Schiano and Sophie Breitbart are contractors with ECS Federal working in support of the NOAA Fisheries National Stock Assessment Program. Our work primarily focuses on stock assessment workflows by creating tools to help stock assessment scientists increase throughput. We are developing two R packages, {asar} and {stockplotr}, using an open science framework that prioritizes transparency and reproducibility.</p>
 </section>
 <section id="how-to-engage-with-us" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-engage-with-us">How to engage with us</h2>
@@ -502,15 +502,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="workshop-overview">Workshop overview</h2>
 <section id="purpose-and-benefits-to-you" class="level3">
 <h3 class="anchored" data-anchor-id="purpose-and-benefits-to-you">Purpose and benefits to you</h3>
-<p>By the end of this workshop, we hope that you come away with the knowledge and confidence to write your next stock assessment report using a <em>reproducible, efficient, and transparent workflow based on <code>asar</code> and <code>stockplotr</code></em>.</p>
-<p><code>asar</code> is designed to:</p>
+<p>By the end of this workshop, we hope that you come away with the knowledge and confidence to write your next stock assessment report using a <em>reproducible, efficient, and transparent workflow based on {asar} and {stockplotr}</em>.</p>
+<p>{asar} is designed to:</p>
 <ul>
 <li>Reduce the barriers of entry to using Quarto</li>
 <li>Familiarize stock assessment scientists with reproducible workflows</li>
 <li>Shift towards a more concise reporting format</li>
 <li>Move towards a more centralized workflow across NOAA Fisheries</li>
 </ul>
-<p>An <code>asar</code> workflow can help ease the following challenges:</p>
+<p>An {asar} workflow can help ease the following challenges:</p>
 <section id="challenges-faced-by-stock-assessment-scientists" class="level4">
 <h4 class="anchored" data-anchor-id="challenges-faced-by-stock-assessment-scientists">Challenges faced by stock assessment scientists</h4>
 <ul>
@@ -548,8 +548,8 @@ Note
 <ul>
 <li>Markdown language</li>
 <li>Quarto basics</li>
-<li>How to set up a reporting workflow using <code>asar</code></li>
-<li>How to create semi-automated figures and tables with <code>stockplotr</code></li>
+<li>How to set up a reporting workflow using {asar}</li>
+<li>How to create semi-automated figures and tables with {stockplotr}</li>
 </ul>
 </section>
 </section>
@@ -585,8 +585,8 @@ Note
 </ol>
 </section>
 <section id="common-uses-in-asar-reports" class="level2">
-<h2 class="anchored" data-anchor-id="common-uses-in-asar-reports">Common uses in <code>asar</code> reports</h2>
-<p>Now, let’s dive into some of the most common features you’ll be using when creating <code>asar</code> reports.</p>
+<h2 class="anchored" data-anchor-id="common-uses-in-asar-reports">Common uses in {asar} reports</h2>
+<p>Now, let’s dive into some of the most common features you’ll be using when creating {asar} reports.</p>
 <section id="parameters" class="level3">
 <h3 class="anchored" data-anchor-id="parameters">Parameters</h3>
 <p>Parameters allow you to create dynamic reports. You can define parameters in the YAML header and then reference them in your text and code.</p>
@@ -806,9 +806,9 @@ Important
 <li>title</li>
 <li>author</li>
 <li>date</li>
-<li>format (For <code>asar</code>, this will be PDF or HTML)</li>
+<li>format (For {asar}, this will be PDF or HTML)</li>
 </ul>
-<p>Here is an example of an <code>asar</code> YAML:</p>
+<p>Here is an example of an {asar} YAML:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">'Stock Assessment Report Template'</span></span>
@@ -915,7 +915,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Before we begin using <code>asar</code> and <code>stockplotr</code> tomorrow, we highly suggest that you ensure that you’ve completed the <a href="resources/checklist.qmd">pre-workshop checklist</a>.</p>
+<p>Before we begin using {asar} and {stockplotr} tomorrow, we highly suggest that you ensure that you’ve completed the <a href="../../resources/checklist.html">pre-workshop checklist</a>.</p>
 </div>
 </div>
 </section>

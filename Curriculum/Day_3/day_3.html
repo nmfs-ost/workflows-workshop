@@ -378,7 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#materials-for-todays-lesson" id="toc-materials-for-todays-lesson" class="nav-link" data-scroll-target="#materials-for-todays-lesson">Materials for today’s lesson</a></li>
   <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
   </ul></li>
-  <li><a href="#introduction-to-stockplotr" id="toc-introduction-to-stockplotr" class="nav-link" data-scroll-target="#introduction-to-stockplotr">Introduction to <code>stockplotr</code></a>
+  <li><a href="#introduction-to-stockplotr" id="toc-introduction-to-stockplotr" class="nav-link" data-scroll-target="#introduction-to-stockplotr">Introduction to {stockplotr}</a>
   <ul class="collapse">
   <li><a href="#convert-output-if-necessary" id="toc-convert-output-if-necessary" class="nav-link" data-scroll-target="#convert-output-if-necessary">Convert output (if necessary)</a></li>
   <li><a href="#package-information" id="toc-package-information" class="nav-link" data-scroll-target="#package-information">Package information</a></li>
@@ -389,7 +389,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#example-table" id="toc-example-table" class="nav-link" data-scroll-target="#example-table">Example Table</a></li>
   <li><a href="#exporting" id="toc-exporting" class="nav-link" data-scroll-target="#exporting">Exporting</a></li>
   </ul></li>
-  <li><a href="#integrating-stockplotr-into-the-workflow" id="toc-integrating-stockplotr-into-the-workflow" class="nav-link" data-scroll-target="#integrating-stockplotr-into-the-workflow">Integrating <code>stockplotr</code> into the workflow</a>
+  <li><a href="#integrating-stockplotr-into-the-workflow" id="toc-integrating-stockplotr-into-the-workflow" class="nav-link" data-scroll-target="#integrating-stockplotr-into-the-workflow">Integrating {stockplotr} into the workflow</a>
   <ul class="collapse">
   <li><a href="#adding-tables-and-figures-to-your-report" id="toc-adding-tables-and-figures-to-your-report" class="nav-link" data-scroll-target="#adding-tables-and-figures-to-your-report">Adding tables and figures to your report</a>
   <ul class="collapse">
@@ -447,9 +447,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             margin: 10px;">
 <h1>Objectives</h1>
 <ul>
-<li>Walk through an example of a plot and table from <code>stockplotr</code></li>
-<li>Learn about the value of the <code>stockplotr</code> R package</li>
-<li>Understand how to integrate <code>stockplotr</code> into an <code>asar</code>-based reporting workflow</li>
+<li>Walk through an example of a plot and table from {stockplotr}</li>
+<li>Learn about the value of the {stockplotr} R package</li>
+<li>Understand how to integrate {stockplotr} into an {asar}-based reporting workflow</li>
 </ul>
 </section>
 <section id="introduction" class="level1">
@@ -500,11 +500,11 @@ Tip
 </section>
 <section id="installation" class="level2">
 <h2 class="anchored" data-anchor-id="installation">Installation</h2>
-<p><code>asar</code>, <code>stockplotr</code>, and <code>tinytex</code> should already be installed if you attended Days 1 or 2. If not, please install these packages by following the instructions in the <a href="https://nmfs-ost.github.io/workflows-workshop/resources/checklist.html">pre-workshop checklist</a>.</p>
+<p>{asar}, {stockplotr}, and {tinytex} should already be installed if you attended Days 1 or 2. If not, please install these packages by following the instructions in the <a href="https://nmfs-ost.github.io/workflows-workshop/resources/checklist.html">pre-workshop checklist</a>.</p>
 </section>
 </section>
 <section id="introduction-to-stockplotr" class="level1">
-<h1>Introduction to <code>stockplotr</code></h1>
+<h1>Introduction to {stockplotr}</h1>
 <section id="convert-output-if-necessary" class="level2">
 <h2 class="anchored" data-anchor-id="convert-output-if-necessary">Convert output (if necessary)</h2>
 <p>First, you’ll need to convert your model results using the same workflow covered yesterday: <code>stockplotr::convert_output()</code>.</p>
@@ -531,7 +531,7 @@ Tip
 <section id="package-information" class="level2">
 <h2 class="anchored" data-anchor-id="package-information">Package information</h2>
 <p>This package is an ongoing process to gather contributions in order to expand the number of pre-made tables and figures that can be incorporated into a stock assessment report. All objects are intended to be generalized and not specific to any region.</p>
-<p>The following table contains figures and tables that are available in <code>stockplotr</code>:</p>
+<p>The following table contains figures and tables that are available in {stockplotr}:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 43%">
@@ -779,7 +779,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>stockplotr</code> uses the native pipe (|&gt;), so if you decide to customize you table, please also use the native pipe to avoid errors.</p>
+<p>{stockplotr} uses the native pipe (|&gt;), so if you decide to customize you table, please also use the native pipe to avoid errors.</p>
 </div>
 </div>
 <div class="cell">
@@ -854,7 +854,7 @@ Note
 </section>
 <section id="exporting" class="level2">
 <h2 class="anchored" data-anchor-id="exporting">Exporting</h2>
-<p>You can export any table or plot along with their associated caption and alternative text (figures only) in the format of an rda file. An rda is an R data file that stores R objects and preserves their structure. In this case, you can think of an rda file exported from <code>stockplotr</code> as a list of objects.</p>
+<p>You can export any table or plot along with their associated caption and alternative text (figures only) in the format of an rda file. An rda is an R data file that stores R objects and preserves their structure. In this case, you can think of an rda file exported from {stockplotr} as a list of objects.</p>
 <p>Each plot or table has the option to export it as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:</p>
 <ul>
 <li><code>ggplot2</code> or <code>gt</code> object</li>
@@ -938,7 +938,7 @@ Tip
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Practice exercises: Creating <code>stockplotr</code> figures &amp; tables
+<span class="screen-reader-only">Caution</span>Practice exercises: Creating {stockplotr} figures &amp; tables
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -965,7 +965,7 @@ Tip
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span><strong>Answers</strong> for Practice exercises: Creating <code>stockplotr</code> figures &amp; tables
+<span class="screen-reader-only">Caution</span><strong>Answers</strong> for Practice exercises: Creating {stockplotr} figures &amp; tables
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1044,9 +1044,9 @@ Tip
 </section>
 </section>
 <section id="integrating-stockplotr-into-the-workflow" class="level1">
-<h1>Integrating <code>stockplotr</code> into the workflow</h1>
-<p>For the second half of today’s lesson, let’s reorient ourselves. We’ve just learned how to make figures and tables with <code>stockplotr</code>. Now, we’ll cover how to add those plots into your <code>asar</code> report template.</p>
-<p>Remember that after running the primary <code>asar</code> function– <code>create_template()</code>- you have a ‘report’ folder with several files in it. These files include the report skeleton; the child documents containing the executive summary, introduction, results, and so on; and, importantly for us right now, the documents that will contain code to display your figures and tables. The files will be named something like ‘08_tables.qmd’ and ‘09_figures.qmd’ (the prefix numbers may vary).</p>
+<h1>Integrating {stockplotr} into the workflow</h1>
+<p>For the second half of today’s lesson, let’s reorient ourselves. We’ve just learned how to make figures and tables with {stockplotr}. Now, we’ll cover how to add those plots into your {asar} report template.</p>
+<p>Remember that after running the primary {asar} function– <code>create_template()</code>- you have a ‘report’ folder with several files in it. These files include the report skeleton; the child documents containing the executive summary, introduction, results, and so on; and, importantly for us right now, the documents that will contain code to display your figures and tables. The files will be named something like ‘08_tables.qmd’ and ‘09_figures.qmd’ (the prefix numbers may vary).</p>
 <p>Each file will contain zero figures or tables. Instead, they will contain a statement referring you to {stockplotr} so that you can make your own. Since we’ve created those already, let’s add them to your report!</p>
 <section id="adding-tables-and-figures-to-your-report" class="level2">
 <h2 class="anchored" data-anchor-id="adding-tables-and-figures-to-your-report">Adding tables and figures to your report</h2>
@@ -1154,7 +1154,7 @@ Note
 <span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a># Show your table</span>
 <span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>your_table</span>
 <span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>``` </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><img src="images/petrale_table.png" class="img-fluid" alt="Example of a table produced with the 'Direct coding-in-qmd table workflow' option for adding tables to `asar` reports."></p>
+<p><img src="images/petrale_table.png" class="img-fluid" alt="Example of a table produced with the 'Direct coding-in-qmd table workflow' option for adding tables to asar reports."></p>
 <p>Then, add a pagebreak:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>{{<span class="sc">&lt;</span> pagebreak <span class="sc">&gt;</span>}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1223,7 +1223,7 @@ Note
 <span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a># Show your figure</span>
 <span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>your_figure</span>
 <span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>``` </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><img src="images/petrale_figure.png" class="img-fluid" alt="Example of a figure produced with the 'Direct coding-in-qmd figure workflow' option for adding figures to `asar` reports."></p>
+<p><img src="images/petrale_figure.png" class="img-fluid" alt="Example of a figure produced with the 'Direct coding-in-qmd figure workflow' option for adding figures to asar reports."></p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1313,7 +1313,7 @@ Warning
 <ol type="1">
 <li>Ensure that you have a ‘figures’ folder and a ‘tables’ folder, each with at least one rda file. If you don’t, export a couple of figures and tables.
 <ul>
-<li><em>Hint:</em> ensure that the <code>make_rda</code> argument is set to TRUE when running the <code>stockplotr</code> functions that create figures and tables).</li>
+<li><em>Hint:</em> ensure that the <code>make_rda</code> argument is set to TRUE when running the {stockplotr} functions that create figures and tables).</li>
 </ul></li>
 <li>Open up your figures and tables qmds, in the ‘report’ folder. If these documents do not contain the necessary chunks to import and display at least one plot, rerun <code>create_figures_doc()</code> and/or <code>create_tables_doc()</code> to add code that will plot the figures/tables in your ‘figures’ and ‘tables’ folders.
 <ul>
@@ -1421,7 +1421,7 @@ Warning
 <section id="sec-add-alttext" class="level2">
 <h2 class="anchored" data-anchor-id="sec-add-alttext">Add alternative text</h2>
 <p>You must add alternative text (“alt text”) for images in a separate csv if you added figures using any of the workflows described above.</p>
-<p>Since you’ve used <code>stockplotr</code> to make some figures, you’ve already completed the first step: making a csv that will contain your alt text.</p>
+<p>Since you’ve used {stockplotr} to make some figures, you’ve already completed the first step: making a csv that will contain your alt text.</p>
 <section id="look-at-your-alt-text-csv" class="level3">
 <h3 class="anchored" data-anchor-id="look-at-your-alt-text-csv">Look at your alt text csv</h3>
 <p>The file, “captions_alt_text.csv”, should be located in your working directory (enter <code>getwd()</code> if you forget where that is). Open it up.</p>
@@ -1468,7 +1468,7 @@ Warning
 <h3 class="anchored" data-anchor-id="update-the-csv">Update the csv</h3>
 <p>Your job is to:</p>
 <ul>
-<li><em>edit</em> existing entries for your figures already created with <code>stockplotr</code>. This entails <a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#your-to-do-list">checking the accuracy, and writing the final component, of the existing alt text</a>.</li>
+<li><em>edit</em> existing entries for your figures already created with {stockplotr}. This entails <a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#your-to-do-list">checking the accuracy, and writing the final component, of the existing alt text</a>.</li>
 <li><em>add</em> entries for your custom figures.</li>
 </ul>
 <section id="sec-edit-exist-entries" class="level4">
@@ -1492,7 +1492,7 @@ Important
 </div>
 </div>
 <ul>
-<li>This prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4): the relationship between the variables shown (i.e., what the figure is conveying). Since we can’t program <code>stockplotr</code> to analyze the figure’s meaning, <strong>you must provide this crucial component</strong>.</li>
+<li>This prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4): the relationship between the variables shown (i.e., what the figure is conveying). Since we can’t program {stockplotr} to analyze the figure’s meaning, <strong>you must provide this crucial component</strong>.</li>
 </ul>
 <p>When you’re satisfied, save the csv.</p>
 </section>
