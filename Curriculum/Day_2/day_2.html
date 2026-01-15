@@ -389,7 +389,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#asarcreate_template" id="toc-asarcreate_template" class="nav-link" data-scroll-target="#asarcreate_template"><code>asar::create_template()</code></a></li>
   <li><a href="#stockplotrconvert_output" id="toc-stockplotrconvert_output" class="nav-link" data-scroll-target="#stockplotrconvert_output"><code>stockplotr::convert_output()</code></a></li>
-  <li><a href="#create_tables_doc-create_figures_doc" id="toc-create_tables_doc-create_figures_doc" class="nav-link" data-scroll-target="#create_tables_doc-create_figures_doc"><code>create_tables_doc()</code> &amp; <code>create_figures_doc()</code></a></li>
   </ul></li>
   <li><a href="#advanced-asar-workflow" id="toc-advanced-asar-workflow" class="nav-link" data-scroll-target="#advanced-asar-workflow">Advanced {asar} workflow</a>
   <ul class="collapse">
@@ -683,6 +682,19 @@ Note
 </div>
 <p>As previously mentioned, the skeleton file controls the rest of the report. This is the file you go to to compile your report, change formatting, or add quantities to reference in your document.</p>
 <p>We went over the basics of a Quarto yaml in <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#yaml">Day 1</a>, but when using {asar}, you don’t actually have to fill in anything yourself. The beauty of using {asar} is that it removes this task, but filling out information provided in the <code>create_template()</code> arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You shouldn’t have to adjust the yaml much, if at all. However, if your <code>species</code> does not match with an image in our <a href="https://github.com/nmfs-ost/asar/tree/main/inst/resources/spp_img">database</a>, then you can edit the yaml to add a filepath leading to your own cover image.</p>
+</div>
+</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/asar_yaml.png" class="img-fluid figure-img" alt="A screenshot of an example yaml, with curly brackets highlighting which code is 'information' and which code is 'formatting'."></p>
@@ -778,7 +790,7 @@ Important
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -787,7 +799,7 @@ Important
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>Run <code>create_template()</code>. Fill in your own values for <code>office</code>, <code>region</code>, <code>species</code>, <code>spp_latin</code>, and <code>year</code>. Use default values for all remaining arguments.</p></li>
@@ -799,7 +811,7 @@ Important
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -808,7 +820,7 @@ Important
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Run <code>create_template()</code>. Fill in your own values for <code>office</code>, <code>region</code>, <code>species</code>, <code>spp_latin</code>, and <code>year</code>. Use default values for all remaining arguments.</li>
@@ -943,14 +955,6 @@ Note
 <p>For more information, navigate to <a href="https://nmfs-ost.github.io/stockplotr/articles/convert_output_details.html">this article</a> describing the conversion process and find ways your can convert your model’s data!</p>
 </div>
 </div>
-</section>
-</section>
-<section id="create_tables_doc-create_figures_doc" class="level3">
-<h3 class="anchored" data-anchor-id="create_tables_doc-create_figures_doc"><code>create_tables_doc()</code> &amp; <code>create_figures_doc()</code></h3>
-<p><strong>What they do:</strong></p>
-<p>These functions create child documents that display your report’s tables and figures, respectively.</p>
-<p>If you run <code>create_template()</code> <em>without</em> folders in your working directory that contain your figures (called “figures”) and tables (called “tables”), then the resulting child documents will be empty except for a note referring you to use {stockplotr} to make plots.</p>
-<p>Once you’ve added files to those “figures” and “tables” folders, you can rerun <code>create_tables_doc()</code> &amp; <code>create_figures_doc()</code> to add those plots to your report. We cover how to do this in <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#adding-tables-and-figures-to-your-report">Day 3</a>.</p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -961,6 +965,7 @@ Note
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 <section id="advanced-asar-workflow" class="level2">
@@ -1074,7 +1079,7 @@ Note
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1083,7 +1088,7 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>Create a stock assessment report template tailored for the AFSC (a SAFE report).</p></li>
@@ -1097,7 +1102,7 @@ Add questions to practice adding new sections and calling a previous report when
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1106,7 +1111,7 @@ Add questions to practice adding new sections and calling a previous report when
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Create a stock assessment report template tailored for the AFSC (a SAFE report).</li>
