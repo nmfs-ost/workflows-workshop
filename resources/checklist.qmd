@@ -7,6 +7,8 @@ Here are the main steps needed to set up your environment so that you're ready t
 
 If you have any questions, please contact the [workshop organizers](https://nmfs-ost.github.io/workflows-workshop/#the-organizers).
 
+# Coding environment = your local machine
+
 1. Ensure that you can run [R code](https://www.r-project.org/) with a platform like RStudio, VS Code, Positron, etc.
 2. Ensure you have downloaded [Quarto, version 1.6+ ](https://quarto.org/docs/get-started/) and can create Quarto documents.
 3. [Create a new Github repo](https://happygitwithr.com/rstudio-git-github.html#make-a-repo-on-github-1) for the workshop.
@@ -86,3 +88,19 @@ We recommend installing the full {tinytex} bundle to ensure that all LaTeX packa
 pak::pkg_install("rstudio/tinytex")
 tinytex::install_tinytex(bundle = "TinyTeX-2")
 ```
+
+7. Explore {asar} and {stockplotr} websites
+
+Browse the [{asar}](https://nmfs-ost.github.io/asar/) and [{stockplotr}](https://nmfs-ost.github.io/stockplotr/) websites- especially the cheatsheets and articles.
+
+# Coding environment = the cloud (Jupyterhub)
+
+::: {.callout-important}
+Currently, this option is **only available for NSAW workshop participants.**
+:::
+
+While we strongly encourage everyone to set up their coding environment on their local machines, we recognize that some may prefer to use a **temporary**, cloud-based environment for this workshop. You must export any files you wish to keep on the same day of the workshop or else they will be erased.
+
+You can access a JupyterHub workshop server for this purpose. Before the workshop begins, please familiarize yourself with the [setup instructions on the NSAW workshop page](https://nmfs-ost.github.io/workflows-workshop/Curriculum/nsaw.html#materials-for-todays-lesson) and contact us for the password.
+
+Then, follow steps 3, 4, 5, and 7 in the section above.
