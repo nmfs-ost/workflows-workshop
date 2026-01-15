@@ -569,6 +569,8 @@ Learn about how to [call in previous reports](https://nmfs-ost.github.io/workflo
 
 This package is an ongoing process to gather contributions in order to expand the number of pre-made tables and figures that can be incorporated into a stock assessment report. All objects are intended to be generalized and not specific to any region.
 
+{stockplotr} also contains `convert_output()`: the function used to convert model results into a standardize output (as explained in a [previous section](https://nmfs-ost.github.io/workflows-workshop/Curriculum/nsaw.html#stockplotrconvert_output)).
+
 The following table contains figures and tables that are available in {stockplotr}:
 
 | Function | Description |
