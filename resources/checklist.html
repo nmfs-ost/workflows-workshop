@@ -366,8 +366,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#coding-environment-your-local-machine" id="toc-coding-environment-your-local-machine" class="nav-link active" data-scroll-target="#coding-environment-your-local-machine">Coding environment = your local machine</a></li>
+  <li><a href="#coding-environment-the-cloud-jupyterhub" id="toc-coding-environment-the-cloud-jupyterhub" class="nav-link" data-scroll-target="#coding-environment-the-cloud-jupyterhub">Coding environment = the cloud (Jupyterhub)</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/nmfs-ost/workflows-workshop/edit/main/resources/checklist.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/resources/checklist.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -394,6 +401,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>Here are the main steps needed to set up your environment so that you’re ready to use {asar} and {stockplotr} to create a stock assessment report.</p>
 <p>If you have any questions, please contact the <a href="https://nmfs-ost.github.io/workflows-workshop/#the-organizers">workshop organizers</a>.</p>
+<section id="coding-environment-your-local-machine" class="level1">
+<h1>Coding environment = your local machine</h1>
 <ol type="1">
 <li>Ensure that you can run <a href="https://www.r-project.org/">R code</a> with a platform like RStudio, VS Code, Positron, etc.</li>
 <li>Ensure you have downloaded <a href="https://quarto.org/docs/get-started/">Quarto, version 1.6+</a> and can create Quarto documents.</li>
@@ -470,8 +479,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We recommend installing the full {tinytex} bundle to ensure that all LaTeX packages will be present when you need them. <strong>This will take ~30 minutes to complete.</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(<span class="st">"rstudio/tinytex"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>(<span class="at">bundle =</span> <span class="st">"TinyTeX-2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="7" type="1">
+<li>Explore {asar} and {stockplotr} websites</li>
+</ol>
+<p>Browse the <a href="https://nmfs-ost.github.io/asar/">{asar}</a> and <a href="https://nmfs-ost.github.io/stockplotr/">{stockplotr}</a> websites- especially the cheatsheets and articles.</p>
+</section>
+<section id="coding-environment-the-cloud-jupyterhub" class="level1">
+<h1>Coding environment = the cloud (Jupyterhub)</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Currently, this option is <strong>only available for NSAW workshop participants.</strong></p>
+</div>
+</div>
+<p>While we strongly encourage everyone to set up their coding environment on their local machines, we recognize that some may prefer to use a <strong>temporary</strong>, cloud-based environment for this workshop. You must export any files you wish to keep on the same day of the workshop or else they will be erased.</p>
+<p>You can access a JupyterHub workshop server for this purpose. Before the workshop begins, please familiarize yourself with the <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/nsaw.html#materials-for-todays-lesson">setup instructions on the NSAW workshop page</a> and contact us for the password.</p>
+<p>Then, follow steps 3, 4, 5, and 7 in the section above.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -907,7 +940,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/nmfs-ost/workflows-workshop/edit/main/resources/checklist.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/resources/checklist.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nmfs-ost/workflows-workshop/edit/main/resources/checklist.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/resources/checklist.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
