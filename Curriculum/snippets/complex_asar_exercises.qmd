@@ -54,7 +54,7 @@ asar::create_template(
   rerender_skeleton = TRUE,
   species = "Petrale sole",
   spp_latin = "Eopsetta jordani",
-  file_dir = here::here("report")
+  file_dir = file.path("report")
 )
 ```
 

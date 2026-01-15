@@ -54,7 +54,7 @@ You can use the example Report.sso file uploaded to the workshop GitHub or, if y
 #| warning: false
 #| messages: false
 # Identify output file
-output_file <- here::here("example_output", "Report.sso")
+output_file <- file.path("example_output", "Report.sso")
 # convert the output and save it as an rda
 petrale <- stockplotr::convert_output(output_file,
                                       save_dir = getwd())
@@ -577,7 +577,7 @@ Run `quarto::quarto_render([path/to/your/skeleton.qmd file])` in the console. Fo
 
 ```{r eval=FALSE}
 quarto::quarto_render(
-  here::here("report",
+  file.path("report",
              "SAR_species_skeleton.qmd") # add your skeleton filename
 )
 ```

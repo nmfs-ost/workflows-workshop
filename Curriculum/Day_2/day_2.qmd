@@ -94,18 +94,16 @@ File > New Project > New or Existing Directory
 If you use VSCode or Positron for your IDE, by navigating to a folder on your computer, it will automatically initialize a project-like environment.
 :::
 
-## The main {asar} functions
+## The main functions
 
-{asar} revolves around a few primary functions* and contains several support functions that help make the template. While most are accessible to the user, they would not perform helpful functions for them. We will be going over the following functions:
+{asar} revolves around a few primary functions and contains several support functions that help make the template. While most are accessible to the user, they would not perform helpful functions for them. Today, we will focus on the following functions:
 
-- `create_template()`
-- `stockplotr::convert_output()`* (*This function is now located within {stockplotr} but is useful for building {asar} reports)
-- `create_tables_doc()`
-- `create_figures_doc()`
+- `asar::create_template()`
+- `stockplotr::convert_output()` (This function is now located within {stockplotr} but is useful for building {asar} reports)
     
 ** Time to browse documentation? or show info from site? **
 
-### `create_template()`
+### `asar::create_template()`
 
 **What it does:**
 
@@ -124,7 +122,7 @@ So, let's do more than just create a blank template! The following arguments are
 | Argument | Options    |
 |----------|------------|
 | format   | pdf, html |
-| type     | SAR, pfmc, safe |
+| type     | SAR, pfmc, safe, nemt |
 | office   | afsc, pifsc, nefsc, nwfsc sefsc, swfsc |
 | region   |  - |
 | species  |  - |
@@ -147,15 +145,14 @@ create_template(
   region = "U.S. West Coast",
   species = "Petrale sole",
   spp_latin = "Eopsetta jordani",
-  authors = c("Samantha Schiano" = "OST"),
-  file_dir = here::here()
+  authors = c("Samantha Schiano" = "OST", "Jane Doe"="SWFSC-LJCA"),
+  file_dir = getwd() # folder where the "report" folder will be saved
 )
 ```
 
 **Run it!**
 
-You should see a folder called "**report**" where you indicated in the argument `file_dir`. It
-should have a set up that looks like this:
+You should see a folder called "**report**" where you indicated in the argument `file_dir`. It should have a set up that looks like this:
 
 ![The contents of an asar-generated template found in the report folder.](images/asar_files.png){fig-alt="A screenshot of files that should appear in the 'report' folder, including '01_executive_summary.qmd', '02_introduction.qmd', '03_data.qmd', and more."}
 
@@ -181,6 +178,10 @@ is the file you go to to compile your report, change formatting, or add quantiti
 to reference in your document.
 
 We went over the basics of a Quarto yaml in [Day 1](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#yaml), but when using {asar}, you don't actually have to fill in anything yourself. The beauty of using {asar} is that it removes this task, but filling out information provided in the `create_template()` arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).
+
+::: {.callout-note}
+You shouldn't have to adjust the yaml much, if at all. However, if your `species` does not match with an image in our [database](https://github.com/nmfs-ost/asar/tree/main/inst/resources/spp_img), then you can edit the yaml to add a filepath leading to your own cover image.
+:::
 
 ![asar yaml controlling formatting and basic document information.](images/asar_yaml.png){fig-alt="A screenshot of an example yaml, with curly brackets highlighting which code is 'information' and which code is 'formatting'."}
 
@@ -258,7 +259,7 @@ We are advising everyone that if required content is needed beyond the standard 
 
 This function, which was **formerly located within {asar} but has been moved to {stockplotr}**, converts an output file from a stock assessment model to a standard format. This file can be used to extract quantities within the preamble and to build figures and tables with {stockplotr} (covered in [Day 3](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html)).
 
-The `convert_output` function currently accepts output from Stock Synthesis (Report.sso) version 3.30 and higher, Beaufort Assessment Model (BAM; output.rda), or Fishereies Integrated Modelling System (FIMS; R object). We are actively working on expanding the `convert_output` function to be compatible with all major U.S. stock assessment models. This function takes a lot of resources to develop, so any contribution to the package is welcome! If you have a model that is not currently compatible with `stockplotr::convert_output()`, please navigate to [our article](https://nmfs-ost.github.io/stockplotr/articles/convert_output_details.html) describing the function and how to get your output in the same format as those produced from the converter!
+The `convert_output` function currently accepts output from Stock Synthesis (Report.sso) version 3.30 and higher, Beaufort Assessment Model (BAM; output.rda), or Fisheries Integrated Modelling System (FIMS; R object). We are actively working on expanding the `convert_output` function to be compatible with all major U.S. stock assessment models. This function takes a lot of resources to develop, so any contribution to the package is welcome! If you have a model that is not currently compatible with `stockplotr::convert_output()`, please navigate to [our article](https://nmfs-ost.github.io/stockplotr/articles/convert_output_details.html) describing the function and how to get your output in the same format as those produced from the converter!
 
 **Let's try it out!**
 
@@ -270,7 +271,7 @@ We have uploaded an example Report.sso file in the workshop GitHub, but if you h
 #| warning: false
 #| messages: false
 # Identify output file
-output_file <- here::here("example_output", "Report.sso")
+output_file <- file.path("example_output", "Report.sso")
 # convert the output
 petrale <- stockplotr::convert_output(output_file)
 ```
@@ -301,17 +302,6 @@ Let's walk through a standard output file in more detail.
 ::: {.callout-note}
 For more information, navigate to [this article](https://nmfs-ost.github.io/stockplotr/articles/convert_output_details.html) describing the conversion process and find ways your can convert your model's data!
 :::
-
-### `create_tables_doc()` & `create_figures_doc()`
-
-**What they do:**
-
-These functions create child documents that display your report's tables and figures, respectively.
-
-If you run `create_template()` *without* folders in your working directory that contain your figures (called "figures") and tables (called "tables"), then the resulting child documents will be empty except for a note referring you to use {stockplotr} to make plots.
-
-Once you've added files to those "figures" and "tables" folders, you can rerun 
-`create_tables_doc()` & `create_figures_doc()` to add those plots to your report. We cover how to do this in [Day 3](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#adding-tables-and-figures-to-your-report).
 
 ::: {.callout-note appearance="minimal"}
 20 minute break for questions & practicing
@@ -392,7 +382,7 @@ Now, I need to add my co-authors to my report especially since I wasn't sure who
 ```{r eval=FALSE}
 asar::create_template(
   rerender_skeleton = TRUE,
-  authors = c("John Doe"="NEFSC", "Jane Doe"="SWFSC-LJCA"),
+  authors = c("John Doe"="NEFSC", "Jane Doe"),
   custom = TRUE,
   new_section = "Changes to the Model",
   section_location = "in-assessment"
