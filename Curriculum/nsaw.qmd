@@ -549,7 +549,7 @@ Learn about how to [call in previous reports](https://nmfs-ost.github.io/workflo
 
 This package is an ongoing process to gather contributions in order to expand the number of pre-made tables and figures that can be incorporated into a stock assessment report. All objects are intended to be generalized and not specific to any region.
 
-{stockplotr} also contains `convert_output()`: the function used to convert model results into a standardize output (as explained in a [previous section](https://nmfs-ost.github.io/workflows-workshop/Curriculum/nsaw.html#stockplotrconvert_output)).
+{stockplotr} also contains `convert_output()`: the function used to convert model results into a standardized output (as explained in a [previous section](https://nmfs-ost.github.io/workflows-workshop/Curriculum/nsaw.html#stockplotrconvert_output)). This standardized output is the input for the {stockplotr} plotting functions, below (the `dat` argument).
 
 The following table contains figures and tables that are available in {stockplotr}:
 
@@ -607,7 +607,7 @@ Here are some examples of how to customize the biomass figure:
 
 #### Change the reference line to a specific value (e.g., 260)
   
-  In this example we are also telling the function which module to select in order to by-pass this step. We plan to remove grouping of some modules in the future.
+In this example we are also telling the function which module to select in order to by-pass this step. We plan to remove grouping of some modules in the future.
 
 ```{r eval = FALSE}
 stockplotr::plot_biomass(
@@ -619,7 +619,7 @@ stockplotr::plot_biomass(
   unit_label = "mt",
   scale_amount = 1,
   relative = FALSE,
-  # interactive = TRUE, # commenting out this argument sets it to FALSE
+  interactive = FALSE, # changed from TRUE
   module = "TIME_SERIES" # indicate module name here
 )
 ```
@@ -628,7 +628,11 @@ stockplotr::plot_biomass(
 
 #### Plot relative biomass and change the size of the line
   
-In this example, we still are bypassing module selection and we are automatically extracting the reference line value from the data. However, now we are using this reference value to plot relative biomass and changing the linewidth to 2 (an argument inherited from `ggplot2`).
+In this example, we still are bypassing module selection and we are automatically extracting the reference line value from the data. However, now we are using this reference value to plot relative biomass and changing the linewidth to 2 (an argument inherited from `ggplot2::geom_line()`).
+
+::: {.callout-note}
+If you were plotting a scatterplot (`geom = 'point'`) or area plot (`geom = 'area'`), you could add arguments associated with `geom_point()` and `geom_area()`, respectively.
+:::
 
 ```{r eval = FALSE}
 stockplotr::plot_biomass(
@@ -640,7 +644,7 @@ stockplotr::plot_biomass(
   unit_label = "mt",
   scale_amount = 1,
   relative = TRUE, # changed from FALSE
-  # interactive = TRUE,
+  interactive = FALSE,
   module = "TIME_SERIES",
   linewidth = 2 # increase width of lines
 )
@@ -704,7 +708,7 @@ stockplotr::plot_biomass(
   unit_label = "mt",
   module = "TIME_SERIES",
   make_rda = TRUE,
-  tables_dir = getwd()
+  figures_dir = getwd()
 )
 ```
 
@@ -794,6 +798,17 @@ Adding figures entails nearly the same process as described for tables. The only
 
 1. Figures will involve captions and *alternative text*, whereas tables only require captions
 2. Figures do not require the option to be rotated or split across pages.
+
+```{r}
+#| label: add-figures
+#| eval: false
+#| warning: false
+#| messages: false
+create_figures_doc(
+  subdir = fs::path(getwd(), "report"),
+  figures_dir = getwd()
+  )
+```
 
 ### Option 2: Manually adding tables/figures
 
