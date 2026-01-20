@@ -446,11 +446,11 @@ We have uploaded an example Report.sso file in the workshop GitHub, but if you h
 #| warning: false
 #| messages: false
 # Identify output file
-output_file <- file.path("example_output", "Report.sso")
+output_file <- file.path(here::here(), "example_output", "Report.sso")
 # convert the output
 petrale <- stockplotr::convert_output(
   output_file,
-  save_dir = file.path(getwd(), "report"))
+  save_dir = file.path(getwd(), "report", "petrale_conout.rda"))
 ```
 
 **Run it!**
@@ -494,39 +494,7 @@ Now we are going to walk-through a more complex use of {asar} by
 
 There are three additional template options available to users to use while we work to set standard assessment report guidelines across the country. They include SAFE reports, NEFSC management track reports, and PFMC guidelines. Not only thing, but you have the ability to add new sections either within the current outline or in individual sections or even select which sections of the standard template you want to create your report around.
 
-Today, we will be going over how to customize your template by selecting a subset of the standard guidelines then adding in a new section within our data section.
-
-First, let's make our template. 
-
-**We are creating a new report, so please set your working directory to a new folder or rename our previous "simple" report folder to "simple_report" or something along those lines.**
-
-```{r eval=FALSE}
-asar::create_template(
-  # Previous arguments we used for simple
-  format = "pdf",
-  type = "SAR",
-  office = "NWFSC",
-  region = "U.S. West Coast",
-  species = "Petrale sole",
-  spp_latin = "Eopsetta jordani",
-  authors = c("Samantha Schiano" = "OST"),
-  # New arguments
-  custom = TRUE,
-  custom_sections = NULL,
-  new_section = NULL,
-  section_location = NULL
-)
-```
-
-::: {.callout-tip}
-To identify what sections you can include from the standard guidelines, you can run `list.files(system.file("templates", "skeleton", package = "asar"))`. Note: this only includes sections within a standard template. To see other sections for available templates, replace "skeleton" with your target template acronym.
-
-Don't worry if you forget! You can find this code in the documentation for the "custom_sections" argument.
-:::
-
-::: {.callout-note appearance="minimal"}
-Break for questions
-:::
+Today, we will be going over how to customize your template by adding a new section along with updating your current report when the need arises..
 
 ### Rerendering report
 
@@ -550,7 +518,9 @@ Now, I need to add my co-authors to my report especially since I wasn't sure who
 ```{r eval=FALSE}
 asar::create_template(
   rerender_skeleton = TRUE,
-  authors = c("John Doe"="NEFSC", "Jane Doe"),
+  file_dir = file.path(getwd(), "report"),
+  authors = c("John Doe"="NEFSC", "Jane Doe"="NOAA"),
+  model_results = file.path(getwd(), "report", "std_output.rda"),
   custom = TRUE,
   new_section = "Changes to the Model",
   section_location = "in-assessment"
