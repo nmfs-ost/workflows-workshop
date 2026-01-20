@@ -2,62 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nmfs-ost.github.io/workflows-workshop/resources/terminology.html</loc>
-    <lastmod>2026-01-15T21:59:14.638Z</lastmod>
+    <lastmod>2026-01-20T12:08:03.043Z</lastmod>
   </url>
   <url>
     <loc>https://nmfs-ost.github.io/workflows-workshop/resources/checklist.html</loc>
-    <lastmod>2026-01-15T21:59:14.638Z</lastmod>
+    <lastmod>2026-01-20T12:08:03.043Z</lastmod>
   </url>
   <url>
     <loc>https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html</loc>
-    <lastmod>2026-01-15T21:59:14.577Z</lastmod>
+    <lastmod>2026-01-20T12:08:02.983Z</lastmod>
   </url>
   <url>
     <loc>https://nmfs-ost.github.io/workflows-workshop/Curriculum/snippets/integrate-stockplotr_exercises.html</loc>
-    <lastmod>2026-01-15T21:59:14.600Z</lastmod>
+    <lastmod>2026-01-20T12:08:03.005Z</lastmod>
   </url>
   <url>
     <loc>https://nmfs-ost.github.io/workflows-workshop/Curriculum/snippets/markdown_exercises.html</loc>
-    <lastmod>2026-01-15T21:59:14.600Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nmfs-ost.github.io/workflows-workshop/Curriculum/snippets/a11y_exercises.html</loc>
-    <lastmod>2026-01-15T21:59:14.599Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html</loc>
-    <lastmod>2026-01-15T21:59:14.577Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nmfs-ost.github.io/workflows-workshop/planning.html</loc>
-    <lastmod>2026-01-15T21:59:14.638Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nmfs-ost.github.io/workflows-workshop/index.html</loc>
-    <lastmod>2026-01-15T21:59:14.638Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nmfs-ost.github.io/workflows-workshop/Curriculum/snippets/figure_table_exercises.html</loc>
-    <lastmod>2026-01-15T21:59:14.600Z</lastmod>
+    <lastmod>2026-01-20T12:08:03.005Z</lastmod>
   </url>
   <url>
     <loc>https://nmfs-ost.github.io/workflows-workshop/Curriculum/snippets/template_exercises.html</loc>
-    <lastmod>2026-01-15T21:59:14.600Z</lastmod>
+    <lastmod>2026-01-20T12:08:03.005Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nmfs-ost.github.io/workflows-workshop/Curriculum/snippets/figure_table_exercises.html</loc>
+    <lastmod>2026-01-20T12:08:03.005Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nmfs-ost.github.io/workflows-workshop/index.html</loc>
+    <lastmod>2026-01-20T12:08:03.043Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nmfs-ost.github.io/workflows-workshop/planning.html</loc>
+    <lastmod>2026-01-20T12:08:03.043Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html</loc>
+    <lastmod>2026-01-20T12:08:02.983Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nmfs-ost.github.io/workflows-workshop/Curriculum/snippets/a11y_exercises.html</loc>
+    <lastmod>2026-01-20T12:08:03.005Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nmfs-ost.github.io/workflows-workshop/Curriculum/snippets/filter-std-output.html</loc>
+    <lastmod>2026-01-20T12:08:03.005Z</lastmod>
   </url>
   <url>
     <loc>https://nmfs-ost.github.io/workflows-workshop/Curriculum/snippets/complex_asar_exercises.html</loc>
-    <lastmod>2026-01-15T21:59:14.600Z</lastmod>
+    <lastmod>2026-01-20T12:08:03.005Z</lastmod>
   </url>
   <url>
     <loc>https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html</loc>
-    <lastmod>2026-01-15T21:59:14.580Z</lastmod>
+    <lastmod>2026-01-20T12:08:02.986Z</lastmod>
   </url>
   <url>
     <loc>https://nmfs-ost.github.io/workflows-workshop/Curriculum/nsaw.html</loc>
-    <lastmod>2026-01-15T21:59:14.599Z</lastmod>
+    <lastmod>2026-01-20T12:08:03.005Z</lastmod>
   </url>
   <url>
     <loc>https://nmfs-ost.github.io/workflows-workshop/resources/good_practices.html</loc>
-    <lastmod>2026-01-15T21:59:14.638Z</lastmod>
+    <lastmod>2026-01-20T12:08:03.043Z</lastmod>
   </url>
 </urlset>
