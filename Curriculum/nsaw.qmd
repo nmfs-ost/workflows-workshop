@@ -876,19 +876,12 @@ In your 'report' folder, you'll find a new file with a .tex filetype: 'SAR_speci
 
 We'll use the `asar::add_tagging()` function to add tags.
 
-Notice that we are using the `withr::with_dir()` function as a wrapper for `add_tagging()`. This allow us to set the "report" folder as a *temporary* working directory, which is essential for the function to work. Likewise, if you set the "report" folder as the working directory, you could remove this wrapper and `add_tagging()` would succeed.
-
 ```{r eval = FALSE}
-path <- getwd()
-
-withr::with_dir(
-  file.path(path, "report"),
-  asar::add_tagging(
+asar::add_tagging(
   x = "SAR_species_skeleton.tex", # your .tex report file
-  dir = getwd(), # the location of the .tex file
+  dir = "report", # the folder containing the .tex file
   compile = FALSE # whether the .tex file should be compiled after tagging. We'll set it to FALSE for now
   )
-)
 ```
 
 Now your PDF is tagged! If you compiled your .tex file, it'd look something like this. The tags are on the right side of the PDF viewer.
@@ -954,27 +947,26 @@ Learn about how to [edit your report's alternative text and captions, and add ne
 Now, we'll use the `asar::add_alttext()` function to add the alt text into the report's .tex file. Again, we'll wrap the function with `with_dir()` to set a temporary working directory.
 
 ```{r eval = FALSE}
-path <- getwd()
-
-withr::with_dir(
-  file.path(path, "report"),
-  add_alttext(
+add_alttext(
     x = "SAR_species_skeleton.tex", # your .tex report file
-    dir = getwd(), # the location of the .tex file
+    dir = "report", # the folder containing the .tex file
     alttext_csv_dir = getwd(), # the location of your "captions_alt_text.csv"
-    figures_dir = path, # location of your "figures" folder
+    figures_dir = getwd(), # location of your "figures" folder
     compile = TRUE # now we'll compile the PDF
   )
-)
 ```
 
 Now your PDF's figures have alt text! You can find and edit the alt text by following these steps:
 
 ![1. Open the 'All Tools' menu in Adobe. Scroll down until you reach the "Prepare for accessibility" button. Click it.](Day_3/images/Check_alttext-1.png){fig-alt="Screenshot of a document opened in Adobe. The 'All Tools' menu shows a red oval around the 'Prepare for accessibility' button."}
 
-![2. In the 'Prepare for accessibility', click the "Add alternative text" button.](Day_3/images/Check_alttext-2.png){fig-alt="Screenshot of a document opened in Adobe. The 'Prepare for accessibility' menu shows a red oval around the 'Add alternative text' button."}
+![2. In the 'Prepare for accessibility', click the "Add alternate text" button.](Day_3/images/Check_alttext-2.png){fig-alt="Screenshot of a document opened in Adobe. The 'Prepare for accessibility' menu shows a red oval around the 'Add alternate text' button."}
 
-![3. In the 'Set alternative text' pop-up, verify that your images contain the expected alternative text and edit as necessary.](Day_3/images/Check_alttext-3.png){fig-alt="Screenshot of a document opened in Adobe. The 'Set alternative text' pop-up shows where an example image's alternative text is located."}
+![3. In the 'Set alternate text' pop-up, verify that your images contain the expected alternative text and edit as necessary.](Day_3/images/Check_alttext-3.png){fig-alt="Screenshot of a document opened in Adobe. The 'Set alternate text' pop-up shows where an example image's alternative text is located."}
+
+::: {.callout-tip}
+The function [`asar::add_accessibility()`](https://github.com/nmfs-ost/asar/blob/main/R/add_accessibility.R) performs the same tasks as `asar::add_tagging()` + `asar::add_alttext()` combined! Here, we showed the latter functions to explain how they work, but you can use `asar::add_accessibility()` once you're comfortable with these steps.
+:::
 
 ::: {.callout-note appearance="minimal"}
 20 minute break for questions & practicing
