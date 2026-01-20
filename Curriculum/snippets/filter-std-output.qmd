@@ -9,7 +9,7 @@
 :::
 
 ::: {.callout-caution collapse="true"}
-## **Answers** for Practice exercises: Foundational `create_template()` use cases
+## **Answers** for Practice exercises: Get familiar with standard output
 
 1. Filter the output data for spawning biomass that only includes years 2000 to 2020.
 
@@ -40,3 +40,4 @@ SBmsy <- petrale |>
   dplyr::pull(estimate)
 ```
 
+:::

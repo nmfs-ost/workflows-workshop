@@ -468,7 +468,7 @@ The converted output is a tibble that reframes and reshapes your data. The tibbl
 Let's walk through a standard output file in more detail.
 :::
 
-{{ <include snippets/filter_std_output.qmd> }}
+{{< include snippets/filter-std-output.qmd >}}
 
 ::: {.callout-note}
 For more information, navigate to [this article](https://nmfs-ost.github.io/stockplotr/articles/convert_output_details.html) describing the conversion process and find ways your can convert your model's data!
