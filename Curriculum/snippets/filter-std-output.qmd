@@ -1,0 +1,42 @@
+
+::: {.callout-caution collapse="true"}
+## Practice exercises: Get familiar with standard output
+
+1. Filter the output data for spawning biomass that only includes years 2000 to 2020.
+
+2. Extract the SBmsy reference point from the output data.
+
+:::
+
+::: {.callout-caution collapse="true"}
+## **Answers** for Practice exercises: Foundational `create_template()` use cases
+
+1. Filter the output data for spawning biomass that only includes years 2000 to 2020.
+
+**Answer**: Use the dplyr filtering functions or other subsetting function to filter the data.
+
+```{r eval = FALSE}
+filtered_data <- petrale |>
+  dplyr::filter(
+    grepl("^spawning_biomass$", label),
+    year > 2000,
+    year < 2020
+  )
+```
+
+::: {.callout-note}
+Notice that there are multiple time series of spawning biomass. This is because the original model output reports these values in different modules. We maintained the integrity of the original model output by keeping all of these time series. You may want to further filter the data to only include spawning biomass from a specific module.
+:::
+
+2. Extract the SBmsy reference point from the output data..
+
+**Answer**: Filter your initial converted data by label name where you can either use "msy" or "spawning_biomass_msy". All quantities are spelled out except for msy or spr.
+
+```{r eval = FALSE}
+SBmsy <- petrale |>
+  dplyr::filter(
+    grepl("^spawning_biomass_msy$", label)
+  ) |>
+  dplyr::pull(estimate)
+```
+
