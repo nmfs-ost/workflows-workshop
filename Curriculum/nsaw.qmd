@@ -710,15 +710,17 @@ stockplotr::plot_biomass(
 
 #### Plot relative biomass and change the size of the line
 
+<!-- This example: -->
+<!-- building on the prev customization, AND: -->
+<!-- -making the plot show *relative* biomass (biomass relative to the ref line) AND changing linewidth to be bolder -->
+<!-- We can change the linewidth because it's an argument associated with the line geom. If we set geom equal to another option- area, point- then we could use arguments from the ggplot functions geom_area, geom_point. -->
+
 In this example, we still are bypassing module selection and we are automatically extracting the reference line value from the data. However, now we are using this reference value to plot relative biomass and changing the linewidth to 2 (an argument inherited from `ggplot2::geom_line()`).
 
 ::: {.callout-note}
 If you were plotting a scatterplot (`geom = 'point'`) or area plot (`geom = 'area'`), you could add arguments associated with `geom_point()` and `geom_area()`, respectively.
 :::
 
-<!-- This example: -->
-<!-- building on the prev customization, AND: -->
-<!-- -making the plot show *relative* biomass (biomass relative to the ref line) AND changing linewidth to be bolder (with a classic `ggplot2` command) -->
 
 ```{r eval = FALSE}
 stockplotr::plot_biomass(
@@ -980,8 +982,7 @@ If you made an HTML-based report, these features would most likely be in your do
 <!-- -ID headers, paragraph text, images, etc. -->
 <!-- We use add_tagging() to add tags to the latex version of our qmd report: named something like 'SAR_species_skeleton.tex' (note extension) -->
 <!-- -doing this bc Quarto doesn't offer tagging yet (v1.9 hopefully!) -->
-<!-- See code to add tagging, below. Note we use `withr::with_dir()` function as a wrapper for `add_tagging()` b/c it sets the "report" folder as a temporary wd -->
-<!-- -Could remove wrapper if you set the "report" folder as the wd -->
+<!-- See code to add tagging, below -->
 <!-- Note the arguments (explain) -->
 
 In your 'report' folder, you'll find a new file with a .tex filetype: 'SAR_USWC_Petrale_sole_skeleton.tex' (or something similar). This file is a LaTex-based version of your rendered skeleton qmd file. It's also where we add our remaining accessibility features, since Quarto does not yet offer that functionality within its qmd files.
