@@ -719,7 +719,7 @@ When you're satisfied, save the csv.
 
 ## Add alt text to your report's images
 
-Now, we'll use the `asar::add_alttext()` function to add the alt text into the report's .tex file. Again, we'll wrap the function with `with_dir()` to set a temporary working directory.
+Now, we'll use the `asar::add_alttext()` function to add the alt text into the report's .tex file.
 
 ```{r eval = FALSE}
 add_alttext(
