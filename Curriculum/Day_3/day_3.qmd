@@ -236,17 +236,15 @@ Run the following example table. The result is a fully report ready table showin
 {stockplotr} uses the native pipe (|>), so if you decide to customize you table, please also use the native pipe to avoid errors.
 :::
 
-```{r}
-# not sure what this will exactly look like so this is a place holder
+```{r eval = FALSE}
 stockplotr::table_landings(
-  dat = petrale,
-  group = "fleet",
-  unit_label = "mt",
-  module = NULL
+    dat = petrale,
+    unit_label = "mt",
+    module = "CATCH"
 )
 ```
 
-<!-- insert image of table here -->
+![](images/day3_ex_table1.png)
 
 ::: {.callout-note appearance="minimal"}
 Break for questions
@@ -256,46 +254,45 @@ Next, we can add some different formatting:
 
 ```{r}
 stockplotr::table_landings(
-  dat = petrale,
-  group = "fleet",
-  unit_label = "mt",
-  module = NULL
-) |>
-  flextable::footnote(
-    i = 6, # row
-    j = 2, # column
-    value = flextable::as_paragraph(
-      "This is an example table from the workflows workshop. Not intended for official use."
-      )
-  )
+    dat = petrale,
+    unit_label = "mt",
+    module = "CATCH") |>
+  gt::tab_style(
+        style = cell_text(weight = "bold"),
+        locations = cells_body(columns = "Year")
+    ) |>
+  gt::tab_style(
+        style = cell_text(style = "italic"),
+        locations = cells_body(columns = 2:3)
+    )
 ```
 
-<!-- insert image of table here -->
+![](images/day3_ex_table2.png)
 
 or potentially highlight a specific line within the table:
 
 ```{r}
 stockplotr::table_landings(
-  dat = petrale,
-  group = "fleet",
-  unit_label = "mt",
-  module = NULL
-) |>
-  flextable::footnote(
-    i = 6, # row
-    j = 2, # column
-    value = flextable::as_paragraph(
-      "Not intended for official use."
-      )
-  ) |>
-  flextable::bg(
-    i = 5,
-    bg = "lightblue",
-    part = "body"
+    dat = petrale,
+    unit_label = "mt",
+    module = "CATCH") |>
+    gt::tab_style(
+        style = cell_text(weight = "bold"),
+        locations = cells_body(columns = "Year")
+    ) |>
+    gt::tab_style(
+        style = cell_text(style = "italic"),
+        locations = cells_body(columns = 2:3)
+    ) |>
+    gt::tab_style(
+        style = cell_fill(color = "yellow"),
+        locations = cells_body(
+            rows = 2
+        )
     )
 ```
 
-<!-- insert image of table here -->
+![](images/day3_ex_table3.png)
 
 ::: {.callout-note appearance="minimal"}
 Break for questions

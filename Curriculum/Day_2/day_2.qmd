@@ -137,7 +137,6 @@ So, let's do more than just create a blank template! The following arguments are
 #| eval: false
 # Adjust below example based on audience
 library(asar)
-library(here)
 create_template(
   format = "pdf", # optional "html"
   type = "SAR", # add'l options: "safe", "nemt", "pfmc"

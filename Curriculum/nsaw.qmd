@@ -324,7 +324,6 @@ So, let's do more than just create a blank template! The following arguments are
 #| eval: false
 # Adjust below example based on audience
 library(asar)
-library(here)
 create_template(
   format = "pdf", # optional "html"
   type = "SAR", # add'l options: "safe", "nemt", "pfmc"
@@ -446,7 +445,7 @@ We have uploaded an example Report.sso file in the workshop GitHub, but if you h
 #| warning: false
 #| messages: false
 # Identify output file
-output_file <- file.path(here::here(), "example_output", "Report.sso")
+output_file <- file.path("example_output", "Report.sso")
 # convert the output
 petrale <- stockplotr::convert_output(
   output_file,
@@ -520,7 +519,7 @@ asar::create_template(
   rerender_skeleton = TRUE,
   file_dir = file.path(getwd(), "report"),
   authors = c("John Doe"="NEFSC", "Jane Doe"="NOAA"),
-  model_results = file.path(getwd(), "report", "std_output.rda"),
+  model_results = file.path(getwd(), "report", "petrale_conout.rda"),
   custom = TRUE,
   new_section = "Changes to the Model",
   section_location = "in-assessment"
@@ -670,16 +669,14 @@ Run the following example table. The result is a fully report ready table showin
 :::
 
 ```{r eval = FALSE}
-# not sure what this will exactly look like so this is a place holder
 stockplotr::table_landings(
-  dat = petrale,
-  group = "fleet",
-  unit_label = "mt",
-  module = NULL
+    dat = petrale,
+    unit_label = "mt",
+    module = "CATCH"
 )
 ```
 
-<!-- insert image of table here -->
+![](Day_3/images/day3_ex_table1.png)
 
 ::: {.callout-tip}
 ## Outside today's scope
