@@ -947,8 +947,7 @@ Now, we'll use the `asar::add_alttext()` function to add the alt text into the r
 add_alttext(
     x = "SAR_USWC_Petrale_sole_skeleton.tex", # your .tex report file
     dir = "report", # the folder containing the .tex file
-    alttext_csv_dir = getwd(), # the location of your "captions_alt_text.csv"
-    figures_dir = getwd(), # location of your "figures" folder
+    alttext_csv = "captions_alt_text.csv", # the filename of your csv with captions and alt text, located in the working directory
     compile = TRUE # now we'll compile the PDF
   )
 ```
