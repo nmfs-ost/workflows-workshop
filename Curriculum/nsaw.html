@@ -1948,7 +1948,7 @@ Note
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>quarto<span class="sc">::</span><span class="fu">quarto_render</span>(</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(<span class="st">"report"</span>,</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>             <span class="st">"SAR_species_skeleton.qmd"</span>) <span class="co"># add your skeleton filename</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>             <span class="st">"SAR_USWC_Petrale_sole_skeleton.qmd"</span>) <span class="co"># add your skeleton filename</span></span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1994,12 +1994,12 @@ Note
 <p>If you made an HTML-based report, these features would most likely be in your document. But since we’re prioritizing PDFs, there are a few more steps to take before your document will significantly more accessible than it is now. This means that, <strong>to achieve compliance with Section 508 criteria, you must complete a couple more tasks</strong>.</p>
 <section id="add-tagging" class="level2">
 <h2 class="anchored" data-anchor-id="add-tagging">Add tagging</h2>
-<p>In your ‘report’ folder, you’ll find a new file with a .tex filetype: ‘SAR_species_skeleton.tex’ (or something similar). This file is a LaTex-based version of your rendered skeleton qmd file. It’s also where we add our remaining accessibility features, since Quarto does not yet offer that functionality within its qmd files.</p>
+<p>In your ‘report’ folder, you’ll find a new file with a .tex filetype: ‘SAR_USWC_Petrale_sole_skeleton.tex’ (or something similar). This file is a LaTex-based version of your rendered skeleton qmd file. It’s also where we add our remaining accessibility features, since Quarto does not yet offer that functionality within its qmd files.</p>
 <p><a href="https://www.section508.gov/create/pdfs/common-tags-and-usage/"><strong>Tags</strong></a> are structural elements of PDFs. They are signals telling software which information are headers, images, tables, text, and so on. Tags allow people using technology like screen readers to logically navigate PDFs.</p>
 <p>We’ll use the <code>asar::add_tagging()</code> function to add tags.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">add_tagging</span>(</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="st">"SAR_species_skeleton.tex"</span>, <span class="co"># your .tex report file</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="st">"SAR_USWC_Petrale_sole_skeleton.tex"</span>, <span class="co"># your .tex report file</span></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">dir =</span> <span class="st">"report"</span>, <span class="co"># the folder containing the .tex file</span></span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">compile =</span> <span class="cn">FALSE</span> <span class="co"># whether the .tex file should be compiled after tagging. We'll set it to FALSE for now</span></span>
 <span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2119,12 +2119,11 @@ Important
 <p>Now, we’ll use the <code>asar::add_alttext()</code> function to add the alt text into the report’s .tex file.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_alttext</span>(</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"SAR_species_skeleton.tex"</span>, <span class="co"># your .tex report file</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"SAR_USWC_Petrale_sole_skeleton.tex"</span>, <span class="co"># your .tex report file</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">dir =</span> <span class="st">"report"</span>, <span class="co"># the folder containing the .tex file</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">alttext_csv_dir =</span> <span class="fu">getwd</span>(), <span class="co"># the location of your "captions_alt_text.csv"</span></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">figures_dir =</span> <span class="fu">getwd</span>(), <span class="co"># location of your "figures" folder</span></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">compile =</span> <span class="cn">TRUE</span> <span class="co"># now we'll compile the PDF</span></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">alttext_csv =</span> <span class="st">"captions_alt_text.csv"</span>, <span class="co"># the filename of your csv with captions and alt text, located in the working directory</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">compile =</span> <span class="cn">TRUE</span> <span class="co"># now we'll compile the PDF</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now your PDF’s figures have alt text! You can find and edit the alt text by following these steps:</p>
 <div class="quarto-figure quarto-figure-center">
