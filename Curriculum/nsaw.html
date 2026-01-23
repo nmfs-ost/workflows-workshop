@@ -1082,6 +1082,7 @@ Note
 </div>
 <p>The quantities in found in this chunk can be referenced in-line throughout the document:</p>
 <p>` r R0 `</p>
+<p>Make sure to check through these quantities once you have a standard output! We have done our best to make this part of the template as flextible as possible, but some of the quantities like targets could be inaccruate for what you want for the stock.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1129,7 +1130,7 @@ Important
 </div>
 <!-- **Demo of child docs and adding quantities from the preamble into your document** -->
 <p>Please add the following text into your “introduction” section:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>The stock assessment for `r params$species` was conducted by the `r params$office` in `r params$region`. The spawning biomass at maximum sustainable yield for the current assessment year (`r end_year`) was `r sb_msy`. You can find more information on the results of this assessment in @sec-assessment-results. The guidelines for this report follow those outlined in @NOAA_2020.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>The stock assessment for `r params$species` was conducted by the `r params$office` in `r params$region`. The spawning biomass at maximum sustainable yield for the current assessment year (`r end_year`) was `r SBend`. You can find more information on the results of this assessment in @sec-assessment-results. The guidelines for this report follow those outlined in @akaiki_new_1974.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 </section>
