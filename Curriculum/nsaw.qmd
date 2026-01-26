@@ -426,7 +426,7 @@ We are advising everyone that if required content is needed beyond the standard 
 Please add the following text into your "introduction" section:
 
 ```{verbatim}
-The stock assessment for `r params$species` was conducted by the `r params$office` in `r params$region`. The spawning biomass at maximum sustainable yield for the current assessment year (`r end_year`) was `r SBend`. You can find more information on the results of this assessment in @sec-assessment-results. The guidelines for this report follow those outlined in @akaiki_new_1974.
+The stock assessment for `r params$species` was conducted by the `r params$office` in `r params$region`. The terminal spawning biomass for the current assessment year (`r end_year`) was `r SBend`. You can find more information on the results of this assessment in @sec-assessment-results. The guidelines for this report follow those outlined in @akaiki_new_1974.
 ```
 
 ### `stockplotr::convert_output()`
