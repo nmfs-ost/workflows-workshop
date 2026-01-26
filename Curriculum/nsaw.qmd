@@ -489,13 +489,8 @@ For more information, navigate to [this article](https://nmfs-ost.github.io/stoc
 Now we are going to walk-through a more complex use of {asar} by
 
 - Customizing our sections
-- Reorganizing section order
-
-### Create-your-own
-
-There are three additional template options available to users to use while we work to set standard assessment report guidelines across the country. They include SAFE reports, NEFSC management track reports, and PFMC guidelines. Not only thing, but you have the ability to add new sections either within the current outline or in individual sections or even select which sections of the standard template you want to create your report around.
-
-Today, we will be going over how to customize your template by adding a new section along with updating your current report when the need arises..
+- Bringing in our output
+- Adding an author
 
 ### Rerendering report
 
@@ -520,7 +515,7 @@ Now, I need to add my co-authors to my report especially since I wasn't sure who
 asar::create_template(
   rerender_skeleton = TRUE,
   file_dir = file.path(getwd(), "report"),
-  authors = c("John Doe"="NEFSC", "Jane Doe"="NOAA"),
+  authors = c("John Doe"="NEFSC"),
   model_results = file.path(getwd(), "report", "petrale_conout.rda"),
   custom = TRUE,
   new_section = "Changes to the Model",
