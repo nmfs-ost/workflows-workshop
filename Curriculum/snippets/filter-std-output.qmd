@@ -4,6 +4,16 @@
 
 1. Filter the output data for spawning biomass that only includes years 2000 to 2020.
 
+::: {.callout-tip collapse="true"}
+## Hints
+
+* Phrases like "spawning biomass" will be spelled out in the 'label' column, with words typically separated with an underscore (_).
+
+* You can see all values in a dataframe column, sorted alphabetically, with the [`unique()`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/unique) and [`sort()`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/sort) functions.
+
+* Use the [`grepl()`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/grep) function to filter a dataframe column for values that match specific patterns.
+:::
+
 2. Extract the SBmsy reference point from the output data.
 
 :::

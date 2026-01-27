@@ -316,9 +316,11 @@ stockplotr::plot_biomass(
   unit_label = "mt",
   module = "TIME_SERIES",
   make_rda = TRUE,
-  figures_dir = getwd()
+  figures_dir = getwd() # indicate where to create a "figures" folder with the biomass figure rda
 )
 ```
+
+Let's explore the rda's components.
 
 ```{r}
 load("figures/biomass_figure.rda")
@@ -327,22 +329,17 @@ rda$caption
 rda$alt_text
 ```
 
-<!-- open the rda and show around -->
-
 ::: {.callout-note appearance="minimal"}
 Break for questions
 :::
-
-
-<!-- Repeat for table -->
 
 ```{r}
 stockplotr::table_landings(
   dat = petrale,
   group = "fleet",
   unit_label = "mt",
-  make_rda = TRUE,
-  tables_dir = getwd()
+  make_rda = TRUE, # new argument needed to export plot
+  tables_dir = getwd() # indicate where to create a "tables" folder with the landings table rda
 )
 ```
 

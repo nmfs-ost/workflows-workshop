@@ -384,7 +384,7 @@ asar::create_template(
   authors = c("John Doe"="NEFSC", "Jane Doe"),
   custom = TRUE,
   new_section = "Changes to the Model",
-  section_location = "in-assessment"
+  section_location = "after-introduction"
 )
 ```
 
