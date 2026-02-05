@@ -32,6 +32,8 @@ website:
     contents:
       - href: index.qmd
         text: "Home"
+      - href: agenda.qmd
+        text: "Agenda"
       - href: resources/terminology.md
         text: "Terminology"
       - href: resources/good_practices.qmd
