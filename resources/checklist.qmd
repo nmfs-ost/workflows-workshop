@@ -53,8 +53,7 @@ get_workshop_files(
 get_workshop_files(
   dest_folder = file.path("example_plots"),
   dest_file = file.path("example_plots", "ex_table.rda"),
-  url = "https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots/ex_table.rda"
-  )
+  url = "https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/main/example_plots/ex_table.rda"  )
 ```
 
 6. Install important R packages
