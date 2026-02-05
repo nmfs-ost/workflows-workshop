@@ -333,6 +333,7 @@ rda$alt_text
 Break for questions
 :::
 
+This is the code you would run to export a landings table, but **it is not yet functional.**
 ```{r}
 stockplotr::table_landings(
   dat = petrale,
@@ -343,12 +344,17 @@ stockplotr::table_landings(
 )
 ```
 
+Import the sample table rda and explore it:
+
 ```{r}
-load("tables/landings_table.rda")
+load("example_plots/ex_table.rda")
 rda$table
 rda$caption
-rda$latex
 ```
+
+::: {.callout-warning}
+We are working on finishing the exporting capability of `table_landings()`. When it's functional, the landings table will be exported using the `make_rda` and `tables_dir` arguments, in parallel to `plot_biomass()` shown above.
+:::
 
 ::: {.callout-tip}
 We have designed two functions that allow you to automatically create all available figures and tables:
@@ -383,54 +389,14 @@ You can add your figures and tables with two workflows:
 
 *This is also known as the [rda-based workflow](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#comparing-workflows)*.
 
-#### Tables
+#### Figures
 
-To add tables, first ensure that your folder containing the tables is called "tables".
+To add figures, first ensure that your folder containing the figures is called "figures".
 
 Then, there are only two arguments to fill out:
 
-1. `subdir`: The location where the *new* tables doc should be saved (we recommend your 'report' folder, so it overwrites the old, empty version)
-2. `tables_dir`: The location of your "tables" folder
-
-```{r}
-#| label: add-tables
-#| eval: false
-#| warning: false
-#| messages: false
-create_tables_doc(
-  subdir = fs::path(getwd(), "report"), # indicates the new tables doc will be saved in your "report" folder, located in the working directory
-  tables_dir = getwd() # indicates your "tables" folder is located in the working directory
-                  )
-```
-
-Now, open your new tables doc and take a look!
-
-You'll notice the following structure:
-
-**Chunk 1** will always create an object saving the location of your `tables_dir`.
-
-Then, there will be at least two chunks for each table. For tables that are *regularly-sized* (i.e., small enough that they don't need to be rotated or split across pages):
-
-**Chunk 2** will:
-
-* load an rda containing a table
-* give the rda a specific name
-* save the table and caption as separate objects
-
-**Chunk 3** will:
-
-* display the table
-
-::: {.callout-note}
-This workflow can also accommodate tables that are wide enough to require rotation into a landscape-view page OR splitting across pages. For more information, please see the ["Adding Custom Tables & Figures" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width).
-:::
-
-#### Figures {#sec-rda-based-fig}
-
-Adding figures entails nearly the same process as described for tables. The only differences are:
-
-1. Figures will involve captions and *alternative text*, whereas tables only require captions
-2. Figures do not require the option to be rotated or split across pages.
+1. `subdir`: The location where the *new* figures doc should be saved (we recommend your 'report' folder, so it overwrites the old, empty version)
+2. `figures_dir`: The location of your "figures" folder
 
 ```{r}
 #| label: add-figures
@@ -438,10 +404,60 @@ Adding figures entails nearly the same process as described for tables. The only
 #| warning: false
 #| messages: false
 create_figures_doc(
+  subdir = fs::path(getwd(), "report"), # indicates the new figures doc will be saved in your "report" folder, located in the working directory
+  figures_dir = getwd() # indicates your "figures" folder is located in the working directory
+                  )
+```
+
+Now, open your new figures doc and take a look!
+
+You'll notice the following structure:
+
+**Chunk 1** will always create an object saving the location of your `figures_dir`.
+
+Then, there will be at least two chunks for each figure. For each figure,
+
+**Chunk 2** will:
+
+* load an rda containing a figure
+* give the rda a specific name
+* save the figure, caption, and alternative text as separate objects
+
+**Chunk 3** will:
+
+* display the figure
+
+#### Tables {#sec-rda-based-tab}
+
+Adding tables entails nearly the same process as described for figures. The only differences are:
+
+1. Tables will involve captions only, whereas figure require captions and alternative text
+2. Tables can be rotated or split across pages.
+
+First, let's copy our example table rda into a "tables" folder:
+
+```{r}
+dir.create(file.path(getwd(), "tables"))
+file.copy(from = file.path(getwd(), "example_plots", "ex_table.rda"),
+          to = file.path(getwd(), "tables"))
+```
+
+Then, add the table to the {asar} tables doc:
+
+```{r}
+#| label: add-tables
+#| eval: false
+#| warning: false
+#| messages: false
+create_tables_doc(
   subdir = fs::path(getwd(), "report"),
-  figures_dir = getwd()
+  tables_dir = getwd()
   )
 ```
+
+::: {.callout-note}
+*Once we complete redevelopment of our pilot table (`table_landings()`)*, our workflow will be able to accommodate tables that are wide enough to require rotation into a landscape-view page OR splitting across pages. For more information, please see the ["Adding Custom Figures & Tables" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width).
+:::
 
 ::: {.callout-note appearance="minimal"}
 Break for questions
