@@ -1,0 +1,51 @@
+---
+title: "Agenda"
+format: html
+---
+
+Workflows Workshop Agenda
+
+Day 1:
+
+| Time      | Topic                     |
+|-----------|---------------------------|
+| 0:00-0:20 | Introduction & Icebreaker |
+| 0:20-0:25 | Break for questions |
+| 0:25-0:35 | Workshop Overview |
+| 0:35-0:55 | Markdown Basics |
+| 0:55-1:15 | Break |
+| 1:15-1:45 | Quarto Basics |
+| 1:45-1:55 | Break |
+| 1:55-2:15 | Package and dependency installation |
+| 2:15-2:30 | Q&A and wrap-up |
+
+Day 2:
+
+| Time      | Topic                     |
+|-----------|---------------------------|
+| 0:00-0:15 | Introduction & Icebreaker |
+| 0:15-0:25 | Setting up materials |
+| 0:25-0:45 | {asar}: installation and overview |
+| 0:45-1:15 | asar::create_template() |
+| 1:15-1:35 | Break |
+| 1:35-2:05 | stockplotr::convert_output() |
+| 2:05-2:20 | Break for questions |
+| 2:20-2:40 | Advanced workflow |
+| 2:40-2:50 | Break for questions |
+| 2:50-3:00 | Day 2 Wrap-up |
+
+Day 3:
+
+| Time | Topic |
+|------|-------|
+| 0:00-0:15 | Introduction & Icebreaker |
+| 0:15-0:25 | {stockplotr} Overview |
+| 0:25-0:55 | Create a figure + Customizing |
+| 0:55-1:05 | Break |
+| 1:05-1:20 | Creating a table |
+| 1:20-1:40 | Exporting tables and figures |
+| 1:40-2:00 | Break |
+| 2:00-2:30 | Integrating {stockplotr} into the workflow |
+| 2:30-2:40 | Manually adding tables and figures |
+| 2:40-3:00 | Creating accessible documents |
+| 3:00-3:05 | Final remarks and questions |
