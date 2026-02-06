@@ -492,7 +492,7 @@ petrale <- load(fs::path("std_output.rda"))
 # Make your table
 your_table <- head(petrale) |>
   dplyr::select(label, year, estimate) |>
-  flextable::flextable()
+  gt::gt()
 
 # Show your table
 your_table
