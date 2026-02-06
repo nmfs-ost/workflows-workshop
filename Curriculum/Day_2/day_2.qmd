@@ -398,6 +398,40 @@ asar::create_template(
 )
 ```
 
+::: {.callout-note icon=false}
+## Testing your understanding
+
+You notice a typo in the "Executive Summary" of your report PDF. Where should you fix it so that the change persists in future versions?
+
+A) The final rendered PDF file
+B) The "skeleton" file
+C) The specific modular file (01_executive_summary.qmd).
+D) Re-run the `create_template()` function with the corrected text as an argument
+
+:::
+
+<!-- Answer: C. -->
+<!-- A identifies thinking towards old workflow: manual post-processing -->
+<!-- B identifies forgetting the modularity of {asar} -->
+<!-- D identifies mistake in understanding purpose of create_teamplate(). create_template() is a tool that builds the structure of your report, but not the detailed content of it (body of text). -->
+
+
+::: {.callout-note icon=false}
+## Testing your understanding
+
+You've used {asar} to set up a stock assessment report. You realize there's some region-specific information you need to add, and it doesn't seem to fit into any of the main sections (e.g., introduction, data, discussion). Which of the following ways can you add it to your report?
+
+A) Add it to the appendix
+B) Add the text to the end of the skeleton qmd
+C) Add a new section with `create_template()`'s `new_section` argument
+D) You can't
+
+:::
+
+<!-- Answer: A and C. -->
+<!-- With B, you'd miss out on headers and proper inclusion in the table of contents. -->
+<!-- D isn't true. -->
+
 <!-- Add back in once section is developed -->
 
 <!-- ::: {.callout-note appearance="minimal"} -->

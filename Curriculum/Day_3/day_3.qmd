@@ -586,6 +586,22 @@ or
 
 Adding an `@` symbol followed by the chunk label, or label of your table/figure, will create an interactive link that lets the reader navigate to that specific table/figure.
 
+::: {.callout-note icon=false}
+## Testing your understanding
+
+Which of the following describes how you can integrate {asar} and {stockplotr} into your reporting workflow?
+
+A) Generating 13+ assessment figures and tables in one go using a single function (`stockplotr::save_all_plots()`).
+B) Creating one specific figure (e.g., biomass, using `stockplotr::plot_biomass()`).
+C) Building an {asar} report template with a model results file, which allows for automatic extraction of B/BMSY and other key quantities from the model output.
+D) Using {asar} to build a report template, without a converted model results file.
+E) Using the entire workflow to convert model results into a standardized format, generate all plots, and integrate them into an accessible report.
+F) All of the above.
+
+:::
+
+<!-- Answer: F. -->
+
 ::: {.callout-note appearance="minimal"}
 Break for questions
 :::
@@ -749,6 +765,23 @@ Now your PDF's figures have alt text! You can find and edit the alt text by foll
 ::: {.callout-tip}
 The function [`asar::add_accessibility()`](https://github.com/nmfs-ost/asar/blob/main/R/add_accessibility.R) performs the same tasks as `asar::add_tagging()` + `asar::add_alttext()` combined! Here, we showed the latter functions to explain how they work, but you can use `asar::add_accessibility()` once you're comfortable with these steps.
 :::
+
+::: {.callout-note icon=false}
+## Testing your understanding
+
+You need to update the alt text for your biomass figure because your interpretation of the plot has changed. Where should you edit this plot's alt text?
+
+A) In the code chunk in the 09_figures.qmd file
+B) In the alt_text_captions.csv file
+C) In the YAML at the top of the skeleton .qmd file
+D) By right-clicking the figure in the RStudio "plots" pane
+
+:::
+
+<!-- Answer: B. -->
+<!-- A identifies "Standard Quarto" thinking. While standard Quarto uses chunk options, {asar} uses the .csv as a single source of truth. When creating PDFs, alt text is taken from the csv-- not from the code chunk. -->
+<!-- C & D do not allow any way to edit alt text. -->
+
 
 ::: {.callout-note appearance="minimal"}
 20 minute break for questions & practicing

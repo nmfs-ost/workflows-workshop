@@ -220,7 +220,7 @@ When you knit the document, \`params\$species\` will be replaced with "Petrale s
 
 ### References and Bibliography
 
-You can easily add citations to your report. We provide an `asar_references.bib` file in the "report" folder with hundreds of citations for you to reference, though you can add your own to the file too.
+You can easily add citations to your report. We provide an `asar_references.bib` file in the "report" folder with hundreds of citations for you to reference, though you can add your own to the file too. Here are resources to export BibTex from [Google Scholar](https://guides.erau.edu/portfolio-how-to/google-bibtex), [EndNote](https://libguides.utsa.edu/c.php?g=522165&p=7949194), [Zotero](https://libguides.princeton.edu/c.php?g=148292&p=991756), and [a guide for connecting Zotero with RStudio](https://nmfs-opensci.github.io/Quarto-Workshop-2024/tutorials/tutorial-6.html#connect-zotero-and-rstudio).
 
 To cite a reference in the text, use the `@` symbol followed by the citation key (e.g., `@Biddle_1992`). Quarto will automatically format the citation and add it to the "References" section towards the end of your report. The bib file will be referenced in your {asar} report's YAML.
 
@@ -351,6 +351,14 @@ my_data <- read.csv("extra_data/red_fish.csv")
 ```
 
 This would work *even if your working directory is not the "report" folder.*
+
+::: {.callout-note icon=false}
+## Testing your understanding
+
+True or False: If you define a variable (e.g., x <- 10) in the R console while you are working, that variable will be automatically available and usable inside your Quarto code chunks when you render your report.
+:::
+
+<!-- Answer: False. Each Quarto document must be self-contained. Quarto starts a fresh, empty R session every time it renders. The state of your R console is not automatically part of the document. -->
 
 
 ::: {.callout-note appearance="minimal"}
