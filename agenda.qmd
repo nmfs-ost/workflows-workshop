@@ -29,7 +29,7 @@ format: html
 | 0:45-1:15 | asar::create_template() |
 | **1:15-1:35** | **Break** |
 | 1:35-2:05 | stockplotr::convert_output() |
-| 2:05-2:20 | **Break for questions** |
+| **2:05-2:20** | **Break for questions** |
 | 2:20-2:40 | Advanced workflow |
 | **2:40-2:50** | **Break for questions** |
 | 2:50-3:00 | Q&A and wrap-up |
