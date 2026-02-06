@@ -398,6 +398,10 @@ asar::create_template(
 )
 ```
 
+::: {.callout-tip}
+Check out the ["Frequently Asked Questions (FAQs)" vignette](https://nmfs-ost.github.io/asar/articles/faqs.html) to find how to solve common issues encountered when using {asar}.
+:::
+
 ::: {.callout-note icon=false}
 ## Testing your understanding
 

@@ -292,6 +292,10 @@ stockplotr::table_landings(
 
 ![](images/day3_ex_table3.png)
 
+::: {.callout-tip}
+Check out the [{stockplotr} cheatsheet](https://nmfs-ost.github.io/stockplotr/stockplotr_cheatsheet.pdf) to quickly reference the main concepts of this package!
+:::
+
 ::: {.callout-note appearance="minimal"}
 Break for questions
 :::
@@ -782,6 +786,9 @@ D) By right-clicking the figure in the RStudio "plots" pane
 <!-- A identifies "Standard Quarto" thinking. While standard Quarto uses chunk options, {asar} uses the .csv as a single source of truth. When creating PDFs, alt text is taken from the csv-- not from the code chunk. -->
 <!-- C & D do not allow any way to edit alt text. -->
 
+::: {.callout-tip}
+Check out the ["Increasing Report Accessibility" vignette](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html), which contains all kinds of accessibility-related information related to alternative text, using acronyms, learning about the status of accessibility features in {asar} with relation to Section 508 standards, and more.
+:::
 
 ::: {.callout-note appearance="minimal"}
 20 minute break for questions & practicing
@@ -789,7 +796,11 @@ D) By right-clicking the figure in the RStudio "plots" pane
 
 {{< include ../snippets/a11y_exercises.qmd >}}
 
-# Questions, comments, and feedback
+# Questions, comments, feedback, and closing
+
+::: {.callout-tip}
+Your colleagues have created some terrific stock assessment reports with {asar}. Check them out on our ["Example Reports" page](https://nmfs-ost.github.io/asar/articles/example_reports.html)!
+:::
 
 Please navigate to the [Feedback](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.vffehz79fm7y#heading=h.llbcc8tygqlb) heading and tell us what you thought about today's workshop. Only 3 simple questions!
 
