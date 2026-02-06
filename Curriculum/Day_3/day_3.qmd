@@ -738,7 +738,9 @@ When you're satisfied, save the csv.
 #### Adding new entries
 
 * Make a new row.
-* For "label", take the "label" of your figure chunk. For example, in [the example above](#sec-code-in-qmd-fig), the label would be "fig-custom1".
+* For "label", take the "label" of your figure chunk.
+  * For figures [coded in chunks](#sec-code-in-qmd-fig), our example label would be "fig-custom1".
+  * For figures [added with markdown](#sec-image-based-fig)^[`![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}`] (i.e., premade pngs or jpgs), our example label would be "fig-example".
 * The type will be "figure".
 * The caption should be identical to the caption in your chunk (what you put in "fig-cap").
 * The "alt_text" will contain your alt text. See the "[Editing existing entries](#sec-edit-exist-entries)" section above, and the "[Achieve Greater Accessibility](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html)" vignette, for help writing alt text.
