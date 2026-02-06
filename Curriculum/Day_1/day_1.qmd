@@ -84,7 +84,7 @@ We have communicated with representatives from each council and all have express
 
 During this workshop, we will cover the following topics:
 
-- Markdown language
+- Markdown
 - Quarto basics
 - How to set up a reporting workflow using {asar}
 - How to create semi-automated figures and tables with {stockplotr} 
@@ -297,23 +297,23 @@ And it will render like this:
 
 #### Survey names
 
-Many people refer to surveys with nicknames or "informal" names that do not match up with administrative documentation. For example, the "Atlantic Surf Clam & Ocean Quahog Dredge" is sometimes called the "clam survey". To facilitate communication in the reporting process, **we have added survey names to the glossary**.
+Many people refer to surveys with nicknames or "informal" names that do not match up with administrative documentation. To facilitate communication in the reporting process, **we have added survey names to the glossary**.
 
 *Informal survey names* (i.e., nicknames used to refer to surveys that are not correct) are listed in the "Acronym" column.
 
 *Formal survey names* (i.e., the correct survey names) are listed in the "Meaning" column.
 
-For example, here is an entry for a survey known locally as "GOA acoustic survey", but administratively called "MACE Gulf of Alaska Pollock Acoustic Trawl_Summer": 
+For example, the "Atlantic Surf Clam & Ocean Quahog Dredge" is sometimes called the "clam survey".
 
-`\newacronym{goa acoustic survey}{GOA acoustic survey}{MACE Gulf of Alaska Pollock Acoustic Trawl_Summer}`
+`\newacronym{clam survey}{Clam Survey}{Atlantic Surf Clam & Ocean Quahog Dredge}`
 
 This text...
 
-> In 2025, the `\gls{GOA acoustic survey}`...
+> In 2025, the `\gls{clam survey}`...
 
 ...will render like this:
 
-> In 2025, the MACE Gulf of Alaska Pollock Acoustic Trawl_Summer (GOA acoustic survey)...
+> In 2025, the Atlantic Surf Clam & Ocean Quahog Dredge (Clam Survey)...
 
 ## Tips for Quarto documents
 ### Modular setup with a skeleton
@@ -365,10 +365,11 @@ This would work *even if your working directory is not the "report" folder.*
 Before we begin using {asar} and {stockplotr} tomorrow, we highly suggest that you ensure that you've completed the [pre-workshop checklist](../../resources/checklist.qmd).
 :::
 
-# Questions, comments, and feedback
+# Final reminders
 
-Please navigate to the [Feedback](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.0#heading=h.llbcc8tygqlb) heading and tell us what you thought about today's workshop. Only 3 simple questions!
+* We offer two weekly "office hours". For the Google Meet links, please see the National Fish Assessment Chat Space or the [Assessments Events Google Calendar](https://calendar.google.com/calendar/embed?src=c_43jjc1ei4kujqki7o5ud918ea8%40group.calendar.google.com&ctz=America%2FNew_York).
+  * Monday, 4–5 PM ET: Drop in for 1-on-1 help with using {asar} or {stockplotr} for your stock assessment reports.
+  * Wednesday, 2–3 PM ET: Join us to help develop these tools and/or learn about the development process. No package development experience is necessary- only an interest to learn. We’ll post the specific weekly topic every Wednesday morning. We're also available for regular 1-on-1 help.
+* [NOAA Open Science offers several "help desk" hours on Wednesdays](https://calendar.app.google/TTkn1jaAz1t98SWLA). Jon Peake hosts. This time is great for general questions about markdown, Quarto, Git and GitHub, and more
+* We will be holding office hours tomorrow 30 minutes before the next session starts for any questions.
 
-* What went well?
-* What could be improved?
-* What is a question you still have?

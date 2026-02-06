@@ -422,6 +422,6 @@ You should now be able to
 
 # Final Reminders
 
-- We will be holding office hours tomorrow 30 minutes before the next session starts for any questions.
+<!-- - We will be holding office hours tomorrow 30 minutes before the next session starts for any questions. -->
 - Feel free to practice some more tonight and come tomorrow with any questions you may have.
 
