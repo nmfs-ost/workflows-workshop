@@ -238,6 +238,83 @@ Here's an example entry from the .bib file:
 }
 ````
 
+### Glossary and survey names
+
+Maintaining a consistent list of acronyms (i.e., a glossary) is essential for reader clarity and accessibility. However, maintaining a glossary *manually* poses multiple challenges:
+
+* Tracking the first, defined usage vs. subsequent, shorthand usages of acronyms in reports
+* Capturing every acronym in a glossary at the end of your report
+* Ensuring the acronym will be read properly by a screen reader
+
+Use our *automated* system to ease this step! It performs these tasks for you:
+
+* Automatically spell out the full meaning of each acronym upon its first usage
+* Use the shorthand version of each acronym after its first usage
+* Add each acronym to a glossary table at the end of your report
+* Format acronyms such that they're pronounced correctly by screen readers
+
+#### Finding the glossary
+
+When you run `asar::create_template()`, you'll see a glossary ("report_glossary.tex") in your "report" folder. Take a look at [the uploaded version, here](github.com/nmfs-ost/asar/blob/main/inst/glossary/report_glossary.tex).
+
+#### Glossary structure
+
+**Order**: The glossary is sorted alphabetically. Case can differentiate entries (e.g., "M" (natural mortality) is different from "m" (meter(s)).)
+
+**Structure**: Each acronym has its own line, structured like this:
+
+`\newacronym{<"label" or "key">}{<"short form" or "acronym">}{<"long form">}`
+
+- "label" (or "key"): The term written in the report body. The label links the short form (see below) to the glossary entry. In our glossary, labels are typically lowercase. *Examples: bcurrent, noaa*.
+
+- "short form" (or "acronym"): The term actually shown when the report is rendered. The short form may have formatting applied to it. *Examples: \$B_{current}$* (which will render as $B_{current}$), *NOAA*.
+
+- "long form": The meaning of the short form. *Examples: current biomass of stock, National Oceanic and Atmospheric Administration*.
+
+Here are two entries using the examples mentioned above:
+
+`\newacronym{bcurrent}{$B_{current}$}{current biomass of stock}`
+
+`\newacronym{noaa}{NOAA}{National Oceanic and Atmospheric Administration}`
+
+::: {.callout-note}
+You can edit the glossary by altering, adding, or removing entries in the "report_glossary.tex" file.
+:::
+
+#### Using acronyms in reports
+
+First, check if the glossary contains your acronym; if it doesn't, you can edit the file and add it yourself.
+
+Once your acronym is in the glossary, find your acronym in your report and encase it in curly brackets ({}), with "\gls" preceding it. For example, to indicate "ABC" is an acronym, you would write `\gls{ABC}`. Use this notation each time you use the acronym in your text.
+
+Your text will look like this:
+
+> This is the first instance of `\gls{ABC}`. Here, `\gls{ABC}` is used a second time.
+
+And it will render like this:
+
+> This is the first instance of Acceptable Biological Catch (ABC). Here, ABC is used a second time.
+
+#### Survey names
+
+Many people refer to surveys with nicknames or "informal" names that do not match up with administrative documentation. For example, the "Atlantic Surf Clam & Ocean Quahog Dredge" is sometimes called the "clam survey". To facilitate communication in the reporting process, **we have added survey names to the glossary**.
+
+*Informal survey names* (i.e., nicknames used to refer to surveys that are not correct) are listed in the "Acronym" column.
+
+*Formal survey names* (i.e., the correct survey names) are listed in the "Meaning" column.
+
+For example, here is an entry for a survey known locally as "GOA acoustic survey", but administratively called "MACE Gulf of Alaska Pollock Acoustic Trawl_Summer": 
+
+`\newacronym{goa acoustic survey}{GOA acoustic survey}{MACE Gulf of Alaska Pollock Acoustic Trawl_Summer}`
+
+This text...
+
+> In 2025, the `\gls{GOA acoustic survey}`...
+
+...will render like this:
+
+> In 2025, the MACE Gulf of Alaska Pollock Acoustic Trawl_Summer (GOA acoustic survey)...
+
 ## Tips for Quarto documents
 ### Modular setup with a skeleton
 
