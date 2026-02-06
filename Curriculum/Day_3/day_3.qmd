@@ -124,8 +124,6 @@ Break for questions
 
 All figures will automatically identify any indexing variables in the data such as fleet, area, or sex. You can use the `group` and `facet` arguments to modify how these indexing variables are displayed in the figure. You can also modify other arguments such as `geom`, `ref_line`, and `relative` to change the appearance of the figure. 
 
-Here are some examples of how to customize the biomass figure:
-
 #### Change the reference line to a specific value (e.g., 260)
   
   In this example we are also telling the function which module to select in order to by-pass this step. We plan to remove grouping of some modules in the future.

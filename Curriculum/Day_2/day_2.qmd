@@ -223,7 +223,7 @@ For more information on markdown notation, see [Day 1](https://nmfs-ost.github.i
 
 ##### The content
 
-The "child docs" are where you as the assessment author or contributor report out the information you need to include. The template is highly modular so there are files for each section of the report and sometimes files for subsections. The default {asar} template creates child docs following the NOAA standard stock assessment report guidelines consisting of the following:
+The "child docs" are where you as the assessment author or contributor report out the information you need to include. The template is highly modular so there are files for each section of the report and sometimes files for subsections. The default {asar} template creates child docs following the [NOAA standard stock assessment report guidelines](https://github.com/nmfs-ost/workflows-workshop/tree/main/assets/standard_guidelines.pdf) consisting of the following:
 
 - executive summary
 - introduction
@@ -236,12 +236,12 @@ The "child docs" are where you as the assessment author or contributor report ou
 - figures
 - appendix
 
-Each child doc contains pre-determined headers and labels for the author to reference back to throughout the document. There are also descriptions within each section that depcit what you should report on throughout the document. You can either keep or remove these notes once the document is finished, either way, they will not be included in your final report.
+Each child doc contains pre-determined headers and labels for the author to reference back to throughout the document. There are also descriptions within each section that depict what you should report on throughout the document. You can either keep or remove these notes once the document is finished, either way, they will not be included in your final report.
 
 Child docs are not intended to be rendered on their own, but only from the skeleton as a whole!
 
 ::: {.callout-important}
-We are advising everyone that if required content is needed beyond the standard guidelines, that it gets placed in the appendix; however we encourage everyone to think about the importance of the content in terms of review for management versus CIE or SSC review.
+We are advising everyone that if any content needed beyond the standard guidelines gets placed in the appendix; however, we encourage everyone to think about the importance of the content in terms of review for management versus CIE or SSC review.
 :::
 
 **Demo of child docs and adding quantities from the preamble into your document**
@@ -304,6 +304,8 @@ The converted output is a tibble that reframes and reshapes your data. The tibbl
 Let's walk through a standard output file in more detail.
 :::
 
+{{< include snippets/filter-std-output.qmd >}}
+
 ::: {.callout-note}
 For more information, navigate to [this article](https://nmfs-ost.github.io/stockplotr/articles/convert_output_details.html) describing the conversion process and find ways your can convert your model's data!
 :::
@@ -323,7 +325,7 @@ Now we are going to walk-through a more complex use of {asar} by
 
 ### Create-your-own
 
-There are three additional template options available to users to use while we work to set standard assessment report guidelines across the country. They include SAFE reports, NEFSC management track reports, and PFMC guidelines. Not only thing, but you have the ability to add new sections either within the current outline or in individual sections or even select which sections of the standard template you want to create your report around.
+There are three additional template options available to users to use while we work to set standard assessment report guidelines across the country. They include SAFE reports, NEFSC management track reports, and PFMC guidelines. You also have the ability to add new sections either within the current outline or in individual sections or even select which sections of the standard template you want to create your report around.
 
 Today, we will be going over how to customize your template by selecting a subset of the standard guidelines then adding in a new section within our data section.
 
@@ -376,6 +378,7 @@ Let's add some more parameters to our script which will allow us to references i
 ```{r eval=FALSE}
 asar::create_template(
   rerender_skeleton = TRUE,
+  file_dir = file.path(getwd(), "report"),
   parameters = TRUE,
   param_names = c("fleet_a", "fleet_b"),
   param_values = c("a long fleet name", "b long fleet name")
@@ -387,7 +390,8 @@ Now, I need to add my co-authors to my report especially since I wasn't sure who
 ```{r eval=FALSE}
 asar::create_template(
   rerender_skeleton = TRUE,
-  authors = c("John Doe"="NEFSC", "Jane Doe"),
+  file_dir = file.path(getwd(), "report"),
+  authors = c("John Doe"="NEFSC"),
   custom = TRUE,
   new_section = "Changes to the Model",
   section_location = "after-introduction"
@@ -401,8 +405,6 @@ asar::create_template(
 <!-- ::: -->
 
 <!-- ### Calling previous report -->
-
-
 
 ::: {.callout-note appearance="minimal"}
 20 minute break for questions & practicing
@@ -418,7 +420,7 @@ You should now be able to
 - Understand how to use parameters and key quantities within text
 - Understand the format of a standard output object
 - Know how to customize a report
-- Know how to pull and update and old report that used {asar}
+<!-- - Know how to pull and update and old report that used {asar} -->
 
 # Final Reminders
 
