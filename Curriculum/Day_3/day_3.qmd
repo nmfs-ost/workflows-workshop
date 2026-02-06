@@ -33,8 +33,8 @@ Break for questions
     -   Contains resources (from us and you!) and areas for note-taking
 -   [Sample data](https://github.com/nmfs-ost/asar/blob/main/inst/extdata/Report.sso)
     -   Sample model output data for coding demonstrations
--   [Example figure](https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots/landings_fig_png.png)
-    -   Example figure for coding demonstration
+-   [Example figure and table](https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots)
+    -   Example figure and table for coding demonstration
 
 ## Installation
 

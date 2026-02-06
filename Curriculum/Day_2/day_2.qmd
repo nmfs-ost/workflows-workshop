@@ -101,7 +101,7 @@ If you use VSCode or Positron for your IDE, by navigating to a folder on your co
 - `asar::create_template()`
 - `stockplotr::convert_output()` (This function is now located within {stockplotr} but is useful for building {asar} reports)
     
-** Time to browse documentation? or show info from site? **
+<!-- ** Time to browse documentation? or show info from site? ** -->
 
 ### `asar::create_template()`
 
@@ -313,7 +313,7 @@ Now we are going to walk-through a more complex use of {asar} by
 - Adding additional parameters
 - Customizing our sections
 - Reorganizing section order
-- Calling a previous report and editing
+<!-- - Calling a previous report and editing -->
 
 ### Create-your-own
 
