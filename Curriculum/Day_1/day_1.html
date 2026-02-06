@@ -446,7 +446,7 @@ window.Quarto = {
   </ul></li>
   </ul></li>
   <li><a href="#sec-prep" id="toc-sec-prep" class="nav-link" data-scroll-target="#sec-prep">Install packages and get ready for tomorrow’s material (if need be)</a></li>
-  <li><a href="#questions-comments-and-feedback" id="toc-questions-comments-and-feedback" class="nav-link" data-scroll-target="#questions-comments-and-feedback">Questions, comments, and feedback</a></li>
+  <li><a href="#final-reminders" id="toc-final-reminders" class="nav-link" data-scroll-target="#final-reminders">Final reminders</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nmfs-ost/workflows-workshop/edit/main/Curriculum/Day_1/day_1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/Curriculum/Day_1/day_1.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -582,7 +582,7 @@ Note
 <h3 class="anchored" data-anchor-id="scope-of-workshop">Scope of workshop</h3>
 <p>During this workshop, we will cover the following topics:</p>
 <ul>
-<li>Markdown language</li>
+<li>Markdown</li>
 <li>Quarto basics</li>
 <li>How to set up a reporting workflow using {asar}</li>
 <li>How to create semi-automated figures and tables with {stockplotr}</li>
@@ -793,18 +793,18 @@ Note
 </section>
 <section id="survey-names" class="level4">
 <h4 class="anchored" data-anchor-id="survey-names">Survey names</h4>
-<p>Many people refer to surveys with nicknames or “informal” names that do not match up with administrative documentation. For example, the “Atlantic Surf Clam &amp; Ocean Quahog Dredge” is sometimes called the “clam survey”. To facilitate communication in the reporting process, <strong>we have added survey names to the glossary</strong>.</p>
+<p>Many people refer to surveys with nicknames or “informal” names that do not match up with administrative documentation. To facilitate communication in the reporting process, <strong>we have added survey names to the glossary</strong>.</p>
 <p><em>Informal survey names</em> (i.e., nicknames used to refer to surveys that are not correct) are listed in the “Acronym” column.</p>
 <p><em>Formal survey names</em> (i.e., the correct survey names) are listed in the “Meaning” column.</p>
-<p>For example, here is an entry for a survey known locally as “GOA acoustic survey”, but administratively called “MACE Gulf of Alaska Pollock Acoustic Trawl_Summer”:</p>
-<p><code>\newacronym{goa acoustic survey}{GOA acoustic survey}{MACE Gulf of Alaska Pollock Acoustic Trawl_Summer}</code></p>
+<p>For example, the “Atlantic Surf Clam &amp; Ocean Quahog Dredge” is sometimes called the “clam survey”.</p>
+<p><code>\newacronym{clam survey}{Clam Survey}{Atlantic Surf Clam &amp; Ocean Quahog Dredge}</code></p>
 <p>This text…</p>
 <blockquote class="blockquote">
-<p>In 2025, the <code>\gls{GOA acoustic survey}</code>…</p>
+<p>In 2025, the <code>\gls{clam survey}</code>…</p>
 </blockquote>
 <p>…will render like this:</p>
 <blockquote class="blockquote">
-<p>In 2025, the MACE Gulf of Alaska Pollock Acoustic Trawl_Summer (GOA acoustic survey)…</p>
+<p>In 2025, the Atlantic Surf Clam &amp; Ocean Quahog Dredge (Clam Survey)…</p>
 </blockquote>
 </section>
 </section>
@@ -962,13 +962,16 @@ Important
 </div>
 </div>
 </section>
-<section id="questions-comments-and-feedback" class="level1">
-<h1>Questions, comments, and feedback</h1>
-<p>Please navigate to the <a href="https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.0#heading=h.llbcc8tygqlb">Feedback</a> heading and tell us what you thought about today’s workshop. Only 3 simple questions!</p>
+<section id="final-reminders" class="level1">
+<h1>Final reminders</h1>
 <ul>
-<li>What went well?</li>
-<li>What could be improved?</li>
-<li>What is a question you still have?</li>
+<li>We offer two weekly “office hours”. For the Google Meet links, please see the National Fish Assessment Chat Space or the <a href="https://calendar.google.com/calendar/embed?src=c_43jjc1ei4kujqki7o5ud918ea8%40group.calendar.google.com&amp;ctz=America%2FNew_York">Assessments Events Google Calendar</a>.
+<ul>
+<li>Monday, 4–5 PM ET: Drop in for 1-on-1 help with using {asar} or {stockplotr} for your stock assessment reports.</li>
+<li>Wednesday, 2–3 PM ET: Join us to help develop these tools and/or learn about the development process. No package development experience is necessary- only an interest to learn. We’ll post the specific weekly topic every Wednesday morning. We’re also available for regular 1-on-1 help.</li>
+</ul></li>
+<li><a href="https://calendar.app.google/TTkn1jaAz1t98SWLA">NOAA Open Science offers several “help desk” hours on Wednesdays</a>. Jon Peake hosts. This time is great for general questions about markdown, Quarto, Git and GitHub, and more</li>
+<li>We will be holding office hours tomorrow 30 minutes before the next session starts for any questions.</li>
 </ul>
 
 
