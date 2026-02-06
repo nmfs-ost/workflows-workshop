@@ -1571,7 +1571,11 @@ Important
 <h4 class="anchored" data-anchor-id="adding-new-entries">Adding new entries</h4>
 <ul>
 <li>Make a new row.</li>
-<li>For “label”, take the “label” of your figure chunk. For example, in <a href="#sec-code-in-qmd-fig">the example above</a>, the label would be “fig-custom1”.</li>
+<li>For “label”, take the “label” of your figure chunk.
+<ul>
+<li>For figures <a href="#sec-code-in-qmd-fig">coded in chunks</a>, our example label would be “fig-custom1”.</li>
+<li>For figures <a href="#sec-image-based-fig">added with markdown</a><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (i.e., premade pngs or jpgs), our example label would be “fig-example”.</li>
+</ul></li>
 <li>The type will be “figure”.</li>
 <li>The caption should be identical to the caption in your chunk (what you put in “fig-cap”).</li>
 <li>The “alt_text” will contain your alt text. See the “<a href="#sec-edit-exist-entries">Editing existing entries</a>” section above, and the “<a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html">Achieve Greater Accessibility</a>” vignette, for help writing alt text.</li>
@@ -1725,6 +1729,7 @@ Tip
 
 <ol>
 <li id="fn1"><p>Again, for tables that require rotating or splitting across pages, please refer to the <a href="https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width">“Adding Custom Tables &amp; Figures” vignette</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><code>![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}</code><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
