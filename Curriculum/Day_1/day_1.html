@@ -109,6 +109,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -408,6 +437,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">Code Chunks</a></li>
   <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
   <li><a href="#references-and-bibliography" id="toc-references-and-bibliography" class="nav-link" data-scroll-target="#references-and-bibliography">References and Bibliography</a></li>
+  <li><a href="#glossary-and-survey-names" id="toc-glossary-and-survey-names" class="nav-link" data-scroll-target="#glossary-and-survey-names">Glossary and survey names</a></li>
   </ul></li>
   <li><a href="#tips-for-quarto-documents" id="toc-tips-for-quarto-documents" class="nav-link" data-scroll-target="#tips-for-quarto-documents">Tips for Quarto documents</a>
   <ul class="collapse">
@@ -702,6 +732,82 @@ Note
   pages={36–51}
 }</code></pre>
 </section>
+<section id="glossary-and-survey-names" class="level3">
+<h3 class="anchored" data-anchor-id="glossary-and-survey-names">Glossary and survey names</h3>
+<p>Maintaining a consistent list of acronyms (i.e., a glossary) is essential for reader clarity and accessibility. However, maintaining a glossary <em>manually</em> poses multiple challenges:</p>
+<ul>
+<li>Tracking the first, defined usage vs.&nbsp;subsequent, shorthand usages of acronyms in reports</li>
+<li>Capturing every acronym in a glossary at the end of your report</li>
+<li>Ensuring the acronym will be read properly by a screen reader</li>
+</ul>
+<p>Use our <em>automated</em> system to ease this step! It performs these tasks for you:</p>
+<ul>
+<li>Automatically spell out the full meaning of each acronym upon its first usage</li>
+<li>Use the shorthand version of each acronym after its first usage</li>
+<li>Add each acronym to a glossary table at the end of your report</li>
+<li>Format acronyms such that they’re pronounced correctly by screen readers</li>
+</ul>
+<section id="finding-the-glossary" class="level4">
+<h4 class="anchored" data-anchor-id="finding-the-glossary">Finding the glossary</h4>
+<p>When you run <code>asar::create_template()</code>, you’ll see a glossary (“report_glossary.tex”) in your “report” folder. Take a look at <a href="github.com/nmfs-ost/asar/blob/main/inst/glossary/report_glossary.tex">the uploaded version, here</a>.</p>
+</section>
+<section id="glossary-structure" class="level4">
+<h4 class="anchored" data-anchor-id="glossary-structure">Glossary structure</h4>
+<p><strong>Order</strong>: The glossary is sorted alphabetically. Case can differentiate entries (e.g., “M” (natural mortality) is different from “m” (meter(s)).)</p>
+<p><strong>Structure</strong>: Each acronym has its own line, structured like this:</p>
+<p><code>\newacronym{&lt;"label" or "key"&gt;}{&lt;"short form" or "acronym"&gt;}{&lt;"long form"&gt;}</code></p>
+<ul>
+<li><p>“label” (or “key”): The term written in the report body. The label links the short form (see below) to the glossary entry. In our glossary, labels are typically lowercase. <em>Examples: bcurrent, noaa</em>.</p></li>
+<li><p>“short form” (or “acronym”): The term actually shown when the report is rendered. The short form may have formatting applied to it. <em>Examples: $B_{current}$</em> (which will render as <span class="math inline">\(B_{current}\)</span>), <em>NOAA</em>.</p></li>
+<li><p>“long form”: The meaning of the short form. <em>Examples: current biomass of stock, National Oceanic and Atmospheric Administration</em>.</p></li>
+</ul>
+<p>Here are two entries using the examples mentioned above:</p>
+<p><code>\newacronym{bcurrent}{$B_{current}$}{current biomass of stock}</code></p>
+<p><code>\newacronym{noaa}{NOAA}{National Oceanic and Atmospheric Administration}</code></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can edit the glossary by altering, adding, or removing entries in the “report_glossary.tex” file.</p>
+</div>
+</div>
+</section>
+<section id="using-acronyms-in-reports" class="level4">
+<h4 class="anchored" data-anchor-id="using-acronyms-in-reports">Using acronyms in reports</h4>
+<p>First, check if the glossary contains your acronym; if it doesn’t, you can edit the file and add it yourself.</p>
+<p>Once your acronym is in the glossary, find your acronym in your report and encase it in curly brackets ({}), with “\gls” preceding it. For example, to indicate “ABC” is an acronym, you would write <code>\gls{ABC}</code>. Use this notation each time you use the acronym in your text.</p>
+<p>Your text will look like this:</p>
+<blockquote class="blockquote">
+<p>This is the first instance of <code>\gls{ABC}</code>. Here, <code>\gls{ABC}</code> is used a second time.</p>
+</blockquote>
+<p>And it will render like this:</p>
+<blockquote class="blockquote">
+<p>This is the first instance of Acceptable Biological Catch (ABC). Here, ABC is used a second time.</p>
+</blockquote>
+</section>
+<section id="survey-names" class="level4">
+<h4 class="anchored" data-anchor-id="survey-names">Survey names</h4>
+<p>Many people refer to surveys with nicknames or “informal” names that do not match up with administrative documentation. For example, the “Atlantic Surf Clam &amp; Ocean Quahog Dredge” is sometimes called the “clam survey”. To facilitate communication in the reporting process, <strong>we have added survey names to the glossary</strong>.</p>
+<p><em>Informal survey names</em> (i.e., nicknames used to refer to surveys that are not correct) are listed in the “Acronym” column.</p>
+<p><em>Formal survey names</em> (i.e., the correct survey names) are listed in the “Meaning” column.</p>
+<p>For example, here is an entry for a survey known locally as “GOA acoustic survey”, but administratively called “MACE Gulf of Alaska Pollock Acoustic Trawl_Summer”:</p>
+<p><code>\newacronym{goa acoustic survey}{GOA acoustic survey}{MACE Gulf of Alaska Pollock Acoustic Trawl_Summer}</code></p>
+<p>This text…</p>
+<blockquote class="blockquote">
+<p>In 2025, the <code>\gls{GOA acoustic survey}</code>…</p>
+</blockquote>
+<p>…will render like this:</p>
+<blockquote class="blockquote">
+<p>In 2025, the MACE Gulf of Alaska Pollock Acoustic Trawl_Summer (GOA acoustic survey)…</p>
+</blockquote>
+</section>
+</section>
 </section>
 <section id="tips-for-quarto-documents" class="level2">
 <h2 class="anchored" data-anchor-id="tips-for-quarto-documents">Tips for Quarto documents</h2>
@@ -751,7 +857,7 @@ Important
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -760,7 +866,7 @@ Important
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Create a new quarto document</li>
@@ -781,7 +887,7 @@ Important
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -790,7 +896,7 @@ Important
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Create a new quarto document</li>
