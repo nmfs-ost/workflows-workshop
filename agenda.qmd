@@ -5,7 +5,7 @@ format: html
 
 # Workflows Workshop Agenda
 
-## Day 1:
+## Day 1
 
 | Time      | Topic                     |
 |-----------|---------------------------|
@@ -18,7 +18,7 @@ format: html
 | 1:55-2:10 | [Q&A and wrap-up](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#final-reminders) |
 | 2:10-2:30 | [Package and dependency installation](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#sec-prep) |
 
-## Day 2:
+## Day 2
 
 | Time      | Topic                     |
 |-----------|---------------------------|
@@ -33,7 +33,7 @@ format: html
 | **2:40-2:50** | **Break for questions** |
 | 2:50-3:00 | [Wrap-up](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#summary-10-mins) |
 
-## Day 3:
+## Day 3
 
 | Time | Topic |
 |------|-------|
