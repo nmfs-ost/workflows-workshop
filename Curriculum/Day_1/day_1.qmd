@@ -126,39 +126,18 @@ You can include LaTeX-style math equations in your report.
     $$
     ```
 
-### References and Bibliography
-
-<!-- Sam's last section -->
-
-You can easily add citations to your report. We provide an `asar_references.bib` file in the "report" folder with hundreds of citations for you to reference, though you can add your own to the file too.
-
-To cite a reference in the text, use the `@` symbol followed by the citation key (e.g., `@Biddle_1992`). R Markdown will automatically format the citation and add it to the "References" section towards the end of your report.
-
-Here's an example entry from the .bib file:
-
-````
-@article{Biddle_1992,
-  title={Repton and the Vikings},
-  volume={66},
-  DOI={10.1017/S0003598X00081023},
-  number={250}, journal={Antiquity},
-  author={Biddle, Martin and Kjølbye-Biddle, Birthe},
-  year={1992},
-  pages={36–51}
-}
-````
-
-::: {.callout-note appearance="minimal"}
-20 minute break for questions & practicing
-:::
-
-{{< include ../snippets/markdown_exercises.qmd >}}
-
 # Quarto
 
 <!-- Sophie start -->
 
 ## Why use Quarto for reports?
+
+<!-- Sam reviewed several ways to make asar reports more reproducible, efficient, with markdown- no pointing/clicking necessary to bold text, etc. -->
+<!-- The container where you'll be editing your documents, with markdown in them, is Quarto. -->
+<!-- Quarto is a publishing system for making reproducible, dynamic reports. -->
+<!-- It's kind of like Microsoft Word: it publishes documents. -->
+<!-- But in contrast, you can use Quarto to make reports with markdown, but also so many other elements, like narrative text, code chunks (several languages, like R, Python... Latex...) -->
+<!-- (keep going through bullets) -->
 
 Quarto is an ideal platform for building reproducible reports, many of which contain markdown. These reports are denoted with a .qmd (Quarto Markdown) extension type. For those familiar with R markdown, Quarto is like a more flexible and powerful version of that.
 
@@ -227,6 +206,8 @@ In the "label" option, for tables and figures, you will need to prefix the label
 :::
 
 For those familiar with R markdown, the code chunk structure in R markdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a "#|" proceeding each option.
+
+<!-- Break for questions -->
 
 ### Parameters
 
@@ -318,15 +299,15 @@ You can edit the glossary by altering, adding, or removing entries in the "repor
 
 First, check if the glossary contains your acronym; if it doesn't, you can edit the file and add it yourself.
 
-Once your acronym is in the glossary, find your acronym in your report and encase it in curly brackets ({}), with "\gls" preceding it. For example, to indicate "ABC" is an acronym, you would write `\gls{ABC}`. Use this notation each time you use the acronym in your text.
+Once your acronym is in the glossary, find your acronym in your report and encase it in curly brackets ({}), with "\gls" preceding it. For example, to indicate "NOAA" is an acronym, you would write `\gls{noaa}`. Use this notation each time you use the acronym in your text.
 
 Your text will look like this:
 
-> This is the first instance of `\gls{ABC}`. Here, `\gls{ABC}` is used a second time.
+> This is the first instance of `\gls{noaa}`. Here, `\gls{NOAA}` is used a second time.
 
 And it will render like this:
 
-> This is the first instance of Acceptable Biological Catch (ABC). Here, ABC is used a second time.
+> This is the first instance of National Oceanic and Atmospheric Administration (NOAA). Here, NOAA is used a second time.
 
 #### Survey names
 
@@ -348,7 +329,12 @@ This text...
 
 > In 2025, the Atlantic Surf Clam & Ocean Quahog Dredge (Clam Survey)...
 
+<!-- Break for questions -->
+
 ## Tips for Quarto documents
+
+<!-- A few tips for working with Quarto docs, which we've learned over our time transitioning from R markdown to Quarto -->
+
 ### Modular setup with a skeleton
 
 When you run `asar::create_template()`, you will receive a "report" folder with several files within it. One of the most important files is what we call the "skeleton": a .qmd file containing chunks that run *other* files, then places the rendered contents of those files within one report.
@@ -358,6 +344,9 @@ Those *other* files are what we call "child documents". For example, your report
 This setup avoids placing your entire report in one massive .qmd file, facilitates asynchronous collaboration with your colleagues, and keeps your project organized (in a "modular" fashion).
 
 ### Relative pathnames
+
+<!-- Ask who knows what abs, rel pathnames are -->
+<!-- give example with AFSC address for abs, rel pathnames -->
 
 ::: {.callout-important}
 Only files with paths relative to the Quarto doc will load!
