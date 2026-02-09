@@ -388,12 +388,13 @@ asar::create_template(
 )
 ```
 
-Now, I need to add my co-authors to my report especially since I wasn't sure who was going to be working on it at the time I created my report template. After review of our terms of reference, I noticed that I needed a section to document my changes to the model, so let's add that in too.
+Now, I need to add my co-authors to my report especially since I wasn't sure who was going to be working on it at the time I created my report template. After review of our terms of reference, I noticed that I needed a section to document my changes to the model, so let's add that in too. Let's also add in the converted model results file.
 
 ```{r eval=FALSE}
 asar::create_template(
   rerender_skeleton = TRUE,
   file_dir = file.path(getwd(), "report"),
+  model_results = file.path(getwd(), "report", "petrale_conout.rda"),
   authors = c("John Doe"="NEFSC"),
   custom = TRUE,
   new_section = "Changes to the Model",
