@@ -255,7 +255,7 @@ Use our *automated* system to ease this step! It performs these tasks for you:
 
 #### Finding the glossary
 
-When you run `asar::create_template()`, you'll see a glossary ("report_glossary.tex") in your "report" folder. Take a look at [the uploaded version, here](github.com/nmfs-ost/asar/blob/main/inst/glossary/report_glossary.tex).
+When you run `asar::create_template()`, you'll see a glossary ("report_glossary.tex") in your "report" folder. Take a look at [the uploaded version, here](https://github.com/nmfs-ost/asar/blob/main/inst/glossary/report_glossary.tex).
 
 #### Glossary structure
 
