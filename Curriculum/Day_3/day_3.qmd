@@ -336,7 +336,7 @@ rda$alt_text
 Break for questions
 :::
 
-This is the code you would run to export a landings table, but **it is not yet functional.**
+This is the code you *would* run to export a landings table, but [it is not yet functional.]{.mark}
 ```{r}
 stockplotr::table_landings(
   dat = petrale,
@@ -355,7 +355,7 @@ rda$table
 rda$caption
 ```
 
-::: {.callout-warning}
+::: {.callout-important}
 We are working on finishing the exporting capability of `table_landings()`. When it's functional, the landings table will be exported using the `make_rda` and `tables_dir` arguments, in parallel to `plot_biomass()` shown above.
 :::
 
@@ -384,11 +384,11 @@ Each file will contain zero figures or tables. Instead, they will contain a stat
 
 You can add your figures and tables with two workflows:
 
-1. Rerunning `asar::create_tables_doc()` and `asar::create_figures_doc()`
+1. Running `asar::create_tables_doc()` and `asar::create_figures_doc()`
   - If you fill in arguments that allow R to find your tables and figures, then it will place them into the respective tables and figures docs automatically.
 2. Adding your tables and figures manually to each doc.
 
-### Option 1: Rerunning `asar::create_tables_doc()`/`asar::create_figures_doc()`
+### Option 1: Running `asar::create_tables_doc()`/`asar::create_figures_doc()`
 
 *This is also known as the [rda-based workflow](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#comparing-workflows)*.
 
@@ -437,16 +437,7 @@ Adding tables entails nearly the same process as described for figures. The only
 1. Tables will involve captions only, whereas figure require captions and alternative text
 2. Tables can be rotated or split across pages.
 
-First, let's copy our example table rda into a "tables" folder:
-
-```{r}
-dir.create(file.path(getwd(), "tables"))
-file.copy(from = file.path(getwd(), "example_plots", "ex_table.rda"),
-          to = file.path(getwd(), "tables"))
-```
-
-Then, add the table to the {asar} tables doc:
-
+This is the code you *would* run to add tables to the {asar} tables doc, but [it is not yet functional.]{.mark}
 ```{r}
 #| label: add-tables
 #| eval: false
@@ -458,7 +449,7 @@ create_tables_doc(
   )
 ```
 
-::: {.callout-note}
+::: {.callout-important}
 *Once we complete redevelopment of our pilot table (`table_landings()`)*, our workflow will be able to accommodate tables that are wide enough to require rotation into a landscape-view page OR splitting across pages. For more information, please see the ["Adding Custom Figures & Tables" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width).
 :::
 
