@@ -47,12 +47,6 @@ If you believe that someone is in violation of the Code of Conduct, please repor
 You probably have some questions lingering from yesterday. Let us answer them for you!
 :::
 
-<!-- # Setup -->
-
-<!-- Let's fork the workshop repository -->
-
-<!-- <!-- tour of the workshop repo and materials --> -->
-
 <!-- ::: {.callout-note appearance="minimal"} -->
 <!-- Break for questions -->
 <!-- ::: -->
@@ -329,6 +323,8 @@ For more information, navigate to [this article](https://nmfs-ost.github.io/stoc
 ## Advanced {asar} workflow
 <!-- Sophie start -->
 
+<!-- A few ways to make your SARs more customized and flexible -->
+
 Now we are going to walk-through a more complex use of {asar} by
 
 - Customizing sections
@@ -340,6 +336,17 @@ Now we are going to walk-through a more complex use of {asar} by
 <!-- - Calling a previous report and editing -->
 
 ### Create-your-own
+
+<!-- The main template: "SAR"- standard assessment report -->
+<!-- We are working to set standard assessment report guidelines across the country. But in the meantime, there are a few ways you can customize your reports to suit you needs: -->
+
+<!-- 1. three extra template options- one of which is for SAFE reports -->
+<!-- 2. you can also add new sections within existing sections (like, within the introduction), or as independent sections -->
+
+<!-- We'll focus on showing you how to edit your sections in a standard assessment report. First, please rename your previous 'report' folder to something like "simple_report" or something similar to distinguish from this more complex 'report' folder. -->
+
+<!-- *Rename "report" to "simple_report"* -->
+<!-- *Highlight what args mean- esp. new args* -->
 
 There are *three additional template options* available to users to use while we work to set standard assessment report guidelines across the country:
 
