@@ -901,7 +901,13 @@ Important
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>petrale <span class="ot">&lt;-</span> stockplotr<span class="sc">::</span><span class="fu">convert_output</span>(</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  output_file,</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">save_dir =</span> <span class="fu">file.path</span>(<span class="fu">getwd</span>(), <span class="st">"report"</span>, <span class="st">"petrale_conout.rda"</span>)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># copy the converted output to your wd too, for later usage</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">file.copy</span>(</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">from =</span> <span class="fu">file.path</span>(<span class="fu">getwd</span>(), <span class="st">"report"</span>, <span class="st">"petrale_conout.rda"</span>),</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">to =</span> <span class="fu">getwd</span>()</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>Run it!</strong></p>
 <div class="cell">
