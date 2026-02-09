@@ -89,9 +89,9 @@ The following table contains figures and tables that are available in {stockplot
 | `plot_spawn_recruitment()` | spawn recruitment relationship |
 | `plot_spawning_biomass()` | spawning biomass time series |
 | `table_landings()` | landings time series by fleet or other indexing |
-| `table_bnc()` | biomass, landings, and catch time series |
-| `table_harvest_projection()` | harvest projection table according to SAFE standards (to be expanded nationally) |
-| `tables_indices()` | indices by fleet |
+| `table_bnc()`- *coming soon* | biomass, landings, and catch time series |
+| `table_harvest_projection()`- *coming soon* | harvest projection table according to SAFE standards (to be expanded nationally) |
+| `tables_indices()`- *coming soon* | indices by fleet |
 
 Each automated function returns either a `ggplot2` object (figure) or `gt` object (table). This allows for further customization of the output if desired by using the notation you are familiar with. For a figure, you can continue to add onto the plot any other `ggplot2` function or extension using the plus (+) operator. For a table, please use the native pipe (|>) when adding additional formatting, rows, or other pieces to the object.
 
@@ -536,7 +536,7 @@ Put your alternative text in a chunk option called 'fig-alt' (example below).
 #| fig-alt: !expr This is your figure alternative text.
 
 # Import your data
-load(fs::path("std_output.rda"))
+load(fs::path("petrale_conout.rda"))
 
 petrale <- out_new |>
                     dplyr::filter(year > 1980) |>
