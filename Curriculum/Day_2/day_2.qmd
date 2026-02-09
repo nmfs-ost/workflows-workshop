@@ -334,9 +334,15 @@ Now we are going to walk-through a more complex use of {asar} by
 
 ### Create-your-own
 
-There are three additional template options available to users to use while we work to set standard assessment report guidelines across the country. They include SAFE reports, NEFSC management track reports, and PFMC guidelines. You also have the ability to add new sections either within the current outline or in individual sections or even select which sections of the standard template you want to create your report around.
+There are three additional template options available to users to use while we work to set standard assessment report guidelines across the country:
 
-Today, we will be going over how to customize your template by selecting a subset of the standard guidelines then adding in a new section within our data section.
+* SAFE reports (`create_template(type = 'safe')`)
+* NEFSC management track reports (`create_template(type = 'nemt')`)
+* PFMC guidelines (`create_template(type = 'pfmc')`)
+
+You also have the ability to add new sections either within the current outline or in individual sections or even select which sections of the standard template you want to create your report around.
+
+Today, we will be going over how to customize your template by selecting a subset of the standard guidelines then adding in a new section after our introduction section.
 
 First, let's make our template. 
 
