@@ -278,7 +278,10 @@ We have uploaded an example Report.sso file in the workshop GitHub, but if you h
 # Identify output file
 output_file <- file.path("example_output", "Report.sso")
 # convert the output
-petrale <- stockplotr::convert_output(output_file)
+petrale <- stockplotr::convert_output(
+  output_file,
+  save_dir = file.path(getwd(), "report", "petrale_conout.rda")
+  )
 ```
 
 **Run it!**
