@@ -251,10 +251,11 @@ Break for questions
 Next, we can add some different formatting:
 
 ```{r}
+library(gt)
 stockplotr::table_landings(
     dat = petrale,
     unit_label = "mt",
-    module = "CATCH") |>
+    module = "CATCH")[[1]] |> # [[1]] pulls the gt table from the list
   gt::tab_style(
         style = cell_text(weight = "bold"),
         locations = cells_body(columns = "Year")
@@ -273,7 +274,7 @@ or potentially highlight a specific line within the table:
 stockplotr::table_landings(
     dat = petrale,
     unit_label = "mt",
-    module = "CATCH") |>
+    module = "CATCH")[[1]] |>
     gt::tab_style(
         style = cell_text(weight = "bold"),
         locations = cells_body(columns = "Year")
