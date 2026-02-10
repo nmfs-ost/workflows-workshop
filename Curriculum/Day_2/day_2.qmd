@@ -327,22 +327,29 @@ For more information, navigate to [this article](https://nmfs-ost.github.io/stoc
 
 Now we are going to walk-through a more complex use of {asar} by
 
-- Adding additional parameters
-- Customizing our sections
-- Reorganizing section order
+- Customizing sections
+- Updating reports after initial setup
+  - Adding additional parameters
+  - Adding model results
+  - Adding a new author
+  
 <!-- - Calling a previous report and editing -->
 
 ### Create-your-own
 
-There are three additional template options available to users to use while we work to set standard assessment report guidelines across the country:
+There are *three additional template options* available to users to use while we work to set standard assessment report guidelines across the country:
 
 * SAFE reports (`create_template(type = 'safe')`)
 * NEFSC management track reports (`create_template(type = 'nemt')`)
 * PFMC guidelines (`create_template(type = 'pfmc')`)
 
-You also have the ability to add new sections either within the current outline or in individual sections or even select which sections of the standard template you want to create your report around.
+You can also:
 
-Today, we will be going over how to customize your template by selecting a subset of the standard guidelines then adding in a new section after our introduction section.
+* add new sections within the current outline
+* add new sections in individual sections
+* select sections of the standard template to include in your report
+
+Today, we will be going over how to customize your template by selecting a subset of the standard guidelines, then adding in a new section after our introduction
 
 First, let's make our template. 
 
@@ -352,24 +359,25 @@ First, let's make our template.
 asar::create_template(
   # Previous arguments we used for simple
   format = "pdf",
-  type = "SAR",
-  office = "NWFSC",
-  region = "U.S. West Coast",
-  species = "Petrale sole",
-  spp_latin = "Eopsetta jordani",
+  office = "AFSC",
+  region = "Gulf of Alaska",
+  species = "Rex sole",
+  spp_latin = "Glyptocephalus zachirus",
   authors = c("Samantha Schiano" = "OST"),
   # New arguments
-  custom = TRUE,
-  custom_sections = NULL,
-  new_section = NULL,
-  section_location = NULL
-)
+  custom = TRUE, # set this to TRUE when you're choosing a subset of standard sections
+  custom_sections = c("executive_summary",      
+                      "introduction",           
+                      "data"), # list of sections from SAR to add
+  new_section = "Changes to the Model", # new section name
+  section_location = "after-introduction" # location of new section
+ )
 ```
 
 ::: {.callout-tip}
-To identify what sections you can include from the standard guidelines, you can run `list.files(system.file("templates", "skeleton", package = "asar"))`. Note: this only includes sections within a standard template. To see other sections for available templates, replace "skeleton" with your target template acronym.
+To identify what sections you can include from the standard guidelines (i.e., options for `custom_sections`), you can run `list.files(system.file("templates", "skeleton", package = "asar"))`. Note: this only includes sections within a standard template. To see other sections for available templates, replace "skeleton" with your target template acronym.
 
-Don't worry if you forget! You can find this code in the documentation for the "custom_sections" argument.
+Don't worry if you forget! You can find this code in the documentation for the `custom_sections` argument.
 :::
 
 ::: {.callout-note appearance="minimal"}
@@ -378,7 +386,7 @@ Break for questions
 
 ### Rerendering report
 
-We understand that it's easy to forget to enter in all of the information you need for a report on it's initial creation! Because of this, we made the argument "rerender_skeleton" that adds on any new information to the skeleton file that you might want such as additional authors, a new species image, parameters, or anything that is open for you to customize in the skeleton file. 
+We understand that it's easy to forget to enter in all of the information you need for a report on its initial creation! Because of this, we made the argument "rerender_skeleton" that adds on any new information to the skeleton file that you might want such as additional authors, a new species image, parameters, or anything that is open for you to customize in the skeleton file. 
 
 You COULD do this manually, but using the function both allows you to create a record of your changes (making it more reproducible) *and* makes the Quarto yaml less intimidating to new users!
 
@@ -386,9 +394,20 @@ You COULD do this manually, but using the function both allows you to create a r
 You can run re-render skeleton as often as you want, it will always edit the current skeleton in the folder. Please note: any additional skeleton files will make this process fail. The process will also verify that you want to overwrite the current skeleton and either keep or replace the key quantities file.
 :::
 
-#### Our changes: new parameters, additional author, and a new section
+#### Our changes: new parameters, additional author, and add model results file
 
 Let's add some more parameters to our script which will allow us to references in-text throughout the document.
+
+::: {.callout-important}
+The console will return this question:
+
+> Do you want to keep the current preamble? (Y/N)
+
+When you are rerendering your skeleton in a way that edits your preamble (e.g., when you add new model results), your answer should typically be NO (n).
+
+Just be aware that these changes will, in fact, change your current preamble and overwrite any edits you made to that file.
+:::
+
 
 ```{r eval=FALSE}
 asar::create_template(
@@ -400,19 +419,24 @@ asar::create_template(
 )
 ```
 
-Now, I need to add my co-authors to my report especially since I wasn't sure who was going to be working on it at the time I created my report template. After review of our terms of reference, I noticed that I needed a section to document my changes to the model, so let's add that in too. Let's also add in the converted model results file.
+Now, I need to:
+
+1. Add my co-authors to my report (I wasn't sure who they were when I created my report template)
+2. Add in the converted model results file (Forgot to add this initially!)
 
 ```{r eval=FALSE}
 asar::create_template(
   rerender_skeleton = TRUE,
   file_dir = file.path(getwd(), "report"),
   model_results = file.path(getwd(), "report", "petrale_conout.rda"),
-  authors = c("John Doe"="NEFSC"),
-  custom = TRUE,
-  new_section = "Changes to the Model",
-  section_location = "after-introduction"
+  authors = c("Ben Williams"="AFSC")
 )
 ```
+
+::: {.callout-warning}
+Some chunks may need minor updates, particularly the "output_and_quantities" chunk.
+Ensure that the model results file is being loaded properly (i.e., its relative filepath is correct) and `eval` is TRUE or FALSE, depending on your needs.
+:::
 
 ::: {.callout-tip}
 Check out the ["Frequently Asked Questions (FAQs)" vignette](https://nmfs-ost.github.io/asar/articles/faqs.html) to find how to solve common issues encountered when using {asar}.
