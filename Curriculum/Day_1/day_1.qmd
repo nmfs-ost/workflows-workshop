@@ -8,7 +8,7 @@ format: html
             margin: 10px;">
 # Objectives
 -   Identify purpose and scope of workshop
--   Learn how R markdown can be used to enhance {asar} reports
+-   Learn how markdown can be used to enhance {asar} reports
 -   Understand how Quarto is used to structure an {asar} report
 -   Install software necessary to build an {asar} report
 </div>
