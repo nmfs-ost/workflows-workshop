@@ -4,7 +4,7 @@
     "href": "agenda.html",
     "title": "Agenda",
     "section": "",
-    "text": "Time\nTopic\n\n\n\n\n0:00-0:25\nIntroduction & Icebreaker\n\n\n0:25-0:35\nWorkshop Overview\n\n\n0:35-0:55\nMarkdown Basics\n\n\n0:55-1:15\nBreak\n\n\n1:15-1:20\nIcebreaker\n\n\n1:20-1:50\nQuarto Basics\n\n\n1:50-2:05\nQ&A and wrap-up\n\n\n2:05-2:30\nPackage and dependency installation\n\n\n\n\n\n\n\n\n\nTime\nTopic\n\n\n\n\n0:00-0:15\nIntroduction & Icebreaker\n\n\n0:15-0:35\n{asar}: installation and overview\n\n\n0:35-1:05\nasar::create_template()\n\n\n1:05-1:25\nBreak\n\n\n1:25-1:35\nMid-session icebreaker\n\n\n1:35-2:05\nstockplotr::convert_output()\n\n\n2:05-2:20\nBreak for questions\n\n\n2:20-2:40\nAdvanced workflow\n\n\n2:40-2:50\nBreak for questions\n\n\n2:50-3:00\nWrap-up\n\n\n\n\n\n\n\n\n\nTime\nTopic\n\n\n\n\n0:00-0:10\nIcebreaker\n\n\n0:10-0:20\n{stockplotr} Overview\n\n\n0:20-0:50\nCreate a figure + Customizing\n\n\n0:50-1:00\nBreak\n\n\n1:00-1:15\nCreating a table\n\n\n1:15-1:30\nExporting tables and figures\n\n\n1:30-2:00\nIntegrating {stockplotr} into the workflow\n\n\n2:00-2:20\nBreak\n\n\n2:20-2:30\nManually adding tables and figures\n\n\n2:30-2:55\nCreating accessible documents\n\n\n2:55-3:00\nFinal remarks and questions",
+    "text": "Time\nTopic\n\n\n\n\n0:00-0:25\nIntroduction & Icebreaker\n\n\n0:25-0:35\nWorkshop Overview\n\n\n0:35-0:55\nMarkdown Basics\n\n\n0:55-1:15\nBreak\n\n\n1:15-1:20\nMid-session icebreaker\n\n\n1:20-1:50\nQuarto Basics\n\n\n1:50-2:05\nQ&A and wrap-up\n\n\n2:05-2:30\nPackage and dependency installation\n\n\n\n\n\n\n\n\n\nTime\nTopic\n\n\n\n\n0:00-0:15\nIntroduction & Icebreaker\n\n\n0:15-0:35\n{asar}: installation and overview\n\n\n0:35-1:05\nasar::create_template()\n\n\n1:05-1:25\nBreak\n\n\n1:25-1:35\nMid-session icebreaker\n\n\n1:35-2:05\nstockplotr::convert_output()\n\n\n2:05-2:20\nBreak for questions\n\n\n2:20-2:40\nAdvanced workflow\n\n\n2:40-2:50\nBreak for questions\n\n\n2:50-3:00\nWrap-up\n\n\n\n\n\n\n\n\n\nTime\nTopic\n\n\n\n\n0:00-0:10\nIcebreaker\n\n\n0:10-0:20\n{stockplotr} Overview\n\n\n0:20-0:50\nCreate a figure + Customizing\n\n\n0:50-1:00\nBreak\n\n\n1:00-1:15\nCreating a table\n\n\n1:15-1:30\nExporting tables and figures\n\n\n1:30-2:00\nIntegrating {stockplotr} into the workflow\n\n\n2:00-2:20\nBreak\n\n\n2:20-2:30\nManually adding tables and figures\n\n\n2:30-2:55\nCreating accessible documents\n\n\n2:55-3:00\nFinal remarks and questions",
     "crumbs": [
       "Agenda"
     ]
@@ -14,7 +14,7 @@
     "href": "agenda.html#day-1",
     "title": "Agenda",
     "section": "",
-    "text": "Time\nTopic\n\n\n\n\n0:00-0:25\nIntroduction & Icebreaker\n\n\n0:25-0:35\nWorkshop Overview\n\n\n0:35-0:55\nMarkdown Basics\n\n\n0:55-1:15\nBreak\n\n\n1:15-1:20\nIcebreaker\n\n\n1:20-1:50\nQuarto Basics\n\n\n1:50-2:05\nQ&A and wrap-up\n\n\n2:05-2:30\nPackage and dependency installation",
+    "text": "Time\nTopic\n\n\n\n\n0:00-0:25\nIntroduction & Icebreaker\n\n\n0:25-0:35\nWorkshop Overview\n\n\n0:35-0:55\nMarkdown Basics\n\n\n0:55-1:15\nBreak\n\n\n1:15-1:20\nMid-session icebreaker\n\n\n1:20-1:50\nQuarto Basics\n\n\n1:50-2:05\nQ&A and wrap-up\n\n\n2:05-2:30\nPackage and dependency installation",
     "crumbs": [
       "Agenda"
     ]
