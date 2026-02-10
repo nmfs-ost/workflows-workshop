@@ -712,7 +712,7 @@
     "href": "Curriculum/Day_1/day_1.html",
     "title": "Day 1",
     "section": "",
-    "text": "Identify purpose and scope of workshop\nLearn how R markdown can be used to enhance {asar} reports\nUnderstand how Quarto is used to structure an {asar} report\nInstall software necessary to build an {asar} report",
+    "text": "Identify purpose and scope of workshop\nLearn how markdown can be used to enhance {asar} reports\nUnderstand how Quarto is used to structure an {asar} report\nInstall software necessary to build an {asar} report",
     "crumbs": [
       "Day 1: General"
     ]
