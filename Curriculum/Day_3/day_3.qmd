@@ -584,7 +584,7 @@ Even though you wrote alt text in the `fig-alt` area, **when you first render yo
 
 Like tables, you can reference figures not made directly in code chunks. However, in this case, this does *not* change the accessibility of the figure because you can still add the necessary components to meet Section 508 compliance standards: alternative text and a caption.
 
-`![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}`
+`![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure" #fig-example}`
 
 ## Referencing your tables or figures in text
 
