@@ -1188,22 +1188,23 @@ Important
 </ol>
 <section id="direct-coding-in-qmd-table-workflow" class="level5">
 <h5 class="anchored" data-anchor-id="direct-coding-in-qmd-table-workflow">Direct coding-in-qmd table workflow</h5>
-<p>Example from the <a href="https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#direct-coding-in-qmd-workflow-option-3-2">“Adding Custom Tables &amp; Figures” vignette</a>:</p>
+<p>Example similar to that in the <a href="https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#direct-coding-in-qmd-workflow-option-3-2">“Adding Custom Tables &amp; Figures” vignette</a>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>```{r} </span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>#| label: 'tbl-custom1' # choose a label</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>#| tbl-cap: !expr This is your table caption.</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a># Import your data</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>petrale &lt;- load(fs::path("std_output.rda"))</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a># Make your table</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>your_table &lt;- head(petrale) |&gt;</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  dplyr::select(label, year, estimate) |&gt;</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  gt::gt()</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a># Show your table</span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>your_table</span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>``` </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>load(fs::path("petrale_conout.rda"))</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>petrale &lt;- out_new</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a># Make your table</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>your_table &lt;- head(petrale) |&gt;</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  dplyr::select(label, year, estimate) |&gt;</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  gt::gt()</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a># Show your table</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>your_table</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>``` </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="images/petrale_table.png" class="img-fluid" alt="Example of a table produced with the 'Direct coding-in-qmd table workflow' option for adding tables to asar reports."></p>
 <p>Then, add a pagebreak:</p>
 <div class="cell">
