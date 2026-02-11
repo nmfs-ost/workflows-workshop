@@ -398,16 +398,6 @@ You can run re-render skeleton as often as you want, it will always edit the cur
 
 Let's add some more parameters to our script which will allow us to references in-text throughout the document.
 
-::: {.callout-important}
-The console will return this question:
-
-> Do you want to keep the current preamble? (Y/N)
-
-When you are rerendering your skeleton in a way that edits your preamble (e.g., when you add new model results), your answer should typically be NO (n).
-
-Just be aware that these changes will, in fact, change your current preamble and overwrite any edits you made to that file.
-:::
-
 
 ```{r eval=FALSE}
 asar::create_template(
@@ -418,6 +408,16 @@ asar::create_template(
   param_values = c("a long fleet name", "b long fleet name")
 )
 ```
+
+::: {.callout-important}
+The console will return this question:
+
+> Do you want to keep the current preamble? (Y/N)
+
+When you are rerendering your skeleton in a way that edits your preamble (e.g., when you add new model results), your answer should typically be NO (n).
+
+Just be aware that these changes will, in fact, change your current preamble and overwrite any edits you made to that file.
+:::
 
 Now, I need to:
 
