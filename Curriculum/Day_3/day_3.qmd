@@ -475,8 +475,8 @@ Example similar to that in the ["Adding Custom Tables & Figures" vignette](https
 
 ````{verbatim}
 ```{r} 
-#| label: 'tbl-custom1' # choose a label
-#| tbl-cap: This is your table caption.
+#| label: 'tbl-custom1-setup' # choose a label
+#| echo: false # don't show this chunk
 
 # Import your data
 load(fs::path("petrale_conout.rda"))
@@ -487,9 +487,19 @@ your_table <- head(petrale) |>
   dplyr::select(label, year, estimate) |>
   gt::gt()
 
+```
+````
+
+````{verbatim}
+```{r}
+#| label: 'tbl-custom1-display' # choose a label
+#| echo: false # don't show the code- only the output (table)
+#| tbl-pos: 'h!' # display the table after "Tables" header
+#| tbl-cap: This is your table caption.
+
 # Show your table
 your_table
-``` 
+```
 ````
 
 ![](images/petrale_table.png){fig-alt="Example of a table produced with the 'Direct coding-in-qmd table workflow' option for adding tables to asar reports."}
@@ -532,9 +542,8 @@ Put your alternative text in a chunk option called 'fig-alt' (example below).
 
 ````{verbatim}
 ```{r} 
-#| label: 'fig-custom1' # choose a label
-#| fig-cap: This is your figure caption.
-#| fig-alt: This is your figure alternative text.
+#| label: 'fig-custom1-setup' # choose a label
+#| echo: false
 
 # Import your data
 load(fs::path("petrale_conout.rda"))
@@ -551,7 +560,15 @@ your_figure <- ggplot2::ggplot(petrale,
   ggplot2::geom_line(linewidth = 0.75) +
   ggplot2::geom_point() +
   ggplot2::theme_classic()
+```
+````
 
+````{verbatim}
+```{r}
+#| label: 'fig-custom1-display' # choose a label
+#| fig-cap: This is your figure caption.
+#| fig-alt: This is your figure alternative text.
+#| echo: false
 # Show your figure
 your_figure
 ``` 
