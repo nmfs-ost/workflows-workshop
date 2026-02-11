@@ -476,7 +476,7 @@ Example similar to that in the ["Adding Custom Tables & Figures" vignette](https
 ````{verbatim}
 ```{r} 
 #| label: 'tbl-custom1' # choose a label
-#| tbl-cap: !expr This is your table caption.
+#| tbl-cap: This is your table caption.
 
 # Import your data
 load(fs::path("petrale_conout.rda"))
@@ -533,8 +533,8 @@ Put your alternative text in a chunk option called 'fig-alt' (example below).
 ````{verbatim}
 ```{r} 
 #| label: 'fig-custom1' # choose a label
-#| fig-cap: !expr This is your figure caption.
-#| fig-alt: !expr This is your figure alternative text.
+#| fig-cap: This is your figure caption.
+#| fig-alt: This is your figure alternative text.
 
 # Import your data
 load(fs::path("petrale_conout.rda"))
