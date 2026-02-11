@@ -471,7 +471,7 @@ You can add a regularly-sized^[Again, for tables that require rotating or splitt
 
 ##### Direct coding-in-qmd table workflow 
 
-Example from the ["Adding Custom Tables & Figures" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#direct-coding-in-qmd-workflow-option-3-2):
+Example similar to that in the ["Adding Custom Tables & Figures" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#direct-coding-in-qmd-workflow-option-3-2):
 
 ````{verbatim}
 ```{r} 
@@ -479,7 +479,8 @@ Example from the ["Adding Custom Tables & Figures" vignette](https://nmfs-ost.gi
 #| tbl-cap: !expr This is your table caption.
 
 # Import your data
-petrale <- load(fs::path("std_output.rda"))
+load(fs::path("petrale_conout.rda"))
+petrale <- out_new
 
 # Make your table
 your_table <- head(petrale) |>
