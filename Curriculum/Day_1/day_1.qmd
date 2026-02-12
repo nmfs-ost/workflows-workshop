@@ -18,6 +18,10 @@ format: html
 
 Welcome! Please open the [Day 1 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?usp=sharing) and participate in the icebreaker exercise.
 
+::: {.callout-note}
+**Discussion time:** What are some reservations or excitement you have surrounding this workshop or workflows as a whole?
+:::
+
 ## Code of conduct
 
 Everyone participating in this workshop is required to abide by the terms of our [Code of Conduct](https://github.com/nmfs-ost/asar/blob/main/CODE_OF_CONDUCT.md). We encourage you to contribute to a positive environment for our community by:
@@ -122,6 +126,10 @@ You can include LaTeX-style math equations in your report.
     E = mc^2
     $$
     ```
+
+::: {.callout-note}
+Let's look at our [article on markdown notation](https://nmfs-ost.github.io/asar/articles/markdown_notation.html)!
+:::
 
 # Quarto
 
