@@ -1321,27 +1321,16 @@ Warning
 <p>or</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>@fig-example</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Adding an <code>@</code> symbol followed by the chunk label, or label of your table/figure, will create an interactive link that lets the reader navigate to that specific table/figure.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Testing your understanding
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Which of the following describes how you can integrate {asar} and {stockplotr} into your reporting workflow?</p>
-<ol type="A">
-<li>Generating 13+ assessment figures and tables in one go using a single function (<code>stockplotr::save_all_plots()</code>).</li>
-<li>Creating one specific figure (e.g., spawning biomass, using <code>stockplotr::plot_spawning_biomass()</code>).</li>
-<li>Building an {asar} report template with a model results file, which allows for automatic extraction of B/BMSY and other key quantities from the model output.</li>
-<li>Using {asar} to build a report template, without a converted model results file.</li>
-<li>Using the entire workflow to convert model results into a standardized format, generate all plots, and integrate them into an accessible report.</li>
-<li>All of the above.</li>
-</ol>
-</div>
-</div>
+<!-- ::: {.callout-note icon=false} -->
+<!-- ## Testing your understanding -->
+<!-- Which of the following describes how you can integrate {asar} and {stockplotr} into your reporting workflow? -->
+<!-- A) Generating 13+ assessment figures and tables in one go using a single function (`stockplotr::save_all_plots()`). -->
+<!-- B) Creating one specific figure (e.g., spawning biomass, using `stockplotr::plot_spawning_biomass()`). -->
+<!-- C) Building an {asar} report template with a model results file, which allows for automatic extraction of B/BMSY and other key quantities from the model output. -->
+<!-- D) Using {asar} to build a report template, without a converted model results file. -->
+<!-- E) Using the entire workflow to convert model results into a standardized format, generate all plots, and integrate them into an accessible report. -->
+<!-- F) All of the above. -->
+<!-- ::: -->
 <!-- Answer: F. -->
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
@@ -1384,12 +1373,12 @@ Warning
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>20 minute break for questions &amp; practicing</p>
+<p>15 minute break for questions &amp; practicing</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1398,7 +1387,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Ensure that you have a ‘figures’ folder and a ‘tables’ folder, each with at least one rda file. If you don’t, export a couple of figures and tables.
@@ -1420,7 +1409,7 @@ Warning
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1429,7 +1418,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol start="3" type="1">
 <li>Practice adding a figure with markdown notation by adding the image of a landings figure into the figures doc. The figure is located in the <a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots/landings_fig_png.png">‘example_plots’ folder</a>. Set the caption to “Historical landings by fleet.”, the alternative text to “Cumulative line plot showing historical landings for North and South fleets. The x axis shows the year, which spans from 1850 to 2026. The y axis shows landings in metric tons, which spans from 0 to 2,400.”, and the figure label to “practice-figure-label”. <em>Hint:</em> This step practices the <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#direct-image-based-table-insertion-workflow">“direct image-based workflow”</a>.</li>
@@ -1686,7 +1675,7 @@ Tip
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1695,7 +1684,7 @@ Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>If you haven’t already, add tags to your pdf by running <code>add_tagging()</code> with the appropriate arguments (including <code>compile</code> set to TRUE). Then, open up the report and ensure it was tagged.</p></li>
