@@ -249,7 +249,7 @@ We are advising everyone that if any content needed beyond the standard guidelin
 Please add the following text into your "introduction" section:
 
 ```{verbatim}
-The stock assessment for `r params$species` was conducted by the `r params$office` in `r params$region`. The terminal spawning biomass for the current assessment year (`r end_year`) was `r SBend`. You can find more information on the results of this assessment in @sec-assessment-results. The guidelines for this report follow those outlined in @akaiki_new_1974.
+The stock assessment for `r params$species` was conducted by the `r params$office` in `r params$region`. The terminal spawning biomass for the current assessment year (`r end_year`) was `r SBend`. You can find more information on the results of this assessment in @sec-assmt-results. The guidelines for this report follow those outlined in @akaiki_new_1974.
 ```
 
 ::: {.callout-note appearance="minimal"}
@@ -490,6 +490,14 @@ D) You can't
 :::
 
 {{< include ../snippets/complex_asar_exercises.qmd >}}
+
+# NOAA Standard Assessment Report Guidelines
+
+A part of the approach to standardizing workflow is to design report guidelines that identifies the audience of assessment reports and attempts to streamline the review process through succinct reporting which will increase throughput.
+
+The standard guidelines were designed using a thorough review of assessment reports from across the agency. Theses guidelines were reviewed by a steering committee of assessment scientists across NOAA, leadership at NOAA Fisheries HQ, and U.S. fishery management councils. The guidelines are also under formal review in the Northwest grounfish SSC subcommittee for adoptions for the 2026-2027 assessment cycle.
+
+{{< embed-pdf url=".../assets/standard_guidelines.pdf" height="600px" width="100%" >}}
 
 # Summary (10 mins)
 
