@@ -45,7 +45,7 @@ format: html
 | 1:00-1:15 | [Creating a table](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#example-table) |
 | 1:15-1:30 | [Exporting tables and figures](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#exporting) |
 | 1:30-2:00 | [Integrating {stockplotr} into the workflow](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#integrating-stockplotr-into-the-workflow) |
-| **2:00-2:20** | **Break** |
-| 2:20-2:30 | [Manually adding tables and figures](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#option-2-manually-adding-tablesfigures) |
-| 2:30-2:55 | [Creating accessible documents](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#sec-a11y) |
-| 2:55-3:00 | [Final remarks and questions](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#questions-comments-feedback-and-closing) |
+| **2:00-2:15** | **Break** |
+| 2:15-2:25 | [Manually adding tables and figures](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#option-2-manually-adding-tablesfigures) |
+| 2:25-2:50 | [Creating accessible documents](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#sec-a11y) |
+| 2:50-3:00 | [Final remarks and questions](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#questions-comments-feedback-and-closing) |

@@ -372,6 +372,7 @@ We have designed two functions that allow you to automatically create all availa
 - `html_all_figs_tables()`
 :::
 
+<!-- move below to before custom figures/tables section? -->
 ::: {.callout-note appearance="minimal"}
 Break for questions
 :::
