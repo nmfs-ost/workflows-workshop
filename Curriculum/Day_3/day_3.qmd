@@ -607,19 +607,18 @@ or
 
 Adding an `@` symbol followed by the chunk label, or label of your table/figure, will create an interactive link that lets the reader navigate to that specific table/figure.
 
-::: {.callout-note icon=false}
-## Testing your understanding
+<!-- ::: {.callout-note icon=false} -->
+<!-- ## Testing your understanding -->
 
-Which of the following describes how you can integrate {asar} and {stockplotr} into your reporting workflow?
+<!-- Which of the following describes how you can integrate {asar} and {stockplotr} into your reporting workflow? -->
 
-A) Generating 13+ assessment figures and tables in one go using a single function (`stockplotr::save_all_plots()`).
-B) Creating one specific figure (e.g., spawning biomass, using `stockplotr::plot_spawning_biomass()`).
-C) Building an {asar} report template with a model results file, which allows for automatic extraction of B/BMSY and other key quantities from the model output.
-D) Using {asar} to build a report template, without a converted model results file.
-E) Using the entire workflow to convert model results into a standardized format, generate all plots, and integrate them into an accessible report.
-F) All of the above.
-
-:::
+<!-- A) Generating 13+ assessment figures and tables in one go using a single function (`stockplotr::save_all_plots()`). -->
+<!-- B) Creating one specific figure (e.g., spawning biomass, using `stockplotr::plot_spawning_biomass()`). -->
+<!-- C) Building an {asar} report template with a model results file, which allows for automatic extraction of B/BMSY and other key quantities from the model output. -->
+<!-- D) Using {asar} to build a report template, without a converted model results file. -->
+<!-- E) Using the entire workflow to convert model results into a standardized format, generate all plots, and integrate them into an accessible report. -->
+<!-- F) All of the above. -->
+<!-- ::: -->
 
 <!-- Answer: F. -->
 
@@ -657,7 +656,7 @@ Run `quarto render [path/to/your/skeleton.qmd file]` in the terminal. For exampl
 Enter `quarto render report/SAR_USWC_Petrale_sole_skeleton.qmd`
 
 ::: {.callout-note appearance="minimal"}
-20 minute break for questions & practicing
+15 minute break for questions & practicing
 :::
 
 {{< include ../snippets/integrate-stockplotr_exercises.qmd >}}

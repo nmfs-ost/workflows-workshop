@@ -497,7 +497,8 @@ A part of the approach to standardizing workflow is to design report guidelines 
 
 The standard guidelines were designed using a thorough review of assessment reports from across the agency. Theses guidelines were reviewed by a steering committee of assessment scientists across NOAA, leadership at NOAA Fisheries HQ, and U.S. fishery management councils. The guidelines are also under formal review in the Northwest grounfish SSC subcommittee for adoptions for the 2026-2027 assessment cycle.
 
-{{< embed-pdf url=".../assets/standard_guidelines.pdf" height="600px" width="100%" >}}
+<!-- {{< embed-pdf url=".../assets/standard_guidelines.pdf" height="600px" width="100%" >}} -->
+<iframe src="../../assets/standard_guidelines.pdf" width="100%" height="600px"></iframe>
 
 # Summary (10 mins)
 
