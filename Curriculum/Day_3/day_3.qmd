@@ -12,6 +12,7 @@ execute:
 -   Walk through an example of a plot and table from {stockplotr}
 -   Learn about the value of the {stockplotr} R package
 -   Understand how to integrate {stockplotr} into an {asar}-based reporting workflow
+-   Understand how to add accessibility features to the report
 </div>
 
 # Introduction
@@ -60,7 +61,12 @@ petrale <- stockplotr::convert_output(output_file,
                                       save_dir = getwd())
 ```
 
-If you have already converted your output: great! Import it into your R environment so that you can handle it as an object like "petrale" in the chunk above.
+If you have already converted your output: great! Import it into your R environment so that you can handle it as an object like "petrale" in the chunk above. For example:
+
+```{r eval=FALSE}
+load("petrale_conout.rda")
+petrale <- out_new
+```
 
 ::: {.callout-note appearance="minimal"}
 Break for issues
@@ -97,7 +103,7 @@ Each automated function returns either a `ggplot2` object (figure) or `gt` objec
 
 ## Example Figure
 
-Run the example below. It should result in a line graph showing biomass over time, including a reference line for the biomass unfished.
+Run the example below. It should result in a line graph showing spawning biomass over time, including a reference line for the spawning biomass at msy.
 
 ```{r eval = FALSE}
 stockplotr::plot_spawning_biomass(
@@ -105,10 +111,10 @@ stockplotr::plot_spawning_biomass(
   geom = "line", # show a line graph
   group = NULL, # don't group by sex, fleet, etc.
   facet = NULL, # not faceting by any variable
-  ref_line = "msy", # set reference line at unfished
+  ref_line = "msy", # set reference line at msy
   unit_label = "mt", # unit label: metric tons
-  scale_amount = 1, # do not scale biomass
-  relative = FALSE, # show biomass, NOT relative biomass
+  scale_amount = 1, # do not scale spawning biomass
+  relative = FALSE, # show spawning biomass, NOT relative spawning biomass
   interactive = TRUE, # prompt user for MODULE_NAME in console
   module = NULL # MODULE_NAME not specified here
 )
@@ -124,9 +130,9 @@ Break for questions
 
 All figures will automatically identify any indexing variables in the data such as fleet, area, or sex. You can use the `group` and `facet` arguments to modify how these indexing variables are displayed in the figure. You can also modify other arguments such as `geom`, `ref_line`, and `relative` to change the appearance of the figure. 
 
-#### Change the reference line to a specific value (e.g., 260)
+#### Change the reference line to a specific value (e.g., 10)
   
-  In this example we are also telling the function which module to select in order to by-pass this step. We plan to remove grouping of some modules in the future.
+In this example we are also telling the function which module to select in order to by-pass this step. We plan to remove grouping of some modules in the future.
 
 ```{r}
 stockplotr::plot_spawning_biomass(
@@ -134,7 +140,7 @@ stockplotr::plot_spawning_biomass(
   geom = "line",
   group = NULL,
   facet = NULL,
-  ref_line = c("target" = 10), # changed from "unfished"
+  ref_line = c("target" = 10), # changed from "msy"
   unit_label = "mt",
   scale_amount = 1,
   relative = FALSE,
@@ -185,7 +191,7 @@ stockplotr::plot_spawning_biomass(
   geom = "line",
   group = "none",
   facet = NULL,
-  ref_line = NULL, # changed from c("target" = 260)
+  ref_line = NULL, # changed from c("target" = 10)
   unit_label = "mt",
   scale_amount = 1,
   relative = FALSE,
@@ -255,7 +261,7 @@ library(gt)
 stockplotr::table_landings(
     dat = petrale,
     unit_label = "mt",
-    module = "CATCH")[[1]] |> # [[1]] pulls the gt table from the list
+    module = "CATCH")[[1]] |> # [[1]] pulls the gt table from the list. Saving as an object and pulling "list" also works (e.g., table$list)
   gt::tab_style(
         style = cell_text(weight = "bold"),
         locations = cells_body(columns = "Year")
@@ -319,7 +325,7 @@ stockplotr::plot_spawning_biomass(
   unit_label = "mt",
   module = "TIME_SERIES",
   make_rda = TRUE,
-  figures_dir = getwd() # indicate where to create a "figures" folder with the biomass figure rda
+  figures_dir = getwd() # indicate where to create a "figures" folder with the spawning biomass figure rda
 )
 ```
 
@@ -367,10 +373,8 @@ We have designed two functions that allow you to automatically create all availa
 :::
 
 ::: {.callout-note appearance="minimal"}
-20 minute break for questions & practicing
+Break for questions
 :::
-
-{{< include ../snippets/figure_table_exercises.qmd >}}
 
 # Integrating {stockplotr} into the workflow
 
@@ -454,8 +458,10 @@ create_tables_doc(
 :::
 
 ::: {.callout-note appearance="minimal"}
-Break for questions
+20 minute break for questions & practicing
 :::
+
+{{< include ../snippets/figure_table_exercises.qmd >}}
 
 ### Option 2: Manually adding tables/figures
 

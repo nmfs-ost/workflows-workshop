@@ -29,9 +29,10 @@ format: html
 | 1:25-1:35 | [Mid-session icebreaker](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.ds1fl2nu2oi5#heading=h.nykzbhpc7iu4) |
 | 1:35-2:05 | [stockplotr::convert_output()](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#stockplotrconvert_output) |
 | **2:05-2:20** | **Break for questions** |
-| 2:20-2:40 | [Advanced workflow](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#advanced-asar-workflow) |
-| **2:40-2:50** | **Break for questions** |
-| 2:50-3:00 | [Wrap-up](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#summary-10-mins) |
+| 2:20-2:25 | [Mid-session icebreaker](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.ds1fl2nu2oi5#heading=h.9n94y9v6xm29) |
+| 2:25-2:45 | [Advanced workflow](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#advanced-asar-workflow) |
+| **2:45-2:55** | **Break for questions** |
+| 2:55-3:00 | [Wrap-up](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#summary-10-mins) |
 
 ## Day 3
 
