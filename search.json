@@ -259,6 +259,36 @@
     ]
   },
   {
+    "objectID": "Curriculum/Day_3/day_3.html#changes-to-quarto",
+    "href": "Curriculum/Day_3/day_3.html#changes-to-quarto",
+    "title": "Day 3",
+    "section": "Changes to Quarto",
+    "text": "Changes to Quarto\nWe are working closely with Quarto developers to incorporate the accessibility featrues found in asar into the base Quarto software. This means that, in the future, you may not need to use asar::add_tagging() and asar::add_alttext() to add accessibility features to your report. Instead, you may be able to add these features directly within your .qmd files. With that said, we will make sure we maintain compatibility of reports throughout quarto updates.",
+    "crumbs": [
+      "Day 3: stockplotr + asar"
+    ]
+  },
+  {
+    "objectID": "Curriculum/Day_3/day_3.html#the-next-assessment-cycle",
+    "href": "Curriculum/Day_3/day_3.html#the-next-assessment-cycle",
+    "title": "Day 3",
+    "section": "The Next Assessment Cycle",
+    "text": "The Next Assessment Cycle\nWhile {asar} is ready for active use in the next assessment cycle, we are working on additional features to call the assessment from the previous cycle and update it for the new one. This will be the foundation of the workflow as assessments are produced year after year. The workflow presented in this workshop lays out the process for writing an assessment that has not been written yet using {asar} and/or the new standard guidelines.\nWe are open to suggestions to improve current and future functionality!",
+    "crumbs": [
+      "Day 3: stockplotr + asar"
+    ]
+  },
+  {
+    "objectID": "Curriculum/Day_3/day_3.html#converter-compatability",
+    "href": "Curriculum/Day_3/day_3.html#converter-compatability",
+    "title": "Day 3",
+    "section": "Converter Compatability",
+    "text": "Converter Compatability\nWe are planning to expand the convert_output() function in {stockplotr} to be compatible with all major U.S. assessment models and then some. In the near term, we plan to expand its functioning to\n\nWHAM\nRceattle\n\nHowever, there are many bespoke and additional models used by assessment scientists across the U.S. We want to include in the function. This will take a lot of resources, so we appreciate contributions to expand its functionality.",
+    "crumbs": [
+      "Day 3: stockplotr + asar"
+    ]
+  },
+  {
     "objectID": "Curriculum/Day_3/day_3.html#footnotes",
     "href": "Curriculum/Day_3/day_3.html#footnotes",
     "title": "Day 3",
@@ -792,7 +822,7 @@
     "href": "agenda.html",
     "title": "Agenda",
     "section": "",
-    "text": "Time\nTopic\n\n\n\n\n0:00-0:25\nIntroduction & Icebreaker\n\n\n0:25-0:35\nWorkshop Overview\n\n\n0:35-0:55\nMarkdown Basics\n\n\n0:55-1:15\nBreak\n\n\n1:15-1:20\nMid-session icebreaker\n\n\n1:20-1:50\nQuarto Basics\n\n\n1:50-2:05\nQ&A and wrap-up\n\n\n2:05-2:30\nPackage and dependency installation\n\n\n\n\n\n\n\n\n\nTime\nTopic\n\n\n\n\n0:00-0:15\nIntroduction & Icebreaker\n\n\n0:15-0:35\n{asar}: installation and overview\n\n\n0:35-1:05\nasar::create_template()\n\n\n1:05-1:25\nBreak\n\n\n1:25-1:35\nMid-session icebreaker\n\n\n1:35-1:55\nstockplotr::convert_output()\n\n\n1:55-2:10\nBreak for questions\n\n\n2:10-2:15\nMid-session icebreaker\n\n\n2:15-2:35\nAdvanced workflow\n\n\n2:35-2:45\nBreak for questions\n\n\n2:45-2:55\nStandard Guidelines Discussion\n\n\n2:55-3:00\nWrap-up\n\n\n\n\n\n\n\n\n\nTime\nTopic\n\n\n\n\n0:00-0:10\nIcebreaker\n\n\n0:10-0:20\n{stockplotr} Overview\n\n\n0:20-0:45\nCreate a figure + Customizing\n\n\n0:45-0:55\nBreak\n\n\n0:55-1:05\nCreating a table\n\n\n1:05-1:20\nExporting tables and figures\n\n\n1:20-1:50\nIntegrating {stockplotr} into the workflow\n\n\n1:50-2:05\nBreak\n\n\n2:05-2:15\nManually adding tables and figures\n\n\n2:15-2:40\nCreating accessible documents\n\n\n2:40-2:50\n\n\n\n2:50-3:00\nFinal remarks and questions",
+    "text": "Time\nTopic\n\n\n\n\n0:00-0:25\nIntroduction & Icebreaker\n\n\n0:25-0:35\nWorkshop Overview\n\n\n0:35-0:55\nMarkdown Basics\n\n\n0:55-1:15\nBreak\n\n\n1:15-1:20\nMid-session icebreaker\n\n\n1:20-1:50\nQuarto Basics\n\n\n1:50-2:05\nQ&A and wrap-up\n\n\n2:05-2:30\nPackage and dependency installation\n\n\n\n\n\n\n\n\n\nTime\nTopic\n\n\n\n\n0:00-0:15\nIntroduction & Icebreaker\n\n\n0:15-0:35\n{asar}: installation and overview\n\n\n0:35-1:05\nasar::create_template()\n\n\n1:05-1:25\nBreak\n\n\n1:25-1:35\nMid-session icebreaker\n\n\n1:35-1:55\nstockplotr::convert_output()\n\n\n1:55-2:10\nBreak for questions\n\n\n2:10-2:15\nMid-session icebreaker\n\n\n2:15-2:35\nAdvanced workflow\n\n\n2:35-2:45\nBreak for questions\n\n\n2:45-2:55\nStandard Guidelines Discussion\n\n\n2:55-3:00\nWrap-up\n\n\n\n\n\n\n\n\n\nTime\nTopic\n\n\n\n\n0:00-0:10\nIcebreaker\n\n\n0:10-0:20\n{stockplotr} Overview\n\n\n0:20-0:45\nCreate a figure + Customizing\n\n\n0:45-0:55\nBreak\n\n\n0:55-1:05\nCreating a table\n\n\n1:05-1:20\nExporting tables and figures\n\n\n1:20-1:50\nIntegrating {stockplotr} into the workflow\n\n\n1:50-2:05\nBreak\n\n\n2:05-2:15\nManually adding tables and figures\n\n\n2:15-2:40\nCreating accessible documents\n\n\n2:40-2:50\nPreparing for the Future\n\n\n2:50-3:00\nFinal remarks and questions",
     "crumbs": [
       "Agenda"
     ]
@@ -822,7 +852,7 @@
     "href": "agenda.html#day-3",
     "title": "Agenda",
     "section": "",
-    "text": "Time\nTopic\n\n\n\n\n0:00-0:10\nIcebreaker\n\n\n0:10-0:20\n{stockplotr} Overview\n\n\n0:20-0:45\nCreate a figure + Customizing\n\n\n0:45-0:55\nBreak\n\n\n0:55-1:05\nCreating a table\n\n\n1:05-1:20\nExporting tables and figures\n\n\n1:20-1:50\nIntegrating {stockplotr} into the workflow\n\n\n1:50-2:05\nBreak\n\n\n2:05-2:15\nManually adding tables and figures\n\n\n2:15-2:40\nCreating accessible documents\n\n\n2:40-2:50\n\n\n\n2:50-3:00\nFinal remarks and questions",
+    "text": "Time\nTopic\n\n\n\n\n0:00-0:10\nIcebreaker\n\n\n0:10-0:20\n{stockplotr} Overview\n\n\n0:20-0:45\nCreate a figure + Customizing\n\n\n0:45-0:55\nBreak\n\n\n0:55-1:05\nCreating a table\n\n\n1:05-1:20\nExporting tables and figures\n\n\n1:20-1:50\nIntegrating {stockplotr} into the workflow\n\n\n1:50-2:05\nBreak\n\n\n2:05-2:15\nManually adding tables and figures\n\n\n2:15-2:40\nCreating accessible documents\n\n\n2:40-2:50\nPreparing for the Future\n\n\n2:50-3:00\nFinal remarks and questions",
     "crumbs": [
       "Agenda"
     ]

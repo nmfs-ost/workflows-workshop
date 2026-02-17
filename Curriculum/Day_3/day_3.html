@@ -420,6 +420,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#add-alt-text-to-your-reports-images" id="toc-add-alt-text-to-your-reports-images" class="nav-link" data-scroll-target="#add-alt-text-to-your-reports-images">Add alt text to your report’s images</a></li>
   </ul></li>
+  <li><a href="#sec-future" id="toc-sec-future" class="nav-link" data-scroll-target="#sec-future">Preparing for the Future</a>
+  <ul class="collapse">
+  <li><a href="#changes-to-quarto" id="toc-changes-to-quarto" class="nav-link" data-scroll-target="#changes-to-quarto">Changes to Quarto</a></li>
+  <li><a href="#the-next-assessment-cycle" id="toc-the-next-assessment-cycle" class="nav-link" data-scroll-target="#the-next-assessment-cycle">The Next Assessment Cycle</a></li>
+  <li><a href="#converter-compatability" id="toc-converter-compatability" class="nav-link" data-scroll-target="#converter-compatability">Converter Compatability</a></li>
+  </ul></li>
   <li><a href="#questions-comments-feedback-and-closing" id="toc-questions-comments-feedback-and-closing" class="nav-link" data-scroll-target="#questions-comments-feedback-and-closing">Questions, comments, feedback, and closing</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nmfs-ost/workflows-workshop/edit/main/Curriculum/Day_3/day_3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/Curriculum/Day_3/day_3.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-ost/workflows-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -1699,6 +1705,27 @@ Tip
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="sec-future" class="level1">
+<h1>Preparing for the Future</h1>
+<section id="changes-to-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="changes-to-quarto">Changes to Quarto</h2>
+<p>We are working closely with Quarto developers to incorporate the accessibility featrues found in <code>asar</code> into the base Quarto software. This means that, in the future, you may not need to use <code>asar::add_tagging()</code> and <code>asar::add_alttext()</code> to add accessibility features to your report. Instead, you may be able to add these features directly within your .qmd files. With that said, we will make sure we maintain compatibility of reports throughout quarto updates.</p>
+</section>
+<section id="the-next-assessment-cycle" class="level2">
+<h2 class="anchored" data-anchor-id="the-next-assessment-cycle">The Next Assessment Cycle</h2>
+<p>While {asar} is ready for active use in the next assessment cycle, we are working on additional features to call the assessment from the previous cycle and update it for the new one. This will be the foundation of the workflow as assessments are produced year after year. The workflow presented in this workshop lays out the process for writing an assessment that has not been written yet using {asar} and/or the new standard guidelines.</p>
+<p>We are open to suggestions to improve current and future functionality!</p>
+</section>
+<section id="converter-compatability" class="level2">
+<h2 class="anchored" data-anchor-id="converter-compatability">Converter Compatability</h2>
+<p>We are planning to expand the <code>convert_output()</code> function in {stockplotr} to be compatible with all major U.S. assessment models and then some. In the near term, we plan to expand its functioning to</p>
+<ul>
+<li>WHAM</li>
+<li>Rceattle</li>
+</ul>
+<p>However, there are many bespoke and additional models used by assessment scientists across the U.S. We want to include in the function. This will take a lot of resources, so we appreciate contributions to expand its functionality.</p>
 </section>
 </section>
 <section id="questions-comments-feedback-and-closing" class="level1">
