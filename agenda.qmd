@@ -49,5 +49,5 @@ format: html
 | **1:50-2:05** | **Break** |
 | 2:05-2:15 | [Manually adding tables and figures](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#option-2-manually-adding-tablesfigures) |
 | 2:15-2:40 | [Creating accessible documents](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#sec-a11y) |
-| 2:40-2:50 | []() |
+| 2:40-2:50 | [Preparing for the Future](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#sec-future) |
 | 2:50-3:00 | [Final remarks and questions](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#questions-comments-feedback-and-closing) |

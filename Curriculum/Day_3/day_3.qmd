@@ -814,6 +814,27 @@ Check out the ["Increasing Report Accessibility" vignette](https://nmfs-ost.gith
 
 {{< include ../snippets/a11y_exercises.qmd >}}
 
+# Preparing for the Future {#sec-future}
+
+## Changes to Quarto
+
+We are working closely with Quarto developers to incorporate the accessibility featrues found in `asar` into the base Quarto software. This means that, in the future, you may not need to use `asar::add_tagging()` and `asar::add_alttext()` to add accessibility features to your report. Instead, you may be able to add these features directly within your .qmd files. With that said, we will make sure we maintain compatibility of reports throughout quarto updates.
+
+## The Next Assessment Cycle
+
+While {asar} is ready for active use in the next assessment cycle, we are working on additional features to call the assessment from the previous cycle and update it for the new one. This will be the foundation of the workflow as assessments are produced year after year. The workflow presented in this workshop lays out the process for writing an assessment that has not been written yet using {asar} and/or the new standard guidelines.
+
+We are open to suggestions to improve current and future functionality!
+
+## Converter Compatability
+
+We are planning to expand the `convert_output()` function in {stockplotr} to be compatible with all major U.S. assessment models and then some. In the near term, we plan to expand its functioning to 
+
+  - WHAM
+  - Rceattle
+  
+However, there are many bespoke and additional models used by assessment scientists across the U.S. We want to include in the function. This will take a lot of resources, so we appreciate contributions to expand its functionality.
+
 # Questions, comments, feedback, and closing
 
 ::: {.callout-tip}
