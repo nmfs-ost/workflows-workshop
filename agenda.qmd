@@ -27,11 +27,12 @@ format: html
 | 0:35-1:05 | [asar::create_template()](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#asarcreate_template) |
 | **1:05-1:25** | **Break** |
 | 1:25-1:35 | [Mid-session icebreaker](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.ds1fl2nu2oi5#heading=h.nykzbhpc7iu4) |
-| 1:35-2:05 | [stockplotr::convert_output()](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#stockplotrconvert_output) |
-| **2:05-2:20** | **Break for questions** |
-| 2:20-2:25 | [Mid-session icebreaker](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.ds1fl2nu2oi5#heading=h.9n94y9v6xm29) |
-| 2:25-2:45 | [Advanced workflow](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#advanced-asar-workflow) |
-| **2:45-2:55** | **Break for questions** |
+| 1:35-1:55 | [stockplotr::convert_output()](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#stockplotrconvert_output) |
+| **1:55-2:10** | **Break for questions** |
+| 2:10-2:15 | [Mid-session icebreaker](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.ds1fl2nu2oi5#heading=h.9n94y9v6xm29) |
+| 2:15-2:35 | [Advanced workflow](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#advanced-asar-workflow) |
+| **2:35-2:45** | **Break for questions** |
+| 2:45-2:55 | [Standard Guidelines Discussion](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#noaa-standard-assessment-report-guidelines) |
 | 2:55-3:00 | [Wrap-up](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#summary-10-mins) |
 
 ## Day 3
@@ -40,12 +41,13 @@ format: html
 |------|-------|
 | 0:00-0:10 | [Icebreaker](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#icebreaker) |
 | 0:10-0:20 | [{stockplotr} Overview](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#introduction-to-stockplotr) |
-| 0:20-0:50 | [Create a figure + Customizing](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#example-figure) |
-| **0:50-1:00** | **Break** |
-| 1:00-1:15 | [Creating a table](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#example-table) |
-| 1:15-1:30 | [Exporting tables and figures](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#exporting) |
-| 1:30-2:00 | [Integrating {stockplotr} into the workflow](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#integrating-stockplotr-into-the-workflow) |
-| **2:00-2:15** | **Break** |
-| 2:15-2:25 | [Manually adding tables and figures](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#option-2-manually-adding-tablesfigures) |
-| 2:25-2:50 | [Creating accessible documents](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#sec-a11y) |
+| 0:20-0:45 | [Create a figure + Customizing](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#example-figure) |
+| **0:45-0:55** | **Break** |
+| 0:55-1:05 | [Creating a table](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#example-table) |
+| 1:05-1:20 | [Exporting tables and figures](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#exporting) |
+| 1:20-1:50 | [Integrating {stockplotr} into the workflow](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#integrating-stockplotr-into-the-workflow) |
+| **1:50-2:05** | **Break** |
+| 2:05-2:15 | [Manually adding tables and figures](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#option-2-manually-adding-tablesfigures) |
+| 2:15-2:40 | [Creating accessible documents](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#sec-a11y) |
+| 2:40-2:50 | []() |
 | 2:50-3:00 | [Final remarks and questions](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#questions-comments-feedback-and-closing) |
