@@ -151,9 +151,31 @@ stockplotr::plot_spawning_biomass(
 
 ![](images/day3_ex_plt2_b.png)
 
-#### Plot relative spawning biomass and change the size of the line
+#### Plot relative spawning biomass and remove the reference line
   
-In this example, we still are bypassing module selection and we are automatically extracting the reference line value from the data. However, now we are using this reference value to plot relative spawning biomass and changing the linewidth to 2 (an argument inherited from `ggplot2::geom_line()`).
+Notice that you can remove the reference line by setting `ref_line = NULL`.
+  
+```{r}
+stockplotr::plot_spawning_biomass(
+  dat = petrale,
+  geom = "line",
+  group = "none",
+  facet = NULL,
+  ref_line = c("target" = 10),
+  unit_label = "mt",
+  scale_amount = 1,
+  relative = TRUE,
+  interactive = FALSE,
+  module = "TIME_SERIES"
+)
+```
+
+![](images/day3_ex_plt4.png)
+
+
+#### Customizations from {ggplot2}
+  
+In this example, we still are bypassing module selection and we are automatically extracting the reference line value from the data. However, now we are using this reference value to plot relative spawning biomass and changing the linewidth to 2 (an argument inherited from `ggplot2::geom_line()`) as well as adding a vertical reference line at 2005 to highlight some point in time. Both of these customizations use functionality from {ggplot2} that is not explicit in {stockplotr}!
   
 ::: {.callout-note}
 If you were plotting a scatterplot (`geom = 'point'`) or area plot (`geom = 'area'`), you could add arguments associated with `geom_point()` and `geom_area()`, respectively.
@@ -172,7 +194,8 @@ stockplotr::plot_spawning_biomass(
   interactive = FALSE,
   module = "TIME_SERIES",
   linewidth = 2 # increase width of lines
-)
+) +
+  ggplot2::geom_vline(xintercept = 2005, linetype = "dashed", color = "red")
 ```
 
 ![](images/day3_ex_plt3_b.png)
@@ -181,31 +204,12 @@ stockplotr::plot_spawning_biomass(
 The only extended arguments available are the ones found from the ggplot2::geom_XX() function. Thus, any indexed variables can not be changes such as color to fill. Please see the documentation for `ggplot2` geom functions for these additional arguments.
 :::
 
-#### Summarize our data
-  
-Notice that you can remove the reference line by setting `ref_line = NULL`.
-  
-```{r}
-stockplotr::plot_spawning_biomass(
-  dat = petrale,
-  geom = "line",
-  group = "none",
-  facet = NULL,
-  ref_line = NULL, # changed from c("target" = 10)
-  unit_label = "mt",
-  scale_amount = 1,
-  relative = FALSE,
-  interactive = FALSE,
-  module = "TIME_SERIES"
-)
-```
-
-![](images/day3_ex_plt4_b.png)
 
 ::: {.callout-note appearance="minimal"}
 Break for questions
 :::
 
+<!-- 
 ::: {.callout-tip}
 Remember that figures return `ggplot2` objects, so we can make additional customization to these plots.
 :::
@@ -226,7 +230,7 @@ stockplotr::plot_spawning_biomass(
   ggplot2::geom_vline(xintercept = 2005, linetype = "dashed", color = "red")
 ```
 
-![](images/day3_ex_plt5_b.png)
+![](images/day3_ex_plt5_b.png) -->
 
 ::: {.callout-note appearance="minimal"}
 Break for questions. We will be moving onto tables next.
@@ -274,7 +278,7 @@ stockplotr::table_landings(
 
 ![](images/day3_ex_table2.png)
 
-or potentially highlight a specific line within the table:
+<!-- or potentially highlight a specific line within the table:
 
 ```{r}
 stockplotr::table_landings(
@@ -297,7 +301,7 @@ stockplotr::table_landings(
     )
 ```
 
-![](images/day3_ex_table3.png)
+![](images/day3_ex_table3.png) -->
 
 ::: {.callout-tip}
 Check out the [{stockplotr} cheatsheet](https://nmfs-ost.github.io/stockplotr/stockplotr_cheatsheet.pdf) to quickly reference the main concepts of this package!
