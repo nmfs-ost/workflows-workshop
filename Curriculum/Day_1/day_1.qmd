@@ -16,7 +16,7 @@ format: html
 # Introduction
 ## Icebreaker
 
-Welcome! Please open the [Day 1 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?usp=sharing) and participate in the icebreaker exercise.
+Welcome! Please open the [Day 1 communal notes doc](https://docs.google.com/document/d/1nVlmmZgp8vCHZKCMHnBm43bf-mtk7pSA1t2FLHEoyZA/edit?usp=sharing) and participate in the icebreaker exercise.
 
 ::: {.callout-note}
 **Discussion time:** What are some reservations or excitement you have surrounding this workshop or workflows as a whole?
@@ -44,7 +44,7 @@ Sam Schiano and Sophie Breitbart are contractors with ECS Federal working in sup
 
 ## Materials for today's lesson
 
--   [Day 1 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?usp=sharing)
+-   [Day 1 communal notes doc](https://docs.google.com/document/d/1nVlmmZgp8vCHZKCMHnBm43bf-mtk7pSA1t2FLHEoyZA/edit?usp=sharing)
     -   Contains resources (from us and you!) and areas for note-taking
 -   [Sample data](https://github.com/nmfs-ost/asar/blob/main/inst/extdata/Report.sso)
     -   Sample model output data for coding demonstrations

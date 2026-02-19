@@ -18,7 +18,7 @@ execute:
 # Introduction
 ## Icebreaker
 
-Welcome! Please open the [Day 3 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.vffehz79fm7y#heading=h.sfq3xaeehv64) and participate in the icebreaker exercise.
+Welcome! Please open the [Day 3 communal notes doc](https://docs.google.com/document/d/1nVlmmZgp8vCHZKCMHnBm43bf-mtk7pSA1t2FLHEoyZA/edit?tab=t.vffehz79fm7y#heading=h.sfq3xaeehv64) and participate in the icebreaker exercise.
 
 ::: {.callout-tip}
 **Reminder**: For comments or questions, please raise your hand, or write them in the chat, *at any time*. Depending on our schedule, we may ask that you save larger questions for breaks.
@@ -30,7 +30,7 @@ Break for questions
 
 ## Materials for today's lesson
 
--   [Day 3 communal notes doc](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.vffehz79fm7y#heading=h.sfq3xaeehv64)
+-   [Day 3 communal notes doc](https://docs.google.com/document/d/1nVlmmZgp8vCHZKCMHnBm43bf-mtk7pSA1t2FLHEoyZA/edit?tab=t.vffehz79fm7y#heading=h.sfq3xaeehv64)
     -   Contains resources (from us and you!) and areas for note-taking
 -   [Sample data](https://github.com/nmfs-ost/asar/blob/main/inst/extdata/Report.sso)
     -   Sample model output data for coding demonstrations
@@ -846,8 +846,8 @@ However, there are many bespoke and additional models used by assessment scienti
 Your colleagues have created some terrific stock assessment reports with {asar}. Check them out on our ["Example Reports" page](https://nmfs-ost.github.io/asar/articles/example_reports.html)!
 :::
 
-Please navigate to the [Feedback](https://docs.google.com/document/d/1SY-xwHXnJUXSXTTeaPA_UkmXXVmUK9Ol751nh6Vtjmg/edit?tab=t.vffehz79fm7y#heading=h.llbcc8tygqlb) heading and tell us what you thought about today's workshop. Only 3 simple questions!
+Please navigate to this [EasyRetro board](https://easyretro.io/publicboard/3kNnwubT8rdQRy0M4aakmbQakcG3/592d2360-e8e0-4587-9aea-a92474d73bd5) and tell us what you thought about today's workshop. Only 3 simple questions!
 
-* What went well?
-* What could be improved?
-* What is a question you still have?
+* No account is necessary.
+* All feedback is anonymous unless you choose to add your name to your comment.
+* You can add a thumbs up, and comment, on others' comments.
