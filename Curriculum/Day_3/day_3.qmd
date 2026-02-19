@@ -34,8 +34,8 @@ Break for questions
     -   Contains resources (from us and you!) and areas for note-taking
 -   [Sample data](https://github.com/nmfs-ost/asar/blob/main/inst/extdata/Report.sso)
     -   Sample model output data for coding demonstrations
--   [Example figure and table](https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots)
-    -   Example figure and table for coding demonstration
+-   [Example figure](https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots)
+    -   Example figure (in .png format) for coding demonstration
 
 ## Installation
 
@@ -346,7 +346,7 @@ rda$alt_text
 Break for questions
 :::
 
-This is the code you *would* run to export a landings table, but [it is not yet functional.]{.mark}
+Now, export the landings table:
 ```{r}
 stockplotr::table_landings(
   dat = petrale,
@@ -357,16 +357,17 @@ stockplotr::table_landings(
 )
 ```
 
-Import the sample table rda and explore it:
+Import the table rda and explore it:
 
 ```{r}
-load("example_plots/ex_table.rda")
+load("tables/landings_table.rda")
 rda$table
 rda$caption
+rda$latex_table
 ```
 
 ::: {.callout-important}
-We are working on finishing the exporting capability of `table_landings()`. When it's functional, the landings table will be exported using the `make_rda` and `tables_dir` arguments, in parallel to `plot_spawning_biomass()` shown above.
+We are working on finishing the exporting capability of `table_landings()` so that it can export multiple tables if the user inputs multiple converted model outputs (i.e., a list of `dat` objects).
 :::
 
 ::: {.callout-tip}

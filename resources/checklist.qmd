@@ -48,12 +48,6 @@ get_workshop_files(
   dest_file = file.path("example_plots", "landings_fig_png.png"),
   url = "https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/main/example_plots/landings_fig_png.png"
   )
-
-# Obtain example table file
-get_workshop_files(
-  dest_folder = file.path("example_plots"),
-  dest_file = file.path("example_plots", "ex_table.rda"),
-  url = "https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/main/example_plots/ex_table.rda"  )
 ```
 
 6. Install important R packages
