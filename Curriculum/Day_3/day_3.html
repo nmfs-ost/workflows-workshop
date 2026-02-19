@@ -505,9 +505,9 @@ Tip
 <ul>
 <li>Sample model output data for coding demonstrations</li>
 </ul></li>
-<li><a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots">Example figure and table</a>
+<li><a href="https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots">Example figure</a>
 <ul>
-<li>Example figure and table for coding demonstration</li>
+<li>Example figure (in .png format) for coding demonstration</li>
 </ul></li>
 </ul>
 </section>
@@ -936,7 +936,7 @@ Tip
 </div>
 </div>
 </div>
-<p>This is the code you <em>would</em> run to export a landings table, but <mark>it is not yet functional.</mark></p>
+<p>Now, export the landings table:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">table_landings</span>(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> petrale,</span>
@@ -946,11 +946,12 @@ Tip
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">tables_dir =</span> <span class="fu">getwd</span>() <span class="co"># indicate where to create a "tables" folder with the landings table rda</span></span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Import the sample table rda and explore it:</p>
+<p>Import the table rda and explore it:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"example_plots/ex_table.rda"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"tables/landings_table.rda"</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>rda<span class="sc">$</span>table</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>rda<span class="sc">$</span>caption</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>rda<span class="sc">$</span>caption</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>rda<span class="sc">$</span>latex_table</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -962,7 +963,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We are working on finishing the exporting capability of <code>table_landings()</code>. When it’s functional, the landings table will be exported using the <code>make_rda</code> and <code>tables_dir</code> arguments, in parallel to <code>plot_spawning_biomass()</code> shown above.</p>
+<p>We are working on finishing the exporting capability of <code>table_landings()</code> so that it can export multiple tables if the user inputs multiple converted model outputs (i.e., a list of <code>dat</code> objects).</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
