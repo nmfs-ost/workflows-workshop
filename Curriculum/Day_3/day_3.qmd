@@ -882,7 +882,7 @@ However, there are many bespoke and additional models used by assessment scienti
 Your colleagues have created some terrific stock assessment reports with {asar}. Check them out on our ["Example Reports" page](https://nmfs-ost.github.io/asar/articles/example_reports.html)!
 :::
 
-Please navigate to this [EasyRetro board](https://easyretro.io/publicboard/3kNnwubT8rdQRy0M4aakmbQakcG3/592d2360-e8e0-4587-9aea-a92474d73bd5) and tell us what you thought about today's workshop. Only 3 simple questions!
+Please navigate to this [EasyRetro board](https://easyretro.io/publicboard/3kNnwubT8rdQRy0M4aakmbQakcG3/592d2360-e8e0-4587-9aea-a92474d73bd5) and tell us what you thought about this workshop. Only 3 simple questions!
 
 -   No account is necessary.
 -   All feedback is anonymous unless you choose to add your name to your comment.

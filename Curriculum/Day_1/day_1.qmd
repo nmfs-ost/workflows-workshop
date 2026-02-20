@@ -151,6 +151,18 @@ So, why should you Quarto to build reports?
 Quarto is both a publishing platform *and* an R package ({quarto}). The R package provides a way to interact with the Quarto platform using R code instead of the terminal. For example, you can render a Quarto document with `quarto::quarto_render(my_quarto_doc.qmd)` or by typing `quarto render my_quarto_doc.qmd` in the terminal.
 :::
 
+### Let's open up a Quarto document!
+
+File > New File > Quarto Document
+
+* Title: Add sample title
+* Author: Add your name
+* Format: Keep as HTML
+* Engine: Keep as Knitr
+* Editor: Uncheck "Use visual markdown editor" box
+
+Click "Create" and open your Quarto document!
+
 ## Components of Quarto reports
 
 ### YAML
