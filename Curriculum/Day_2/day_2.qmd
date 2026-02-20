@@ -501,12 +501,14 @@ Use the following code to download files into your working directory for the nex
 get_nefsc_files <- function(dir){
   NEFSCtoASAR_folder <- file.path(dir, "ExportLegacyNEFSCtoASARproject")
   testStocks_folder <- file.path(NEFSCtoASAR_folder, "testStocks")
-  if (!file.exists(dir)) {
-    dir.create(NEFSCtoASAR_folder)
-    dir.create(testStocks_folder)
-  }
+  asarreport_folder <- file.path(NEFSCtoASAR_folder, "ASARreportFiles")
+  # if (!file.exists(dir)) {
+  dir.create(NEFSCtoASAR_folder)
+  dir.create(testStocks_folder)
+  dir.create(asarreport_folder)
+  # }
   file_names_to_download <- c(
-    "ASARreportFiles",
+    # "ASARreportFiles",
     "CheckLatexInstall.R",
     "create_asar_object.R",
     "Example.R",
@@ -526,12 +528,31 @@ get_nefsc_files <- function(dir){
     "CODWGOMAutoAss.RData",
     "SCUNITAutoAss.RData" 
   )
+  asarreport_files <- c(
+    "01_executive_summary.qmd",
+    "in-header.tex",
+    "preamble.R" 
+  )
   
   for (i in file_names_to_download) {
      cli::cli_alert_info("📥 Downloading {i}...")
     download.file(
       glue::glue("https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/nefsc-transition/resources/ExportLegacyNEFSCtoASARproject/{i}"), 
       NEFSCtoASAR_folder, mode = "wb")
+  }
+  
+  for (i in teststocks_files) {
+     cli::cli_alert_info("📥 Downloading {i}...")
+    download.file(
+      glue::glue("https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/nefsc-transition/resources/ExportLegacyNEFSCtoASARproject/testStocks/{i}"), 
+      testStocks_folder, mode = "wb")
+  }
+  
+  for (i in asarreport_files) {
+     cli::cli_alert_info("📥 Downloading {i}...")
+    download.file(
+      glue::glue("https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/nefsc-transition/resources/ExportLegacyNEFSCtoASARproject/ASARreportFiles/{i}"), 
+      asarreport_folder, mode = "wb")
   }
   
   message("✅ Download complete.")
