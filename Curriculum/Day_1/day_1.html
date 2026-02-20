@@ -668,6 +668,19 @@ Note
 <li><p>You can produce reports in several formats like HTML, PDF, and Word.</p></li>
 <li><p>Using a platform like Quarto <em>saves time and reduces errors</em>. If your data changes, you don’t have to manually rerun your analysis and copy/paste the results. You just re-knit the document, and everything is updated automatically.</p></li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Quarto is both a publishing platform <em>and</em> an R package ({quarto}). The R package provides a way to interact with the Quarto platform using R code instead of the terminal. For example, you can render a Quarto document with <code>quarto::quarto_render(my_quarto_doc.qmd)</code> or by typing <code>quarto render my_quarto_doc.qmd</code> in the terminal.</p>
+</div>
+</div>
 </section>
 <section id="components-of-quarto-reports" class="level2">
 <h2 class="anchored" data-anchor-id="components-of-quarto-reports">Components of Quarto reports</h2>
@@ -823,7 +836,7 @@ Note
 <p><em>Informal survey names</em> (i.e., nicknames used to refer to surveys that are not correct) are listed in the “Acronym” column.</p>
 <p><em>Formal survey names</em> (i.e., the correct survey names) are listed in the “Meaning” column.</p>
 <p>For example, the “Atlantic Surf Clam &amp; Ocean Quahog Dredge” is sometimes called the “clam survey”.</p>
-<p><code>\newacronym{clam survey}{Clam Survey}{Atlantic Surf Clam &amp; Ocean Quahog Dredge}</code></p>
+<p><code>\newacronym{clam survey}{Clam Survey}{Atlantic Surf Clam \&amp; Ocean Quahog Dredge}</code></p>
 <p>This text…</p>
 <blockquote class="blockquote">
 <p>In 2025, the <code>\gls{clam survey}</code>…</p>
@@ -897,7 +910,7 @@ Important
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -906,7 +919,7 @@ Important
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Create a new quarto document</li>
@@ -927,7 +940,7 @@ Important
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -936,7 +949,7 @@ Important
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Create a new quarto document</li>
