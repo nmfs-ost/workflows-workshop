@@ -19,13 +19,9 @@ Before attending the workshop, **we ask that you prepare by completing the [pre-
 
 The curriculum is comprised of three days of tutorial-based materials (see the left sidebar for [Day 1](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html), [Day 2](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html), and [Day 3](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html) links). We have dedicated a lot of time to the documentation of {asar} and {stockplotr}, so we encourage everyone to visit these sites prior to the workshop.
 
-## Example
-
-The "examples" folder contains multiple examples of reports produced from {asar} and {stockplotr} with varying complexities. Feel free to explore these folders and familiarize yourself with the contents generated from these two packages.
-
 # Format
 
-As of now, we are planning to hold a series of workshops spanning 3 days (Tuesday-Thursday) in 3 hours sessions. 
+As of now, we are planning to hold a series of workshops spanning 3 days (Tuesday-Thursday) in 3 hour sessions. 
 
 [Day 1](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html): Learning the foundations of {asar} and {stockplotr}: Markdown & Quarto
 
