@@ -486,10 +486,91 @@ D) You can't
 <!-- ### Calling previous report -->
 
 ::: {.callout-note appearance="minimal"}
-20 minute break for questions & practicing
+Break for questions & practicing
 :::
 
 {{< include ../snippets/complex_asar_exercises.qmd >}}
+
+# Adaptation of NEFSC Template to asar
+
+Dan Hennen, the NEFSC representative on the workflows steering committee, has designed a sleek workflow to help aid the tranistion from the typical management track assessment to NOAA standard guidelines. The standard guidelines executive summary mimics closely the current management track reports, so here we will automate the executive summary in this section of the report.
+
+Use the following code to download files into your working directory for the next process:
+
+```{r}
+get_nefsc_files <- function(dir){
+  NEFSCtoASAR_folder <- file.path(dir, "ExportLegacyNEFSCtoASARproject")
+  testStocks_folder <- file.path(NEFSCtoASAR_folder, "testStocks")
+  if (!file.exists(dir)) {
+    dir.create(NEFSCtoASAR_folder)
+    dir.create(testStocks_folder)
+  }
+  file_names_to_download <- c(
+    "ASARreportFiles",
+    "CheckLatexInstall.R",
+    "create_asar_object.R",
+    "Example.R",
+    "MapAutoUpdateToAsar.R",
+    "plot_survey_indices.R",
+    "plot_total_catch.R",
+    "table_brp1.1.R",
+    "table_catch_status1.1.R",
+    "table_projections1.1.R",
+    "testAdditionalStocks.R",
+    "TestMoreStocksReportOnly.R"
+  )
+  teststocks_files <- c(
+    "BSBUNITAutoAss.RData",
+    "BUTUNITAutoAss.RData",
+    "CODGBAutoAss.RData",
+    "CODWGOMAutoAss.RData",
+    "SCUNITAutoAss.RData" 
+  )
+  
+  for (i in file_names_to_download) {
+     cli::cli_alert_info("📥 Downloading {i}...")
+    download.file(
+      glue::glue("https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/nefsc-transition/resources/ExportLegacyNEFSCtoASARproject/{i}"), 
+      NEFSCtoASAR_folder, mode = "wb")
+  }
+  
+  message("✅ Download complete.")
+}
+```
+
+The following steps will guide you through how to adapt the asar workflow and template and migrate the current content in your documents to the new ones:
+
+  1. Download the folder package that contains content and functions to aid this transition.
+  
+  2. change paths in TestMoreStocksReportOnly.R and source it.
+  
+  3. Copy the 3 files in ASARreportFiles and paste them into the report directory made by step 1 (and overwrite). 
+
+  4. Move in-header.tex to report/support_files and overwrite (this just adds package float)
+
+  5. change paths at the top of report/preamble.R
+
+  6. Add 
+  
+```
+execute:
+  echo: false
+  message: false
+  warning: false
+```
+      to the yaml in the skeleton.qmd
+
+  7. Delete lines 66 - 71 
+    # load converted output from stockplotr::convert_output()
+    load(fname)
+    # Call reference points and quantities below
+    output <- out_new |>
+      dplyr::mutate(estimate = as.numeric(estimate),
+        uncertainty = as.numeric(uncertainty)) 
+        
+    from the skeleton and *render*.
+  
+
 
 # NOAA Standard Assessment Report Guidelines
 
