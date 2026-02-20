@@ -689,9 +689,22 @@ Notably, this function does *not* work on your skeleton .qmd file. Instead, it a
 
 ## Tagging
 
+::: columns
+::: {.column width="65%"}
+
 First, `asar::add_accessibility()` adds [**tags**](https://www.section508.gov/create/pdfs/common-tags-and-usage/) to your report.
 
 Tags are structural elements of PDFs. They are signals telling software which information are headers, images, tables, text, and so on. Tags allow people using technology like screen readers to logically navigate PDFs.
+
+:::
+
+::: {.column width="35%"}
+
+![](images/tag_example.png){fig-alt="Cartoon of a document with four features- header 1, header 2, paragraph text, and image- each with a tag labelling them."}
+
+:::
+:::
+
 
 ::: {.callout-note appearance="minimal"}
 Break for questions

@@ -11,15 +11,19 @@ If you have any questions, please contact the [workshop organizers](https://nmfs
 
 1. Ensure that you can run [R code](https://www.r-project.org/) with a platform like RStudio, VS Code, Positron, etc.
 2. Ensure you have downloaded [Quarto, version 1.6+ ](https://quarto.org/docs/get-started/) and can create Quarto documents.
+```{r eval=FALSE}
+quarto::quarto_version()
+```
+
 3. [Create a new Github repo](https://happygitwithr.com/rstudio-git-github.html#make-a-repo-on-github-1) for the workshop.
 4. [Clone your repo and set up an RStudio Project](https://happygitwithr.com/rstudio-git-github.html#clone-the-test-github-repository-to-your-computer-via-rstudio).
 5. Run the following code to get two essential files from the workflows-workshop github repo:
 
-- input data file "Report.sso" will save to a "example_output" folder in your home directory
-- example plot file "landings_fig_png.png" will save to a "example_plots" folder in your home directory
+1. Input data file "Report.sso" will save to a "example_output" folder in your home directory
+2. Example plot file "landings_fig_png.png" will save to a "example_plots" folder in your home directory
 
 ```{r eval=FALSE, message=FALSE}
-# Function to obtain three files used during workshop
+# Function to obtain files used during workshop
 get_workshop_files <- function(dest_folder,
                                dest_file,
                                url){
