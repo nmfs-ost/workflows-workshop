@@ -1,0 +1,370 @@
+# Executive Summary {#sec-exec-sum}
+
+<!--- Where possible, the executive summary should paraphrase the shared content of the body of the report to minimize redundancy.--->
+```{r} 
+#| label: 'preamble'
+#| warning: false 
+#| eval: true 
+#| include: false
+#| results: asis
+
+#source("preamble.R")
+#Preamble text
+# Dynamically find the final projection year from the data
+# This looks for the latest year in the 'fore' (forecast) era
+final_proj_yr <- model_results |>
+  dplyr::filter(era == "fore") |>
+  dplyr::pull(year) |>
+  max(na.rm = TRUE)
+
+# Build the Preamble using glue
+preamble_text <- glue::glue("
+  This assessment of the {metadata$spp_name} ({metadata$spp_latin}) stock is a \\
+  Management Track assessment update of the {metadata$last_ass} Research Track \\
+  assessment. This assessment updates fishery catch data, research survey \\
+  indices of abundance, and the Research Track assessment model and \\
+  reference points through {metadata$term_yr}. Additionally, stock \\
+  projections have been updated through {final_proj_yr}.
+")
+
+# Display the result
+cat(preamble_text)
+
+#You can then change what needs to be changed for the update, or set up a nice paragraph with dynamic variables.
+```
+
+
+```{r} 
+#| label: 'state_of_stock'
+#| eval: true 
+#| include: false
+
+# STATE OF THE STOCK TEXT
+# Calculate Percentages on the fly
+calc_perc <- function(num, den) {
+  if (is.null(num) || is.null(den) || is.na(num) || is.na(den) || den == 0) return("___")
+  return(round((as.numeric(num) / as.numeric(den)) * 100))
+}
+
+# Calculate percentages using the safety function
+ssb_perc <- calc_perc(metadata$terminal_b_adj, metadata$val_ssb_msy)
+f_perc   <- calc_perc(metadata$terminal_f_adj, metadata$val_f_msy)
+
+
+# Force values to be simple, single characters to prevent glue from collapsing
+spp_name   <- to_latex_caption(metadata$spp_name %||% "___")
+spp_latin  <- to_latex_caption(metadata$spp_latin %||% "___")
+ssb_status <- to_latex_caption(metadata$status_ssb_now %||% "___")
+f_status   <- to_latex_caption(metadata$status_f_now %||% "___")
+term_yr    <- as.numeric(metadata$term_yr %||% 0)
+ssb_val    <- to_latex_caption(metadata$terminal_b_adj %||% "___")
+ssb_units  <- to_latex_caption(metadata$ssb_units %||% "___")
+ssb_name   <- to_latex_caption(metadata$ssb_name %||% "___")
+msy_val    <- to_latex_caption(metadata$val_ssb_msy %||% "___")
+f_val      <- to_latex_caption(metadata$terminal_f_adj %||% "___")
+f_name     <- to_latex_caption(metadata$f_name %||% "___")
+f_msy_val  <- to_latex_caption(metadata$val_f_msy %||% "___")
+
+# Clean the rho variables using your to_latex_caption function
+rho_ssb <- to_latex_caption("rho") # This will return the actual Greek symbol ρ
+rho_f   <- to_latex_caption("rho")
+
+# Logic for the Rho Adjustment sentence
+if (isTRUE(metadata$rho_adj_used)) {
+  rho_val_ssb <- metadata$rho_ssb_now %||% 0
+  rho_val_f   <- metadata$rho_f_now %||% 0
+  
+  rho_sentence <- glue::glue("Retrospective adjustments were made to the terminal year model results ({rho_ssb} = {rho_val_ssb}; {rho_f} = {rho_val_f}).")
+} else {
+  rho_sentence <- "Retrospective adjustments were not made to the model results because the retrospective pattern was minor."
+}
+
+
+# Build the final state of the stock text
+state_of_stock_text <- glue::glue("
+  Based on this updated assessment, the {spp_name} ({spp_latin}) \\
+  stock is {ssb_status} and {f_status}. {rho_sentence} \\
+  Spawning stock biomass (SSB) in {term_yr} was estimated to be \\
+  {ssb_val} {ssb_units}, which is {ssb_perc}% of the \\
+  biomass target ({ssb_name} = {msy_val} {ssb_units}). \\
+  The {term_yr} fully selected fishing mortality was estimated to be \\
+  {f_val}, which is {f_perc}% of the overfishing \\
+  threshold proxy ({f_name} = {f_msy_val}).
+")
+
+# Display result
+#print(state_of_stock_text)
+
+```
+
+```{r} 
+#| label: 'projections'
+#| warning: false 
+#| eval: true 
+#| include: false
+#| results: asis
+
+# PROJECTION TEXT
+# Calculate the projection span dynamically
+# This determines how many years out the forecast goes
+projection_span <- final_proj_yr - metadata$term_yr
+
+# Define the average year range used for model inputs
+# This aligns the window length with the projection length
+avg_start_yr <- metadata$term_yr - (projection_span - 1)
+avg_end_yr   <- metadata$term_yr
+
+# Build the Projection text using your metadata$proj_text (just paste it in your console and copy)
+# if there are parts you can automate - do it!
+# This one uses the null-coalescing operator to default to WHAM if model_type is missing
+projection_text <- glue::glue("
+  Short-term {projection_span}-year projections of biomass and catch were \\
+  performed through {final_proj_yr} using standard {metadata$model_type %||% 'WHAM'} \\
+  projections from the assessment model. The most recent {projection_span}-year \\
+  averages ({avg_start_yr}-{avg_end_yr}) of annual fishery selectivity, \\
+  maturity, and mean weight-at-age were used in the projections.
+")
+
+report_text <- list(
+  preamble   = preamble_text,
+  sos        = state_of_stock_text,
+  projection = projection_text
+)
+
+#print(to_latex_caption(metadata$cap_brp))
+```
+
+
+
+## Introduction
+
+`r report_text$preamble`
+
+## State of the Stock
+
+`r report_text$sos`
+
+```{r}
+#| echo: false
+#| label: tbl-catch
+#| tbl-cap: !expr to_latex_caption(metadata$cap_status)
+
+table_catch_status(output)
+```
+
+
+```{r}
+#| echo: false
+#| label: tbl-brp
+#| tbl-cap: !expr to_latex_caption(metadata$cap_brp)
+table_brp(dat = output)
+```
+
+
+
+
+## Projections
+
+`r report_text$projection`
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Extract and clean the caption string
+cap_text <- to_latex_caption(metadata$cap_proj)
+
+# Prepare the table object
+# We apply the caption internally to ensure LaTeX compatibility
+tab_out <- table_projections(output) |> 
+  gt::tab_caption(caption = cap_text)
+
+# Render output based on format
+if (knitr::is_latex_output()) {
+  # Print the raw LaTeX to the document
+  cat(gt::as_latex(tab_out))
+} else {
+  # Standard HTML display
+  tab_out
+}
+```
+
+\clearpage
+
+```{r}
+#| label: fig-ssb
+#| fig-cap: !expr to_latex_caption(metadata$cap_ssb)
+#| fig-pos: 'H'
+#| fig-height: 8
+#| fig-width: 7
+
+# Start with the base biomass plot
+plt_ssb <- stockplotr::plot_biomass(output)
+
+# Filter and add the previous assessment line
+plt_ssb <- plt_ssb + ggplot2::geom_line(
+    data = dplyr::filter(output, 
+                         module_name == "model_results", 
+                         label == "biomass", 
+                         era == "prev"),
+    ggplot2::aes(x = year, y = estimate, color = "Previous"),
+    linetype = "dashed", 
+    linewidth = 0.8
+  )
+
+# Check for Rho Adjusted SSB value
+if (!is.null(metadata$terminal_b_adj) && !is.na(metadata$terminal_b_adj)) {
+  
+  # Add point and annotation for Rho Adj
+  plt_ssb <- plt_ssb + 
+    ggplot2::geom_point(
+      data = data.frame(x = metadata$term_yr, y = metadata$terminal_b_adj),
+      ggplot2::aes(x = x, y = y, color = "Rho Adj"), 
+      size = 3
+    ) +
+    ggplot2::annotate(
+      "text", 
+      x = metadata$term_yr, 
+      y = metadata$terminal_b_adj, 
+      label = "Rho Adj", 
+      color = "red", 
+      vjust = -1.5
+    ) +
+    ggplot2::scale_color_manual(
+      name = "Assessment",
+      values = c("Current" = "black", "Previous" = "blue", "Rho Adj" = "red")
+    ) +
+    ggplot2::labs(
+      subtitle = "Current Assessment vs. Previous and Rho-Adjusted Terminal Year"
+    )
+
+} else {
+  
+  # Standard styling if no Rho Adj exists
+  plt_ssb <- plt_ssb + 
+    ggplot2::scale_color_manual(
+      name = "Assessment",
+      values = c("Current" = "black", "Previous" = "blue")
+    ) +
+    ggplot2::labs(
+      subtitle = "Current Assessment vs. Previous Assessment"
+    )
+}
+
+plt_ssb
+
+
+
+
+```
+
+
+```{r}
+#| label: fig-f
+#| fig-cap: !expr to_latex_caption(metadata$cap_f)
+#| fig-pos: 'H'
+#| fig-height: 8
+#| fig-width: 7
+
+# Start with the base F plot
+plt_f <- stockplotr::plot_fishing_mortality(output)
+
+# Filter and add the previous assessment line
+plt_f <- plt_f + ggplot2::geom_line(
+    data = dplyr::filter(output, 
+                         module_name == "model_results", 
+                         label == "fishing_mortality", 
+                         era == "prev"),
+    ggplot2::aes(x = year, y = estimate, color = "Previous"),
+    linetype = "dashed", 
+    linewidth = 0.8
+  )
+
+# Check for Rho Adjusted F value
+if (!is.null(metadata$terminal_f_adj) && !is.na(metadata$terminal_f_adj)) {
+  
+  # Add point and annotation for Rho Adj
+  plt_f <- plt_f + 
+    ggplot2::geom_point(
+      data = data.frame(x = metadata$term_yr, y = metadata$terminal_f_adj),
+      ggplot2::aes(x = x, y = y, color = "Rho Adj"), 
+      size = 3
+    ) +
+    ggplot2::annotate(
+      "text", 
+      x = metadata$term_yr, 
+      y = metadata$terminal_f_adj, 
+      label = "Rho Adj", 
+      color = "red", 
+      vjust = -1.5
+    ) +
+    ggplot2::scale_color_manual(
+      name = "Assessment",
+      values = c("Current" = "black", "Previous" = "blue", "Rho Adj" = "red")
+    ) +
+    ggplot2::labs(
+      subtitle = "Current Assessment vs. Previous and Rho-Adjusted Terminal Year"
+    )
+
+} else {
+  
+  # Standard styling if no Rho Adj exists
+  plt_f <- plt_f + 
+    ggplot2::scale_color_manual(
+      name = "Assessment",
+      values = c("Current" = "black", "Previous" = "blue")
+    ) +
+    ggplot2::labs(
+      subtitle = "Current Assessment vs. Previous Assessment"
+    )
+}
+
+plt_f
+
+```
+
+
+```{r}
+#| label: fig-fish
+#| fig-cap: !expr to_latex_caption(metadata$cap_fish)
+#| fig-pos: 'H'
+#| fig-height: 7
+#| fig-width: 7
+
+#plot_total_catch(dat = output)
+#or if you want to keep the legacy style
+plot_total_catch(dat = output, type = "bar")
+
+```
+
+
+```{r}
+#| label: fig-surveys
+#| fig-cap: !expr to_latex_caption(metadata$cap_surv)
+#| fig-pos: 'H'
+#| fig-height: 8.5
+#| fig-width: 7
+
+plot_survey_indices(dat = output, interactive = F)
+
+```
+
+
+
+```{r}
+#| label: fig-recr
+#| fig-cap: !expr to_latex_caption(metadata$cap_recr)
+#| fig-pos: 'H'
+#| fig-height: 6
+#| fig-width: 7
+
+#Recruitment - this one seems to work fine
+stockplotr::plot_recruitment(dat = output)
+
+
+
+
+
+
+```
