@@ -4,23 +4,23 @@ format: html
 execute:
   eval: false
 ---
-<div style="background: ghostwhite; 
-            padding: 10px; 
-            border: 2px solid lightgray; 
-            margin: 10px;">
+
+::: {style="background: ghostwhite;              padding: 10px;              border: 2px solid lightgray;              margin: 10px;"}
 # Objectives
+
 -   Walk through an example of a plot and table from {stockplotr}
 -   Learn about the value of the {stockplotr} R package
 -   Understand how to integrate {stockplotr} into an {asar}-based reporting workflow
 -   Understand how to add accessibility features to the report
-</div>
+:::
 
 # Introduction
+
 ## Icebreaker
 
 Welcome! Please open the [Day 3 communal notes doc](https://docs.google.com/document/d/1nVlmmZgp8vCHZKCMHnBm43bf-mtk7pSA1t2FLHEoyZA/edit?tab=t.vffehz79fm7y#heading=h.sfq3xaeehv64) and participate in the icebreaker exercise.
 
-::: {.callout-tip}
+::: callout-tip
 **Reminder**: For comments or questions, please raise your hand, or write them in the chat, *at any time*. Depending on our schedule, we may ask that you save larger questions for breaks.
 :::
 
@@ -81,7 +81,7 @@ This package is an ongoing process to gather contributions in order to expand th
 The following table contains figures and tables that are available in {stockplotr}:
 
 | Function | Description |
-|----------|-------------|
+|--------------------------------|----------------------------------------|
 | `plot_abundance_at_age()` | abundance-at-age |
 | `plot_biomass_at_age()` | biomass-at-age |
 | `plot_biomass()` | biomass time series |
@@ -99,7 +99,7 @@ The following table contains figures and tables that are available in {stockplot
 | `table_harvest_projection()`- *coming soon* | harvest projection table according to SAFE standards (to be expanded nationally) |
 | `tables_indices()`- *coming soon* | indices by fleet |
 
-Each automated function returns either a `ggplot2` object (figure) or `gt` object (table). This allows for further customization of the output if desired by using the notation you are familiar with. For a figure, you can continue to add onto the plot any other `ggplot2` function or extension using the plus (+) operator. For a table, please use the native pipe (|>) when adding additional formatting, rows, or other pieces to the object.
+Each automated function returns either a `ggplot2` object (figure) or `gt` object (table). This allows for further customization of the output if desired by using the notation you are familiar with. For a figure, you can continue to add onto the plot any other `ggplot2` function or extension using the plus (+) operator. For a table, please use the native pipe (\|\>) when adding additional formatting, rows, or other pieces to the object.
 
 ## Example Figure
 
@@ -128,10 +128,10 @@ Break for questions
 
 ### Customizing
 
-All figures will automatically identify any indexing variables in the data such as fleet, area, or sex. You can use the `group` and `facet` arguments to modify how these indexing variables are displayed in the figure. You can also modify other arguments such as `geom`, `ref_line`, and `relative` to change the appearance of the figure. 
+All figures will automatically identify any indexing variables in the data such as fleet, area, or sex. You can use the `group` and `facet` arguments to modify how these indexing variables are displayed in the figure. You can also modify other arguments such as `geom`, `ref_line`, and `relative` to change the appearance of the figure.
 
 #### Change the reference line to a specific value (e.g., 10)
-  
+
 In this example we are also telling the function which module to select in order to by-pass this step. We plan to remove grouping of some modules in the future.
 
 ```{r}
@@ -152,9 +152,9 @@ stockplotr::plot_spawning_biomass(
 ![](images/day3_ex_plt2_b.png)
 
 #### Plot relative spawning biomass and remove the reference line
-  
+
 Notice that you can remove the reference line by setting `ref_line = NULL`.
-  
+
 ```{r}
 stockplotr::plot_spawning_biomass(
   dat = petrale,
@@ -172,12 +172,11 @@ stockplotr::plot_spawning_biomass(
 
 ![](images/day3_ex_plt4.png)
 
-
 #### Customizations from {ggplot2}
-  
+
 In this example, we still are bypassing module selection and we are automatically extracting the reference line value from the data. However, now we are using this reference value to plot relative spawning biomass and changing the linewidth to 2 (an argument inherited from `ggplot2::geom_line()`) as well as adding a vertical reference line at 2005 to highlight some point in time. Both of these customizations use functionality from {ggplot2} that is not explicit in {stockplotr}!
-  
-::: {.callout-note}
+
+::: callout-note
 If you were plotting a scatterplot (`geom = 'point'`) or area plot (`geom = 'area'`), you could add arguments associated with `geom_point()` and `geom_area()`, respectively.
 :::
 
@@ -200,15 +199,15 @@ stockplotr::plot_spawning_biomass(
 
 ![](images/day3_ex_plt3_b.png)
 
-::: {.callout-tip}
+::: callout-tip
 The only extended arguments available are the ones found from the ggplot2::geom_XX() function. Thus, any indexed variables can not be changes such as color to fill. Please see the documentation for `ggplot2` geom functions for these additional arguments.
 :::
-
 
 ::: {.callout-note appearance="minimal"}
 Break for questions
 :::
 
+````{=html}
 <!-- 
 ::: {.callout-tip}
 Remember that figures return `ggplot2` objects, so we can make additional customization to these plots.
@@ -231,6 +230,7 @@ stockplotr::plot_spawning_biomass(
 ```
 
 ![](images/day3_ex_plt5_b.png) -->
+````
 
 ::: {.callout-note appearance="minimal"}
 Break for questions. We will be moving onto tables next.
@@ -240,8 +240,8 @@ Break for questions. We will be moving onto tables next.
 
 Run the following example table. The result is a fully report ready table showing landings over time. Remember that these are exported as `gt` objects and can be edited as such.
 
-::: {.callout-note}
-{stockplotr} uses the native pipe (|>), so if you decide to customize you table, please also use the native pipe to avoid errors.
+::: callout-note
+{stockplotr} uses the native pipe (\|\>), so if you decide to customize you table, please also use the native pipe to avoid errors.
 :::
 
 ```{r eval = FALSE}
@@ -278,6 +278,7 @@ stockplotr::table_landings(
 
 ![](images/day3_ex_table2.png)
 
+````{=html}
 <!-- or potentially highlight a specific line within the table:
 
 ```{r}
@@ -302,8 +303,9 @@ stockplotr::table_landings(
 ```
 
 ![](images/day3_ex_table3.png) -->
+````
 
-::: {.callout-tip}
+::: callout-tip
 Check out the [{stockplotr} cheatsheet](https://nmfs-ost.github.io/stockplotr/stockplotr_cheatsheet.pdf) to quickly reference the main concepts of this package!
 :::
 
@@ -317,10 +319,10 @@ You can export any table or plot along with their associated caption and alterna
 
 Each plot or table has the option to export it as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:
 
-- `ggplot2` or `gt` object
-- caption
-- alternative text (figures only)
-- LaTeX object (tables only)
+-   `ggplot2` or `gt` object
+-   caption
+-   alternative text (figures only)
+-   LaTeX object (tables only)
 
 ```{r}
 stockplotr::plot_spawning_biomass(
@@ -347,6 +349,7 @@ Break for questions
 :::
 
 Now, export the landings table:
+
 ```{r}
 stockplotr::table_landings(
   dat = petrale,
@@ -366,18 +369,19 @@ rda$caption
 rda$latex_table
 ```
 
-::: {.callout-important}
+::: callout-important
 We are working on finishing the exporting capability of `table_landings()` so that it can export multiple tables if the user inputs multiple converted model outputs (i.e., a list of `dat` objects).
 :::
 
-::: {.callout-tip}
+::: callout-tip
 We have designed two functions that allow you to automatically create all available figures and tables:
 
-- `save_all_plots()`
-- `html_all_figs_tables()`
+-   `save_all_plots()`
+-   `html_all_figs_tables()`
 :::
 
 <!-- move below to before custom figures/tables section? -->
+
 ::: {.callout-note appearance="minimal"}
 Break for questions
 :::
@@ -394,9 +398,11 @@ Each file will contain zero figures or tables. Instead, they will contain a stat
 
 You can add your figures and tables with two workflows:
 
-1. Running `asar::create_tables_doc()` and `asar::create_figures_doc()`
-  - If you fill in arguments that allow R to find your tables and figures, then it will place them into the respective tables and figures docs automatically.
-2. Adding your tables and figures manually to each doc.
+1.  Running `asar::create_tables_doc()` and `asar::create_figures_doc()`
+
+-   If you fill in arguments that allow R to find your tables and figures, then it will place them into the respective tables and figures docs automatically.
+
+2.  Adding your tables and figures manually to each doc.
 
 ### Option 1: Running `asar::create_tables_doc()`/`asar::create_figures_doc()`
 
@@ -408,8 +414,8 @@ To add figures, first ensure that your folder containing the figures is called "
 
 Then, there are only two arguments to fill out:
 
-1. `subdir`: The location where the *new* figures doc should be saved (we recommend your 'report' folder, so it overwrites the old, empty version)
-2. `figures_dir`: The location of your "figures" folder
+1.  `subdir`: The location where the *new* figures doc should be saved (we recommend your 'report' folder, so it overwrites the old, empty version)
+2.  `figures_dir`: The location of your "figures" folder
 
 ```{r}
 #| label: add-figures
@@ -432,22 +438,23 @@ Then, there will be at least two chunks for each figure. For each figure,
 
 **Chunk 2** will:
 
-* load an rda containing a figure
-* give the rda a specific name
-* save the figure, caption, and alternative text as separate objects
+-   load an rda containing a figure
+-   give the rda a specific name
+-   save the figure, caption, and alternative text as separate objects
 
 **Chunk 3** will:
 
-* display the figure
+-   display the figure
 
 #### Tables {#sec-rda-based-tab}
 
 Adding tables entails nearly the same process as described for figures. The only differences are:
 
-1. Tables will involve captions only, whereas figure require captions and alternative text
-2. Tables can be rotated or split across pages.
+1.  Tables will involve captions only, whereas figure require captions and alternative text
+2.  Tables can be rotated or split across pages.
 
 This is the code you *would* run to add tables to the {asar} tables doc, but [it is not yet functional.]{.mark}
+
 ```{r}
 #| label: add-tables
 #| eval: false
@@ -459,7 +466,7 @@ create_tables_doc(
   )
 ```
 
-::: {.callout-important}
+::: callout-important
 *Once we complete redevelopment of our pilot table (`table_landings()`)*, our workflow will be able to accommodate tables that are wide enough to require rotation into a landscape-view page OR splitting across pages. For more information, please see the ["Adding Custom Figures & Tables" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width).
 :::
 
@@ -473,15 +480,17 @@ create_tables_doc(
 
 #### Tables
 
-You can add a regularly-sized^[Again, for tables that require rotating or splitting across pages, please refer to the ["Adding Custom Tables & Figures" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width).] table/figure manually by following these main steps:
+You can add a regularly-sized[^1] table/figure manually by following these main steps:
 
-1. Create a code chunk
-2. Add your label and other chunk options
-3. Add code
-4. Write caption
-5. Add a page break between tables (optional but recommended)
+[^1]: Again, for tables that require rotating or splitting across pages, please refer to the ["Adding Custom Tables & Figures" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width).
 
-##### Direct coding-in-qmd table workflow 
+1.  Create a code chunk
+2.  Add your label and other chunk options
+3.  Add code
+4.  Write caption
+5.  Add a page break between tables (optional but recommended)
+
+##### Direct coding-in-qmd table workflow
 
 Example similar to that in the ["Adding Custom Tables & Figures" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#direct-coding-in-qmd-workflow-option-3-2):
 
@@ -518,19 +527,18 @@ your_table
 
 Then, add a pagebreak:
 
-```{r} 
+```{r}
 #| label: 'pgbreak'
 #| eval: false
 #| echo: true
 
 {{< pagebreak >}}
 
-``` 
+```
 
-::: {.callout-warning}
+::: callout-warning
 It will be important to add your captions and labels into a csv file when making your documents accessible. You will soon learn more about this in the the ["Adding accessibility features" section](#sec-a11y)!
 :::
-
 
 ##### Direct image-based table insertion workflow
 
@@ -540,7 +548,7 @@ Use the following notation to reference an external table as an image:
 
 `![Caption for my example table](example_table.png){fig-alt="This is the alternative text for my table", #tbl-example}`
 
-::: {.callout-note}
+::: callout-note
 Notice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. **Please make sure you add alternative text for image-based tables added in this way.**
 :::
 
@@ -588,7 +596,7 @@ your_figure
 
 ![](images/petrale_figure.png){fig-alt="Example of a figure produced with the 'Direct coding-in-qmd figure workflow' option for adding figures to asar reports."}
 
-::: {.callout-warning}
+::: callout-warning
 Even though you wrote alt text in the `fig-alt` area, **when you first render your report into a PDF, your alternative text will not show up in your document.** Strange, right?! **To ensure it shows up, refer to the ["Adding accessibility features" section](#sec-a11y)** (which we'll discuss in a moment).
 :::
 
@@ -602,27 +610,36 @@ Like tables, you can reference figures not made directly in code chunks. However
 
 Quarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:
 
-````{verbatim}
+```{verbatim}
 @tbl-example
-````
+```
+
 or
-````{verbatim}
+
+```{verbatim}
 @fig-example
-````
+```
 
 Adding an `@` symbol followed by the chunk label, or label of your table/figure, will create an interactive link that lets the reader navigate to that specific table/figure.
 
 <!-- ::: {.callout-note icon=false} -->
+
 <!-- ## Testing your understanding -->
 
 <!-- Which of the following describes how you can integrate {asar} and {stockplotr} into your reporting workflow? -->
 
 <!-- A) Generating 13+ assessment figures and tables in one go using a single function (`stockplotr::save_all_plots()`). -->
+
 <!-- B) Creating one specific figure (e.g., spawning biomass, using `stockplotr::plot_spawning_biomass()`). -->
+
 <!-- C) Building an {asar} report template with a model results file, which allows for automatic extraction of B/BMSY and other key quantities from the model output. -->
+
 <!-- D) Using {asar} to build a report template, without a converted model results file. -->
+
 <!-- E) Using the entire workflow to convert model results into a standardized format, generate all plots, and integrate them into an accessible report. -->
+
 <!-- F) All of the above. -->
+
 <!-- ::: -->
 
 <!-- Answer: F. -->
@@ -668,8 +685,9 @@ Enter `quarto render report/SAR_USWC_Petrale_sole_skeleton.qmd`
 
 # Adding accessibility features {#sec-a11y}
 
-::: {.callout-tip}
+::: callout-tip
 ## Congrats! You're almost there!
+
 You've made major progress towards completing your first report!
 :::
 
@@ -683,28 +701,23 @@ Notably, this function does *not* work on your skeleton .qmd file. Instead, it a
 
 **Here are the steps you must take before you run `asar::add_accessibility()`, and what will happen when we run it.**
 
-::: {.callout-tip}
+::: callout-tip
 `asar::add_accessibility()` essentially combines two separate functions that add tags (`asar::add_tagging()`) and alternative text (`asar::add_alttext()`) to reports. You can run these two functions individually, if you prefer (in the order above).
 :::
 
 ## Tagging
 
-::: columns
+::::: columns
 ::: {.column width="65%"}
-
 First, `asar::add_accessibility()` adds [**tags**](https://www.section508.gov/create/pdfs/common-tags-and-usage/) to your report.
 
 Tags are structural elements of PDFs. They are signals telling software which information are headers, images, tables, text, and so on. Tags allow people using technology like screen readers to logically navigate PDFs.
-
 :::
 
 ::: {.column width="35%"}
-
 ![](images/tag_example.png){fig-alt="Cartoon of a document with four features- header 1, header 2, paragraph text, and image- each with a tag labelling them."}
-
 :::
-:::
-
+:::::
 
 ::: {.callout-note appearance="minimal"}
 Break for questions
@@ -729,13 +742,10 @@ The file is set up like this:
 -   Column 3 ("caption") contains your caption.
 -   Column 4 ("alt_text") contains alternative text for figures. For tables, this column will be blank.
 
-+-------------+------------+-----------------------------+--------------------------------------+
-| label       | type       | caption                     | alt_text                             |
-+=============+============+=============================+======================================+
-| example_fig | figure     | Example caption for figure. | Example alternative text for figure. |
-+-------------+------------+-----------------------------+--------------------------------------+
-| example_tab | table      | Example caption for table.  |                                      |
-+-------------+------------+-----------------------------+--------------------------------------+
+| label | type | caption | alt_text |
+|-----------------|-----------------|-----------------|-----------------------|
+| example_fig | figure | Example caption for figure. | Example alternative text for figure. |
+| example_tab | table | Example caption for table. |  |
 
 : Format for csv containing table and figure captions and alternative text.
 
@@ -743,20 +753,20 @@ The file is set up like this:
 
 Your job is to:
 
-* *edit* existing entries for your figures already created with {stockplotr}. This entails [checking the accuracy, and writing the final component, of the existing alt text](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#your-to-do-list).
-* *add* entries for your custom figures.
+-   *edit* existing entries for your figures already created with {stockplotr}. This entails [checking the accuracy, and writing the final component, of the existing alt text](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#your-to-do-list).
+-   *add* entries for your custom figures.
 
 #### Editing existing entries {#sec-edit-exist-entries}
 
 Using the "label" column, find the row associated with your figure and inspect it.
 
-* You'll see that there's already some prewritten alt text (in the "alt_text" column) that includes data from the model results file. Now, **you must check this information for accuracy and update it where necessary** (especially if the default figures were modified).
+-   You'll see that there's already some prewritten alt text (in the "alt_text" column) that includes data from the model results file. Now, **you must check this information for accuracy and update it where necessary** (especially if the default figures were modified).
 
-  * This prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4): the relationship between the variables shown (i.e., what the figure is conveying). Since we can't program {stockplotr} to analyze the figure's meaning, **you must provide this crucial component**.
+    -   This prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4): the relationship between the variables shown (i.e., what the figure is conveying). Since we can't program {stockplotr} to analyze the figure's meaning, **you must provide this crucial component**.
 
-* If you see text that looks like a placeholder (e.g., "The x axis, showing the year, spans from B.start.year to B.end.year..."), that means that there was at least one instance where our tool failed to extract a specific value from the model results, calculate a key quantity (like the start year of a biomass plot- aka "B.start.year"), and substitute it into the placeholder.
+-   If you see text that looks like a placeholder (e.g., "The x axis, showing the year, spans from B.start.year to B.end.year..."), that means that there was at least one instance where our tool failed to extract a specific value from the model results, calculate a key quantity (like the start year of a biomass plot- aka "B.start.year"), and substitute it into the placeholder.
 
-::: {.callout-important}
+::: callout-important
 While we have extracted key quantities as accurately as possible, we cannot guarantee that each quantity will have been calculated perfectly. Input data varies widely. **It's your responsibility to check the accuracy of your figures' alt text.**
 :::
 
@@ -764,13 +774,15 @@ When you're satisfied, save the csv.
 
 #### Adding new entries
 
-* Make a new row.
-* For "label", take the "label" of your figure chunk.
-  * For figures [coded in chunks](#sec-code-in-qmd-fig), our example label would be "fig-custom1".
-  * For figures [added with markdown](#sec-image-based-fig)^[`![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}`] (i.e., premade pngs or jpgs), our example label would be "fig-example".
-* The type will be "figure".
-* The caption should be identical to the caption in your chunk (what you put in "fig-cap").
-* The "alt_text" will contain your alt text. See the "[Editing existing entries](#sec-edit-exist-entries)" section above, and the "[Achieve Greater Accessibility](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html)" vignette, for help writing alt text.
+-   Make a new row.
+-   For "label", take the "label" of your figure chunk.
+    -   For figures [coded in chunks](#sec-code-in-qmd-fig), our example label would be "fig-custom1".
+    -   For figures [added with markdown](#sec-image-based-fig)[^2] (i.e., premade pngs or jpgs), our example label would be "fig-example".
+-   The type will be "figure".
+-   The caption should be identical to the caption in your chunk (what you put in "fig-cap").
+-   The "alt_text" will contain your alt text. See the "[Editing existing entries](#sec-edit-exist-entries)" section above, and the "[Achieve Greater Accessibility](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html)" vignette, for help writing alt text.
+
+[^2]: `![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}`
 
 When you're satisfied, save the csv.
 
@@ -803,30 +815,31 @@ Now your PDF's figures have alt text! You can find and edit the alt text by foll
 
 ![3. In the 'Set alternate text' pop-up, verify that your images contain the expected alternative text and edit as necessary.](images/Check_alttext-3.png){fig-alt="Screenshot of a document opened in Adobe. The 'Set alternate text' pop-up shows where an example image's alternative text is located."}
 
-
-::: {.callout-tip}
+::: callout-tip
 Check out the ["Increasing Report Accessibility" vignette](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html), which contains all kinds of accessibility-related information related to alternative text, using acronyms, learning about the status of accessibility features in {asar} with relation to Section 508 standards, and more.
 :::
 
-::: {.callout-note icon=false}
+::: {.callout-note icon="false"}
 ## Testing your understanding
 
 You need to update the alt text for your biomass figure because your interpretation of the plot has changed. Where should you edit this plot's alt text?
 
-A) In the code chunk in the 09_figures.qmd file
-B) In the captions_alt_text.csv file
-C) In the YAML at the top of the skeleton .qmd file
-D) By right-clicking the figure in the RStudio "plots" pane
-
+A)  In the code chunk in the 09_figures.qmd file
+B)  In the captions_alt_text.csv file
+C)  In the YAML at the top of the skeleton .qmd file
+D)  By right-clicking the figure in the RStudio "plots" pane
 :::
 
 <!-- Answer: B. -->
+
 <!-- A identifies "Standard Quarto" thinking. While standard Quarto uses chunk options, {asar} uses the .csv as a single source of truth. When creating PDFs, alt text is taken from the csv-- not from the code chunk. -->
+
 <!-- C & D do not allow any way to edit alt text. -->
 
-
 <!-- ::: {.callout-note appearance="minimal"} -->
+
 <!-- 20 minute break for questions & practicing -->
+
 <!-- ::: -->
 
 {{< include ../snippets/a11y_exercises.qmd >}}
@@ -837,6 +850,17 @@ D) By right-clicking the figure in the RStudio "plots" pane
 
 We are working closely with Quarto developers to incorporate the accessibility features found in {asar} into the base Quarto software. This means that, in the future, you may not need to use `asar::add_tagging()`, `asar::add_alttext()`, or `asar::add_accessibility()` to add accessibility features to your report. Instead, you may be able to add these features directly within your .qmd files. With that said, we will make sure we maintain compatibility of reports throughout Quarto updates.
 
+Example:
+
+| **Current workflow** | **Potential future workflow** |
+|------------------------------------|:----------------------------------:|
+| 1. {stockplotr} creates csv with alt text and captions in "caption_alt_text.csv" | *Identical* |
+| 2. `asar::create_template()` creates figures and tables docs, with chunks that import alt text and captions from the csv file, save them as objects, and positions them in the chunk options ('fig-alt', 'fig-cap', 'tbl-cap') | *Identical* |
+| 3. User renders skeleton .qmd file | *Identical* |
+| 4. `asar::add_accessibility()` inserts captions and alt text from the csv directly into the LaTeX report file created during .qmd report rendering | *Unnecessary* |
+
+: Table comparing current vs. potential future workflow that could be used once Quarto developers incorporate the accessibility features found in {asar} into the base Quarto software.
+
 ## The Next Assessment Cycle
 
 While {asar} is ready for active use in the next assessment cycle, we are working on additional features to call the assessment from the previous cycle and update it for the new one. This will be the foundation of the workflow as assessments are produced year after year. The workflow presented in this workshop lays out the process for writing an assessment that has not been written yet using {asar} and/or the new standard guidelines.
@@ -845,21 +869,21 @@ We are open to suggestions to improve current and future functionality!
 
 ## Converter Compatibility
 
-We are planning to expand the `convert_output()` function in {stockplotr} to be compatible with all major U.S. assessment models and then some. In the near term, we plan to expand its functioning to 
+We are planning to expand the `convert_output()` function in {stockplotr} to be compatible with all major U.S. assessment models and then some. In the near term, we plan to expand its functioning to
 
-  - WHAM
-  - Rceattle
-  
+-   WHAM
+-   Rceattle
+
 However, there are many bespoke and additional models used by assessment scientists across the U.S. We want to include in the function. This will take a lot of resources, so we appreciate contributions to expand its functionality.
 
 # Questions, comments, feedback, and closing
 
-::: {.callout-tip}
+::: callout-tip
 Your colleagues have created some terrific stock assessment reports with {asar}. Check them out on our ["Example Reports" page](https://nmfs-ost.github.io/asar/articles/example_reports.html)!
 :::
 
 Please navigate to this [EasyRetro board](https://easyretro.io/publicboard/3kNnwubT8rdQRy0M4aakmbQakcG3/592d2360-e8e0-4587-9aea-a92474d73bd5) and tell us what you thought about today's workshop. Only 3 simple questions!
 
-* No account is necessary.
-* All feedback is anonymous unless you choose to add your name to your comment.
-* You can add a thumbs up, and comment, on others' comments.
+-   No account is necessary.
+-   All feedback is anonymous unless you choose to add your name to your comment.
+-   You can add a thumbs up, and comment, on others' comments.

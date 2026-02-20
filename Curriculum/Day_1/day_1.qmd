@@ -147,6 +147,10 @@ So, why should you Quarto to build reports?
 
 * Using a platform like Quarto *saves time and reduces errors*. If your data changes, you don't have to manually rerun your analysis and copy/paste the results. You just re-knit the document, and everything is updated automatically.
 
+::: {.callout-note}
+Quarto is both a publishing platform *and* an R package ({quarto}). The R package provides a way to interact with the Quarto platform using R code instead of the terminal. For example, you can render a Quarto document with `quarto::quarto_render(my_quarto_doc.qmd)` or by typing `quarto render my_quarto_doc.qmd` in the terminal.
+:::
+
 ## Components of Quarto reports
 
 ### YAML
@@ -313,7 +317,7 @@ Many people refer to surveys with nicknames or "informal" names that do not matc
 
 For example, the "Atlantic Surf Clam & Ocean Quahog Dredge" is sometimes called the "clam survey".
 
-`\newacronym{clam survey}{Clam Survey}{Atlantic Surf Clam & Ocean Quahog Dredge}`
+`\newacronym{clam survey}{Clam Survey}{Atlantic Surf Clam \& Ocean Quahog Dredge}`
 
 This text...
 
