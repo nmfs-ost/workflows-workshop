@@ -412,19 +412,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#sec-a11y" id="toc-sec-a11y" class="nav-link" data-scroll-target="#sec-a11y">Adding accessibility features</a>
   <ul class="collapse">
-  <li><a href="#add-tagging" id="toc-add-tagging" class="nav-link" data-scroll-target="#add-tagging">Add tagging</a></li>
-  <li><a href="#sec-add-alttext" id="toc-sec-add-alttext" class="nav-link" data-scroll-target="#sec-add-alttext">Add alternative text</a>
+  <li><a href="#tagging" id="toc-tagging" class="nav-link" data-scroll-target="#tagging">Tagging</a></li>
+  <li><a href="#sec-add-alttext" id="toc-sec-add-alttext" class="nav-link" data-scroll-target="#sec-add-alttext">Alternative text</a>
   <ul class="collapse">
   <li><a href="#look-at-your-alt-text-csv" id="toc-look-at-your-alt-text-csv" class="nav-link" data-scroll-target="#look-at-your-alt-text-csv">Look at your alt text csv</a></li>
   <li><a href="#update-the-csv" id="toc-update-the-csv" class="nav-link" data-scroll-target="#update-the-csv">Update the csv</a></li>
   </ul></li>
-  <li><a href="#add-alt-text-to-your-reports-images" id="toc-add-alt-text-to-your-reports-images" class="nav-link" data-scroll-target="#add-alt-text-to-your-reports-images">Add alt text to your report’s images</a></li>
+  <li><a href="#add-tagging-and-alt-text-to-your-report" id="toc-add-tagging-and-alt-text-to-your-report" class="nav-link" data-scroll-target="#add-tagging-and-alt-text-to-your-report">Add tagging and alt text to your report</a>
+  <ul class="collapse">
+  <li><a href="#check-the-tags" id="toc-check-the-tags" class="nav-link" data-scroll-target="#check-the-tags">Check the tags</a></li>
+  <li><a href="#check-the-alt-text" id="toc-check-the-alt-text" class="nav-link" data-scroll-target="#check-the-alt-text">Check the alt text</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#sec-future" id="toc-sec-future" class="nav-link" data-scroll-target="#sec-future">Preparing for the Future</a>
   <ul class="collapse">
   <li><a href="#changes-to-quarto" id="toc-changes-to-quarto" class="nav-link" data-scroll-target="#changes-to-quarto">Changes to Quarto</a></li>
   <li><a href="#the-next-assessment-cycle" id="toc-the-next-assessment-cycle" class="nav-link" data-scroll-target="#the-next-assessment-cycle">The Next Assessment Cycle</a></li>
-  <li><a href="#converter-compatability" id="toc-converter-compatability" class="nav-link" data-scroll-target="#converter-compatability">Converter Compatability</a></li>
+  <li><a href="#converter-compatibility" id="toc-converter-compatibility" class="nav-link" data-scroll-target="#converter-compatibility">Converter Compatibility</a></li>
   </ul></li>
   <li><a href="#questions-comments-feedback-and-closing" id="toc-questions-comments-feedback-and-closing" class="nav-link" data-scroll-target="#questions-comments-feedback-and-closing">Questions, comments, feedback, and closing</a></li>
   </ul>
@@ -1359,7 +1363,7 @@ Warning
 </section>
 <section id="render-your-first-report-draft" class="level1">
 <h1>Render your first report draft!</h1>
-<p>Open your skeleton qmd file, then render the report.</p>
+<p>Open your skeleton .qmd file, then render the report.</p>
 <p>You can render a report in three ways:</p>
 <section id="in-the-r-console" class="level2">
 <h2 class="anchored" data-anchor-id="in-the-r-console">In the R console</h2>
@@ -1373,7 +1377,7 @@ Warning
 </section>
 <section id="with-the-rstudio-render-button" class="level2">
 <h2 class="anchored" data-anchor-id="with-the-rstudio-render-button">With the RStudio “render” button</h2>
-<p>Open the skeleton.qmd file. Then, in the program pane, press the “render” button:</p>
+<p>Open the skeleton .qmd file. Then, in the program pane, press the “render” button:</p>
 <p><img src="images/render_button.png" class="img-fluid" alt="Screenshot of the RStudio console with a red rectangle highlighting the location of the 'Render' button."></p>
 </section>
 <section id="in-the-terminal" class="level2">
@@ -1466,33 +1470,26 @@ Warning
 </div>
 <p>While your rendered report looks superb, it’s probably missing two major components: <strong>tags and alternative text</strong>.</p>
 <p>If you made an HTML-based report, these features would most likely be in your document. But since we’re prioritizing PDFs, there are a few more steps to take before your document will significantly more accessible than it is now. This means that, <strong>to achieve compliance with Section 508 criteria, you must complete a couple more tasks</strong>.</p>
-<section id="add-tagging" class="level2">
-<h2 class="anchored" data-anchor-id="add-tagging">Add tagging</h2>
-<p>In your ‘report’ folder, you’ll find a new file with a .tex filetype: ‘SAR_USWC_Petrale_sole_skeleton.tex’ (or something similar). This file is a LaTex-based version of your rendered skeleton qmd file. It’s also where we add our remaining accessibility features, since Quarto does not yet offer that functionality within its qmd files.</p>
-<p><a href="https://www.section508.gov/create/pdfs/common-tags-and-usage/"><strong>Tags</strong></a> are structural elements of PDFs. They are signals telling software which information are headers, images, tables, text, and so on. Tags allow people using technology like screen readers to logically navigate PDFs.</p>
-<p>We’ll use the <code>asar::add_tagging()</code> function to add tags.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">add_tagging</span>(</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="st">"SAR_USWC_Petrale_sole_skeleton.tex"</span>, <span class="co"># your .tex report file</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">dir =</span> <span class="st">"report"</span>, <span class="co"># the folder containing the .tex file</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">compile =</span> <span class="cn">FALSE</span> <span class="co"># whether the .tex file should be compiled after tagging. We'll set it to FALSE for now</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Now your PDF is tagged! If you compiled your .tex file, it’d look something like this. The tags are on the right side of the PDF viewer.</p>
-<p><img src="images/tagged_pdf.png" class="img-fluid" alt="Screenshot of an example PDF-based, tagged report. The PDF is opened in Adobe and tags for the Table of Contents are shown on the right side of the screen."></p>
-<div class="callout callout-style-default callout-warning callout-titled">
+<p>We will use a single function to add these features to our reports: <code>asar::add_accessibility()</code>.</p>
+<p>Notably, this function does <em>not</em> work on your skeleton .qmd file. Instead, it acts on a new file in your ‘report’ folder: a LaTex-based version of your rendered skeleton .qmd file created when you rendered that skeleton .qmd file. It will have a .tex file extension and will be titled something like ‘SAR_USWC_Petrale_sole_skeleton.tex’. It’s where we add our remaining accessibility features because Quarto does not yet offer that functionality within its .qmd files.</p>
+<p><strong>Here are the steps you must take before you run <code>asar::add_accessibility()</code>, and what will happen when we run it.</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Default alt text should be updated
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you stop here (i.e., you don’t add your own alt text), this function will add the image paths as alt text. We’ll show you how to add your <em>intended</em> alt text in <a href="@sec-add-alttext">the next step</a>.</p>
+<p><code>asar::add_accessibility()</code> essentially combines two separate functions that add tags (<code>asar::add_tagging()</code>) and alternative text (<code>asar::add_alttext()</code>) to reports. You can run these two functions individually, if you prefer (in the order above).</p>
 </div>
 </div>
+<section id="tagging" class="level2">
+<h2 class="anchored" data-anchor-id="tagging">Tagging</h2>
+<p>First, <code>asar::add_accessibility()</code> adds <a href="https://www.section508.gov/create/pdfs/common-tags-and-usage/"><strong>tags</strong></a> to your report.</p>
+<p>Tags are structural elements of PDFs. They are signals telling software which information are headers, images, tables, text, and so on. Tags allow people using technology like screen readers to logically navigate PDFs.</p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1505,8 +1502,11 @@ Warning
 </div>
 </section>
 <section id="sec-add-alttext" class="level2">
-<h2 class="anchored" data-anchor-id="sec-add-alttext">Add alternative text</h2>
-<p>You must add alternative text (“alt text”) for images in a separate csv if you added figures using any of the workflows described above.</p>
+<h2 class="anchored" data-anchor-id="sec-add-alttext">Alternative text</h2>
+<p>You must add <a href="https://www.section508.gov/create/alternative-text/">alternative text</a> (“alt text”) for images in a separate csv if you added figures using any of the workflows described above. Alt text is a description of your figure that can be read aloud by a screen reader and should answer this essential question:</p>
+<blockquote class="blockquote">
+<p>What is this image conveying?</p>
+</blockquote>
 <p>Since you’ve used {stockplotr} to make some figures, you’ve already completed the first step: making a csv that will contain your alt text.</p>
 <section id="look-at-your-alt-text-csv" class="level3">
 <h3 class="anchored" data-anchor-id="look-at-your-alt-text-csv">Look at your alt text csv</h3>
@@ -1561,7 +1561,10 @@ Warning
 <h4 class="anchored" data-anchor-id="sec-edit-exist-entries">Editing existing entries</h4>
 <p>Using the “label” column, find the row associated with your figure and inspect it.</p>
 <ul>
-<li><p>You’ll see that there’s already some prewritten alt text (in the “alt_text” column) that includes data from the model results file. Now, <strong>you must check this information for accuracy and update it where necessary</strong> (especially if the default figures were modified).</p></li>
+<li><p>You’ll see that there’s already some prewritten alt text (in the “alt_text” column) that includes data from the model results file. Now, <strong>you must check this information for accuracy and update it where necessary</strong> (especially if the default figures were modified).</p>
+<ul>
+<li>This prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4): the relationship between the variables shown (i.e., what the figure is conveying). Since we can’t program {stockplotr} to analyze the figure’s meaning, <strong>you must provide this crucial component</strong>.</li>
+</ul></li>
 <li><p>If you see text that looks like a placeholder (e.g., “The x axis, showing the year, spans from B.start.year to B.end.year…”), that means that there was at least one instance where our tool failed to extract a specific value from the model results, calculate a key quantity (like the start year of a biomass plot- aka “B.start.year”), and substitute it into the placeholder.</p></li>
 </ul>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -1577,9 +1580,6 @@ Important
 <p>While we have extracted key quantities as accurately as possible, we cannot guarantee that each quantity will have been calculated perfectly. Input data varies widely. <strong>It’s your responsibility to check the accuracy of your figures’ alt text.</strong></p>
 </div>
 </div>
-<ul>
-<li>This prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4): the relationship between the variables shown (i.e., what the figure is conveying). Since we can’t program {stockplotr} to analyze the figure’s meaning, <strong>you must provide this crucial component</strong>.</li>
-</ul>
 <p>When you’re satisfied, save the csv.</p>
 </section>
 <section id="adding-new-entries" class="level4">
@@ -1599,17 +1599,24 @@ Important
 </section>
 </section>
 </section>
-<section id="add-alt-text-to-your-reports-images" class="level2">
-<h2 class="anchored" data-anchor-id="add-alt-text-to-your-reports-images">Add alt text to your report’s images</h2>
-<p>Now, we’ll use the <code>asar::add_alttext()</code> function to add the alt text into the report’s .tex file.</p>
+<section id="add-tagging-and-alt-text-to-your-report" class="level2">
+<h2 class="anchored" data-anchor-id="add-tagging-and-alt-text-to-your-report">Add tagging and alt text to your report</h2>
+<p>Now, we’re ready to use the <code>asar::add_accessibility()</code> function to add tags and alt text into the report’s .tex file.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_alttext</span>(</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"SAR_USWC_Petrale_sole_skeleton.tex"</span>, <span class="co"># your .tex report file</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">dir =</span> <span class="st">"report"</span>, <span class="co"># the folder containing the .tex file</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">alttext_csv =</span> <span class="st">"captions_alt_text.csv"</span>, <span class="co"># the filename of your csv with captions and alt text, located in the working directory</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">compile =</span> <span class="cn">TRUE</span> <span class="co"># now we'll compile the PDF</span></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_accessibility</span>(</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"SAR_USWC_Petrale_sole_skeleton.tex"</span>, <span class="co"># your .tex report file</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">dir =</span> <span class="st">"report"</span>, <span class="co"># the folder containing the .tex file</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">alttext_csv =</span> <span class="st">"captions_alt_text.csv"</span>, <span class="co"># the filename of your csv with captions and alt text, located in the working directory</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">compile =</span> <span class="cn">TRUE</span> <span class="co"># we'll compile the PDF</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<section id="check-the-tags" class="level3">
+<h3 class="anchored" data-anchor-id="check-the-tags">Check the tags</h3>
+<p>Now your PDF is tagged! Once you <a href="https://oit.colorado.gov/standards-policies-guides/a-guide-to-accessible-web-services/accessible-documents-toolkit/how-to-adobe-acrobat-tags-tree">open the tag menu</a>, you’ll see the tags on the right side of the PDF viewer.</p>
+<p><img src="images/tagged_pdf.png" class="img-fluid" alt="Screenshot of an example PDF-based, tagged report. The PDF is opened in Adobe and tags for the Table of Contents are shown on the right side of the screen."></p>
+</section>
+<section id="check-the-alt-text" class="level3">
+<h3 class="anchored" data-anchor-id="check-the-alt-text">Check the alt text</h3>
 <p>Now your PDF’s figures have alt text! You can find and edit the alt text by following these steps:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1639,7 +1646,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The function <a href="https://github.com/nmfs-ost/asar/blob/main/R/add_accessibility.R"><code>asar::add_accessibility()</code></a> performs the same tasks as <code>asar::add_tagging()</code> + <code>asar::add_alttext()</code> combined! Here, we showed the latter functions to explain how they work, but you can use <code>asar::add_accessibility()</code> once you’re comfortable with these steps.</p>
+<p>Check out the <a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html">“Increasing Report Accessibility” vignette</a>, which contains all kinds of accessibility-related information related to alternative text, using acronyms, learning about the status of accessibility features in {asar} with relation to Section 508 standards, and more.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -1664,31 +1671,11 @@ Tip
 <!-- Answer: B. -->
 <!-- A identifies "Standard Quarto" thinking. While standard Quarto uses chunk options, {asar} uses the .csv as a single source of truth. When creating PDFs, alt text is taken from the csv-- not from the code chunk. -->
 <!-- C & D do not allow any way to edit alt text. -->
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Check out the <a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html">“Increasing Report Accessibility” vignette</a>, which contains all kinds of accessibility-related information related to alternative text, using acronyms, learning about the status of accessibility features in {asar} with relation to Section 508 standards, and more.</p>
-</div>
-</div>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>20 minute break for questions &amp; practicing</p>
-</div>
-</div>
-</div>
+<!-- ::: {.callout-note appearance="minimal"} -->
+<!-- 20 minute break for questions & practicing -->
+<!-- ::: -->
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1697,7 +1684,7 @@ Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>If you haven’t already, add tags to your pdf by running <code>add_tagging()</code> with the appropriate arguments (including <code>compile</code> set to TRUE). Then, open up the report and ensure it was tagged.</p></li>
@@ -1714,19 +1701,20 @@ Tip
 </div>
 </section>
 </section>
+</section>
 <section id="sec-future" class="level1">
 <h1>Preparing for the Future</h1>
 <section id="changes-to-quarto" class="level2">
 <h2 class="anchored" data-anchor-id="changes-to-quarto">Changes to Quarto</h2>
-<p>We are working closely with Quarto developers to incorporate the accessibility featrues found in <code>asar</code> into the base Quarto software. This means that, in the future, you may not need to use <code>asar::add_tagging()</code> and <code>asar::add_alttext()</code> to add accessibility features to your report. Instead, you may be able to add these features directly within your .qmd files. With that said, we will make sure we maintain compatibility of reports throughout quarto updates.</p>
+<p>We are working closely with Quarto developers to incorporate the accessibility features found in {asar} into the base Quarto software. This means that, in the future, you may not need to use <code>asar::add_tagging()</code>, <code>asar::add_alttext()</code>, or <code>asar::add_accessibility()</code> to add accessibility features to your report. Instead, you may be able to add these features directly within your .qmd files. With that said, we will make sure we maintain compatibility of reports throughout Quarto updates.</p>
 </section>
 <section id="the-next-assessment-cycle" class="level2">
 <h2 class="anchored" data-anchor-id="the-next-assessment-cycle">The Next Assessment Cycle</h2>
 <p>While {asar} is ready for active use in the next assessment cycle, we are working on additional features to call the assessment from the previous cycle and update it for the new one. This will be the foundation of the workflow as assessments are produced year after year. The workflow presented in this workshop lays out the process for writing an assessment that has not been written yet using {asar} and/or the new standard guidelines.</p>
 <p>We are open to suggestions to improve current and future functionality!</p>
 </section>
-<section id="converter-compatability" class="level2">
-<h2 class="anchored" data-anchor-id="converter-compatability">Converter Compatability</h2>
+<section id="converter-compatibility" class="level2">
+<h2 class="anchored" data-anchor-id="converter-compatibility">Converter Compatibility</h2>
 <p>We are planning to expand the <code>convert_output()</code> function in {stockplotr} to be compatible with all major U.S. assessment models and then some. In the near term, we plan to expand its functioning to</p>
 <ul>
 <li>WHAM</li>
