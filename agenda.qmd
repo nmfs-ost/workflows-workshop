@@ -20,6 +20,8 @@ format: html
 
 ## Day 2
 
+(See @sec-nefsc for the NEFSC Workshop adjustment)
+
 | Time      | Topic                     |
 |-----------|---------------------------|
 | 0:00-0:15 |[ Introduction & Icebreaker](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#introduction) |
@@ -51,3 +53,21 @@ format: html
 | 2:15-2:40 | [Creating accessible documents](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#sec-a11y) |
 | 2:40-2:50 | [Preparing for the Future](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#sec-future) |
 | 2:50-3:00 | [Final remarks and questions](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html#questions-comments-feedback-and-closing) |
+
+
+# NEFSC Day 2 {#sec-nefsc}
+
+| Time      | Topic                     |
+|-----------|---------------------------|
+| 0:00-0:15 |[ Introduction & Icebreaker](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#introduction) |
+| 0:15-0:35 | [{asar}: installation and overview](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#installation) |
+| 0:35-1:05 | [asar::create_template()](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#asarcreate_template) |
+| **1:05-1:25** | **Break** |
+| 1:25-1:35 | [Mid-session icebreaker](https://docs.google.com/document/d/1nVlmmZgp8vCHZKCMHnBm43bf-mtk7pSA1t2FLHEoyZA/edit?tab=t.0#heading=h.lwix6dbx3lr8) |
+| 1:35-1:50 | [stockplotr::convert_output()](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#stockplotrconvert_output) |
+| 1:50-2:10 | [Advanced workflow](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#advanced-asar-workflow) |
+| **2:10-2:20** | **Break for questions** |
+| 2:20-2:25 | [Mid-session icebreaker](https://docs.google.com/document/d/1nVlmmZgp8vCHZKCMHnBm43bf-mtk7pSA1t2FLHEoyZA/edit?tab=t.0#heading=h.lwix6dbx3lr8) |
+| 2:25-2:45 | [Adaptation of NEFSC Template](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#adaptation-of-nefsc-template-to-asar) |
+| 2:45-2:55 | [Standard Guidelines Discussion](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#noaa-standard-assessment-report-guidelines) |
+| 2:55-3:00 | [Wrap-up](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#summary-10-mins) |
