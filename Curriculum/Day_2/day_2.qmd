@@ -492,7 +492,7 @@ Break for questions & practicing
 {{< include ../snippets/complex_asar_exercises.qmd >}}
 
 
-{{< include ../snippers/nefsc_transition.qmd >}}
+{{< include ../snippets/nefsc_transition.qmd >}}
   
 # NOAA Standard Assessment Report Guidelines
 
