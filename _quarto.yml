@@ -1,5 +1,8 @@
 project: 
   type: website
+  render:
+    - "*.qmd" # Render all qmd files in the root
+    - "!resources/ExportLegacyNEFSCtoASARproject" # Exclude this folder from rendering
 
 website: 
   page-navigation: true
