@@ -499,7 +499,6 @@ Use the following code to download files into your working directory for the nex
 
 ```{r}
 #| eval: false
-#| echo: false
 get_nefsc_files <- function(dir){
   NEFSCtoASAR_folder <- file.path(dir, "ExportLegacyNEFSCtoASARproject")
   testStocks_folder <- file.path(NEFSCtoASAR_folder, "testStocks")
@@ -576,7 +575,6 @@ The following steps will guide you through how to adapt the asar workflow and te
   
 ```{r}
 #| eval: false
-#| echo: false
 file.copy(
   from = list.files(file.path(getwd(), "ExportLegacyNEFSCtoASARproject", "ASARreportFiles"), full.names = TRUE),
   to = file.path(getwd(), "report"),
@@ -589,7 +587,6 @@ file.copy(
   
 ```{r}
 #| eval: false
-#| echo: false
 fs::file_move(
   file.path(getwd(), "report", "in-header.tex"),
   file.path(getwd(), "report", "support_files", "in-header.tex")
