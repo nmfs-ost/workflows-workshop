@@ -104,7 +104,7 @@ fs::file_move(
 
   4. change paths at the top of report/preamble.R
 
-  5. Add 
+  5. Add to the yaml in the skeleton.qmd
   
 ```
 execute:
@@ -112,9 +112,9 @@ execute:
   message: false
   warning: false
 ```
-      to the yaml in the skeleton.qmd
 
-  6. Delete lines 66 - 71 
+  6. Delete lines 66 - 71 from the skeleton and *render*.
+
     # load converted output from stockplotr::convert_output()
     load(fname)
     # Call reference points and quantities below
@@ -122,6 +122,6 @@ execute:
       dplyr::mutate(estimate = as.numeric(estimate),
         uncertainty = as.numeric(uncertainty)) 
         
-    from the skeleton and *render*.
+    
 
 :::
