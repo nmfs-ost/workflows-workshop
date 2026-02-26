@@ -1,6 +1,4 @@
-::: {.callout-tip collapse="true"}
-
-# Adaptation of NEFSC Template to asar
+### Adaptation of NEFSC Template to {asar}
 
 Dan Hennen, the NEFSC representative on the workflows steering committee, has designed a sleek workflow to help aid the transition from the typical management track assessment to NOAA standard guidelines. The standard guidelines executive summary mimics closely the current management track reports, so here we will automate the executive summary in this section of the report.
 
@@ -76,7 +74,7 @@ get_nefsc_files <- function(dir){
 get_nefsc_files(getwd())
 ```
 
-The following steps will guide you through how to adapt the asar workflow and template and migrate the current content in your documents to the new ones:
+The following steps will guide you through how to adapt the {asar} workflow and template and migrate the current content in your documents to the new ones:
 
   1. Change paths in TestMoreStocksReportOnly.R and source it.
   
@@ -92,7 +90,7 @@ file.copy(
 )
 ```
 
-  3. Move in-header.tex to report/support_files and overwrite (this just adds package float)
+  3. Move in-header.tex to report/support_files and overwrite (this just adds the LaTeX package {float})
   
 ```{r}
 #| eval: false
@@ -102,9 +100,9 @@ fs::file_move(
 )
 ```
 
-  4. change paths at the top of report/preamble.R
+  4. Change paths at the top of report/preamble.R
 
-  5. Add to the yaml in the skeleton.qmd
+  5. Add to the yaml in the skeleton.qmd:
   
 ```
 execute:
@@ -115,13 +113,11 @@ execute:
 
   6. Delete lines 66 - 71 from the skeleton and *render*.
 
-    # load converted output from stockplotr::convert_output()
-    load(fname)
-    # Call reference points and quantities below
-    output <- out_new |>
-      dplyr::mutate(estimate = as.numeric(estimate),
-        uncertainty = as.numeric(uncertainty)) 
-        
-    
-
-:::
+```
+# load converted output from stockplotr::convert_output()
+load(fname)
+# Call reference points and quantities below
+output <- out_new |>
+  dplyr::mutate(estimate = as.numeric(estimate),
+    uncertainty = as.numeric(uncertainty)) 
+```
