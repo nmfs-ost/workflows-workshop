@@ -76,7 +76,7 @@ get_nefsc_files(getwd())
 
 The following steps will guide you through how to adapt the {asar} workflow and template and migrate the current content in your documents to the new ones:
 
-  1. Change paths in TestMoreStocksReportOnly.R and source it.
+  1. Change paths in TestMoreStocksReportOnly.R and source it (run all the code in the file).
   
   2. Copy the 3 files in ASARreportFiles and paste them into the report directory made by step 1 (and overwrite). 
   
@@ -100,9 +100,11 @@ fs::file_move(
 )
 ```
 
-  4. Change paths at the top of report/preamble.R
+  4. Change paths at the top of report/preamble.R.
+  
+  * For the third line (starts with `load`), the example rda file ("Black_Sea_Bass2024.rda") will probably be in your working directory.
 
-  5. Add to the yaml in the skeleton.qmd:
+  5. Add the following code to the yaml in the skeleton.qmd (probably named "sar_N_Black_Sea_Bass_skeleton.qmd):
   
 ```
 execute:
@@ -111,7 +113,7 @@ execute:
   warning: false
 ```
 
-  6. Delete lines 66 - 71 from the skeleton and *render*.
+  6. From the skeleton, delete lines 70-75 (before step 5, lines 66-71) and *render*.
 
 ```
 # load converted output from stockplotr::convert_output()
