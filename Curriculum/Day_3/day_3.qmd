@@ -18,7 +18,7 @@ execute:
 
 ## Icebreaker
 
-Welcome! Please open the [Day 3 communal notes doc](https://docs.google.com/document/d/1nVlmmZgp8vCHZKCMHnBm43bf-mtk7pSA1t2FLHEoyZA/edit?tab=t.vffehz79fm7y#heading=h.sfq3xaeehv64) and participate in the icebreaker exercise.
+Welcome! Please open the [Day 3 communal notes doc](https://docs.google.com/document/d/1mHPDuGS8V-fdb_eKJXPPV332lRBQwEViLxcVVOO1ong/edit?tab=t.vffehz79fm7y#heading=h.lwix6dbx3lr8) and participate in the icebreaker exercise.
 
 ::: callout-tip
 **Reminder**: For comments or questions, please raise your hand, or write them in the chat, *at any time*. Depending on our schedule, we may ask that you save larger questions for breaks.
@@ -30,7 +30,7 @@ Break for questions
 
 ## Materials for today's lesson
 
--   [Day 3 communal notes doc](https://docs.google.com/document/d/1nVlmmZgp8vCHZKCMHnBm43bf-mtk7pSA1t2FLHEoyZA/edit?tab=t.vffehz79fm7y#heading=h.sfq3xaeehv64)
+-   [Day 3 communal notes doc](https://docs.google.com/document/d/1mHPDuGS8V-fdb_eKJXPPV332lRBQwEViLxcVVOO1ong/edit?tab=t.vffehz79fm7y#heading=h.lwix6dbx3lr8)
     -   Contains resources (from us and you!) and areas for note-taking
 -   [Sample data](https://github.com/nmfs-ost/asar/blob/main/inst/extdata/Report.sso)
     -   Sample model output data for coding demonstrations
