@@ -338,7 +338,7 @@ stockplotr::plot_spawning_biomass(
 Let's explore the rda's components.
 
 ```{r}
-load("figures/spawning.biomass_figure.rda")
+load("figures/spawning_biomass_figure.rda")
 rda$figure
 rda$caption
 rda$alt_text
@@ -368,10 +368,6 @@ rda$table
 rda$caption
 rda$latex_table
 ```
-
-::: callout-important
-We are working on finishing the exporting capability of `table_landings()` so that it can export multiple tables if the user inputs multiple converted model outputs (i.e., a list of `dat` objects).
-:::
 
 ::: callout-tip
 We have designed two functions that allow you to automatically create all available figures and tables:
