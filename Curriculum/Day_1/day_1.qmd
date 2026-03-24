@@ -309,11 +309,11 @@ You can edit the glossary by altering, adding, or removing entries in the "repor
 
 First, check if the glossary contains your acronym; if it doesn't, you can edit the file and add it yourself.
 
-Once your acronym is in the glossary, find your acronym in your report and encase it in curly brackets ({}), with "\gls" preceding it. For example, to indicate "ABC" is an acronym, you would write `\gls{ABC}`. Use this notation each time you use the acronym in your text.
+Once your acronym is in the glossary, find your acronym in your report and encase it in curly brackets ({}), with "\gls" preceding it. For example, to indicate "ABC" is an acronym, you would write `\gls{abc}`. Use this notation each time you use the acronym in your text.
 
 Your text will look like this:
 
-> This is the first instance of `\gls{ABC}`. Here, `\gls{ABC}` is used a second time.
+> This is the first instance of `\gls{abc}`. Here, `\gls{abc}` is used a second time.
 
 And it will render like this:
 
@@ -383,11 +383,6 @@ True or False: If you define a variable (e.g., x <- 10) in the R console while y
 :::
 
 <!-- Answer: False. Each Quarto document must be self-contained. Quarto starts a fresh, empty R session every time it renders. The state of your R console is not automatically part of the document. -->
-
-
-::: {.callout-note appearance="minimal"}
-20 minute break for questions & practicing
-:::
 
 {{< include ../snippets/markdown_exercises.qmd >}}
 
