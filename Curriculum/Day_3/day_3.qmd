@@ -542,7 +542,7 @@ We don't recommended adding tables as images, since it significantly reduces the
 
 Use the following notation to reference an external table as an image:
 
-`![Caption for my example table](example_table.png){fig-alt="This is the alternative text for my table", #tbl-example}`
+`![Caption for my example table](example_table.png){fig-alt="This is the alternative text for my table" #tbl-example}`
 
 ::: callout-note
 Notice how there is alternative text added to this method of adding a table. In this scenario, the table is recognized as an image and thus would NOT pass accessibility checks. **Please make sure you add alternative text for image-based tables added in this way.**
