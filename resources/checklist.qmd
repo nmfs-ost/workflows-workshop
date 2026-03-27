@@ -92,6 +92,18 @@ We recommend installing the full {tinytex} bundle to ensure that all LaTeX packa
 pak::pkg_install("rstudio/tinytex")
 tinytex::install_tinytex(bundle = "TinyTeX-2")
 ```
+::: callout-tip
+To test your `TinyTeX` setup, you can save the following code in a Quarto file ("test.qmd") and hit Render. If it renders, that's a good sign! If you get an error, you may have an issue with your `TinyTeX` installation:
+
+````
+---
+title: "TinyTeX Test"
+format: pdf
+---
+
+Sample text to test if your Quarto file rendered into a PDF.
+````
+:::
 
 7. Explore {asar} and {stockplotr} websites
 
