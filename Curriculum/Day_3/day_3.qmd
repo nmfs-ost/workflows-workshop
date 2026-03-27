@@ -43,9 +43,22 @@ Break for questions
 
 # Introduction to {stockplotr}
 
-## Convert output (if necessary)
+## Import converted model results
 
-First, you'll need to convert your model results using the same workflow covered yesterday: `stockplotr::convert_output()`.
+First, you'll need to import a set of converted model results. You can 1) load in already-converted model results, or 2) convert model results again.
+
+### Load in converted model results
+
+If you have already converted your output: great! Import it into your R environment so that you can handle it as an object like "petrale". For example:
+
+```{r eval=FALSE}
+load("petrale_conout.rda")
+petrale <- out_new
+```
+
+### Convert model results
+
+If you need to convert model results into a standardized format again, you can use the same workflow covered yesterday: `stockplotr::convert_output()`.
 
 You can use the example Report.sso file uploaded to the workshop GitHub or, if you have a compatible output file, your own.
 
@@ -58,14 +71,8 @@ You can use the example Report.sso file uploaded to the workshop GitHub or, if y
 output_file <- file.path("example_output", "Report.sso")
 # convert the output and save it as an rda
 petrale <- stockplotr::convert_output(output_file,
-                                      save_dir = getwd())
-```
-
-If you have already converted your output: great! Import it into your R environment so that you can handle it as an object like "petrale" in the chunk above. For example:
-
-```{r eval=FALSE}
-load("petrale_conout.rda")
-petrale <- out_new
+                                      save_dir = file.path(getwd(), "petrale_conout.rda")
+                                      )
 ```
 
 ::: {.callout-note appearance="minimal"}
@@ -164,7 +171,7 @@ stockplotr::plot_spawning_biomass(
   ref_line = c("target" = 10),
   unit_label = "mt",
   scale_amount = 1,
-  relative = TRUE,
+  relative = TRUE, # changed from FALSE
   interactive = FALSE,
   module = "TIME_SERIES"
 )
@@ -203,9 +210,9 @@ stockplotr::plot_spawning_biomass(
 The only extended arguments available are the ones found from the ggplot2::geom_XX() function. Thus, any indexed variables can not be changes such as color to fill. Please see the documentation for `ggplot2` geom functions for these additional arguments.
 :::
 
-::: {.callout-note appearance="minimal"}
-Break for questions
-:::
+<!-- ::: {.callout-note appearance="minimal"} -->
+<!-- Break for questions -->
+<!-- ::: -->
 
 ````{=html}
 <!-- 
@@ -492,8 +499,10 @@ Example similar to that in the ["Adding Custom Tables & Figures" vignette](https
 
 ````{verbatim}
 ```{r} 
-#| label: 'tbl-custom1-setup' # choose a label
-#| echo: false # don't show this chunk
+#| label: 'tbl-direct_code_table1' # choose a label
+#| echo: false # don't show the code- only the output (table)
+#| tbl-pos: 'h!' # display the table after "Tables" header
+#| tbl-cap: This is your table caption.
 
 # Import your data
 load(fs::path("petrale_conout.rda"))
@@ -503,16 +512,6 @@ petrale <- out_new
 your_table <- head(petrale) |>
   dplyr::select(label, year, estimate) |>
   gt::gt()
-
-```
-````
-
-````{verbatim}
-```{r}
-#| label: 'tbl-custom1-display' # choose a label
-#| echo: false # don't show the code- only the output (table)
-#| tbl-pos: 'h!' # display the table after "Tables" header
-#| tbl-cap: This is your table caption.
 
 # Show your table
 your_table
@@ -558,33 +557,27 @@ Put your alternative text in a chunk option called 'fig-alt' (example below).
 
 ````{verbatim}
 ```{r} 
-#| label: 'fig-custom1-setup' # choose a label
-#| echo: false
+#| label: 'fig-direct_code_figure1' # choose a label
+#| echo: false # show only the output, not the code
+#| fig-cap: This is your figure caption.
+#| fig-alt: This is your figure alternative text.
 
 # Import your data
 load(fs::path("petrale_conout.rda"))
 
-petrale <- out_new |>
+petrale2 <- out_new |>
                     dplyr::filter(year > 1980) |>
                     dplyr::filter(module_name == "TIME_SERIES") |>
-                    dplyr::filter(label == "biomass") |>
-                    dplyr::filter(!is.na(fleet))
+                    dplyr::filter(label == "biomass") 
 
 # Make your figure
-your_figure <- ggplot2::ggplot(petrale,
+your_figure <- ggplot2::ggplot(petrale2,
   ggplot2::aes(x = year, y = estimate, color = fleet)) +
   ggplot2::geom_line(linewidth = 0.75) +
   ggplot2::geom_point() +
   ggplot2::theme_classic()
-```
-````
 
-````{verbatim}
-```{r}
-#| label: 'fig-custom1-display' # choose a label
-#| fig-cap: This is your figure caption.
-#| fig-alt: This is your figure alternative text.
-#| echo: false
+
 # Show your figure
 your_figure
 ``` 
@@ -600,20 +593,20 @@ Even though you wrote alt text in the `fig-alt` area, **when you first render yo
 
 Like tables, you can reference figures not made directly in code chunks. However, in this case, this does *not* change the accessibility of the figure because you can still add the necessary components to meet Section 508 compliance standards: alternative text and a caption.
 
-`![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure" #fig-example}`
+`![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure" #fig-markdown_figure1}`
 
 ## Referencing your tables or figures in text
 
 Quarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:
 
 ```{verbatim}
-@tbl-example
+@tbl-direct_code_table1
 ```
 
 or
 
 ```{verbatim}
-@fig-example
+@fig-markdown_figure1
 ```
 
 Adding an `@` symbol followed by the chunk label, or label of your table/figure, will create an interactive link that lets the reader navigate to that specific table/figure.
@@ -734,6 +727,21 @@ The file, "captions_alt_text.csv", should be located in your working directory (
 The file is set up like this:
 
 -   Column 1 ("label") is a shorthand label for your figure or table. Labels should be somewhat short and exclude spaces. Examples include "kobe", "relative.biomass", and "fishing.mortality".
+
+::: callout-important
+The label in the csv must match the label in your plot's chunk options, **MINUS the "fig-" or "tab-"**.
+For example, the label "custom_table1" in the csv would match up properly with the "tbl-custom_table1" label in this code chunk:
+
+```{r eval=FALSE}
+#| label: 'tbl-custom_table1'
+
+my_table
+```
+
+The same rule applies for figures: "custom_figure1" in the csv would match up with "fig-custom_figure1" in the chunk options' label.
+
+:::
+
 -   Column 2 ("type") contains "figure" or "table".
 -   Column 3 ("caption") contains your caption.
 -   Column 4 ("alt_text") contains alternative text for figures. For tables, this column will be blank.
