@@ -388,7 +388,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#introduction-to-stockplotr" id="toc-introduction-to-stockplotr" class="nav-link" data-scroll-target="#introduction-to-stockplotr">Introduction to {stockplotr}</a>
   <ul class="collapse">
-  <li><a href="#convert-output-if-necessary" id="toc-convert-output-if-necessary" class="nav-link" data-scroll-target="#convert-output-if-necessary">Convert output (if necessary)</a></li>
+  <li><a href="#import-converted-model-results" id="toc-import-converted-model-results" class="nav-link" data-scroll-target="#import-converted-model-results">Import converted model results</a>
+  <ul class="collapse">
+  <li><a href="#load-in-converted-model-results" id="toc-load-in-converted-model-results" class="nav-link" data-scroll-target="#load-in-converted-model-results">Load in converted model results</a></li>
+  <li><a href="#convert-model-results" id="toc-convert-model-results" class="nav-link" data-scroll-target="#convert-model-results">Convert model results</a></li>
+  </ul></li>
   <li><a href="#package-information" id="toc-package-information" class="nav-link" data-scroll-target="#package-information">Package information</a></li>
   <li><a href="#example-figure" id="toc-example-figure" class="nav-link" data-scroll-target="#example-figure">Example Figure</a>
   <ul class="collapse">
@@ -521,21 +525,28 @@ Tip
 </section>
 <section id="introduction-to-stockplotr" class="level1">
 <h1>Introduction to {stockplotr}</h1>
-<section id="convert-output-if-necessary" class="level2">
-<h2 class="anchored" data-anchor-id="convert-output-if-necessary">Convert output (if necessary)</h2>
-<p>First, you’ll need to convert your model results using the same workflow covered yesterday: <code>stockplotr::convert_output()</code>.</p>
+<section id="import-converted-model-results" class="level2">
+<h2 class="anchored" data-anchor-id="import-converted-model-results">Import converted model results</h2>
+<p>First, you’ll need to import a set of converted model results. You can 1) load in already-converted model results, or 2) convert model results again.</p>
+<section id="load-in-converted-model-results" class="level3">
+<h3 class="anchored" data-anchor-id="load-in-converted-model-results">Load in converted model results</h3>
+<p>If you have already converted your output: great! Import it into your R environment so that you can handle it as an object like “petrale”. For example:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"petrale_conout.rda"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>petrale <span class="ot">&lt;-</span> out_new</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="convert-model-results" class="level3">
+<h3 class="anchored" data-anchor-id="convert-model-results">Convert model results</h3>
+<p>If you need to convert model results into a standardized format again, you can use the same workflow covered yesterday: <code>stockplotr::convert_output()</code>.</p>
 <p>You can use the example Report.sso file uploaded to the workshop GitHub or, if you have a compatible output file, your own.</p>
 <div class="cell" data-messages="false">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify output file</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>output_file <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="st">"example_output"</span>, <span class="st">"Report.sso"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># convert the output and save it as an rda</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>petrale <span class="ot">&lt;-</span> stockplotr<span class="sc">::</span><span class="fu">convert_output</span>(output_file,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">save_dir =</span> <span class="fu">getwd</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>If you have already converted your output: great! Import it into your R environment so that you can handle it as an object like “petrale” in the chunk above. For example:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"petrale_conout.rda"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>petrale <span class="ot">&lt;-</span> out_new</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify output file</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>output_file <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="st">"example_output"</span>, <span class="st">"Report.sso"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># convert the output and save it as an rda</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>petrale <span class="ot">&lt;-</span> stockplotr<span class="sc">::</span><span class="fu">convert_output</span>(output_file,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">save_dir =</span> <span class="fu">file.path</span>(<span class="fu">getwd</span>(), <span class="st">"petrale_conout.rda"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                                      )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
@@ -547,6 +558,7 @@ Tip
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="package-information" class="level2">
 <h2 class="anchored" data-anchor-id="package-information">Package information</h2>
@@ -695,7 +707,7 @@ Tip
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="fu">c</span>(<span class="st">"target"</span> <span class="ot">=</span> <span class="dv">10</span>),</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>,</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale_amount =</span> <span class="dv">1</span>,</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">relative =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">relative =</span> <span class="cn">TRUE</span>, <span class="co"># changed from FALSE</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">interactive =</span> <span class="cn">FALSE</span>,</span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="st">"TIME_SERIES"</span></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -748,16 +760,9 @@ Tip
 <p>The only extended arguments available are the ones found from the ggplot2::geom_XX() function. Thus, any indexed variables can not be changes such as color to fill. Please see the documentation for <code>ggplot2</code> geom functions for these additional arguments.</p>
 </div>
 </div>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Break for questions</p>
-</div>
-</div>
-</div>
+<!-- ::: {.callout-note appearance="minimal"} -->
+<!-- Break for questions -->
+<!-- ::: -->
 <!-- 
 ::: {.callout-tip}
 Remember that figures return `ggplot2` objects, so we can make additional customization to these plots.
@@ -1199,32 +1204,27 @@ Important
 <h5 class="anchored" data-anchor-id="direct-coding-in-qmd-table-workflow">Direct coding-in-qmd table workflow</h5>
 <p>Example similar to that in the <a href="https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#direct-coding-in-qmd-workflow-option-3-2">“Adding Custom Tables &amp; Figures” vignette</a>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>```{r} </span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>#| label: 'tbl-custom1-setup' # choose a label</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>#| echo: false # don't show this chunk</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a># Import your data</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>load(fs::path("petrale_conout.rda"))</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>petrale &lt;- out_new</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a># Make your table</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>your_table &lt;- head(petrale) |&gt;</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  dplyr::select(label, year, estimate) |&gt;</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  gt::gt()</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>```{r}</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>#| label: 'tbl-custom1-display' # choose a label</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>#| echo: false # don't show the code- only the output (table)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>#| tbl-pos: 'h!' # display the table after "Tables" header</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>#| tbl-cap: This is your table caption.</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a># Show your table</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>your_table</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>#| label: 'tbl-direct_code_table1' # choose a label</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>#| echo: false # don't show the code- only the output (table)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>#| tbl-pos: 'h!' # display the table after "Tables" header</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>#| tbl-cap: This is your table caption.</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a># Import your data</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>load(fs::path("petrale_conout.rda"))</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>petrale &lt;- out_new</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a># Make your table</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>your_table &lt;- head(petrale) |&gt;</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  dplyr::select(label, year, estimate) |&gt;</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  gt::gt()</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a># Show your table</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>your_table</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="images/petrale_table.png" class="img-fluid" alt="Example of a table produced with the 'Direct coding-in-qmd table workflow' option for adding tables to asar reports."></p>
 <p>Then, add a pagebreak:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>{{<span class="sc">&lt;</span> pagebreak <span class="sc">&gt;</span>}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>{{<span class="sc">&lt;</span> pagebreak <span class="sc">&gt;</span>}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1266,34 +1266,31 @@ Note
 <h5 class="anchored" data-anchor-id="sec-code-in-qmd-fig">Direct coding-in-qmd figure workflow</h5>
 <p>Like with tables, running <code>create_figures_doc()</code> produces a blank figures Quarto file. We add figures similarly to tables. In fact, the only major difference is that you must write <strong>alternative text</strong> for your figure.</p>
 <p>Put your alternative text in a chunk option called ‘fig-alt’ (example below).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>```{r} </span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>#| label: 'fig-custom1-setup' # choose a label</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>#| echo: false</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a># Import your data</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>load(fs::path("petrale_conout.rda"))</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>petrale &lt;- out_new |&gt;</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>                    dplyr::filter(year &gt; 1980) |&gt;</span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>                    dplyr::filter(module_name == "TIME_SERIES") |&gt;</span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>                    dplyr::filter(label == "biomass") |&gt;</span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>                    dplyr::filter(!is.na(fleet))</span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a># Make your figure</span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>your_figure &lt;- ggplot2::ggplot(petrale,</span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>  ggplot2::aes(x = year, y = estimate, color = fleet)) +</span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>  ggplot2::geom_line(linewidth = 0.75) +</span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>  ggplot2::geom_point() +</span>
-<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>  ggplot2::theme_classic()</span>
-<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>```{r}</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>#| label: 'fig-custom1-display' # choose a label</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>#| fig-cap: This is your figure caption.</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>#| fig-alt: This is your figure alternative text.</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>#| echo: false</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a># Show your figure</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>your_figure</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>``` </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>```{r} </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>#| label: 'fig-direct_code_figure1' # choose a label</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>#| echo: false # show only the output, not the code</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>#| fig-cap: This is your figure caption.</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>#| fig-alt: This is your figure alternative text.</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a># Import your data</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>load(fs::path("petrale_conout.rda"))</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>petrale2 &lt;- out_new |&gt;</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>                    dplyr::filter(year &gt; 1980) |&gt;</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>                    dplyr::filter(module_name == "TIME_SERIES") |&gt;</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>                    dplyr::filter(label == "biomass") </span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a># Make your figure</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>your_figure &lt;- ggplot2::ggplot(petrale2,</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>  ggplot2::aes(x = year, y = estimate, color = fleet)) +</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>  ggplot2::geom_line(linewidth = 0.75) +</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>  ggplot2::geom_point() +</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>  ggplot2::theme_classic()</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a># Show your figure</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>your_figure</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>``` </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="images/petrale_figure.png" class="img-fluid" alt="Example of a figure produced with the 'Direct coding-in-qmd figure workflow' option for adding figures to asar reports."></p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1312,7 +1309,7 @@ Warning
 <section id="sec-image-based-fig" class="level5">
 <h5 class="anchored" data-anchor-id="sec-image-based-fig">Direct image-based figure insertion workflow</h5>
 <p>Like tables, you can reference figures not made directly in code chunks. However, in this case, this does <em>not</em> change the accessibility of the figure because you can still add the necessary components to meet Section 508 compliance standards: alternative text and a caption.</p>
-<p><code>![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure" #fig-example}</code></p>
+<p><code>![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure" #fig-markdown_figure1}</code></p>
 </section>
 </section>
 </section>
@@ -1320,9 +1317,9 @@ Warning
 <section id="referencing-your-tables-or-figures-in-text" class="level2">
 <h2 class="anchored" data-anchor-id="referencing-your-tables-or-figures-in-text">Referencing your tables or figures in text</h2>
 <p>Quarto uses a special notation to allow users to link tables and figures throughout their text. Use the following notation to link/reference tables in your text:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>@tbl-example</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>@tbl-direct_code_table1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>or</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>@fig-example</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>@fig-markdown_figure1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Adding an <code>@</code> symbol followed by the chunk label, or label of your table/figure, will create an interactive link that lets the reader navigate to that specific table/figure.</p>
 <!-- ::: {.callout-note icon=false} -->
 <!-- ## Testing your understanding -->
@@ -1355,10 +1352,10 @@ Warning
 <h2 class="anchored" data-anchor-id="in-the-r-console">In the R console</h2>
 <p>Run <code>quarto::quarto_render([path/to/your/skeleton.qmd file])</code> in the console. For example:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>quarto<span class="sc">::</span><span class="fu">quarto_render</span>(</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(<span class="st">"report"</span>,</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>             <span class="st">"SAR_USWC_Petrale_sole_skeleton.qmd"</span>) <span class="co"># add your skeleton filename</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>quarto<span class="sc">::</span><span class="fu">quarto_render</span>(</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(<span class="st">"report"</span>,</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>             <span class="st">"SAR_USWC_Petrale_sole_skeleton.qmd"</span>) <span class="co"># add your skeleton filename</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="with-the-rstudio-render-button" class="level2">
@@ -1428,7 +1425,7 @@ Warning
 </ol>
 <p><strong>Answer</strong>: Add the following chunk to the figures doc:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[Historical landings by fleet.](example_plots<span class="sc">/</span>landings_fig_png.png){fig<span class="sc">-</span>alt<span class="ot">=</span><span class="st">"Cumulative line plot showing historical landings for North and South fleets. The x axis shows the year, which spans from 1850 to 2026. The y axis shows landings in metric tons, which spans from 0 to 2,400."</span>, <span class="co">#practice-figure-label}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[Historical landings by fleet.](example_plots<span class="sc">/</span>landings_fig_png.png){fig<span class="sc">-</span>alt<span class="ot">=</span><span class="st">"Cumulative line plot showing historical landings for North and South fleets. The x axis shows the year, which spans from 1850 to 2026. The y axis shows landings in metric tons, which spans from 0 to 2,400."</span>, <span class="co">#practice-figure-label}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="4" type="1">
 <li>In the Executive Summary, add a reference to the first figure in your figures qmd file.</li>
@@ -1506,6 +1503,32 @@ Tip
 <p>The file is set up like this:</p>
 <ul>
 <li>Column 1 (“label”) is a shorthand label for your figure or table. Labels should be somewhat short and exclude spaces. Examples include “kobe”, “relative.biomass”, and “fishing.mortality”.</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The label in the csv must match the label in your plot’s chunk options, <strong>MINUS the “fig-” or “tab-”</strong>. For example, the label “custom_table1” in the csv would match up properly with the “tbl-custom_table1” label in this code chunk:</p>
+<div id="tbl-custom_table1" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-custom_table1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1
+</figcaption>
+<div aria-describedby="tbl-custom_table1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>my_table</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</figure>
+</div>
+<p>The same rule applies for figures: “custom_figure1” in the csv would match up with “fig-custom_figure1” in the chunk options’ label.</p>
+</div>
+</div>
+<ul>
 <li>Column 2 (“type”) contains “figure” or “table”.</li>
 <li>Column 3 (“caption”) contains your caption.</li>
 <li>Column 4 (“alt_text”) contains alternative text for figures. For tables, this column will be blank.</li>
@@ -1595,12 +1618,12 @@ Important
 <h2 class="anchored" data-anchor-id="add-tagging-and-alt-text-to-your-report">Add tagging and alt text to your report</h2>
 <p>Now, we’re ready to use the <code>asar::add_accessibility()</code> function to add tags and alt text into the report’s .tex file.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_accessibility</span>(</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"SAR_USWC_Petrale_sole_skeleton.tex"</span>, <span class="co"># your .tex report file</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">dir =</span> <span class="st">"report"</span>, <span class="co"># the folder containing the .tex file</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">alttext_csv =</span> <span class="st">"captions_alt_text.csv"</span>, <span class="co"># the filename of your csv with captions and alt text, located in the working directory</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">compile =</span> <span class="cn">TRUE</span> <span class="co"># we'll compile the PDF</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_accessibility</span>(</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"SAR_USWC_Petrale_sole_skeleton.tex"</span>, <span class="co"># your .tex report file</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">dir =</span> <span class="st">"report"</span>, <span class="co"># the folder containing the .tex file</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">alttext_csv =</span> <span class="st">"captions_alt_text.csv"</span>, <span class="co"># the filename of your csv with captions and alt text, located in the working directory</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">compile =</span> <span class="cn">TRUE</span> <span class="co"># we'll compile the PDF</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="check-the-tags" class="level3">
 <h3 class="anchored" data-anchor-id="check-the-tags">Check the tags</h3>
@@ -1667,7 +1690,7 @@ Tip
 <!-- 20 minute break for questions & practicing -->
 <!-- ::: -->
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1676,7 +1699,7 @@ Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>If you haven’t already, add tags to your pdf by running <code>add_tagging()</code> with the appropriate arguments (including <code>compile</code> set to TRUE). Then, open up the report and ensure it was tagged.</p></li>
