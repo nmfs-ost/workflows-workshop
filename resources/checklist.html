@@ -486,6 +486,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We recommend installing the full {tinytex} bundle to ensure that all LaTeX packages will be present when you need them. <strong>This will take ~30 minutes to complete.</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(<span class="st">"rstudio/tinytex"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>(<span class="at">bundle =</span> <span class="st">"TinyTeX-2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To test your <code>TinyTeX</code> setup, you can save the following code in a Quarto file (“test.qmd”) and hit Render. If it renders, that’s a good sign! If you get an error, you may have an issue with your <code>TinyTeX</code> installation:</p>
+<pre><code>---
+title: "TinyTeX Test"
+format: pdf
+---
+
+Sample text to test if your Quarto file rendered into a PDF.</code></pre>
+</div>
+</div>
 <ol start="7" type="1">
 <li>Explore {asar} and {stockplotr} websites</li>
 </ol>
