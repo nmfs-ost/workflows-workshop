@@ -1,0 +1,5 @@
+# Regionally-specific content
+
+## NEFSC
+
+{{< include ../Curriculum/snippets/nefsc_transition.qmd >}}

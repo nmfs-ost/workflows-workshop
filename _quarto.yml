@@ -1,5 +1,8 @@
 project: 
   type: website
+  render:
+    - "*.qmd" # Render all qmd files in the root
+    - "!resources/ExportLegacyNEFSCtoASARproject" # Exclude this folder from rendering
 
 website: 
   page-navigation: true
@@ -48,6 +51,8 @@ website:
         text: "Day 3: stockplotr + asar"
       - href: Curriculum/nsaw.qmd
         text: "NSAW workshop"
+      - href: resources/regional_info.qmd
+        text: "Regionally-specific content"
 
 
 format:

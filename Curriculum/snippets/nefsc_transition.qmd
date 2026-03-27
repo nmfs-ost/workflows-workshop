@@ -1,0 +1,125 @@
+### Adaptation of NEFSC Template to {asar}
+
+Dan Hennen, the NEFSC representative on the workflows steering committee, has designed a sleek workflow to help aid the transition from the typical management track assessment to NOAA standard guidelines. The standard guidelines executive summary mimics closely the current management track reports, so here we will automate the executive summary in this section of the report.
+
+Use the following code to download files into your working directory for the next process:
+
+```{r}
+#| eval: false
+get_nefsc_files <- function(dir){
+  NEFSCtoASAR_folder <- file.path(dir, "ExportLegacyNEFSCtoASARproject")
+  testStocks_folder <- file.path(NEFSCtoASAR_folder, "testStocks")
+  asarreport_folder <- file.path(NEFSCtoASAR_folder, "ASARreportFiles")
+  # if (!file.exists(dir)) {
+  dir.create(NEFSCtoASAR_folder)
+  dir.create(testStocks_folder)
+  dir.create(asarreport_folder)
+  # }
+  file_names_to_download <- c(
+    # "ASARreportFiles",
+    "CheckLatexInstall.R",
+    "create_asar_object.R",
+    "Example.R",
+    "MapAutoUpdateToAsar.R",
+    "plot_survey_indices.R",
+    "plot_total_catch.R",
+    "table_brp1.1.R",
+    "table_catch_status1.1.R",
+    "table_projections1.1.R",
+    "testAdditionalStocks.R",
+    "TestMoreStocksReportOnly.R"
+  )
+  teststocks_files <- c(
+    "BSBUNITAutoAss.RData",
+    "BUTUNITAutoAss.RData",
+    "CODGBAutoAss.RData",
+    "CODWGOMAutoAss.RData",
+    "SCUNITAutoAss.RData" 
+  )
+  asarreport_files <- c(
+    "01_executive_summary.qmd",
+    "in-header.tex",
+    "preamble.R" 
+  )
+  
+  for (i in file_names_to_download) {
+     cli::cli_alert_info("📥 Downloading {i}...")
+    download.file(
+      glue::glue("https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/nefsc-transition/resources/ExportLegacyNEFSCtoASARproject/{i}"), 
+      glue::glue("{NEFSCtoASAR_folder}/{i}"),
+      mode = "wb"
+      )
+  }
+  
+  for (i in teststocks_files) {
+     cli::cli_alert_info("📥 Downloading {i}...")
+    download.file(
+      glue::glue("https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/nefsc-transition/resources/ExportLegacyNEFSCtoASARproject/testStocks/{i}"), 
+      glue::glue("{testStocks_folder}/{i}"),
+      mode = "wb"
+      )
+  }
+  
+  for (i in asarreport_files) {
+     cli::cli_alert_info("📥 Downloading {i}...")
+    download.file(
+      glue::glue("https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/nefsc-transition/resources/ExportLegacyNEFSCtoASARproject/ASARreportFiles/{i}"),
+      glue::glue("{asarreport_folder}/{i}"),
+      mode = "wb"
+      )
+  }
+  
+  message("✅ Download complete.")
+}
+get_nefsc_files(getwd())
+```
+
+The following steps will guide you through how to adapt the {asar} workflow and template and migrate the current content in your documents to the new ones:
+
+  1. Change paths in TestMoreStocksReportOnly.R and source it (run all the code in the file).
+  
+  2. Copy the 3 files in ASARreportFiles and paste them into the report directory made by step 1 (and overwrite). 
+  
+```{r}
+#| eval: false
+file.copy(
+  from = list.files(file.path(getwd(), "ExportLegacyNEFSCtoASARproject", "ASARreportFiles"), full.names = TRUE),
+  to = file.path(getwd(), "report"),
+  recursive = FALSE,
+  overwrite = TRUE
+)
+```
+
+  3. Move in-header.tex to report/support_files and overwrite (this just adds the LaTeX package {float})
+  
+```{r}
+#| eval: false
+fs::file_move(
+  file.path(getwd(), "report", "in-header.tex"),
+  file.path(getwd(), "report", "support_files", "in-header.tex")
+)
+```
+
+  4. Change paths at the top of report/preamble.R.
+  
+  * For the third line (starts with `load`), the example rda file ("Black_Sea_Bass2024.rda") will probably be in your working directory.
+
+  5. Add the following code to the yaml in the skeleton.qmd (probably named "sar_N_Black_Sea_Bass_skeleton.qmd):
+  
+```
+execute:
+  echo: false
+  message: false
+  warning: false
+```
+
+  6. From the skeleton, delete lines 70-75 (before step 5, lines 66-71) and *render*.
+
+```
+# load converted output from stockplotr::convert_output()
+load(fname)
+# Call reference points and quantities below
+output <- out_new |>
+  dplyr::mutate(estimate = as.numeric(estimate),
+    uncertainty = as.numeric(uncertainty)) 
+```
