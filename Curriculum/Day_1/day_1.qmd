@@ -46,8 +46,6 @@ Sam Schiano and Sophie Breitbart are contractors with ECS Federal working in sup
 
 -   [Day 1 communal notes doc](https://docs.google.com/document/d/1nVlmmZgp8vCHZKCMHnBm43bf-mtk7pSA1t2FLHEoyZA/edit?tab=t.0#heading=h.lwix6dbx3lr8)
     -   Contains resources (from us and you!) and areas for note-taking
--   [Sample data](https://github.com/nmfs-ost/asar/blob/main/inst/extdata/Report.sso)
-    -   Sample model output data for coding demonstrations
 
 ::: {.callout-note appearance="minimal"}
 Break for questions
@@ -237,10 +235,26 @@ params:
 
 Then, in the body of your report, you can reference this parameter like this:
 
-"The native range of \`params\$species\` spans from..."
+* add a backtick (`)
+* add lowercase 'r'
+* add params + $ + the parameter itself
+* add a backtick (`)
 
-When you knit the document, \`params\$species\` will be replaced with "Petrale sole".
+```{r eval=FALSE}
+`r params$species`
+```
 
+Here is an example. NOTE that this example uses single quotes (') instead of backticks (`), otherwise this page won't render properly. But in your report, use the syntax directly above.
+
+"The native range of 'r params$species' spans from..."
+
+When you knit the document, 'r params$species' will be replaced with "Petrale sole".
+
+::: {.callout-tip}
+To make the species name italicized, add single asterisks (*) around the phrase. For example:
+
+\*'r params$species'* will render as *Petrale sole*.
+:::
 
 ### References and Bibliography
 
@@ -303,6 +317,10 @@ Here are two entries using the examples mentioned above:
 
 ::: {.callout-note}
 You can edit the glossary by altering, adding, or removing entries in the "report_glossary.tex" file.
+:::
+
+::: {.callout-tip}
+Is there an acronym we've missed that should be included in this national glossary? Make an [issue](https://github.com/nmfs-ost/asar?tab=contributing-ov-file#contributing-bugs) or, even better, a [pull request](https://github.com/nmfs-ost/asar?tab=contributing-ov-file#recommended-workflow-fork--submit-a-pull-request) with your suggestion!
 :::
 
 #### Using acronyms in reports

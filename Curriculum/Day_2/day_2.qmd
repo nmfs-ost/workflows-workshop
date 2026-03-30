@@ -412,9 +412,9 @@ asar::create_template(
 ::: {.callout-important}
 The console will return this question:
 
-> Do you want to keep the current preamble? (Y/N)
+> Update the preamble to match entered arguments? (Y/N)
 
-When you are rerendering your skeleton in a way that edits your preamble (e.g., when you add new model results), your answer should typically be NO (n).
+When you are rerendering your skeleton in a way that edits your preamble (e.g., when you add new model results), your answer should typically be YES (y).
 
 Just be aware that these changes will, in fact, change your current preamble and overwrite any edits you made to that file.
 :::
