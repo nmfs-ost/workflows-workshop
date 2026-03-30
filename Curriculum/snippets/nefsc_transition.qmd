@@ -7,69 +7,69 @@ Use the following code to download files into your working directory for the nex
 ```{r}
 #| eval: false
 get_nefsc_files <- function(dir){
-  NEFSCtoASAR_folder <- file.path(dir, "ExportLegacyNEFSCtoASARproject")
-  testStocks_folder <- file.path(NEFSCtoASAR_folder, "testStocks")
-  asarreport_folder <- file.path(NEFSCtoASAR_folder, "ASARreportFiles")
-  # if (!file.exists(dir)) {
-  dir.create(NEFSCtoASAR_folder)
-  dir.create(testStocks_folder)
-  dir.create(asarreport_folder)
-  # }
-  file_names_to_download <- c(
-    # "ASARreportFiles",
-    "CheckLatexInstall.R",
-    "create_asar_object.R",
-    "Example.R",
-    "MapAutoUpdateToAsar.R",
-    "plot_survey_indices.R",
-    "plot_total_catch.R",
-    "table_brp1.1.R",
-    "table_catch_status1.1.R",
-    "table_projections1.1.R",
-    "testAdditionalStocks.R",
-    "TestMoreStocksReportOnly.R"
-  )
-  teststocks_files <- c(
-    "BSBUNITAutoAss.RData",
-    "BUTUNITAutoAss.RData",
-    "CODGBAutoAss.RData",
-    "CODWGOMAutoAss.RData",
-    "SCUNITAutoAss.RData" 
-  )
-  asarreport_files <- c(
-    "01_executive_summary.qmd",
-    "in-header.tex",
-    "preamble.R" 
-  )
-  
-  for (i in file_names_to_download) {
-     cli::cli_alert_info("📥 Downloading {i}...")
-    download.file(
-      glue::glue("https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/nefsc-transition/resources/ExportLegacyNEFSCtoASARproject/{i}"), 
-      glue::glue("{NEFSCtoASAR_folder}/{i}"),
-      mode = "wb"
-      )
-  }
-  
-  for (i in teststocks_files) {
-     cli::cli_alert_info("📥 Downloading {i}...")
-    download.file(
-      glue::glue("https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/nefsc-transition/resources/ExportLegacyNEFSCtoASARproject/testStocks/{i}"), 
-      glue::glue("{testStocks_folder}/{i}"),
-      mode = "wb"
-      )
-  }
-  
-  for (i in asarreport_files) {
-     cli::cli_alert_info("📥 Downloading {i}...")
-    download.file(
-      glue::glue("https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/nefsc-transition/resources/ExportLegacyNEFSCtoASARproject/ASARreportFiles/{i}"),
-      glue::glue("{asarreport_folder}/{i}"),
-      mode = "wb"
-      )
-  }
-  
-  message("✅ Download complete.")
+    NEFSCtoASAR_folder <- file.path(dir, "ExportLegacyNEFSCtoASARproject")
+    testStocks_folder <- file.path(NEFSCtoASAR_folder, "testStocks")
+    asarreport_folder <- file.path(NEFSCtoASAR_folder, "ASARreportFiles")
+    # if (!file.exists(dir)) {
+    dir.create(NEFSCtoASAR_folder)
+    dir.create(testStocks_folder)
+    dir.create(asarreport_folder)
+    # }
+    file_names_to_download <- c(
+        # "ASARreportFiles",
+        "CheckLatexInstall.R",
+        "create_asar_object.R",
+        "Example.R",
+        "MapAutoUpdateToAsar.R",
+        "plot_survey_indices.R",
+        "plot_total_catch.R",
+        "table_brp1.1.R",
+        "table_catch_status1.1.R",
+        "table_projections1.1.R",
+        "testAdditionalStocks.R",
+        "TestMoreStocksReportOnly.R"
+    )
+    teststocks_files <- c(
+        "BSBUNITAutoAss.RData",
+        "BUTUNITAutoAss.RData",
+        "CODGBAutoAss.RData",
+        "CODWGOMAutoAss.RData",
+        "SCUNITAutoAss.RData" 
+    )
+    asarreport_files <- c(
+        "01_executive_summary.qmd",
+        "in-header.tex",
+        "preamble.R" 
+    )
+    
+    for (i in file_names_to_download) {
+        cli::cli_alert_info("📥 Downloading {i}...")
+        download.file(
+            glue::glue("https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/refs/heads/main/resources/ExportLegacyNEFSCtoASARproject/{i}"), 
+            glue::glue("{NEFSCtoASAR_folder}/{i}"),
+            mode = "wb"
+        )
+    }
+    
+    for (i in teststocks_files) {
+        cli::cli_alert_info("📥 Downloading {i}...")
+        download.file(
+            glue::glue("https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/refs/heads/main/resources/ExportLegacyNEFSCtoASARproject/testStocks/{i}"), 
+            glue::glue("{testStocks_folder}/{i}"),
+            mode = "wb"
+        )
+    }
+    
+    for (i in asarreport_files) {
+        cli::cli_alert_info("📥 Downloading {i}...")
+        download.file(
+            glue::glue("https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/refs/heads/main/resources/ExportLegacyNEFSCtoASARproject/ASARreportFiles/{i}"),
+            glue::glue("{asarreport_folder}/{i}"),
+            mode = "wb"
+        )
+    }
+    
+    message("✅ Download complete.")
 }
 get_nefsc_files(getwd())
 ```
