@@ -320,7 +320,7 @@ For more information, navigate to [this article](https://nmfs-ost.github.io/stoc
 :::
 
 ::: {.callout-note appearance="minimal"}
-20 minute break for questions & practicing
+15 minute break for questions & practicing
 :::
 
 ## Advanced {asar} workflow

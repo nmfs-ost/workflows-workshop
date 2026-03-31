@@ -456,7 +456,7 @@ Adding tables entails nearly the same process as described for figures. The only
 1.  Tables will involve captions only, whereas figure require captions and alternative text
 2.  Tables can be rotated or split across pages.
 
-This is the code you *would* run to add tables to the {asar} tables doc, but [it is not yet functional.]{.mark}
+To add tables to the {asar} tables doc:
 
 ```{r}
 #| label: add-tables
@@ -470,11 +470,11 @@ create_tables_doc(
 ```
 
 ::: callout-important
-*Once we complete redevelopment of our pilot table (`table_landings()`)*, our workflow will be able to accommodate tables that are wide enough to require rotation into a landscape-view page OR splitting across pages. For more information, please see the ["Adding Custom Figures & Tables" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width).
+Our workflow can accommodate tables that are wide enough to require rotation into a landscape-view page OR splitting across pages. For more information, please see the ["Adding Custom Figures & Tables" vignette](https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width).
 :::
 
 ::: {.callout-note appearance="minimal"}
-20 minute break for questions & practicing
+15 minute break for questions & practicing
 :::
 
 {{< include ../snippets/figure_table_exercises.qmd >}}
