@@ -790,6 +790,29 @@ When you're satisfied, save the csv.
 
 When you're satisfied, save the csv.
 
+**Shortcut for NEFSC**: Run this code to automatically add a row to your alt text/captions csv with sample data for the Executive Summary's ssb figure (label = "fig-ssb"):
+
+```{r eval=FALSE}
+# Make small data frame with ssb figure's information
+new_row <- data.frame(
+  col1 = "ssb", # identical to the chunk label ("fig-ssb") MINUS "fig-"
+  col2 = "figure",
+  col3 = "my caption",
+  col4 = "my exec summary figure alt text",
+  stringsAsFactors = FALSE
+)
+
+# Add information to captions/alt text csv file as new row
+write.table(new_row, 
+              file = file.path(getwd(), "captions_alt_text.csv"),
+              sep = ",", 
+              append = TRUE, 
+              col.names = FALSE, 
+              row.names = FALSE, 
+              quote = TRUE) 
+
+```
+
 ## Add tagging and alt text to your report
 
 Now, we're ready to use the `asar::add_accessibility()` function to add tags and alt text into the report's .tex file.
