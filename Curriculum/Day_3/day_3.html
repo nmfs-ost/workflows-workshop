@@ -682,9 +682,10 @@ Tip
 <section id="customizing" class="level3">
 <h3 class="anchored" data-anchor-id="customizing">Customizing</h3>
 <p>All figures will automatically identify any indexing variables in the data such as fleet, area, or sex. You can use the <code>group</code> and <code>facet</code> arguments to modify how these indexing variables are displayed in the figure. You can also modify other arguments such as <code>geom</code>, <code>ref_line</code>, and <code>relative</code> to change the appearance of the figure.</p>
-<section id="change-the-reference-line-to-a-specific-value-e.g.-10" class="level4">
-<h4 class="anchored" data-anchor-id="change-the-reference-line-to-a-specific-value-e.g.-10">Change the reference line to a specific value (e.g., 10)</h4>
+<section id="change-the-reference-line-to-a-specific-value-e.g.-10-or-remove-it" class="level4">
+<h4 class="anchored" data-anchor-id="change-the-reference-line-to-a-specific-value-e.g.-10-or-remove-it">Change the reference line to a specific value (e.g., 10), or remove it</h4>
 <p>In this example we are also telling the function which module to select in order to by-pass this step. We plan to remove grouping of some modules in the future.</p>
+<p>You can remove the reference line by setting <code>ref_line = NULL</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_spawning_biomass</span>(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> petrale,</span>
@@ -701,9 +702,8 @@ Tip
 </div>
 <p><img src="images/day3_ex_plt2_b.png" class="img-fluid"></p>
 </section>
-<section id="plot-relative-spawning-biomass-and-remove-the-reference-line" class="level4">
-<h4 class="anchored" data-anchor-id="plot-relative-spawning-biomass-and-remove-the-reference-line">Plot relative spawning biomass and remove the reference line</h4>
-<p>Notice that you can remove the reference line by setting <code>ref_line = NULL</code>.</p>
+<section id="plot-relative-spawning-biomass" class="level4">
+<h4 class="anchored" data-anchor-id="plot-relative-spawning-biomass">Plot relative spawning biomass</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_spawning_biomass</span>(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> petrale,</span>

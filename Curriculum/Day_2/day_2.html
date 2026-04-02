@@ -646,6 +646,28 @@ Important
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">file_dir =</span> <span class="fu">getwd</span>() <span class="co"># folder where the "report" folder will be saved</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notice the <code>authors</code> syntax. It contains a vector with:</p>
+<ol type="1">
+<li>The author’s first and last name</li>
+<li><code>=</code> sign</li>
+<li>Initials of the author’s office or region (their affiliation)</li>
+</ol>
+<ul>
+<li>To denote a specific location within a region, add a hyphen followed by the first letter of each word of the location (city, state). Example: “SWFSC-LJCA” stands for “Southwest Fisheries Science Center, La Jolla, California;”AFSC-NOR” stands for “Alaska Fisheries Science Center, Newport, Oregon”.</li>
+</ul>
+<p>All affiliation acronyms are in the <a href="https://github.com/nmfs-ost/asar/blob/main/inst/resources/affiliation_info.csv">“affiliations” file</a>.</p>
+</div>
+</div>
 <p><strong>Run it!</strong></p>
 <p>You should see a folder called “<strong>report</strong>” where you indicated in the argument <code>file_dir</code>. It should have a set up that looks like this:</p>
 <div class="quarto-figure quarto-figure-center">
@@ -684,12 +706,11 @@ Note
 <h5 class="anchored" data-anchor-id="the-skeleton">The skeleton</h5>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/asar_skeleton.png" class="img-fluid figure-img" alt="A figure showing seven rectangles on top of one another, portraying the order of content in a Quarto yaml. Sections include 'Yaml (Formatting and input information)', 'Parameters R chunk', 'Preamble R chunk', 'Disclaimer', 'Citation', 'Report content ('child docs'): Executive Summary', an ellipsis to separate the blocks, and then a final block ('Report content ('Child docs'): Appendix')."></p>
-<figcaption>Diagram showing different blocks of content found in the Quarto yaml within the skeleton.qmd file.</figcaption>
+<p><img src="images/asar_skeleton.png" class="img-fluid figure-img" alt="A figure showing seven rectangles on top of one another, portraying the order of content in a Quarto YAML. Sections include 'Yaml (Formatting and input information)', 'Parameters R chunk', 'Preamble R chunk', 'Disclaimer', 'Citation', 'Report content ('child docs'): Executive Summary', an ellipsis to separate the blocks, and then a final block ('Report content ('Child docs'): Appendix')."></p>
+<figcaption>Diagram showing different blocks of content found in the Quarto YAML within the skeleton.qmd file.</figcaption>
 </figure>
 </div>
 <p>As previously mentioned, the skeleton file controls the rest of the report. This is the file you go to to compile your report, change formatting, or add quantities to reference in your document.</p>
-<p>We went over the basics of a Quarto yaml in <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#yaml">Day 1</a>, but when using {asar}, you don’t actually have to fill in anything yourself. The beauty of using {asar} is that it removes this task, but filling out information provided in the <code>create_template()</code> arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -700,13 +721,28 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You shouldn’t have to adjust the yaml much, if at all. However, if your <code>species</code> does not match with an image in our <a href="https://github.com/nmfs-ost/asar/tree/main/inst/resources/spp_img">database</a>, then you can edit the yaml to add a filepath leading to your own cover image.</p>
+<p>Your skeleton file will <em>not</em> be called “skeleton.qmd”. Its filename will be comprised based on the arguments you added to <code>create_template()</code>, such as the report type, region, and species.</p>
+<p>For the example above, it will be called “sar_USWC_Petrale_sole_skeleton.qmd”.</p>
+</div>
+</div>
+<p>We went over the basics of a Quarto YAML in <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#yaml">Day 1</a>, but when using {asar}, you don’t actually have to fill in anything yourself. The beauty of using {asar} is that it removes this task, but filling out information provided in the <code>create_template()</code> arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You shouldn’t have to adjust the YAML much, if at all. However, if your <code>species</code> does not match with an image in our <a href="https://github.com/nmfs-ost/asar/tree/main/inst/resources/spp_img">database</a>, then you can edit the YAML to add a filepath leading to your own cover image.</p>
 </div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/asar_yaml.png" class="img-fluid figure-img" alt="A screenshot of an example yaml, with curly brackets highlighting which code is 'information' and which code is 'formatting'."></p>
-<figcaption>asar yaml controlling formatting and basic document information.</figcaption>
+<p><img src="images/asar_yaml.png" class="img-fluid figure-img" alt="A screenshot of an example YAML, with curly brackets highlighting which code is 'information' and which code is 'formatting'."></p>
+<figcaption>asar YAML controlling formatting and basic document information.</figcaption>
 </figure>
 </div>
 <p>The YAML controls the following:</p>
@@ -723,7 +759,7 @@ Note
 </section>
 <section id="parameterization" class="level5">
 <h5 class="anchored" data-anchor-id="parameterization">Parameterization</h5>
-<p>Quarto has a cool feature that allows users to parameterize their document by utilizing markdown’s ability to render in-line code throughout your writing. In the yaml, there are pre-added parameters of the species, Latin name, region, and office. These are called in through an R chunk after the YAML.</p>
+<p>Quarto has a cool feature that allows users to parameterize their document by utilizing markdown’s ability to render in-line code throughout your writing. In the YAML, there are pre-added parameters of the species, Latin name, region, and office. These are called in through an R chunk after the YAML.</p>
 <p>You have two options for calling these parameters in your writing.</p>
 <ol type="1">
 <li>` r params$species ` (Quarto parameterization)</li>
@@ -800,7 +836,7 @@ Important
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -809,19 +845,19 @@ Important
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>Run <code>create_template()</code>. Fill in your own values for <code>office</code>, <code>region</code>, <code>species</code>, <code>spp_latin</code>, and <code>year</code>. Use default values for all remaining arguments.</p></li>
-<li><p>Whoops! You forgot to add the report author’s name and affiliation (yours!). Open the report skeleton and edit the yaml with this information.</p></li>
-<li><p>You realize that your report will frequently reference another species: <em>Patrickicus starrus</em>. Add a new parameter to the report’s yaml so that you can reference “Patrickicus starrus” with a simple “ps”.</p></li>
+<li><p>Whoops! You forgot to add the report author’s name and affiliation (yours!). Open the report skeleton and edit the YAML with this information.</p></li>
+<li><p>You realize that your report will frequently reference another species: <em>Patrickicus starrus</em>. Add a new parameter to the report’s YAML so that you can reference “Patrickicus starrus” with a simple “ps”.</p></li>
 <li><p>Open up the Executive Summary qmd file and add a sentence that references your new parameter.</p></li>
 </ol>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -830,7 +866,7 @@ Important
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Run <code>create_template()</code>. Fill in your own values for <code>office</code>, <code>region</code>, <code>species</code>, <code>spp_latin</code>, and <code>year</code>. Use default values for all remaining arguments.</li>
@@ -846,11 +882,11 @@ Important
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="2" type="1">
-<li>Whoops! You forgot to add the report author’s name and affiliation (yours!). Open the report skeleton and edit the yaml with this information.</li>
+<li>Whoops! You forgot to add the report author’s name and affiliation (yours!). Open the report skeleton and edit the YAML with this information.</li>
 </ol>
-<p><strong>Answer</strong>: Open the .qmd file with “skeleton” in the filename. Edit the yaml’s “author” section to go from something like the first chunk to the second chunk.</p>
+<p><strong>Answer</strong>: Open the .qmd file with “skeleton” in the filename. Edit the YAML’s “author” section to go from something like the first chunk to the second chunk.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Original yaml snippet (located just beneath the title)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Original YAML snippet (located just beneath the title)</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'FIRST LAST'</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    affiliations<span class="sc">:</span> </span>
@@ -861,7 +897,7 @@ Important
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        postal<span class="sc">-</span>code<span class="sc">:</span> <span class="st">'POSTAL CODE'</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated yaml snippet</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated YAML snippet</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'Patrick Star'</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    affiliations<span class="sc">:</span></span>
@@ -872,11 +908,11 @@ Important
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        postal<span class="sc">-</span>code<span class="sc">:</span> <span class="st">'33149'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="3" type="1">
-<li>You realize that your report will frequently reference another species: <em>Patrickicus starrus</em>. Add a new parameter to the report’s yaml so that you can reference “Patrickicus starrus” with a simple “ps”.</li>
+<li>You realize that your report will frequently reference another species: <em>Patrickicus starrus</em>. Add a new parameter to the report’s YAML so that you can reference “Patrickicus starrus” with a simple “ps”.</li>
 </ol>
-<p><strong>Answer</strong>: Open the .qmd file with “skeleton” in the filename. Edit the yaml’s “params” section and add the following line:</p>
+<p><strong>Answer</strong>: Open the .qmd file with “skeleton” in the filename. Edit the YAML’s “params” section and add the following line:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated yaml snippet</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated YAML snippet</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>params<span class="sc">:</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>   office<span class="sc">:</span> <span class="st">'SEFSC'</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>   species<span class="sc">:</span> <span class="st">'Atlantic Bigeye Tuna'</span></span>
@@ -962,7 +998,7 @@ Note
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -971,13 +1007,13 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Filter the output data for spawning biomass that only includes years 2000 to 2020.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -986,7 +1022,7 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><p>Phrases like “spawning biomass” will be spelled out in the ‘label’ column, with words typically separated with an underscore (_).</p></li>
@@ -1003,7 +1039,7 @@ Note
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1012,7 +1048,7 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Filter the output data for spawning biomass that only includes years 2000 to 2020.</li>
@@ -1155,7 +1191,7 @@ Tip
 <section id="rerendering-report" class="level3">
 <h3 class="anchored" data-anchor-id="rerendering-report">Rerendering report</h3>
 <p>We understand that it’s easy to forget to enter in all of the information you need for a report on its initial creation! Because of this, we made the argument “rerender_skeleton” that adds on any new information to the skeleton file that you might want such as additional authors, a new species image, parameters, or anything that is open for you to customize in the skeleton file.</p>
-<p>You COULD do this manually, but using the function both allows you to create a record of your changes (making it more reproducible) <em>and</em> makes the Quarto yaml less intimidating to new users!</p>
+<p>You COULD do this manually, but using the function both allows you to create a record of your changes (making it more reproducible) <em>and</em> makes the Quarto YAML less intimidating to new users!</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1300,7 +1336,7 @@ Tip
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1309,7 +1345,7 @@ Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>Create a stock assessment report template tailored for the AFSC (a SAFE report).</p></li>
@@ -1323,7 +1359,7 @@ Add questions to practice adding new sections and calling a previous report when
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1332,7 +1368,7 @@ Add questions to practice adding new sections and calling a previous report when
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Create a stock assessment report template tailored for the AFSC (a SAFE report).</li>
@@ -1482,7 +1518,7 @@ Add questions to practice adding new sections and calling a previous report when
 <li>For the third line (starts with <code>load</code>), the example rda file (“Black_Sea_Bass2024.rda”) will probably be in your working directory.</li>
 </ul>
 <ol start="5" type="1">
-<li>Add the following code to the yaml in the skeleton.qmd (probably named “sar_N_Black_Sea_Bass_skeleton.qmd):</li>
+<li>Add the following code to the YAML in the skeleton.qmd (probably named “sar_N_Black_Sea_Bass_skeleton.qmd):</li>
 </ol>
 <pre><code>execute:
   echo: false

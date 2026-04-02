@@ -1400,8 +1400,8 @@ Note
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>Run <code>create_template()</code>. Fill in your own values for <code>office</code>, <code>region</code>, <code>species</code>, <code>spp_latin</code>, and <code>year</code>. Use default values for all remaining arguments.</p></li>
-<li><p>Whoops! You forgot to add the report author’s name and affiliation (yours!). Open the report skeleton and edit the yaml with this information.</p></li>
-<li><p>You realize that your report will frequently reference another species: <em>Patrickicus starrus</em>. Add a new parameter to the report’s yaml so that you can reference “Patrickicus starrus” with a simple “ps”.</p></li>
+<li><p>Whoops! You forgot to add the report author’s name and affiliation (yours!). Open the report skeleton and edit the YAML with this information.</p></li>
+<li><p>You realize that your report will frequently reference another species: <em>Patrickicus starrus</em>. Add a new parameter to the report’s YAML so that you can reference “Patrickicus starrus” with a simple “ps”.</p></li>
 <li><p>Open up the Executive Summary qmd file and add a sentence that references your new parameter.</p></li>
 </ol>
 </div>
@@ -1433,11 +1433,11 @@ Note
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="2" type="1">
-<li>Whoops! You forgot to add the report author’s name and affiliation (yours!). Open the report skeleton and edit the yaml with this information.</li>
+<li>Whoops! You forgot to add the report author’s name and affiliation (yours!). Open the report skeleton and edit the YAML with this information.</li>
 </ol>
-<p><strong>Answer</strong>: Open the .qmd file with “skeleton” in the filename. Edit the yaml’s “author” section to go from something like the first chunk to the second chunk.</p>
+<p><strong>Answer</strong>: Open the .qmd file with “skeleton” in the filename. Edit the YAML’s “author” section to go from something like the first chunk to the second chunk.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Original yaml snippet (located just beneath the title)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Original YAML snippet (located just beneath the title)</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'FIRST LAST'</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    affiliations<span class="sc">:</span> </span>
@@ -1448,7 +1448,7 @@ Note
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        postal<span class="sc">-</span>code<span class="sc">:</span> <span class="st">'POSTAL CODE'</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated yaml snippet</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated YAML snippet</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'Patrick Star'</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    affiliations<span class="sc">:</span></span>
@@ -1459,11 +1459,11 @@ Note
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>        postal<span class="sc">-</span>code<span class="sc">:</span> <span class="st">'33149'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="3" type="1">
-<li>You realize that your report will frequently reference another species: <em>Patrickicus starrus</em>. Add a new parameter to the report’s yaml so that you can reference “Patrickicus starrus” with a simple “ps”.</li>
+<li>You realize that your report will frequently reference another species: <em>Patrickicus starrus</em>. Add a new parameter to the report’s YAML so that you can reference “Patrickicus starrus” with a simple “ps”.</li>
 </ol>
-<p><strong>Answer</strong>: Open the .qmd file with “skeleton” in the filename. Edit the yaml’s “params” section and add the following line:</p>
+<p><strong>Answer</strong>: Open the .qmd file with “skeleton” in the filename. Edit the YAML’s “params” section and add the following line:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated yaml snippet</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updated YAML snippet</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>params<span class="sc">:</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>   office<span class="sc">:</span> <span class="st">'SEFSC'</span></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>   species<span class="sc">:</span> <span class="st">'Atlantic Bigeye Tuna'</span></span>

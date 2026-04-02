@@ -445,8 +445,8 @@ window.Quarto = {
   <li><a href="#components-of-quarto-reports" id="toc-components-of-quarto-reports" class="nav-link" data-scroll-target="#components-of-quarto-reports">Components of Quarto reports</a>
   <ul class="collapse">
   <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">YAML</a></li>
-  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">Code Chunks</a></li>
   <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
+  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">Code Chunks</a></li>
   <li><a href="#references-and-bibliography" id="toc-references-and-bibliography" class="nav-link" data-scroll-target="#references-and-bibliography">References and Bibliography</a></li>
   <li><a href="#glossary-and-survey-names" id="toc-glossary-and-survey-names" class="nav-link" data-scroll-target="#glossary-and-survey-names">Glossary and survey names</a></li>
   </ul></li>
@@ -725,54 +725,18 @@ Note
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="code-chunks" class="level3">
-<h3 class="anchored" data-anchor-id="code-chunks">Code Chunks</h3>
-<p>As we previously mentioned, the beauty of using Quarto is that it allows the user to integrate text and code throughout their reports making them super reproducible.</p>
-<p>The basics of a code chunk (chunk) are:</p>
-<ul>
-<li>the language (R or python)</li>
-<li>chunk options</li>
-<li>code</li>
-</ul>
-<p>These three things get wrapped together within two sets of three back ticks (```) to allow a user to run code.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>```{r}</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>#| label: ex-chunk</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>#| eval: false</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>#| warning: false</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>#| echo: false</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>#| fig-cap: This is my figure caption.</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>#| fig-alt: This is my alternative text.</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>#| tbl-cap: This is my table caption.</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>x &lt;- 1 + 1</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><em>There are a variety of chunk options, but the ones you will see consistently throughout this workshop are listed in the example above.</em> See more chunk options in the <a href="https://nmfs-ost.github.io/asar/articles/markdown_notation.html#sec-codechunk">markdown vignette</a>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the “label” option, for tables and figures, you will need to prefix the label with either “fig-” for a figure or “tbl-” for a table.</p>
-</div>
-</div>
-<p>For those familiar with R markdown, the code chunk structure in R markdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a “#|” proceeding each option.</p>
-</section>
 <section id="parameters" class="level3">
 <h3 class="anchored" data-anchor-id="parameters">Parameters</h3>
 <p>Parameters allow you to create dynamic reports. You can define parameters in the YAML header and then reference them in your text and code.</p>
 <p>For example, you could have a parameter for the species you’re writing about:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"Stock Assessment Report"</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"Patrick Star"</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> today</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>params<span class="sc">:</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  species<span class="sc">:</span> <span class="st">"Petrale sole"</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"Stock Assessment Report"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"Patrick Star"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> today</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>params<span class="sc">:</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  species<span class="sc">:</span> <span class="st">"Petrale sole"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Then, in the body of your report, you can reference this parameter like this:</p>
 <ul>
@@ -782,7 +746,7 @@ Note
 <li>add a backtick (`)</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r params$species</span><span class="st">`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r params$species</span><span class="st">`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Here is an example. NOTE that this example uses single quotes (’) instead of backticks (`), otherwise this page won’t render properly. But in your report, use the syntax directly above.</p>
 <p>“The native range of ‘r params$species’ spans from…”</p>
@@ -801,6 +765,42 @@ Tip
 <p>*‘r params$species’* will render as <em>Petrale sole</em>.</p>
 </div>
 </div>
+</section>
+<section id="code-chunks" class="level3">
+<h3 class="anchored" data-anchor-id="code-chunks">Code Chunks</h3>
+<p>As we previously mentioned, the beauty of using Quarto is that it allows the user to integrate text and code throughout their reports making them super reproducible.</p>
+<p>The basics of a code chunk (chunk) are:</p>
+<ul>
+<li>the language (R or python)</li>
+<li>chunk options</li>
+<li>code</li>
+</ul>
+<p>These three things get wrapped together within two sets of three back ticks (```) to allow a user to run code.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>```{r}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>#| label: ex-chunk</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>#| eval: false</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>#| warning: false</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>#| echo: false</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>#| fig-cap: This is my figure caption.</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>#| fig-alt: This is my alternative text.</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>#| tbl-cap: This is my table caption.</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>x &lt;- 1 + 1</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><em>There are a variety of chunk options, but the ones you will see consistently throughout this workshop are listed in the example above.</em> See more chunk options in the <a href="https://nmfs-ost.github.io/asar/articles/markdown_notation.html#sec-codechunk">markdown vignette</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the “label” option, for tables and figures, you will need to prefix the label with either “fig-” for a figure or “tbl-” for a table.</p>
+</div>
+</div>
+<p>For those familiar with R markdown, the code chunk structure in R markdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a “#|” proceeding each option.</p>
 </section>
 <section id="references-and-bibliography" class="level3">
 <h3 class="anchored" data-anchor-id="references-and-bibliography">References and Bibliography</h3>
