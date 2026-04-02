@@ -149,6 +149,17 @@ create_template(
 )
 ```
 
+::: {.callout-tip}
+Notice the `authors` syntax. It contains a vector with:
+
+1. The author's first and last name
+2. `=` sign
+3. Initials of the author's office or region (their affiliation)
+* To denote a specific location within a region, add a hyphen followed by the first letter of each word of the location (city, state). Example: "SWFSC-LJCA" stands for "Southwest Fisheries Science Center, La Jolla, California; "AFSC-NOR" stands for "Alaska Fisheries Science Center, Newport, Oregon".
+
+All affiliation acronyms are in the ["affiliations" file](https://github.com/nmfs-ost/asar/blob/main/inst/resources/affiliation_info.csv).
+:::
+
 **Run it!**
 
 You should see a folder called "**report**" where you indicated in the argument `file_dir`. It should have a set up that looks like this:

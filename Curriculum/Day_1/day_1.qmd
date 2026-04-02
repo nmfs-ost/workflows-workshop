@@ -184,39 +184,6 @@ date: today
 ---
 ```
 
-### Code Chunks
-
-As we previously mentioned, the beauty of using Quarto is that it allows the user to integrate text and code throughout their reports making them super reproducible.
-
-The basics of a code chunk (chunk) are:
-
-- the language (R or python)
-- chunk options
-- code
-
-These three things get wrapped together within two sets of three back ticks (```) to allow a user to run code.
-
-````{verbatim}
-```{r}
-#| label: ex-chunk
-#| eval: false
-#| warning: false
-#| echo: false
-#| fig-cap: This is my figure caption.
-#| fig-alt: This is my alternative text.
-#| tbl-cap: This is my table caption.
-x <- 1 + 1
-```
-````
-
-*There are a variety of chunk options, but the ones you will see consistently throughout this workshop are listed in the example above.* See more chunk options in the [markdown vignette](https://nmfs-ost.github.io/asar/articles/markdown_notation.html#sec-codechunk).
-
-::: {.callout-note}
-In the "label" option, for tables and figures, you will need to prefix the label with either "fig-" for a figure or "tbl-" for a table.
-:::
-
-For those familiar with R markdown, the code chunk structure in R markdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a "#|" proceeding each option.
-
 ### Parameters
 
 Parameters allow you to create dynamic reports. You can define parameters in the YAML header and then reference them in your text and code.
@@ -255,6 +222,39 @@ To make the species name italicized, add single asterisks (*) around the phrase.
 
 \*'r params$species'* will render as *Petrale sole*.
 :::
+
+### Code Chunks
+
+As we previously mentioned, the beauty of using Quarto is that it allows the user to integrate text and code throughout their reports making them super reproducible.
+
+The basics of a code chunk (chunk) are:
+
+- the language (R or python)
+- chunk options
+- code
+
+These three things get wrapped together within two sets of three back ticks (```) to allow a user to run code.
+
+````{verbatim}
+```{r}
+#| label: ex-chunk
+#| eval: false
+#| warning: false
+#| echo: false
+#| fig-cap: This is my figure caption.
+#| fig-alt: This is my alternative text.
+#| tbl-cap: This is my table caption.
+x <- 1 + 1
+```
+````
+
+*There are a variety of chunk options, but the ones you will see consistently throughout this workshop are listed in the example above.* See more chunk options in the [markdown vignette](https://nmfs-ost.github.io/asar/articles/markdown_notation.html#sec-codechunk).
+
+::: {.callout-note}
+In the "label" option, for tables and figures, you will need to prefix the label with either "fig-" for a figure or "tbl-" for a table.
+:::
+
+For those familiar with R markdown, the code chunk structure in R markdown documents will work with Quarto. The main difference is that the chunk options are now brought into the code chunk itself with a "#|" proceeding each option.
 
 ### References and Bibliography
 
