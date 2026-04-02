@@ -181,19 +181,25 @@ Break for questions
 
 ##### The skeleton
 
-![Diagram showing different blocks of content found in the Quarto yaml within the skeleton.qmd file.](images/asar_skeleton.png){fig-alt="A figure showing seven rectangles on top of one another, portraying the order of content in a Quarto yaml. Sections include 'Yaml (Formatting and input information)', 'Parameters R chunk', 'Preamble R chunk', 'Disclaimer', 'Citation', 'Report content ('child docs'): Executive Summary', an ellipsis to separate the blocks, and then a final block ('Report content ('Child docs'): Appendix')."}
+![Diagram showing different blocks of content found in the Quarto YAML within the skeleton.qmd file.](images/asar_skeleton.png){fig-alt="A figure showing seven rectangles on top of one another, portraying the order of content in a Quarto YAML. Sections include 'Yaml (Formatting and input information)', 'Parameters R chunk', 'Preamble R chunk', 'Disclaimer', 'Citation', 'Report content ('child docs'): Executive Summary', an ellipsis to separate the blocks, and then a final block ('Report content ('Child docs'): Appendix')."}
 
 As previously mentioned, the skeleton file controls the rest of the report. This 
 is the file you go to to compile your report, change formatting, or add quantities
 to reference in your document.
 
-We went over the basics of a Quarto yaml in [Day 1](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#yaml), but when using {asar}, you don't actually have to fill in anything yourself. The beauty of using {asar} is that it removes this task, but filling out information provided in the `create_template()` arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).
-
 ::: {.callout-note}
-You shouldn't have to adjust the yaml much, if at all. However, if your `species` does not match with an image in our [database](https://github.com/nmfs-ost/asar/tree/main/inst/resources/spp_img), then you can edit the yaml to add a filepath leading to your own cover image.
+Your skeleton file will *not* be called "skeleton.qmd". Its filename will be comprised based on the arguments you added to `create_template()`, such as the report type, region, and species.
+
+For the example above, it will be called "sar_USWC_Petrale_sole_skeleton.qmd".
 :::
 
-![asar yaml controlling formatting and basic document information.](images/asar_yaml.png){fig-alt="A screenshot of an example yaml, with curly brackets highlighting which code is 'information' and which code is 'formatting'."}
+We went over the basics of a Quarto YAML in [Day 1](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html#yaml), but when using {asar}, you don't actually have to fill in anything yourself. The beauty of using {asar} is that it removes this task, but filling out information provided in the `create_template()` arguments and providing the template custom formatting that is part of the package (and the NOAA standard!).
+
+::: {.callout-note}
+You shouldn't have to adjust the YAML much, if at all. However, if your `species` does not match with an image in our [database](https://github.com/nmfs-ost/asar/tree/main/inst/resources/spp_img), then you can edit the YAML to add a filepath leading to your own cover image.
+:::
+
+![asar YAML controlling formatting and basic document information.](images/asar_yaml.png){fig-alt="A screenshot of an example YAML, with curly brackets highlighting which code is 'information' and which code is 'formatting'."}
 
 The YAML controls the following:
 
@@ -208,7 +214,7 @@ The YAML controls the following:
 
 ##### Parameterization
 
-Quarto has a cool feature that allows users to parameterize their document by utilizing markdown's ability to render in-line code throughout your writing. In the yaml, there are pre-added parameters of the species, Latin name, region, and office. These are called in through an R chunk after the YAML.
+Quarto has a cool feature that allows users to parameterize their document by utilizing markdown's ability to render in-line code throughout your writing. In the YAML, there are pre-added parameters of the species, Latin name, region, and office. These are called in through an R chunk after the YAML.
 
 You have two options for calling these parameters in your writing.
 
@@ -399,7 +405,7 @@ Break for questions
 
 We understand that it's easy to forget to enter in all of the information you need for a report on its initial creation! Because of this, we made the argument "rerender_skeleton" that adds on any new information to the skeleton file that you might want such as additional authors, a new species image, parameters, or anything that is open for you to customize in the skeleton file. 
 
-You COULD do this manually, but using the function both allows you to create a record of your changes (making it more reproducible) *and* makes the Quarto yaml less intimidating to new users!
+You COULD do this manually, but using the function both allows you to create a record of your changes (making it more reproducible) *and* makes the Quarto YAML less intimidating to new users!
 
 ::: {.callout-note}
 You can run re-render skeleton as often as you want, it will always edit the current skeleton in the folder. Please note: any additional skeleton files will make this process fail. The process will also verify that you want to overwrite the current skeleton and either keep or replace the key quantities file.

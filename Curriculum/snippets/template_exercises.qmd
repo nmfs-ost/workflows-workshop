@@ -4,9 +4,9 @@
 
 1. Run `create_template()`. Fill in your own values for `office`, `region`, `species`, `spp_latin`, and `year`. Use default values for all remaining arguments.
 
-2. Whoops! You forgot to add the report author's name and affiliation (yours!). Open the report skeleton and edit the yaml with this information.
+2. Whoops! You forgot to add the report author's name and affiliation (yours!). Open the report skeleton and edit the YAML with this information.
 
-3. You realize that your report will frequently reference another species: *Patrickicus starrus*. Add a new parameter to the report's yaml so that you can reference "Patrickicus starrus" with a simple "ps".
+3. You realize that your report will frequently reference another species: *Patrickicus starrus*. Add a new parameter to the report's YAML so that you can reference "Patrickicus starrus" with a simple "ps".
 
 4. Open up the Executive Summary qmd file and add a sentence that references your new parameter.
 
@@ -29,12 +29,12 @@ create_template(
 )
 ```
 
-2. Whoops! You forgot to add the report author's name and affiliation (yours!). Open the report skeleton and edit the yaml with this information.
+2. Whoops! You forgot to add the report author's name and affiliation (yours!). Open the report skeleton and edit the YAML with this information.
 
-**Answer**: Open the .qmd file with "skeleton" in the filename. Edit the yaml's "author" section to go from something like the first chunk to the second chunk.
+**Answer**: Open the .qmd file with "skeleton" in the filename. Edit the YAML's "author" section to go from something like the first chunk to the second chunk.
 
 ```{r eval = FALSE}
-# Original yaml snippet (located just beneath the title)
+# Original YAML snippet (located just beneath the title)
 author:
   - name: 'FIRST LAST'
     affiliations: 
@@ -46,7 +46,7 @@ author:
 ```
 
 ```{r eval = FALSE}
-# Updated yaml snippet
+# Updated YAML snippet
 author:
   - name: 'Patrick Star'
     affiliations:
@@ -57,12 +57,12 @@ author:
         postal-code: '33149'
 ```
 
-3. You realize that your report will frequently reference another species: *Patrickicus starrus*. Add a new parameter to the report's yaml so that you can reference "Patrickicus starrus" with a simple "ps".
+3. You realize that your report will frequently reference another species: *Patrickicus starrus*. Add a new parameter to the report's YAML so that you can reference "Patrickicus starrus" with a simple "ps".
 
-**Answer**: Open the .qmd file with "skeleton" in the filename. Edit the yaml's "params" section and add the following line:
+**Answer**: Open the .qmd file with "skeleton" in the filename. Edit the YAML's "params" section and add the following line:
 
 ```{r eval = FALSE}
-# Updated yaml snippet
+# Updated YAML snippet
 params:
    office: 'SEFSC'
    species: 'Atlantic Bigeye Tuna'

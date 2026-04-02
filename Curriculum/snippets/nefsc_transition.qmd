@@ -104,7 +104,7 @@ fs::file_move(
   
   * For the third line (starts with `load`), the example rda file ("Black_Sea_Bass2024.rda") will probably be in your working directory.
 
-  5. Add the following code to the yaml in the skeleton.qmd (probably named "sar_N_Black_Sea_Bass_skeleton.qmd):
+  5. Add the following code to the YAML in the skeleton.qmd (probably named "sar_N_Black_Sea_Bass_skeleton.qmd):
   
 ```
 execute:
