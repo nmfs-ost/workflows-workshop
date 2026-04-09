@@ -6,3 +6,6 @@ report
 /.quarto/
 **/*.quarto_ipynb
 /_site/*
+Black_Sea_Bass2024.rda
+ExportLegacyNEFSCtoASARproject
+site_libs

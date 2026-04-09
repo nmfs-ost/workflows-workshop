@@ -15,7 +15,7 @@ format: html
 # Introduction
 ## Icebreaker
 
-Welcome! Please open the [Day 2 communal notes doc](https://docs.google.com/document/d/1nVlmmZgp8vCHZKCMHnBm43bf-mtk7pSA1t2FLHEoyZA/edit?tab=t.ds1fl2nu2oi5#heading=h.lwix6dbx3lr8) and participate in the icebreaker exercise.
+Welcome! Please open the [Day 2 communal notes doc](https://docs.google.com/document/d/1gsB_iRbcrBay2BTbcS7p24SoY7pMdksYdUIxSBWCbx8/edit?tab=t.ds1fl2nu2oi5#heading=h.lwix6dbx3lr8) and participate in the icebreaker exercise.
 
 ## Code of conduct
 
@@ -31,7 +31,7 @@ If you believe that someone is in violation of the Code of Conduct, please repor
 
 ## Materials for today's lesson
 
--   [Day 2 communal notes doc](https://docs.google.com/document/d/1nVlmmZgp8vCHZKCMHnBm43bf-mtk7pSA1t2FLHEoyZA/edit?tab=t.ds1fl2nu2oi5#heading=h.lwix6dbx3lr8)
+-   [Day 2 communal notes doc](https://docs.google.com/document/d/1gsB_iRbcrBay2BTbcS7p24SoY7pMdksYdUIxSBWCbx8/edit?tab=t.ds1fl2nu2oi5#heading=h.lwix6dbx3lr8)
     -   Contains resources (from us and you!) and areas for note-taking
 -   [Sample data](https://github.com/nmfs-ost/asar/blob/main/inst/extdata/Report.sso)
     -   Sample model output data for coding demonstrations
