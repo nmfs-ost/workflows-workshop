@@ -1,0 +1,14 @@
+---
+title: "Workshop FAQ"
+---
+
+Answers to frequently asked questions or simply answers to post-workshop questions from our workshop feedback survey.
+
+## Some models have lots of configurations options, does this work with all sex specific/ multi season, multi region SS3 models?
+
+The packages are designed to work with any model configuration. I am assuming you are referring to the convert_output() function which takes into consideration any potential model configuration much as mult-sex, multi-season ect. Each `stockplotr` function will recognize any of these indexing variables and automatically make a plot or table with this configuration.
+
+## Is there a way to add standard chunks of text the same way you can add standard plots? 
+
+We do not plan to develop and standard chunks of text with the exception of description of models. The advantage of using Quarto along with a future planned development should automatically have your text. The idea is that you should only need to make edits to the parts you want to change from the previous assessment report and all other sections can remain the same, if you so choose.
+
