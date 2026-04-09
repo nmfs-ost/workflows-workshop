@@ -508,12 +508,6 @@ Break for questions & practicing
 
 {{< include ../snippets/complex_asar_exercises.qmd >}}
 
-# NEFSC-specific content
-
-This information will be available after the workshop in the sidebar's [Regionally-specific content tab](../../resources/regional_info.qmd).
-
-{{< include ../snippets/nefsc_transition.qmd >}}
-
 # Summary (10 mins)
 
 You should now be able to
