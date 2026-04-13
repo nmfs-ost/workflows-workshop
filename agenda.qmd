@@ -25,14 +25,13 @@ format: html
 |-----------|---------------------------|
 | 0:00-0:15 |[ Introduction & Icebreaker](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#introduction) |
 | 0:15-0:35 | [{asar}: installation and overview](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#installation) |
-| 0:35-1:05 | [asar::create_template()](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#asarcreate_template) |
-| **1:05-1:25** | **Break** |
-| 1:25-1:35 | [Mid-session icebreaker](https://docs.google.com/document/d/1gsB_iRbcrBay2BTbcS7p24SoY7pMdksYdUIxSBWCbx8/edit?tab=t.ds1fl2nu2oi5#heading=h.lwix6dbx3lr8) |
-| 1:35-1:55 | [stockplotr::convert_output()](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#stockplotrconvert_output) |
-| **1:55-2:10** | **Break for questions** |
-| 2:10-2:20 | [Mid-session icebreaker](https://docs.google.com/document/d/1gsB_iRbcrBay2BTbcS7p24SoY7pMdksYdUIxSBWCbx8/edit?tab=t.ds1fl2nu2oi5#heading=h.lwix6dbx3lr8) |
-| 2:20-2:40 | [Advanced workflow](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#advanced-asar-workflow) |
-| **2:40-2:50** | **Break for questions** |
+| 0:35-1:10 | [asar::create_template()](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#asarcreate_template) |
+| **1:10-1:30** | **Break** |
+| 1:30-1:40 | [Mid-session icebreaker](https://docs.google.com/document/d/1gsB_iRbcrBay2BTbcS7p24SoY7pMdksYdUIxSBWCbx8/edit?tab=t.ds1fl2nu2oi5#heading=h.lwix6dbx3lr8) |
+| 1:40-2:00 | [stockplotr::convert_output()](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#stockplotrconvert_output) |
+| **2:00-2:15** | **Break for questions** |
+| 2:15-2:25 | [Mid-session icebreaker](https://docs.google.com/document/d/1gsB_iRbcrBay2BTbcS7p24SoY7pMdksYdUIxSBWCbx8/edit?tab=t.ds1fl2nu2oi5#heading=h.lwix6dbx3lr8) |
+| 2:25-2:50 | [Advanced workflow](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#advanced-asar-workflow) |
 | 2:50-3:00 | [Wrap-up](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_2/day_2.html#summary-10-mins) |
 
 ## Day 3
