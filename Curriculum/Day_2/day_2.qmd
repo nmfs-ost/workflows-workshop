@@ -140,11 +140,11 @@ library(asar)
 create_template(
   format = "pdf", # optional "html"
   type = "sar", # add'l options: "safe", "nemt", "pfmc"
-  office = "NWFSC",
-  region = "U.S. West Coast",
-  species = "Petrale sole",
-  spp_latin = "Eopsetta jordani",
-  authors = c("Samantha Schiano" = "OST", "Jane Doe"="SWFSC-LJCA"),
+  office = "PIFSC",
+  region = "Hawaii",
+  species = "Crimson jobfish",
+  spp_latin = "Pristipomoides filamentosus",
+  authors = c("Samantha Schiano" = "OST", "Jane Doe"="PIFSC"),
   file_dir = getwd() # folder where the "report" folder will be saved
 )
 ```
@@ -295,14 +295,14 @@ We have uploaded an example Report.sso file in the workshop GitHub, but if you h
 # Identify output file
 output_file <- file.path("example_output", "Report.sso")
 # convert the output
-petrale <- stockplotr::convert_output(
+paka <- stockplotr::convert_output(
   output_file,
-  save_dir = file.path(getwd(), "report", "petrale_conout.rda")
+  save_dir = file.path(getwd(), "report", "paka_conout.rda")
   )
 
 # copy the converted output to your wd too, for later usage
 file.copy(
-  from = file.path(getwd(), "report", "petrale_conout.rda"),
+  from = file.path(getwd(), "report", "paka_conout.rda"),
   to = getwd()
   )
 ```
@@ -310,7 +310,7 @@ file.copy(
 **Run it!**
 
 ```{r eval=FALSE}
-petrale
+paka
 ```
 
 ![A screenshot of the first 8 columns and 10 rows of data from a standard output tibble converted from a stock synthesis Report.sso file.](images/petrale_conout.png)
@@ -375,11 +375,11 @@ First, let's make our template.
 ```{r eval=FALSE}
 asar::create_template(
   # Previous arguments we used for simple
-  format = "pdf",
-  office = "AFSC",
-  region = "Gulf of Alaska",
-  species = "Rex sole",
-  spp_latin = "Glyptocephalus zachirus",
+  type = "sar",
+  office = "PIFSC",
+  region = "Hawaii",
+  species = "Crimson jobfish",
+  spp_latin = "Pristipomoides filamentosus",
   authors = c("Samantha Schiano" = "OST"),
   # New arguments
   custom = TRUE, # set this to TRUE when you're choosing a subset of standard sections
@@ -445,8 +445,8 @@ Now, I need to:
 asar::create_template(
   rerender_skeleton = TRUE,
   file_dir = file.path(getwd(), "report"),
-  model_results = file.path(getwd(), "report", "petrale_conout.rda"),
-  authors = c("Ben Williams"="AFSC")
+  model_results = file.path(getwd(), "report", "paka_conout.rda"),
+  authors = c("Michelle Sculley"="PIFSC")
 )
 ```
 
