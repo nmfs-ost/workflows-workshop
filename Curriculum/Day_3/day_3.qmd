@@ -739,12 +739,13 @@ The file is set up like this:
 The label in the csv must match the label in your plot's chunk options, **MINUS the "fig-" or "tab-"**.
 For example, the label "custom_table1" in the csv would match up properly with the "tbl-custom_table1" label in this code chunk:
 
+````{verbatim}
 ```{r eval=FALSE}
 #| label: 'tbl-custom_table1'
 
 my_table
 ```
-
+````
 The same rule applies for figures: "custom_figure1" in the csv would match up with "fig-custom_figure1" in the chunk options' label.
 
 :::
