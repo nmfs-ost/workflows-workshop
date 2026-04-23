@@ -15,7 +15,7 @@ If you have any questions, please contact the [workshop organizers](https://nmfs
 quarto::quarto_version()
 ```
 
-3. [Create a new Github repo](https://happygitwithr.com/rstudio-git-github.html#make-a-repo-on-github-1) for the workshop.
+3. [Create a new Github repo](https://happygitwithr.com/rstudio-git-github.html#make-a-repo-on-github-1) for the workshop. Do not complete the last step ("12.7 Clean up").
 4. [Clone your repo and set up an RStudio Project](https://happygitwithr.com/rstudio-git-github.html#clone-the-test-github-repository-to-your-computer-via-rstudio).
 5. Run the following code to get two essential files from the workflows-workshop github repo:
 
