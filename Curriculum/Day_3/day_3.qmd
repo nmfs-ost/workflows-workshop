@@ -113,6 +113,7 @@ Each automated function returns either a `ggplot2` object (figure) or `gt` objec
 Run the example below. It should result in a line graph showing spawning biomass over time, including a reference line for the spawning biomass at msy.
 
 ```{r eval = FALSE}
+library(stockplotr)
 stockplotr::plot_spawning_biomass(
   dat = paka, # dataset
   geom = "line", # show a line graph
@@ -341,7 +342,7 @@ Each plot or table has the option to export it as an rda. This rda is a list of 
 -   LaTeX object (tables only)
 
 ```{r}
-stockplotr::plot_spawning_biomass(
+plot_spawning_biomass(
   dat = paka,
   ref_line = c("target" = 10),
   unit_label = "mt",
@@ -367,7 +368,7 @@ Break for questions
 Now, export the landings table:
 
 ```{r}
-stockplotr::table_landings(
+table_landings(
   dat = paka,
   make_rda = TRUE, # new argument needed to export plot
   tables_dir = getwd() # indicate where to create a "tables" folder with the landings table rda
@@ -432,6 +433,7 @@ Then, there are only two arguments to fill out:
 #| eval: false
 #| warning: false
 #| messages: false
+library(asar)
 create_figures_doc(
   subdir = fs::path(getwd(), "report"), # indicates the new figures doc will be saved in your "report" folder, located in the working directory
   figures_dir = getwd() # indicates your "figures" folder is located in the working directory
@@ -470,6 +472,7 @@ To add tables to the {asar} tables doc:
 #| eval: false
 #| warning: false
 #| messages: false
+library(asar)
 create_tables_doc(
   subdir = fs::path(getwd(), "report"),
   tables_dir = getwd()
