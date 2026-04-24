@@ -482,7 +482,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Introduction</h1>
 <section id="icebreaker" class="level2">
 <h2 class="anchored" data-anchor-id="icebreaker">Icebreaker</h2>
-<p>Welcome! Please open the <a href="https://docs.google.com/document/d/1gsB_iRbcrBay2BTbcS7p24SoY7pMdksYdUIxSBWCbx8/edit?tab=t.vffehz79fm7y#heading=h.lwix6dbx3lr8">Day 3 communal notes doc</a> and participate in the icebreaker exercise.</p>
+<p>Welcome! Please open the <a href="https://docs.google.com/document/d/1zxzu143BNOOsMjx1OoCs-Bj0chz_caHNpHb5jzCN9FM/edit?tab=t.vffehz79fm7y#heading=h.lwix6dbx3lr8">Day 3 communal notes doc</a> and participate in the icebreaker exercise.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -510,7 +510,7 @@ Tip
 <section id="materials-for-todays-lesson" class="level2">
 <h2 class="anchored" data-anchor-id="materials-for-todays-lesson">Materials for today’s lesson</h2>
 <ul>
-<li><a href="https://docs.google.com/document/d/1gsB_iRbcrBay2BTbcS7p24SoY7pMdksYdUIxSBWCbx8/edit?tab=t.vffehz79fm7y#heading=h.lwix6dbx3lr8">Day 3 communal notes doc</a>
+<li><a href="https://docs.google.com/document/d/1zxzu143BNOOsMjx1OoCs-Bj0chz_caHNpHb5jzCN9FM/edit?tab=t.vffehz79fm7y#heading=h.lwix6dbx3lr8">Day 3 communal notes doc</a>
 <ul>
 <li>Contains resources (from us and you!) and areas for note-taking</li>
 </ul></li>
@@ -655,18 +655,19 @@ Tip
 <h2 class="anchored" data-anchor-id="example-figure">Example Figure</h2>
 <p>Run the example below. It should result in a line graph showing spawning biomass over time, including a reference line for the spawning biomass at msy.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_spawning_biomass</span>(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> paka, <span class="co"># dataset</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">geom =</span> <span class="st">"line"</span>, <span class="co"># show a line graph</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="cn">NULL</span>, <span class="co"># don't group by sex, fleet, etc.</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">facet =</span> <span class="cn">NULL</span>, <span class="co"># not faceting by any variable</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="st">"msy"</span>, <span class="co"># set reference line at msy</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>, <span class="co"># unit label: metric tons</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale_amount =</span> <span class="dv">1</span>, <span class="co"># do not scale spawning biomass</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">relative =</span> <span class="cn">FALSE</span>, <span class="co"># show spawning biomass, NOT relative spawning biomass</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">interactive =</span> <span class="cn">TRUE</span>, <span class="co"># prompt user for MODULE_NAME in console</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="cn">NULL</span> <span class="co"># MODULE_NAME not specified here</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stockplotr)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_spawning_biomass</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> paka, <span class="co"># dataset</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">geom =</span> <span class="st">"line"</span>, <span class="co"># show a line graph</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="cn">NULL</span>, <span class="co"># don't group by sex, fleet, etc.</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">facet =</span> <span class="cn">NULL</span>, <span class="co"># not faceting by any variable</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="st">"msy"</span>, <span class="co"># set reference line at msy</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>, <span class="co"># unit label: metric tons</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale_amount =</span> <span class="dv">1</span>, <span class="co"># do not scale spawning biomass</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">relative =</span> <span class="cn">FALSE</span>, <span class="co"># show spawning biomass, NOT relative spawning biomass</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">interactive =</span> <span class="cn">TRUE</span>, <span class="co"># prompt user for MODULE_NAME in console</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="cn">NULL</span> <span class="co"># MODULE_NAME not specified here</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img src="images/day3_ex_plt1_a.png" class="img-fluid"></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -939,7 +940,7 @@ Tip
 <li>LaTeX object (tables only)</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">plot_spawning_biomass</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_spawning_biomass</span>(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> paka,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="fu">c</span>(<span class="st">"target"</span> <span class="ot">=</span> <span class="dv">10</span>),</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>,</span>
@@ -967,7 +968,7 @@ Tip
 </div>
 <p>Now, export the landings table:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">table_landings</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table_landings</span>(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">dat =</span> paka,</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">make_rda =</span> <span class="cn">TRUE</span>, <span class="co"># new argument needed to export plot</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">tables_dir =</span> <span class="fu">getwd</span>() <span class="co"># indicate where to create a "tables" folder with the landings table rda</span></span>
@@ -1039,10 +1040,11 @@ Tip
 <li><code>figures_dir</code>: The location of your “figures” folder</li>
 </ol>
 <div class="cell" data-messages="false">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_figures_doc</span>(</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">subdir =</span> fs<span class="sc">::</span><span class="fu">path</span>(<span class="fu">getwd</span>(), <span class="st">"report"</span>), <span class="co"># indicates the new figures doc will be saved in your "report" folder, located in the working directory</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">figures_dir =</span> <span class="fu">getwd</span>() <span class="co"># indicates your "figures" folder is located in the working directory</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(asar)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create_figures_doc</span>(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">subdir =</span> fs<span class="sc">::</span><span class="fu">path</span>(<span class="fu">getwd</span>(), <span class="st">"report"</span>), <span class="co"># indicates the new figures doc will be saved in your "report" folder, located in the working directory</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">figures_dir =</span> <span class="fu">getwd</span>() <span class="co"># indicates your "figures" folder is located in the working directory</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, open your new figures doc and take a look!</p>
 <p>You’ll notice the following structure:</p>
@@ -1068,10 +1070,11 @@ Tip
 </ol>
 <p>To add tables to the {asar} tables doc:</p>
 <div class="cell" data-messages="false">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_tables_doc</span>(</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">subdir =</span> fs<span class="sc">::</span><span class="fu">path</span>(<span class="fu">getwd</span>(), <span class="st">"report"</span>),</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">tables_dir =</span> <span class="fu">getwd</span>()</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(asar)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create_tables_doc</span>(</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">subdir =</span> fs<span class="sc">::</span><span class="fu">path</span>(<span class="fu">getwd</span>(), <span class="st">"report"</span>),</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">tables_dir =</span> <span class="fu">getwd</span>()</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1534,16 +1537,11 @@ Important
 </div>
 <div class="callout-body-container callout-body">
 <p>The label in the csv must match the label in your plot’s chunk options, <strong>MINUS the “fig-” or “tab-”</strong>. For example, the label “custom_table1” in the csv would match up properly with the “tbl-custom_table1” label in this code chunk:</p>
-<div id="tbl-custom_table1" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-custom_table1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1
-</figcaption>
-<div aria-describedby="tbl-custom_table1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>my_table</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</figure>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>```{r eval=FALSE}</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>#| label: 'tbl-custom_table1'</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>my_table</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The same rule applies for figures: “custom_figure1” in the csv would match up with “fig-custom_figure1” in the chunk options’ label.</p>
 </div>
 </div>
