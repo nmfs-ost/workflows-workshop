@@ -203,7 +203,7 @@ stockplotr::plot_spawning_biomass(
   era = NULL,
   lbs = TRUE, # new argument to plot in lbs instead of mt
   ref_line = c("target" = 1200),
-  unit_label = "1000 lbs", # assuming changing from mt
+  unit_label = "lbs", # assuming changing from mt
   scale_amount = 1,
   relative = FALSE,
   interactive = FALSE,
