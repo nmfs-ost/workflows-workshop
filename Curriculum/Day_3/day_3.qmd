@@ -114,7 +114,7 @@ Run the example below. It should result in a line graph showing spawning biomass
 
 ```{r eval = FALSE}
 library(stockplotr)
-stockplotr::plot_spawning_biomass(
+plot_spawning_biomass(
   dat = paka, # dataset
   geom = "line", # show a line graph
   group = NULL, # don't group by sex, fleet, etc.
@@ -155,42 +155,63 @@ In this example we are also telling the function which module to select in order
 You can remove the reference line by setting `ref_line = NULL`.
 
 ```{r}
-stockplotr::plot_spawning_biomass(
+plot_spawning_biomass(
   dat = paka,
   geom = "line",
   group = NULL,
   facet = NULL,
   era = NULL,
-  ref_line = c("target" = 10), # changed from "msy"
+  ref_line = c("target" = 1200), # changed from "msy"
   unit_label = "mt",
   scale_amount = 1,
   relative = FALSE,
   interactive = FALSE, # changed from TRUE
-  module = "DERIVED_QUANTITIES                                                                              " # indicate module name here
+  module = "DERIVED_QUANTITIES" # indicate module name here
 )
 ```
 
 ![](images/day3_ex_plt2_b.png)
 
-#### Plot relative spawning biomass
+<!-- #### Plot relative spawning biomass -->
 
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 stockplotr::plot_spawning_biomass(
   dat = paka,
   geom = "line",
   group = "none",
   facet = NULL,
   era = NULL,
-  ref_line = c("target" = 10),
+  ref_line = c("target" = 1200),
   unit_label = "mt",
   scale_amount = 1,
   relative = TRUE, # changed from FALSE
+  interactive = FALSE,
+  module = "TIME_SERIES"
+)
+```
+
+<!-- ![](images/day3_ex_plt4.png) -->
+
+### Plot in lbs
+
+```{r}
+stockplotr::plot_spawning_biomass(
+  dat = paka,
+  geom = "line",
+  group = NULL,
+  facet = NULL,
+  era = NULL,
+  lbs = TRUE, # new argument to plot in lbs instead of mt
+  ref_line = c("target" = 1200),
+  unit_label = "1000 lbs", # assuming changing from mt
+  scale_amount = 1,
+  relative = FALSE,
   interactive = FALSE,
   module = "DERIVED_QUANTITIES"
 )
 ```
 
-![](images/day3_ex_plt4.png)
+<!-- ![](images/day3_lbs_ex_plt.png) -->
 
 #### Customizations from {ggplot2}
 
@@ -201,21 +222,15 @@ If you were plotting a scatterplot (`geom = 'point'`) or area plot (`geom = 'are
 :::
 
 ```{r}
-stockplotr::plot_spawning_biomass(
+plot_spawning_biomass(
   dat = paka,
-  geom = "line",
-  group = NULL,
-  facet = NULL,
   era = NULL,
-  ref_line = c("target" = 10),
-  unit_label = "mt",
-  scale_amount = 1,
-  relative = TRUE, # changed from FALSE
-  interactive = FALSE,
+  ref_line = c("target" = 1200),
   module = "DERIVED_QUANTITIES",
   linewidth = 2 # increase width of lines
 ) +
-  ggplot2::geom_vline(xintercept = 2005, linetype = "dashed", color = "red")
+  ggplot2::geom_vline(xintercept = 2005, linetype = "dashed", color = "red") +
+  ggplot2::theme(legend.position = "none")
 ```
 
 ![](images/day3_ex_plt3_b.png)
@@ -235,13 +250,12 @@ Remember that figures return `ggplot2` objects, so we can make additional custom
 :::
 
 ```{r}
-stockplotr::plot_spawning_biomass(
+plot_spawning_biomass(
   dat = paka,
   geom = "line",
-  group = "fleet",
   facet = NULL,
   era = NULL,
-  ref_line = c("target" = 10),
+  ref_line = c("target" = 1200),
   unit_label = "mt",
   scale_amount = 1,
   relative = FALSE,
