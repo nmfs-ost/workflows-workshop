@@ -661,13 +661,14 @@ Tip
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">geom =</span> <span class="st">"line"</span>, <span class="co"># show a line graph</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="cn">NULL</span>, <span class="co"># don't group by sex, fleet, etc.</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">facet =</span> <span class="cn">NULL</span>, <span class="co"># not faceting by any variable</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="st">"msy"</span>, <span class="co"># set reference line at msy</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>, <span class="co"># unit label: metric tons</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale_amount =</span> <span class="dv">1</span>, <span class="co"># do not scale spawning biomass</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">relative =</span> <span class="cn">FALSE</span>, <span class="co"># show spawning biomass, NOT relative spawning biomass</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">interactive =</span> <span class="cn">TRUE</span>, <span class="co"># prompt user for MODULE_NAME in console</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="cn">NULL</span> <span class="co"># MODULE_NAME not specified here</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">era =</span> <span class="cn">NULL</span>, <span class="co"># default to "time"</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="st">"msy"</span>, <span class="co"># set reference line at msy</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>, <span class="co"># unit label: metric tons</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale_amount =</span> <span class="dv">1</span>, <span class="co"># do not scale spawning biomass</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">relative =</span> <span class="cn">FALSE</span>, <span class="co"># show spawning biomass, NOT relative spawning biomass</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">interactive =</span> <span class="cn">TRUE</span>, <span class="co"># prompt user for MODULE_NAME in console</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="cn">NULL</span> <span class="co"># MODULE_NAME not specified here</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img src="images/day3_ex_plt1_a.png" class="img-fluid"></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -708,13 +709,14 @@ Tip
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">geom =</span> <span class="st">"line"</span>,</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="cn">NULL</span>,</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">facet =</span> <span class="cn">NULL</span>,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="fu">c</span>(<span class="st">"target"</span> <span class="ot">=</span> <span class="dv">10</span>), <span class="co"># changed from "msy"</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>,</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale_amount =</span> <span class="dv">1</span>,</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">relative =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">interactive =</span> <span class="cn">FALSE</span>, <span class="co"># changed from TRUE</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="st">"TIME_SERIES"</span> <span class="co"># indicate module name here</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">era =</span> <span class="cn">NULL</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="fu">c</span>(<span class="st">"target"</span> <span class="ot">=</span> <span class="dv">10</span>), <span class="co"># changed from "msy"</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale_amount =</span> <span class="dv">1</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">relative =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">interactive =</span> <span class="cn">FALSE</span>, <span class="co"># changed from TRUE</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="st">"DERIVED_QUANTITIES                                                                              "</span> <span class="co"># indicate module name here</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img src="images/day3_ex_plt2_b.png" class="img-fluid"></p>
 </section>
@@ -726,13 +728,14 @@ Tip
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">geom =</span> <span class="st">"line"</span>,</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="st">"none"</span>,</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">facet =</span> <span class="cn">NULL</span>,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="fu">c</span>(<span class="st">"target"</span> <span class="ot">=</span> <span class="dv">10</span>),</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>,</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale_amount =</span> <span class="dv">1</span>,</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">relative =</span> <span class="cn">TRUE</span>, <span class="co"># changed from FALSE</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">interactive =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="st">"TIME_SERIES"</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">era =</span> <span class="cn">NULL</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="fu">c</span>(<span class="st">"target"</span> <span class="ot">=</span> <span class="dv">10</span>),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale_amount =</span> <span class="dv">1</span>,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">relative =</span> <span class="cn">TRUE</span>, <span class="co"># changed from FALSE</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">interactive =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="st">"DERIVED_QUANTITIES"</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img src="images/day3_ex_plt4.png" class="img-fluid"></p>
 </section>
@@ -758,15 +761,16 @@ Note
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">geom =</span> <span class="st">"line"</span>,</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="cn">NULL</span>,</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">facet =</span> <span class="cn">NULL</span>,</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="fu">c</span>(<span class="st">"target"</span> <span class="ot">=</span> <span class="dv">10</span>),</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>,</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale_amount =</span> <span class="dv">1</span>,</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">relative =</span> <span class="cn">TRUE</span>, <span class="co"># changed from FALSE</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">interactive =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="st">"TIME_SERIES"</span>,</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">linewidth =</span> <span class="dv">2</span> <span class="co"># increase width of lines</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">2005</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">era =</span> <span class="cn">NULL</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="fu">c</span>(<span class="st">"target"</span> <span class="ot">=</span> <span class="dv">10</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale_amount =</span> <span class="dv">1</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">relative =</span> <span class="cn">TRUE</span>, <span class="co"># changed from FALSE</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">interactive =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">module =</span> <span class="st">"DERIVED_QUANTITIES"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">linewidth =</span> <span class="dv">2</span> <span class="co"># increase width of lines</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">2005</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img src="images/day3_ex_plt3_b.png" class="img-fluid"></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -799,12 +803,13 @@ stockplotr::plot_spawning_biomass(
   geom = "line",
   group = "fleet",
   facet = NULL,
+  era = NULL,
   ref_line = c("target" = 10),
   unit_label = "mt",
   scale_amount = 1,
   relative = FALSE,
   interactive = FALSE,
-  module = "TIME_SERIES"
+  module = "DERIVED_QUANTITIES"
 ) +
   ggplot2::geom_vline(xintercept = 2005, linetype = "dashed", color = "red")
 ```
