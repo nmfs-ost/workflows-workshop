@@ -119,6 +119,7 @@ stockplotr::plot_spawning_biomass(
   geom = "line", # show a line graph
   group = NULL, # don't group by sex, fleet, etc.
   facet = NULL, # not faceting by any variable
+  era = NULL, # default to "time"
   ref_line = "msy", # set reference line at msy
   unit_label = "mt", # unit label: metric tons
   scale_amount = 1, # do not scale spawning biomass
@@ -159,12 +160,13 @@ stockplotr::plot_spawning_biomass(
   geom = "line",
   group = NULL,
   facet = NULL,
+  era = NULL,
   ref_line = c("target" = 10), # changed from "msy"
   unit_label = "mt",
   scale_amount = 1,
   relative = FALSE,
   interactive = FALSE, # changed from TRUE
-  module = "TIME_SERIES" # indicate module name here
+  module = "DERIVED_QUANTITIES                                                                              " # indicate module name here
 )
 ```
 
@@ -178,12 +180,13 @@ stockplotr::plot_spawning_biomass(
   geom = "line",
   group = "none",
   facet = NULL,
+  era = NULL,
   ref_line = c("target" = 10),
   unit_label = "mt",
   scale_amount = 1,
   relative = TRUE, # changed from FALSE
   interactive = FALSE,
-  module = "TIME_SERIES"
+  module = "DERIVED_QUANTITIES"
 )
 ```
 
@@ -203,12 +206,13 @@ stockplotr::plot_spawning_biomass(
   geom = "line",
   group = NULL,
   facet = NULL,
+  era = NULL,
   ref_line = c("target" = 10),
   unit_label = "mt",
   scale_amount = 1,
   relative = TRUE, # changed from FALSE
   interactive = FALSE,
-  module = "TIME_SERIES",
+  module = "DERIVED_QUANTITIES",
   linewidth = 2 # increase width of lines
 ) +
   ggplot2::geom_vline(xintercept = 2005, linetype = "dashed", color = "red")
@@ -236,12 +240,13 @@ stockplotr::plot_spawning_biomass(
   geom = "line",
   group = "fleet",
   facet = NULL,
+  era = NULL,
   ref_line = c("target" = 10),
   unit_label = "mt",
   scale_amount = 1,
   relative = FALSE,
   interactive = FALSE,
-  module = "TIME_SERIES"
+  module = "DERIVED_QUANTITIES"
 ) +
   ggplot2::geom_vline(xintercept = 2005, linetype = "dashed", color = "red")
 ```
