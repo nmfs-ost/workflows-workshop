@@ -135,7 +135,7 @@ Let's look at our [article on markdown notation](https://nmfs-ost.github.io/asar
 
 Quarto is an ideal platform for building reproducible reports, many of which contain markdown. These reports are denoted with a .qmd (Quarto Markdown) extension type. For those familiar with R markdown, Quarto is like a more flexible and powerful version of that.
 
-So, why should you Quarto to build reports?
+So, why should you use Quarto to build reports?
 
 * It allows you to combine narrative text, source code (like R, Python, LaTeX, and more), and the outputs of that code (like tables and figures) into a single, polished, dynamic document. When you "knit" the document, the code is executed, and all of those components are inserted into the final report.
 
