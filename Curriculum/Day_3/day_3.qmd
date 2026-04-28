@@ -192,26 +192,10 @@ stockplotr::plot_spawning_biomass(
 
 <!-- ![](images/day3_ex_plt4.png) -->
 
-### Plot in lbs
 
-```{r}
-stockplotr::plot_spawning_biomass(
-  dat = paka,
-  geom = "line",
-  group = NULL,
-  facet = NULL,
-  era = NULL,
-  lbs = TRUE, # new argument to plot in lbs instead of mt
-  ref_line = c("target" = 1200),
-  unit_label = "lbs", # assuming changing from mt
-  scale_amount = 1,
-  relative = FALSE,
-  interactive = FALSE,
-  module = "DERIVED_QUANTITIES"
-)
-```
-
-<!-- ![](images/day3_lbs_ex_plt.png) -->
+::: callout-note
+A feature to show plots in lbs along with displaying relative values is in the works and is planned for release in July 2026 (v0.11.0). For more information on planned developments and timeline see our [GitHub Project](https://github.com/orgs/nmfs-ost/projects/45/views/2) and [Milestones](https://github.com/nmfs-ost/stockplotr/milestones?sort=due_date&direction=asc).
+:::
 
 #### Customizations from {ggplot2}
 
