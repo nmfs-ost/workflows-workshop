@@ -53,7 +53,8 @@ website:
         text: "NSAW workshop"
       - href: resources/regional_info.qmd
         text: "Regionally-specific content"
-
+      - href: resources/faq.qmd
+        text: "FAQ"
 
 format:
   html:
