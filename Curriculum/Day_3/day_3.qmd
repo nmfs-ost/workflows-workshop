@@ -39,7 +39,7 @@ Break for questions
 
 ## Installation
 
-{asar}, {stockplotr}, and {tinytex} should already be installed if you attended Days 1 or 2. If not, please install these packages by following the instructions in the [pre-workshop checklist](https://nmfs-ost.github.io/workflows-workshop/resources/checklist.html).
+{asar}, {stockplotr}, {quarto}, and {tinytex} should already be installed if you attended Days 1 or 2. If not, please install these packages by following the instructions in the [pre-workshop checklist](https://nmfs-ost.github.io/workflows-workshop/resources/checklist.html).
 
 # Introduction to {stockplotr}
 
@@ -407,6 +407,8 @@ For the second half of today's lesson, let's reorient ourselves. We've just lear
 Remember that after running the primary {asar} function-- `create_template()`- you have a 'report' folder with several files in it. These files include the report skeleton; the child documents containing the executive summary, introduction, results, and so on; and, importantly for us right now, the documents that will contain code to display your figures and tables. The files will be named something like '08_tables.qmd' and '09_figures.qmd' (the prefix numbers may vary).
 
 Each file will contain zero figures or tables. Instead, they will contain a statement referring you to {stockplotr} so that you can make your own. Since we've created those already, let's add them to your report!
+
+*Reminder: we are going to proceed in working with the original report you created yesterday, located in the "report" folder. This folder contains a document with the example paragraph, model results, and more.*
 
 ## Adding tables and figures to your report
 

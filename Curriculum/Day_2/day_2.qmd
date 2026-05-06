@@ -266,7 +266,7 @@ We are advising everyone that if any content needed beyond the standard guidelin
 Please add the following text into your "introduction" section:
 
 ```{verbatim}
-The stock assessment for `r params$species` was conducted by the `r params$office` in `r params$region`. The terminal spawning biomass for the current assessment year (`r end_year`) was `r SBend`. You can find more information on the results of this assessment in @sec-assmt-results. The guidelines for this report follow those outlined in @akaiki_new_1974.
+The stock assessment for `r params$species` was conducted by the `r params$office` in `r params$region`. The terminal spawning biomass for the current assessment year (`r end_year`) was `r SBend`. You can find more information on the results of this assessment in @sec-assmt-results. The guidelines for this report follow those outlined in @Abrams2014.
 ```
 
 ::: {.callout-note appearance="minimal"}
@@ -344,62 +344,13 @@ For more information, navigate to [this article](https://nmfs-ost.github.io/stoc
 
 Now we are going to walk-through a more complex use of {asar} by
 
-- Customizing sections
 - Updating reports after initial setup
   - Adding additional parameters
   - Adding model results
   - Adding a new author
-  
+- Customizing sections
+
 <!-- - Calling a previous report and editing -->
-
-### Create-your-own
-
-There are *three additional template options* available to users to use while we work to set standard assessment report guidelines across the country:
-
-* SAFE reports (`create_template(type = 'safe')`)
-* NEFSC management track reports (`create_template(type = 'nemt')`)
-* PFMC guidelines (`create_template(type = 'pfmc')`)
-
-You can also:
-
-* add new sections within the current outline
-* add new sections in individual sections
-* select sections of the standard template to include in your report
-
-Today, we will be going over how to customize your template by selecting a subset of the standard guidelines, then adding in a new section after our introduction
-
-First, let's make our template. 
-
-**We are creating a new report, so please set your working directory to a new folder or rename our previous "simple" report folder to "simple_report" or something along those lines.**
-
-```{r eval=FALSE}
-asar::create_template(
-  # Previous arguments we used for simple
-  type = "sar",
-  office = "PIFSC",
-  region = "Hawaii",
-  species = "Crimson jobfish",
-  spp_latin = "Pristipomoides filamentosus",
-  authors = c("Samantha Schiano" = "OST"),
-  # New arguments
-  custom = TRUE, # set this to TRUE when you're choosing a subset of standard sections
-  custom_sections = c("executive_summary",      
-                      "introduction",           
-                      "data"), # list of sections from SAR to add
-  new_section = "Changes to the Model", # new section name
-  section_location = "after-introduction" # location of new section
- )
-```
-
-::: {.callout-tip}
-To identify what sections you can include from the standard guidelines (i.e., options for `custom_sections`), you can run `list.files(system.file("templates", "skeleton", package = "asar"))`. Note: this only includes sections within a standard template. To see other sections for available templates, replace "skeleton" with your target template acronym.
-
-Don't worry if you forget! You can find this code in the documentation for the `custom_sections` argument.
-:::
-
-::: {.callout-note appearance="minimal"}
-Break for questions
-:::
 
 ### Rerendering report
 
@@ -414,7 +365,6 @@ You can run re-render skeleton as often as you want, it will always edit the cur
 #### Our changes: new parameters, additional author, and add model results file
 
 Let's add some more parameters to our script which will allow us to references in-text throughout the document.
-
 
 ```{r eval=FALSE}
 asar::create_template(
@@ -454,6 +404,57 @@ asar::create_template(
 Some chunks may need minor updates, particularly the "output_and_quantities" chunk.
 Ensure that the model results file is being loaded properly (i.e., its relative filepath is correct) and `eval` is TRUE or FALSE, depending on your needs.
 :::
+
+::: {.callout-note appearance="minimal"}
+Break for questions
+:::
+
+### Create-your-own
+
+There are *three additional template options* available to users to use while we work to set standard assessment report guidelines across the country:
+
+* SAFE reports (`create_template(type = 'safe')`)
+* NEFSC management track reports (`create_template(type = 'nemt')`)
+* PFMC guidelines (`create_template(type = 'pfmc')`)
+
+You can also:
+
+* add new sections within the current outline
+* add new sections in individual sections
+* select sections of the standard template to include in your report
+
+Today, we will be going over how to customize your template by selecting a subset of the standard guidelines, then adding in a new section after our introduction.
+
+First, let's make our template. 
+
+**We are creating a new report, so please set your working directory to a new folder or rename our previous "simple" report folder to "simple_report" or something along those lines.**
+
+```{r eval=FALSE}
+asar::create_template(
+  # Previous arguments we used for simple
+  type = "sar",
+  office = "PIFSC",
+  region = "Hawaii",
+  species = "Crimson jobfish",
+  spp_latin = "Pristipomoides filamentosus",
+  authors = c("Samantha Schiano" = "OST"),
+  # New arguments
+  custom = TRUE, # set this to TRUE when you're choosing a subset of standard sections
+  custom_sections = c("executive_summary",      
+                      "introduction",           
+                      "data"), # list of sections from SAR to add
+  new_section = "Changes to the Model", # new section name
+  section_location = "after-introduction" # location of new section
+ )
+```
+
+::: {.callout-tip}
+To identify what sections you can include from the standard guidelines (i.e., options for `custom_sections`), you can run `list.files(system.file("templates", "skeleton", package = "asar"))`. Note: this only includes sections within a standard template. To see other sections for available templates, replace "skeleton" with your target template acronym.
+
+Don't worry if you forget! You can find this code in the documentation for the `custom_sections` argument.
+:::
+
+**Now, let's rename our folders: "report" --> "custom_report", and "simple_report" --> "report". This will allow us to continue working with our original report tomorrow by adding figures and tables.**
 
 ::: {.callout-tip}
 Check out the ["Frequently Asked Questions (FAQs)" vignette](https://nmfs-ost.github.io/asar/articles/faqs.html) to find how to solve common issues encountered when using {asar}.
