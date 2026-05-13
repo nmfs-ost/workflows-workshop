@@ -915,7 +915,8 @@ We are open to suggestions to improve current and future functionality!
 We are planning to expand the `convert_output()` function in {stockplotr} to be compatible with all major U.S. assessment models and then some. In the near term, we plan to expand its functioning to
 
 -   WHAM
--   Rceattle
+-   sdmTMB
+-   r4ss
 
 However, there are many bespoke and additional models used by assessment scientists across the U.S. We want to include in the function. This will take a lot of resources, so we appreciate contributions to expand its functionality.
 

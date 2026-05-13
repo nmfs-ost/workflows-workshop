@@ -76,7 +76,7 @@ params:
 **Answer**: Open the 01_executive_summary.qmd file and add a line that references the param 'ps', like the following:
 
 ```{r eval = FALSE}
-"The species `r ps` was abundant throughout the study area."
+"The species `r params$ps` was abundant throughout the study area."
 ```
 
 *The sentence will render as such:*
