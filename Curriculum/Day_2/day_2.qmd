@@ -427,11 +427,11 @@ Today, we will be going over how to customize your template by selecting a subse
 
 First, let's make our template. 
 
-**We are creating a new report, so please set your working directory to a new folder or rename our previous "simple" report folder to "simple_report" or something along those lines.**
+**We are creating a new report, so please set your working directory to a new folder or rename our previous "main" report folder to "main_report" or something along those lines.**
 
 ```{r eval=FALSE}
 asar::create_template(
-  # Previous arguments we used for simple
+  # Previous arguments we used for main report
   type = "sar",
   office = "PIFSC",
   region = "Hawaii",
@@ -454,7 +454,7 @@ To identify what sections you can include from the standard guidelines (i.e., op
 Don't worry if you forget! You can find this code in the documentation for the `custom_sections` argument.
 :::
 
-**Now, let's rename our folders: "report" --> "custom_report", and "simple_report" --> "report". This will allow us to continue working with our original report tomorrow by adding figures and tables.**
+**Now, let's rename our folders: "report" --> "custom_report", and "main_report" --> "report". This will allow us to continue working with our original report tomorrow by adding figures and tables.**
 
 ::: {.callout-tip}
 Check out the ["Frequently Asked Questions (FAQs)" vignette](https://nmfs-ost.github.io/asar/articles/faqs.html) to find how to solve common issues encountered when using {asar}.
