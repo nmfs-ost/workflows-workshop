@@ -193,8 +193,8 @@ stockplotr::plot_spawning_biomass(
 <!-- ![](images/day3_ex_plt4.png) -->
 
 
-::: callout-note
-A feature to show plots in lbs along with displaying relative values is in the works and is planned for release in July 2026 (v0.11.0). For more information on planned developments and timeline see our [GitHub Project](https://github.com/orgs/nmfs-ost/projects/45/views/2) and [Milestones](https://github.com/nmfs-ost/stockplotr/milestones?sort=due_date&direction=asc).
+::: callout-tip
+To show plots in lbs, set the `lbs` argument in `plot_spawning_biomass()` to TRUE.
 :::
 
 #### Customizations from {ggplot2}
@@ -838,6 +838,7 @@ add_accessibility(
     x = "sar_H_Crimson_jobfish_skeleton.tex", # your .tex report file
     dir = "report", # the folder containing the .tex file
     alttext_csv = "captions_alt_text.csv", # the filename of your csv with captions and alt text, located in the working directory
+    rename = "Crimson_jobfish_tagged", # the name of the new, accessible PDF
     compile = TRUE # we'll compile the PDF
   )
 ```
@@ -919,6 +920,8 @@ We are planning to expand the `convert_output()` function in {stockplotr} to be 
 -   r4ss
 
 However, there are many bespoke and additional models used by assessment scientists across the U.S. We want to include in the function. This will take a lot of resources, so we appreciate contributions to expand its functionality.
+
+For more information on planned developments and timeline see our [GitHub Project](https://github.com/orgs/nmfs-ost/projects/45/views/2) and [Milestones](https://github.com/nmfs-ost/stockplotr/milestones?sort=due_date&direction=asc)
 
 # Questions, comments, feedback, and closing
 
