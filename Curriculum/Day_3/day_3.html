@@ -80,9 +80,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-8d51171ab127489a77a17eca793c6490.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-6f148fdfc5ec14e9f951eb17949292fc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-8d51171ab127489a77a17eca793c6490.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-aff25e020dfdafe23b428159bc1a3b48.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8537064ef5dfa7c5ecb25c5c6b2fe0a3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-aff25e020dfdafe23b428159bc1a3b48.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -721,17 +721,17 @@ Tip
 <p><img src="images/day3_ex_plt2_b.png" class="img-fluid"></p>
 <!-- #### Plot relative spawning biomass -->
 <!-- ![](images/day3_ex_plt4.png) -->
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A feature to show plots in lbs along with displaying relative values is in the works and is planned for release in July 2026 (v0.11.0). For more information on planned developments and timeline see our <a href="https://github.com/orgs/nmfs-ost/projects/45/views/2">GitHub Project</a> and <a href="https://github.com/nmfs-ost/stockplotr/milestones?sort=due_date&amp;direction=asc">Milestones</a>.</p>
+<p>To show plots in lbs, set the <code>lbs</code> argument in <code>plot_spawning_biomass()</code> to TRUE.</p>
 </div>
 </div>
 </section>
@@ -1654,8 +1654,9 @@ Important
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"sar_H_Crimson_jobfish_skeleton.tex"</span>, <span class="co"># your .tex report file</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">dir =</span> <span class="st">"report"</span>, <span class="co"># the folder containing the .tex file</span></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">alttext_csv =</span> <span class="st">"captions_alt_text.csv"</span>, <span class="co"># the filename of your csv with captions and alt text, located in the working directory</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">compile =</span> <span class="cn">TRUE</span> <span class="co"># we'll compile the PDF</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">rename =</span> <span class="st">"Crimson_jobfish_tagged"</span>, <span class="co"># the name of the new, accessible PDF</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">compile =</span> <span class="cn">TRUE</span> <span class="co"># we'll compile the PDF</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="check-the-tags" class="level3">
 <h3 class="anchored" data-anchor-id="check-the-tags">Check the tags</h3>
@@ -1801,6 +1802,7 @@ Tip
 <li>r4ss</li>
 </ul>
 <p>However, there are many bespoke and additional models used by assessment scientists across the U.S. We want to include in the function. This will take a lot of resources, so we appreciate contributions to expand its functionality.</p>
+<p>For more information on planned developments and timeline see our <a href="https://github.com/orgs/nmfs-ost/projects/45/views/2">GitHub Project</a> and <a href="https://github.com/nmfs-ost/stockplotr/milestones?sort=due_date&amp;direction=asc">Milestones</a></p>
 </section>
 </section>
 <section id="questions-comments-feedback-and-closing" class="level1">
