@@ -18,7 +18,7 @@ execute:
 
 ## Icebreaker
 
-Welcome! Please open the [Day 3 communal notes doc](https://docs.google.com/document/d/1KpKQySdVuYko7qElO5odm-PoAclN5zOsL6Wr59tvIcE/edit?tab=t.vffehz79fm7y#heading=h.lwix6dbx3lr8) and participate in the icebreaker exercise.
+Welcome! Please open the [Day 3 communal notes doc](https://docs.google.com/document/d/1lcBCPdqQSmKcxR5O1Tv7Rv6n1UdZWsCxY7Xk28AJLXc/edit?tab=t.vffehz79fm7y#heading=h.lwix6dbx3lr8) and participate in the icebreaker exercise.
 
 ::: callout-tip
 **Reminder**: For comments or questions, please raise your hand, or write them in the chat, *at any time*. Depending on our schedule, we may ask that you save larger questions for breaks.
@@ -30,7 +30,7 @@ Break for questions
 
 ## Materials for today's lesson
 
--   [Day 3 communal notes doc](https://docs.google.com/document/d/1KpKQySdVuYko7qElO5odm-PoAclN5zOsL6Wr59tvIcE/edit?tab=t.vffehz79fm7y#heading=h.lwix6dbx3lr8)
+-   [Day 3 communal notes doc](https://docs.google.com/document/d/1lcBCPdqQSmKcxR5O1Tv7Rv6n1UdZWsCxY7Xk28AJLXc/edit?tab=t.vffehz79fm7y#heading=h.lwix6dbx3lr8)
     -   Contains resources (from us and you!) and areas for note-taking
 -   [Sample data](https://github.com/nmfs-ost/asar/blob/main/inst/extdata/Report.sso)
     -   Sample model output data for coding demonstrations
@@ -680,10 +680,6 @@ Open the skeleton .qmd file. Then, in the program pane, press the "render" butto
 Run `quarto render [path/to/your/skeleton.qmd file]` in the terminal. For example:
 
 Enter `quarto render report/sar_H_Crimson_jobfish_skeleton.qmd`
-
-::: {.callout-note appearance="minimal"}
-15 minute break for questions & practicing
-:::
 
 {{< include ../snippets/integrate-stockplotr_exercises.qmd >}}
 
