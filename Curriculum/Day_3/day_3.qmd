@@ -807,22 +807,25 @@ When you're satisfied, save the csv.
 ```{r eval=FALSE}
 # Make small data frame with abcde figure's information
 new_row <- data.frame(
-  col1 = "abcde", # identical to the chunk label ("fig-abcde") MINUS "fig-"
-  col2 = "figure",
-  col3 = "my example figure caption",
-  col4 = "my example figure alt text",
-  stringsAsFactors = FALSE
+  label = "abcde", # identical to the chunk label ("fig-abcde") MINUS "fig-"
+  type = "figure",
+  caption = "My example figure caption.",
+  alt_text = "My example figure alt text."
 )
 
-# Add information to captions/alt text csv file as new row
-write.table(new_row, 
-              file = file.path(getwd(), "captions_alt_text.csv"),
-              sep = ",", 
-              append = TRUE, 
-              col.names = FALSE, 
-              row.names = FALSE, 
-              quote = TRUE) 
+# path to captions/alt text csv (edit as needed)
+csv_path <- file.path(getwd(), "captions_alt_text.csv")
+# read existing captions/alt text csv file
+captions_alt_text <- read.csv(csv_path)
+# add new row(s)
+captions_alt_text <- rbind(captions_alt_text, new_row)
 
+# write updated captions/alt text csv file
+write.csv(
+  captions_alt_text,
+  file = csv_path,
+  row.names = FALSE
+)
 ```
 
 ## Add tagging and alt text to your report
