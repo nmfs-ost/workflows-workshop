@@ -391,11 +391,18 @@ Now, I need to:
 1. Add my co-authors to my report (I wasn't sure who they were when I created my report template)
 2. Add in the converted model results file (Forgot to add this initially!)
 
+::: {.callout-important}
+You should provide the `model_results` argument with the path to your model results file *relative to your report skeleton*.
+For example, if your model results file is in the same folder as your skeleton, you would just provide the filename.
+If it's the parent folder of "report", you would provide "../filename".
+If it's in a subfolder of "report", you would provide "subfolder/filename".
+:::
+
 ```{r eval=FALSE}
 asar::create_template(
   rerender_skeleton = TRUE,
   file_dir = file.path(getwd(), "report"),
-  model_results = file.path(getwd(), "report", "paka_conout.rda"),
+  model_results = file.path("paka_conout.rda"), # add the path to your model results file *in relation to your report skeleton*
   authors = c("Michelle Sculley"="PIFSC")
 )
 ```
@@ -475,7 +482,7 @@ D) Re-run the `create_template()` function with the corrected text as an argumen
 <!-- Answer: C. -->
 <!-- A identifies thinking towards old workflow: manual post-processing -->
 <!-- B identifies forgetting the modularity of {asar} -->
-<!-- D identifies mistake in understanding purpose of create_teamplate(). create_template() is a tool that builds the structure of your report, but not the detailed content of it (body of text). -->
+<!-- D identifies mistake in understanding purpose of create_template(). create_template() is a tool that builds the structure of your report, but not the detailed content of it (body of text). -->
 
 
 ::: {.callout-note icon=false}

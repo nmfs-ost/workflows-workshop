@@ -16,8 +16,8 @@ pak::pak("quarto")
 quarto::quarto_version()
 ```
 
-3. [Create a new Github repo](https://happygitwithr.com/rstudio-git-github.html#make-a-repo-on-github-1) for the workshop. Do not complete the last step ("12.7 Clean up").
-4. [Clone your repo and set up an RStudio Project](https://happygitwithr.com/rstudio-git-github.html#clone-the-test-github-repository-to-your-computer-via-rstudio).
+3. *Optional*: [Create a new Github repo](https://happygitwithr.com/rstudio-git-github.html#make-a-repo-on-github-1) for the workshop. Do not complete the last step ("12.7 Clean up"). First, [install Git](https://happygitwithr.com/install-git) if you don't have it.
+4. *Optional*: [Clone your repo and set up an RStudio Project](https://happygitwithr.com/rstudio-git-github.html#clone-the-test-github-repository-to-your-computer-via-rstudio).
 5. Run the following code to get two essential files from the workflows-workshop github repo:
 
 1. Input data file "Report.sso" will save to a "example_output" folder in your home directory
