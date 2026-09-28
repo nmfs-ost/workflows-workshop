@@ -1,0 +1,23 @@
+---
+title: "Workshop FAQ"
+---
+
+Answers to frequently asked questions or simply answers to post-workshop questions from our workshop feedback survey.
+
+## Some models have lots of configurations options, does this work with all sex specific/ multi season, multi region SS3 models?
+
+The packages are designed to work with any model configuration. I am assuming you are referring to the convert_output() function which takes into consideration any potential model configuration much as mult-sex, multi-season ect. Each `stockplotr` function will recognize any of these indexing variables and automatically make a plot or table with this configuration.
+
+## Is there a way to add standard chunks of text the same way you can add standard plots? 
+
+We do not plan to develop and standard chunks of text with the exception of description of models. The advantage of using Quarto along with a future planned development should automatically have your text. The idea is that you should only need to make edits to the parts you want to change from the previous assessment report and all other sections can remain the same, if you so choose.
+
+## Other than checking in on the respective GitHub pages, are there communication pathways for sharing out future improvements/changes to asar and/or stockplotr? For example, national seminars or broadcast emails?
+
+We highly recommend users and those interested should "watch" the GitHub for releases. This means that you will receive and email in your inbox each time we put out a release which includes new features, bug fixes, and general improvements to the package. We aim to do this monthly, so this should not clog your inbox. 
+
+We periodically do presentations on parts of the workflow, but would be open to doing seminars in the future. The National Stock Assessment Program is also working on a national newsletter in which we could include packages updates there if people are interested in that line of communication.
+
+## Will you be adding an overall workflow with each step to get to the final report?
+
+This is a fantastic idea and one that might be of help to some users. We plan on making a script that is runnable and describes each step for making the final report. Once this is completed, we will upload it to the workshop repository and make past participants aware of the addition.
