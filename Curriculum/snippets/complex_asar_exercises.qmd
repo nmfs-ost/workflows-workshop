@@ -6,7 +6,7 @@
 
 2. Create a stock assessment report template with two main sections: an executive summary and an introduction (the following sections will be added automatically: acknowledgments, references, tables, figures).
 
-3. Whoops! You forgot to add your species name, and now you don't have a cover image. Run `create_template()` with the argument `rerender_skeleton = TRUE`, and add your species name (common and scientific names) as two additional arguments: "Petrale sole" (*Eopsetta jordani*).
+3. Whoops! You forgot to add your species name, and now you don't have a cover image. Run `rerender_skeleton()`, and add your species name (common and scientific names) as two additional arguments: "Petrale sole" (*Eopsetta jordani*).
 
 <!-- 
 Add questions to practice adding new sections and calling a previous report when features are ready.
@@ -45,13 +45,12 @@ asar::create_template(
 )
 ```
 
-3. Whoops! You forgot to add your species name, and now you don't have a cover image. Run `create_template()` with the argument `rerender_skeleton = TRUE`, and add your species name (common and scientific names) as two additional arguments: "Petrale sole" (*Eopsetta jordani*).
+3. Whoops! You forgot to add your species name, and now you don't have a cover image. Run `rerender_skeleton()`, and add your species name (common and scientific names) as two additional arguments: "Petrale sole" (*Eopsetta jordani*).
 
 **Answer**:
 
 ```{r eval=FALSE}
-asar::create_template(
-  rerender_skeleton = TRUE,
+asar::rerender_skeleton(
   species = "Petrale sole",
   spp_latin = "Eopsetta jordani",
   file_dir = file.path("report")

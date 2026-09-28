@@ -494,7 +494,7 @@ Now we are going to walk-through a more complex use of {asar} by
 
 ### Rerendering report
 
-We understand that it's easy to forget to enter in all of the information you need for a report on it's initial creation! Because of this, we made the argument "rerender_skeleton" that adds on any new information to the skeleton file that you might want such as additional authors, a new species image, parameters, or anything that is open for you to customize in the skeleton file. 
+We understand that it's easy to forget to enter in all of the information you need for a report on it's initial creation! Because of this, we made the function "rerender_skeleton" that adds on any new information to the skeleton file that you might want such as additional authors, a new species image, parameters, or anything that is open for you to customize in the skeleton file. 
 
 You COULD do this manually, but using the function both allows you to create a record of your changes (making it more reproducible) *and* makes the Quarto yaml less intimidating to new users!
 
@@ -512,8 +512,7 @@ Learn about how to [add more parameters](https://nmfs-ost.github.io/workflows-wo
 Now, I need to add my co-authors to my report especially since I wasn't sure who was going to be working on it at the time I created my report template. After review of our terms of reference, I noticed that I needed a section to document my changes to the model, so let's add that in too.
 
 ```{r eval=FALSE}
-asar::create_template(
-  rerender_skeleton = TRUE,
+asar::rerender_skeleton(
   file_dir = file.path(getwd(), "report"),
   authors = c("John Doe"="NEFSC"),
   model_results = file.path(getwd(), "report", "petrale_conout.rda"),
