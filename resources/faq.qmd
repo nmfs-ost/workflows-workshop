@@ -2,15 +2,19 @@
 title: "Workshop FAQ"
 ---
 
-Answers to frequently asked questions or simply answers to post-workshop questions from our workshop feedback survey.
+Answers to frequently asked questions or post-workshop questions from our workshop feedback survey.
 
 ## Some models have lots of configurations options, does this work with all sex specific/ multi season, multi region SS3 models?
 
-The packages are designed to work with any model configuration. I am assuming you are referring to the convert_output() function which takes into consideration any potential model configuration much as mult-sex, multi-season ect. Each `stockplotr` function will recognize any of these indexing variables and automatically make a plot or table with this configuration.
+The packages are designed to work with any model configuration.
 
-## Is there a way to add standard chunks of text the same way you can add standard plots? 
+* `asar` does not require model outputs. If a standardized, converted model output (converted with `stockplotr::convert_output()`) is provided, it can be used in the `asar` report template to extract key quantities that can be referenced in the report.
+* The `stockplotr::convert_output()` function processes any potential model configuration such as multi-sex, multi-season etc. Each `stockplotr` plotting function will recognize any of these indexing variables and automatically make a plot or table with this configuration.
 
-We do not plan to develop and standard chunks of text with the exception of description of models. The advantage of using Quarto along with a future planned development should automatically have your text. The idea is that you should only need to make edits to the parts you want to change from the previous assessment report and all other sections can remain the same, if you so choose.
+## Is there a way to add standard chunks of text the same way you can add standard plots  [to an `asar` report]?
+
+We do not plan to develop and standardize chunks of text with the exception of description of models. By using a reproducible reporting workflow based on Quarto, you should automatically have lots of text available from your previous report. The idea is that you should only need to make edits to the parts you want to change from the previous assessment report and all other sections can remain the same, if you so choose.
+Relatedly, stay tuned for a future planned development: a feature that will transfer text from previous reports into new reports.
 
 ## Other than checking in on the respective GitHub pages, are there communication pathways for sharing out future improvements/changes to asar and/or stockplotr? For example, national seminars or broadcast emails?
 
