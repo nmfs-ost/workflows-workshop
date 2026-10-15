@@ -354,7 +354,7 @@ Now we are going to walk-through a more complex use of {asar} by
 
 ### Rerendering report
 
-We understand that it's easy to forget to enter in all of the information you need for a report on its initial creation! Because of this, we made the argument "rerender_skeleton" that adds on any new information to the skeleton file that you might want such as additional authors, a new species image, parameters, or anything that is open for you to customize in the skeleton file. 
+We understand that it's easy to forget to enter in all of the information you need for a report on its initial creation! Because of this, we made the function "rerender_skeleton" that adds on any new information to the skeleton file that you might want such as additional authors, a new species image, parameters, or anything that is open for you to customize in the skeleton file. 
 
 You COULD do this manually, but using the function both allows you to create a record of your changes (making it more reproducible) *and* makes the Quarto YAML less intimidating to new users!
 
@@ -367,12 +367,9 @@ You can run re-render skeleton as often as you want, it will always edit the cur
 Let's add some more parameters to our script which will allow us to references in-text throughout the document.
 
 ```{r eval=FALSE}
-asar::create_template(
-  rerender_skeleton = TRUE,
+asar::rerender_skeleton(
   file_dir = file.path(getwd(), "report"),
-  parameters = TRUE,
-  param_names = c("fleet_a", "fleet_b"),
-  param_values = c("a long fleet name", "b long fleet name")
+  custom_params = c("fleet_a" = "a long fleet name", "fleet_b" = "b long fleet name")
 )
 ```
 
@@ -399,8 +396,7 @@ If it's in a subfolder of "report", you would provide "subfolder/filename".
 :::
 
 ```{r eval=FALSE}
-asar::create_template(
-  rerender_skeleton = TRUE,
+asar::rerender_skeleton()
   file_dir = file.path(getwd(), "report"),
   model_results = file.path("paka_conout.rda"), # add the path to your model results file *in relation to your report skeleton*
   authors = c("Michelle Sculley"="PIFSC")
