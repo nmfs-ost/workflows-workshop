@@ -391,7 +391,6 @@ rda$latex_table
 We have designed two functions that allow you to automatically create all available figures and tables:
 
 -   `save_all_plots()`
--   `html_all_figs_tables()`
 :::
 
 <!-- move below to before custom figures/tables section? -->
