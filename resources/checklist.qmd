@@ -20,8 +20,8 @@ quarto::quarto_version()
 4. *Optional*: [Clone your repo and set up an RStudio Project](https://happygitwithr.com/rstudio-git-github.html#clone-the-test-github-repository-to-your-computer-via-rstudio).
 5. Run the following code to get two essential files from the workflows-workshop github repo:
 
-1. Input data file "Report.sso" will save to a "example_output" folder in your home directory
-2. Example plot file "landings_fig_png.png" will save to a "example_plots" folder in your home directory
+- Input data file "Report.sso" will save to a "example_output" folder in your home directory
+- Example plot file "landings_fig_png.png" will save to a "example_plots" folder in your home directory
 
 ```{r eval=FALSE, message=FALSE}
 # Function to obtain files used during workshop

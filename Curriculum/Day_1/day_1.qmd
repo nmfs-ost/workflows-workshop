@@ -414,6 +414,12 @@ The standard guidelines were designed using a thorough review of assessment repo
 <!-- {{< embed-pdf url=".../assets/standard_guidelines.pdf" height="600px" width="100%" >}} -->
 <iframe src="../../assets/standard_guidelines.pdf" width="100%" height="600px"></iframe>
 
+# Recommended Stock Assessment Repository Setup
+
+We are in the process of setting up a recommended [GitHub repository template](https://github.com/nmfs-ost/region_spp_stock_assessment) for stock assessment reports. The repo structure is designed to organize and standardize files created in the stock assessment workflow year after year, holding current and historical assessments and related files. Learn more about the template's folder structure, report versioning and archiving strategy with tags/releases, and how to connect to a Google Workstation in the [README](https://github.com/nmfs-ost/region_spp_stock_assessment#template-repository-for-us-stock-assessment-files).
+
+Have opinions or feedback about the template? Please contribute to our [discussion](https://github.com/nmfs-ost/region_spp_stock_assessment/discussions/1)!
+
 # Install packages and get ready for tomorrow's material (if need be) {#sec-prep}
 
 ::: {.callout-important}
