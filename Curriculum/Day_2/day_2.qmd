@@ -144,7 +144,7 @@ create_template(
   region = "Hawaii",
   species = "Crimson jobfish",
   spp_latin = "Pristipomoides filamentosus",
-  authors = c("Samantha Schiano" = "OST", "Jane Doe"="PIFSC"),
+  authors = c("Samantha Bredeck" = "OST", "Jane Doe"="PIFSC"),
   file_dir = getwd() # folder where the "report" folder will be saved
 )
 ```
@@ -396,7 +396,7 @@ If it's in a subfolder of "report", you would provide "subfolder/filename".
 :::
 
 ```{r eval=FALSE}
-asar::rerender_skeleton()
+asar::rerender_skeleton(
   file_dir = file.path(getwd(), "report"),
   model_results = file.path("paka_conout.rda"), # add the path to your model results file *in relation to your report skeleton*
   authors = c("Michelle Sculley"="PIFSC")
@@ -440,7 +440,7 @@ asar::create_template(
   region = "Hawaii",
   species = "Crimson jobfish",
   spp_latin = "Pristipomoides filamentosus",
-  authors = c("Samantha Schiano" = "OST"),
+  authors = c("Samantha Bredeck" = "OST"),
   # New arguments
   custom = TRUE, # set this to TRUE when you're choosing a subset of standard sections
   custom_sections = c("executive_summary",      

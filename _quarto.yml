@@ -37,7 +37,7 @@ website:
         text: "Home"
       - href: agenda.qmd
         text: "Agenda"
-      - href: resources/terminology.md
+      - href: resources/terminology.qmd
         text: "Terminology"
       - href: resources/good_practices.qmd
         text: "Good data science practices"

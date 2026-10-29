@@ -36,7 +36,7 @@ If you believe that someone is in violation of the Code of Conduct, please repor
 
 ## Who are we?
 
-Sam Schiano and Sophie Breitbart are contractors with ECS Federal working in support of the NOAA Fisheries National Stock Assessment Program. Our work primarily focuses on stock assessment workflows by creating tools to help stock assessment scientists increase throughput. We are developing two R packages, {asar} and {stockplotr}, using an open science framework that prioritizes transparency and reproducibility.
+Sam Bredeck and Sophie Breitbart are contractors with ECS Federal working in support of the NOAA Fisheries National Stock Assessment Program. Our work primarily focuses on stock assessment workflows by creating tools to help stock assessment scientists increase throughput. We are developing two R packages, {asar} and {stockplotr}, using an open science framework that prioritizes transparency and reproducibility.
 
 ## How to engage with us
 

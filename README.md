@@ -42,4 +42,4 @@ As of now, we are planning to hold a series of workshops spanning 3 days (Tuesda
 
 # The organizers
 
-These workshops are being organized and taught by Workflows team members Sam Schiano and Sophie Breitbart, both of whom are based in OST.
+These workshops are being organized and taught by Workflows team members Sam Bredeck and Sophie Breitbart, both of whom are based in OST.

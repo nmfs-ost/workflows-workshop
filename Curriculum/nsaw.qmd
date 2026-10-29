@@ -4,7 +4,7 @@ format: html
 date: 1/26/2026
 abstract: "Workshop about how to make stock assessment reports using a workflow based on the {asar} and {stockplotr} R packages. This 3-hour workshop is an abbreivated version of our full workshop (also shown on this website, under Days 1-3) that was designed for the National Stock Assessment Workshop (NSAW) in La Jolla, CA."
 abstract-title: "Description"
-author: "Sam Schiano & Sophie Breitbart"
+author: "Sam Bredeck & Sophie Breitbart"
 toc: TRUE
 toc-depth: 3
 ---
@@ -38,7 +38,7 @@ If you believe that someone is in violation of the Code of Conduct, please repor
 
 ## Who are we?
 
-Sam Schiano and Sophie Breitbart are contractors with ECS Federal working in support of the NOAA Fisheries National Stock Assessment Program. Our work primarily focuses on stock assessment workflows by creating tools to help stock assessment scientists increase throughput. We are developing two R packages, {asar} and {stockplotr}, using an open science framework that prioritizes transparency and reproducibility.
+Sam Bredeck and Sophie Breitbart are contractors with ECS Federal working in support of the NOAA Fisheries National Stock Assessment Program. Our work primarily focuses on stock assessment workflows by creating tools to help stock assessment scientists increase throughput. We are developing two R packages, {asar} and {stockplotr}, using an open science framework that prioritizes transparency and reproducibility.
 
 ## How to engage with us
 
@@ -331,7 +331,7 @@ create_template(
   region = "U.S. West Coast",
   species = "Petrale sole",
   spp_latin = "Eopsetta jordani",
-  authors = c("Samantha Schiano" = "OST", "Jane Doe" = "SWFSC-LJCA"),
+  authors = c("Samantha Bredeck" = "OST", "Jane Doe" = "SWFSC-LJCA"),
   file_dir = getwd() # folder where the "report" folder will be saved
 )
 ```

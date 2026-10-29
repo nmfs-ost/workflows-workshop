@@ -39,7 +39,7 @@ asar::create_template(
 
 ```{r eval=FALSE}
 asar::create_template(
-    authors = c("Samantha Schiano" = "OST"),
+    authors = c("Samantha Bredeck" = "OST"),
     custom = TRUE,
     custom_sections = c("executive_summary", "introduction")
 )
