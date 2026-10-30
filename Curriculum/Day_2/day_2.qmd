@@ -131,6 +131,10 @@ So, let's do more than just create a blank template! The following arguments are
 | authors | - |
 | file_dir | - |
 
+::: {.callout-tip}
+If you're using this function to make a report for something other than stock assessment, use `type = 'sar'` (i.e., the default option).
+Don't need citations from fisheries-related journals? Set `bib_file = FALSE` to avoid creating those bibliography files.
+:::
 
 ```{r}
 #| label: basic-ex
@@ -145,7 +149,8 @@ create_template(
   species = "Crimson jobfish",
   spp_latin = "Pristipomoides filamentosus",
   authors = c("Samantha Bredeck" = "OST", "Jane Doe"="PIFSC"),
-  file_dir = getwd() # folder where the "report" folder will be saved
+  file_dir = getwd(), # folder where the "report" folder will be saved
+  bib_file = TRUE # optional
 )
 ```
 
@@ -164,7 +169,7 @@ All affiliation acronyms are in the ["affiliations" file](https://github.com/nmf
 
 You should see a folder called "**report**" where you indicated in the argument `file_dir`. It should have a set up that looks like this:
 
-![The contents of an asar-generated template found in the report folder.](images/asar_files.png){fig-alt="A screenshot of files that should appear in the 'report' folder, including '01_executive_summary.qmd', '02_introduction.qmd', '03_data.qmd', and more."}
+![The contents of an asar-generated template found in the report folder.](images/asar_files1.png){fig-alt="A screenshot of files that should appear in the 'report' folder, including '01_executive_summary.qmd', '02_introduction.qmd', '03_data.qmd', and more."}
 
 ::: {.callout-note}
 You should see a variety of messages reported in the console to indicate
@@ -199,7 +204,72 @@ We went over the basics of a Quarto YAML in [Day 1](https://nmfs-ost.github.io/w
 You shouldn't have to adjust the YAML much, if at all. However, if your `species` does not match with an image in our [database](https://github.com/nmfs-ost/asar/tree/main/inst/resources/spp_img), then you can edit the YAML to add a filepath leading to your own cover image.
 :::
 
-![asar YAML controlling formatting and basic document information.](images/asar_yaml.png){fig-alt="A screenshot of an example YAML, with curly brackets highlighting which code is 'information' and which code is 'formatting'."}
+---
+code-annotations: hover
+---
+
+```r
+
+title: 'Stock Assessment for Crimson jobfish (Pristipomoides filamentosus) on Hawaii in 2026' # <1>
+author: # <1>
+  - name: 'Samantha Bredeck' # <1>
+    affiliations: # <1>
+      - name: 'NOAA Fisheries Office of Science and Technology' # <1>
+        address: '1315 East-West Highway' # <1>
+        city: 'Silver Spring, MD' # <1>
+        state: 'MD' # <1>
+        postal-code: '20910' # <1>
+date: today # <1>
+keep-tex: true # <2>
+tbl-pos: 't'  # <2>
+echo: false  # <2>
+cover: support_files/Crimson_jobfish.png # <2>
+pdf-engine: lualatex # <2>
+format:  # <2>
+  pdf:  # <2>
+    documentclass: article # <2>
+    papersize: letter # <2>
+    number-sections: true # <2>
+    template-partials: # <2>
+      - 'support_files/before-body.tex' # <2>
+      - 'support_files/_titlepage.tex' # <2>
+    include-in-header: # <2>
+      - 'support_files/in-header.tex' # <2>
+    toc: true # <2>
+    lof: true # <2>
+    lot: true # <2>
+    titlepage-geometry:  # <2>
+      - top=2in # <2>
+      - bottom=1in # <2>
+      - right=1in # <2>
+      - left=1in # <2>
+output-file: 'Crimson_jobfish_SAR_2026'  # <2>
+params: # <2>
+   office: '\gls{pifsc}' # <2>
+   species: 'Crimson jobfish' # <2>
+   spp_latin: 'Pristipomoides filamentosus' # <2>
+   region: 'Hawaii' # <2>
+bibliography:   # <2>
+  - bibliography_files/aquaculture.bib # <2>
+  - bibliography_files/asar_citation.bib # <2>
+  - bibliography_files/canjfishaquatsci.bib # <2>
+  - bibliography_files/conservation-policy-management.bib # <2>
+  - bibliography_files/ecology.bib # <2>
+  - bibliography_files/fish.bib # <2>
+  - bibliography_files/fishres.bib # <2>
+  - bibliography_files/icesjmarsci.bib # <2>
+  - bibliography_files/jfishbiol.bib # <2>
+  - bibliography_files/oceanography-limnology.bib # <2>
+  - bibliography_files/transamfishsoc.bib # <2>
+csl: support_files/cjfas.csl # <2>
+
+```
+
+1. Report information (metadata)
+2. Formatting
+
+
+<!-- ![asar YAML controlling formatting and basic document information.](images/asar_yaml.png){fig-alt="A screenshot of an example YAML, with curly brackets highlighting which code is 'information' and which code is 'formatting'."} -->
 
 The YAML controls the following:
 
@@ -266,7 +336,7 @@ We are advising everyone that if any content needed beyond the standard guidelin
 Please add the following text into your "introduction" section:
 
 ```{verbatim}
-The stock assessment for `r params$species` was conducted by the `r params$office` in `r params$region`. The terminal spawning biomass for the current assessment year (`r end_year`) was `r SBend`. You can find more information on the results of this assessment in @sec-assmt-results. The guidelines for this report follow those outlined in @Abrams2014.
+The stock assessment for `r params$species` was conducted by the `r params$office` in `r params$region`. The terminal spawning biomass for the current assessment year (`r end_year`) was `r SBend`. You can find more information on the results of this assessment in @sec-assmt-results. The guidelines for this report follow those outlined in @fishres:Waluda:2008:RSS.
 ```
 
 ::: {.callout-note appearance="minimal"}
