@@ -8,10 +8,10 @@ execute:
 ::: {style="background: ghostwhite;              padding: 10px;              border: 2px solid lightgray;              margin: 10px;"}
 # Objectives
 
--   Walk through an example of a plot and table from {stockplotr}
--   Learn about the value of the {stockplotr} R package
--   Understand how to integrate {stockplotr} into an {asar}-based reporting workflow
--   Understand how to add accessibility features to the report
+- Walk through an example of a plot and table from {stockplotr}
+- Learn about the value of the {stockplotr} R package
+- Understand how to integrate {stockplotr} into an {asar}-based reporting workflow
+- Understand how to add accessibility features to the report
 :::
 
 # Introduction
@@ -30,12 +30,12 @@ Break for questions
 
 ## Materials for today's lesson
 
--   [Day 3 communal notes doc](https://docs.google.com/document/d/1STtzvoMQPYWD4pEnEZnytFfFb_4aOSdYUZFDJ3cmFN8/edit?tab=t.vffehz79fm7y#heading=h.hc704f8rm101)
-    -   Contains resources (from us and you!) and areas for note-taking
--   [Sample data](https://github.com/nmfs-ost/asar/blob/main/inst/extdata/Report.sso)
-    -   Sample model output data for coding demonstrations
--   [Example figure](https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots)
-    -   Example figure (in .png format) for coding demonstration
+- [Day 3 communal notes doc](https://docs.google.com/document/d/1STtzvoMQPYWD4pEnEZnytFfFb_4aOSdYUZFDJ3cmFN8/edit?tab=t.vffehz79fm7y#heading=h.hc704f8rm101)
+  - Contains resources (from us and you!) and areas for note-taking
+- [Sample data](https://github.com/nmfs-ost/asar/blob/main/inst/extdata/Report.sso)
+  - Sample model output data for coding demonstrations
+- [Example figure](https://github.com/nmfs-ost/workflows-workshop/blob/main/example_plots)
+  - Example figure (in .png format) for coding demonstration
 
 ## Installation
 
@@ -87,24 +87,29 @@ This package is an ongoing process to gather contributions in order to expand th
 
 The following table contains figures and tables that are available in {stockplotr}:
 
-| Function | Description |
-|--------------------------------|----------------------------------------|
-| `plot_abundance_at_age()` | abundance-at-age |
-| `plot_biomass_at_age()` | biomass-at-age |
-| `plot_biomass()` | biomass time series |
-| `plot_catch_comp()` | catch compositions |
-| `plot_fishing_mortality` | fishing mortality time series |
-| `plot_indices()` | indices |
-| `plot_landings()` | landings time series |
-| `plot_natural_mortality()` | natural mortality time series or at-age |
-| `plot_recruitment_deviations()` | recruitment deviations |
-| `plot_recruitment()` | recruitment time series |
-| `plot_spawn_recruitment()` | spawn recruitment relationship |
-| `plot_spawning_biomass()` | spawning biomass time series |
-| `table_landings()` | landings time series by fleet or other indexing |
-| `table_bnc()`- *coming soon* | biomass, landings, and catch time series |
-| `table_harvest_projection()`- *coming soon* | harvest projection table according to SAFE standards (to be expanded nationally) |
-| `tables_indices()`- *coming soon* | indices by fleet |
+| Function | Description | Type |
+|-----------------------------|---------------------------|--------------------------------|
+| `plot_abundance_at_age()` | abundance-at-age | Figure |
+| `plot_biomass_at_age()` | biomass-at-age | Figure |
+| `plot_biomass()` | biomass time series | Figure |
+| `plot_catch_comp()` | catch compositions | Figure |
+| `plot_discard()` | discards time series | Figure |
+| `plot_fishing_mortality()` | fishing mortality time series | Figure |
+| `plot_index()` | index of abundance | Figure |
+| `plot_landings()` | landings time series | Figure |
+| `plot_natural_mortality()` | natural mortality time series or at-age | Figure |
+| `plot_recruitment()` | recruitment time series | Figure |
+| `plot_recruitment_deviations()` | recruitment deviations | Figure |
+| `plot_selectivity()` | selectivity time series | Figure |
+| `plot_spawning_biomass()` | spawning biomass time series | Figure |
+| `plot_spawning_potential_ratio()` | spawning potential ratio (SPR) | Figure |
+| `plot_stock_recruitment()` | stock recruitment relationship | Figure |
+| `table_biomass_abundance_catch()` | biomass, abundance, and catch time series | Table |
+| `table_index()` | index of abundance | Table |
+| `table_landings()` | landings time series by fleet or other indexing | Table |
+| `table_projections()` | projected spawning biomass, fishing mortality, and catch | Table |
+| `table_total_catch()` | total catch by fleet, gear type, sector | Table |
+| `table_harvest_projection()`- *coming soon* | harvest projection table according to SAFE standards (to be expanded nationally) | Table |
 
 Each automated function returns either a `ggplot2` object (figure) or `gt` object (table). This allows for further customization of the output if desired by using the notation you are familiar with. For a figure, you can continue to add onto the plot any other `ggplot2` function or extension using the plus (+) operator. For a table, please use the native pipe (\|\>) when adding additional formatting, rows, or other pieces to the object.
 
@@ -131,14 +136,13 @@ plot_spawning_biomass(
 
 ![](images/day3_ex_plt1_a.png)
 
-::: {.callout-tip}
+::: callout-tip
 Remove the legend by adding this code directly onto your original `plot_spawning_biomass()` code:
 
 `+ ggplot2::theme(legend.position="none")`
 
 We'll cover customizations in more detail in a moment.
 :::
-
 
 ::: {.callout-note appearance="minimal"}
 Break for questions
@@ -192,7 +196,6 @@ stockplotr::plot_spawning_biomass(
 
 <!-- ![](images/day3_ex_plt4.png) -->
 
-
 ::: callout-tip
 To show plots in lbs, set the `lbs` argument in `plot_spawning_biomass()` to TRUE.
 :::
@@ -224,7 +227,9 @@ The only extended arguments available are the ones found from the ggplot2::geom_
 :::
 
 <!-- ::: {.callout-note appearance="minimal"} -->
+
 <!-- Break for questions -->
+
 <!-- ::: -->
 
 ````{=html}
@@ -339,10 +344,10 @@ You can export any table or plot along with their associated caption and alterna
 
 Each plot or table has the option to export it as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:
 
--   `ggplot2` or `gt` object
--   caption
--   alternative text (figures only)
--   LaTeX object (tables only)
+- `ggplot2` or `gt` object
+- caption
+- alternative text (figures only)
+- LaTeX object (tables only)
 
 ```{r}
 plot_spawning_biomass(
@@ -373,6 +378,7 @@ Now, export the landings table:
 ```{r}
 table_landings(
   dat = paka,
+  module = "CATCH",
   make_rda = TRUE, # new argument needed to export plot
   tables_dir = getwd() # indicate where to create a "tables" folder with the landings table rda
 )
@@ -390,7 +396,7 @@ rda$latex_table
 ::: callout-tip
 We have designed two functions that allow you to automatically create all available figures and tables:
 
--   `save_all_plots()`
+- `save_all_plots()`
 :::
 
 <!-- move below to before custom figures/tables section? -->
@@ -415,7 +421,7 @@ You can add your figures and tables with two workflows:
 
 1.  Running `asar::create_tables_doc()` and `asar::create_figures_doc()`
 
--   If you fill in arguments that allow R to find your tables and figures, then it will place them into the respective tables and figures docs automatically.
+- If you fill in arguments that allow R to find your tables and figures, then it will place them into the respective tables and figures docs automatically.
 
 2.  Adding your tables and figures manually to each doc.
 
@@ -454,13 +460,13 @@ Then, there will be at least two chunks for each figure. For each figure,
 
 **Chunk 2** will:
 
--   load an rda containing a figure
--   give the rda a specific name
--   save the figure, caption, and alternative text as separate objects
+- load an rda containing a figure
+- give the rda a specific name
+- save the figure, caption, and alternative text as separate objects
 
 **Chunk 3** will:
 
--   display the figure
+- display the figure
 
 #### Tables {#sec-rda-based-tab}
 
@@ -515,7 +521,6 @@ Example similar to that in the ["Adding Custom Tables & Figures" vignette](https
 ```{r} 
 #| label: 'tbl-direct_code_table1' # choose a label
 #| echo: false # don't show the code- only the output (table)
-#| tbl-pos: 'h!' # display the table after "Tables" header
 #| tbl-cap: This is your table caption.
 
 # Import your data
@@ -736,11 +741,10 @@ The file, "captions_alt_text.csv", should be located in your working directory (
 
 The file is set up like this:
 
--   Column 1 ("label") is a shorthand label for your figure or table. Labels should be somewhat short and exclude spaces. Examples include "kobe", "relative.biomass", and "fishing.mortality".
+- Column 1 ("label") is a shorthand label for your figure or table. Labels should be somewhat short and exclude spaces. Examples include "kobe", "relative.biomass", and "fishing.mortality".
 
 ::: callout-important
-The label in the csv must match the label in your plot's chunk options, **MINUS the "fig-" or "tab-"**.
-For example, the label "custom_table1" in the csv would match up properly with the "tbl-custom_table1" label in this code chunk:
+The label in the csv must match the label in your plot's chunk options, **MINUS the "fig-" or "tab-"**. For example, the label "custom_table1" in the csv would match up properly with the "tbl-custom_table1" label in this code chunk:
 
 ````{verbatim}
 ```{r eval=FALSE}
@@ -749,16 +753,16 @@ For example, the label "custom_table1" in the csv would match up properly with t
 my_table
 ```
 ````
-The same rule applies for figures: "custom_figure1" in the csv would match up with "fig-custom_figure1" in the chunk options' label.
 
+The same rule applies for figures: "custom_figure1" in the csv would match up with "fig-custom_figure1" in the chunk options' label.
 :::
 
--   Column 2 ("type") contains "figure" or "table".
--   Column 3 ("caption") contains your caption.
--   Column 4 ("alt_text") contains alternative text for figures. For tables, this column will be blank.
+- Column 2 ("type") contains "figure" or "table".
+- Column 3 ("caption") contains your caption.
+- Column 4 ("alt_text") contains alternative text for figures. For tables, this column will be blank.
 
 | label | type | caption | alt_text |
-|-----------------|-----------------|-----------------|-----------------------|
+|-----------------|-----------------|-----------------|---------------------|
 | example_fig | figure | Example caption for figure. | Example alternative text for figure. |
 | example_tab | table | Example caption for table. |  |
 
@@ -768,18 +772,18 @@ The same rule applies for figures: "custom_figure1" in the csv would match up wi
 
 Your job is to:
 
--   *edit* existing entries for your figures already created with {stockplotr}. This entails [checking the accuracy, and writing the final component, of the existing alt text](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#your-to-do-list).
--   *add* entries for your custom figures.
+- *edit* existing entries for your figures already created with {stockplotr}. This entails [checking the accuracy, and writing the final component, of the existing alt text](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#your-to-do-list).
+- *add* entries for your custom figures.
 
 #### Editing existing entries {#sec-edit-exist-entries}
 
 Using the "label" column, find the row associated with your figure and inspect it.
 
--   You'll see that there's already some prewritten alt text (in the "alt_text" column) that includes data from the model results file. Now, **you must check this information for accuracy and update it where necessary** (especially if the default figures were modified).
+- You'll see that there's already some prewritten alt text (in the "alt_text" column) that includes data from the model results file. Now, **you must check this information for accuracy and update it where necessary** (especially if the default figures were modified).
 
-    -   This prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4): the relationship between the variables shown (i.e., what the figure is conveying). Since we can't program {stockplotr} to analyze the figure's meaning, **you must provide this crucial component**.
+  - This prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4): the relationship between the variables shown (i.e., what the figure is conveying). Since we can't program {stockplotr} to analyze the figure's meaning, **you must provide this crucial component**.
 
--   If you see text that looks like a placeholder (e.g., "The x axis, showing the year, spans from B.start.year to B.end.year..."), that means that there was at least one instance where our tool failed to extract a specific value from the model results, calculate a key quantity (like the start year of a biomass plot- aka "B.start.year"), and substitute it into the placeholder.
+- If you see text that looks like a placeholder (e.g., "The x axis, showing the year, spans from B.start.year to B.end.year..."), that means that there was at least one instance where our tool failed to extract a specific value from the model results, calculate a key quantity (like the start year of a biomass plot- aka "B.start.year"), and substitute it into the placeholder.
 
 ::: callout-important
 While we have extracted key quantities as accurately as possible, we cannot guarantee that each quantity will have been calculated perfectly. Input data varies widely. **It's your responsibility to check the accuracy of your figures' alt text.**
@@ -789,13 +793,13 @@ When you're satisfied, save the csv.
 
 #### Adding new entries
 
--   Make a new row.
--   For "label", take the "label" of your figure chunk.
-    -   For figures [coded in chunks](#sec-code-in-qmd-fig), our example label would be "fig-custom1".
-    -   For figures [added with markdown](#sec-image-based-fig)[^2] (i.e., premade pngs or jpgs), our example label would be "fig-example".
--   The type will be "figure".
--   The caption should be identical to the caption in your chunk (what you put in "fig-cap").
--   The "alt_text" will contain your alt text. See the "[Editing existing entries](#sec-edit-exist-entries)" section above, and the "[Achieve Greater Accessibility](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html)" vignette, for help writing alt text.
+- Make a new row.
+- For "label", take the "label" of your figure chunk.
+  - For figures [coded in chunks](#sec-code-in-qmd-fig), our example label would be "fig-custom1".
+  - For figures [added with markdown](#sec-image-based-fig)[^2] (i.e., premade pngs or jpgs), our example label would be "fig-example".
+- The type will be "figure".
+- The caption should be identical to the caption in your chunk (what you put in "fig-cap").
+- The "alt_text" will contain your alt text. See the "[Editing existing entries](#sec-edit-exist-entries)" section above, and the "[Achieve Greater Accessibility](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html)" vignette, for help writing alt text.
 
 [^2]: `![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}`
 
@@ -896,10 +900,10 @@ Example:
 
 | **Current workflow** | **Potential future workflow** |
 |------------------------------------|:----------------------------------:|
-| 1. {stockplotr} creates csv with alt text and captions in "caption_alt_text.csv" | *Identical* |
-| 2. `asar::create_template()` creates figures and tables docs, with chunks that import alt text and captions from the csv file, save them as objects, and positions them in the chunk options ('fig-alt', 'fig-cap', 'tbl-cap') | *Identical* |
-| 3. User renders skeleton .qmd file | *Identical* |
-| 4. `asar::add_accessibility()` inserts captions and alt text from the csv directly into the LaTeX report file created during .qmd report rendering | *Unnecessary* |
+| 1\. {stockplotr} creates csv with alt text and captions in "caption_alt_text.csv" | *Identical* |
+| 2\. `asar::create_template()` creates figures and tables docs, with chunks that import alt text and captions from the csv file, save them as objects, and positions them in the chunk options ('fig-alt', 'fig-cap', 'tbl-cap') | *Identical* |
+| 3\. User renders skeleton .qmd file | *Identical* |
+| 4\. `asar::add_accessibility()` inserts captions and alt text from the csv directly into the LaTeX report file created during .qmd report rendering | *Unnecessary* |
 
 : Table comparing current vs. potential future workflow that could be used once Quarto developers incorporate the accessibility features found in {asar} into the base Quarto software.
 
@@ -913,13 +917,17 @@ We are open to suggestions to improve current and future functionality!
 
 We are planning to expand the `convert_output()` function in {stockplotr} to be compatible with all major U.S. assessment models and then some. In the near term, we plan to expand its functioning to
 
--   WHAM
--   sdmTMB
--   r4ss
+- WHAM
+- sdmTMB
 
 However, there are many bespoke and additional models used by assessment scientists across the U.S. We want to include in the function. This will take a lot of resources, so we appreciate contributions to expand its functionality.
 
-For more information on planned developments and timeline see our [GitHub Project](https://github.com/orgs/nmfs-ost/projects/45/views/2) and [Milestones](https://github.com/nmfs-ost/stockplotr/milestones?sort=due_date&direction=asc)
+For more information on planned developments and timeline, see:
+
+* [`asar` GitHub Project](https://github.com/orgs/nmfs-ost/projects/56/)
+* [`asar` Milestones](https://github.com/nmfs-ost/asar/milestones)
+* [`stockplotr` GitHub Project](https://github.com/orgs/nmfs-ost/projects/57/)
+* [`stockplotr` Milestones](https://github.com/nmfs-ost/stockplotr/milestones)
 
 # Questions, comments, feedback, and closing
 
@@ -929,6 +937,6 @@ Your colleagues have created some terrific stock assessment reports with {asar}.
 
 Please navigate to this [EasyRetro board](https://easyretro.io/publicboard/3kNnwubT8rdQRy0M4aakmbQakcG3/592d2360-e8e0-4587-9aea-a92474d73bd5) and tell us what you thought about this workshop. Only 3 simple questions!
 
--   No account is necessary.
--   All feedback is anonymous unless you choose to add your name to your comment.
--   You can add a thumbs up, and comment, on others' comments.
+- No account is necessary.
+- All feedback is anonymous unless you choose to add your name to your comment.
+- You can add a thumbs up, and comment, on others' comments.
