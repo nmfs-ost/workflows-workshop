@@ -757,59 +757,59 @@ Note
 <p>You shouldn’t have to adjust the YAML much, if at all. However, if your <code>species</code> does not match with an image in our <a href="https://github.com/nmfs-ost/asar/tree/main/inst/resources/spp_img">database</a>, then you can edit the YAML to add a filepath leading to your own cover image.</p>
 </div>
 </div>
-<pre id="annotated-cell-2" class="code-annotation-code"><code>title: 'Stock Assessment for Crimson jobfish (Pristipomoides filamentosus) on Hawaii in 2026'
-author:
-  - name: 'Samantha Bredeck'
-    affiliations:
-      - name: 'NOAA Fisheries Office of Science and Technology'
-        address: '1315 East-West Highway'
-        city: 'Silver Spring, MD'
-        state: 'MD'
-        postal-code: '20910'
-date: today
-keep-tex: true
-tbl-pos: 't'
-echo: false
-cover: support_files/Crimson_jobfish.png
-pdf-engine: lualatex
-format:
-  pdf:
-    documentclass: article
-    papersize: letter
-    number-sections: true
-    template-partials:
-      - 'support_files/before-body.tex'
-      - 'support_files/_titlepage.tex'
-    include-in-header:
-      - 'support_files/in-header.tex'
-    toc: true
-    lof: true
-    lot: true
-    titlepage-geometry:
-      - top=2in
-      - bottom=1in
-      - right=1in
-      - left=1in
-output-file: 'Crimson_jobfish_SAR_2026'
-params:
-   office: '\gls{pifsc}'
-   species: 'Crimson jobfish'
-   spp_latin: 'Pristipomoides filamentosus'
-   region: 'Hawaii'
-bibliography:
-  - bibliography_files/aquaculture.bib
-  - bibliography_files/asar_citation.bib
-  - bibliography_files/canjfishaquatsci.bib
-  - bibliography_files/conservation-policy-management.bib
-  - bibliography_files/ecology.bib
-  - bibliography_files/fish.bib
-  - bibliography_files/fishres.bib
-  - bibliography_files/icesjmarsci.bib
-  - bibliography_files/jfishbiol.bib
-  - bibliography_files/oceanography-limnology.bib
-  - bibliography_files/transamfishsoc.bib
-csl: support_files/cjfas.csl</code></pre>
-<dl>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">'Stock Assessment for Crimson jobfish (Pristipomoides filamentosus) on Hawaii in 2026'</span></span>
+<span id="annotated-cell-2-2"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span></span>
+<span id="annotated-cell-2-3"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'Samantha Bredeck'</span></span>
+<span id="annotated-cell-2-4"><a href="#annotated-cell-2-4" aria-hidden="true" tabindex="-1"></a>    affiliations<span class="sc">:</span></span>
+<span id="annotated-cell-2-5"><a href="#annotated-cell-2-5" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> name<span class="sc">:</span> <span class="st">'NOAA Fisheries Office of Science and Technology'</span></span>
+<span id="annotated-cell-2-6"><a href="#annotated-cell-2-6" aria-hidden="true" tabindex="-1"></a>        address<span class="sc">:</span> <span class="st">'1315 East-West Highway'</span></span>
+<span id="annotated-cell-2-7"><a href="#annotated-cell-2-7" aria-hidden="true" tabindex="-1"></a>        city<span class="sc">:</span> <span class="st">'Silver Spring, MD'</span></span>
+<span id="annotated-cell-2-8"><a href="#annotated-cell-2-8" aria-hidden="true" tabindex="-1"></a>        state<span class="sc">:</span> <span class="st">'MD'</span></span>
+<span id="annotated-cell-2-9"><a href="#annotated-cell-2-9" aria-hidden="true" tabindex="-1"></a>        postal<span class="sc">-</span>code<span class="sc">:</span> <span class="st">'20910'</span></span>
+<span id="annotated-cell-2-10"><a href="#annotated-cell-2-10" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> today</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-2-11" class="code-annotation-target"><a href="#annotated-cell-2-11" aria-hidden="true" tabindex="-1"></a>keep<span class="sc">-</span>tex<span class="sc">:</span> true</span>
+<span id="annotated-cell-2-12"><a href="#annotated-cell-2-12" aria-hidden="true" tabindex="-1"></a>tbl<span class="sc">-</span>pos<span class="sc">:</span> <span class="st">'t'</span></span>
+<span id="annotated-cell-2-13"><a href="#annotated-cell-2-13" aria-hidden="true" tabindex="-1"></a>echo<span class="sc">:</span> false</span>
+<span id="annotated-cell-2-14"><a href="#annotated-cell-2-14" aria-hidden="true" tabindex="-1"></a>cover<span class="sc">:</span> support_files<span class="sc">/</span>Crimson_jobfish.png</span>
+<span id="annotated-cell-2-15"><a href="#annotated-cell-2-15" aria-hidden="true" tabindex="-1"></a>pdf<span class="sc">-</span>engine<span class="sc">:</span> lualatex</span>
+<span id="annotated-cell-2-16"><a href="#annotated-cell-2-16" aria-hidden="true" tabindex="-1"></a>format<span class="sc">:</span></span>
+<span id="annotated-cell-2-17"><a href="#annotated-cell-2-17" aria-hidden="true" tabindex="-1"></a>  pdf<span class="sc">:</span></span>
+<span id="annotated-cell-2-18"><a href="#annotated-cell-2-18" aria-hidden="true" tabindex="-1"></a>    documentclass<span class="sc">:</span> article</span>
+<span id="annotated-cell-2-19"><a href="#annotated-cell-2-19" aria-hidden="true" tabindex="-1"></a>    papersize<span class="sc">:</span> letter</span>
+<span id="annotated-cell-2-20"><a href="#annotated-cell-2-20" aria-hidden="true" tabindex="-1"></a>    number<span class="sc">-</span>sections<span class="sc">:</span> true</span>
+<span id="annotated-cell-2-21"><a href="#annotated-cell-2-21" aria-hidden="true" tabindex="-1"></a>    template<span class="sc">-</span>partials<span class="sc">:</span></span>
+<span id="annotated-cell-2-22"><a href="#annotated-cell-2-22" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> <span class="st">'support_files/before-body.tex'</span></span>
+<span id="annotated-cell-2-23"><a href="#annotated-cell-2-23" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> <span class="st">'support_files/_titlepage.tex'</span></span>
+<span id="annotated-cell-2-24"><a href="#annotated-cell-2-24" aria-hidden="true" tabindex="-1"></a>    include<span class="sc">-</span><span class="cf">in</span><span class="sc">-</span>header<span class="sc">:</span></span>
+<span id="annotated-cell-2-25"><a href="#annotated-cell-2-25" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> <span class="st">'support_files/in-header.tex'</span></span>
+<span id="annotated-cell-2-26"><a href="#annotated-cell-2-26" aria-hidden="true" tabindex="-1"></a>    toc<span class="sc">:</span> true</span>
+<span id="annotated-cell-2-27"><a href="#annotated-cell-2-27" aria-hidden="true" tabindex="-1"></a>    lof<span class="sc">:</span> true</span>
+<span id="annotated-cell-2-28"><a href="#annotated-cell-2-28" aria-hidden="true" tabindex="-1"></a>    lot<span class="sc">:</span> true</span>
+<span id="annotated-cell-2-29"><a href="#annotated-cell-2-29" aria-hidden="true" tabindex="-1"></a>    titlepage<span class="sc">-</span>geometry<span class="sc">:</span></span>
+<span id="annotated-cell-2-30"><a href="#annotated-cell-2-30" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> top<span class="ot">=</span><span class="dv">2</span>in</span>
+<span id="annotated-cell-2-31"><a href="#annotated-cell-2-31" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> bottom<span class="ot">=</span><span class="dv">1</span>in</span>
+<span id="annotated-cell-2-32"><a href="#annotated-cell-2-32" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> right<span class="ot">=</span><span class="dv">1</span>in</span>
+<span id="annotated-cell-2-33"><a href="#annotated-cell-2-33" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> left<span class="ot">=</span><span class="dv">1</span>in</span>
+<span id="annotated-cell-2-34"><a href="#annotated-cell-2-34" aria-hidden="true" tabindex="-1"></a>output<span class="sc">-</span>file<span class="sc">:</span> <span class="st">'Crimson_jobfish_SAR_2026'</span></span>
+<span id="annotated-cell-2-35"><a href="#annotated-cell-2-35" aria-hidden="true" tabindex="-1"></a>params<span class="sc">:</span></span>
+<span id="annotated-cell-2-36"><a href="#annotated-cell-2-36" aria-hidden="true" tabindex="-1"></a>   office<span class="sc">:</span> <span class="st">'\gls{pifsc}'</span></span>
+<span id="annotated-cell-2-37"><a href="#annotated-cell-2-37" aria-hidden="true" tabindex="-1"></a>   species<span class="sc">:</span> <span class="st">'Crimson jobfish'</span></span>
+<span id="annotated-cell-2-38"><a href="#annotated-cell-2-38" aria-hidden="true" tabindex="-1"></a>   spp_latin<span class="sc">:</span> <span class="st">'Pristipomoides filamentosus'</span></span>
+<span id="annotated-cell-2-39"><a href="#annotated-cell-2-39" aria-hidden="true" tabindex="-1"></a>   region<span class="sc">:</span> <span class="st">'Hawaii'</span></span>
+<span id="annotated-cell-2-40"><a href="#annotated-cell-2-40" aria-hidden="true" tabindex="-1"></a>bibliography<span class="sc">:</span></span>
+<span id="annotated-cell-2-41"><a href="#annotated-cell-2-41" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> bibliography_files<span class="sc">/</span>aquaculture.bib</span>
+<span id="annotated-cell-2-42"><a href="#annotated-cell-2-42" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> bibliography_files<span class="sc">/</span>asar_citation.bib</span>
+<span id="annotated-cell-2-43"><a href="#annotated-cell-2-43" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> bibliography_files<span class="sc">/</span>canjfishaquatsci.bib</span>
+<span id="annotated-cell-2-44"><a href="#annotated-cell-2-44" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> bibliography_files<span class="sc">/</span>conservation<span class="sc">-</span>policy<span class="sc">-</span>management.bib</span>
+<span id="annotated-cell-2-45"><a href="#annotated-cell-2-45" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> bibliography_files<span class="sc">/</span>ecology.bib</span>
+<span id="annotated-cell-2-46"><a href="#annotated-cell-2-46" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> bibliography_files<span class="sc">/</span>fish.bib</span>
+<span id="annotated-cell-2-47"><a href="#annotated-cell-2-47" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> bibliography_files<span class="sc">/</span>fishres.bib</span>
+<span id="annotated-cell-2-48"><a href="#annotated-cell-2-48" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> bibliography_files<span class="sc">/</span>icesjmarsci.bib</span>
+<span id="annotated-cell-2-49"><a href="#annotated-cell-2-49" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> bibliography_files<span class="sc">/</span>jfishbiol.bib</span>
+<span id="annotated-cell-2-50"><a href="#annotated-cell-2-50" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> bibliography_files<span class="sc">/</span>oceanography<span class="sc">-</span>limnology.bib</span>
+<span id="annotated-cell-2-51"><a href="#annotated-cell-2-51" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> bibliography_files<span class="sc">/</span>transamfishsoc.bib</span>
+<span id="annotated-cell-2-52"><a href="#annotated-cell-2-52" aria-hidden="true" tabindex="-1"></a>csl<span class="sc">:</span> support_files<span class="sc">/</span>cjfas.csl</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
 <span data-code-cell="annotated-cell-2" data-code-lines="1,2,3,4,5,6,7,8,9,10" data-code-annotation="1">Report information (metadata)</span>
@@ -819,12 +819,7 @@ csl: support_files/cjfas.csl</code></pre>
 <span data-code-cell="annotated-cell-2" data-code-lines="11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52" data-code-annotation="2">Formatting</span>
 </dd>
 </dl>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/asar_yaml.png" class="img-fluid figure-img" alt="A screenshot of an example YAML, with curly brackets highlighting which code is 'information' and which code is 'formatting'."></p>
-<figcaption>asar YAML controlling formatting and basic document information.</figcaption>
-</figure>
-</div>
+<!-- ![asar YAML controlling formatting and basic document information.](images/asar_yaml.png){fig-alt="A screenshot of an example YAML, with curly brackets highlighting which code is 'information' and which code is 'formatting'."} -->
 <p>The YAML controls the following:</p>
 <ul>
 <li>title</li>
