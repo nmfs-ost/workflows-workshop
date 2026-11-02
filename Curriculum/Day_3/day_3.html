@@ -455,7 +455,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#add-tags" id="toc-add-tags" class="nav-link" data-scroll-target="#add-tags">Add tags</a></li>
   <li><a href="#check-the-tags" id="toc-check-the-tags" class="nav-link" data-scroll-target="#check-the-tags">Check the tags</a></li>
-  <li><a href="#add-alt-text" id="toc-add-alt-text" class="nav-link" data-scroll-target="#add-alt-text">Add alt text</a></li>
+  <li><a href="#add-alt-text-if-necessary" id="toc-add-alt-text-if-necessary" class="nav-link" data-scroll-target="#add-alt-text-if-necessary">Add alt text (if necessary)</a></li>
   <li><a href="#check-the-alt-text" id="toc-check-the-alt-text" class="nav-link" data-scroll-target="#check-the-alt-text">Check the alt text</a></li>
   </ul></li>
   </ul></li>
@@ -1727,8 +1727,8 @@ Important
 <p>Now your PDF is tagged! Once you <a href="https://oit.colorado.gov/standards-policies-guides/a-guide-to-accessible-web-services/accessible-documents-toolkit/how-to-adobe-acrobat-tags-tree">open the tag menu</a>, you’ll see the tags on the right side of the PDF viewer.</p>
 <p><img src="images/tagged_pdf.png" class="img-fluid" alt="Screenshot of an example PDF-based, tagged report. The PDF is opened in Adobe and tags for the Table of Contents are shown on the right side of the screen."></p>
 </section>
-<section id="add-alt-text" class="level3">
-<h3 class="anchored" data-anchor-id="add-alt-text">Add alt text</h3>
+<section id="add-alt-text-if-necessary" class="level3">
+<h3 class="anchored" data-anchor-id="add-alt-text-if-necessary">Add alt text (if necessary)</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1805,8 +1805,8 @@ Tip
 </ol>
 </div>
 </div>
-<!-- Answer: B. -->
-<!-- A identifies "Standard Quarto" thinking. While standard Quarto uses chunk options, {asar} uses the .csv as a single source of truth. When creating PDFs, alt text is taken from the csv-- not from the code chunk. -->
+<!-- Answer: A OR B. -->
+<!-- The "single source of truth" is quarto version-dependent. If you have version 1.9+, it can come from the code chunk OR rda; otherwise, add_alttext() sources it from the csv. -->
 <!-- C & D do not allow any way to edit alt text. -->
 <!-- ::: {.callout-note appearance="minimal"} -->
 <!-- 20 minute break for questions & practicing -->
