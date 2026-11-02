@@ -10,7 +10,7 @@ If you have any questions, please contact the [workshop organizers](https://nmfs
 # Coding environment = your local machine
 
 1. Ensure that you can run [R code](https://www.r-project.org/) with a platform like RStudio, VS Code, Positron, etc.
-2. Ensure you have downloaded [Quarto, version 1.6+ ](https://quarto.org/docs/get-started/), the `quarto` R package, and can create Quarto documents.
+2. Ensure you have downloaded [Quarto version 1.6+ ](https://quarto.org/docs/get-started/), the `quarto` R package, and can create Quarto documents. **We recommend Quarto v1.9 or higher.** You can check your Quarto version with the following code:
 ```{r eval=FALSE}
 pak::pak("quarto")
 quarto::quarto_version()

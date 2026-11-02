@@ -299,7 +299,7 @@ You have two options for calling these parameters in your writing.
 
 ##### The preamble
 
-The preamble is an R chunk that loads in a script called "preamble.R" which extracts key quantities commonly referenced in stock assessment reports. This will only work with a standard results file converted using `asar::convert_output()`, which we will get to shortly.
+The preamble is an R chunk that loads in a script called "preamble.R" which extracts key quantities commonly referenced in stock assessment reports. This will only work with a standard results file converted using `stockplotr::convert_output()`, which we will get to shortly.
 
 ![A screenshot showing lines of code in an R chunk within the skeleton file containing various quantities pulled from the preamble.R script.](images/preamble.png){fig-alt="A screenshot of the preamble, with the R chunk option 'eval: false' highlighted."}
 
@@ -517,7 +517,6 @@ asar::create_template(
   spp_latin = "Pristipomoides filamentosus",
   authors = c("Samantha Bredeck" = "OST"),
   # New arguments
-  custom = TRUE, # set this to TRUE when you're choosing a subset of standard sections
   custom_sections = c("executive_summary",      
                       "introduction",           
                       "data"), # list of sections from SAR to add

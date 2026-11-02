@@ -102,7 +102,7 @@ The following table contains figures and tables that are available in {stockplot
 | `plot_recruitment_deviations()` | recruitment deviations | Figure |
 | `plot_selectivity()` | selectivity time series | Figure |
 | `plot_spawning_biomass()` | spawning biomass time series | Figure |
-| `plot_spawning_potential_ratio()` | spawning potential ratio (SPR) | Figure |
+| `plot_spr()` | spawning potential ratio (SPR) | Figure |
 | `plot_stock_recruitment()` | stock recruitment relationship | Figure |
 | `table_biomass_abundance_catch()` | biomass, abundance, and catch time series | Table |
 | `table_index()` | index of abundance | Table |
@@ -338,7 +338,7 @@ Check out the [{stockplotr} cheatsheet](https://nmfs-ost.github.io/stockplotr/st
 Break for questions
 :::
 
-## Exporting
+## Exporting {#sec-export}
 
 You can export any table or plot along with their associated caption and alternative text (figures only) in the format of an rda file. An rda is an R data file that stores R objects and preserves their structure. In this case, you can think of an rda file exported from {stockplotr} as a list of objects.
 
@@ -730,15 +730,55 @@ Break for questions
 
 ## Alternative text {#sec-add-alttext}
 
-You must add [alternative text](https://www.section508.gov/create/alternative-text/) ("alt text") for images in a separate csv if you added figures using any of the workflows described above. Alt text is a description of your figure that can be read aloud by a screen reader and should answer this essential question:
+You must add [alternative text](https://www.section508.gov/create/alternative-text/) ("alt text") for images if you added figures using any of the workflows described above. Alt text is a description of your figure that can be read aloud by a screen reader and should answer this essential question:
 
 > What is this image conveying?
 
-Since you've used {stockplotr} to make some figures, you've already completed the first step: making a csv that will contain your alt text.
+Since you've used {stockplotr} to make some figures, you've already made some of your alt text.
 
-### Look at your alt text csv
+### Your responsibilities
 
-The file, "captions_alt_text.csv", should be located in your working directory (enter `getwd()` if you forget where that is). Open it up.
+- **Inspect** existing entries for your figures already created with {stockplotr}. This entails [checking the accuracy of the existing, prewritten alt text](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#your-to-do-list). It will contain some information pulled from the model results file ("key quantities"). If you see text that looks like a placeholder (e.g., "The x axis, showing the year, spans from B.start.year to B.end.year..."), that means that there was at least one instance where the {stockplotr} workflow failed to extract a specific value from the model results, calculate a key quantity (like the start year of a biomass plot- aka "B.start.year"), and substitute it into the placeholder.
+
+::: callout-important
+While we have extracted key quantities as accurately as possible, we cannot guarantee that each quantity will have been calculated perfectly; input data varies widely. **It's your responsibility to check the accuracy of your figures' alt text and captions.**
+:::
+
+- **Edit** existing entries. This entails updating the existing entries where necessary (especially if the default figures were modified) and [writing the final component of the alt text](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#your-to-do-list). The prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4) is: the relationship between the variables shown (i.e., what the figure is conveying). Since we can't program {stockplotr} to analyze the figure's meaning, **you must provide this crucial component**.
+
+- **Add** entries for your custom figures.
+
+### Workflows depending on Quarto version
+
+#### Quarto v1.9+ instructions
+
+Your "single source of truth" of captions/alt text will be the chunk options in your figures and tables docs. You do not need to edit the captions_alt_text.csv file. 
+
+##### For figures and tables made with {stockplotr}
+
+Captions and alt text will be pulled from your rda files. To edit this text, we recommend editing the text 1) in the rda files or 2) in the "setup" chunk of your figures and tables docs. Refer to the ["Exporting" section](#sec-export) for reminders about how this information is imported into the figures and tables docs, and see the ["Adding accessibility features" vignette](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#how-to-edit-your-reports-alt-text-and-captions) for more information about how to edit your alt text and captions.
+
+Here's a brief example showing how to edit the alt text in an rda file:
+
+```{r eval=FALSE}
+# rda file is imported into environment as "rda"
+rda[["caption"]] <- "my new caption"
+rda[["alt_text"]] <- "my new alt text"
+
+save(rda, file = 'example_figure.rda')
+```
+
+##### For figures and tables made by other means
+
+We recommend adding captions and alt text directly to your figures and tables docs' code chunks via the `fig-cap`, `tab-cap`, and `fig-alt` chunk options.
+
+#### Quarto older than v1.9 instructions
+
+This workflow requires `asar::add_alttext()` to insert your alt text into your report. To do this, your captions and alt text must be saved in the csv file "captions_alt_text.csv" that is produced if you export any {stockplotr} figure or table. This file will be your "single source of truth".
+
+##### Inspect the original {stockplotr} figure alt text
+
+The "captions_alt_text.csv" file should be located in your working directory (enter `getwd()` if you forget where that is). Open it up.
 
 The file is set up like this:
 
@@ -769,30 +809,11 @@ The same rule applies for figures: "custom_figure1" in the csv would match up wi
 
 : Format for csv containing table and figure captions and alternative text.
 
-### Update the csv
+##### Editing existing entries
 
-Your job is to:
+Using the "label" column, find the row associated with your figure and inspect it. Edit it where necessary, which includes adding the fourth ingredient of useful alt text. When you're satisfied, save the csv.
 
-- *edit* existing entries for your figures already created with {stockplotr}. This entails [checking the accuracy, and writing the final component, of the existing alt text](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#your-to-do-list).
-- *add* entries for your custom figures.
-
-#### Editing existing entries {#sec-edit-exist-entries}
-
-Using the "label" column, find the row associated with your figure and inspect it.
-
-- You'll see that there's already some prewritten alt text (in the "alt_text" column) that includes data from the model results file. Now, **you must check this information for accuracy and update it where necessary** (especially if the default figures were modified).
-
-  - This prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4): the relationship between the variables shown (i.e., what the figure is conveying). Since we can't program {stockplotr} to analyze the figure's meaning, **you must provide this crucial component**.
-
-- If you see text that looks like a placeholder (e.g., "The x axis, showing the year, spans from B.start.year to B.end.year..."), that means that there was at least one instance where our tool failed to extract a specific value from the model results, calculate a key quantity (like the start year of a biomass plot- aka "B.start.year"), and substitute it into the placeholder.
-
-::: callout-important
-While we have extracted key quantities as accurately as possible, we cannot guarantee that each quantity will have been calculated perfectly. Input data varies widely. **It's your responsibility to check the accuracy of your figures' alt text.**
-:::
-
-When you're satisfied, save the csv.
-
-#### Adding new entries
+##### Adding new entries
 
 Use the `stockplotr::add_caption_alt_text()` function to reproducibly add a row to your alt text/captions csv. Below is an example:
 
@@ -811,9 +832,7 @@ stockplotr::add_caption_alt_text(
 ```
 
 1. For figures [coded in chunks](#sec-code-in-qmd-fig), our example label would be "fig-custom1". For figures [added with markdown](#sec-image-based-fig)[^3] (i.e., premade pngs or jpgs), our example label would be "fig-example".
-2. See the "[Editing existing entries](#sec-edit-exist-entries)" section above, and the "[Achieve Greater Accessibility](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html)" vignette, for help writing alt text.
-
-[^3]: `![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}`
+2. See the "[Achieve Greater Accessibility](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html)" vignette for help writing alt text.
 
 ## Add tagging and alt text to your report
 
@@ -836,7 +855,11 @@ Now your PDF is tagged! Once you [open the tag menu](https://oit.colorado.gov/st
 
 ![](images/tagged_pdf.png){fig-alt="Screenshot of an example PDF-based, tagged report. The PDF is opened in Adobe and tags for the Table of Contents are shown on the right side of the screen."}
 
-### Add alt text
+### Add alt text (if necessary)
+
+::: {.callout-tip}
+If you have Quarto v1.9+ installed, this step is unnecessary.
+:::
 
 ```{r eval = FALSE}
 add_alttext(
@@ -873,9 +896,9 @@ C)  In the YAML at the top of the skeleton .qmd file
 D)  By right-clicking the figure in the RStudio "plots" pane
 :::
 
-<!-- Answer: B. -->
+<!-- Answer: A OR B. -->
 
-<!-- A identifies "Standard Quarto" thinking. While standard Quarto uses chunk options, {asar} uses the .csv as a single source of truth. When creating PDFs, alt text is taken from the csv-- not from the code chunk. -->
+<!-- The "single source of truth" is quarto version-dependent. If you have version 1.9+, it can come from the code chunk OR rda; otherwise, add_alttext() sources it from the csv. -->
 
 <!-- C & D do not allow any way to edit alt text. -->
 

@@ -27,12 +27,6 @@ asar::create_template(
 )
 ```
 
-<!-- asar::create_template( -->
-<!--   # custom = TRUE, -->
-<!--   # new_section = c("Changes to the Model", "Sec3"), -->
-<!--   # section_location = c("before-introduction", "after-acknowledgments") -->
-<!-- ) -->
-
 2. Create a stock assessment report template with two main sections: an executive summary and an introduction (the following sections will be added automatically: acknowledgments, references, tables, figures).
 
 **Answer**:
@@ -40,7 +34,6 @@ asar::create_template(
 ```{r eval=FALSE}
 asar::create_template(
     authors = c("Samantha Bredeck" = "OST"),
-    custom = TRUE,
     custom_sections = c("executive_summary", "introduction")
 )
 ```

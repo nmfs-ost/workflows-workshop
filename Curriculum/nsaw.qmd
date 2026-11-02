@@ -382,7 +382,7 @@ You have two options for calling these parameters in your writing.
 
 ##### The preamble
 
-The preamble is an R chunk that loads in a script called "preamble.R" which extracts key quantities commonly referenced in stock assessment reports. This will only work with a standard results file converted using `asar::convert_output()`, which we will get to shortly.
+The preamble is an R chunk that loads in a script called "preamble.R" which extracts key quantities commonly referenced in stock assessment reports. This will only work with a standard results file converted using `stockplotr::convert_output()`, which we will get to shortly.
 
 ![A screenshot showing lines of code in an R chunk within the skeleton file containing various quantities pulled from the preamble.R script.](Day_2/images/preamble.png){fig-alt="A screenshot of the preamble, with the R chunk option 'eval: false' highlighted."}
 
@@ -516,7 +516,6 @@ asar::rerender_skeleton(
   file_dir = file.path(getwd(), "report"),
   authors = c("John Doe"="NEFSC"),
   model_results = file.path(getwd(), "report", "petrale_conout.rda"),
-  custom = TRUE,
   new_section = "Changes to the Model",
   section_location = "in-assessment"
 )
