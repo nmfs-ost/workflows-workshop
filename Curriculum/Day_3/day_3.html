@@ -458,7 +458,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#sec-future" id="toc-sec-future" class="nav-link" data-scroll-target="#sec-future">Preparing for the Future</a>
   <ul class="collapse">
-  <li><a href="#changes-to-quarto" id="toc-changes-to-quarto" class="nav-link" data-scroll-target="#changes-to-quarto">Changes to Quarto</a></li>
   <li><a href="#the-next-assessment-cycle" id="toc-the-next-assessment-cycle" class="nav-link" data-scroll-target="#the-next-assessment-cycle">The Next Assessment Cycle</a></li>
   <li><a href="#converter-compatibility" id="toc-converter-compatibility" class="nav-link" data-scroll-target="#converter-compatibility">Converter Compatibility</a></li>
   </ul></li>
@@ -1515,9 +1514,7 @@ Warning
 </div>
 <p>While your rendered report looks superb, it’s probably missing <strong>tags</strong> and may be missing <strong>alternative text</strong>.</p>
 <p>If you made an HTML-based report, these features would most likely be in your document. But since we’re prioritizing PDFs, there are a few more steps to take before your document will significantly more accessible than it is now. This means that, <strong>to achieve compliance with Section 508 criteria, you must complete a couple more tasks</strong>.</p>
-<p>We will use two functions to add these features to our reports: <code>asar::add_tagging()</code> and <code>asar::add_alttext()</code>.</p>
-<p>Notably, these functions do <em>not</em> work on your skeleton .qmd file. Instead, each adds accessibility features into a new file in your ‘report’ folder: a LaTex-based version of your rendered skeleton .qmd file created when you rendered that skeleton .qmd file. It will have a .tex file extension and will be titled something like ‘sar_H_Crimson_jobfish_skeleton.tex’.</p>
-<p><strong>Here are the steps you must take before you run these functions, and what will happen when we run it.</strong></p>
+<p>We will use one or two functions to add these features to our reports. Note that these functions do <em>not</em> work on your skeleton .qmd file. Instead, each adds accessibility features into a new file in your ‘report’ folder: a LaTex-based version of your rendered skeleton .qmd file created when you rendered that skeleton .qmd file. It will have a .tex file extension and will be titled something like ‘sar_H_Crimson_jobfish_skeleton.tex’.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1528,19 +1525,15 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>asar::add_tagging()</code> and <code>asar::add_alttext()</code> (run in that order) comprise the <code>asar::add_accessibility()</code> function.</p>
-<p>Both <code>asar::add_alttext()</code> and <code>asar::add_accessibility()</code> are being deprecated and will be available until <strong>October 1, 2027</strong>.</p>
-<p>This means that, eventually, only <code>asar::add_tagging()</code> will be needed to add tags to your reports.</p>
-<section id="what-this-means-for-you" class="level2">
-<h2 class="anchored" data-anchor-id="what-this-means-for-you">What this means for you</h2>
-<p>Question: Do you have Quarto v1.9 installed?</p>
+<p>When we began the Workflows project, we had to develop functions to add tags and alt text to Quarto-based PDFs (<code>asar::add_tagging()</code>, <code>asar::add_alttext()</code>, and <code>asar::add_accessibility()</code>, which combined the former two functions into one). Since then, we worked with Quarto developers to incorporate these features into base Quarto.</p>
+<p>What does this mean for you?</p>
 <ul>
-<li>Yes: Congratulations! You only need to run <code>asar::add_tagging()</code> to add tags to your report. The alt text in your <code>fig-alt</code> sections will show up in your report.</li>
-<li>No: We encourage installing Quarto v1.9 because it will make your reporting process faster and easier. If you are unable to do so, you will need to run <code>asar::add_accessibility()</code> to add both tags and alternative text to your report.</li>
+<li><p>If you have installed Quarto v1.9 (the version with enhanced accessibility features) or higher, you <strong>do not</strong> need to use <code>asar::add_alttext()</code> or <code>asar::add_accessibility()</code>; the alt text in your <code>fig-alt</code> sections will show up in your report. You <strong>do</strong> need to run <code>asar::add_tagging()</code> to add tags to your report<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p></li>
+<li><p>If you have an earlier version of Quarto installed, we encourage installing v1.9 because it will make your reporting process faster and easier. If you are unable to do so, you will need to add both tags and alt text to your report with the {asar} functions. <strong>However, we strongly recommend upgrading to Quarto v1.9 because both <code>asar::add_alttext()</code> and <code>asar::add_accessibility()</code> are being deprecated and will be available until October 1, 2027</strong>.</p></li>
 </ul>
-</section>
 </div>
 </div>
+<p><strong>Here’s how we’ll make our reports accessible.</strong></p>
 <section id="tagging" class="level2">
 <h2 class="anchored" data-anchor-id="tagging">Tagging</h2>
 <div class="columns">
@@ -1679,7 +1672,7 @@ Important
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-20" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-20" data-code-lines="2" data-code-annotation="1">For figures <a href="#sec-code-in-qmd-fig">coded in chunks</a>, our example label would be “fig-custom1”. For figures <a href="#sec-image-based-fig">added with markdown</a><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (i.e., premade pngs or jpgs), our example label would be “fig-example”.</span>
+<span data-code-cell="annotated-cell-20" data-code-lines="2" data-code-annotation="1">For figures <a href="#sec-code-in-qmd-fig">coded in chunks</a>, our example label would be “fig-custom1”. For figures <a href="#sec-image-based-fig">added with markdown</a><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (i.e., premade pngs or jpgs), our example label would be “fig-example”.</span>
 </dd>
 <dt data-target-cell="annotated-cell-20" data-target-annotation="2">2</dt>
 <dd>
@@ -1811,42 +1804,6 @@ Tip
 </section>
 <section id="sec-future" class="level1">
 <h1>Preparing for the Future</h1>
-<section id="changes-to-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="changes-to-quarto">Changes to Quarto</h2>
-<p>We worked with Quarto developers to incorporate {asar} accessibility features into base Quarto. This means that, in the future, you may not need to use <code>asar::add_tagging()</code>, <code>asar::add_alttext()</code>, or <code>asar::add_accessibility()</code> to add accessibility features to your report. Instead, you may be able to add these features directly within your .qmd files. With that said, we will make sure we maintain compatibility of reports throughout Quarto updates.</p>
-<p>Example:</p>
-<table class="caption-top table">
-<caption>Table comparing current vs.&nbsp;potential future workflow that could be used once Quarto developers incorporate the accessibility features found in {asar} into the base Quarto software.</caption>
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Current workflow</strong></th>
-<th style="text-align: center;"><strong>Potential future workflow</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1. {stockplotr} creates csv with alt text and captions in “caption_alt_text.csv”</td>
-<td style="text-align: center;"><em>Identical</em></td>
-</tr>
-<tr class="even">
-<td>2. <code>asar::create_template()</code> creates figures and tables docs, with chunks that import alt text and captions from the csv file, save them as objects, and positions them in the chunk options (‘fig-alt’, ‘fig-cap’, ‘tbl-cap’)</td>
-<td style="text-align: center;"><em>Identical</em></td>
-</tr>
-<tr class="odd">
-<td>3. User renders skeleton .qmd file</td>
-<td style="text-align: center;"><em>Identical</em></td>
-</tr>
-<tr class="even">
-<td>4. <code>asar::add_accessibility()</code> inserts captions and alt text from the csv directly into the LaTeX report file created during .qmd report rendering</td>
-<td style="text-align: center;"><em>Unnecessary</em></td>
-</tr>
-</tbody>
-</table>
-</section>
 <section id="the-next-assessment-cycle" class="level2">
 <h2 class="anchored" data-anchor-id="the-next-assessment-cycle">The Next Assessment Cycle</h2>
 <p>While {asar} is ready for active use in the next assessment cycle, we are working on additional features to call the assessment from the previous cycle and update it for the new one. This will be the foundation of the workflow as assessments are produced year after year. The workflow presented in this workshop lays out the process for writing an assessment that has not been written yet using {asar} and/or the new standard guidelines.</p>
@@ -1899,7 +1856,8 @@ Tip
 
 <ol>
 <li id="fn1"><p>Again, for tables that require rotating or splitting across pages, please refer to the <a href="https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width">“Adding Custom Tables &amp; Figures” vignette</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p><code>![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}</code><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Through <a href="https://github.com/Schiano-NOAA/a11y-sandbox/tree/main">extensive testing</a>, we found that reports containing {stockplotr} tables that were tagged with <code>asar::add_tagging()</code> passed Adobe’s table header test, whereas reports tagged with the Quarto v1.9 accessibility workflow failed this test. Thus, we recommend using <code>asar::add_tagging()</code> to add tags to your report to satisfy the <a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#noaa-institutional-repository-submission-requirements">NOAA institutional repository submission requirements</a>. That said, both workflows’ reports passed <a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#verapdf-accessibility-testing-optional">veraPDF tests</a>, an optional, open source PDF accessibility checker.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><code>![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}</code><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
