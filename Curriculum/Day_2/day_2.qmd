@@ -220,6 +220,10 @@ author: # <1>
         state: 'MD' # <1>
         postal-code: '20910' # <1>
 date: today # <1>
+knitr: # <2>
+  opts_chunk: # <2>
+    dev: 'cairo_pdf' # <2>
+lang: en # <2>
 keep-tex: true # <2>
 tbl-pos: 't'  # <2>
 echo: false  # <2>
@@ -227,6 +231,7 @@ cover: support_files/Crimson_jobfish.png # <2>
 pdf-engine: lualatex # <2>
 format:  # <2>
   pdf:  # <2>
+    pdf-standard: ua-2 # <2>
     documentclass: article # <2>
     papersize: letter # <2>
     number-sections: true # <2>
