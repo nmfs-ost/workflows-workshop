@@ -394,12 +394,8 @@ rda$latex_table
 ```
 
 ::: callout-tip
-We have designed a function that allows you to automatically create all available figures and tables:
-
-- `save_all_plots()`
+The `save_all_plots()` function allows you to automatically create and export all available figures and tables. 
 :::
-
-<!-- move below to before custom figures/tables section? -->
 
 ::: {.callout-note appearance="minimal"}
 Break for questions
@@ -585,27 +581,24 @@ Put your alternative text in a chunk option called 'fig-alt' (example below).
 load(fs::path("paka_conout.rda"))
 
 paka2 <- out_new |>
-                    dplyr::filter(year > 1980) |>
                     dplyr::filter(module_name == "TIME_SERIES") |>
-                    dplyr::filter(label == "biomass") 
+                    dplyr::filter(label == "fishing_mortality") 
 
 # Make your figure
 your_figure <- ggplot2::ggplot(paka2,
   ggplot2::aes(x = year, y = estimate, color = fleet)) +
   ggplot2::geom_line(linewidth = 0.75) +
-  ggplot2::geom_point() +
-  ggplot2::theme_classic()
-
+  stockplotr::theme_noaa()
 
 # Show your figure
 your_figure
 ``` 
 ````
 
-![](images/petrale_figure.png){fig-alt="Example of a figure produced with the 'Direct coding-in-qmd figure workflow' option for adding figures to asar reports."}
+![](images/day3_fig4.png){fig-alt="Example of a figure produced with the 'Direct coding-in-qmd figure workflow' option for adding figures to asar reports."}
 
 ::: callout-warning
-Even though you wrote alt text in the `fig-alt` area, **when you first render your report into a PDF, your alternative text will not show up in your document.** Strange, right?! **To ensure it shows up, refer to the ["Adding accessibility features" section](#sec-a11y)** (which we'll discuss in a moment).
+To ensure the alt text in the `fig-alt` area shows up in your report, stay tuned for the ["Adding accessibility features" section](#sec-a11y), which we'll discuss in a moment.
 :::
 
 ##### Direct image-based figure insertion workflow {#sec-image-based-fig}
@@ -695,25 +688,37 @@ Enter `quarto render report/sar_H_Crimson_jobfish_skeleton.qmd`
 You've made major progress towards completing your first report!
 :::
 
-While your rendered report looks superb, it's probably missing two major components: **tags and alternative text**.
+While your rendered report looks superb, it's probably missing **tags** and may be missing **alternative text**.
 
 If you made an HTML-based report, these features would most likely be in your document. But since we're prioritizing PDFs, there are a few more steps to take before your document will significantly more accessible than it is now. This means that, **to achieve compliance with Section 508 criteria, you must complete a couple more tasks**.
 
-We will use a single function to add these features to our reports: `asar::add_accessibility()`.
+We will use two functions to add these features to our reports: `asar::add_tagging()` and `asar::add_alttext()`.
 
-Notably, this function does *not* work on your skeleton .qmd file. Instead, it acts on a new file in your 'report' folder: a LaTex-based version of your rendered skeleton .qmd file created when you rendered that skeleton .qmd file. It will have a .tex file extension and will be titled something like 'sar_H_Crimson_jobfish_skeleton.tex'. It's where we add our remaining accessibility features because Quarto does not yet offer that functionality within its .qmd files.
+Notably, these functions do *not* work on your skeleton .qmd file. Instead, each adds accessibility features into a new file in your 'report' folder: a LaTex-based version of your rendered skeleton .qmd file created when you rendered that skeleton .qmd file. It will have a .tex file extension and will be titled something like 'sar_H_Crimson_jobfish_skeleton.tex'.
 
-**Here are the steps you must take before you run `asar::add_accessibility()`, and what will happen when we run it.**
+**Here are the steps you must take before you run these functions, and what will happen when we run it.**
 
-::: callout-tip
-`asar::add_accessibility()` essentially combines two separate functions that add tags (`asar::add_tagging()`) and alternative text (`asar::add_alttext()`) to reports. You can run these two functions individually, if you prefer (in the order above).
+::: callout-important
+## IMPORTANT
+`asar::add_tagging()` and `asar::add_alttext()` (run in that order) comprise the `asar::add_accessibility()` function.
+
+Both `asar::add_alttext()` and `asar::add_accessibility()` are being deprecated and will be available until **October 1, 2027**.
+
+This means that, eventually, only `asar::add_tagging()` will be needed to add tags to your reports.
+
+## What this means for you
+
+Question: Do you have Quarto v1.9 installed?
+
+* Yes: Congratulations! You only need to run `asar::add_tagging()` to add tags to your report. The alt text in your `fig-alt` sections will show up in your report.
+* No: We encourage installing Quarto v1.9 because it will make your reporting process faster and easier. If you are unable to do so, you will need to run `asar::add_accessibility()` to add both tags and alternative text to your report.
 :::
 
 ## Tagging
 
 ::::: columns
 ::: {.column width="65%"}
-First, `asar::add_accessibility()` adds [**tags**](https://www.section508.gov/create/pdfs/common-tags-and-usage/) to your report.
+`asar::add_tagging()` adds [**tags**](https://www.section508.gov/create/pdfs/common-tags-and-usage/) to your report.
 
 Tags are structural elements of PDFs. They are signals telling software which information are headers, images, tables, text, and so on. Tags allow people using technology like screen readers to logically navigate PDFs.
 :::
@@ -793,53 +798,37 @@ When you're satisfied, save the csv.
 
 #### Adding new entries
 
-- Make a new row.
-- For "label", take the "label" of your figure chunk.
-  - For figures [coded in chunks](#sec-code-in-qmd-fig), our example label would be "fig-custom1".
-  - For figures [added with markdown](#sec-image-based-fig)[^2] (i.e., premade pngs or jpgs), our example label would be "fig-example".
-- The type will be "figure".
-- The caption should be identical to the caption in your chunk (what you put in "fig-cap").
-- The "alt_text" will contain your alt text. See the "[Editing existing entries](#sec-edit-exist-entries)" section above, and the "[Achieve Greater Accessibility](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html)" vignette, for help writing alt text.
+Use the `stockplotr::add_caption_alt_text()` function to reproducibly add a row to your alt text/captions csv. Below is an example:
 
-[^2]: `![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}`
-
-When you're satisfied, save the csv.
-
-**Shortcut**: Run this code to automatically add a row to your alt text/captions csv with sample data for an example "abcde" figure (label = "fig-abcde"):
+---
+code-annotations: hover
+---
 
 ```{r eval=FALSE}
-# Make small data frame with abcde figure's information
-new_row <- data.frame(
-  label = "abcde", # identical to the chunk label ("fig-abcde") MINUS "fig-"
-  type = "figure",
+stockplotr::add_caption_alt_text(
+  topic_label = "my_topic", # identical to the chunk label ("fig-my_topic") MINUS "fig-"  # <1>
+  fig_or_table = "figure",
   caption = "My example figure caption.",
-  alt_text = "My example figure alt text."
-)
-
-# path to captions/alt text csv (edit as needed)
-csv_path <- file.path(getwd(), "captions_alt_text.csv")
-# read existing captions/alt text csv file
-captions_alt_text <- read.csv(csv_path)
-# add new row(s)
-captions_alt_text <- rbind(captions_alt_text, new_row)
-
-# write updated captions/alt text csv file
-write.csv(
-  captions_alt_text,
-  file = csv_path,
-  row.names = FALSE
+  alt_text = "My example figure alt text.",  # <2>
+  dir = file.path(getwd(), "captions_alt_text.csv") # path to captions/alt text csv (edit as needed)
 )
 ```
 
+1. For figures [coded in chunks](#sec-code-in-qmd-fig), our example label would be "fig-custom1". For figures [added with markdown](#sec-image-based-fig)[^2] (i.e., premade pngs or jpgs), our example label would be "fig-example".
+2. See the "[Editing existing entries](#sec-edit-exist-entries)" section above, and the "[Achieve Greater Accessibility](https://nmfs-ost.github.io/asar/articles/accessibility_guide.html)" vignette, for help writing alt text.
+
+[^2]: `![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}`
+
 ## Add tagging and alt text to your report
 
-Now, we're ready to use the `asar::add_accessibility()` function to add tags and alt text into the report's .tex file.
+Now, we're ready to add tags and alt text into the report's .tex file!
+
+### Add tags
 
 ```{r eval = FALSE}
-add_accessibility(
+add_tagging(
     x = "sar_H_Crimson_jobfish_skeleton.tex", # your .tex report file
     dir = "report", # the folder containing the .tex file
-    alttext_csv = "captions_alt_text.csv", # the filename of your csv with captions and alt text, located in the working directory
     rename = "Crimson_jobfish_tagged", # the name of the new, accessible PDF
     compile = TRUE # we'll compile the PDF
   )
@@ -850,6 +839,18 @@ add_accessibility(
 Now your PDF is tagged! Once you [open the tag menu](https://oit.colorado.gov/standards-policies-guides/a-guide-to-accessible-web-services/accessible-documents-toolkit/how-to-adobe-acrobat-tags-tree), you'll see the tags on the right side of the PDF viewer.
 
 ![](images/tagged_pdf.png){fig-alt="Screenshot of an example PDF-based, tagged report. The PDF is opened in Adobe and tags for the Table of Contents are shown on the right side of the screen."}
+
+### Add alt text
+
+```{r eval = FALSE}
+add_alttext(
+    x = "sar_H_Crimson_jobfish_skeleton.tex", # your .tex report file
+    dir = "report", # the folder containing the .tex file
+    alttext_csv = "captions_alt_text.csv", # the filename of your csv with captions and alt text, located in the working directory
+    rename = "Crimson_jobfish_tagged_alttext", # the name of the new, accessible PDF
+    compile = TRUE # we'll compile the PDF again
+  )
+```
 
 ### Check the alt text
 
@@ -894,7 +895,7 @@ D)  By right-clicking the figure in the RStudio "plots" pane
 
 ## Changes to Quarto
 
-We are working closely with Quarto developers to incorporate the accessibility features found in {asar} into the base Quarto software. This means that, in the future, you may not need to use `asar::add_tagging()`, `asar::add_alttext()`, or `asar::add_accessibility()` to add accessibility features to your report. Instead, you may be able to add these features directly within your .qmd files. With that said, we will make sure we maintain compatibility of reports throughout Quarto updates.
+We worked with Quarto developers to incorporate {asar} accessibility features into base Quarto. This means that, in the future, you may not need to use `asar::add_tagging()`, `asar::add_alttext()`, or `asar::add_accessibility()` to add accessibility features to your report. Instead, you may be able to add these features directly within your .qmd files. With that said, we will make sure we maintain compatibility of reports throughout Quarto updates.
 
 Example:
 
