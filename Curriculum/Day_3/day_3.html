@@ -1669,14 +1669,14 @@ Important
 <p>Use the <code>stockplotr::add_caption_alt_text()</code> function to reproducibly add a row to your alt text/captions csv. Below is an example:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-20"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-20-1"><a href="#annotated-cell-20-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">add_caption_alt_text</span>(</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-20-2" class="code-annotation-target"><a href="#annotated-cell-20-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">topic_label =</span> <span class="st">"my_topic"</span>, <span class="co"># identical to the chunk label ("fig-my_topic") MINUS "fig-"</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="1">1</button><span id="annotated-cell-20-2" class="code-annotation-target"><a href="#annotated-cell-20-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">topic_label =</span> <span class="st">"my_topic"</span>, <span class="co"># identical to the chunk label ("fig-my_topic") MINUS "fig-"</span></span>
 <span id="annotated-cell-20-3"><a href="#annotated-cell-20-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig_or_table =</span> <span class="st">"figure"</span>,</span>
 <span id="annotated-cell-20-4"><a href="#annotated-cell-20-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"My example figure caption."</span>,</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-20-5" class="code-annotation-target"><a href="#annotated-cell-20-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">alt_text =</span> <span class="st">"My example figure alt text."</span>,</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="2">2</button><span id="annotated-cell-20-5" class="code-annotation-target"><a href="#annotated-cell-20-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">alt_text =</span> <span class="st">"My example figure alt text."</span>,</span>
 <span id="annotated-cell-20-6"><a href="#annotated-cell-20-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">dir =</span> <span class="fu">file.path</span>(<span class="fu">getwd</span>(), <span class="st">"captions_alt_text.csv"</span>) <span class="co"># path to captions/alt text csv (edit as needed)</span></span>
 <span id="annotated-cell-20-7"><a href="#annotated-cell-20-7" aria-hidden="true" tabindex="-1"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
-<dl class="code-annotation-container-grid">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-20" data-target-annotation="1">1</dt>
 <dd>
 <span data-code-cell="annotated-cell-20" data-code-lines="2" data-code-annotation="1">For figures <a href="#sec-code-in-qmd-fig">coded in chunks</a>, our example label would be “fig-custom1”. For figures <a href="#sec-image-based-fig">added with markdown</a><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (i.e., premade pngs or jpgs), our example label would be “fig-example”.</span>
@@ -1813,7 +1813,7 @@ Tip
 <h1>Preparing for the Future</h1>
 <section id="changes-to-quarto" class="level2">
 <h2 class="anchored" data-anchor-id="changes-to-quarto">Changes to Quarto</h2>
-<p>We are working closely with Quarto developers to incorporate the accessibility features found in {asar} into the base Quarto software. This means that, in the future, you may not need to use <code>asar::add_tagging()</code>, <code>asar::add_alttext()</code>, or <code>asar::add_accessibility()</code> to add accessibility features to your report. Instead, you may be able to add these features directly within your .qmd files. With that said, we will make sure we maintain compatibility of reports throughout Quarto updates.</p>
+<p>We worked with Quarto developers to incorporate {asar} accessibility features into base Quarto. This means that, in the future, you may not need to use <code>asar::add_tagging()</code>, <code>asar::add_alttext()</code>, or <code>asar::add_accessibility()</code> to add accessibility features to your report. Instead, you may be able to add these features directly within your .qmd files. With that said, we will make sure we maintain compatibility of reports throughout Quarto updates.</p>
 <p>Example:</p>
 <table class="caption-top table">
 <caption>Table comparing current vs.&nbsp;potential future workflow that could be used once Quarto developers incorporate the accessibility features found in {asar} into the base Quarto software.</caption>
@@ -2364,25 +2364,65 @@ Tip
           }
         };
       }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
+        const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+        for (let i=0; i<annoteTargets.length; i++) {
+          const annoteTarget = annoteTargets[i];
+          const targetCell = annoteTarget.getAttribute("data-target-cell");
+          const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+          const contentFn = () => {
+            const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+            if (content) {
+              const tipContent = content.cloneNode(true);
+              tipContent.classList.add("code-annotation-tip-content");
+              return tipContent.outerHTML;
             }
-          });
+          }
+          const config = {
+            allowHTML: true,
+            content: contentFn,
+            onShow: (instance) => {
+              selectCodeLines(instance.reference);
+              instance.reference.classList.add('code-annotation-active');
+              window.tippy.hideAll();
+            },
+            onHide: (instance) => {
+              unselectCodeLines();
+              instance.reference.classList.remove('code-annotation-active');
+            },
+            maxWidth: 300,
+            delay: [50, 0],
+            duration: [200, 0],
+            offset: [5, 10],
+            arrow: true,
+            appendTo: function(el) {
+              return el.parentElement.parentElement.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'quarto',
+            placement: 'right',
+            plugins: [hideOnEscAndFocusOut],
+            popperOptions: {
+              modifiers: [
+              {
+                name: 'flip',
+                options: {
+                  flipVariations: false, // true by default
+                  allowedAutoPlacements: ['right'],
+                  fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+                },
+              },
+              {
+                name: 'preventOverflow',
+                options: {
+                  mainAxis: false,
+                  altAxis: false
+                }
+              }
+              ]        
+            }      
+          };
+          window.tippy(annoteTarget, config); 
         }
     const findCites = (el) => {
       const parentEl = el.parentElement;
