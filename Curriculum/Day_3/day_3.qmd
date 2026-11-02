@@ -134,7 +134,7 @@ plot_spawning_biomass(
 )
 ```
 
-![](images/day3_ex_plt1_a.png)
+![](images/day3_sb1.png)
 
 ::: callout-tip
 Remove the legend by adding this code directly onto your original `plot_spawning_biomass()` code:
@@ -174,7 +174,7 @@ plot_spawning_biomass(
 )
 ```
 
-![](images/day3_ex_plt2_b.png)
+![](images/day3_sb2.png)
 
 <!-- #### Plot relative spawning biomass -->
 
@@ -220,7 +220,7 @@ plot_spawning_biomass(
   ggplot2::theme(legend.position = "none")
 ```
 
-![](images/day3_ex_plt3_b.png)
+![](images/day3_sb3.png)
 
 ::: callout-tip
 The only extended arguments available are the ones found from the ggplot2::geom_XX() function. Thus, any indexed variables can not be changes such as color to fill. Please see the documentation for `ggplot2` geom functions for these additional arguments.
@@ -277,7 +277,7 @@ stockplotr::table_landings(
 )
 ```
 
-![](images/day3_ex_table1.png)
+![](images/day3_table1.png)
 
 ::: {.callout-note appearance="minimal"}
 Break for questions
@@ -301,7 +301,7 @@ stockplotr::table_landings(
     )
 ```
 
-![](images/day3_ex_table2.png)
+![](images/day3_table2.png)
 
 ````{=html}
 <!-- or potentially highlight a specific line within the table:
@@ -394,7 +394,7 @@ rda$latex_table
 ```
 
 ::: callout-tip
-We have designed two functions that allow you to automatically create all available figures and tables:
+We have designed a function that allows you to automatically create all available figures and tables:
 
 - `save_all_plots()`
 :::

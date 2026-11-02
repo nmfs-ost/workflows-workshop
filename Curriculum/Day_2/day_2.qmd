@@ -351,7 +351,7 @@ The stock assessment for `r params$species` was conducted by the `r params$offic
 
 This function, which was **formerly located within {asar} but has been moved to {stockplotr}**, converts an output file from a stock assessment model to a standard format. This file can be used to extract quantities within the preamble and to build figures and tables with {stockplotr} (covered in [Day 3](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_3/day_3.html)).
 
-The `convert_output` function currently accepts output from Stock Synthesis (Report.sso) version 3.30 and higher, Beaufort Assessment Model (BAM; output.rda), Fisheries Integrated Modelling System (FIMS; R object), or Rceattle (model output object). We are actively working on expanding the `convert_output` function to be compatible with all major U.S. stock assessment models. This function takes a lot of resources to develop, so any contribution to the package is welcome! If you have a model that is not currently compatible with `stockplotr::convert_output()`, please navigate to [our article](https://nmfs-ost.github.io/stockplotr/articles/convert_output_details.html) describing the function and how to get your output in the same format as those produced from the converter!
+The `convert_output` function currently accepts output from Stock Synthesis version 3.30 and higher (`r4ss::ss_output()` and Report.sso (slated for deprecation)), Beaufort Assessment Model (BAM; output.rda), Fisheries Integrated Modelling System (FIMS; R object), or Rceattle (model output object). We are actively working on expanding the `convert_output` function to be compatible with all major U.S. stock assessment models. This function takes a lot of resources to develop, so any contribution to the package is welcome! If you have a model that is not currently compatible with `stockplotr::convert_output()`, please navigate to [our article](https://nmfs-ost.github.io/stockplotr/articles/convert_output_details.html) describing the function and how to get your output in the same format as those produced from the converter!
 
 **Let's try it out!**
 
@@ -496,7 +496,7 @@ You can also:
 * add new sections in individual sections
 * select sections of the standard template to include in your report
 
-Today, we will be going over how to customize your template by selecting a subset of the standard guidelines, then adding in a new section after our introduction.
+Today, we will be going over how to customize your template by selecting a subset of the standard guidelines, then adding in a new section after our introduction. Note: this section will be particularly useful for those writing reproducible reports for purposes beyond stock assessment.
 
 First, let's make our template. 
 
