@@ -426,7 +426,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#customizing" id="toc-customizing" class="nav-link" data-scroll-target="#customizing">Customizing</a></li>
   </ul></li>
   <li><a href="#example-table" id="toc-example-table" class="nav-link" data-scroll-target="#example-table">Example Table</a></li>
-  <li><a href="#exporting" id="toc-exporting" class="nav-link" data-scroll-target="#exporting">Exporting</a></li>
+  <li><a href="#sec-export" id="toc-sec-export" class="nav-link" data-scroll-target="#sec-export">Exporting</a></li>
   </ul></li>
   <li><a href="#integrating-stockplotr-into-the-workflow" id="toc-integrating-stockplotr-into-the-workflow" class="nav-link" data-scroll-target="#integrating-stockplotr-into-the-workflow">Integrating {stockplotr} into the workflow</a>
   <ul class="collapse">
@@ -448,8 +448,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#tagging" id="toc-tagging" class="nav-link" data-scroll-target="#tagging">Tagging</a></li>
   <li><a href="#sec-add-alttext" id="toc-sec-add-alttext" class="nav-link" data-scroll-target="#sec-add-alttext">Alternative text</a>
   <ul class="collapse">
-  <li><a href="#look-at-your-alt-text-csv" id="toc-look-at-your-alt-text-csv" class="nav-link" data-scroll-target="#look-at-your-alt-text-csv">Look at your alt text csv</a></li>
-  <li><a href="#update-the-csv" id="toc-update-the-csv" class="nav-link" data-scroll-target="#update-the-csv">Update the csv</a></li>
+  <li><a href="#your-responsibilities" id="toc-your-responsibilities" class="nav-link" data-scroll-target="#your-responsibilities">Your responsibilities</a></li>
+  <li><a href="#workflows-depending-on-quarto-version" id="toc-workflows-depending-on-quarto-version" class="nav-link" data-scroll-target="#workflows-depending-on-quarto-version">Workflows depending on Quarto version</a></li>
   </ul></li>
   <li><a href="#add-tagging-and-alt-text-to-your-report" id="toc-add-tagging-and-alt-text-to-your-report" class="nav-link" data-scroll-target="#add-tagging-and-alt-text-to-your-report">Add tagging and alt text to your report</a>
   <ul class="collapse">
@@ -673,7 +673,7 @@ Tip
 <td>Figure</td>
 </tr>
 <tr class="even">
-<td><code>plot_spawning_potential_ratio()</code></td>
+<td><code>plot_spr()</code></td>
 <td>spawning potential ratio (SPR)</td>
 <td>Figure</td>
 </tr>
@@ -988,8 +988,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="exporting" class="level2">
-<h2 class="anchored" data-anchor-id="exporting">Exporting</h2>
+<section id="sec-export" class="level2">
+<h2 class="anchored" data-anchor-id="sec-export">Exporting</h2>
 <p>You can export any table or plot along with their associated caption and alternative text (figures only) in the format of an rda file. An rda is an R data file that stores R objects and preserves their structure. In this case, you can think of an rda file exported from {stockplotr} as a list of objects.</p>
 <p>Each plot or table has the option to export it as an rda. This rda is a list of 3 associated components for the plot/table to be used in a stock assessment report:</p>
 <ul>
@@ -1560,14 +1560,62 @@ Warning
 </section>
 <section id="sec-add-alttext" class="level2">
 <h2 class="anchored" data-anchor-id="sec-add-alttext">Alternative text</h2>
-<p>You must add <a href="https://www.section508.gov/create/alternative-text/">alternative text</a> (“alt text”) for images in a separate csv if you added figures using any of the workflows described above. Alt text is a description of your figure that can be read aloud by a screen reader and should answer this essential question:</p>
+<p>You must add <a href="https://www.section508.gov/create/alternative-text/">alternative text</a> (“alt text”) for images if you added figures using any of the workflows described above. Alt text is a description of your figure that can be read aloud by a screen reader and should answer this essential question:</p>
 <blockquote class="blockquote">
 <p>What is this image conveying?</p>
 </blockquote>
-<p>Since you’ve used {stockplotr} to make some figures, you’ve already completed the first step: making a csv that will contain your alt text.</p>
-<section id="look-at-your-alt-text-csv" class="level3">
-<h3 class="anchored" data-anchor-id="look-at-your-alt-text-csv">Look at your alt text csv</h3>
-<p>The file, “captions_alt_text.csv”, should be located in your working directory (enter <code>getwd()</code> if you forget where that is). Open it up.</p>
+<p>Since you’ve used {stockplotr} to make some figures, you’ve already made some of your alt text.</p>
+<section id="your-responsibilities" class="level3">
+<h3 class="anchored" data-anchor-id="your-responsibilities">Your responsibilities</h3>
+<ul>
+<li><strong>Inspect</strong> existing entries for your figures already created with {stockplotr}. This entails <a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#your-to-do-list">checking the accuracy of the existing, prewritten alt text</a>. It will contain some information pulled from the model results file (“key quantities”). If you see text that looks like a placeholder (e.g., “The x axis, showing the year, spans from B.start.year to B.end.year…”), that means that there was at least one instance where the {stockplotr} workflow failed to extract a specific value from the model results, calculate a key quantity (like the start year of a biomass plot- aka “B.start.year”), and substitute it into the placeholder.</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>While we have extracted key quantities as accurately as possible, we cannot guarantee that each quantity will have been calculated perfectly; input data varies widely. <strong>It’s your responsibility to check the accuracy of your figures’ alt text and captions.</strong></p>
+</div>
+</div>
+<ul>
+<li><p><strong>Edit</strong> existing entries. This entails updating the existing entries where necessary (especially if the default figures were modified) and <a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#your-to-do-list">writing the final component of the alt text</a>. The prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4) is: the relationship between the variables shown (i.e., what the figure is conveying). Since we can’t program {stockplotr} to analyze the figure’s meaning, <strong>you must provide this crucial component</strong>.</p></li>
+<li><p><strong>Add</strong> entries for your custom figures.</p></li>
+</ul>
+</section>
+<section id="workflows-depending-on-quarto-version" class="level3">
+<h3 class="anchored" data-anchor-id="workflows-depending-on-quarto-version">Workflows depending on Quarto version</h3>
+<section id="quarto-v1.9-instructions" class="level4">
+<h4 class="anchored" data-anchor-id="quarto-v1.9-instructions">Quarto v1.9+ instructions</h4>
+<p>Your “single source of truth” of captions/alt text will be the chunk options in your figures and tables docs. You do not need to edit the captions_alt_text.csv file.</p>
+<section id="for-figures-and-tables-made-with-stockplotr" class="level5">
+<h5 class="anchored" data-anchor-id="for-figures-and-tables-made-with-stockplotr">For figures and tables made with {stockplotr}</h5>
+<p>Captions and alt text will be pulled from your rda files. To edit this text, we recommend editing the text 1) in the rda files or 2) in the “setup” chunk of your figures and tables docs. Refer to the <a href="#sec-export">“Exporting” section</a> for reminders about how this information is imported into the figures and tables docs, and see the <a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#how-to-edit-your-reports-alt-text-and-captions">“Adding accessibility features” vignette</a> for more information about how to edit your alt text and captions.</p>
+<p>Here’s a brief example showing how to edit the alt text in an rda file:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rda file is imported into environment as "rda"</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>rda[[<span class="st">"caption"</span>]] <span class="ot">&lt;-</span> <span class="st">"my new caption"</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>rda[[<span class="st">"alt_text"</span>]] <span class="ot">&lt;-</span> <span class="st">"my new alt text"</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(rda, <span class="at">file =</span> <span class="st">'example_figure.rda'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="for-figures-and-tables-made-by-other-means" class="level5">
+<h5 class="anchored" data-anchor-id="for-figures-and-tables-made-by-other-means">For figures and tables made by other means</h5>
+<p>We recommend adding captions and alt text directly to your figures and tables docs’ code chunks via the <code>fig-cap</code>, <code>tab-cap</code>, and <code>fig-alt</code> chunk options.</p>
+</section>
+</section>
+<section id="quarto-older-than-v1.9-instructions" class="level4">
+<h4 class="anchored" data-anchor-id="quarto-older-than-v1.9-instructions">Quarto older than v1.9 instructions</h4>
+<p>This workflow requires <code>asar::add_alttext()</code> to insert your alt text into your report. To do this, your captions and alt text must be saved in the csv file “captions_alt_text.csv” that is produced if you export any {stockplotr} figure or table. This file will be your “single source of truth”.</p>
+<section id="inspect-the-original-stockplotr-figure-alt-text" class="level5">
+<h5 class="anchored" data-anchor-id="inspect-the-original-stockplotr-figure-alt-text">Inspect the original {stockplotr} figure alt text</h5>
+<p>The “captions_alt_text.csv” file should be located in your working directory (enter <code>getwd()</code> if you forget where that is). Open it up.</p>
 <p>The file is set up like this:</p>
 <ul>
 <li>Column 1 (“label”) is a shorthand label for your figure or table. Labels should be somewhat short and exclude spaces. Examples include “kobe”, “relative.biomass”, and “fishing.mortality”.</li>
@@ -1583,11 +1631,11 @@ Important
 </div>
 <div class="callout-body-container callout-body">
 <p>The label in the csv must match the label in your plot’s chunk options, <strong>MINUS the “fig-” or “tab-”</strong>. For example, the label “custom_table1” in the csv would match up properly with the “tbl-custom_table1” label in this code chunk:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>```{r eval=FALSE}</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>#| label: 'tbl-custom_table1'</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>my_table</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>```{r eval=FALSE}</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>#| label: 'tbl-custom_table1'</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>my_table</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The same rule applies for figures: “custom_figure1” in the csv would match up with “fig-custom_figure1” in the chunk options’ label.</p>
 </div>
 </div>
@@ -1628,62 +1676,35 @@ Important
 </tbody>
 </table>
 </section>
-<section id="update-the-csv" class="level3">
-<h3 class="anchored" data-anchor-id="update-the-csv">Update the csv</h3>
-<p>Your job is to:</p>
-<ul>
-<li><em>edit</em> existing entries for your figures already created with {stockplotr}. This entails <a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#your-to-do-list">checking the accuracy, and writing the final component, of the existing alt text</a>.</li>
-<li><em>add</em> entries for your custom figures.</li>
-</ul>
-<section id="sec-edit-exist-entries" class="level4">
-<h4 class="anchored" data-anchor-id="sec-edit-exist-entries">Editing existing entries</h4>
-<p>Using the “label” column, find the row associated with your figure and inspect it.</p>
-<ul>
-<li><p>You’ll see that there’s already some prewritten alt text (in the “alt_text” column) that includes data from the model results file. Now, <strong>you must check this information for accuracy and update it where necessary</strong> (especially if the default figures were modified).</p>
-<ul>
-<li>This prewritten alt text usually contains 3/4 essential ingredients for well-written alt text. The remaining ingredient (#4): the relationship between the variables shown (i.e., what the figure is conveying). Since we can’t program {stockplotr} to analyze the figure’s meaning, <strong>you must provide this crucial component</strong>.</li>
-</ul></li>
-<li><p>If you see text that looks like a placeholder (e.g., “The x axis, showing the year, spans from B.start.year to B.end.year…”), that means that there was at least one instance where our tool failed to extract a specific value from the model results, calculate a key quantity (like the start year of a biomass plot- aka “B.start.year”), and substitute it into the placeholder.</p></li>
-</ul>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>While we have extracted key quantities as accurately as possible, we cannot guarantee that each quantity will have been calculated perfectly. Input data varies widely. <strong>It’s your responsibility to check the accuracy of your figures’ alt text.</strong></p>
-</div>
-</div>
-<p>When you’re satisfied, save the csv.</p>
+<section id="editing-existing-entries" class="level5">
+<h5 class="anchored" data-anchor-id="editing-existing-entries">Editing existing entries</h5>
+<p>Using the “label” column, find the row associated with your figure and inspect it. Edit it where necessary, which includes adding the fourth ingredient of useful alt text. When you’re satisfied, save the csv.</p>
 </section>
-<section id="adding-new-entries" class="level4">
-<h4 class="anchored" data-anchor-id="adding-new-entries">Adding new entries</h4>
+<section id="adding-new-entries" class="level5">
+<h5 class="anchored" data-anchor-id="adding-new-entries">Adding new entries</h5>
 <p>Use the <code>stockplotr::add_caption_alt_text()</code> function to reproducibly add a row to your alt text/captions csv. Below is an example:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-20"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-20-1"><a href="#annotated-cell-20-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">add_caption_alt_text</span>(</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="1">1</button><span id="annotated-cell-20-2" class="code-annotation-target"><a href="#annotated-cell-20-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">topic_label =</span> <span class="st">"my_topic"</span>, <span class="co"># identical to the chunk label ("fig-my_topic") MINUS "fig-"</span></span>
-<span id="annotated-cell-20-3"><a href="#annotated-cell-20-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig_or_table =</span> <span class="st">"figure"</span>,</span>
-<span id="annotated-cell-20-4"><a href="#annotated-cell-20-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"My example figure caption."</span>,</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="2">2</button><span id="annotated-cell-20-5" class="code-annotation-target"><a href="#annotated-cell-20-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">alt_text =</span> <span class="st">"My example figure alt text."</span>,</span>
-<span id="annotated-cell-20-6"><a href="#annotated-cell-20-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">dir =</span> <span class="fu">file.path</span>(<span class="fu">getwd</span>(), <span class="st">"captions_alt_text.csv"</span>) <span class="co"># path to captions/alt text csv (edit as needed)</span></span>
-<span id="annotated-cell-20-7"><a href="#annotated-cell-20-7" aria-hidden="true" tabindex="-1"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-21"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-21-1"><a href="#annotated-cell-21-1" aria-hidden="true" tabindex="-1"></a>stockplotr<span class="sc">::</span><span class="fu">add_caption_alt_text</span>(</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-21" data-target-annotation="1">1</button><span id="annotated-cell-21-2" class="code-annotation-target"><a href="#annotated-cell-21-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">topic_label =</span> <span class="st">"my_topic"</span>, <span class="co"># identical to the chunk label ("fig-my_topic") MINUS "fig-"</span></span>
+<span id="annotated-cell-21-3"><a href="#annotated-cell-21-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig_or_table =</span> <span class="st">"figure"</span>,</span>
+<span id="annotated-cell-21-4"><a href="#annotated-cell-21-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"My example figure caption."</span>,</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-21" data-target-annotation="2">2</button><span id="annotated-cell-21-5" class="code-annotation-target"><a href="#annotated-cell-21-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">alt_text =</span> <span class="st">"My example figure alt text."</span>,</span>
+<span id="annotated-cell-21-6"><a href="#annotated-cell-21-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">dir =</span> <span class="fu">file.path</span>(<span class="fu">getwd</span>(), <span class="st">"captions_alt_text.csv"</span>) <span class="co"># path to captions/alt text csv (edit as needed)</span></span>
+<span id="annotated-cell-21-7"><a href="#annotated-cell-21-7" aria-hidden="true" tabindex="-1"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-20" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-21" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-20" data-code-lines="2" data-code-annotation="1">For figures <a href="#sec-code-in-qmd-fig">coded in chunks</a>, our example label would be “fig-custom1”. For figures <a href="#sec-image-based-fig">added with markdown</a><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (i.e., premade pngs or jpgs), our example label would be “fig-example”.</span>
+<span data-code-cell="annotated-cell-21" data-code-lines="2" data-code-annotation="1">For figures <a href="#sec-code-in-qmd-fig">coded in chunks</a>, our example label would be “fig-custom1”. For figures <a href="#sec-image-based-fig">added with markdown</a><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (i.e., premade pngs or jpgs), our example label would be “fig-example”.</span>
 </dd>
-<dt data-target-cell="annotated-cell-20" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-21" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-20" data-code-lines="5" data-code-annotation="2">See the “<a href="#sec-edit-exist-entries">Editing existing entries</a>” section above, and the “<a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html">Achieve Greater Accessibility</a>” vignette, for help writing alt text.</span>
+<span data-code-cell="annotated-cell-21" data-code-lines="5" data-code-annotation="2">See the “<a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html">Achieve Greater Accessibility</a>” vignette for help writing alt text.</span>
 </dd>
 </dl>
 </div>
 </div>
+</section>
 </section>
 </section>
 </section>
@@ -1693,12 +1714,12 @@ Important
 <section id="add-tags" class="level3">
 <h3 class="anchored" data-anchor-id="add-tags">Add tags</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_tagging</span>(</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"sar_H_Crimson_jobfish_skeleton.tex"</span>, <span class="co"># your .tex report file</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">dir =</span> <span class="st">"report"</span>, <span class="co"># the folder containing the .tex file</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">rename =</span> <span class="st">"Crimson_jobfish_tagged"</span>, <span class="co"># the name of the new, accessible PDF</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">compile =</span> <span class="cn">TRUE</span> <span class="co"># we'll compile the PDF</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_tagging</span>(</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"sar_H_Crimson_jobfish_skeleton.tex"</span>, <span class="co"># your .tex report file</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">dir =</span> <span class="st">"report"</span>, <span class="co"># the folder containing the .tex file</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">rename =</span> <span class="st">"Crimson_jobfish_tagged"</span>, <span class="co"># the name of the new, accessible PDF</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">compile =</span> <span class="cn">TRUE</span> <span class="co"># we'll compile the PDF</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="check-the-tags" class="level3">
@@ -1708,14 +1729,27 @@ Important
 </section>
 <section id="add-alt-text" class="level3">
 <h3 class="anchored" data-anchor-id="add-alt-text">Add alt text</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you have Quarto v1.9+ installed, this step is unnecessary.</p>
+</div>
+</div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_alttext</span>(</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"sar_H_Crimson_jobfish_skeleton.tex"</span>, <span class="co"># your .tex report file</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">dir =</span> <span class="st">"report"</span>, <span class="co"># the folder containing the .tex file</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">alttext_csv =</span> <span class="st">"captions_alt_text.csv"</span>, <span class="co"># the filename of your csv with captions and alt text, located in the working directory</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">rename =</span> <span class="st">"Crimson_jobfish_tagged_alttext"</span>, <span class="co"># the name of the new, accessible PDF</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">compile =</span> <span class="cn">TRUE</span> <span class="co"># we'll compile the PDF again</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_alttext</span>(</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"sar_H_Crimson_jobfish_skeleton.tex"</span>, <span class="co"># your .tex report file</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">dir =</span> <span class="st">"report"</span>, <span class="co"># the folder containing the .tex file</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">alttext_csv =</span> <span class="st">"captions_alt_text.csv"</span>, <span class="co"># the filename of your csv with captions and alt text, located in the working directory</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">rename =</span> <span class="st">"Crimson_jobfish_tagged_alttext"</span>, <span class="co"># the name of the new, accessible PDF</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">compile =</span> <span class="cn">TRUE</span> <span class="co"># we'll compile the PDF again</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="check-the-alt-text" class="level3">
@@ -1778,7 +1812,7 @@ Tip
 <!-- 20 minute break for questions & practicing -->
 <!-- ::: -->
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1787,7 +1821,7 @@ Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>If you haven’t already, add tags to your pdf by running <code>add_tagging()</code> with the appropriate arguments (including <code>compile</code> set to TRUE). Then, open up the report and ensure it was tagged.</p></li>
