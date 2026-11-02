@@ -1695,7 +1695,7 @@ Important
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-21" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-21" data-code-lines="2" data-code-annotation="1">For figures <a href="#sec-code-in-qmd-fig">coded in chunks</a>, our example label would be “fig-custom1”. For figures <a href="#sec-image-based-fig">added with markdown</a><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (i.e., premade pngs or jpgs), our example label would be “fig-example”.</span>
+<span data-code-cell="annotated-cell-21" data-code-lines="2" data-code-annotation="1">For figures <a href="#sec-code-in-qmd-fig">coded in chunks</a>, our example label would be “fig-custom1”. For figures <a href="#sec-image-based-fig">added with markdown</a>[^3] (i.e., premade pngs or jpgs), our example label would be “fig-example”.</span>
 </dd>
 <dt data-target-cell="annotated-cell-21" data-target-annotation="2">2</dt>
 <dd>
@@ -1894,7 +1894,6 @@ Tip
 <ol>
 <li id="fn1"><p>Again, for tables that require rotating or splitting across pages, please refer to the <a href="https://nmfs-ost.github.io/asar/articles/custom-figs-tabs.html#sec-id_width">“Adding Custom Tables &amp; Figures” vignette</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Through <a href="https://github.com/Schiano-NOAA/a11y-sandbox/tree/main">extensive testing</a>, we found that reports containing {stockplotr} tables that were tagged with <code>asar::add_tagging()</code> passed Adobe’s table header test, whereas reports tagged with the Quarto v1.9 accessibility workflow failed this test. Thus, we recommend using <code>asar::add_tagging()</code> to add tags to your report to satisfy the <a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#noaa-institutional-repository-submission-requirements">NOAA institutional repository submission requirements</a>. That said, both workflows’ reports passed <a href="https://nmfs-ost.github.io/asar/articles/accessibility_guide.html#verapdf-accessibility-testing-optional">veraPDF tests</a>, an optional, open source PDF accessibility checker.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p><code>![Caption for my example figure](example_figure.png){fig-alt="This is the alternative text for my figure", #fig-example}</code><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
