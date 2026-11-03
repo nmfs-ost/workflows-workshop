@@ -258,7 +258,11 @@ For those familiar with R markdown, the code chunk structure in R markdown docum
 
 ### References and Bibliography
 
-You can easily add citations to your report. We provide an `asar_references.bib` file in the "report" folder with hundreds of citations for you to reference, though you can add your own to the file too. Here are resources to export BibTex from [Google Scholar](https://guides.erau.edu/portfolio-how-to/google-bibtex), [EndNote](https://libguides.utsa.edu/c.php?g=522165&p=7949194), [Zotero](https://libguides.princeton.edu/c.php?g=148292&p=991756), and [a guide for connecting Zotero with RStudio](https://nmfs-opensci.github.io/Quarto-Workshop-2024/tutorials/tutorial-6.html#connect-zotero-and-rstudio). Take a look at [the uploaded version, here](https://github.com/nmfs-ost/asar/blob/main/inst/resources/asar_references.bib).
+You can easily add citations to your report. By default, the `asar::create_template()` function downloads several bib files into the "report/bibliography_files" folder, each with hundreds or thousands of citations for you to reference. These bib files are sourced from the [{journals} R package](https://github.com/nmfs-ost/journals) and contain up-to-date citations from over 30 journals in fisheries.
+
+If you aren't interested in obtaining those files, you can set the argument `bib_file` = FALSE and receive an "asar_citation.bib" file.
+
+You can add your own citations to those files, too, by simply adding onto them. Here are resources about how to export BibTex from [Google Scholar](https://guides.erau.edu/portfolio-how-to/google-bibtex), [EndNote](https://libguides.utsa.edu/c.php?g=522165&p=7949194), [Zotero](https://libguides.princeton.edu/c.php?g=148292&p=991756), and [a guide for connecting Zotero with RStudio](https://nmfs-opensci.github.io/Quarto-Workshop-2024/tutorials/tutorial-6.html#connect-zotero-and-rstudio).
 
 To cite a reference in the text, use the `@` symbol followed by the citation key (e.g., `@Biddle_1992`). Quarto will automatically format the citation and add it to the "References" section towards the end of your report. The bib file will be referenced in your {asar} report's YAML.
 
