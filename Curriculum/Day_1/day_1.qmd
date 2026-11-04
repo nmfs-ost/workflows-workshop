@@ -331,7 +331,13 @@ Is there an acronym we've missed that should be included in this national glossa
 
 First, check if the glossary contains your acronym; if it doesn't, you can edit the file and add it yourself.
 
-Once your acronym is in the glossary, find your acronym in your report and encase it in curly brackets ({}), with "\gls" preceding it. For example, to indicate "ABC" is an acronym, you would write `\gls{abc}`. Use this notation each time you use the acronym in your text.
+Once your acronym is in the glossary, find the label and encase it in curly brackets ({}), with "\gls" preceding it. For example, to indicate "ABC" is an acronym, you would:
+
+1. Find the glossary entry: `\newacronym{abc}{ABC}{acceptable biological catch}`
+
+2. Find the label: `abc`
+
+3. Format it: `\gls{abc}`. Use this notation each time you use the acronym in your text.
 
 Your text will look like this:
 
