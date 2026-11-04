@@ -81,7 +81,7 @@ Break for issues
 
 ## Package information
 
-This package is an ongoing process to gather contributions in order to expand the number of pre-made tables and figures that can be incorporated into a stock assessment report. All objects are intended to be generalized and not specific to any region.
+This package is an ongoing process to gather contributions in order to expand the number of pre-made tables and figures that can be incorporated into a stock assessment report. All objects are intended to be generalized and not specific to any region. Release of version 1 is planned for mid-2027.
 
 {stockplotr} also contains `convert_output()`: the function used to convert model results into a standardized output (as explained in a [previous section](https://nmfs-ost.github.io/workflows-workshop/Curriculum/nsaw.html#stockplotrconvert_output)). This standardized output is the input for the {stockplotr} plotting functions, below (the `dat` argument).
 
@@ -912,18 +912,13 @@ D)  By right-clicking the figure in the RStudio "plots" pane
 
 # Preparing for the Future {#sec-future}
 
-## The Next Assessment Cycle
-
-While {asar} is ready for active use in the next assessment cycle, we are working on additional features to call the assessment from the previous cycle and update it for the new one. This will be the foundation of the workflow as assessments are produced year after year. The workflow presented in this workshop lays out the process for writing an assessment that has not been written yet using {asar} and/or the new standard guidelines.
-
-We are open to suggestions to improve current and future functionality!
-
 ## Converter Compatibility
 
 We are planning to expand the `convert_output()` function in {stockplotr} to be compatible with all major U.S. assessment models and then some. In the near term, we plan to expand its functioning to
 
-- WHAM
+- WHAM (end of 2026)
 - sdmTMB
+- AMAK
 
 However, there are many bespoke and additional models used by assessment scientists across the U.S. We want to include in the function. This will take a lot of resources, so we appreciate contributions to expand its functionality.
 
