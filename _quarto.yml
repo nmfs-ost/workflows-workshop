@@ -8,7 +8,7 @@ website:
   announcement: 
     icon: info-circle
     dismissable: true
-    content: "**Alert** - the material in this workshop has evolved since the original workshops held in 2026. Please see the release notes for [{asar}](https://github.com/nmfs-ost/asar/releases) and [{stockplotr}](https://github.com/nmfs-ost/stockplotr/releases) for the most up-to-date information."
+    content: "**Alert** - the material in this workshop has evolved since the original workshops held in early-mid 2026. Please see the release notes for [{asar}](https://github.com/nmfs-ost/asar/releases) and [{stockplotr}](https://github.com/nmfs-ost/stockplotr/releases) for the most up-to-date information."
     type: primary
     position: below-navbar
   page-navigation: true
