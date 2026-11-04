@@ -423,6 +423,7 @@ Now we are going to walk-through a more complex use of {asar} by
   - Adding additional parameters
   - Adding model results
   - Adding a new author
+- Updating a report for a new assessment cycle
 - Customizing sections
 
 <!-- - Calling a previous report and editing -->
@@ -439,12 +440,14 @@ You can run re-render skeleton as often as you want, it will always edit the cur
 
 #### Our changes: new parameters, additional author, and add model results file
 
-Let's add some more parameters to our script which will allow us to references in-text throughout the document.
+Let's add some more parameters to our script which will allow us to references in-text throughout the document. Additionally, earlier we converted out model results using `convert_output()` so let's add them as well to our template. While we're at it, let's add another author that we forgot to add on initial creation.
 
 ```{r eval=FALSE}
 asar::rerender_skeleton(
   file_dir = file.path(getwd(), "report"),
-  custom_params = c("fleet_a" = "a long fleet name", "fleet_b" = "b long fleet name")
+  custom_params = c("fleet_a" = "a long fleet name", "fleet_b" = "b long fleet name"),
+  model_results = file.path("paka_conout.rda"), # add the path to your model results file *in relation to your report skeleton*
+  authors = c("Michelle Sculley"="PIFSC")
 )
 ```
 
@@ -458,11 +461,6 @@ When you are rerendering your skeleton in a way that edits your preamble (e.g., 
 Just be aware that these changes will, in fact, change your current preamble and overwrite any edits you made to that file.
 :::
 
-Now, I need to:
-
-1. Add my co-authors to my report (I wasn't sure who they were when I created my report template)
-2. Add in the converted model results file (Forgot to add this initially!)
-
 ::: {.callout-important}
 You should provide the `model_results` argument with the path to your model results file *relative to your report skeleton*.
 For example, if your model results file is in the same folder as your skeleton, you would just provide the filename.
@@ -470,18 +468,34 @@ If it's the parent folder of "report", you would provide "../filename".
 If it's in a subfolder of "report", you would provide "subfolder/filename".
 :::
 
-```{r eval=FALSE}
-asar::rerender_skeleton(
-  file_dir = file.path(getwd(), "report"),
-  model_results = file.path("paka_conout.rda"), # add the path to your model results file *in relation to your report skeleton*
-  authors = c("Michelle Sculley"="PIFSC")
-)
-```
-
 ::: {.callout-warning}
 Some chunks may need minor updates, particularly the "output_and_quantities" chunk.
 Ensure that the model results file is being loaded properly (i.e., its relative filepath is correct) and `eval` is TRUE or FALSE, depending on your needs.
 :::
+
+### Updating the Report
+
+It would be unreasonable to expect authors to rewrite their report each year when content is often reused and simply updated. It would also be partially a disservice to using Quarto if we did not take advantage of it's capabilities. We made a function called `update_report` which calls the report that was previously written and places it then updates it for the next assessment cycle. Let's go through an example:
+
+```
+dir.create("stock_2028")
+asar::update_report(
+  file_dir = getwd(), # looks for report folder
+  previous_file_dir = "stock_2028",
+  authors = c("Sam Bredeck" = "SEFSC","John Doe" = "NEFSC"),
+  # model_results = NULL,
+  year = 2028,
+  # format = "pdf",
+  # region = NULL,
+  custom_sections = FALSE,
+  # new_section = NULL,
+  # section_location = NULL,
+  figures_dir = getwd(),
+  tables_dir = getwd(),
+  reset_tables_and_figures = TRUE,
+  reset_authors = TRUE
+)
+```
 
 ::: {.callout-note appearance="minimal"}
 Break for questions
