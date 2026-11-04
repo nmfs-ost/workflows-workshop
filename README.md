@@ -23,7 +23,7 @@ The curriculum is comprised of three days of tutorial-based materials (see the l
 
 # Format
 
-As of now, we are planning to hold a series of workshops spanning 3 days (Tuesday-Thursday) in 3 hour sessions. 
+We are holding a series of workshops spanning 3 days (Tuesday-Thursday) in 3 hour sessions (7 in early-mid 2026 and 2 additional workshops in late 2026/early 2027). 
 
 [Day 1](https://nmfs-ost.github.io/workflows-workshop/Curriculum/Day_1/day_1.html): Learning the foundations of {asar} and {stockplotr}: Markdown & Quarto
 
