@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6a36185f99ea5b9b018e3fca1b021af7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-25dd44d0515cba741b0fa4d987d60185.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-6a36185f99ea5b9b018e3fca1b021af7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-eeb88b71290fc475801d3d9b727ef59c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-600864cc9fd94fae26ba65a8648bc2d4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-eeb88b71290fc475801d3d9b727ef59c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -904,7 +904,15 @@ Tip
 <section id="using-acronyms-in-reports" class="level4">
 <h4 class="anchored" data-anchor-id="using-acronyms-in-reports">Using acronyms in reports</h4>
 <p>First, check if the glossary contains your acronym; if it doesn’t, you can edit the file and add it yourself.</p>
-<p>Once your acronym is in the glossary, find your acronym in your report and encase it in curly brackets ({}), with “\gls” preceding it. For example, to indicate “ABC” is an acronym, you would write <code>\gls{abc}</code>. Use this notation each time you use the acronym in your text.</p>
+<p>Once your acronym is in the glossary, find the label and encase it in curly brackets ({}), with “\gls” preceding it. For example, to indicate “ABC” is an acronym, you would:</p>
+<ol type="1">
+<li>Find the glossary entry:</li>
+</ol>
+<p><code>\newacronym{abc}{ABC}{acceptable biological catch}</code></p>
+<ol start="2" type="1">
+<li><p>Find the label (abc)</p></li>
+<li><p>Format it (<code>\gls{abc}</code>). Use this notation each time you use the acronym in your text.</p></li>
+</ol>
 <p>Your text will look like this:</p>
 <blockquote class="blockquote">
 <p>This is the first instance of <code>\gls{abc}</code>. Here, <code>\gls{abc}</code> is used a second time.</p>
