@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6a36185f99ea5b9b018e3fca1b021af7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-25dd44d0515cba741b0fa4d987d60185.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-6a36185f99ea5b9b018e3fca1b021af7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-eeb88b71290fc475801d3d9b727ef59c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-600864cc9fd94fae26ba65a8648bc2d4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-eeb88b71290fc475801d3d9b727ef59c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -305,8 +305,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </button>
     </div>
   </nav>
-  <div id="quarto-announcement" data-announcement-id="36a95b1c794ca17828a85ca00deb1942" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p><strong>Alert</strong> - the material in this workshop has evolved since the original workshops held in 2026. Please see the release notes for <a href="https://github.com/nmfs-ost/asar/releases">{asar}</a> and <a href="https://github.com/nmfs-ost/stockplotr/releases">{stockplotr}</a> for the most up-to-date information.</p>
+  <div id="quarto-announcement" data-announcement-id="249a2477c770bd02d5e9c0108696f97e" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p><strong>Alert</strong> - the material in this workshop has evolved since the original workshops held in early-mid 2026. Please see the release notes for <a href="https://github.com/nmfs-ost/asar/releases">{asar}</a> and <a href="https://github.com/nmfs-ost/stockplotr/releases">{stockplotr}</a> for the most up-to-date information.</p>
 </div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
@@ -427,6 +427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#advanced-asar-workflow" id="toc-advanced-asar-workflow" class="nav-link" data-scroll-target="#advanced-asar-workflow">Advanced {asar} workflow</a>
   <ul class="collapse">
   <li><a href="#rerendering-report" id="toc-rerendering-report" class="nav-link" data-scroll-target="#rerendering-report">Rerendering report</a></li>
+  <li><a href="#updating-the-report" id="toc-updating-the-report" class="nav-link" data-scroll-target="#updating-the-report">Updating the Report</a></li>
   <li><a href="#create-your-own" id="toc-create-your-own" class="nav-link" data-scroll-target="#create-your-own">Create-your-own</a></li>
   </ul></li>
   </ul></li>
@@ -1218,6 +1219,7 @@ Note
 <li>Adding model results</li>
 <li>Adding a new author</li>
 </ul></li>
+<li>Updating a report for a new assessment cycle</li>
 <li>Customizing sections</li>
 </ul>
 <!-- - Calling a previous report and editing -->
@@ -1240,12 +1242,14 @@ Note
 </div>
 <section id="our-changes-new-parameters-additional-author-and-add-model-results-file" class="level4">
 <h4 class="anchored" data-anchor-id="our-changes-new-parameters-additional-author-and-add-model-results-file">Our changes: new parameters, additional author, and add model results file</h4>
-<p>Let’s add some more parameters to our script which will allow us to references in-text throughout the document.</p>
+<p>Let’s add some more parameters to our script which will allow us to references in-text throughout the document. Additionally, earlier we converted out model results using <code>convert_output()</code> so let’s add them as well to our template. While we’re at it, let’s add another author that we forgot to add on initial creation.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">rerender_skeleton</span>(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">file_dir =</span> <span class="fu">file.path</span>(<span class="fu">getwd</span>(), <span class="st">"report"</span>),</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom_params =</span> <span class="fu">c</span>(<span class="st">"fleet_a"</span> <span class="ot">=</span> <span class="st">"a long fleet name"</span>, <span class="st">"fleet_b"</span> <span class="ot">=</span> <span class="st">"b long fleet name"</span>)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom_params =</span> <span class="fu">c</span>(<span class="st">"fleet_a"</span> <span class="ot">=</span> <span class="st">"a long fleet name"</span>, <span class="st">"fleet_b"</span> <span class="ot">=</span> <span class="st">"b long fleet name"</span>),</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_results =</span> <span class="fu">file.path</span>(<span class="st">"paka_conout.rda"</span>), <span class="co"># add the path to your model results file *in relation to your report skeleton*</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">authors =</span> <span class="fu">c</span>(<span class="st">"Michelle Sculley"</span><span class="ot">=</span><span class="st">"PIFSC"</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1265,11 +1269,6 @@ Important
 <p>Just be aware that these changes will, in fact, change your current preamble and overwrite any edits you made to that file.</p>
 </div>
 </div>
-<p>Now, I need to:</p>
-<ol type="1">
-<li>Add my co-authors to my report (I wasn’t sure who they were when I created my report template)</li>
-<li>Add in the converted model results file (Forgot to add this initially!)</li>
-</ol>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1282,13 +1281,6 @@ Important
 <div class="callout-body-container callout-body">
 <p>You should provide the <code>model_results</code> argument with the path to your model results file <em>relative to your report skeleton</em>. For example, if your model results file is in the same folder as your skeleton, you would just provide the filename. If it’s the parent folder of “report”, you would provide “../filename”. If it’s in a subfolder of “report”, you would provide “subfolder/filename”.</p>
 </div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">rerender_skeleton</span>(</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">file_dir =</span> <span class="fu">file.path</span>(<span class="fu">getwd</span>(), <span class="st">"report"</span>),</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_results =</span> <span class="fu">file.path</span>(<span class="st">"paka_conout.rda"</span>), <span class="co"># add the path to your model results file *in relation to your report skeleton*</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">authors =</span> <span class="fu">c</span>(<span class="st">"Michelle Sculley"</span><span class="ot">=</span><span class="st">"PIFSC"</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1303,6 +1295,34 @@ Warning
 <p>Some chunks may need minor updates, particularly the “output_and_quantities” chunk. Ensure that the model results file is being loaded properly (i.e., its relative filepath is correct) and <code>eval</code> is TRUE or FALSE, depending on your needs.</p>
 </div>
 </div>
+</section>
+</section>
+<section id="updating-the-report" class="level3">
+<h3 class="anchored" data-anchor-id="updating-the-report">Updating the Report</h3>
+<p>It would be unreasonable to expect authors to rewrite their report for the next assessment cycle when content is often reused and simply updated. It would also be partially a disservice to using Quarto if we did not take advantage of its capabilities. The function <code>update_report()</code> facilitates creating reports for new assessment cycles by:</p>
+<ol type="1">
+<li>Copying all files from the old directory to the new one</li>
+<li>Updating the skeleton according the the input arguments using the rerender_skeleton() function (year, model results, authors, etc.)</li>
+<li>Resetting your figures and tables documents (optional)</li>
+</ol>
+<p>Let’s go through an example:</p>
+<pre><code>dir.create("stock_2028")
+asar::update_report(
+  file_dir = "stock_2028", # location of the updated (new) report folder
+  previous_file_dir = getwd(), # looks for report folder
+  authors = c("Sam Bredeck" = "SEFSC","John Doe" = "NEFSC"),
+  # model_results = NULL,
+  year = 2028,
+  # format = "pdf",
+  # region = NULL,
+  custom_sections = FALSE,
+  # new_section = NULL,
+  # section_location = NULL,
+  figures_dir = getwd(),
+  tables_dir = getwd(),
+  reset_tables_and_figures = TRUE,
+  reset_authors = TRUE
+)</code></pre>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1313,7 +1333,6 @@ Warning
 </div>
 </div>
 </div>
-</section>
 </section>
 <section id="create-your-own" class="level3">
 <h3 class="anchored" data-anchor-id="create-your-own">Create-your-own</h3>

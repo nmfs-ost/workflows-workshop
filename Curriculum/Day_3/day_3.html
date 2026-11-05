@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6a36185f99ea5b9b018e3fca1b021af7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-25dd44d0515cba741b0fa4d987d60185.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-6a36185f99ea5b9b018e3fca1b021af7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-eeb88b71290fc475801d3d9b727ef59c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-600864cc9fd94fae26ba65a8648bc2d4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-eeb88b71290fc475801d3d9b727ef59c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -305,8 +305,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </button>
     </div>
   </nav>
-  <div id="quarto-announcement" data-announcement-id="36a95b1c794ca17828a85ca00deb1942" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p><strong>Alert</strong> - the material in this workshop has evolved since the original workshops held in 2026. Please see the release notes for <a href="https://github.com/nmfs-ost/asar/releases">{asar}</a> and <a href="https://github.com/nmfs-ost/stockplotr/releases">{stockplotr}</a> for the most up-to-date information.</p>
+  <div id="quarto-announcement" data-announcement-id="249a2477c770bd02d5e9c0108696f97e" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p><strong>Alert</strong> - the material in this workshop has evolved since the original workshops held in early-mid 2026. Please see the release notes for <a href="https://github.com/nmfs-ost/asar/releases">{asar}</a> and <a href="https://github.com/nmfs-ost/stockplotr/releases">{stockplotr}</a> for the most up-to-date information.</p>
 </div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
@@ -461,7 +461,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#sec-future" id="toc-sec-future" class="nav-link" data-scroll-target="#sec-future">Preparing for the Future</a>
   <ul class="collapse">
-  <li><a href="#the-next-assessment-cycle" id="toc-the-next-assessment-cycle" class="nav-link" data-scroll-target="#the-next-assessment-cycle">The Next Assessment Cycle</a></li>
   <li><a href="#converter-compatibility" id="toc-converter-compatibility" class="nav-link" data-scroll-target="#converter-compatibility">Converter Compatibility</a></li>
   </ul></li>
   <li><a href="#questions-comments-feedback-and-closing" id="toc-questions-comments-feedback-and-closing" class="nav-link" data-scroll-target="#questions-comments-feedback-and-closing">Questions, comments, feedback, and closing</a></li>
@@ -590,7 +589,7 @@ Tip
 </section>
 <section id="package-information" class="level2">
 <h2 class="anchored" data-anchor-id="package-information">Package information</h2>
-<p>This package is an ongoing process to gather contributions in order to expand the number of pre-made tables and figures that can be incorporated into a stock assessment report. All objects are intended to be generalized and not specific to any region.</p>
+<p>This package is an ongoing process to gather contributions in order to expand the number of pre-made tables and figures that can be incorporated into a stock assessment report. All objects are intended to be generalized and not specific to any region. Release of version 1 is planned for mid-2027.</p>
 <p>{stockplotr} also contains <code>convert_output()</code>: the function used to convert model results into a standardized output (as explained in a <a href="https://nmfs-ost.github.io/workflows-workshop/Curriculum/nsaw.html#stockplotrconvert_output">previous section</a>). This standardized output is the input for the {stockplotr} plotting functions, below (the <code>dat</code> argument).</p>
 <p>The following table contains figures and tables that are available in {stockplotr}:</p>
 <table class="caption-top table">
@@ -1841,17 +1840,13 @@ Tip
 </section>
 <section id="sec-future" class="level1">
 <h1>Preparing for the Future</h1>
-<section id="the-next-assessment-cycle" class="level2">
-<h2 class="anchored" data-anchor-id="the-next-assessment-cycle">The Next Assessment Cycle</h2>
-<p>While {asar} is ready for active use in the next assessment cycle, we are working on additional features to call the assessment from the previous cycle and update it for the new one. This will be the foundation of the workflow as assessments are produced year after year. The workflow presented in this workshop lays out the process for writing an assessment that has not been written yet using {asar} and/or the new standard guidelines.</p>
-<p>We are open to suggestions to improve current and future functionality!</p>
-</section>
 <section id="converter-compatibility" class="level2">
 <h2 class="anchored" data-anchor-id="converter-compatibility">Converter Compatibility</h2>
 <p>We are planning to expand the <code>convert_output()</code> function in {stockplotr} to be compatible with all major U.S. assessment models and then some. In the near term, we plan to expand its functioning to</p>
 <ul>
-<li>WHAM</li>
+<li>WHAM (end of 2026)</li>
 <li>sdmTMB</li>
+<li>AMAK</li>
 </ul>
 <p>However, there are many bespoke and additional models used by assessment scientists across the U.S. We want to include in the function. This will take a lot of resources, so we appreciate contributions to expand its functionality.</p>
 <p>For more information on planned developments and timeline, see:</p>
