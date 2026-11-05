@@ -475,13 +475,19 @@ Ensure that the model results file is being loaded properly (i.e., its relative 
 
 ### Updating the Report
 
-It would be unreasonable to expect authors to rewrite their report each year when content is often reused and simply updated. It would also be partially a disservice to using Quarto if we did not take advantage of it's capabilities. We made a function called `update_report` which calls the report that was previously written and places it then updates it for the next assessment cycle. Let's go through an example:
+It would be unreasonable to expect authors to rewrite their report for the next assessment cycle when content is often reused and simply updated. It would also be partially a disservice to using Quarto if we did not take advantage of its capabilities. The function `update_report()` facilitates creating reports for new assessment cycles by:
+
+1. Copying all files from the old directory to the new one
+2. Updating the skeleton according the the input arguments using the rerender_skeleton() function (year, model results, authors, etc.)
+3. Resetting your figures and tables documents (optional)
+
+Let's go through an example:
 
 ```
 dir.create("stock_2028")
 asar::update_report(
-  file_dir = getwd(), # looks for report folder
-  previous_file_dir = "stock_2028",
+  file_dir = "stock_2028", # location of the updated (new) report folder
+  previous_file_dir = getwd(), # looks for report folder
   authors = c("Sam Bredeck" = "SEFSC","John Doe" = "NEFSC"),
   # model_results = NULL,
   year = 2028,
