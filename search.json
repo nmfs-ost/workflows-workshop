@@ -298,6 +298,16 @@
     ]
   },
   {
+    "objectID": "Curriculum/Day_3/day_3.html#asar-sis-pipeline",
+    "href": "Curriculum/Day_3/day_3.html#asar-sis-pipeline",
+    "title": "Day 3",
+    "section": "asar –> SIS Pipeline",
+    "text": "asar –&gt; SIS Pipeline\nAfter completing a stock assessment report, authors submit key assessment data to the Stock Information System (SIS) for inclusion in StockSmart. This process has traditionally entailed entering data through a GUI interface.\nWe are working on a pipeline that will allow for the direct transmittance of assessment and time series data from asar to SIS. Currently, there are two main components of this in-progress pipeline:\n\nstockplotr::extract_sis_data(): Semi-automates the extraction of key quantities from model results and time series data from exported figure/table .rda files [available now]\nasar::export_to_sis(): Semi-automates the insertion of data into SIS-ready formats and exports it to SIS [in-progress]\n\nFor more information, check out the “Automating data extraction for SIS” vignette.",
+    "crumbs": [
+      "Day 3: stockplotr + asar"
+    ]
+  },
+  {
     "objectID": "Curriculum/Day_3/day_3.html#footnotes",
     "href": "Curriculum/Day_3/day_3.html#footnotes",
     "title": "Day 3",

@@ -462,6 +462,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sec-future" id="toc-sec-future" class="nav-link" data-scroll-target="#sec-future">Preparing for the Future</a>
   <ul class="collapse">
   <li><a href="#converter-compatibility" id="toc-converter-compatibility" class="nav-link" data-scroll-target="#converter-compatibility">Converter Compatibility</a></li>
+  <li><a href="#asar-sis-pipeline" id="toc-asar-sis-pipeline" class="nav-link" data-scroll-target="#asar-sis-pipeline"><code>asar</code> –&gt; SIS Pipeline</a></li>
   </ul></li>
   <li><a href="#questions-comments-feedback-and-closing" id="toc-questions-comments-feedback-and-closing" class="nav-link" data-scroll-target="#questions-comments-feedback-and-closing">Questions, comments, feedback, and closing</a></li>
   </ul>
@@ -1856,6 +1857,16 @@ Tip
 <li><a href="https://github.com/orgs/nmfs-ost/projects/57/"><code>stockplotr</code> GitHub Project</a></li>
 <li><a href="https://github.com/nmfs-ost/stockplotr/milestones"><code>stockplotr</code> Milestones</a></li>
 </ul>
+</section>
+<section id="asar-sis-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="asar-sis-pipeline"><code>asar</code> –&gt; SIS Pipeline</h2>
+<p>After completing a stock assessment report, authors submit key assessment data to the Stock Information System (SIS) for inclusion in StockSmart. This process has traditionally entailed entering data through a GUI interface.</p>
+<p>We are working on a pipeline that will allow for the direct transmittance of assessment and time series data from <code>asar</code> to SIS. Currently, there are two main components of this in-progress pipeline:</p>
+<ol type="1">
+<li><code>stockplotr::extract_sis_data()</code>: Semi-automates the extraction of key quantities from model results and time series data from exported figure/table <code>.rda</code> files [available now]</li>
+<li><code>asar::export_to_sis()</code>: Semi-automates the insertion of data into SIS-ready formats and exports it to SIS [in-progress]</li>
+</ol>
+<p>For more information, check out the <a href="https://nmfs-ost.github.io/stockplotr/articles/extract-sis-data.html">“Automating data extraction for SIS” vignette</a>.</p>
 </section>
 </section>
 <section id="questions-comments-feedback-and-closing" class="level1">
