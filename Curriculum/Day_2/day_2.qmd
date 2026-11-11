@@ -592,14 +592,6 @@ D) You can't
 <!-- With B, you'd miss out on headers and proper inclusion in the table of contents. -->
 <!-- D isn't true. -->
 
-<!-- Add back in once section is developed -->
-
-<!-- ::: {.callout-note appearance="minimal"} -->
-<!-- Break for questions -->
-<!-- ::: -->
-
-<!-- ### Calling previous report -->
-
 ::: {.callout-note appearance="minimal"}
 Break for questions & practicing
 :::
