@@ -440,7 +440,7 @@ You can run re-render skeleton as often as you want, it will always edit the cur
 
 #### Our changes: new parameters, additional author, and add model results file
 
-Let's add some more parameters to our script which will allow us to references in-text throughout the document. Additionally, earlier we converted out model results using `convert_output()` so let's add them as well to our template. While we're at it, let's add another author that we forgot to add on initial creation.
+Let's add some more parameters to our script which will allow us to references in-text throughout the document. Additionally, earlier we converted our model results using `convert_output()` so let's add them as well to our template. While we're at it, let's add another author that we forgot to add on initial creation.
 
 ```{r eval=FALSE}
 asar::rerender_skeleton(
@@ -478,28 +478,28 @@ Ensure that the model results file is being loaded properly (i.e., its relative 
 It would be unreasonable to expect authors to rewrite their report for the next assessment cycle when content is often reused and simply updated. It would also be partially a disservice to using Quarto if we did not take advantage of its capabilities. The function `update_report()` facilitates creating reports for new assessment cycles by:
 
 1. Copying all files from the old directory to the new one
-2. Updating the skeleton according the the input arguments using the rerender_skeleton() function (year, model results, authors, etc.)
+2. Updating the skeleton according the the input arguments using the `rerender_skeleton()` function (year, model results, authors, etc.)
 3. Resetting your figures and tables documents (optional)
 
 Let's go through an example:
 
-```
+```{r eval=FALSE}
 dir.create("stock_2028")
 asar::update_report(
   file_dir = "stock_2028", # location of the updated (new) report folder
   previous_file_dir = getwd(), # looks for report folder
-  authors = c("Sam Bredeck" = "SEFSC","John Doe" = "NEFSC"),
-  # model_results = NULL,
+  reset_authors = TRUE,
+  authors = c("Sam Bredeck" = "SEFSC", "John Doe" = "NEFSC"),
   year = 2028,
+  custom_sections = FALSE,
+  reset_tables_and_figures = TRUE,
+  figures_dir = getwd(),
+  tables_dir = getwd()
+  # model_results = NULL,
   # format = "pdf",
   # region = NULL,
-  custom_sections = FALSE,
   # new_section = NULL,
-  # section_location = NULL,
-  figures_dir = getwd(),
-  tables_dir = getwd(),
-  reset_tables_and_figures = TRUE,
-  reset_authors = TRUE
+  # section_location = NULL
 )
 ```
 
