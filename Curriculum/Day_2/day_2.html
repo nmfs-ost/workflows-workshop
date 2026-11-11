@@ -1242,7 +1242,7 @@ Note
 </div>
 <section id="our-changes-new-parameters-additional-author-and-add-model-results-file" class="level4">
 <h4 class="anchored" data-anchor-id="our-changes-new-parameters-additional-author-and-add-model-results-file">Our changes: new parameters, additional author, and add model results file</h4>
-<p>Let’s add some more parameters to our script which will allow us to references in-text throughout the document. Additionally, earlier we converted out model results using <code>convert_output()</code> so let’s add them as well to our template. While we’re at it, let’s add another author that we forgot to add on initial creation.</p>
+<p>Let’s add some more parameters to our script which will allow us to references in-text throughout the document. Additionally, earlier we converted our model results using <code>convert_output()</code> so let’s add them as well to our template. While we’re at it, let’s add another author that we forgot to add on initial creation.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">rerender_skeleton</span>(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">file_dir =</span> <span class="fu">file.path</span>(<span class="fu">getwd</span>(), <span class="st">"report"</span>),</span>
@@ -1302,27 +1302,29 @@ Warning
 <p>It would be unreasonable to expect authors to rewrite their report for the next assessment cycle when content is often reused and simply updated. It would also be partially a disservice to using Quarto if we did not take advantage of its capabilities. The function <code>update_report()</code> facilitates creating reports for new assessment cycles by:</p>
 <ol type="1">
 <li>Copying all files from the old directory to the new one</li>
-<li>Updating the skeleton according the the input arguments using the rerender_skeleton() function (year, model results, authors, etc.)</li>
+<li>Updating the skeleton according the the input arguments using the <code>rerender_skeleton()</code> function (year, model results, authors, etc.)</li>
 <li>Resetting your figures and tables documents (optional)</li>
 </ol>
 <p>Let’s go through an example:</p>
-<pre><code>dir.create("stock_2028")
-asar::update_report(
-  file_dir = "stock_2028", # location of the updated (new) report folder
-  previous_file_dir = getwd(), # looks for report folder
-  authors = c("Sam Bredeck" = "SEFSC","John Doe" = "NEFSC"),
-  # model_results = NULL,
-  year = 2028,
-  # format = "pdf",
-  # region = NULL,
-  custom_sections = FALSE,
-  # new_section = NULL,
-  # section_location = NULL,
-  figures_dir = getwd(),
-  tables_dir = getwd(),
-  reset_tables_and_figures = TRUE,
-  reset_authors = TRUE
-)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"stock_2028"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">update_report</span>(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">file_dir =</span> <span class="st">"stock_2028"</span>, <span class="co"># location of the updated (new) report folder</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">previous_file_dir =</span> <span class="fu">getwd</span>(), <span class="co"># looks for report folder</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">reset_authors =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">authors =</span> <span class="fu">c</span>(<span class="st">"Sam Bredeck"</span> <span class="ot">=</span> <span class="st">"SEFSC"</span>, <span class="st">"John Doe"</span> <span class="ot">=</span> <span class="st">"NEFSC"</span>),</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">year =</span> <span class="dv">2028</span>,</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom_sections =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">reset_tables_and_figures =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">figures_dir =</span> <span class="fu">getwd</span>(),</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">tables_dir =</span> <span class="fu">getwd</span>()</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># model_results = NULL,</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># format = "pdf",</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># region = NULL,</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># new_section = NULL,</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># section_location = NULL</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1442,11 +1444,6 @@ Tip
 <!-- Ideally, you'd add a new section to the appendix with create_template(new_section = ...) -->
 <!-- With B, you'd miss out on headers and proper inclusion in the table of contents. -->
 <!-- D isn't true. -->
-<!-- Add back in once section is developed -->
-<!-- ::: {.callout-note appearance="minimal"} -->
-<!-- Break for questions -->
-<!-- ::: -->
-<!-- ### Calling previous report -->
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
