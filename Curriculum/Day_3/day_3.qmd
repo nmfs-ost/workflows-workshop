@@ -68,11 +68,12 @@ You can use the example Report.sso file uploaded to the workshop GitHub or, if y
 #| warning: false
 #| messages: false
 # Identify output file
-output_file <- file.path("example_output", "Report.sso")
+load(here::here("example_output", "petrale_r4ss.rda"))
 # convert the output and save it as an rda
-paka <- stockplotr::convert_output(output_file,
-                                      save_dir = file.path(getwd(), "paka_conout.rda")
-                                      )
+petrale <- stockplotr::convert_output(
+  petrale_r4ss,
+  save_dir = file.path(getwd(), "petrale_conout.rda")
+)
 ```
 
 ::: {.callout-note appearance="minimal"}
@@ -120,7 +121,7 @@ Run the example below. It should result in a line graph showing spawning biomass
 ```{r eval = FALSE}
 library(stockplotr)
 plot_spawning_biomass(
-  dat = paka, # dataset
+  dat = petrale, # dataset
   geom = "line", # show a line graph
   group = NULL, # don't group by sex, fleet, etc.
   facet = NULL, # not faceting by any variable
@@ -160,17 +161,17 @@ You can remove the reference line by setting `ref_line = NULL`.
 
 ```{r}
 plot_spawning_biomass(
-  dat = paka,
+  dat = petrale,
   geom = "line",
   group = NULL,
   facet = NULL,
   era = NULL,
-  ref_line = c("target" = 1200), # changed from "msy"
+  ref_line = c("target" = 10), # changed from "msy"
   unit_label = "mt",
   scale_amount = 1,
   relative = FALSE,
   interactive = FALSE, # changed from TRUE
-  module = "DERIVED_QUANTITIES" # indicate module name here
+  module = "derived_quants" # indicate module name here
 )
 ```
 
@@ -179,18 +180,16 @@ plot_spawning_biomass(
 <!-- #### Plot relative spawning biomass -->
 
 ```{r, eval=FALSE, echo=FALSE}
-stockplotr::plot_spawning_biomass(
-  dat = paka,
+plot_spawning_biomass(
+  dat = petrale,
   geom = "line",
   group = "none",
   facet = NULL,
   era = NULL,
-  ref_line = c("target" = 1200),
   unit_label = "mt",
   scale_amount = 1,
   relative = TRUE, # changed from FALSE
-  interactive = FALSE,
-  module = "TIME_SERIES"
+  interactive = FALSE
 )
 ```
 
@@ -210,10 +209,10 @@ If you were plotting a scatterplot (`geom = 'point'`) or area plot (`geom = 'are
 
 ```{r}
 plot_spawning_biomass(
-  dat = paka,
+  dat = petrale,
   era = NULL,
-  ref_line = c("target" = 1200),
-  module = "DERIVED_QUANTITIES",
+  ref_line = c("target" = 10),
+  module = "derived_quants",
   linewidth = 2 # increase width of lines
 ) +
   ggplot2::geom_vline(xintercept = 2005, linetype = "dashed", color = "red") +
@@ -240,16 +239,16 @@ Remember that figures return `ggplot2` objects, so we can make additional custom
 
 ```{r}
 plot_spawning_biomass(
-  dat = paka,
+  dat = petrale,
   geom = "line",
   facet = NULL,
   era = NULL,
-  ref_line = c("target" = 1200),
+  ref_line = c("target" = 10),
   unit_label = "mt",
   scale_amount = 1,
   relative = FALSE,
   interactive = FALSE,
-  module = "DERIVED_QUANTITIES"
+  module = "derived_quants"
 ) +
   ggplot2::geom_vline(xintercept = 2005, linetype = "dashed", color = "red")
 ```
@@ -270,10 +269,10 @@ Run the following example table. The result is a fully report ready table showin
 :::
 
 ```{r eval = FALSE}
-stockplotr::table_landings(
-    dat = paka,
+table_landings(
+    dat = petrale,
     unit_label = "mt",
-    module = "CATCH"
+    module = "catch"
 )
 ```
 
@@ -287,10 +286,10 @@ Next, we can add some different formatting:
 
 ```{r}
 library(gt)
-stockplotr::table_landings(
-    dat = paka,
+table_landings(
+    dat = petrale,
     unit_label = "mt",
-    module = "CATCH")[[1]] |> # [[1]] pulls the gt table from the list. Saving as an object and pulling "list" also works (e.g., table$list)
+    module = "catch") |>
   gt::tab_style(
         style = cell_text(weight = "bold"),
         locations = cells_body(columns = "Year")
@@ -308,9 +307,9 @@ stockplotr::table_landings(
 
 ```{r}
 stockplotr::table_landings(
-    dat = paka,
+    dat = petrale,
     unit_label = "mt",
-    module = "CATCH")[[1]] |>
+    module = "catch") |>
     gt::tab_style(
         style = cell_text(weight = "bold"),
         locations = cells_body(columns = "Year")
@@ -351,10 +350,10 @@ Each plot or table has the option to export it as an rda. This rda is a list of 
 
 ```{r}
 plot_spawning_biomass(
-  dat = paka,
+  dat = petrale,
   ref_line = c("target" = 10),
   unit_label = "mt",
-  module = "TIME_SERIES",
+  module = "derived_quants",
   make_rda = TRUE,
   figures_dir = getwd() # indicate where to create a "figures" folder with the spawning biomass figure rda
 )
@@ -377,8 +376,8 @@ Now, export the landings table:
 
 ```{r}
 table_landings(
-  dat = paka,
-  module = "CATCH",
+  dat = petrale,
+  module = "catch",
   make_rda = TRUE, # new argument needed to export plot
   tables_dir = getwd() # indicate where to create a "tables" folder with the landings table rda
 )
@@ -520,11 +519,11 @@ Example similar to that in the ["Adding Custom Tables & Figures" vignette](https
 #| tbl-cap: This is your table caption.
 
 # Import your data
-load(fs::path("paka_conout.rda"))
-paka <- out_new
+load(fs::path("petrale_conout.rda"))
+petrale <- out_new
 
 # Make your table
-your_table <- head(paka) |>
+your_table <- head(petrale) |>
   dplyr::select(label, year, estimate) |>
   gt::gt()
 
@@ -578,14 +577,14 @@ Put your alternative text in a chunk option called 'fig-alt' (example below).
 #| fig-alt: This is your figure alternative text.
 
 # Import your data
-load(fs::path("paka_conout.rda"))
+load(fs::path("petrale_conout.rda"))
 
-paka2 <- out_new |>
-                    dplyr::filter(module_name == "TIME_SERIES") |>
+petrale2 <- out_new |>
+                    dplyr::filter(module_name == "timeseries") |>
                     dplyr::filter(label == "fishing_mortality") 
 
 # Make your figure
-your_figure <- ggplot2::ggplot(paka2,
+your_figure <- ggplot2::ggplot(petrale2,
   ggplot2::aes(x = year, y = estimate, color = fleet)) +
   ggplot2::geom_line(linewidth = 0.75) +
   stockplotr::theme_noaa()
@@ -662,7 +661,7 @@ Run `quarto::quarto_render([path/to/your/skeleton.qmd file])` in the console. Fo
 ```{r eval=FALSE}
 quarto::quarto_render(
   file.path("report",
-             "sar_H_Crimson_jobfish_skeleton.qmd") # add your skeleton filename
+             "sar_USWC_Petrale_sole_skeleton.qmd") # add your skeleton filename
 )
 ```
 
@@ -676,7 +675,7 @@ Open the skeleton .qmd file. Then, in the program pane, press the "render" butto
 
 Run `quarto render [path/to/your/skeleton.qmd file]` in the terminal. For example:
 
-Enter `quarto render report/sar_H_Crimson_jobfish_skeleton.qmd`
+Enter `quarto render report/sar_USWC_Petrale_sole_skeleton.qmd`
 
 {{< include ../snippets/integrate-stockplotr_exercises.qmd >}}
 
@@ -842,9 +841,9 @@ Now, we're ready to add tags and alt text into the report's .tex file!
 
 ```{r eval = FALSE}
 add_tagging(
-    x = "sar_H_Crimson_jobfish_skeleton.tex", # your .tex report file
+    x = "sar_USWC_Petrale_sole_skeleton.tex", # your .tex report file
     dir = "report", # the folder containing the .tex file
-    rename = "Crimson_jobfish_tagged", # the name of the new, accessible PDF
+    rename = "Petrale_sole_tagged", # the name of the new, accessible PDF
     compile = TRUE # we'll compile the PDF
   )
 ```
@@ -863,10 +862,10 @@ If you have Quarto v1.9+ installed, this step is unnecessary.
 
 ```{r eval = FALSE}
 add_alttext(
-    x = "sar_H_Crimson_jobfish_skeleton.tex", # your .tex report file
+    x = "sar_USWC_Petrale_sole_skeleton.tex", # your .tex report file
     dir = "report", # the folder containing the .tex file
     alttext_csv = "captions_alt_text.csv", # the filename of your csv with captions and alt text, located in the working directory
-    rename = "Crimson_jobfish_tagged_alttext", # the name of the new, accessible PDF
+    rename = "Petrale_sole_tagged_alttext", # the name of the new, accessible PDF
     compile = TRUE # we'll compile the PDF again
   )
 ```
