@@ -928,6 +928,17 @@ For more information on planned developments and timeline, see:
 * [`stockplotr` GitHub Project](https://github.com/orgs/nmfs-ost/projects/57/)
 * [`stockplotr` Milestones](https://github.com/nmfs-ost/stockplotr/milestones)
 
+## `asar` --> SIS Pipeline
+
+After completing a stock assessment report, authors submit key assessment data to the Stock Information System (SIS) for inclusion in StockSmart. This process has traditionally entailed entering data through a GUI interface. 
+
+We are working on a pipeline that will allow for the direct transmittance of assessment and time series data from `asar` to SIS. Currently, there are two main components of this in-progress pipeline:
+
+1. `stockplotr::extract_sis_data()`: Semi-automates the extraction of key quantities from model results and time series data from exported figure/table `.rda` files [available now]
+2. `asar::export_to_sis()`: Semi-automates the insertion of data into SIS-ready formats and exports it to SIS [in-progress]
+
+For more information, check out the ["Automating data extraction for SIS" vignette](https://nmfs-ost.github.io/stockplotr/articles/extract-sis-data.html).
+
 # Questions, comments, feedback, and closing
 
 ::: callout-tip
