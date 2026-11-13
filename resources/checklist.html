@@ -450,7 +450,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><em>Optional</em>: <a href="https://happygitwithr.com/rstudio-git-github.html#clone-the-test-github-repository-to-your-computer-via-rstudio">Clone your repo and set up an RStudio Project</a>.</p></li>
 <li><p>Run the following code to get two essential files from the workflows-workshop github repo:</p>
 <ul>
-<li><p>Input data file “Report.sso” will save to a “example_output” folder in your home directory</p></li>
+<li><p>Input data file “petrale_r4ss.rda” will save to a “example_output” folder in your home directory</p></li>
 <li><p>Example plot file “landings_fig_png.png” will save to a “example_plots” folder in your home directory</p></li>
 </ul></li>
 </ol>
@@ -474,8 +474,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain example output file</span></span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">get_workshop_files</span>(</span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">dest_folder =</span> <span class="fu">file.path</span>(<span class="st">"example_output"</span>),</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">dest_file =</span> <span class="fu">file.path</span>(<span class="st">"example_output"</span>, <span class="st">"Report.sso"</span>),</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">url =</span> <span class="st">"https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/main/example_output/Report.sso"</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">dest_file =</span> <span class="fu">file.path</span>(<span class="st">"example_output"</span>, <span class="st">"petrale_r4ss.rda"</span>),</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">url =</span> <span class="st">"https://raw.githubusercontent.com/nmfs-ost/workflows-workshop/main/example_output/petrale_r4ss.rda"</span></span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain example figure file</span></span>
