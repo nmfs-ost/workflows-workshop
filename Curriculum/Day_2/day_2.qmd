@@ -451,7 +451,7 @@ You can run re-render skeleton as often as you want, it will always edit the cur
 Let's add some more parameters to our script which will allow us to references in-text throughout the document. Additionally, earlier we converted our model results using `convert_output()` so let's add them as well to our template. While we're at it, let's add another author that we forgot to add on initial creation.
 
 ```{r eval=FALSE}
-asar::rerender_skeleton(
+rerender_skeleton(
   file_dir = file.path(getwd(), "report"),
   custom_params = c("fleet_a" = "a long fleet name", "fleet_b" = "b long fleet name"),
   model_results = file.path("petrale_conout.rda"), # add the path to your model results file *in relation to your report skeleton*
@@ -493,7 +493,7 @@ Let's go through an example:
 
 ```{r eval=FALSE}
 dir.create("stock_2028")
-asar::update_report(
+update_report(
   file_dir = "stock_2028", # location of the updated (new) report folder
   previous_file_dir = getwd(), # looks for report folder
   reset_authors = TRUE,
