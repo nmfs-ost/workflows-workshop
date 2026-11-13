@@ -396,7 +396,7 @@ file.copy(
 petrale
 ```
 
-![A screenshot of the first 8 columns and 10 rows of data from a standard output tibble converted from a stock synthesis Report.sso file.](images/petrale_conout.png)
+![A screenshot of the first 8 columns and 15 rows of data from a standard output tibble converted from a stock synthesis Report.sso file.](images/petrale_conout.png)
 
 ::: {.callout-tip}
 `convert_output()` will recognize which model the results file came from as well as fleet names. In the rare case either of these are incorrect, the function contains arguments of `model` and `fleet_names` which you as the user can indicate for the function.
