@@ -1252,7 +1252,7 @@ Note
 <h4 class="anchored" data-anchor-id="our-changes-new-parameters-additional-author-and-add-model-results-file">Our changes: new parameters, additional author, and add model results file</h4>
 <p>Let’s add some more parameters to our script which will allow us to references in-text throughout the document. Additionally, earlier we converted our model results using <code>convert_output()</code> so let’s add them as well to our template. While we’re at it, let’s add another author that we forgot to add on initial creation.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">rerender_skeleton</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rerender_skeleton</span>(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">file_dir =</span> <span class="fu">file.path</span>(<span class="fu">getwd</span>(), <span class="st">"report"</span>),</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom_params =</span> <span class="fu">c</span>(<span class="st">"fleet_a"</span> <span class="ot">=</span> <span class="st">"a long fleet name"</span>, <span class="st">"fleet_b"</span> <span class="ot">=</span> <span class="st">"b long fleet name"</span>),</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">model_results =</span> <span class="fu">file.path</span>(<span class="st">"petrale_conout.rda"</span>), <span class="co"># add the path to your model results file *in relation to your report skeleton*</span></span>
@@ -1316,7 +1316,7 @@ Warning
 <p>Let’s go through an example:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"stock_2028"</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>asar<span class="sc">::</span><span class="fu">update_report</span>(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">update_report</span>(</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">file_dir =</span> <span class="st">"stock_2028"</span>, <span class="co"># location of the updated (new) report folder</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">previous_file_dir =</span> <span class="fu">getwd</span>(), <span class="co"># looks for report folder</span></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">reset_authors =</span> <span class="cn">TRUE</span>,</span>
