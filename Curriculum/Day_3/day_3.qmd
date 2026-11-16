@@ -891,21 +891,15 @@ You need to update the alt text for your biomass figure because your interpretat
 
 A)  In the code chunk in the 09_figures.qmd file
 B)  In the captions_alt_text.csv file
-C)  In the YAML at the top of the skeleton .qmd file
+C)  The biomass figure's rda file
 D)  By right-clicking the figure in the RStudio "plots" pane
 :::
 
-<!-- Answer: A OR B. -->
+<!-- Answer: A OR B OR C. -->
 
 <!-- The "single source of truth" is quarto version-dependent. If you have version 1.9+, it can come from the code chunk OR rda; otherwise, add_alttext() sources it from the csv. -->
 
-<!-- C & D do not allow any way to edit alt text. -->
-
-<!-- ::: {.callout-note appearance="minimal"} -->
-
-<!-- 20 minute break for questions & practicing -->
-
-<!-- ::: -->
+<!-- D does not allow any way to edit alt text. -->
 
 {{< include ../snippets/a11y_exercises.qmd >}}
 
