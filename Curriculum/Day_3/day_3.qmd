@@ -691,7 +691,7 @@ While your rendered report looks superb, it's probably missing **tags** and may 
 
 If you made an HTML-based report, these features would most likely be in your document. But since we're prioritizing PDFs, there are a few more steps to take before your document will significantly more accessible than it is now. This means that, **to achieve compliance with Section 508 criteria, you must complete a couple more tasks**.
 
-We will use one or two functions to add these features to our reports. Note that these functions do *not* work on your skeleton .qmd file. Instead, each adds accessibility features into a new file in your 'report' folder: a LaTex-based version of your rendered skeleton .qmd file created when you rendered that skeleton .qmd file. It will have a .tex file extension and will be titled something like 'sar_H_Crimson_jobfish_skeleton.tex'.
+We will use one or two functions to add these features to our reports. Note that these functions do *not* work on your skeleton .qmd file. Instead, each adds accessibility features into a new file in your 'report' folder: a LaTex-based version of your rendered skeleton .qmd file created when you rendered that skeleton .qmd file. It will have a .tex file extension and will be titled something like 'sar_USWC_Petrale_sole_skeleton.tex'.
 
 ::: callout-important
 ## IMPORTANT
