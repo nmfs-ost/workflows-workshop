@@ -61,6 +61,8 @@ website:
         text: "Regionally-specific content"
       - href: resources/faq.qmd
         text: "FAQ"
+      - href: resources/basic_report_script.qmd
+        text: "Basic Report Script"
 
 format:
   html:
