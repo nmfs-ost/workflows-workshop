@@ -93,7 +93,7 @@ The following table contains figures and tables that are available in {stockplot
 | `plot_abundance_at_age()` | abundance-at-age | Figure |
 | `plot_biomass_at_age()` | biomass-at-age | Figure |
 | `plot_biomass()` | biomass time series | Figure |
-| `plot_catch_comp()` | catch compositions | Figure |
+| `plot_catch_at_age()` | catch-at-age | Figure |
 | `plot_discard()` | discards time series | Figure |
 | `plot_fishing_mortality()` | fishing mortality time series | Figure |
 | `plot_index()` | index of abundance | Figure |
