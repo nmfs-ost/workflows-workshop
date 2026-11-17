@@ -24,4 +24,4 @@ We periodically do presentations on parts of the workflow, but would be open to 
 
 ## Will you be adding an overall workflow with each step to get to the final report?
 
-This is a fantastic idea and one that might be of help to some users. We plan on making a script that is runnable and describes each step for making the final report. Once this is completed, we will upload it to the workshop repository and make past participants aware of the addition.
+This is a fantastic idea. We made a [script](https://nmfs-ost.github.io/workflows-workshop/resources/basic-report-script.html) that is runnable and describes each step for making the final report. Check it out!
