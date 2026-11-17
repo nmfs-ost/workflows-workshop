@@ -5,10 +5,10 @@ title: "Basic Report Script"
 As requested, we have created an R script conveying the overall workflow to build a tagged {asar} report, with figures and tables from {stockplotr}.
 
 ```{r eval = FALSE}
-## Day 0: Complete pre-workshop checklist: https://nmfs-ost.github.io/workflows-workshop/resources/checklist.html
+# Day 0: Complete pre-workshop checklist: https://nmfs-ost.github.io/workflows-workshop/resources/checklist.html
 
-## Day 2
-### Set up basic report structure
+# Day 2
+## Set up basic report structure
 library(asar)
 create_template(
   format = "pdf", # optional "html"
@@ -22,12 +22,12 @@ create_template(
   bib_file = TRUE # optional
 )
 
-### Insert additional text into the executive summary to highlight parameters, section tags, and references
+## Insert additional text into the executive summary to highlight parameters, section tags, and references
 exec_sum_path <- file.path(getwd(), "report", "01_executive_summary.qmd")
 lines <- readLines(exec_sum_path, warn = FALSE)
 writeLines(append(lines, "The stock assessment for `r params$species` was conducted by the `r params$office` in `r params$region`. The terminal spawning biomass for the current assessment year (`r end_year`) was `r SBend`. You can find more information on the results of this assessment in @sec-assmt-results. The guidelines for this report follow those outlined in @fishres:Waluda:2008:RSS.\n", after = 2), exec_sum_path)
 
-### Convert model results
+## Convert model results
 load(here::here("example_output", "petrale_r4ss.rda"))
 library(stockplotr)
 petrale <- convert_output(
@@ -42,8 +42,8 @@ rerender_skeleton(
   authors = c("Michelle Sculley"="PIFSC")
 )
 
-## Day 3
-### Note: this script is written for setups using Quarto v1.9+, meaning that alt text is added without asar::add_alttext() and WITH the new native Quarto functionality
+# Day 3
+## Note: this script is written for setups using Quarto v1.9+, meaning that alt text is added without asar::add_alttext() and WITH the new native Quarto functionality
 library(stockplotr)
 plot_spawning_biomass(
   dat = petrale,
@@ -72,8 +72,8 @@ create_tables_doc(
   tables_dir = getwd()
 )
 
-### add table and figure manually to figure/table docs
-table_example <- "```{r} 
+## add table and figure manually to figure/table docs
+table_example <- paste0("```{r} 
 #| label: 'tbl-direct_code_table1' # choose a label
 #| echo: false # don't show the code- only the output (table)
 #| tbl-cap: This is your table caption.
@@ -89,11 +89,7 @@ your_table <- head(petrale) |>
 
 # Show your table
 your_table
-```
-
-{{< pagebreak >}}
-
-"
+```\n\n", "{{< pagebreak >}}")
 
 table_qmd <- readLines(fs::path("report", "09_tables.qmd"))
 table_qmd_new <- append(table_qmd, table_example)
@@ -104,7 +100,7 @@ writeLines(
 )
 
 
-figure_example <- "```{r} 
+figure_example <- paste0("```{r} 
 #| label: 'fig-direct_code_figure1' # choose a label
 #| echo: false # show only the output, not the code
 #| fig-cap: This is your figure caption.
@@ -125,10 +121,7 @@ your_figure <- ggplot2::ggplot(petrale2,
 
 # Show your figure
 your_figure
-```
-{{< pagebreak >}}
-
-"
+```\n\n", "{{< pagebreak >}}")
 
 figure_image <- "![Caption for my example figure](../example_plots/landings_fig_png.png){fig-alt=\"This is the alternative text for my figure\" #fig-markdown_figure1}"
 
@@ -141,7 +134,7 @@ writeLines(
   fs::path("report", "08_figures.qmd")
 )
 
-### demonstrate how to reference figures in the report
+## demonstrate how to reference figures in the report
 figure_ref <- "I am referencing the example figure: @fig-direct_code_figure1."
 
 intro_qmd <- readLines(fs::path("report", "02_introduction.qmd"))
@@ -152,13 +145,13 @@ writeLines(
   fs::path("report", "02_introduction.qmd")
 )
 
-### render report into PDF
+## render report into PDF
 quarto::quarto_render(
   file.path("report",
             "sar_USWC_Petrale_sole_skeleton.qmd") # add your skeleton filename
 )
 
-### add tags to report to prepare for Section 508 compliance (accessibility requirements)
+## add tags to report to prepare for Section 508 compliance (accessibility requirements)
 add_tagging(
   x = "sar_USWC_Petrale_sole_skeleton.tex", # your .tex report file
   dir = "report", # the folder containing the .tex file
@@ -167,4 +160,3 @@ add_tagging(
 )
 
 ```
-
