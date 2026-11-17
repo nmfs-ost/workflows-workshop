@@ -545,10 +545,6 @@ Then, add a pagebreak:
 
 ```
 
-::: callout-warning
-It will be important to add your captions and labels into a csv file when making your documents accessible. You will soon learn more about this in the the ["Adding accessibility features" section](#sec-a11y)!
-:::
-
 ##### Direct image-based table insertion workflow
 
 We don't recommended adding tables as images, since it significantly reduces the accessibility of your table. However, we understand that sometimes this is the only format available.
@@ -924,7 +920,7 @@ For more information on planned developments and timeline, see:
 
 ## `asar` --> SIS Pipeline
 
-After completing a stock assessment report, authors submit key assessment data to the Stock Information System (SIS) for inclusion in StockSmart. This process has traditionally entailed entering data through a GUI interface. 
+After completing a stock assessment report, authors submit key assessment data to the Species Information System (SIS) for inclusion in StockSmart. This process has traditionally entailed entering data through a GUI interface. 
 
 We are working on a pipeline that will allow for the direct transmittance of assessment and time series data from `asar` to SIS. Currently, there are two main components of this in-progress pipeline:
 
