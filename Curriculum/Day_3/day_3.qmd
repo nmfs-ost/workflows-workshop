@@ -125,7 +125,7 @@ plot_spawning_biomass(
   geom = "line", # show a line graph
   group = NULL, # don't group by sex, fleet, etc.
   facet = NULL, # not faceting by any variable
-  era = NULL, # default to "time"
+  era = NULL, # shows all eras by default
   ref_line = "msy", # set reference line at msy
   unit_label = "mt", # unit label: metric tons
   scale_amount = 1, # do not scale spawning biomass
@@ -201,7 +201,7 @@ To show plots in lbs, set the `lbs` argument in `plot_spawning_biomass()` to TRU
 
 #### Customizations from {ggplot2}
 
-In this example, we still are bypassing module selection and we are automatically extracting the reference line value from the data. However, now we are using this reference value to plot relative spawning biomass and changing the linewidth to 2 (an argument inherited from `ggplot2::geom_line()`) as well as adding a vertical reference line at 2005 to highlight some point in time. Both of these customizations use functionality from {ggplot2} that is not explicit in {stockplotr}!
+In this example, we are still bypassing module selection and indicating a custom reference line value. However, now we are changing the linewidth to 2 (an argument inherited from `ggplot2::geom_line()`) as well as adding a vertical reference line at 2005 to highlight some point in time. Both of these customizations use functionality from {ggplot2} that is not explicit in {stockplotr}!
 
 ::: callout-note
 If you were plotting a scatterplot (`geom = 'point'`) or area plot (`geom = 'area'`), you could add arguments associated with `geom_point()` and `geom_area()`, respectively.
