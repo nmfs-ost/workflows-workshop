@@ -733,7 +733,7 @@ Tip
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">geom =</span> <span class="st">"line"</span>, <span class="co"># show a line graph</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="cn">NULL</span>, <span class="co"># don't group by sex, fleet, etc.</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">facet =</span> <span class="cn">NULL</span>, <span class="co"># not faceting by any variable</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">era =</span> <span class="cn">NULL</span>, <span class="co"># default to "time"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">era =</span> <span class="cn">NULL</span>, <span class="co"># shows all eras by default</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">ref_line =</span> <span class="st">"msy"</span>, <span class="co"># set reference line at msy</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">unit_label =</span> <span class="st">"mt"</span>, <span class="co"># unit label: metric tons</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale_amount =</span> <span class="dv">1</span>, <span class="co"># do not scale spawning biomass</span></span>
@@ -809,7 +809,7 @@ Tip
 </section>
 <section id="customizations-from-ggplot2" class="level4">
 <h4 class="anchored" data-anchor-id="customizations-from-ggplot2">Customizations from {ggplot2}</h4>
-<p>In this example, we still are bypassing module selection and we are automatically extracting the reference line value from the data. However, now we are using this reference value to plot relative spawning biomass and changing the linewidth to 2 (an argument inherited from <code>ggplot2::geom_line()</code>) as well as adding a vertical reference line at 2005 to highlight some point in time. Both of these customizations use functionality from {ggplot2} that is not explicit in {stockplotr}!</p>
+<p>In this example, we are still bypassing module selection and indicating a custom reference line value. However, now we are changing the linewidth to 2 (an argument inherited from <code>ggplot2::geom_line()</code>) as well as adding a vertical reference line at 2005 to highlight some point in time. Both of these customizations use functionality from {ggplot2} that is not explicit in {stockplotr}!</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
